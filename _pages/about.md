@@ -7,9 +7,10 @@ subtitle: PhD Student, Faculty of Pharmacy, University of Malaya
 
 profile:
 align: right
-image:
+image: ardie-profile.jpg
 image_circular: false
-more_info: > <p>Faculty of Pharmacy</p> <p>University of Malaya</p> <p>Kuala Lumpur, Malaysia</p> <p><a href="https://orcid.org/0009-0009-8994-2793">ORCID: 0009-0009-8994-2793</a></p> <p>Scopus Author ID: 60192026900</p>
+more_info: > <p>Faculty of Pharmacy</p> <p>University of Malaya</p> <p>Kuala Lumpur, Malaysia</p> <p> <a href="https://orcid.org/0009-0009-8994-2793">
+ORCID: 0009-0009-8994-2793 </a> </p> <p>Scopus Author ID: 60192026900</p>
 
 news: false
 latest_posts: false
