@@ -163,3 +163,29 @@ article > p {
 .contact-icons i::before {
   font-size: 1.2rem !important;
 }
+
+/* Fix footer white strip */
+footer,
+footer.fixed-bottom,
+.fixed-bottom,
+footer .container,
+footer .container-fluid,
+footer div {
+  background-color: #0b174f !important;
+  color: #ffffff !important;
+}
+
+footer *,
+.fixed-bottom * {
+  color: #ffffff !important;
+}
+
+footer a,
+.fixed-bottom a {
+  color: #ffffff !important;
+}
+
+footer a:hover,
+.fixed-bottom a:hover {
+  color: #d6d9ff !important;
+}
