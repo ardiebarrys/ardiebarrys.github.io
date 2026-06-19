@@ -196,3 +196,12 @@ article p {
 .navbar-nav .nav-link:hover {
   color: #d6d9ff !important;
 }
+/* Capitalize first letter of navbar items */
+.navbar-nav .nav-link,
+.navbar-brand {
+  text-transform: capitalize !important;
+}
+.navbar-nav .nav-link[href*="cv"],
+.navbar-nav .nav-link[href*="CV"] {
+  text-transform: uppercase !important;
+}
