@@ -137,3 +137,29 @@ h1 {
 .profile p {
   text-align: left !important;
 }
+
+/* Smaller bottom social icons */
+.social,
+.contact-icons {
+  font-size: 1.6rem !important;
+}
+
+.social a,
+.contact-icons a {
+  font-size: 1.6rem !important;
+  margin: 0 0.25rem !important;
+}
+
+.social i,
+.contact-icons i,
+.social svg,
+.contact-icons svg,
+.contact-icons .ai,
+.contact-icons .fab,
+.contact-icons .fas,
+.contact-icons .far {
+  font-size: 1.6rem !important;
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+  line-height: 1.6rem !important;
+}
