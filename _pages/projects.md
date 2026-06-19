@@ -5,7 +5,9 @@ permalink: /projects/
 description: Selected personal and group projects.
 nav: true
 nav_order: 4
-display_categories: [personal, group]
+display_categories:
+  - Personal Projects
+  - Group Projects
 horizontal: false
 ---
 layout: page
