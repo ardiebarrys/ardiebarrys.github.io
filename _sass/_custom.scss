@@ -119,3 +119,21 @@ a:hover {
   width: 2rem !important;
   height: 2rem !important;
 }
+
+/* Bold name/title */
+h1 {
+  font-weight: 700 !important;
+}
+
+/* Justify biography text */
+.post article p,
+.page article p,
+.about p {
+  text-align: justify !important;
+}
+
+/* Keep profile/sidebar text left-aligned */
+.profile-info p,
+.profile p {
+  text-align: left !important;
+}
