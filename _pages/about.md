@@ -18,6 +18,21 @@ profile:
       </a>
     </p>
     <p>Scopus Author ID: 60192026900</p>
+    <p>
+      <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&hl=en">
+        Google Scholar
+      </a>
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/in/ardiebarrysailis/">
+        LinkedIn
+      </a>
+    </p>
+    <p>
+      <a href="https://communities.springernature.com/users/ardie-barry-sailis">
+        Springer Nature Research Communities
+      </a>
+    </p>
 
 news: false
 latest_posts: false
