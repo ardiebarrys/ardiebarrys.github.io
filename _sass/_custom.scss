@@ -179,3 +179,20 @@ article p {
   height: 1.6rem !important;
   line-height: 1.6rem !important;
 }
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link[aria-current="page"] {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  text-transform: uppercase !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #d6d9ff !important;
+}
