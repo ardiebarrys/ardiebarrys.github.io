@@ -132,6 +132,22 @@ h1 {
   text-align: justify !important;
 }
 
+/* Justify only the main bio text on the about page */
+.post .clearfix p,
+.post article p,
+article p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+
+/* Do not justify the profile/sidebar text */
+.profile p,
+.profile-info p,
+.post .profile p,
+.post .profile-info p {
+  text-align: left !important;
+}
+
 /* Keep profile/sidebar text left-aligned */
 .profile-info p,
 .profile p {
