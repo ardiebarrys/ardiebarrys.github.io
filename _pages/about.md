@@ -1,34 +1,28 @@
 ---
+
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: PhD Student, Faculty of Pharmacy, University of Malaya
 
 profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+align: right
+image:
+image_circular: false
+more_info: > <p>Faculty of Pharmacy</p> <p>University of Malaya</p> <p>Kuala Lumpur, Malaysia</p> <p><a href="https://orcid.org/0009-0009-8994-2793">ORCID: 0009-0009-8994-2793</a></p> <p>Scopus Author ID: 60192026900</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: false
+latest_posts: false
+selected_papers: false
+social: true
+------------
 
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+Ardie Barry Sailis is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.
 
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
----
+His doctoral research focuses on the toxicological effects of e-cigarette exposure, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+In parallel, he is developing a conceptual research framework titled *Cellular Signaling as Dynamic Regulatory Circuits*. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
