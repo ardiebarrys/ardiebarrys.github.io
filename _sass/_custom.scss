@@ -1,3 +1,4 @@
+/* Global typography */
 body {
   background: #ffffff !important;
   color: #111111 !important;
@@ -18,6 +19,20 @@ a,
   font-family: "Times New Roman", Times, serif !important;
 }
 
+h1 {
+  font-weight: 700 !important;
+}
+
+/* Links */
+a {
+  color: #2447a8 !important;
+}
+
+a:hover {
+  color: #0b174f !important;
+}
+
+/* Navbar */
 .navbar,
 .navbar.navbar-light,
 .navbar.navbar-expand-sm {
@@ -33,16 +48,30 @@ a,
   color: #ffffff !important;
 }
 
+.navbar-nav .nav-link,
+.navbar-brand {
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  text-transform: capitalize !important;
+}
+
+.navbar-nav .nav-link[href*="cv"],
+.navbar-nav .nav-link[href*="CV"] {
+  text-transform: uppercase !important;
+}
+
 .navbar a:hover,
 .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
   color: #d6d9ff !important;
+  font-weight: 700 !important;
 }
 
 .navbar-nav .nav-link.active,
-.navbar-nav .nav-item.active .nav-link {
-  color: #d6d9ff !important;
-  font-weight: 700;
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link[aria-current="page"] {
+  color: #ffffff !important;
+  font-weight: 700 !important;
 }
 
 .navbar i,
@@ -54,6 +83,7 @@ a,
   color: #ffffff !important;
 }
 
+/* Footer */
 footer,
 .fixed-bottom {
   background-color: #0b174f !important;
@@ -70,100 +100,49 @@ footer a:hover,
   color: #d6d9ff !important;
 }
 
-a {
-  color: #2447a8 !important;
-}
-
-a:hover {
-  color: #0b174f !important;
-}
-
-/* Navbar text */
-.navbar-nav .nav-link,
-.navbar-brand {
-  text-transform: uppercase !important;
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
-}
-
-/* Bold current page */
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-link[aria-current="page"] {
-  font-weight: 700 !important;
-  color: #ffffff !important;
-}
-
-/* Navbar hover */
-.navbar-nav .nav-link:hover {
-  font-weight: 700 !important;
-  color: #d6d9ff !important;
-}
-
-/* Smaller social icons below */
-.social .contact-icons,
-.contact-icons {
-  font-size: 2rem !important;
-}
-
-.social .contact-icons a,
-.contact-icons a {
-  margin: 0 0.35rem !important;
-}
-
-.social .contact-icons i,
-.contact-icons i,
-.social .contact-icons svg,
-.contact-icons svg {
-  font-size: 2rem !important;
-  width: 2rem !important;
-  height: 2rem !important;
-}
-
-/* Bold name/title */
-h1 {
-  font-weight: 700 !important;
-}
-
-/* Justify biography text */
-.post article p,
-.page article p,
-.about p {
+/* Biography text */
+.bio-text,
+.bio-text p,
+.post .bio-text,
+.post .bio-text p {
   text-align: justify !important;
+  text-justify: inter-word !important;
+  hyphens: auto;
 }
 
-/* Justify only the main bio text on the about page */
-.post .clearfix p,
-.post article p,
-article p {
+/* Fallback if bio-text wrapper is not used */
+.post article > p,
+.page article > p,
+article > p {
   text-align: justify !important;
-  text-justify: inter-word;
+  text-justify: inter-word !important;
 }
 
-/* Do not justify the profile/sidebar text */
+/* Keep profile/sidebar text left-aligned */
+.profile,
 .profile p,
+.profile-info,
 .profile-info p,
 .post .profile p,
 .post .profile-info p {
   text-align: left !important;
 }
 
-/* Keep profile/sidebar text left-aligned */
-.profile-info p,
-.profile p {
-  text-align: left !important;
-}
-
 /* Smaller bottom social icons */
 .social,
 .contact-icons {
-  font-size: 1.6rem !important;
+  font-size: 0 !important;
 }
 
 .social a,
 .contact-icons a {
-  font-size: 1.6rem !important;
-  margin: 0 0.25rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.2rem !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  margin: 0 0.35rem !important;
 }
 
 .social i,
@@ -174,34 +153,13 @@ article p {
 .contact-icons .fab,
 .contact-icons .fas,
 .contact-icons .far {
-  font-size: 1.6rem !important;
-  width: 1.6rem !important;
-  height: 1.6rem !important;
-  line-height: 1.6rem !important;
+  font-size: 1.2rem !important;
+  width: 1.2rem !important;
+  height: 1.2rem !important;
+  line-height: 1.2rem !important;
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-link[aria-current="page"] {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-}
-
-.navbar-nav .nav-link {
-  color: #ffffff !important;
-  text-transform: uppercase !important;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #d6d9ff !important;
-}
-/* Capitalize first letter of navbar items */
-.navbar-nav .nav-link,
-.navbar-brand {
-  text-transform: capitalize !important;
-}
-.navbar-nav .nav-link[href*="cv"],
-.navbar-nav .nav-link[href*="CV"] {
-  text-transform: uppercase !important;
+.social i::before,
+.contact-icons i::before {
+  font-size: 1.2rem !important;
 }
