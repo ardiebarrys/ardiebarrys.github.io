@@ -25,7 +25,7 @@ selected_papers: false
 social: true
 ---
 
-Ardie Barry Sailis is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.
+**Ardie Barry Sailis** is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.
 
 His doctoral research focuses on the toxicological effects of e-cigarette exposure, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.
 
