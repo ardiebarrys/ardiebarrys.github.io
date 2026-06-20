@@ -165,6 +165,36 @@ toc:
       width: 100%;
       padding: 0.55rem 0;
     }
+
+    /* Move main CV content slightly left and widen it */
+@media (min-width: 992px) {
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1400px !important;
+  }
+
+  .row > .col-lg-2 {
+    flex: 0 0 190px !important;
+    max-width: 190px !important;
+  }
+
+  .row > .col-lg-8,
+  .row > .col-lg-10 {
+    flex: 1 1 auto !important;
+    max-width: calc(100% - 210px) !important;
+    padding-left: 0.5rem !important;
+  }
+
+  #toc-sidebar,
+  .toc-sidebar {
+    width: 190px !important;
+    max-width: 190px !important;
+    padding-right: 0.5rem !important;
+    margin-right: 0 !important;
+  }
+}
   }
 </style>
 
