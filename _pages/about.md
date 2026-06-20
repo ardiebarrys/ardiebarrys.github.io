@@ -60,6 +60,98 @@ social: true
 ---
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly =
+          url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink =
+          link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script>
+
+<style>
   .post,
   .page,
   .container,
@@ -126,7 +218,7 @@ social: true
   .profile-logo-links {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 0.85rem;
     margin-top: 0.75rem;
   }
 
@@ -134,8 +226,8 @@ social: true
     display: flex !important;
     align-items: center;
     justify-content: center;
-    min-height: 76px;
-    padding: 0.9rem 1rem;
+    min-height: 88px;
+    padding: 1rem 1.1rem;
     border: 1px solid rgba(183, 0, 183, 0.28);
     border-radius: 10px;
     background: #ffffff !important;
@@ -146,11 +238,12 @@ social: true
   .profile-logo-links a:hover {
     border-color: var(--global-theme-color);
     box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
+    transform: translateY(-1px);
   }
 
   .profile-logo-links img {
-    max-width: 230px;
-    max-height: 46px;
+    max-width: 240px;
+    max-height: 54px;
     object-fit: contain;
     display: block;
   }
@@ -290,11 +383,11 @@ social: true
     }
 
     .profile-logo-links a {
-      min-height: 68px;
+      min-height: 72px;
     }
 
     .profile-logo-links img {
-      max-height: 40px;
+      max-height: 44px;
     }
   }
 </style>
