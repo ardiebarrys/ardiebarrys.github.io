@@ -7,11 +7,110 @@ nav_order: 5
 ---
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly =
+          url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink =
+          link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script>
+
+<style>
   .post,
   .page,
   .container,
   main {
     max-width: 1280px !important;
+  }
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
   }
 
   .contact-page {
@@ -99,13 +198,6 @@ nav_order: 5
 
   .contact-form button:hover {
     opacity: 0.9;
-  }
-
-  .navbar .nav-link.active,
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
-    color: var(--global-theme-color) !important;
-    font-weight: 700 !important;
   }
 
   @media (max-width: 768px) {
