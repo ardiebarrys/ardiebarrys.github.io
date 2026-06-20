@@ -76,7 +76,8 @@ a:hover {
 .navbar i,
 .navbar svg,
 .navbar .fas,
-.navbar .far {
+.navbar .far,
+.navbar .fab {
   color: #ffffff !important;
 }
 
@@ -172,6 +173,7 @@ article > p {
 .social svg,
 .contact-icons svg,
 .contact-icons .ai,
+.contact-icons .fab,
 .contact-icons .fas,
 .contact-icons .far {
   font-size: 1.2rem !important;
