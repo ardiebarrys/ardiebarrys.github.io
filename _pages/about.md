@@ -28,15 +28,31 @@ profile:
 
       <hr>
 
-      <p>
-        <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
-      </p>
+      <div class="profile-logo-links">
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
+          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities">
+        </a>
+
+        <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
+          <img src="/assets/img/kudos-logo.png" alt="Kudos">
+        </a>
+
+        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate">
+          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate">
+        </a>
+
+        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation">
+          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation">
+        </a>
+
+        <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID">
+          <img src="/assets/img/orcid-logo.png" alt="ORCID">
+        </a>
+
+        <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn">
+          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn">
+        </a>
+      </div>
     </div>
 
 selected_papers: false
@@ -99,13 +115,42 @@ social: true
     text-align-last: left !important;
   }
 
-  .profile-info a.profile-link {
-    display: block !important;
-    margin-bottom: 0.35rem !important;
+  .profile-logo-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 0.65rem;
   }
 
-  .profile-info p a:not(.profile-link) {
-    display: inline !important;
+  .profile-logo-links a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 10px;
+    background: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.055);
+    box-sizing: border-box;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .profile-logo-links a:hover {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .profile-logo-links img {
+    max-width: 210px;
+    max-height: 34px;
+    object-fit: contain;
+    display: block;
   }
 
   .profile,
@@ -123,18 +168,18 @@ social: true
     hyphens: auto !important;
   }
 
-.keyword-box {
-  clear: none !important;
-  display: flow-root;
-  width: auto;
-  max-width: none;
-  margin: 1.5rem 0 2rem;
-  padding: 1.15rem 1.25rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
-  box-sizing: border-box;
-}
+  .keyword-box {
+    clear: none !important;
+    display: flow-root;
+    width: auto;
+    max-width: none;
+    margin: 1.5rem 0 2rem;
+    padding: 1.15rem 1.25rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    box-sizing: border-box;
+  }
 
   .keyword-title {
     margin-bottom: 0.8rem;
