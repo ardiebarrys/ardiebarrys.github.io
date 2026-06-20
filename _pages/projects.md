@@ -8,8 +8,16 @@ nav_order: 3
 ---
 
 <style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
   .projects-page {
     margin-top: 2rem;
+    width: 100%;
   }
 
   .project-section {
