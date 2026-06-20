@@ -99,13 +99,13 @@ social: true
     text-align-last: left !important;
   }
 
-  .profile-info p a:not(.profile-link) {
-    display: inline !important;
-  }
-
   .profile-info a.profile-link {
     display: block !important;
     margin-bottom: 0.35rem !important;
+  }
+
+  .profile-info p a:not(.profile-link) {
+    display: inline !important;
   }
 
   .profile,
@@ -125,7 +125,8 @@ social: true
 
   .keyword-box {
     clear: none !important;
-    width: calc(100% - 360px);
+    width: min(100%, 760px);
+    max-width: 760px;
     margin: 1.5rem 0 2rem;
     padding: 1.15rem 1.25rem;
     border-left: 5px solid var(--global-theme-color);
@@ -238,6 +239,7 @@ social: true
   @media (max-width: 768px) {
     .keyword-box {
       width: 100%;
+      max-width: 100%;
     }
   }
 </style>
