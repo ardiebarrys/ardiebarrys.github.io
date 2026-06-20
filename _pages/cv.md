@@ -157,8 +157,6 @@ toc:
     display: none !important;
   }
 </style>
-  }
-</style>
 
 <div class="cv-page">
   <div class="cv-hero">
