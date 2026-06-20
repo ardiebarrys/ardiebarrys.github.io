@@ -14,7 +14,14 @@ toc:
   .page,
   .container,
   main {
-    max-width: 1280px !important;
+    max-width: 1500px !important;
+  }
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
   }
 
   /* Keep main CV navigation visible, hide only nested subheadings */
@@ -25,33 +32,45 @@ toc:
     display: none !important;
   }
 
-/* Keep the left CV navigation pane aligned without pushing content down */
-@media (min-width: 992px) {
-  #toc-sidebar,
-  .toc-sidebar {
-    width: 220px !important;
-    max-width: 220px !important;
-    padding-right: 1rem !important;
-    margin-right: 1rem !important;
-  }
+  /* Move sidebar left and expand main content toward it */
+  @media (min-width: 992px) {
+    .post .row,
+    .page .row,
+    main .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
 
-  .row > .col-lg-2 {
-    flex: 0 0 220px !important;
-    max-width: 220px !important;
-  }
+    .row > .col-lg-2 {
+      flex: 0 0 155px !important;
+      max-width: 155px !important;
+      padding-left: 0 !important;
+      padding-right: 0.4rem !important;
+    }
 
-  .row > .col-lg-8,
-  .row > .col-lg-10 {
-    flex: 1 1 0 !important;
-    max-width: calc(100% - 260px) !important;
-  }
-}
+    .row > .col-lg-8,
+    .row > .col-lg-10 {
+      flex: 1 1 auto !important;
+      max-width: calc(100% - 165px) !important;
+      padding-left: 0.75rem !important;
+      padding-right: 0 !important;
+    }
 
-  .navbar .nav-link.active,
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
-    color: var(--global-theme-color) !important;
-    font-weight: 700 !important;
+    #toc-sidebar,
+    .toc-sidebar {
+      width: 155px !important;
+      max-width: 155px !important;
+      padding-left: 0 !important;
+      padding-right: 0.35rem !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    #toc-sidebar .nav,
+    .toc-sidebar .nav {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
   }
 
   .cv-page {
@@ -165,36 +184,6 @@ toc:
       width: 100%;
       padding: 0.55rem 0;
     }
-
-    /* Move main CV content slightly left and widen it */
-@media (min-width: 992px) {
-  .post,
-  .page,
-  .container,
-  main {
-    max-width: 1400px !important;
-  }
-
-  .row > .col-lg-2 {
-    flex: 0 0 190px !important;
-    max-width: 190px !important;
-  }
-
-  .row > .col-lg-8,
-  .row > .col-lg-10 {
-    flex: 1 1 auto !important;
-    max-width: calc(100% - 210px) !important;
-    padding-left: 0.5rem !important;
-  }
-
-  #toc-sidebar,
-  .toc-sidebar {
-    width: 190px !important;
-    max-width: 190px !important;
-    padding-right: 0.5rem !important;
-    margin-right: 0 !important;
-  }
-}
   }
 </style>
 
@@ -280,7 +269,6 @@ toc:
 <div class="cv-card">
   <div class="cv-date">2025 - Ongoing</div>
   <div class="cv-item-title">Peer Reviewer</div>
-
   <p>
     Provides peer-review support for scholarly manuscripts in toxicology, pharmacology, reproductive health,
     public health, and molecular biology.
@@ -290,7 +278,6 @@ toc:
 <div class="cv-card">
   <div class="cv-date">Oct 2022 - Jan 2023</div>
   <div class="cv-item-title">Intern</div>
-
   <p>
     Completed laboratory and professional training involving microbiology, analytical workflows, documentation,
     and research-related technical tasks.
