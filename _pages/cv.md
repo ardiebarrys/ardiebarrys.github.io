@@ -193,7 +193,18 @@ toc:
       width: 100%;
       padding: 0.55rem 0;
     }
+
+    /* Keep CV left navigation visible while scrolling */
+@media (min-width: 992px) {
+  #toc-sidebar,
+  .toc-sidebar {
+    position: sticky !important;
+    top: 6rem !important;
+    align-self: start !important;
+    max-height: calc(100vh - 6rem) !important;
+    overflow-y: auto !important;
   }
+}
 </style>
 
 <div class="cv-page" markdown="1">
