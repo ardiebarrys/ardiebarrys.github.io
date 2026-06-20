@@ -198,3 +198,27 @@ footer a:hover,
   font-size: 1.6rem !important;
   opacity: 1 !important;
 }
+
+/* Force biography text to justify visibly */
+.bio-text,
+.bio-text p,
+.post .bio-text,
+.post .bio-text p,
+article > p {
+  display: block !important;
+  width: 100% !important;
+  text-align: justify !important;
+  text-align-last: justify !important;
+  text-justify: inter-word !important;
+  hyphens: auto !important;
+}
+
+/* Keep profile/sidebar normal */
+.profile,
+.profile p,
+.profile-info,
+.profile-info p {
+  text-align: left !important;
+  text-align-last: left !important;
+}
+
