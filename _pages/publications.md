@@ -11,20 +11,21 @@ nav_order: 2
   body {
     background: #ffffff !important;
     color: #111111 !important;
-    font-family: Georgia, "Times New Roman", Times, serif !important;
+    font-family: "Times New Roman", Times, serif !important;
   }
 
-  .post,
-  .page,
-  .container,
-  main {
-    background: #ffffff !important;
-    color: #111111 !important;
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  li {
+    font-family: "Times New Roman", Times, serif !important;
   }
 
   .pub-list {
     margin-top: 1.5rem;
-    color: #111111 !important;
+    width: 100%;
   }
 
   .pub-year {
@@ -32,50 +33,44 @@ nav_order: 2
     margin-bottom: 1rem;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #111111 !important;
+    color: #0b174f !important;
   }
 
   .pub-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 230px;
     gap: 1.5rem;
+    align-items: start;
+    width: 100%;
+    min-height: 220px;
     padding: 1.25rem 0;
     border-bottom: 1px solid #cccccc;
-    color: #111111 !important;
   }
 
   .pub-text {
-    flex: 1 1 auto;
+    width: 100%;
     min-width: 0;
-    color: #111111 !important;
   }
 
   .pub-title {
-    margin: 0 0 0.35rem 0;
+    margin: 0 0 0.4rem;
     font-size: 1.15rem;
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.35;
     color: #111111 !important;
   }
 
-  .pub-authors {
-    margin: 0 0 0.35rem 0;
-    font-size: 0.95rem;
+  .pub-authors,
+  .pub-journal,
+  .pub-doi {
+    margin: 0 0 0.35rem;
+    font-size: 0.98rem;
+    line-height: 1.45;
     color: #111111 !important;
   }
 
   .pub-journal {
-    margin: 0 0 0.5rem 0;
     font-style: italic;
-    font-size: 0.95rem;
-    color: #111111 !important;
-  }
-
-  .pub-doi {
-    margin: 0;
-    font-size: 0.93rem;
-    color: #111111 !important;
   }
 
   .pub-doi a {
@@ -83,39 +78,33 @@ nav_order: 2
   }
 
   .pub-metrics {
-    flex: 0 0 210px;
-    width: 210px;
-    min-height: 180px;
+    width: 230px !important;
+    min-width: 230px !important;
+    max-width: 230px !important;
+    min-height: 200px;
     background: #ffffff !important;
     border: 1px solid #dddddd;
     border-radius: 8px;
     padding: 10px;
     box-sizing: border-box;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    overflow: hidden;
   }
 
-  .pub-metrics .plumx-summary {
-    display: block;
-    width: 100%;
-    min-height: 160px;
-  }
-
+  .pub-metrics .plumx-summary,
   .pub-metrics iframe {
     width: 100% !important;
-    background: #ffffff !important;
-    border-radius: 6px;
+    max-width: 100% !important;
   }
 
   @media (max-width: 768px) {
     .pub-item {
-      flex-direction: column;
+      grid-template-columns: 1fr;
     }
 
     .pub-metrics {
-      width: 100%;
-      max-width: 220px;
+      width: 230px !important;
+      min-width: 230px !important;
+      max-width: 230px !important;
     }
   }
 </style>
