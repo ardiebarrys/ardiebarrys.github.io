@@ -210,8 +210,6 @@ His research has addressed mechanisms including mitochondrial dysfunction, impai
 
 In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
 
-This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
-
 <div class="highlight-study">
   <div class="highlight-label">Highlighted Study</div>
 
