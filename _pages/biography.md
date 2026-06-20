@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: Biography
@@ -24,6 +23,17 @@ nav_order: 6
 
   .bio-page {
     width: 100%;
+    max-width: 1280px !important;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  .bio-hero,
+  .bio-section,
+  .bio-gallery {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .bio-hero {
@@ -105,13 +115,13 @@ nav_order: 6
   }
 </style>
 
-<div class="bio-page">
+<div class="bio-page" markdown="1">
 
 <div class="bio-hero">
   <img src="{{ '/assets/img/biography-lab.jpg' | relative_url }}" alt="Laboratory at the Faculty of Pharmacy, Universiti Malaya">
 </div>
 
-<div class="bio-section">
+<div class="bio-section" markdown="1">
 
 ## Biography
 
@@ -133,7 +143,7 @@ Beyond his doctoral research, Ardie is developing a broader conceptual framework
 
 This conceptual work reflects his wider interest in building bridges between molecular detail and higher-level biological interpretation. Rather than treating signaling proteins, pathways, and biomarkers as isolated components, Ardie is interested in how they operate as parts of adaptive systems. From this perspective, disease can be understood not only as molecular damage, but also as a failure of regulation: a breakdown in timing, feedback, compartmentalization, communication, or recovery.
 
-His recent scholarly work has addressed topics including mitochondrial dysfunction induced by e-cigarettes, microRNA-mediated disruption of testosterone signaling, Leydig cell steroidogenic pathways, NRF2–KEAP1 redox signaling, CYP1A1 as an environmental sensing circuit, systemic metabolic disruption, secondhand e-cigarette aerosol exposure, and obesity-related erectile dysfunction. Together, these research directions reflect a broader effort to understand how environmental exposures and internal regulatory networks interact in shaping disease risk.
+His recent scholarly work has addressed topics including mitochondrial dysfunction induced by e-cigarettes, microRNA-mediated disruption of testosterone signaling, Leydig cell steroidogenic pathways, NRF2-KEAP1 redox signaling, CYP1A1 as an environmental sensing circuit, systemic metabolic disruption, secondhand e-cigarette aerosol exposure, and obesity-related erectile dysfunction. Together, these research directions reflect a broader effort to understand how environmental exposures and internal regulatory networks interact in shaping disease risk.
 
 Ardie’s long-term academic goal is to contribute to mechanistic toxicology and molecular systems biology by developing research that is both biologically detailed and conceptually integrative. He is particularly interested in work that connects exposure science, cellular stress responses, endocrine regulation, reproductive health, and systems-level disease models. His scientific perspective is grounded in the idea that meaningful toxicological research should explain not only whether an exposure causes harm, but also how biological systems respond, adapt, compensate, and eventually fail.
 
