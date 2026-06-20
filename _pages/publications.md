@@ -8,6 +8,98 @@ nav_order: 2
 ---
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<noscript>
+  <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly =
+          url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink =
+          link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script>
+
+<style>
   .post,
   .page,
   .container,
@@ -15,9 +107,16 @@ nav_order: 2
     max-width: 1280px !important;
   }
 
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
+  }
+
   .manual-publications {
-    margin-top: 1.5rem;
     width: 100%;
+    margin-top: 1.5rem;
   }
 
   .manual-pub-year {
@@ -35,6 +134,10 @@ nav_order: 2
     width: 100% !important;
     padding: 1.5rem 0 !important;
     border-bottom: 1px solid #cccccc !important;
+  }
+
+  .manual-pub-info {
+    min-width: 0;
   }
 
   .manual-pub-title {
@@ -72,6 +175,7 @@ nav_order: 2
     font-size: 0.98rem !important;
     line-height: 1.45 !important;
     text-align: justify !important;
+    text-justify: inter-word !important;
   }
 
   .manual-pub-abstract strong {
@@ -207,7 +311,7 @@ nav_order: 2
       <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.mce.2026.112786">DOI: 10.1016/j.mce.2026.112786</a></p>
 
       <div class="manual-pub-abstract">
-        <p><strong>Abstract.</strong> The rising prevalence of e-cigarette use has raised concerns regarding potential adverse effects on male reproductive and endocrine health, yet its impact on testosterone regulation remains poorly defined. This narrative review critically synthesizes evidence from preclinical in vivo and in vitro models and from human observational studies to evaluate how e-cigarette exposure may influence testosterone homeostasis and hypothalamic pituitary gonadal axis function. Across experimental models, e-cigarette aerosols and their constituents consistently impair Leydig cell function and testosterone biosynthesis through convergent mechanisms involving oxidative stress, inflammatory signaling, mitochondrial dysfunction, epigenetic modification, and suppression of key steroidogenic enzymes. Several of these mechanisms overlap with those described for combustible cigarette exposure, whereas others, particularly those related to aerosolized solvents, flavoring agents, and device-derived metals, appear more specific to e-cigarettes. In contrast, the available human evidence is limited to cross-sectional studies and yields inconsistent findings, with the largest population-based study reporting no significant differences in circulating testosterone concentrations between e-cigarette users and non-users. Collectively, the evidence supports biological plausibility for e-cigarette-associated disruption of testosterone steroidogenesis but remains insufficient to establish causality in humans. This review therefore identifies critical methodological gaps and highlights priorities for longitudinal, biomarker-anchored human studies required to determine the clinical relevance and reversibility of e-cigarette-associated endocrine disruption.</p>
+        <p><strong>Abstract.</strong> The rising prevalence of e-cigarette use has raised concerns regarding potential adverse effects on male reproductive and endocrine health, yet its impact on testosterone regulation remains poorly defined. This narrative review critically synthesizes evidence from preclinical in vivo and in vitro models and from human observational studies to evaluate how e-cigarette exposure may influence testosterone homeostasis and hypothalamic-pituitary-gonadal axis function. Across experimental models, e-cigarette aerosols and their constituents consistently impair Leydig cell function and testosterone biosynthesis through convergent mechanisms involving oxidative stress, inflammatory signaling, mitochondrial dysfunction, epigenetic modification, and suppression of key steroidogenic enzymes. Several of these mechanisms overlap with those described for combustible cigarette exposure, whereas others, particularly those related to aerosolized solvents, flavoring agents, and device-derived metals, appear more specific to e-cigarettes. In contrast, the available human evidence is limited to cross-sectional studies and yields inconsistent findings, with the largest population-based study reporting no significant differences in circulating testosterone concentrations between e-cigarette users and non-users. Collectively, the evidence supports biological plausibility for e-cigarette-associated disruption of testosterone steroidogenesis but remains insufficient to establish causality in humans. This review therefore identifies critical methodological gaps and highlights priorities for longitudinal, biomarker-anchored human studies required to determine the clinical relevance and reversibility of e-cigarette-associated endocrine disruption.</p>
       </div>
     </div>
 
@@ -232,7 +336,7 @@ nav_order: 2
       <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.etap.2026.104994">DOI: 10.1016/j.etap.2026.104994</a></p>
 
       <div class="manual-pub-abstract">
-        <p><strong>Abstract.</strong> Electronic cigarette (e-cigarette) use is increasing worldwide, yet its effects on male endocrine and reproductive health remain poorly defined. Beyond nicotine, e-cigarette aerosols contain aldehydes, metals, and particulate matter capable of perturbing pathways essential for steroidogenesis. MicroRNAs (miRNAs) have emerged as key post-transcriptional regulators of hypothalamic–pituitary–gonadal axis signaling and Leydig cell function, and multiple miRNAs involved in GnRH release, gonadotropin synthesis, and testosterone biosynthesis are responsive to oxidative and metabolic stressors present in e-cigarette aerosols. Although direct evidence in e-cigarette users is limited, findings from studies of nicotine, flavoring agents, and metal exposures support the plausibility that e-cigarettes may alter miRNA expression and impair steroidogenic processes. This hypothesis-generating review synthesizes current evidence linking miRNA dysregulation to testosterone biosynthesis, proposes candidate e-cigarette constituents capable of modulating these miRNAs, and highlights critical gaps requiring experimental validation. Overall, miRNAs may represent integrative mediators and potential biomarkers of e-cigarette-associated testicular toxicity.</p>
+        <p><strong>Abstract.</strong> Electronic cigarette (e-cigarette) use is increasing worldwide, yet its effects on male endocrine and reproductive health remain poorly defined. Beyond nicotine, e-cigarette aerosols contain aldehydes, metals, and particulate matter capable of perturbing pathways essential for steroidogenesis. MicroRNAs (miRNAs) have emerged as key post-transcriptional regulators of hypothalamic-pituitary-gonadal axis signaling and Leydig cell function, and multiple miRNAs involved in GnRH release, gonadotropin synthesis, and testosterone biosynthesis are responsive to oxidative and metabolic stressors present in e-cigarette aerosols. Although direct evidence in e-cigarette users is limited, findings from studies of nicotine, flavoring agents, and metal exposures support the plausibility that e-cigarettes may alter miRNA expression and impair steroidogenic processes. This hypothesis-generating review synthesizes current evidence linking miRNA dysregulation to testosterone biosynthesis, proposes candidate e-cigarette constituents capable of modulating these miRNAs, and highlights critical gaps requiring experimental validation. Overall, miRNAs may represent integrative mediators and potential biomarkers of e-cigarette-associated testicular toxicity.</p>
       </div>
     </div>
 
@@ -251,13 +355,13 @@ nav_order: 2
 
   <div class="manual-pub-item">
     <div class="manual-pub-info">
-      <p class="manual-pub-title">NRF2–KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch</p>
+      <p class="manual-pub-title">NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
       <p class="manual-pub-journal">Progress in Biophysics and Molecular Biology, 2026</p>
       <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">DOI: 10.1016/j.pbiomolbio.2026.03.005</a></p>
 
       <div class="manual-pub-abstract">
-        <p><strong>Abstract.</strong> The NRF2–KEAP1 pathway is classically described as an inducible antioxidant switch, yet this binary framework fails to explain why transient NRF2 activation is broadly cytoprotective whereas sustained activation drives pathology across cancer, fibrosis, and metabolic disease. In this conceptual synthesis, we integrate evidence from redox biology, proteostasis, autophagy, metabolism, and systems biology to reinterpret NRF2–KEAP1 signaling using concepts from control theory. We propose that the pathway functions as a redoxostat, a signal-resolution control circuit that detects oxidative and electrophilic stress, encodes signal magnitude and duration, executes graded transcriptional responses, and actively promotes its own termination through genetically encoded feedback mechanisms. Central to this architecture is a resolution module involving KEAP1 resynthesis, ubiquitin–proteasome and autophagic turnover, and metabolic restoration of redox-sensitive cysteines. Within this framework, pathological outcomes arise primarily from failure of signal resolution rather than excessive activation, and distinct disease phenotypes can be mapped to specific circuit failure modes including sensor dysfunction, controller impairment, amplifier escape, and feedback disruption. This model reconciles the protective and pathogenic roles of NRF2 under a unified explanatory logic, clarifies why chronic activation is deleterious while transient activation is adaptive, and shifts experimental and therapeutic emphasis from endpoint activation toward restoration of signaling dynamics and resolution.</p>
+        <p><strong>Abstract.</strong> The NRF2-KEAP1 pathway is classically described as an inducible antioxidant switch, yet this binary framework fails to explain why transient NRF2 activation is broadly cytoprotective whereas sustained activation drives pathology across cancer, fibrosis, and metabolic disease. In this conceptual synthesis, we integrate evidence from redox biology, proteostasis, autophagy, metabolism, and systems biology to reinterpret NRF2-KEAP1 signaling using concepts from control theory. We propose that the pathway functions as a redoxostat, a signal-resolution control circuit that detects oxidative and electrophilic stress, encodes signal magnitude and duration, executes graded transcriptional responses, and actively promotes its own termination through genetically encoded feedback mechanisms. Central to this architecture is a resolution module involving KEAP1 resynthesis, ubiquitin-proteasome and autophagic turnover, and metabolic restoration of redox-sensitive cysteines. Within this framework, pathological outcomes arise primarily from failure of signal resolution rather than excessive activation, and distinct disease phenotypes can be mapped to specific circuit failure modes including sensor dysfunction, controller impairment, amplifier escape, and feedback disruption. This model reconciles the protective and pathogenic roles of NRF2 under a unified explanatory logic, clarifies why chronic activation is deleterious while transient activation is adaptive, and shifts experimental and therapeutic emphasis from endpoint activation toward restoration of signaling dynamics and resolution.</p>
       </div>
     </div>
 
@@ -307,7 +411,7 @@ nav_order: 2
       <p class="manual-pub-doi"><a href="https://doi.org/10.1080/15376516.2026.2658739">DOI: 10.1080/15376516.2026.2658739</a></p>
 
       <div class="manual-pub-abstract">
-        <p><strong>Abstract.</strong> E-cigarettes are promoted as reduced-harm alternatives to combustible tobacco, yet their aerosols contain metals, aldehydes, solvents, and other bioactive chemicals capable of disrupting metabolic regulation. This review synthesizes evidence from cellular, animal, and early human studies on how e-cigarette aerosol exposure affects metabolic homeostasis across mitochondrial, redox, circadian, and neurobehavioral systems. A systems-level model is proposed in which mitochondrial dysfunction, oxidative stress, circadian misalignment, and neurobehavioral alterations form a feed-forward network that drives metabolic inflexibility. Across experimental systems, e-cigarette exposure is associated with mitochondrial impairment, oxidative stress, AMPK suppression, disrupted lipid oxidation, adipose inflammation, and reduced thermogenic capacity, changes consistent with insulin resistance. Evidence also indicates disruption of circadian clock signaling and modulation of reward and appetite circuits, further biasing energy balance. These findings support a model in which e-cigarette aerosols act as multi-system metabolic disruptors affecting both peripheral organs and central regulatory pathways. However, important uncertainties remain regarding dose–response relationships, exposure patterns, device variability, and long-term human risk. This review provides an integrated framework to clarify potential links between e-cigarette aerosol exposure and metabolic dysfunction and highlights priorities for future translational and human research.</p>
+        <p><strong>Abstract.</strong> E-cigarettes are promoted as reduced-harm alternatives to combustible tobacco, yet their aerosols contain metals, aldehydes, solvents, and other bioactive chemicals capable of disrupting metabolic regulation. This review synthesizes evidence from cellular, animal, and early human studies on how e-cigarette aerosol exposure affects metabolic homeostasis across mitochondrial, redox, circadian, and neurobehavioral systems. A systems-level model is proposed in which mitochondrial dysfunction, oxidative stress, circadian misalignment, and neurobehavioral alterations form a feed-forward network that drives metabolic inflexibility. Across experimental systems, e-cigarette exposure is associated with mitochondrial impairment, oxidative stress, AMPK suppression, disrupted lipid oxidation, adipose inflammation, and reduced thermogenic capacity, changes consistent with insulin resistance. Evidence also indicates disruption of circadian clock signaling and modulation of reward and appetite circuits, further biasing energy balance. These findings support a model in which e-cigarette aerosols act as multi-system metabolic disruptors affecting both peripheral organs and central regulatory pathways. However, important uncertainties remain regarding dose-response relationships, exposure patterns, device variability, and long-term human risk. This review provides an integrated framework to clarify potential links between e-cigarette aerosol exposure and metabolic dysfunction and highlights priorities for future translational and human research.</p>
       </div>
     </div>
 
@@ -332,7 +436,7 @@ nav_order: 2
       <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s00204-026-04384-1">DOI: 10.1007/s00204-026-04384-1</a></p>
 
       <div class="manual-pub-abstract">
-        <p><strong>Abstract.</strong> Cytochrome P450 1A1 (CYP1A1) is traditionally described as a xenobiotic detoxification enzyme induced by the aryl hydrocarbon receptor (AhR). However, its tight inducible regulation, evolutionary conservation, and prominent expression in immune and barrier tissues where xenobiotic metabolism operates alongside environmental sensing and immune regulation suggest a broader regulatory role. This review proposes that CYP1A1 functions as a metabolic feedback regulator that controls the duration and intensity of AhR signaling. AhR rapidly senses diverse environmental, dietary, microbial, and endogenous ligands, while delayed induction of CYP1A1 limits signaling by metabolizing susceptible ligands and reducing their availability. Through this feedback architecture, ligand metabolism determines signal persistence and shapes downstream transcriptional and immune outcomes. Evidence from evolutionary analyses, signaling kinetics, tissue biology, and immunology indicates that CYP1A1-mediated metabolic feedback calibrates immune differentiation and barrier homeostasis across tissues. Disruption of this feedback, through persistent ligands or impaired CYP1A1 activity, uncouples environmental sensing from signal resolution and promotes sustained AhR activation. This framework reframes the AhR–CYP1A1 axis as a regulatory control circuit rather than a linear detoxification pathway and highlights signal duration and feedback integrity as key determinants of environmental immunotoxicity.</p>
+        <p><strong>Abstract.</strong> Cytochrome P450 1A1 (CYP1A1) is traditionally described as a xenobiotic detoxification enzyme induced by the aryl hydrocarbon receptor (AhR). However, its tight inducible regulation, evolutionary conservation, and prominent expression in immune and barrier tissues where xenobiotic metabolism operates alongside environmental sensing and immune regulation suggest a broader regulatory role. This review proposes that CYP1A1 functions as a metabolic feedback regulator that controls the duration and intensity of AhR signaling. AhR rapidly senses diverse environmental, dietary, microbial, and endogenous ligands, while delayed induction of CYP1A1 limits signaling by metabolizing susceptible ligands and reducing their availability. Through this feedback architecture, ligand metabolism determines signal persistence and shapes downstream transcriptional and immune outcomes. Evidence from evolutionary analyses, signaling kinetics, tissue biology, and immunology indicates that CYP1A1-mediated metabolic feedback calibrates immune differentiation and barrier homeostasis across tissues. Disruption of this feedback, through persistent ligands or impaired CYP1A1 activity, uncouples environmental sensing from signal resolution and promotes sustained AhR activation. This framework reframes the AhR-CYP1A1 axis as a regulatory control circuit rather than a linear detoxification pathway and highlights signal duration and feedback integrity as key determinants of environmental immunotoxicity.</p>
       </div>
     </div>
 
