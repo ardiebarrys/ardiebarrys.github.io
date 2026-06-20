@@ -2,7 +2,6 @@
 layout: page
 title: Cellular Signaling as Dynamic Regulatory Circuits
 description: Personal conceptual project connected to NRF2-KEAP1, CYP1A1, and regulatory circuit papers.
-img: assets/img/project-2.jpg
 importance: 2
 category: research
 ---
