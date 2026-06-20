@@ -2,7 +2,6 @@
 layout: page
 title: Miscellaneous Sole-Author Works
 description: Sole-author papers and writing that do not belong directly to the PhD thesis or cellular signaling project.
-img: assets/img/project-3.jpg
 importance: 3
 category: research
 ---
