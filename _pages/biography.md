@@ -234,9 +234,13 @@ nav_order: 6
   </p>
 
   <h3>Academic Development</h3>
-  <p>
-    That early ambition developed into a focused academic pathway in pharmaceutical sciences. As his training progressed, Ardie became increasingly interested in the molecular basis of toxic injury: how external exposures interact with biological systems, how cells detect and respond to stress, and why some adaptive responses eventually fail. This interest led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms, where his work combines experimental investigation with broader systems-level thinking.
-  </p>
+<p>
+  Over time, Ardie’s early interest in science developed into a more defined academic direction within pharmaceutical sciences. His training introduced him to the ways medicines, toxicants, and biological systems interact, and this gradually shaped his interest in the molecular events that occur when cells are exposed to stress. He became particularly drawn to questions about how external exposures influence cellular function, how cells detect and respond to injury, and why protective responses may eventually become insufficient or maladaptive.
+</p>
+
+<p>
+  This academic development led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms. His current approach combines experimental investigation with systems-level thinking, allowing him to examine biological effects not only as isolated outcomes, but as coordinated responses across multiple molecular and cellular pathways.
+</p>
 
   <div class="bio-focus-inline">
     <h3>Research Focus</h3>
