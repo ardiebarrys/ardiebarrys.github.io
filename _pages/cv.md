@@ -25,34 +25,27 @@ toc:
     display: none !important;
   }
 
-  /* Bring CV content closer to the left navigation pane */
-  .row {
-    column-gap: 1.5rem !important;
-  }
-
+/* Keep the left CV navigation pane aligned without pushing content down */
+@media (min-width: 992px) {
   #toc-sidebar,
   .toc-sidebar {
-    padding-right: 0.75rem !important;
-    margin-right: 0 !important;
+    width: 220px !important;
+    max-width: 220px !important;
+    padding-right: 1rem !important;
+    margin-right: 1rem !important;
   }
 
-  #toc-sidebar + div,
-  .toc-sidebar + div {
-    margin-left: 0 !important;
+  .row > .col-lg-2 {
+    flex: 0 0 220px !important;
+    max-width: 220px !important;
   }
 
-  @media (min-width: 992px) {
-    .col-lg-2 {
-      flex: 0 0 220px !important;
-      max-width: 220px !important;
-    }
-
-    .col-lg-8,
-    .col-lg-10 {
-      flex: 1 1 auto !important;
-      max-width: calc(100% - 240px) !important;
-    }
+  .row > .col-lg-8,
+  .row > .col-lg-10 {
+    flex: 1 1 0 !important;
+    max-width: calc(100% - 260px) !important;
   }
+}
 
   .navbar .nav-link.active,
   .navbar .nav-item.active .nav-link,
