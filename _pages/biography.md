@@ -210,6 +210,10 @@ nav_order: 6
     .bio-image-card img {
       height: 280px;
     }
+    
+    .bio-image-card figcaption {
+  display: none !important;
+}
   }
 </style>
 
@@ -299,7 +303,6 @@ nav_order: 6
 
 <figure class="bio-image-card">
   <img src="{{ '/assets/img/biography-portrait.png' | relative_url }}" alt="Ardie Barry Sailis preparing samples during laboratory research">
-  <figcaption>Preparing samples during laboratory-based experimental research.</figcaption>
 </figure>
 
 </div>
