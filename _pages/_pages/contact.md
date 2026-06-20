@@ -3,75 +3,74 @@ layout: page
 title: Contact
 permalink: /contact/
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
 <style>
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: start;
-    max-width: 780px;
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
+  .contact-page {
+    width: 100%;
     margin-top: 1.5rem;
   }
 
-  .contact-panel,
-  .contact-card {
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(183, 0, 183, 0.22);
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    width: 100%;
+    margin-top: 1.5rem;
   }
 
-  .contact-card h2,
-  .contact-panel h2 {
-    margin: 0 0 0.8rem;
-    font-size: 1.35rem;
+  .contact-card {
+    width: 100%;
+    padding: 1.8rem 2rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.025));
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
+
+  .contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
     font-weight: 700;
   }
 
   .contact-address {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
     line-height: 1.55;
   }
 
   .contact-map {
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #dddddd;
-    background: #ffffff;
-  }
-
-  .contact-map iframe {
-    display: block;
     width: 100%;
-    height: 360px;
+    height: 420px;
     border: 0;
+    border-radius: 10px;
   }
 
-  .response-note {
-    margin: -0.25rem 0 1rem;
-    color: #555555;
-    font-size: 0.95rem;
-    line-height: 1.45;
+  .contact-note {
+    margin-bottom: 1.2rem;
+    color: #666666;
   }
 
-  .contact-form {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .contact-field label {
+  .contact-form label {
     display: block;
+    margin-top: 1rem;
     margin-bottom: 0.35rem;
     font-weight: 700;
   }
 
-  .contact-field input,
-  .contact-field select,
-  .contact-field textarea {
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
     width: 100%;
     padding: 0.75rem 0.85rem;
     border: 1px solid #cccccc;
@@ -82,22 +81,14 @@ nav_order: 6
     box-sizing: border-box;
   }
 
-  .contact-field textarea {
-    min-height: 160px;
+  .contact-form textarea {
+    min-height: 190px;
     resize: vertical;
   }
 
-  .contact-field input:focus,
-  .contact-field select:focus,
-  .contact-field textarea:focus {
-    outline: none;
-    border-color: var(--global-theme-color);
-    box-shadow: 0 0 0 3px rgba(183, 0, 183, 0.12);
-  }
-
-  .contact-submit {
-    width: fit-content;
-    padding: 0.7rem 1.1rem;
+  .contact-form button {
+    margin-top: 1.2rem;
+    padding: 0.75rem 1.2rem;
     border: 0;
     border-radius: 8px;
     background: var(--global-theme-color);
@@ -106,64 +97,76 @@ nav_order: 6
     cursor: pointer;
   }
 
-  .contact-submit:hover {
-    opacity: 0.88;
+  .contact-form button:hover {
+    opacity: 0.9;
+  }
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
+  }
+
+  @media (max-width: 768px) {
+    .contact-card {
+      padding: 1.25rem;
+    }
+
+    .contact-map {
+      height: 320px;
+    }
   }
 </style>
 
-<div class="contact-layout">
-  <div class="contact-card">
-    <h2>Address</h2>
+<div class="contact-page">
+  <div class="contact-layout">
+    <section class="contact-card">
+      <h2>Address</h2>
 
-    <div class="contact-address">
-      <strong>Department of Pharmaceutical Life Sciences</strong><br>
-      Faculty of Pharmacy<br>
-      University of Malaya<br>
-      50603 Kuala Lumpur, Malaysia
-    </div>
-
-    <div class="contact-map">
-      <iframe
-        src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="contact-panel">
-    <h2>Send a Message</h2>
-
-    <p class="response-note">
-      Please allow up to seven business days for a response.
-    </p>
-
-    <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
-      <div class="contact-field">
-        <label for="email">Your Email</label>
-        <input id="email" name="email" type="email" required>
+      <div class="contact-address">
+        <strong>Department of Pharmaceutical Life Sciences</strong><br>
+        Faculty of Pharmacy<br>
+        University of Malaya<br>
+        50603 Kuala Lumpur, Malaysia
       </div>
 
-      <div class="contact-field">
+      <iframe
+        class="contact-map"
+        src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+
+    <section class="contact-card">
+      <h2>Send a Message</h2>
+
+      <p class="contact-note">
+        Please allow up to seven business days for a response.
+      </p>
+
+      <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
+        <label for="email">Your Email</label>
+        <input id="email" type="email" name="email" required>
+
         <label for="topic">Topic</label>
         <select id="topic" name="topic" required>
           <option value="">Select a topic</option>
           <option value="Inquiry">Inquiry</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Publication">Publication</option>
-          <option value="Speaking Invitation">Speaking Invitation</option>
-          <option value="Media or Writing">Media or Writing</option>
+          <option value="Speaking invitation">Speaking Invitation</option>
+          <option value="Media or writing">Media or Writing</option>
           <option value="Other">Other</option>
         </select>
-      </div>
 
-      <div class="contact-field">
         <label for="message">Question</label>
         <textarea id="message" name="message" required></textarea>
-      </div>
 
-      <button class="contact-submit" type="submit">Send Message</button>
-    </form>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </div>
 </div>
