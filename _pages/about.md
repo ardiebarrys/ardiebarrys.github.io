@@ -136,6 +136,40 @@ social: true
   .contact-icons i::before {
     font-size: 1.2rem !important;
   }
+
+  .highlight-study {
+  margin-top: 2rem;
+  padding: 1.25rem 1.4rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+.highlight-label {
+  margin-bottom: 0.4rem;
+  color: var(--global-theme-color);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  }
+
+.highlight-study h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  }
+
+.highlight-study p {
+  margin-bottom: 0.75rem;
+  text-align: left !important;
+  line-height: 1.55;
+  }
+
+.highlight-study a {
+  color: var(--global-theme-color) !important;
+  font-weight: 700;
+}
 </style>
 
 <div class="bio-text" markdown="1">
@@ -149,5 +183,16 @@ His research has addressed mechanisms including mitochondrial dysfunction, impai
 In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
 
 This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
+
+<div class="highlight-study">
+  <div class="highlight-label">Highlighted Study</div>
+  <h2>E-cigarette and Sexual Function</h2>
+  <p>
+    My doctoral research examines how e-cigarette exposure may affect reproductive health, with emphasis on erectile function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and related toxicological mechanisms.
+  </p>
+  <a href="/publications/">View related publications</a>
+</div>
+
+</div>
 
 </div>
