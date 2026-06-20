@@ -222,3 +222,17 @@ article > p {
   text-align-last: left !important;
 }
 
+/* Profile sidebar font */
+.profile-info,
+.profile-info p,
+.profile-info a,
+.profile-info strong {
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0 !important;
+}
+
+.profile-info p {
+  margin-bottom: 0.35rem !important;
+}
