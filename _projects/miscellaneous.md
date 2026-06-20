@@ -7,5 +7,3 @@ category: Miscellaneous
 ---
 
 This section collects sole-author works and scholarly writing that are not directly part of my PhD thesis project or the cellular signaling framework.
-
-These works may include broader reviews, independent conceptual articles, or topic-specific manuscripts developed outside the main project categories.
