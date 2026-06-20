@@ -52,18 +52,49 @@ social: true
     font-weight: 700 !important;
   }
 
-  a {
+  .bio-text a,
+  .profile-info a {
     color: #2447a8 !important;
+  }
+
+  .navbar a,
+  .navbar .nav-link,
+  .navbar-brand {
+    color: inherit !important;
+  }
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+  }
+
+  .profile-info,
+  .profile-info p,
+  .profile-info a,
+  .profile-info strong,
+  .profile-info *,
+  .profile .profile-info,
+  .profile .profile-info *,
+  div.profile-info,
+  div.profile-info * {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: 1rem !important;
+    letter-spacing: 0 !important;
+    line-height: 1.45 !important;
   }
 
   .profile-info p {
     margin-bottom: 0.35rem !important;
-    line-height: 1.45 !important;
     text-align: left !important;
   }
 
-  .profile-info a {
+  .profile-info a.profile-link {
     display: block !important;
+  }
+
+  .profile-info p a:not(.profile-link) {
+    display: inline !important;
   }
 
   .bio-text p {
@@ -115,40 +146,6 @@ social: true
   .contact-icons i::before {
     font-size: 1.2rem !important;
   }
-  
-  .profile-info,
-.profile-info p,
-.profile-info a,
-.profile-info strong {
-  font-family: inherit !important;
-  font-size: 1rem !important;
-  letter-spacing: 0 !important;
-  line-height: 1.45 !important;
-  }
-  
-  .profile-info,
-.profile-info *,
-.profile .profile-info,
-.profile .profile-info *,
-div.profile-info,
-div.profile-info * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
-  letter-spacing: 0 !important;
-}
-  
-  .profile-info p {
-  margin-bottom: 0.35rem !important;
-  line-height: 1.45 !important;
-  text-align: left !important;
-}
-
-.profile-info a.profile-link {
-  display: block !important;
-}
-
-.profile-info p a:not(.profile-link) {
-  display: inline !important;
-}
 </style>
 
 <div class="bio-text" markdown="1">
