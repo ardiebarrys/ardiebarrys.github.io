@@ -6,8 +6,8 @@ description: Selected research projects and writing themes.
 nav: true
 nav_order: 3
 display_categories:
-  - PhD Thesis Project
-  - Personal Project
-  - Miscellaneous
+  - phd
+  - personal
+  - misc
 horizontal: false
 ---
