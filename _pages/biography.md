@@ -7,6 +7,28 @@ nav_order: 6
 ---
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
   .post,
   .page,
   .container,
@@ -37,7 +59,7 @@ nav_order: 6
     border-radius: 14px;
     overflow: hidden;
     background-image:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.35)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42)),
       url("{{ '/assets/img/biography-lab.jpg' | relative_url }}");
     background-size: cover;
     background-position: center;
@@ -47,9 +69,10 @@ nav_order: 6
   .bio-hero-content {
     position: absolute;
     left: 2.2rem;
+    right: 2.2rem;
     bottom: 2.2rem;
     max-width: 760px;
-    color: #ffffff;
+    color: #ffffff !important;
   }
 
   .bio-hero-content h1 {
@@ -57,19 +80,16 @@ nav_order: 6
     color: #ffffff !important;
     font-size: 3rem;
     font-weight: 700;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
   }
 
   .bio-hero-content p {
-    display: inline;
     margin: 0;
-    padding: 0.15rem 0.35rem;
-    background: rgba(0, 0, 0, 0.45);
-    color: #ffffff;
+    padding: 0.2rem 0;
+    color: #ffffff !important;
     font-size: 1.2rem;
     line-height: 1.65;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   }
 
   .bio-card,
@@ -106,64 +126,64 @@ nav_order: 6
     line-height: 1.75;
   }
 
-.bio-focus-inline {
-  max-width: 820px;
-  margin: 1.8rem auto;
-  padding: 1.25rem 1.4rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
-  text-align: center;
+  .bio-focus-inline {
+    max-width: 860px;
+    margin: 1.8rem auto;
+    padding: 1.25rem 1.4rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    text-align: center;
   }
 
-.bio-focus-inline h3 {
-  margin-top: 0;
-  margin-bottom: 0.9rem;
-  text-align: center;
+  .bio-focus-inline h3 {
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    text-align: center;
   }
 
-.bio-focus-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.55rem;
+  .bio-focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
   }
 
-.bio-focus-tag {
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(183, 0, 183, 0.22);
-  border-radius: 999px;
-  background: #ffffff;
-  color: #111111;
-  font-size: 0.95rem;
+  .bio-focus-tag {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 999px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 0.95rem;
   }
 
-.bio-inline-quote {
-  max-width: 820px;
-  margin: 1.8rem auto;
-  padding: 1.35rem 1.5rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
-  text-align: center;
+  .bio-inline-quote {
+    max-width: 860px;
+    margin: 1.8rem auto;
+    padding: 1.35rem 1.5rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    text-align: center;
   }
 
-.bio-inline-quote blockquote {
-  margin: 0;
-  color: #111111;
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.7;
-  text-align: center;
+  .bio-inline-quote blockquote {
+    margin: 0;
+    color: #111111;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: center;
   }
 
-.bio-inline-quote cite {
-  display: block;
-  margin-top: 0.85rem;
-  color: #555555;
-  font-style: italic;
-  font-weight: 700;
-  text-align: center;
+  .bio-inline-quote cite {
+    display: block;
+    margin-top: 0.85rem;
+    color: #555555;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
   }
 
   .bio-image-card {
@@ -176,12 +196,6 @@ nav_order: 6
     height: 420px;
     object-fit: cover;
     display: block;
-  }
-
-  .bio-image-card figcaption {
-    padding: 0.9rem 1rem;
-    color: #555555;
-    font-size: 0.95rem;
   }
 
   @media (max-width: 768px) {
@@ -210,12 +224,73 @@ nav_order: 6
     .bio-image-card img {
       height: 280px;
     }
-    
-    .bio-image-card figcaption {
-  display: none !important;
-}
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 </style>
+
+<noscript>
+  <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style>
+</noscript>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly = url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink = link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script>
 
 <div class="bio-page">
 
@@ -238,13 +313,13 @@ nav_order: 6
   </p>
 
   <h3>Academic Development</h3>
-<p>
-  Over time, Ardie’s early interest in science developed into a more defined academic direction within pharmaceutical sciences. His training introduced him to the ways medicines, toxicants, and biological systems interact, and this gradually shaped his interest in the molecular events that occur when cells are exposed to stress. He became particularly drawn to questions about how external exposures influence cellular function, how cells detect and respond to injury, and why protective responses may eventually become insufficient or maladaptive.
-</p>
+  <p>
+    Over time, Ardie's early interest in science developed into a more defined academic direction within pharmaceutical sciences. His training introduced him to the ways medicines, toxicants, and biological systems interact, and this gradually shaped his interest in the molecular events that occur when cells are exposed to stress. He became particularly drawn to questions about how external exposures influence cellular function, how cells detect and respond to injury, and why protective responses may eventually become insufficient or maladaptive.
+  </p>
 
-<p>
-  This academic development led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms. His current approach combines experimental investigation with systems-level thinking, allowing him to examine biological effects not only as isolated outcomes, but as coordinated responses across multiple molecular and cellular pathways.
-</p>
+  <p>
+    This academic development led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms. His current approach combines experimental investigation with systems-level thinking, allowing him to examine biological effects not only as isolated outcomes, but as coordinated responses across multiple molecular and cellular pathways.
+  </p>
 
   <div class="bio-focus-inline">
     <h3>Research Focus</h3>
@@ -260,7 +335,7 @@ nav_order: 6
 
   <h3>Doctoral Research</h3>
   <p>
-    Ardie’s doctoral research investigates the biological effects of e-cigarette exposure, particularly in relation to male reproductive and endocrine health. While e-cigarettes are often discussed primarily in the context of respiratory exposure, his work examines their wider systemic relevance. His research explores how e-cigarette aerosols and their chemical constituents may influence Leydig cell steroidogenesis, testosterone-associated signaling, mitochondrial function, oxidative and redox imbalance, microRNA-mediated regulation, and intercellular communication pathways.
+    Ardie's doctoral research investigates the biological effects of e-cigarette exposure, particularly in relation to male reproductive and endocrine health. While e-cigarettes are often discussed primarily in the context of respiratory exposure, his work examines their wider systemic relevance. His research explores how e-cigarette aerosols and their chemical constituents may influence Leydig cell steroidogenesis, testosterone-associated signaling, mitochondrial function, oxidative and redox imbalance, microRNA-mediated regulation, and intercellular communication pathways.
   </p>
 
   <p>
@@ -269,7 +344,7 @@ nav_order: 6
 
   <h3>Research Philosophy</h3>
   <p>
-    A central theme of Ardie’s work is that toxicant exposure should not be viewed only as isolated cellular injury. Instead, he approaches toxicological effects as disruptions of coordinated biological systems. Cells do not respond to stress through single linear pathways; they integrate signals across mitochondrial activity, redox balance, gene regulation, inflammatory communication, protein networks, and hormonal control. When these systems are repeatedly challenged, the biological outcome may depend not only on the initial injury but also on whether cells can correctly sense, process, resolve, and recover from stress.
+    A central theme of Ardie's work is that toxicant exposure should not be viewed only as isolated cellular injury. Instead, he approaches toxicological effects as disruptions of coordinated biological systems. Cells do not respond to stress through single linear pathways; they integrate signals across mitochondrial activity, redox balance, gene regulation, inflammatory communication, protein networks, and hormonal control. When these systems are repeatedly challenged, the biological outcome may depend not only on the initial injury but also on whether cells can correctly sense, process, resolve, and recover from stress.
   </p>
 
   <p>
@@ -278,7 +353,7 @@ nav_order: 6
 
   <div class="bio-inline-quote">
     <blockquote>
-      “Absence of evidence is not evidence of absence. For me, the most important scientific questions often begin where existing evidence becomes incomplete, uncertain, or overlooked.”
+      "Absence of evidence is not evidence of absence. For me, the most important scientific questions often begin where existing evidence becomes incomplete, uncertain, or overlooked."
     </blockquote>
     <cite>Ardie Barry Sailis (2026)</cite>
   </div>
@@ -293,7 +368,7 @@ nav_order: 6
 
   <h3>Long-Term Direction</h3>
   <p>
-    Ardie’s long-term academic goal is to contribute to mechanistic toxicology and molecular systems biology by developing research that is both biologically detailed and conceptually integrative. He is particularly interested in work that connects exposure science, cellular stress responses, endocrine regulation, reproductive health, systems-level disease models, and responsible scientific innovation.
+    Ardie's long-term academic goal is to contribute to mechanistic toxicology and molecular systems biology by developing research that is both biologically detailed and conceptually integrative. He is particularly interested in work that connects exposure science, cellular stress responses, endocrine regulation, reproductive health, systems-level disease models, and responsible scientific innovation.
   </p>
 
   <p>
@@ -302,7 +377,7 @@ nav_order: 6
 </article>
 
 <figure class="bio-image-card">
-  <img src="{{ '/assets/img/biography-portrait.png' | relative_url }}" alt="Ardie Barry Sailis preparing samples during laboratory research">
+  <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis during laboratory research">
 </figure>
 
 </div>
