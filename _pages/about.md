@@ -16,13 +16,18 @@ profile:
       <p>Faculty of Pharmacy</p>
       <p>University of Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
+
       <hr>
+
       <p>
         <strong>ORCID:</strong>
         <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
       </p>
+
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
+
       <hr>
+
       <p>
         <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
       </p>
@@ -55,11 +60,6 @@ social: true
     font-weight: 700 !important;
   }
 
-  .bio-text a,
-  .profile-info a {
-    color: #2447a8 !important;
-  }
-
   .navbar a,
   .navbar .nav-link,
   .navbar-brand {
@@ -71,6 +71,11 @@ social: true
   .navbar .nav-link[aria-current="page"] {
     color: var(--global-theme-color) !important;
     font-weight: 700 !important;
+  }
+
+  .bio-text a,
+  .profile-info a {
+    color: #2447a8 !important;
   }
 
   .profile-info,
@@ -94,20 +99,13 @@ social: true
     text-align-last: left !important;
   }
 
-  .profile-info a.profile-link {
-    display: block !important;
-    margin-bottom: 0.35rem !important;
-  }
-
   .profile-info p a:not(.profile-link) {
     display: inline !important;
   }
 
-  .bio-text p {
-    text-align: justify !important;
-    text-align-last: left !important;
-    text-justify: inter-word !important;
-    hyphens: auto !important;
+  .profile-info a.profile-link {
+    display: block !important;
+    margin-bottom: 0.35rem !important;
   }
 
   .profile,
@@ -118,13 +116,22 @@ social: true
     text-align-last: left !important;
   }
 
+  .bio-text p {
+    text-align: justify !important;
+    text-align-last: left !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+  }
+
   .keyword-box {
-    clear: both;
-    margin: 2rem 0;
+    clear: none !important;
+    width: calc(100% - 360px);
+    margin: 1.5rem 0 2rem;
     padding: 1.15rem 1.25rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    box-sizing: border-box;
   }
 
   .keyword-title {
@@ -226,6 +233,12 @@ social: true
   .highlight-study a {
     color: var(--global-theme-color) !important;
     font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .keyword-box {
+      width: 100%;
+    }
   }
 </style>
 
