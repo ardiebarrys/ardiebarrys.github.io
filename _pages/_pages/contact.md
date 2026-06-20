@@ -9,9 +9,10 @@ nav_order: 6
 <style>
   .contact-layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-columns: 1fr;
     gap: 1.5rem;
     align-items: start;
+    max-width: 780px;
     margin-top: 1.5rem;
   }
 
@@ -46,8 +47,15 @@ nav_order: 6
   .contact-map iframe {
     display: block;
     width: 100%;
-    height: 320px;
+    height: 360px;
     border: 0;
+  }
+
+  .response-note {
+    margin: -0.25rem 0 1rem;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .contact-form {
@@ -101,12 +109,6 @@ nav_order: 6
   .contact-submit:hover {
     opacity: 0.88;
   }
-
-  @media (max-width: 768px) {
-    .contact-layout {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
 
 <div class="contact-layout">
@@ -132,6 +134,10 @@ nav_order: 6
 
   <div class="contact-panel">
     <h2>Send a Message</h2>
+
+    <p class="response-note">
+      I usually reply within 7 business days.
+    </p>
 
     <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
       <div class="contact-field">
