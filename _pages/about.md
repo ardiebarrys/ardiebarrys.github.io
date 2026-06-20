@@ -123,3 +123,13 @@ In parallel, he is developing a conceptual research framework titled _Cellular S
 This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
 
 </div>
+
+.profile-info,
+.profile-info p,
+.profile-info a,
+.profile-info strong {
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  letter-spacing: 0 !important;
+  line-height: 1.45 !important;
+}
