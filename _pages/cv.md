@@ -1,6 +1,3 @@
-Replace your `_pages/cv.md` with this:
-
-```markdown
 ---
 layout: page
 title: CV
@@ -8,6 +5,19 @@ permalink: /cv/
 nav: true
 nav_order: 4
 ---
+
+<style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
+  .post {
+    width: 100% !important;
+  }
+</style>
 
 # CV
 
