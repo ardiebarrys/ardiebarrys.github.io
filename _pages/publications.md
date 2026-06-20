@@ -8,6 +8,13 @@ nav_order: 2
 ---
 
 <style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
   .manual-publications {
     margin-top: 1.5rem;
     width: 100%;
@@ -23,21 +30,22 @@ nav_order: 2
 
   .manual-pub-item {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 250px !important;
-    gap: 1.5rem !important;
+    grid-template-columns: minmax(0, 1fr) 360px !important;
+    gap: 2rem !important;
     align-items: start !important;
     width: 100% !important;
-    padding: 1.25rem 0 !important;
+    padding: 1.5rem 0 !important;
     border-bottom: 1px solid #cccccc !important;
   }
 
   .manual-pub-info {
     display: block !important;
+    min-width: 0 !important;
     color: #111111 !important;
   }
 
   .manual-pub-title {
-    margin: 0 0 0.4rem !important;
+    margin: 0 0 0.5rem !important;
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
@@ -47,7 +55,7 @@ nav_order: 2
   .manual-pub-authors,
   .manual-pub-journal,
   .manual-pub-doi {
-    margin: 0 0 0.35rem !important;
+    margin: 0 0 0.4rem !important;
     font-size: 0.98rem !important;
     line-height: 1.45 !important;
     color: #111111 !important;
@@ -62,20 +70,21 @@ nav_order: 2
   }
 
   .manual-pub-metrics {
-    width: 250px !important;
-    min-width: 250px !important;
-    max-width: 250px !important;
+    width: 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
     background: #ffffff !important;
     border: 1px solid #dddddd !important;
     border-radius: 8px !important;
-    padding: 10px !important;
+    padding: 12px !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .metric-block {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
     text-align: center;
+    overflow: visible !important;
   }
 
   .metric-block:last-child {
@@ -92,17 +101,24 @@ nav_order: 2
   .manual-pub-metrics iframe {
     width: 100% !important;
     max-width: 100% !important;
+    overflow: visible !important;
   }
 
-  @media (max-width: 768px) {
+  .altmetric-embed,
+  .__dimensions_badge_embed__ {
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  @media (max-width: 900px) {
     .manual-pub-item {
       grid-template-columns: 1fr !important;
     }
 
     .manual-pub-metrics {
-      width: 250px !important;
-      min-width: 250px !important;
-      max-width: 250px !important;
+      width: 360px !important;
+      min-width: 360px !important;
+      max-width: 100% !important;
     }
   }
 </style>
