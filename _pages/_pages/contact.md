@@ -71,7 +71,7 @@ nav_order: 6
 </style>
 
 <div class="contact-panel">
-  <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
     <div class="contact-field">
       <label for="email">Your Email</label>
       <input id="email" name="email" type="email" required>
