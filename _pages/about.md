@@ -28,31 +28,32 @@ profile:
 
       <hr>
 
-<div class="profile-logo-links">
-  <a href="https://communities.springernature.com/users/ardie-barry-sailis">
-    <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature">
-  </a>
+      <div class="profile-logo-links">
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
+          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities">
+        </a>
 
-  <a href="https://www.growkudos.com/profile/ardie_barry_sailis">
-    <img src="/assets/img/kudos-logo.png" alt="Kudos">
-  </a>
+        <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
+          <img src="/assets/img/kudos-logo.png" alt="Kudos">
+        </a>
 
-  <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">
-    <img src="/assets/img/researchgate-logo.png" alt="ResearchGate">
-  </a>
+        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate">
+          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate">
+        </a>
 
-  <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news">
-    <img src="/assets/img/the-conversation-logo.png" alt="The Conversation">
-  </a>
+        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation">
+          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation">
+        </a>
 
-  <a href="https://orcid.org/0009-0009-8994-2793">
-    <img src="/assets/img/orcid-logo.png" alt="ORCID">
-  </a>
+        <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID">
+          <img src="/assets/img/orcid-logo.png" alt="ORCID">
+        </a>
 
-  <a href="https://www.linkedin.com/in/ardiebarrysailis">
-    <img src="/assets/img/linkedin-logo.png" alt="LinkedIn">
-  </a>
-</div>
+        <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn">
+          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
 
 selected_papers: false
 social: true
@@ -114,31 +115,32 @@ social: true
     text-align-last: left !important;
   }
 
-.profile-logo-links {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.7rem;
-  margin-top: 0.75rem;
-}
+  .profile-logo-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 0.75rem;
+  }
 
-.profile-logo-links a {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  min-height: 54px;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid rgba(183, 0, 183, 0.25);
-  border-radius: 10px;
-  background: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-}
+  .profile-logo-links a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid rgba(183, 0, 183, 0.25);
+    border-radius: 10px;
+    background: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
 
-.profile-logo-links img {
-  max-width: 210px;
-  max-height: 34px;
-  object-fit: contain;
-  display: block;
-}
+  .profile-logo-links img {
+    max-width: 210px;
+    max-height: 34px;
+    object-fit: contain;
+    display: block;
+  }
 
   .profile,
   .profile p,
