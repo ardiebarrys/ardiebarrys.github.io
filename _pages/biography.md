@@ -158,7 +158,7 @@ This website brings together his publications, research themes, academic profile
   </figure>
 
   <figure>
-    <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis">
+    <img src="{{ '/assets/img/biography-portrait.png' | relative_url }}" alt="Ardie Barry Sailis">
     <figcaption>Ardie Barry Sailis.</figcaption>
   </figure>
 </div>
