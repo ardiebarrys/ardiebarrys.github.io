@@ -7,42 +7,6 @@ nav: true
 nav_order: 3
 ---
 
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    opacity: 0;
-    transform: translateY(8px);
-    transition:
-      opacity 220ms ease,
-      transform 220ms ease;
-  }
-
-  body.page-loaded {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  body.page-exiting {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-
-    body {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-  }
-</style>
-
 <noscript>
   <style>
     body {
