@@ -80,10 +80,12 @@ social: true
   .profile-info p {
     margin-bottom: 0.35rem !important;
     text-align: left !important;
+    text-align-last: left !important;
   }
 
   .profile-info a.profile-link {
     display: block !important;
+    margin-bottom: 0.35rem !important;
   }
 
   .profile-info p a:not(.profile-link) {
@@ -141,12 +143,15 @@ social: true
   }
 
   .highlight-study {
-    margin-top: 2rem;
+    clear: both;
+    max-width: 100%;
+    margin: 2rem 0 2.5rem;
     padding: 1.25rem 1.4rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
   }
 
   .highlight-label {
@@ -194,8 +199,6 @@ In parallel, he is developing a conceptual research framework titled _Cellular S
 
 This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
 
-</div>
-
 <div class="highlight-study">
   <div class="highlight-label">Highlighted Study</div>
 
@@ -213,4 +216,6 @@ This website collects his publications, research themes, academic profiles, publ
   </p>
 
   <a href="/publications/">View related publications</a>
+</div>
+
 </div>
