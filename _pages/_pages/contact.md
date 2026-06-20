@@ -7,14 +7,47 @@ nav_order: 6
 ---
 
 <style>
-  .contact-panel {
-    max-width: 760px;
+  .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 1.5rem;
+    align-items: start;
     margin-top: 1.5rem;
+  }
+
+  .contact-panel,
+  .contact-card {
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid rgba(183, 0, 183, 0.22);
     background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  }
+
+  .contact-card h2,
+  .contact-panel h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .contact-address {
+    margin-bottom: 1rem;
+    line-height: 1.55;
+  }
+
+  .contact-map {
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    background: #ffffff;
+  }
+
+  .contact-map iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
   }
 
   .contact-form {
@@ -68,33 +101,63 @@ nav_order: 6
   .contact-submit:hover {
     opacity: 0.88;
   }
+
+  @media (max-width: 768px) {
+    .contact-layout {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 
-<div class="contact-panel">
-  <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
-    <div class="contact-field">
-      <label for="email">Your Email</label>
-      <input id="email" name="email" type="email" required>
+<div class="contact-layout">
+  <div class="contact-card">
+    <h2>Address</h2>
+
+    <div class="contact-address">
+      <strong>Department of Pharmaceutical Life Sciences</strong><br>
+      Faculty of Pharmacy<br>
+      University of Malaya<br>
+      50603 Kuala Lumpur, Malaysia
     </div>
 
-    <div class="contact-field">
-      <label for="topic">Topic</label>
-      <select id="topic" name="topic" required>
-        <option value="">Select a topic</option>
-        <option value="Inquiry">Inquiry</option>
-        <option value="Collaboration">Collaboration</option>
-        <option value="Publication">Publication</option>
-        <option value="Speaking Invitation">Speaking Invitation</option>
-        <option value="Media or Writing">Media or Writing</option>
-        <option value="Other">Other</option>
-      </select>
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
     </div>
+  </div>
 
-    <div class="contact-field">
-      <label for="message">Question</label>
-      <textarea id="message" name="message" required></textarea>
-    </div>
+  <div class="contact-panel">
+    <h2>Send a Message</h2>
 
-    <button class="contact-submit" type="submit">Send Message</button>
-  </form>
+    <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
+      <div class="contact-field">
+        <label for="email">Your Email</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+
+      <div class="contact-field">
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic" required>
+          <option value="">Select a topic</option>
+          <option value="Inquiry">Inquiry</option>
+          <option value="Collaboration">Collaboration</option>
+          <option value="Publication">Publication</option>
+          <option value="Speaking Invitation">Speaking Invitation</option>
+          <option value="Media or Writing">Media or Writing</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="contact-field">
+        <label for="message">Question</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button class="contact-submit" type="submit">Send Message</button>
+    </form>
+  </div>
 </div>
