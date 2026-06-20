@@ -9,13 +9,13 @@ profile:
   image: ardie-profile.jpg
   image_circular: false
   more_info: >
-    <div class="profile-info">
+    <div class="profile-info" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important; font-size: 1rem; line-height: 1.45; letter-spacing: 0;">
       <p><strong>Faculty of Pharmacy</strong></p>
       <p>University of Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
       <hr>
       <p>
-        <strong>ORCID:</strong>
+        <strong>ORCID:</strong><br>
         <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
       </p>
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
@@ -117,6 +117,16 @@ social: true
   font-size: 1rem !important;
   letter-spacing: 0 !important;
   line-height: 1.45 !important;
+  }
+  
+  .profile-info,
+.profile-info *,
+.profile .profile-info,
+.profile .profile-info *,
+div.profile-info,
+div.profile-info * {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+  letter-spacing: 0 !important;
 }
 </style>
 
