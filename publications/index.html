@@ -3,6 +3,13 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://ardiebarrysailis.com/publications/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Ardie Barry Sailis </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/publications/">Publications <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/contact/">Contact </a> </li> <li class="nav-item "> <a class="nav-link" href="/people/">Biography </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Publications</h1> <p class="post-description">All journal articles and literature reviews</p> </header> <article> <style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
   .manual-publications {
     margin-top: 1.5rem;
     width: 100%;
@@ -18,21 +25,22 @@
 
   .manual-pub-item {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 250px !important;
-    gap: 1.5rem !important;
+    grid-template-columns: minmax(0, 1fr) 360px !important;
+    gap: 2rem !important;
     align-items: start !important;
     width: 100% !important;
-    padding: 1.25rem 0 !important;
+    padding: 1.5rem 0 !important;
     border-bottom: 1px solid #cccccc !important;
   }
 
   .manual-pub-info {
     display: block !important;
+    min-width: 0 !important;
     color: #111111 !important;
   }
 
   .manual-pub-title {
-    margin: 0 0 0.4rem !important;
+    margin: 0 0 0.5rem !important;
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
@@ -42,7 +50,7 @@
   .manual-pub-authors,
   .manual-pub-journal,
   .manual-pub-doi {
-    margin: 0 0 0.35rem !important;
+    margin: 0 0 0.4rem !important;
     font-size: 0.98rem !important;
     line-height: 1.45 !important;
     color: #111111 !important;
@@ -57,20 +65,21 @@
   }
 
   .manual-pub-metrics {
-    width: 250px !important;
-    min-width: 250px !important;
-    max-width: 250px !important;
+    width: 360px !important;
+    min-width: 360px !important;
+    max-width: 360px !important;
     background: #ffffff !important;
     border: 1px solid #dddddd !important;
     border-radius: 8px !important;
-    padding: 10px !important;
+    padding: 12px !important;
     box-sizing: border-box !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .metric-block {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
     text-align: center;
+    overflow: visible !important;
   }
 
   .metric-block:last-child {
@@ -87,17 +96,24 @@
   .manual-pub-metrics iframe {
     width: 100% !important;
     max-width: 100% !important;
+    overflow: visible !important;
   }
 
-  @media (max-width: 768px) {
+  .altmetric-embed,
+  .__dimensions_badge_embed__ {
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  @media (max-width: 900px) {
     .manual-pub-item {
       grid-template-columns: 1fr !important;
     }
 
     .manual-pub-metrics {
-      width: 250px !important;
-      min-width: 250px !important;
-      max-width: 250px !important;
+      width: 360px !important;
+      min-width: 360px !important;
+      max-width: 100% !important;
     }
   }
 </style> <div class="manual-publications"> <div class="manual-pub-year">2026</div> <div class="manual-pub-item"> <div class="manual-pub-info"> <p class="manual-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction</p> <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh</p> <p class="manual-pub-journal">Diabetes, Obesity and Metabolism, 2026</p> <p class="manual-pub-doi"> <a href="https://doi.org/10.1111/dom.70818" rel="external nofollow noopener" target="_blank">DOI: 10.1111/dom.70818</a> </p> </div> <div class="manual-pub-metrics"> <div class="metric-block"> <a href="https://plu.mx/plum/a/?doi=10.1111%2Fdom.70818" data-orientation="vertical" class="plumx-summary" data-site="plum" rel="external nofollow noopener" target="_blank"></a> </div> <div class="metric-block metric-inline"> <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/dom.70818"></div> </div> <div class="metric-block metric-inline"> <span class="__dimensions_badge_embed__" data-doi="10.1111/dom.70818"></span> </div> </div> </div> <div class="manual-pub-item"> <div class="manual-pub-info"> <p class="manual-pub-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models</p> <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey </p> </div> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
