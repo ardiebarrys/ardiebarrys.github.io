@@ -1,11 +1,9 @@
 ---
 layout: page
-title: E-cigarette and Sexual Function
-description: PhD thesis project on e-cigarette exposure, reproductive health, sexual function, and related collaborative papers.
-importance: 1
-category: PhD Thesis Project
+title: Cellular Signaling as Dynamic Regulatory Circuits
+description: Personal conceptual project connected to NRF2-KEAP1, CYP1A1, and regulatory circuit papers.
+importance: 2
+category: Personal Project
 ---
 
-This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
-
-Related collaborative papers include work on e-cigarette aerosol constituents, microRNA-mediated disruption of testosterone signaling, mitochondrial dysfunction, lung health, and erectile dysfunction.
+This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits, including redox signal resolution, environmental sensing, immune regulation, temporal signal encoding, and disease-associated failures in signal resolution.
