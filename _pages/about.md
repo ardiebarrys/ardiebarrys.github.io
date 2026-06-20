@@ -20,12 +20,15 @@ profile:
       </p>
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
       <hr>
-      <p>
-        <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a>
-      </p>
+<p>
+  <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
+</p>
+<p>
+  <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a>
+</p>
+<p>
+  <a class="profile-link" href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
+</p>
     </div>
 
 selected_papers: false
