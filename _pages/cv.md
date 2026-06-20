@@ -39,14 +39,14 @@ toc:
     main .row {
       display: grid !important;
       grid-template-columns: 170px minmax(0, 1fr) !important;
-      column-gap: 0.75rem !important;
+      column-gap: 1rem !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
 
     .row > .col-lg-2 {
       width: 170px !important;
-      max-width: 170px !important;
+      max-width: 190px !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
     }
