@@ -13,40 +13,121 @@ profile:
       <p><strong>Faculty of Pharmacy</strong></p>
       <p>University of Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
-
       <hr>
-
       <p>
         <strong>ORCID:</strong>
         <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
       </p>
-
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
-
       <hr>
-
       <p>
-        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&hl=en">
-          Google Scholar
-        </a>
+        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&hl=en">Google Scholar</a>
       </p>
-
       <p>
-        <a href="https://www.linkedin.com/in/ardiebarrysailis/">
-          LinkedIn
-        </a>
+        <a href="https://www.linkedin.com/in/ardiebarrysailis/">LinkedIn</a>
       </p>
-
       <p>
-        <a href="https://communities.springernature.com/users/ardie-barry-sailis">
-          Springer Nature Research Communities
-        </a>
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
       </p>
     </div>
 
 selected_papers: false
 social: true
 ---
+
+<style>
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-family: "Times New Roman", Times, serif !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  a,
+  .navbar-brand,
+  .nav-link,
+  .profile-info,
+  .profile-info p,
+  .profile-info a,
+  .profile-info strong {
+    font-family: "Times New Roman", Times, serif !important;
+  }
+
+  h1 {
+    font-weight: 700 !important;
+  }
+
+  a {
+    color: #2447a8 !important;
+  }
+
+  .profile-info p {
+    margin-bottom: 0.35rem !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+  }
+
+  .profile-info a {
+    display: block !important;
+  }
+
+  .bio-text p {
+    text-align: justify !important;
+    text-align-last: left !important;
+    text-justify: inter-word !important;
+    hyphens: auto !important;
+  }
+
+  .profile,
+  .profile p,
+  .profile-info,
+  .profile-info p {
+    text-align: left !important;
+    text-align-last: left !important;
+  }
+
+  .social,
+  .contact-icons {
+    font-size: 0 !important;
+  }
+
+  .social a,
+  .contact-icons a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    margin: 0 0.35rem !important;
+  }
+
+  .social i,
+  .contact-icons i,
+  .social svg,
+  .contact-icons svg,
+  .contact-icons .ai,
+  .contact-icons .fab,
+  .contact-icons .fas,
+  .contact-icons .far {
+    font-size: 1.2rem !important;
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    line-height: 1.2rem !important;
+  }
+
+  .social i::before,
+  .contact-icons i::before {
+    font-size: 1.2rem !important;
+  }
+</style>
 
 <div class="bio-text" markdown="1">
 
