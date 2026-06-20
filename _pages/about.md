@@ -10,7 +10,8 @@ profile:
   image_circular: false
   more_info: |
     <div class="profile-info">
-      <p><strong>Faculty of Pharmacy</strong></p>
+      <p><strong>Department of Pharmaceutical Life Sciences</strong></p>
+      <p>Faculty of Pharmacy</p>
       <p>University of Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
       <hr>
