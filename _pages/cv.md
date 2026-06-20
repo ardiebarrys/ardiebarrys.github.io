@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Curriculum Vitae
+title: CV
 permalink: /cv/
 nav: true
 nav_order: 4
-abbr: CV
 toc:
   sidebar: left
 ---
@@ -17,14 +16,11 @@ toc:
     max-width: 1280px !important;
   }
 
-  /* Hide nested subheadings in the left TOC/sidebar */
+  /* Keep main CV navigation visible, hide only nested subheadings */
   #toc-sidebar ul ul,
   .toc-sidebar ul ul,
-  .sticky-top ul ul,
-  .toc ul ul,
-  .nav ul,
-  .nav .nav,
-  .tocify-subheader {
+  #toc-sidebar .nav .nav,
+  .toc-sidebar .nav .nav {
     display: none !important;
   }
 
@@ -149,7 +145,7 @@ toc:
   }
 </style>
 
-<div class="cv-page">
+<div class="cv-page" markdown="1">
 
 <div class="cv-hero">
   <h1>Ardie Barry Sailis</h1>
