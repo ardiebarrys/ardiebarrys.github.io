@@ -14,7 +14,7 @@ toc:
   .page,
   .container,
   main {
-    max-width: 1500px !important;
+    max-width: 1280px !important;
   }
 
   .navbar .nav-link.active,
@@ -33,45 +33,32 @@ toc:
   }
 
   /* Move sidebar left and expand main content toward it */
-  @media (min-width: 992px) {
-    .post .row,
-    .page .row,
-    main .row {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    .row > .col-lg-2 {
-      flex: 0 0 155px !important;
-      max-width: 155px !important;
-      padding-left: 0 !important;
-      padding-right: 0.4rem !important;
-    }
-
-    .row > .col-lg-8,
-    .row > .col-lg-10 {
-      flex: 1 1 auto !important;
-      max-width: calc(100% - 165px) !important;
-      padding-left: 0.75rem !important;
-      padding-right: 0 !important;
-    }
-
-    #toc-sidebar,
-    .toc-sidebar {
-      width: 155px !important;
-      max-width: 155px !important;
-      padding-left: 0 !important;
-      padding-right: 0.35rem !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    #toc-sidebar .nav,
-    .toc-sidebar .nav {
-      padding-left: 0 !important;
-      margin-left: 0 !important;
-    }
+@media (min-width: 992px) {
+  .row > .col-lg-2 {
+    flex: 0 0 155px !important;
+    max-width: 155px !important;
+    padding-left: 0 !important;
+    padding-right: 0.4rem !important;
   }
+
+  .row > .col-lg-8,
+  .row > .col-lg-10 {
+    flex: 1 1 auto !important;
+    max-width: calc(100% - 165px) !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0 !important;
+  }
+
+  #toc-sidebar,
+  .toc-sidebar {
+    width: 155px !important;
+    max-width: 155px !important;
+    padding-left: 0 !important;
+    padding-right: 0.35rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
 
   .cv-page {
     width: 100%;
