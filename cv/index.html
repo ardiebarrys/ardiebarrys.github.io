@@ -25,33 +25,49 @@
     display: none !important;
   }
 
-  /* Move sidebar left and expand main content toward it */
-@media (min-width: 992px) {
-  .row > .col-lg-2 {
-    flex: 0 0 155px !important;
-    max-width: 155px !important;
-    padding-left: 0 !important;
-    padding-right: 0.4rem !important;
-  }
+  /* Final CV layout: keep sidebar left, pull main content closer */
+  @media (min-width: 992px) {
+    .post .row,
+    .page .row,
+    main .row {
+      display: grid !important;
+      grid-template-columns: 170px minmax(0, 1fr) !important;
+      column-gap: 0.75rem !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
 
-  .row > .col-lg-8,
-  .row > .col-lg-10 {
-    flex: 1 1 auto !important;
-    max-width: calc(100% - 165px) !important;
-    padding-left: 0.75rem !important;
-    padding-right: 0 !important;
-  }
+    .row > .col-lg-2 {
+      width: 170px !important;
+      max-width: 170px !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
 
-  #toc-sidebar,
-  .toc-sidebar {
-    width: 155px !important;
-    max-width: 155px !important;
-    padding-left: 0 !important;
-    padding-right: 0.35rem !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    .row > .col-lg-8,
+    .row > .col-lg-10 {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    #toc-sidebar,
+    .toc-sidebar {
+      width: 170px !important;
+      max-width: 170px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0.5rem !important;
+    }
+
+    #toc-sidebar .nav,
+    .toc-sidebar .nav {
+      padding-left: 0 !important;
+      margin-left: 0 !important;
+    }
   }
-}
 
   .cv-page {
     width: 100%;
