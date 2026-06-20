@@ -68,7 +68,8 @@ a:hover {
 }
 
 .navbar-nav .nav-link.active,
-.navbar-nav .nav-item.active .nav-link {
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-link[aria-current="page"] {
   color: #ffffff !important;
   font-weight: 700 !important;
 }
