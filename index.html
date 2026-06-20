@@ -3,6 +3,90 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/abs.png?v=c908d1601d2337fcdd78f9f715e58398"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://ardiebarrysailis.com/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/">About <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Curriculum Vitae </a> </li> <li class="nav-item "> <a class="nav-link" href="/contact/">Contact </a> </li> <li class="nav-item "> <a class="nav-link" href="/biography/">Biography </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title"> Ardie Barry Sailis </h1> <p class="desc">PhD Student, Faculty of Pharmacy, University of Malaya</p> </header> <article> <div class="profile float-right"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/ardie-profile-480.webp 480w,/assets/img/ardie-profile-800.webp 800w,/assets/img/ardie-profile-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="/assets/img/ardie-profile.jpg?v=ea34d5977c6643b5046f5ff11d543315" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="ardie-profile.jpg" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="more-info"> <div class="profile-info"> <p><strong>Department of Pharmaceutical Life Sciences</strong></p> <p>Faculty of Pharmacy</p> <p>University of Malaya</p> <p>Kuala Lumpur, Malaysia</p> <hr> <p> <strong>ORCID:</strong> <a href="https://orcid.org/0009-0009-8994-2793" rel="external nofollow noopener" target="_blank">0009-0009-8994-2793</a> </p> <p><strong>Scopus Author ID:</strong> 60192026900</p> <hr> <div class="profile-logo-links"> <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities"> </a> <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/kudos-logo.png" alt="Kudos"> </a> <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/researchgate-logo.png" alt="ResearchGate"> </a> <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/the-conversation-logo.png" alt="The Conversation"> </a> <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/orcid-logo.png" alt="ORCID"> </a> <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn" rel="external nofollow noopener" target="_blank"> <img src="/assets/img/linkedin-logo.png" alt="LinkedIn"> </a> </div> </div> </div> </div> <div class="clearfix"> <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style> <noscript> <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style> </noscript> <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly =
+          url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink =
+          link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script> <style>
   .post,
   .page,
   .container,
@@ -69,7 +153,7 @@
   .profile-logo-links {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.8rem;
+    gap: 0.85rem;
     margin-top: 0.75rem;
   }
 
@@ -77,8 +161,8 @@
     display: flex !important;
     align-items: center;
     justify-content: center;
-    min-height: 76px;
-    padding: 0.9rem 1rem;
+    min-height: 88px;
+    padding: 1rem 1.1rem;
     border: 1px solid rgba(183, 0, 183, 0.28);
     border-radius: 10px;
     background: #ffffff !important;
@@ -89,11 +173,12 @@
   .profile-logo-links a:hover {
     border-color: var(--global-theme-color);
     box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
+    transform: translateY(-1px);
   }
 
   .profile-logo-links img {
-    max-width: 230px;
-    max-height: 46px;
+    max-width: 240px;
+    max-height: 54px;
     object-fit: contain;
     display: block;
   }
@@ -233,11 +318,11 @@
     }
 
     .profile-logo-links a {
-      min-height: 68px;
+      min-height: 72px;
     }
 
     .profile-logo-links img {
-      max-height: 40px;
+      max-height: 44px;
     }
   }
 </style> <div class="bio-text"> <p><strong>Ardie Barry Sailis</strong> is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.</p> <p>His doctoral research focuses on the toxicological effects of e-cigarette exposure, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.</p> <p>His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.</p> <p>In parallel, he is developing a conceptual research framework titled <em>Cellular Signaling as Dynamic Regulatory Circuits</em>. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.</p> <div class="keyword-box"> <div class="keyword-title">Keywords</div> <div class="keyword-list"> <span>E-cigarette toxicology</span> <span>Reproductive toxicology</span> <span>Male reproductive health</span> <span>Endocrine disruption</span> <span>Mitochondrial dysfunction</span> <span>Oxidative stress</span> <span>microRNA regulation</span> <span>Molecular toxicology</span> <span>Environmental exposure</span> <span>Systems toxicology</span> <span>Pharmaceutical sciences</span> </div> </div> <div class="highlight-study"> <div class="highlight-label">Highlighted Study</div> <h2>E-cigarettes and Erectile Dysfunction</h2> <p class="highlight-citation"> <strong>E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</strong><br> June 2026, <em>International Journal of Impotence Research</em><br> DOI: <a href="https://doi.org/10.1038/s41443-026-01300-0" rel="external nofollow noopener" target="_blank">10.1038/s41443-026-01300-0</a> </p> <p> This review explains that vaping may affect men's sexual health because e-cigarette aerosols can disturb blood vessel function, hormones, inflammation, and other systems involved in erections. However, the current evidence is still early, so stronger long-term studies are needed before we can say whether vaping directly causes erectile dysfunction. </p> <a href="/publications/">View related publications</a> </div> </div> </div> <div class="social"> <div class="contact-icons"> <a href="mailto:17205246@siswa.um.edu.my" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://orcid.org/0009-0009-8994-2793" title="Orcid id" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i></a> <a href="https://scholar.google.com/citations?user=saKP688AAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/ardiebarrysailis" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </div> <div class="contact-note">For academic correspondence, please contact me through my university email or linked academic profiles. </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
