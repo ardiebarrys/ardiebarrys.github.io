@@ -11,16 +11,6 @@ nav_order: 2
   body {
     background: #ffffff !important;
     color: #111111 !important;
-    font-family: "Times New Roman", Times, serif !important;
-  }
-
-  h1,
-  h2,
-  h3,
-  p,
-  a,
-  li {
-    font-family: "Times New Roman", Times, serif !important;
   }
 
   .pub-list {
