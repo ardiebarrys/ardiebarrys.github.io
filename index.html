@@ -82,17 +82,18 @@
     hyphens: auto !important;
   }
 
-  .keyword-box {
-    clear: none !important;
-    width: min(100%, 760px);
-    max-width: 760px;
-    margin: 1.5rem 0 2rem;
-    padding: 1.15rem 1.25rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
-    box-sizing: border-box;
-  }
+.keyword-box {
+  clear: none !important;
+  display: flow-root;
+  width: auto;
+  max-width: none;
+  margin: 1.5rem 0 2rem;
+  padding: 1.15rem 1.25rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+  box-sizing: border-box;
+}
 
   .keyword-title {
     margin-bottom: 0.8rem;
