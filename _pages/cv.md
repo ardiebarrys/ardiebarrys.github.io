@@ -383,7 +383,12 @@ toc:
   <div class="cv-item-title">Peer Reviewer</div>
   <p>
     Provides peer-review support for scholarly manuscripts in toxicology, pharmacology, reproductive health,
-    public health, and molecular biology.
+    public health, molecular biology, and environmental health.
+  </p>
+  <p>
+    Reviewed manuscripts for American Journal of Preventive Medicine, Journal of Hazardous Materials Advances,
+    Pharmacological Reviews, Progress in Biophysics and Molecular Biology, Toxicology Reports, PLOS One,
+    and International Journal of General Medicine.
   </p>
 </div>
 
@@ -391,8 +396,14 @@ toc:
   <div class="cv-date">Oct 2022 - Jan 2023</div>
   <div class="cv-item-title">Intern</div>
   <p>
-    Completed laboratory and professional training involving microbiology, analytical workflows, documentation,
-    and research-related technical tasks.
+    Completed a full-time internship at Indah Water Konsortium Sdn Bhd, gaining hands-on exposure to
+    laboratory operations, microbiology-related procedures, water quality assessment, analytical workflows,
+    and research support activities.
+  </p>
+  <p>
+    Assisted with sample handling, test preparation, equipment use, documentation, and technical reporting
+    while following laboratory safety practices and standard operating procedures within a professional
+    environmental services setting.
   </p>
 </div>
 
@@ -405,6 +416,7 @@ toc:
 
 <div class="cv-card">
   <div class="cv-item-title">Bachelor of Science in Microbiology</div>
+  <p><em>With Distinction</em></p>
   <p>Universiti Malaya, Kuala Lumpur, Malaysia</p>
 </div>
 
@@ -455,6 +467,10 @@ toc:
   <div class="cv-item-title">Laboratory and Analytical Skills</div>
   <div class="cv-tags">
     <span class="cv-tag">Molecular biology</span>
+    <span class="cv-tag">qPCR</span>
+    <span class="cv-tag">Transmission Electron Microscopy</span>
+    <span class="cv-tag">SPSS</span>
+    <span class="cv-tag">Bioinformatics</span>
     <span class="cv-tag">Data interpretation</span>
     <span class="cv-tag">Literature synthesis</span>
     <span class="cv-tag">Systematic review methods</span>
@@ -490,8 +506,25 @@ toc:
 ## Certificates
 
 <div class="cv-card">
+  <div class="cv-item-title">Relevant Research Training &amp; Academic Activities</div>
+
+  <p><strong>Workshops</strong></p>
   <ul>
-    <li>Research, laboratory, and academic training certificates available upon request.</li>
+    <li>ic-PHIR Metabolic Workshop, UiTM Puncak Alam (2023)</li>
+    <li>Quantitative PCR (qPCR) Workshop, Vazyme, University of Malaya (2024)</li>
+    <li>UV-Visible Double Beam Spectrophotometer (Shimadzu) Workshop (2025)</li>
+    <li>Systematic Literature Review and Meta-Analysis Workshop (2025)</li>
+  </ul>
+
+  <p><strong>Conferences</strong></p>
+  <ul>
+    <li>ic-PHIR Conference at UiTM Puncak Alam (2023)</li>
+    <li>
+      Sailis AB, et al. "Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users,
+      and Dual Users in Malaysia: A Comparative Study" ISAM Regional Meeting 2024 Conference -
+      Poster Presentation
+    </li>
+    <li>Early Career Researchers-Postgraduates Research Symposium (2024)</li>
   </ul>
 </div>
 
