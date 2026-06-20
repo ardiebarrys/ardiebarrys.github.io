@@ -506,8 +506,6 @@ toc:
 ## Certificates
 
 <div class="cv-card">
-  <div class="cv-item-title">Relevant Research Training &amp; Academic Activities</div>
-
   <p><strong>Workshops</strong></p>
   <ul>
     <li>ic-PHIR Metabolic Workshop, UiTM Puncak Alam (2023)</li>
