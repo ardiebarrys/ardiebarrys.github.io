@@ -33,6 +33,17 @@ social: true
 ---
 
 <style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
+  .post {
+    width: 100% !important;
+  }
+
   body {
     background: #ffffff !important;
     color: #111111 !important;
@@ -89,6 +100,11 @@ social: true
     display: inline !important;
   }
 
+  .profile-links a {
+    display: inline !important;
+    line-height: 1.7 !important;
+  }
+
   .bio-text p {
     text-align: justify !important;
     text-align-last: left !important;
@@ -114,10 +130,10 @@ social: true
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.2rem !important;
     width: 1.2rem !important;
     height: 1.2rem !important;
     margin: 0 0.35rem !important;
+    font-size: 1.2rem !important;
   }
 
   .social i,
@@ -128,9 +144,9 @@ social: true
   .contact-icons .fab,
   .contact-icons .fas,
   .contact-icons .far {
-    font-size: 1.2rem !important;
     width: 1.2rem !important;
     height: 1.2rem !important;
+    font-size: 1.2rem !important;
     line-height: 1.2rem !important;
   }
 
@@ -181,11 +197,6 @@ social: true
   .highlight-study a {
     color: var(--global-theme-color) !important;
     font-weight: 700;
-  }
-
-  .profile-links a {
-  display: inline !important;
-  line-height: 1.7 !important;
   }
 </style>
 
