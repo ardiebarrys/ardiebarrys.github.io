@@ -30,7 +30,7 @@ nav_order: 2
 
   .manual-pub-item {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) 420px !important;
+    grid-template-columns: minmax(0, 1fr) 300px !important;
     gap: 2rem !important;
     align-items: start !important;
     width: 100% !important;
@@ -54,8 +54,9 @@ nav_order: 2
 
   .manual-pub-authors,
   .manual-pub-journal,
-  .manual-pub-doi {
-    margin: 0 0 0.4rem !important;
+  .manual-pub-doi,
+  .manual-pub-abstract {
+    margin: 0 0 0.45rem !important;
     font-size: 0.98rem !important;
     line-height: 1.45 !important;
     color: #111111 !important;
@@ -69,44 +70,51 @@ nav_order: 2
     color: #2447a8 !important;
   }
 
+  .manual-pub-abstract {
+    margin-top: 0.85rem !important;
+    text-align: justify !important;
+  }
+
+  .manual-pub-abstract strong {
+    color: #0b174f !important;
+  }
+
   .manual-pub-metrics {
-    width: 420px !important;
-    min-width: 420px !important;
-    max-width: 420px !important;
-    min-height: 420px !important;
-    background: #ffffff !important;
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    box-sizing: border-box !important;
+  }
+
+  .plumx-top {
+    width: 230px !important;
+    margin: 0 auto 0.8rem !important;
+    text-align: center !important;
+  }
+
+  .plumx-top .plumx-summary,
+  .plumx-top iframe {
+    width: 230px !important;
+    max-width: 230px !important;
+  }
+
+  .metrics-box {
+    width: 300px !important;
+    min-height: 170px !important;
+    padding: 1rem !important;
     border: 1px solid #dddddd !important;
     border-radius: 8px !important;
-    padding: 12px !important;
+    background: #ffffff !important;
     box-sizing: border-box !important;
-    overflow: visible !important;
+    display: grid !important;
+    gap: 0.9rem !important;
+    justify-items: center !important;
+    align-items: center !important;
   }
 
   .metric-block {
-    margin-bottom: 0.9rem;
-    text-align: center;
-    overflow: visible !important;
-  }
-
-  .metric-block:first-child {
-    min-height: 260px !important;
-  }
-
-  .metric-block:last-child {
-    margin-bottom: 0;
-  }
-
-  .metric-inline {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .manual-pub-metrics .plumx-summary,
-  .manual-pub-metrics iframe {
-    width: 100% !important;
-    min-height: 260px !important;
-    max-width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
     overflow: visible !important;
   }
 
@@ -121,9 +129,10 @@ nav_order: 2
       grid-template-columns: 1fr !important;
     }
 
-    .manual-pub-metrics {
-      width: 420px !important;
-      min-width: 420px !important;
+    .manual-pub-metrics,
+    .metrics-box {
+      width: 300px !important;
+      min-width: 300px !important;
       max-width: 100% !important;
     }
   }
@@ -137,19 +146,16 @@ nav_order: 2
       <p class="manual-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh</p>
       <p class="manual-pub-journal">Diabetes, Obesity and Metabolism, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1111/dom.70818">DOI: 10.1111/dom.70818</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1111/dom.70818">DOI: 10.1111/dom.70818</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> Obesity and erectile dysfunction are increasingly co-prevalent, yet adipose tissue is often viewed as a secondary contributor rather than a primary driver of erectile impairment. This review evaluates an adipose-centric framework in which depot-specific adipose dysfunction regulates vascular, neuroendocrine, and smooth muscle processes essential for erection. Dysfunctional adipose tissue remodels systemic and local microenvironments through adipokines, cytokines, extracellular vesicle cargo, and oxidized lipid mediators. These processes reduce nitric oxide bioavailability, increase vascular stiffness, disrupt neuroendocrine signaling, and promote cavernosal fibrosis. Adipose tissue functions as an upstream regulator of ED pathogenesis, and targeting adipose dysfunction may modify disease progression rather than provide symptomatic relief.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1111%2Fdom.70818" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/dom.70818"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1111/dom.70818"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/dom.70818"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1111/dom.70818"></span></div>
       </div>
     </div>
   </div>
@@ -159,19 +165,16 @@ nav_order: 2
       <p class="manual-pub-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
       <p class="manual-pub-journal">Molecular and Cellular Endocrinology, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1016/j.mce.2026.112786">DOI: 10.1016/j.mce.2026.112786</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.mce.2026.112786">DOI: 10.1016/j.mce.2026.112786</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This narrative review synthesizes evidence from preclinical in vivo and in vitro models and human observational studies to evaluate how e-cigarette exposure may influence testosterone homeostasis and hypothalamic pituitary gonadal axis function. Across experimental models, e-cigarette aerosols and their constituents impair Leydig cell function and testosterone biosynthesis through oxidative stress, inflammatory signaling, mitochondrial dysfunction, epigenetic modification, and suppression of key steroidogenic enzymes. Human evidence remains limited and inconsistent, so longitudinal biomarker-anchored studies are needed to determine clinical relevance and reversibility.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.mce.2026.112786" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.mce.2026.112786"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1016/j.mce.2026.112786"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.mce.2026.112786"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.mce.2026.112786"></span></div>
       </div>
     </div>
   </div>
@@ -181,19 +184,16 @@ nav_order: 2
       <p class="manual-pub-title">MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
       <p class="manual-pub-journal">Environmental Toxicology and Pharmacology, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1016/j.etap.2026.104994">DOI: 10.1016/j.etap.2026.104994</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.etap.2026.104994">DOI: 10.1016/j.etap.2026.104994</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This hypothesis-generating review synthesizes current evidence linking microRNA dysregulation to testosterone biosynthesis and proposes candidate e-cigarette constituents capable of modulating these microRNAs. Although direct evidence in e-cigarette users remains limited, studies of nicotine, flavoring agents, and metal exposures support the plausibility that e-cigarettes may alter microRNA expression and impair steroidogenic processes. MicroRNAs may represent integrative mediators and potential biomarkers of e-cigarette-associated testicular toxicity.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.etap.2026.104994" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.etap.2026.104994"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1016/j.etap.2026.104994"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.etap.2026.104994"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.etap.2026.104994"></span></div>
       </div>
     </div>
   </div>
@@ -203,19 +203,16 @@ nav_order: 2
       <p class="manual-pub-title">NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
       <p class="manual-pub-journal">Progress in Biophysics and Molecular Biology, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">DOI: 10.1016/j.pbiomolbio.2026.03.005</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">DOI: 10.1016/j.pbiomolbio.2026.03.005</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This conceptual synthesis reinterprets NRF2-KEAP1 signaling using concepts from control theory. Rather than functioning simply as an antioxidant switch, the pathway is proposed to act as a redoxostat: a signal-resolution control circuit that detects oxidative and electrophilic stress, encodes signal magnitude and duration, executes graded transcriptional responses, and promotes termination through feedback mechanisms. This model shifts emphasis from endpoint activation toward restoration of signaling dynamics and resolution.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.pbiomolbio.2026.03.005" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.pbiomolbio.2026.03.005"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1016/j.pbiomolbio.2026.03.005"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.pbiomolbio.2026.03.005"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.pbiomolbio.2026.03.005"></span></div>
       </div>
     </div>
   </div>
@@ -225,19 +222,16 @@ nav_order: 2
       <p class="manual-pub-title">E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Hui Yin Yow; Anne Yee; Maw Shin Sim</p>
       <p class="manual-pub-journal">International Journal of Impotence Research, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1038/s41443-026-01300-0">DOI: 10.1038/s41443-026-01300-0</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1038/s41443-026-01300-0">DOI: 10.1038/s41443-026-01300-0</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This review synthesizes experimental, clinical, and epidemiological evidence examining the association between electronic cigarette use and erectile dysfunction. Emerging evidence implicates endothelial dysfunction, impaired nitric oxide bioavailability, oxidative stress, inflammation, hormonal disturbance, autonomic imbalance, sleep disturbance, and exposure to aerosolized substances and metals as interconnected pathways that may contribute to erectile dysfunction. Current evidence remains preliminary, and prospective studies are needed to clarify long-term sexual health outcomes.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1038%2Fs41443-026-01300-0" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41443-026-01300-0"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1038/s41443-026-01300-0"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41443-026-01300-0"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1038/s41443-026-01300-0"></span></div>
       </div>
     </div>
   </div>
@@ -247,19 +241,16 @@ nav_order: 2
       <p class="manual-pub-title">E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
       <p class="manual-pub-journal">Toxicology Mechanisms and Methods, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1080/15376516.2026.2658739">DOI: 10.1080/15376516.2026.2658739</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1080/15376516.2026.2658739">DOI: 10.1080/15376516.2026.2658739</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This review synthesizes evidence from cellular, animal, and early human studies on how e-cigarette aerosol exposure affects metabolic homeostasis across mitochondrial, redox, circadian, and neurobehavioral systems. It proposes a systems-level model in which mitochondrial dysfunction, oxidative stress, circadian misalignment, and neurobehavioral alterations form a feed-forward network that drives metabolic inflexibility. Important uncertainties remain regarding dose-response relationships, exposure patterns, device variability, and long-term human risk.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1080%2F15376516.2026.2658739" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1080/15376516.2026.2658739"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2658739"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1080/15376516.2026.2658739"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2658739"></span></div>
       </div>
     </div>
   </div>
@@ -269,19 +260,16 @@ nav_order: 2
       <p class="manual-pub-title">CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
       <p class="manual-pub-journal">Archives of Toxicology, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1007/s00204-026-04384-1">DOI: 10.1007/s00204-026-04384-1</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s00204-026-04384-1">DOI: 10.1007/s00204-026-04384-1</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This review proposes that CYP1A1 functions as a metabolic feedback regulator that controls the duration and intensity of aryl hydrocarbon receptor signaling. Through delayed ligand metabolism, CYP1A1 limits signaling persistence and shapes downstream transcriptional and immune outcomes. This framework reframes the AhR-CYP1A1 axis as a regulatory control circuit rather than a linear detoxification pathway and highlights signal duration and feedback integrity as key determinants of environmental immunotoxicity.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1007%2Fs00204-026-04384-1" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00204-026-04384-1"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1007/s00204-026-04384-1"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00204-026-04384-1"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1007/s00204-026-04384-1"></span></div>
       </div>
     </div>
   </div>
@@ -291,19 +279,16 @@ nav_order: 2
       <p class="manual-pub-title">Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
       <p class="manual-pub-journal">Journal of Public Health, 2026</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1007/s10389-026-02740-0">DOI: 10.1007/s10389-026-02740-0</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s10389-026-02740-0">DOI: 10.1007/s10389-026-02740-0</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This systematic review assesses respiratory effects of passive exposure to e-cigarette aerosols in adolescents, healthy adults, and individuals with pre-existing respiratory conditions. Evidence suggests that secondhand aerosol exposure is associated with bronchitic symptoms, wheeze, shortness of breath, asthma outcomes, sensory irritation, increased airway resistance, decreased exhaled nitric oxide, inflammatory biomarkers, and ultrafine particle exposure. Long-term studies are needed to determine chronic health consequences and guide policy.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1007%2Fs10389-026-02740-0" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s10389-026-02740-0"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1007/s10389-026-02740-0"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s10389-026-02740-0"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1007/s10389-026-02740-0"></span></div>
       </div>
     </div>
   </div>
@@ -315,19 +300,16 @@ nav_order: 2
       <p class="manual-pub-title">Mitochondrial dysfunction induced by E-cigarettes</p>
       <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
       <p class="manual-pub-journal">Toxicology, 2025</p>
-      <p class="manual-pub-doi">
-        <a href="https://doi.org/10.1016/j.tox.2025.154339">DOI: 10.1016/j.tox.2025.154339</a>
-      </p>
+      <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.tox.2025.154339">DOI: 10.1016/j.tox.2025.154339</a></p>
+      <p class="manual-pub-abstract"><strong>Abstract.</strong> This review identifies mitochondrial dysfunction as a key mechanism in e-cigarette toxicity. E-cigarette constituents, including reactive oxygen species, toxic aldehydes, metals, and flavoring agents, can damage mitochondrial DNA, impair oxidative phosphorylation, disrupt calcium homeostasis, and promote oxidative stress, inflammation, and programmed cell death. Longitudinal research is needed to clarify long-term health consequences.</p>
     </div>
     <div class="manual-pub-metrics">
-      <div class="metric-block">
+      <div class="plumx-top">
         <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.tox.2025.154339" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
       </div>
-      <div class="metric-block metric-inline">
-        <div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.tox.2025.154339"></div>
-      </div>
-      <div class="metric-block metric-inline">
-        <span class="__dimensions_badge_embed__" data-doi="10.1016/j.tox.2025.154339"></span>
+      <div class="metrics-box">
+        <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.tox.2025.154339"></div></div>
+        <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.tox.2025.154339"></span></div>
       </div>
     </div>
   </div>
