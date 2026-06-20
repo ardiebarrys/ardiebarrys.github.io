@@ -21,14 +21,10 @@ profile:
       </p>
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
       <hr>
-      <p>
-        <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
+      <p class="profile-links">
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a><br>
+        <a href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a><br>
+        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
       </p>
     </div>
 
@@ -185,6 +181,11 @@ social: true
   .highlight-study a {
     color: var(--global-theme-color) !important;
     font-weight: 700;
+  }
+
+  .profile-links a {
+  display: inline !important;
+  line-height: 1.7 !important;
   }
 </style>
 
