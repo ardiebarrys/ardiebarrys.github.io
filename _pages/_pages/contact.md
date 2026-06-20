@@ -136,7 +136,7 @@ nav_order: 6
     <h2>Send a Message</h2>
 
     <p class="response-note">
-      I usually reply within 7 business days.
+      Please allow up to seven business days for a response.
     </p>
 
     <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
