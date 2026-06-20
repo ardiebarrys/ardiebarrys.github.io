@@ -141,38 +141,45 @@ social: true
   }
 
   .highlight-study {
-  margin-top: 2rem;
-  padding: 1.25rem 1.4rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  }
-.highlight-label {
-  margin-bottom: 0.4rem;
-  color: var(--global-theme-color);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+    margin-top: 2rem;
+    padding: 1.25rem 1.4rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
-.highlight-study h2 {
-  margin: 0 0 0.6rem;
-  font-size: 1.35rem;
-  font-weight: 700;
+  .highlight-label {
+    margin-bottom: 0.4rem;
+    color: var(--global-theme-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
-.highlight-study p {
-  margin-bottom: 0.75rem;
-  text-align: left !important;
-  line-height: 1.55;
+  .highlight-study h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.35rem;
+    font-weight: 700;
   }
 
-.highlight-study a {
-  color: var(--global-theme-color) !important;
-  font-weight: 700;
-}
+  .highlight-study p {
+    margin-bottom: 0.75rem;
+    text-align: left !important;
+    line-height: 1.55;
+  }
+
+  .highlight-citation {
+    padding: 0.75rem 0.85rem;
+    border-radius: 8px;
+    background: rgba(183, 0, 183, 0.08);
+  }
+
+  .highlight-study a {
+    color: var(--global-theme-color) !important;
+    font-weight: 700;
+  }
 </style>
 
 <div class="bio-text" markdown="1">
@@ -187,15 +194,23 @@ In parallel, he is developing a conceptual research framework titled _Cellular S
 
 This website collects his publications, research themes, academic profiles, public writing, and selected scholarly outputs.
 
+</div>
+
 <div class="highlight-study">
   <div class="highlight-label">Highlighted Study</div>
-  <h2>E-cigarette and Sexual Function</h2>
-  <p>
-    My doctoral research examines how e-cigarette exposure may affect reproductive health, with emphasis on erectile function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and related toxicological mechanisms.
+
+  <h2>E-cigarettes and Erectile Dysfunction</h2>
+
+  <p class="highlight-citation">
+    <strong>E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</strong><br>
+    June 2026, <em>International Journal of Impotence Research</em><br>
+    DOI:
+    <a href="https://doi.org/10.1038/s41443-026-01300-0">10.1038/s41443-026-01300-0</a>
   </p>
+
+  <p>
+    This review explains that vaping may affect men's sexual health because e-cigarette aerosols can disturb blood vessel function, hormones, inflammation, and other systems involved in erections. However, the current evidence is still early, so stronger long-term studies are needed before we can say whether vaping directly causes erectile dysfunction.
+  </p>
+
   <a href="/publications/">View related publications</a>
-</div>
-
-</div>
-
 </div>
