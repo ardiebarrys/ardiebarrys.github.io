@@ -315,7 +315,7 @@ toc:
 
 <div class="cv-card">
   <div class="cv-item-title">Bachelor of Science in Microbiology</div>
-  <p>Universiti Malaya Sabah, Malaysia</p>
+  <p>Universiti Malaya, Kuala Lumpur, Malaysia</p>
 </div>
 
 <div class="cv-card">
