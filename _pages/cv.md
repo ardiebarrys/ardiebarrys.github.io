@@ -32,7 +32,7 @@ toc:
     display: none !important;
   }
 
-  /* CV layout: move pane left and pull main content closer */
+  /* CV layout: move pane left, pull main content closer, and keep pane sticky */
   @media (min-width: 992px) {
     .row:has(#toc-sidebar),
     .row:has(.toc-sidebar) {
@@ -57,6 +57,12 @@ toc:
     .row:has(.toc-sidebar) > [class*="col-"]:first-child {
       width: 210px !important;
       max-width: 210px !important;
+      position: sticky !important;
+      top: 5.5rem !important;
+      align-self: start !important;
+      height: fit-content !important;
+      max-height: calc(100vh - 6rem) !important;
+      overflow-y: auto !important;
     }
 
     .row:has(#toc-sidebar) > [class*="col-"]:last-child,
@@ -66,13 +72,20 @@ toc:
     }
 
     #toc-sidebar,
-    .toc-sidebar {
+    .toc-sidebar,
+    #toc-sidebar.sticky-top,
+    .toc-sidebar.sticky-top {
       width: 210px !important;
       max-width: 210px !important;
+      position: sticky !important;
+      top: 5.5rem !important;
+      align-self: start !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
       padding-left: 0 !important;
       padding-right: 0.5rem !important;
+      max-height: calc(100vh - 6rem) !important;
+      overflow-y: auto !important;
     }
 
     #toc-sidebar .nav,
@@ -193,18 +206,7 @@ toc:
       width: 100%;
       padding: 0.55rem 0;
     }
-
-    /* Keep CV left navigation visible while scrolling */
-@media (min-width: 992px) {
-  #toc-sidebar,
-  .toc-sidebar {
-    position: sticky !important;
-    top: 6rem !important;
-    align-self: start !important;
-    max-height: calc(100vh - 6rem) !important;
-    overflow-y: auto !important;
   }
-}
 </style>
 
 <div class="cv-page" markdown="1">
