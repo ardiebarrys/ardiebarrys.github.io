@@ -115,10 +115,18 @@ social: true
     text-align-last: left !important;
   }
 
+  .profile,
+  .profile p,
+  .profile-info,
+  .profile-info p {
+    text-align: left !important;
+    text-align-last: left !important;
+  }
+
   .profile-logo-links {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.7rem;
+    gap: 0.8rem;
     margin-top: 0.75rem;
   }
 
@@ -126,28 +134,25 @@ social: true
     display: flex !important;
     align-items: center;
     justify-content: center;
-    min-height: 54px;
-    padding: 0.7rem 0.9rem;
-    border: 1px solid rgba(183, 0, 183, 0.25);
+    min-height: 76px;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(183, 0, 183, 0.28);
     border-radius: 10px;
     background: #ffffff !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
   }
 
-  .profile-logo-links img {
-    max-width: 210px;
-    max-height: 34px;
-    object-fit: contain;
-    display: block;
+  .profile-logo-links a:hover {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
   }
 
-  .profile,
-  .profile p,
-  .profile-info,
-  .profile-info p {
-    text-align: left !important;
-    text-align-last: left !important;
+  .profile-logo-links img {
+    max-width: 230px;
+    max-height: 46px;
+    object-fit: contain;
+    display: block;
   }
 
   .bio-text p {
@@ -157,17 +162,19 @@ social: true
     hyphens: auto !important;
   }
 
+  .keyword-box,
+  .highlight-study {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .keyword-box {
-    clear: none !important;
-    display: flow-root;
-    width: auto;
-    max-width: none;
     margin: 1.5rem 0 2rem;
     padding: 1.15rem 1.25rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
-    box-sizing: border-box;
   }
 
   .keyword-title {
@@ -190,6 +197,47 @@ social: true
     background: #ffffff;
     color: #111111;
     font-size: 0.95rem;
+  }
+
+  .highlight-study {
+    margin: 2rem 0 2.5rem;
+    padding: 1.25rem 1.4rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .highlight-label {
+    margin-bottom: 0.4rem;
+    color: var(--global-theme-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .highlight-study h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .highlight-study p {
+    margin-bottom: 0.75rem;
+    text-align: left !important;
+    line-height: 1.55;
+  }
+
+  .highlight-citation {
+    padding: 0.75rem 0.85rem;
+    border-radius: 8px;
+    background: rgba(183, 0, 183, 0.08);
+  }
+
+  .highlight-study a {
+    color: var(--global-theme-color) !important;
+    font-weight: 700;
   }
 
   .social,
@@ -227,54 +275,26 @@ social: true
     font-size: 1.2rem !important;
   }
 
-  .highlight-study {
-    clear: both;
-    max-width: 100%;
-    margin: 2rem 0 2.5rem;
-    padding: 1.25rem 1.4rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-  }
-
-  .highlight-label {
-    margin-bottom: 0.4rem;
-    color: var(--global-theme-color);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .highlight-study h2 {
-    margin: 0 0 0.65rem;
-    font-size: 1.35rem;
-    font-weight: 700;
-  }
-
-  .highlight-study p {
-    margin-bottom: 0.75rem;
-    text-align: left !important;
-    line-height: 1.55;
-  }
-
-  .highlight-citation {
-    padding: 0.75rem 0.85rem;
-    border-radius: 8px;
-    background: rgba(183, 0, 183, 0.08);
-  }
-
-  .highlight-study a {
-    color: var(--global-theme-color) !important;
-    font-weight: 700;
+  @media (min-width: 992px) {
+    .bio-text {
+      max-width: calc(100% - 430px);
+    }
   }
 
   @media (max-width: 768px) {
-    .keyword-box {
+    .bio-text,
+    .keyword-box,
+    .highlight-study {
       width: 100%;
       max-width: 100%;
+    }
+
+    .profile-logo-links a {
+      min-height: 68px;
+    }
+
+    .profile-logo-links img {
+      max-height: 40px;
     }
   }
 </style>
