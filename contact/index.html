@@ -3,71 +3,70 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A7%AC&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://ardiebarrysailis.com/contact/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Ardie Barry Sailis </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Curriculum Vitae </a> </li> <li class="nav-item active"> <a class="nav-link" href="/contact/">Contact <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/people/">Biography </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Contact</h1> <p class="post-description"></p> </header> <article> <style>
-  .contact-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: start;
-    max-width: 780px;
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
+  .contact-page {
+    width: 100%;
     margin-top: 1.5rem;
   }
 
-  .contact-panel,
-  .contact-card {
-    padding: 1.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(183, 0, 183, 0.22);
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    width: 100%;
+    margin-top: 1.5rem;
   }
 
-  .contact-card h2,
-  .contact-panel h2 {
-    margin: 0 0 0.8rem;
-    font-size: 1.35rem;
+  .contact-card {
+    width: 100%;
+    padding: 1.8rem 2rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.025));
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+  }
+
+  .contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
     font-weight: 700;
   }
 
   .contact-address {
-    margin-bottom: 1rem;
+    margin-bottom: 1.4rem;
     line-height: 1.55;
   }
 
   .contact-map {
-    overflow: hidden;
-    border-radius: 10px;
-    border: 1px solid #dddddd;
-    background: #ffffff;
-  }
-
-  .contact-map iframe {
-    display: block;
     width: 100%;
-    height: 360px;
+    height: 420px;
     border: 0;
+    border-radius: 10px;
   }
 
-  .response-note {
-    margin: -0.25rem 0 1rem;
-    color: #555555;
-    font-size: 0.95rem;
-    line-height: 1.45;
+  .contact-note {
+    margin-bottom: 1.2rem;
+    color: #666666;
   }
 
-  .contact-form {
-    display: grid;
-    gap: 1rem;
-  }
-
-  .contact-field label {
+  .contact-form label {
     display: block;
+    margin-top: 1rem;
     margin-bottom: 0.35rem;
     font-weight: 700;
   }
 
-  .contact-field input,
-  .contact-field select,
-  .contact-field textarea {
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
     width: 100%;
     padding: 0.75rem 0.85rem;
     border: 1px solid #cccccc;
@@ -78,22 +77,14 @@
     box-sizing: border-box;
   }
 
-  .contact-field textarea {
-    min-height: 160px;
+  .contact-form textarea {
+    min-height: 190px;
     resize: vertical;
   }
 
-  .contact-field input:focus,
-  .contact-field select:focus,
-  .contact-field textarea:focus {
-    outline: none;
-    border-color: var(--global-theme-color);
-    box-shadow: 0 0 0 3px rgba(183, 0, 183, 0.12);
-  }
-
-  .contact-submit {
-    width: fit-content;
-    padding: 0.7rem 1.1rem;
+  .contact-form button {
+    margin-top: 1.2rem;
+    padding: 0.75rem 1.2rem;
     border: 0;
     border-radius: 8px;
     background: var(--global-theme-color);
@@ -102,10 +93,27 @@
     cursor: pointer;
   }
 
-  .contact-submit:hover {
-    opacity: 0.88;
+  .contact-form button:hover {
+    opacity: 0.9;
   }
-</style> <div class="contact-layout"> <div class="contact-card"> <h2>Address</h2> <div class="contact-address"> <strong>Department of Pharmaceutical Life Sciences</strong><br> Faculty of Pharmacy<br> University of Malaya<br> 50603 Kuala Lumpur, Malaysia </div> <div class="contact-map"> <iframe src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen=""> </iframe> </div> </div> <div class="contact-panel"> <h2>Send a Message</h2> <p class="response-note"> Please allow up to seven business days for a response. </p> <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST"> <div class="contact-field"> <label for="email">Your Email</label> <input id="email" name="email" type="email" required=""> </div> <div class="contact-field"> <label for="topic">Topic</label> <select id="topic" name="topic" required=""> <option value="">Select a topic</option> <option value="Inquiry">Inquiry</option> <option value="Collaboration">Collaboration</option> <option value="Publication">Publication</option> <option value="Speaking Invitation">Speaking Invitation</option> <option value="Media or Writing">Media or Writing</option> <option value="Other">Other</option> </select> </div> <div class="contact-field"> <label for="message">Question</label> <textarea id="message" name="message" required=""></textarea> </div> <button class="contact-submit" type="submit">Send Message</button> </form> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
+  }
+
+  @media (max-width: 768px) {
+    .contact-card {
+      padding: 1.25rem;
+    }
+
+    .contact-map {
+      height: 320px;
+    }
+  }
+</style> <div class="contact-page"> <div class="contact-layout"> <section class="contact-card"> <h2>Address</h2> <div class="contact-address"> <strong>Department of Pharmaceutical Life Sciences</strong><br> Faculty of Pharmacy<br> University of Malaya<br> 50603 Kuala Lumpur, Malaysia </div> <iframe class="contact-map" src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe> </section> <section class="contact-card"> <h2>Send a Message</h2> <p class="contact-note"> Please allow up to seven business days for a response. </p> <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST"> <label for="email">Your Email</label> <input id="email" type="email" name="email" required=""> <label for="topic">Topic</label> <select id="topic" name="topic" required=""> <option value="">Select a topic</option> <option value="Inquiry">Inquiry</option> <option value="Collaboration">Collaboration</option> <option value="Publication">Publication</option> <option value="Speaking invitation">Speaking Invitation</option> <option value="Media or writing">Media or Writing</option> <option value="Other">Other</option> </select> <label for="message">Question</label> <textarea id="message" name="message" required=""></textarea> <button type="submit">Send Message</button> </form> </section> </div> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
