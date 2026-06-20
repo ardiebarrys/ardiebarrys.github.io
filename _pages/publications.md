@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
-description: Selected journal articles and literature reviews.
+description: All journal articles and literature reviews
 nav: true
 nav_order: 2
 ---
