@@ -13,24 +13,18 @@ profile:
       <p><strong>Faculty of Pharmacy</strong></p>
       <p>University of Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
-      <hr>
-      <p>
-        <strong>ORCID:</strong>
-        <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
-      </p>
-      <p><strong>Scopus Author ID:</strong> 60192026900</p>
-      <hr>
-      <p>
-        <a class="profile-link" href="https://scholar.google.com/citations?user=saKP688AAAAJ&hl=en">Google Scholar</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://www.linkedin.com/in/ardiebarrysailis/">LinkedIn</a>
-      </p>
-      <p>
-        <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
-      </p>
+<hr>
+<p>
+  <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">
+    Springer Nature Research Communities
+  </a>
+</p>
+<p>
+  <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">
+    Kudos
+  </a>
+</p>
     </div>
-
 selected_papers: false
 social: true
 ---
