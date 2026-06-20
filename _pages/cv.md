@@ -1,9 +1,10 @@
 ---
 layout: page
-title: CV
+title: Curriculum Vitae
 permalink: /cv/
 nav: true
 nav_order: 4
+nav_title: CV
 toc:
   sidebar: left
 ---
@@ -22,6 +23,35 @@ toc:
   #toc-sidebar .nav .nav,
   .toc-sidebar .nav .nav {
     display: none !important;
+  }
+
+  /* Bring CV content closer to the left navigation pane */
+  .row {
+    column-gap: 1.5rem !important;
+  }
+
+  #toc-sidebar,
+  .toc-sidebar {
+    padding-right: 0.75rem !important;
+    margin-right: 0 !important;
+  }
+
+  #toc-sidebar + div,
+  .toc-sidebar + div {
+    margin-left: 0 !important;
+  }
+
+  @media (min-width: 992px) {
+    .col-lg-2 {
+      flex: 0 0 220px !important;
+      max-width: 220px !important;
+    }
+
+    .col-lg-8,
+    .col-lg-10 {
+      flex: 1 1 auto !important;
+      max-width: calc(100% - 240px) !important;
+    }
   }
 
   .navbar .nav-link.active,
