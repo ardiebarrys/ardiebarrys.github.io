@@ -294,7 +294,7 @@ nav_order: 6
 </article>
 
 <figure class="bio-image-card">
-  <img src="{{ '/assets/img/biography-experimental.jpg' | relative_url }}" alt="Ardie Barry Sailis preparing samples during laboratory research">
+  <img src="{{ '/assets/img/biography-portrait.png' | relative_url }}" alt="Ardie Barry Sailis preparing samples during laboratory research">
   <figcaption>Preparing samples during laboratory-based experimental research.</figcaption>
 </figure>
 
