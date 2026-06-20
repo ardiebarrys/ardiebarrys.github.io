@@ -159,7 +159,7 @@ This website brings together his publications, research themes, academic profile
 
   <figure>
     <img src="{{ '/assets/img/biography-portrait.png' | relative_url }}" alt="Ardie Barry Sailis">
-    <figcaption>Ardie Barry Sailis.</figcaption>
+    <figcaption>Preparing samples during laboratory-based experimental research.</figcaption>
   </figure>
 </div>
 
