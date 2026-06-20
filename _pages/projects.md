@@ -93,7 +93,7 @@ nav_order: 3
   <section class="project-section">
     <h2 class="project-section-title">PhD Thesis Project</h2>
 
-    <details class="project-card" open>
+    <details class="project-card">
       <summary>Doctoral Research</summary>
 
       <div class="project-card-content">
@@ -117,7 +117,7 @@ nav_order: 3
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
 
-    <details class="project-card" open>
+    <details class="project-card">
       <summary>Conceptual Framework</summary>
 
       <div class="project-card-content">
@@ -140,7 +140,7 @@ nav_order: 3
   <section class="project-section">
     <h2 class="project-section-title">Miscellaneous</h2>
 
-    <details class="project-card" open>
+    <details class="project-card">
       <summary>Independent Writing</summary>
 
       <div class="project-card-content">
