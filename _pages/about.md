@@ -29,7 +29,6 @@ profile:
       <hr>
 
       <div class="profile-logo-links">
-      <div class="profile-logo-links">
         <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en" aria-label="Google Scholar">
         <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar">
         </a>
