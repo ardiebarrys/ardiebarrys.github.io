@@ -150,7 +150,6 @@ social: true
   .profile-logo-links a:hover {
     border-color: var(--global-theme-color);
     box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
-    transform: translateY(-1px);
   }
 
   .profile-logo-links img {
@@ -219,7 +218,6 @@ social: true
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   .highlight-study h2 {
