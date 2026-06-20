@@ -3,6 +3,28 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/abs.png?v=c908d1601d2337fcdd78f9f715e58398"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://ardiebarrysailis.com/biography/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Ardie Barry Sailis </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">Projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Curriculum Vitae </a> </li> <li class="nav-item "> <a class="nav-link" href="/contact/">Contact </a> </li> <li class="nav-item active"> <a class="nav-link" href="/biography/">Biography <span class="sr-only">(current)</span> </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Biography</h1> <p class="post-description"></p> </header> <article> <style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  body.page-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  body.page-exiting {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
   .post,
   .page,
   .container,
@@ -33,7 +55,7 @@
     border-radius: 14px;
     overflow: hidden;
     background-image:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.35)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42)),
       url("/assets/img/biography-lab.jpg");
     background-size: cover;
     background-position: center;
@@ -43,9 +65,10 @@
   .bio-hero-content {
     position: absolute;
     left: 2.2rem;
+    right: 2.2rem;
     bottom: 2.2rem;
     max-width: 760px;
-    color: #ffffff;
+    color: #ffffff !important;
   }
 
   .bio-hero-content h1 {
@@ -53,19 +76,16 @@
     color: #ffffff !important;
     font-size: 3rem;
     font-weight: 700;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
   }
 
   .bio-hero-content p {
-    display: inline;
     margin: 0;
-    padding: 0.15rem 0.35rem;
-    background: rgba(0, 0, 0, 0.45);
-    color: #ffffff;
+    padding: 0.2rem 0;
+    color: #ffffff !important;
     font-size: 1.2rem;
     line-height: 1.65;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   }
 
   .bio-card,
@@ -102,64 +122,64 @@
     line-height: 1.75;
   }
 
-.bio-focus-inline {
-  max-width: 820px;
-  margin: 1.8rem auto;
-  padding: 1.25rem 1.4rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
-  text-align: center;
+  .bio-focus-inline {
+    max-width: 860px;
+    margin: 1.8rem auto;
+    padding: 1.25rem 1.4rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    text-align: center;
   }
 
-.bio-focus-inline h3 {
-  margin-top: 0;
-  margin-bottom: 0.9rem;
-  text-align: center;
+  .bio-focus-inline h3 {
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    text-align: center;
   }
 
-.bio-focus-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.55rem;
+  .bio-focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
   }
 
-.bio-focus-tag {
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(183, 0, 183, 0.22);
-  border-radius: 999px;
-  background: #ffffff;
-  color: #111111;
-  font-size: 0.95rem;
+  .bio-focus-tag {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 999px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 0.95rem;
   }
 
-.bio-inline-quote {
-  max-width: 820px;
-  margin: 1.8rem auto;
-  padding: 1.35rem 1.5rem;
-  border-left: 5px solid var(--global-theme-color);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
-  text-align: center;
+  .bio-inline-quote {
+    max-width: 860px;
+    margin: 1.8rem auto;
+    padding: 1.35rem 1.5rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    text-align: center;
   }
 
-.bio-inline-quote blockquote {
-  margin: 0;
-  color: #111111;
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.7;
-  text-align: center;
+  .bio-inline-quote blockquote {
+    margin: 0;
+    color: #111111;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.7;
+    text-align: center;
   }
 
-.bio-inline-quote cite {
-  display: block;
-  margin-top: 0.85rem;
-  color: #555555;
-  font-style: italic;
-  font-weight: 700;
-  text-align: center;
+  .bio-inline-quote cite {
+    display: block;
+    margin-top: 0.85rem;
+    color: #555555;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
   }
 
   .bio-image-card {
@@ -172,12 +192,6 @@
     height: 420px;
     object-fit: cover;
     display: block;
-  }
-
-  .bio-image-card figcaption {
-    padding: 0.9rem 1rem;
-    color: #555555;
-    font-size: 0.95rem;
   }
 
   @media (max-width: 768px) {
@@ -206,12 +220,67 @@
     .bio-image-card img {
       height: 280px;
     }
-    
-    .bio-image-card figcaption {
-  display: none !important;
-}
   }
-</style> <div class="bio-page"> <section class="bio-hero"> <div class="bio-hero-content"> <h1>Biography</h1> <p> PhD student in Pharmaceutical Sciences working at the intersection of toxicology, molecular regulation, and reproductive health. </p> </div> </section> <article class="bio-card"> <h2>Ardie Barry Sailis</h2> <h3>Early Background</h3> <p> Ardie Barry Sailis is from Tambunan, Sabah, and is of Dusun heritage. His path into science has been shaped by both personal ambition and long-standing curiosity about the living world. His interest in research began early. By the age of ten, he had already set his mind on becoming a scientist, driven by a desire to understand how the body works, why disease develops, and how scientific discovery can be used to improve human health. </p> <h3>Academic Development</h3> <p> Over time, Ardie’s early interest in science developed into a more defined academic direction within pharmaceutical sciences. His training introduced him to the ways medicines, toxicants, and biological systems interact, and this gradually shaped his interest in the molecular events that occur when cells are exposed to stress. He became particularly drawn to questions about how external exposures influence cellular function, how cells detect and respond to injury, and why protective responses may eventually become insufficient or maladaptive. </p> <p> This academic development led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms. His current approach combines experimental investigation with systems-level thinking, allowing him to examine biological effects not only as isolated outcomes, but as coordinated responses across multiple molecular and cellular pathways. </p> <div class="bio-focus-inline"> <h3>Research Focus</h3> <div class="bio-focus-list"> <span class="bio-focus-tag">Environmental toxicology</span> <span class="bio-focus-tag">E-cigarette exposure</span> <span class="bio-focus-tag">Reproductive health</span> <span class="bio-focus-tag">Molecular regulation</span> <span class="bio-focus-tag">Mitochondrial stress</span> <span class="bio-focus-tag">microRNA signaling</span> </div> </div> <h3>Doctoral Research</h3> <p> Ardie’s doctoral research investigates the biological effects of e-cigarette exposure, particularly in relation to male reproductive and endocrine health. While e-cigarettes are often discussed primarily in the context of respiratory exposure, his work examines their wider systemic relevance. His research explores how e-cigarette aerosols and their chemical constituents may influence Leydig cell steroidogenesis, testosterone-associated signaling, mitochondrial function, oxidative and redox imbalance, microRNA-mediated regulation, and intercellular communication pathways. </p> <p> Through this work, he aims to contribute to a clearer understanding of how inhaled toxicants may affect health beyond the lungs. His research considers the possibility that repeated or chronic exposure to aerosol constituents may disturb molecular systems involved in hormone production, cellular energy regulation, stress adaptation, and reproductive function. </p> <h3>Research Philosophy</h3> <p> A central theme of Ardie’s work is that toxicant exposure should not be viewed only as isolated cellular injury. Instead, he approaches toxicological effects as disruptions of coordinated biological systems. Cells do not respond to stress through single linear pathways; they integrate signals across mitochondrial activity, redox balance, gene regulation, inflammatory communication, protein networks, and hormonal control. When these systems are repeatedly challenged, the biological outcome may depend not only on the initial injury but also on whether cells can correctly sense, process, resolve, and recover from stress. </p> <p> His broader conceptual framework, titled <em>Cellular Signaling as Dynamic Regulatory Circuits</em>, applies ideas from systems biology and control theory to reinterpret canonical signaling pathways as dynamic regulatory systems rather than static molecular cascades. This framework emphasizes feedback regulation, temporal signal encoding, stress-integration circuits, phase-separated regulatory states, and failures in signal resolution that may contribute to disease progression. </p> <div class="bio-inline-quote"> <blockquote> “Absence of evidence is not evidence of absence. For me, the most important scientific questions often begin where existing evidence becomes incomplete, uncertain, or overlooked.” </blockquote> <cite>Ardie Barry Sailis (2026)</cite> </div> <p> This systems-oriented perspective also extends into his public writing on science, technology, and society. In his article <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em>, published on May 29, 2026, Ardie reflected on artificial intelligence, AI ethics, health data, digital power, and human dignity. The article argues that AI should not be evaluated only through efficiency, speed, scale, accuracy, or productivity, but also through its effects on justice, accountability, human dignity, labor, data governance, and the common good. </p> <p> From this perspective, scientific and technological progress should remain accountable to the people and communities it is meant to serve. In biomedical and health research, this means asking who contributes data, who governs it, who benefits from the resulting models, and whether affected communities have meaningful participation in decisions that shape research and care. </p> <h3>Long-Term Direction</h3> <p> Ardie’s long-term academic goal is to contribute to mechanistic toxicology and molecular systems biology by developing research that is both biologically detailed and conceptually integrative. He is particularly interested in work that connects exposure science, cellular stress responses, endocrine regulation, reproductive health, systems-level disease models, and responsible scientific innovation. </p> <p> His scientific perspective is grounded in the idea that meaningful research should explain not only whether an exposure, technology, or intervention causes harm, but also how biological and social systems respond, adapt, compensate, and eventually fail. Through this direction, his work aims to build bridges between molecular detail, higher-level biological interpretation, and broader questions about human-centered science. </p> </article> <figure class="bio-image-card"> <img src="/assets/img/biography-portrait.png" alt="Ardie Barry Sailis preparing samples during laboratory research"> </figure> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style> <noscript> <style>
+    body {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  </style> </noscript> <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("page-loaded");
+
+    document.querySelectorAll("a[href]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        const url = new URL(link.href, window.location.href);
+        const isSameSite = url.origin === window.location.origin;
+        const isHashOnly = url.pathname === window.location.pathname && url.hash.length > 0;
+        const opensNewTab = link.target === "_blank";
+        const isDownload = link.hasAttribute("download");
+        const isSpecialLink = link.href.startsWith("mailto:") || link.href.startsWith("tel:");
+
+        if (
+          !isSameSite ||
+          isHashOnly ||
+          opensNewTab ||
+          isDownload ||
+          isSpecialLink ||
+          event.metaKey ||
+          event.ctrlKey ||
+          event.shiftKey ||
+          event.altKey
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+        document.body.classList.remove("page-loaded");
+        document.body.classList.add("page-exiting");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 180);
+      });
+    });
+  });
+
+  window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-exiting");
+    document.body.classList.add("page-loaded");
+  });
+</script> <div class="bio-page"> <section class="bio-hero"> <div class="bio-hero-content"> <h1>Biography</h1> <p> PhD student in Pharmaceutical Sciences working at the intersection of toxicology, molecular regulation, and reproductive health. </p> </div> </section> <article class="bio-card"> <h2>Ardie Barry Sailis</h2> <h3>Early Background</h3> <p> Ardie Barry Sailis is from Tambunan, Sabah, and is of Dusun heritage. His path into science has been shaped by both personal ambition and long-standing curiosity about the living world. His interest in research began early. By the age of ten, he had already set his mind on becoming a scientist, driven by a desire to understand how the body works, why disease develops, and how scientific discovery can be used to improve human health. </p> <h3>Academic Development</h3> <p> Over time, Ardie's early interest in science developed into a more defined academic direction within pharmaceutical sciences. His training introduced him to the ways medicines, toxicants, and biological systems interact, and this gradually shaped his interest in the molecular events that occur when cells are exposed to stress. He became particularly drawn to questions about how external exposures influence cellular function, how cells detect and respond to injury, and why protective responses may eventually become insufficient or maladaptive. </p> <p> This academic development led him toward toxicology, pharmacology, molecular regulation, and disease mechanisms. His current approach combines experimental investigation with systems-level thinking, allowing him to examine biological effects not only as isolated outcomes, but as coordinated responses across multiple molecular and cellular pathways. </p> <div class="bio-focus-inline"> <h3>Research Focus</h3> <div class="bio-focus-list"> <span class="bio-focus-tag">Environmental toxicology</span> <span class="bio-focus-tag">E-cigarette exposure</span> <span class="bio-focus-tag">Reproductive health</span> <span class="bio-focus-tag">Molecular regulation</span> <span class="bio-focus-tag">Mitochondrial stress</span> <span class="bio-focus-tag">microRNA signaling</span> </div> </div> <h3>Doctoral Research</h3> <p> Ardie's doctoral research investigates the biological effects of e-cigarette exposure, particularly in relation to male reproductive and endocrine health. While e-cigarettes are often discussed primarily in the context of respiratory exposure, his work examines their wider systemic relevance. His research explores how e-cigarette aerosols and their chemical constituents may influence Leydig cell steroidogenesis, testosterone-associated signaling, mitochondrial function, oxidative and redox imbalance, microRNA-mediated regulation, and intercellular communication pathways. </p> <p> Through this work, he aims to contribute to a clearer understanding of how inhaled toxicants may affect health beyond the lungs. His research considers the possibility that repeated or chronic exposure to aerosol constituents may disturb molecular systems involved in hormone production, cellular energy regulation, stress adaptation, and reproductive function. </p> <h3>Research Philosophy</h3> <p> A central theme of Ardie's work is that toxicant exposure should not be viewed only as isolated cellular injury. Instead, he approaches toxicological effects as disruptions of coordinated biological systems. Cells do not respond to stress through single linear pathways; they integrate signals across mitochondrial activity, redox balance, gene regulation, inflammatory communication, protein networks, and hormonal control. When these systems are repeatedly challenged, the biological outcome may depend not only on the initial injury but also on whether cells can correctly sense, process, resolve, and recover from stress. </p> <p> His broader conceptual framework, titled <em>Cellular Signaling as Dynamic Regulatory Circuits</em>, applies ideas from systems biology and control theory to reinterpret canonical signaling pathways as dynamic regulatory systems rather than static molecular cascades. This framework emphasizes feedback regulation, temporal signal encoding, stress-integration circuits, phase-separated regulatory states, and failures in signal resolution that may contribute to disease progression. </p> <div class="bio-inline-quote"> <blockquote> "Absence of evidence is not evidence of absence. For me, the most important scientific questions often begin where existing evidence becomes incomplete, uncertain, or overlooked." </blockquote> <cite>Ardie Barry Sailis (2026)</cite> </div> <p> This systems-oriented perspective also extends into his public writing on science, technology, and society. In his article <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em>, published on May 29, 2026, Ardie reflected on artificial intelligence, AI ethics, health data, digital power, and human dignity. The article argues that AI should not be evaluated only through efficiency, speed, scale, accuracy, or productivity, but also through its effects on justice, accountability, human dignity, labor, data governance, and the common good. </p> <p> From this perspective, scientific and technological progress should remain accountable to the people and communities it is meant to serve. In biomedical and health research, this means asking who contributes data, who governs it, who benefits from the resulting models, and whether affected communities have meaningful participation in decisions that shape research and care. </p> <h3>Long-Term Direction</h3> <p> Ardie's long-term academic goal is to contribute to mechanistic toxicology and molecular systems biology by developing research that is both biologically detailed and conceptually integrative. He is particularly interested in work that connects exposure science, cellular stress responses, endocrine regulation, reproductive health, systems-level disease models, and responsible scientific innovation. </p> <p> His scientific perspective is grounded in the idea that meaningful research should explain not only whether an exposure, technology, or intervention causes harm, but also how biological and social systems respond, adapt, compensate, and eventually fail. Through this direction, his work aims to build bridges between molecular detail, higher-level biological interpretation, and broader questions about human-centered science. </p> </article> <figure class="bio-image-card"> <img src="/assets/img/biography-portrait.jpg" alt="Ardie Barry Sailis during laboratory research"> </figure> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
