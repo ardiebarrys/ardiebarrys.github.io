@@ -414,7 +414,7 @@ toc:
 ## Certificates
 
 <div class="cv-card">
-  <p><strong>Workshops</strong></p>
+  <div class="cv-item-title">Workshops</div>
   <ul>
     <li>ic-PHIR Metabolic Workshop, UiTM Puncak Alam (2023)</li>
     <li>Quantitative PCR (qPCR) Workshop, Vazyme, University of Malaya (2024)</li>
@@ -422,7 +422,7 @@ toc:
     <li>Systematic Literature Review and Meta-Analysis Workshop (2025)</li>
   </ul>
 
-  <p><strong>Conferences</strong></p>
+  <div class="cv-item-title">Conferences</div>
   <ul>
     <li>ic-PHIR Conference at UiTM Puncak Alam (2023)</li>
     <li>
