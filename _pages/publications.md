@@ -7,7 +7,6 @@ nav: true
 nav_order: 2
 ---
 
-<noscript>
   <style>
     body {
       opacity: 1 !important;
