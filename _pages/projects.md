@@ -21,7 +21,7 @@ nav_order: 3
   }
 
   .project-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .project-section-title {
@@ -31,33 +31,44 @@ nav_order: 3
     font-weight: 700;
   }
 
-  .project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-
   .project-card {
-    padding: 1.25rem;
-    border: 1px solid rgba(183, 0, 183, 0.2);
+    width: 100%;
+    padding: 0;
+    border: 1px solid rgba(183, 0, 183, 0.22);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
-  .project-label {
-    margin-bottom: 0.5rem;
+  .project-card summary {
+    padding: 1.15rem 1.25rem;
     color: var(--global-theme-color);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    cursor: pointer;
+    list-style-position: inside;
+  }
+
+  .project-card summary:hover {
+    background: rgba(183, 0, 183, 0.06);
+  }
+
+  .project-card[open] summary {
+    border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+  }
+
+  .project-card-content {
+    padding: 1.25rem;
   }
 
   .project-card h2 {
     margin: 0 0 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
   }
 
@@ -76,27 +87,16 @@ nav_order: 3
     margin-bottom: 0.35rem;
     line-height: 1.45;
   }
-
-  .project-card a {
-    color: var(--global-theme-color) !important;
-    font-weight: 700;
-  }
-
-  @media (max-width: 900px) {
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
 
 <div class="projects-page">
   <section class="project-section">
     <h2 class="project-section-title">PhD Thesis Project</h2>
 
-    <div class="project-grid">
-      <article class="project-card">
-        <div class="project-label">Doctoral Research</div>
+    <details class="project-card" open>
+      <summary>Doctoral Research</summary>
 
+      <div class="project-card-content">
         <h2>E-cigarette and Sexual Function</h2>
 
         <p>
@@ -110,17 +110,17 @@ nav_order: 3
           <li>Mitochondrial dysfunction</li>
           <li>Secondhand aerosol exposure and lung health</li>
         </ul>
-      </article>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
 
-    <div class="project-grid">
-      <article class="project-card">
-        <div class="project-label">Conceptual Framework</div>
+    <details class="project-card" open>
+      <summary>Conceptual Framework</summary>
 
+      <div class="project-card-content">
         <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2>
 
         <p>
@@ -133,17 +133,17 @@ nav_order: 3
           <li>Signal duration, feedback, and resolution failure</li>
           <li>Control theory approaches to cell signaling</li>
         </ul>
-      </article>
-    </div>
+      </div>
+    </details>
   </section>
 
   <section class="project-section">
     <h2 class="project-section-title">Miscellaneous</h2>
 
-    <div class="project-grid">
-      <article class="project-card">
-        <div class="project-label">Independent Writing</div>
+    <details class="project-card" open>
+      <summary>Independent Writing</summary>
 
+      <div class="project-card-content">
         <h2>Miscellaneous Sole-Author Works</h2>
 
         <p>
@@ -155,7 +155,7 @@ nav_order: 3
           <li>Conceptual manuscripts</li>
           <li>Topic-specific scholarly writing</li>
         </ul>
-      </article>
-    </div>
+      </div>
+    </details>
   </section>
 </div>
