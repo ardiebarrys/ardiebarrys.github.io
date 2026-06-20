@@ -38,8 +38,8 @@ toc:
     .page .row,
     main .row {
       display: grid !important;
-      grid-template-columns: 170px minmax(0, 1fr) !important;
-      column-gap: 1.5rem !important;
+      grid-template-columns: 200px minmax(0, 1fr) !important;
+      column-gap: 0.75rem !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
