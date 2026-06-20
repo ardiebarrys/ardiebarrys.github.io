@@ -148,6 +148,15 @@ toc:
     .cv-info-table th {
       padding-bottom: 0.2rem;
     }
+    
+    <style>
+  /* Keep only main CV headings in the left table of contents */
+  #toc-sidebar ul ul,
+  .toc-sidebar ul ul,
+  .sticky-top ul ul {
+    display: none !important;
+  }
+</style>
   }
 </style>
 
