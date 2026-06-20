@@ -2,6 +2,8 @@
 layout: about
 title: About
 permalink: /
+nav: true
+nav_order: 1
 subtitle: PhD Student, Faculty of Pharmacy, University of Malaya
 
 profile:
@@ -21,10 +23,14 @@ profile:
       </p>
       <p><strong>Scopus Author ID:</strong> 60192026900</p>
       <hr>
-      <p class="profile-links">
-        <a href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a><br>
-        <a href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a><br>
-        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
+      <p>
+        <a class="profile-link" href="https://communities.springernature.com/users/ardie-barry-sailis">Springer Nature Research Communities</a>
+      </p>
+      <p>
+        <a class="profile-link" href="https://www.growkudos.com/profile/ardie_barry_sailis">Kudos</a>
+      </p>
+      <p>
+        <a class="profile-link" href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf">ResearchGate</a>
       </p>
     </div>
 
@@ -38,10 +44,6 @@ social: true
   .container,
   main {
     max-width: 1280px !important;
-  }
-
-  .post {
-    width: 100% !important;
   }
 
   body {
@@ -68,6 +70,7 @@ social: true
   .navbar .nav-item.active .nav-link,
   .navbar .nav-link[aria-current="page"] {
     color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
   }
 
   .profile-info,
@@ -100,11 +103,6 @@ social: true
     display: inline !important;
   }
 
-  .profile-links a {
-    display: inline !important;
-    line-height: 1.7 !important;
-  }
-
   .bio-text p {
     text-align: justify !important;
     text-align-last: left !important;
@@ -120,6 +118,37 @@ social: true
     text-align-last: left !important;
   }
 
+  .keyword-box {
+    clear: both;
+    margin: 2rem 0;
+    padding: 1.15rem 1.25rem;
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+  }
+
+  .keyword-title {
+    margin-bottom: 0.8rem;
+    color: #0b174f;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .keyword-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .keyword-list span {
+    padding: 0.42rem 0.68rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 999px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 0.95rem;
+  }
+
   .social,
   .contact-icons {
     font-size: 0 !important;
@@ -130,10 +159,10 @@ social: true
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    font-size: 1.2rem !important;
     width: 1.2rem !important;
     height: 1.2rem !important;
     margin: 0 0.35rem !important;
-    font-size: 1.2rem !important;
   }
 
   .social i,
@@ -144,9 +173,9 @@ social: true
   .contact-icons .fab,
   .contact-icons .fas,
   .contact-icons .far {
+    font-size: 1.2rem !important;
     width: 1.2rem !important;
     height: 1.2rem !important;
-    font-size: 1.2rem !important;
     line-height: 1.2rem !important;
   }
 
@@ -209,6 +238,23 @@ His doctoral research focuses on the toxicological effects of e-cigarette exposu
 His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.
 
 In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
+
+<div class="keyword-box">
+  <div class="keyword-title">Keywords</div>
+  <div class="keyword-list">
+    <span>E-cigarette toxicology</span>
+    <span>Reproductive toxicology</span>
+    <span>Male reproductive health</span>
+    <span>Endocrine disruption</span>
+    <span>Mitochondrial dysfunction</span>
+    <span>Oxidative stress</span>
+    <span>microRNA regulation</span>
+    <span>Molecular toxicology</span>
+    <span>Environmental exposure</span>
+    <span>Systems toxicology</span>
+    <span>Pharmaceutical sciences</span>
+  </div>
+</div>
 
 <div class="highlight-study">
   <div class="highlight-label">Highlighted Study</div>
