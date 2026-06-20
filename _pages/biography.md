@@ -106,56 +106,64 @@ nav_order: 6
     line-height: 1.75;
   }
 
-  .bio-focus-inline {
-    margin: 1.5rem 0;
-    padding: 1.1rem 1.25rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+.bio-focus-inline {
+  max-width: 820px;
+  margin: 1.8rem auto;
+  padding: 1.25rem 1.4rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+  text-align: center;
   }
 
-  .bio-focus-inline h3 {
-    margin-top: 0;
+.bio-focus-inline h3 {
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  text-align: center;
   }
 
-  .bio-focus-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-top: 0.75rem;
+.bio-focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
   }
 
-  .bio-focus-tag {
-    padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
-    border-radius: 999px;
-    background: #ffffff;
-    color: #111111;
-    font-size: 0.95rem;
+.bio-focus-tag {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(183, 0, 183, 0.22);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 0.95rem;
   }
 
-  .bio-inline-quote {
-    margin: 1.6rem 0;
-    padding: 1.25rem 1.4rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+.bio-inline-quote {
+  max-width: 820px;
+  margin: 1.8rem auto;
+  padding: 1.35rem 1.5rem;
+  border-left: 5px solid var(--global-theme-color);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+  text-align: center;
   }
 
-  .bio-inline-quote blockquote {
-    margin: 0;
-    color: #111111;
-    font-size: 1.08rem;
-    font-weight: 600;
-    line-height: 1.7;
+.bio-inline-quote blockquote {
+  margin: 0;
+  color: #111111;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.7;
+  text-align: center;
   }
 
-  .bio-inline-quote cite {
-    display: block;
-    margin-top: 0.75rem;
-    color: #555555;
-    font-style: italic;
-    font-weight: 700;
+.bio-inline-quote cite {
+  display: block;
+  margin-top: 0.85rem;
+  color: #555555;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
   }
 
   .bio-image-card {
