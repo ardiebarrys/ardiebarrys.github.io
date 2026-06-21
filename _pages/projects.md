@@ -115,11 +115,11 @@ nav_order: 3
       </p>
 
       <ul class="project-list">
-        <li>E-cigarettes and erectile dysfunction</li>
-        <li>Leydig cell steroidogenic pathways</li>
-        <li>MicroRNA-mediated testosterone signaling</li>
-        <li>Mitochondrial dysfunction</li>
-        <li>Secondhand aerosol exposure and lung health</li>
+        <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li>
+        <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li>
+        <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
+        <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
+        <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
       </ul>
     </div>
   </details>
@@ -135,14 +135,13 @@ nav_order: 3
         <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2>
 
         <p>
-          This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches.
+          This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding.
         </p>
 
         <ul class="project-list">
-          <li>NRF2-KEAP1 as a redox signal-resolution circuit</li>
-          <li>CYP1A1 as an environmental sensing feedback circuit</li>
-          <li>Signal duration, feedback, and resolution failure</li>
-          <li>Control theory approaches to cell signaling</li>
+          <li>NRF2-KEAP1 as a redox signal-resolution circuit (DOI: 10.1016/j.pbiomolbio.2026.03.005)</li>
+          <li>CYP1A1 as an environmental sensing feedback circuit (DOI: 10.1007/s00204-026-04384-1)</li>
+          <li>More coming soon!</li>
         </ul>
       </div>
     </details>
