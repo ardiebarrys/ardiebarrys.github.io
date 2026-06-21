@@ -1,7 +1,27 @@
 /* Back to top button */
 #back-to-top,
-.vanilla-back-to-top {
-  bottom: 5.5rem !important;
+.back-to-top,
+.vanilla-back-to-top,
+button[aria-label="Back to top"],
+button[title="Back to top"],
+a[aria-label="Back to top"],
+a[title="Back to top"] {
+  bottom: 6.5rem !important;
+  z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+  #back-to-top,
+  .back-to-top,
+  .vanilla-back-to-top,
+  button[aria-label="Back to top"],
+  button[title="Back to top"],
+  a[aria-label="Back to top"],
+  a[title="Back to top"],
+  div[style*="bottom"][style*="position: fixed"],
+  button[style*="bottom"][style*="position: fixed"] {
+    bottom: 6.8rem !important;
+  }
 }
 
 /* Global typography */
