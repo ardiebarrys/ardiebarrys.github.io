@@ -36,9 +36,10 @@ nav_order: 5
 
   .contact-top-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
     gap: 1.8rem;
     width: 100%;
+    align-items: start;
   }
 
   .contact-card {
@@ -79,6 +80,7 @@ nav_order: 5
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1.45rem 1.6rem;
   }
 
   .support-card p {
