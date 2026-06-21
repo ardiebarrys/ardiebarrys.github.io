@@ -30,11 +30,11 @@ profile:
 
       <div class="profile-logo-links">
         <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en" aria-label="Google Scholar">
-        <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar">
+          <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar">
         </a>
 
         <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
-        <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities">
+          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities">
         </a>
 
         <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
@@ -166,6 +166,40 @@ social: true
     hyphens: auto !important;
   }
 
+  .about-support-note {
+    margin: 1rem 0 1.4rem;
+    text-align: left !important;
+    line-height: 1.55;
+  }
+
+  .bio-text a.about-coffee-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-left: 0.35rem;
+    padding: 0.42rem 0.75rem;
+    border: 1px solid rgba(183, 0, 183, 0.24);
+    border-radius: 999px;
+    background: #ffffff;
+    color: #b700b7 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 6px 16px rgba(183, 0, 183, 0.1);
+    white-space: nowrap;
+  }
+
+  .bio-text a.about-coffee-button:hover {
+    border-color: var(--global-theme-color);
+    background: rgba(183, 0, 183, 0.08);
+    color: var(--global-theme-color) !important;
+  }
+
+  .about-coffee-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+  }
+
   .keyword-box,
   .highlight-study {
     width: 100%;
@@ -292,6 +326,11 @@ social: true
       max-width: 100%;
     }
 
+    .bio-text a.about-coffee-button {
+      margin-top: 0.5rem;
+      margin-left: 0;
+    }
+
     .profile-logo-links a {
       min-height: 72px;
     }
@@ -311,6 +350,14 @@ His doctoral research focuses on the toxicological effects of e-cigarette exposu
 His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.
 
 In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
+
+<p class="about-support-note">
+  If you find Ardie's independent academic writing and research commentary useful, you may support its continuation through
+  <a class="about-coffee-button" href="/contact/">
+    <span class="about-coffee-icon">&#9749;</span>
+    <span>Buy Me a Coffee</span>
+  </a>
+</p>
 
 <div class="keyword-box">
   <div class="keyword-title">Keywords</div>
