@@ -51,7 +51,7 @@
     justify-content: space-between;
     gap: 1rem;
     padding: 1.15rem 1.25rem;
-    color: var(--global-theme-color);
+    color: var(--global-theme-color) !important;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -60,19 +60,22 @@
     list-style-position: inside;
   }
 
-  .project-card summary:hover {
-    background: rgba(183, 0, 183, 0.06);
-  }
-
-  .project-card[open] summary {
-    border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+  .project-summary-title {
+    color: var(--global-theme-color) !important;
+    font-weight: 700;
   }
 
   .project-progress {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    min-width: 220px;
+    min-width: 300px;
+  }
+
+  .project-progress-label {
+    color: var(--global-theme-color);
+    font-size: 0.78rem;
+    font-weight: 700;
   }
 
   .project-progress-track {
@@ -84,10 +87,12 @@
   }
 
   .project-progress-fill {
-    width: 0;
+    width: var(--progress);
     height: 100%;
     border-radius: 999px;
     background: linear-gradient(90deg, #6b1aa8, #b700b7, #e783e7);
+    transform: scaleX(0);
+    transform-origin: left;
     animation: fillProgress 1.4s ease forwards;
   }
 
@@ -101,11 +106,11 @@
 
   @keyframes fillProgress {
     from {
-      width: 0;
+      transform: scaleX(0);
     }
 
     to {
-      width: var(--progress);
+      transform: scaleX(1);
     }
   }
 
@@ -149,7 +154,7 @@
       width: 100%;
     }
   }
-</style> <div class="projects-page"> <section class="project-section"> <h2 class="project-section-title">PhD Thesis Project</h2> <details class="project-card"> <summary> <span>Doctoral Research</span> <span class="project-progress"> <span class="project-progress-track"> <span class="project-progress-fill" style="--progress: 90%;"></span> </span> <span class="project-progress-value">90%</span> </span> </summary> <div class="project-card-content"> <h2>E-cigarette and Sexual Function</h2> <p> This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure. </p> <p> This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022). </p> <ul class="project-list"> <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li> <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li> <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li> <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li> <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li> <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li> </ul> </div> </details> </section> <section class="project-section"> <h2 class="project-section-title">Personal Project</h2> <details class="project-card"> <summary> <span>Conceptual Framework</span> <span class="project-progress"> <span class="project-progress-track"> <span class="project-progress-fill" style="--progress: 30%;"></span> </span> <span class="project-progress-value">30%</span> </span> </summary> <div class="project-card-content"> <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2> <p> This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding. </p> <ul class="project-list"> <li>NRF2-KEAP1 as a redox signal-resolution circuit (DOI: 10.1016/j.pbiomolbio.2026.03.005)</li> <li>CYP1A1 as an environmental sensing feedback circuit (DOI: 10.1007/s00204-026-04384-1)</li> <li>More coming soon!</li> </ul> </div> </details> </section> <section class="project-section"> <h2 class="project-section-title">Miscellaneous</h2> <details class="project-card"> <summary>Independent Writing</summary> <div class="project-card-content"> <h2>Miscellaneous Sole-Author Works</h2> <p> This section collects articles that do not belong directly to the PhD thesis project or the cellular signaling framework. </p> <ul class="project-list"> <li>Adipose-driven erectile dysfunction (DOI: 10.1111/dom.70818)</li> </ul> </div> </details> </section> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
+</style> <div class="projects-page"> <section class="project-section"> <h2 class="project-section-title">PhD Thesis Project</h2> <details class="project-card"> <summary> <span class="project-summary-title">Doctoral Research</span> <span class="project-progress"> <span class="project-progress-label">Progress:</span> <span class="project-progress-track"> <span class="project-progress-fill" style="--progress: 90%;"></span> </span> <span class="project-progress-value">90%</span> </span> </summary> <div class="project-card-content"> <h2>E-cigarette and Sexual Function</h2> <p> This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure. </p> <p> This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022). </p> <ul class="project-list"> <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li> <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li> <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li> <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li> <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li> <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li> </ul> </div> </details> </section> <section class="project-section"> <h2 class="project-section-title">Personal Project</h2> <summary> <span class="project-summary-title">Conceptual Framework</span> <span class="project-progress"> <span class="project-progress-label">Progress:</span> <span class="project-progress-track"> <span class="project-progress-fill" style="--progress: 30%;"></span> </span> <span class="project-progress-value">30%</span> </span> </summary> <div class="project-card-content"> <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2> <p> This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding. </p> <ul class="project-list"> <li>NRF2-KEAP1 as a redox signal-resolution circuit (DOI: 10.1016/j.pbiomolbio.2026.03.005)</li> <li>CYP1A1 as an environmental sensing feedback circuit (DOI: 10.1007/s00204-026-04384-1)</li> <li>More coming soon!</li> </ul> </div> &lt;/details&gt; </section> <section class="project-section"> <h2 class="project-section-title">Miscellaneous</h2> <details class="project-card"> <summary>Independent Writing</summary> <div class="project-card-content"> <h2>Miscellaneous Sole-Author Works</h2> <p> This section collects articles that do not belong directly to the PhD thesis project or the cellular signaling framework. </p> <ul class="project-list"> <li>Adipose-driven erectile dysfunction (DOI: 10.1111/dom.70818)</li> </ul> </div> </details> </section> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
