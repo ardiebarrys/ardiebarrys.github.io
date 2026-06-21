@@ -65,6 +65,14 @@ nav_order: 3
     list-style-position: inside;
   }
 
+  .project-card summary:hover {
+    background: rgba(183, 0, 183, 0.06);
+  }
+
+  .project-card[open] summary {
+    border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+  }
+
   .project-summary-title {
     color: var(--global-theme-color) !important;
     font-weight: 700;
@@ -92,6 +100,7 @@ nav_order: 3
   }
 
   .project-progress-fill {
+    display: block;
     width: var(--progress);
     height: 100%;
     border-radius: 999px;
@@ -153,6 +162,7 @@ nav_order: 3
 
     .project-progress {
       width: 100%;
+      min-width: 0;
     }
 
     .project-progress-track {
@@ -203,6 +213,7 @@ nav_order: 3
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
 
+    <details class="project-card">
       <summary>
         <span class="project-summary-title">Conceptual Framework</span>
         <span class="project-progress">
