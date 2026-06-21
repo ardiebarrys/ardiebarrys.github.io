@@ -97,29 +97,33 @@ nav_order: 3
 </style>
 
 <div class="projects-page">
-  <section class="project-section">
-    <h2 class="project-section-title">PhD Thesis Project</h2>
+<section class="project-section">
+  <h2 class="project-section-title">PhD Thesis Project</h2>
 
-    <details class="project-card">
-      <summary>Doctoral Research</summary>
+  <details class="project-card">
+    <summary>Doctoral Research</summary>
 
-      <div class="project-card-content">
-        <h2>E-cigarette and Sexual Function</h2>
+    <div class="project-card-content">
+      <h2>E-cigarette and Sexual Function</h2>
 
-        <p>
-          This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
-        </p>
+      <p>
+        This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
+      </p>
 
-        <ul class="project-list">
-          <li>E-cigarettes and erectile dysfunction</li>
-          <li>Leydig cell steroidogenic pathways</li>
-          <li>MicroRNA-mediated testosterone signaling</li>
-          <li>Mitochondrial dysfunction</li>
-          <li>Secondhand aerosol exposure and lung health</li>
-        </ul>
-      </div>
-    </details>
-  </section>
+      <p>
+        This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022).
+      </p>
+
+      <ul class="project-list">
+        <li>E-cigarettes and erectile dysfunction</li>
+        <li>Leydig cell steroidogenic pathways</li>
+        <li>MicroRNA-mediated testosterone signaling</li>
+        <li>Mitochondrial dysfunction</li>
+        <li>Secondhand aerosol exposure and lung health</li>
+      </ul>
+    </div>
+  </details>
+</section>
 
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
