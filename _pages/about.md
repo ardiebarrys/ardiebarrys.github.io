@@ -326,6 +326,15 @@ social: true
       max-width: 100%;
     }
 
+    .profile img {
+      max-width: 180px !important;
+      width: 60% !important;
+      height: auto !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: block !important;
+    }
+
     .bio-text a.about-coffee-button {
       margin-top: 0.5rem;
       margin-left: 0;
