@@ -51,6 +51,10 @@ nav_order: 3
   }
 
   .project-card summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 1.15rem 1.25rem;
     color: var(--global-theme-color);
     font-size: 0.85rem;
@@ -67,6 +71,47 @@ nav_order: 3
 
   .project-card[open] summary {
     border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+  }
+
+  .project-progress {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 220px;
+  }
+
+  .project-progress-track {
+    width: 150px;
+    height: 9px;
+    border-radius: 999px;
+    background: rgba(183, 0, 183, 0.14);
+    overflow: hidden;
+  }
+
+  .project-progress-fill {
+    width: 0;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #6b1aa8, #b700b7, #e783e7);
+    animation: fillProgress 1.4s ease forwards;
+  }
+
+  .project-progress-value {
+    min-width: 38px;
+    color: #8a008a;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  @keyframes fillProgress {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: var(--progress);
+    }
   }
 
   .project-card-content {
@@ -94,43 +139,74 @@ nav_order: 3
     margin-bottom: 0.35rem;
     line-height: 1.45;
   }
+
+  @media (max-width: 768px) {
+    .project-card summary {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .project-progress {
+      width: 100%;
+    }
+
+    .project-progress-track {
+      width: 100%;
+    }
+  }
 </style>
 
 <div class="projects-page">
-<section class="project-section">
-  <h2 class="project-section-title">PhD Thesis Project</h2>
+  <section class="project-section">
+    <h2 class="project-section-title">PhD Thesis Project</h2>
 
-  <details class="project-card">
-    <summary>Doctoral Research</summary>
+    <details class="project-card">
+      <summary>
+        <span>Doctoral Research</span>
+        <span class="project-progress">
+          <span class="project-progress-track">
+            <span class="project-progress-fill" style="--progress: 90%;"></span>
+          </span>
+          <span class="project-progress-value">90%</span>
+        </span>
+      </summary>
 
-    <div class="project-card-content">
-      <h2>E-cigarette and Sexual Function</h2>
+      <div class="project-card-content">
+        <h2>E-cigarette and Sexual Function</h2>
 
-      <p>
-        This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
-      </p>
+        <p>
+          This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
+        </p>
 
-      <p>
-        This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022).
-      </p>
+        <p>
+          This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022).
+        </p>
 
-      <ul class="project-list">
-        <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li>
-        <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li>
-        <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
-        <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
-        <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
-        <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li>
-      </ul>
-    </div>
-  </details>
-</section>
+        <ul class="project-list">
+          <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li>
+          <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li>
+          <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
+          <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
+          <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
+          <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li>
+        </ul>
+      </div>
+    </details>
+  </section>
 
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
 
     <details class="project-card">
-      <summary>Conceptual Framework</summary>
+      <summary>
+        <span>Conceptual Framework</span>
+        <span class="project-progress">
+          <span class="project-progress-track">
+            <span class="project-progress-fill" style="--progress: 30%;"></span>
+          </span>
+          <span class="project-progress-value">30%</span>
+        </span>
+      </summary>
 
       <div class="project-card-content">
         <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2>
