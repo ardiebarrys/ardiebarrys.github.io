@@ -36,10 +36,14 @@ nav_order: 5
 
   .contact-top-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(360px, 0.85fr);
+    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
     gap: 1.8rem;
     width: 100%;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .contact-top-grid .contact-card {
+    height: 100%;
   }
 
   .contact-card {
@@ -220,7 +224,7 @@ nav_order: 5
         </p>
 
         <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
-          <span class="coffee-icon">☕</span>
+          <span class="coffee-icon">&#9749;</span>
           <span>Support via Buy Me a Coffee</span>
         </a>
 
