@@ -34,6 +34,13 @@ nav_order: 5
     margin-top: 1.5rem;
   }
 
+  .contact-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+    width: 100%;
+  }
+
   .contact-card {
     width: 100%;
     padding: 1.8rem 2rem;
@@ -58,7 +65,7 @@ nav_order: 5
 
   .contact-map {
     width: 100%;
-    height: 420px;
+    height: 360px;
     border: 0;
     border-radius: 10px;
   }
@@ -69,11 +76,13 @@ nav_order: 5
   }
 
   .support-card {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .support-card p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     color: #444444;
     line-height: 1.55;
   }
@@ -82,24 +91,43 @@ nav_order: 5
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.65rem;
-    padding: 0.9rem 1.35rem;
+    gap: 0.6rem;
+    width: fit-content;
+    margin: 0.3rem 0 1rem;
+    padding: 0.78rem 1.15rem;
+    border: 1px solid rgba(110, 49, 130, 0.28);
     border-radius: 999px;
-    background: linear-gradient(135deg, #7b1fa2, #b700b7, #e783e7);
+    background: linear-gradient(135deg, #5b416b, #7a4b8d, #9d79aa);
     color: #ffffff !important;
     font-weight: 700;
     text-decoration: none !important;
-    box-shadow: 0 10px 24px rgba(183, 0, 183, 0.22);
+    box-shadow: 0 8px 18px rgba(91, 65, 107, 0.18);
   }
 
   .coffee-button:hover {
     color: #ffffff !important;
-    opacity: 0.92;
+    opacity: 0.94;
   }
 
   .coffee-icon {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1;
+  }
+
+  .support-helps {
+    margin-top: 0.4rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(183, 0, 183, 0.16);
+    color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .support-note {
+    margin-top: 0.85rem;
+    color: #666666;
+    font-size: 0.88rem;
+    line-height: 1.5;
   }
 
   .contact-form label {
@@ -142,6 +170,12 @@ nav_order: 5
     opacity: 0.9;
   }
 
+  @media (max-width: 900px) {
+    .contact-top-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 768px) {
     .contact-card {
       padding: 1.25rem;
@@ -155,37 +189,48 @@ nav_order: 5
 
 <div class="contact-page">
   <div class="contact-layout">
-    <section class="contact-card">
-      <h2>Address</h2>
+    <div class="contact-top-grid">
+      <section class="contact-card">
+        <h2>Address</h2>
 
-      <div class="contact-address">
-        <strong>Department of Pharmaceutical Life Sciences</strong><br>
-        Faculty of Pharmacy<br>
-        University of Malaya<br>
-        50603 Kuala Lumpur, Malaysia
-      </div>
+        <div class="contact-address">
+          <strong>Department of Pharmaceutical Life Sciences</strong><br>
+          Faculty of Pharmacy<br>
+          University of Malaya<br>
+          50603 Kuala Lumpur, Malaysia
+        </div>
 
-      <iframe
-        class="contact-map"
-        src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
+        <iframe
+          class="contact-map"
+          src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </section>
 
-    <section class="contact-card support-card">
-      <h2>Support Independent Work</h2>
+      <section class="contact-card support-card">
+        <h2>Support Independent Academic Work</h2>
 
-      <p>
-        If you find my independent research writing useful, you can support its continuation through Buy Me a Coffee.
-      </p>
+        <p>
+          I write independent academic summaries, research commentary, and educational resources on toxicology, reproductive health, and biomedical science. Optional support helps maintain this website and support open science communication.
+        </p>
 
-      <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
-        <span class="coffee-icon">☕</span>
-        <span>Buy Me a Coffee</span>
-      </a>
-    </section>
+        <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
+          <span class="coffee-icon">☕</span>
+          <span>Support via Buy Me a Coffee</span>
+        </a>
+
+        <div class="support-helps">
+          <strong>Support helps with:</strong><br>
+          Website hosting | Open educational resources | Research communication
+        </div>
+
+        <div class="support-note">
+          Contributions are voluntary and personal. They do not influence research findings, academic judgment, supervision, peer review, or institutional decisions. This page does not represent institutional fundraising unless stated otherwise.
+        </div>
+      </section>
+    </div>
 
     <section class="contact-card">
       <h2>Send a Message</h2>
