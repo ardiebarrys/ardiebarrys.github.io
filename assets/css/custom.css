@@ -1,3 +1,9 @@
+/* Back to top button */
+
+.vanilla-back-to-top {
+  bottom: 5.5rem !important;
+}
+
 /* Global typography */
 body {
   background: #ffffff !important;
