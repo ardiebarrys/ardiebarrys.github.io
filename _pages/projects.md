@@ -120,6 +120,7 @@ nav_order: 3
         <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
         <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
         <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
+        <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li>
       </ul>
     </div>
   </details>
@@ -157,13 +158,11 @@ nav_order: 3
         <h2>Miscellaneous Sole-Author Works</h2>
 
         <p>
-          This section collects sole-author papers and scholarly writing that do not belong directly to the PhD thesis project or the cellular signaling framework.
+          This section collects articles that do not belong directly to the PhD thesis project or the cellular signaling framework.
         </p>
 
         <ul class="project-list">
-          <li>Independent review articles</li>
-          <li>Conceptual manuscripts</li>
-          <li>Topic-specific scholarly writing</li>
+          <li>Adipose-driven erectile dysfunction (DOI: 10.1111/dom.70818)</li>
         </ul>
       </div>
     </details>
