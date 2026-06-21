@@ -361,7 +361,7 @@ His research has addressed mechanisms including mitochondrial dysfunction, impai
 In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
 
 <p class="about-support-note">
-  If you find Ardie's independent academic writing and research commentary useful, you may support its continuation through
+  If you find Ardie’s independent academic writing useful, you may support his personal scholarly projects through
   <a class="about-coffee-button" href="/contact/">
     <span class="about-coffee-icon">&#9749;</span>
     <span>Buy Me a Coffee</span>
