@@ -56,7 +56,7 @@ nav_order: 3
     justify-content: space-between;
     gap: 1rem;
     padding: 1.15rem 1.25rem;
-    color: var(--global-theme-color);
+    color: var(--global-theme-color) !important;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -65,19 +65,22 @@ nav_order: 3
     list-style-position: inside;
   }
 
-  .project-card summary:hover {
-    background: rgba(183, 0, 183, 0.06);
-  }
-
-  .project-card[open] summary {
-    border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+  .project-summary-title {
+    color: var(--global-theme-color) !important;
+    font-weight: 700;
   }
 
   .project-progress {
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
-    min-width: 220px;
+    min-width: 300px;
+  }
+
+  .project-progress-label {
+    color: var(--global-theme-color);
+    font-size: 0.78rem;
+    font-weight: 700;
   }
 
   .project-progress-track {
@@ -89,10 +92,12 @@ nav_order: 3
   }
 
   .project-progress-fill {
-    width: 0;
+    width: var(--progress);
     height: 100%;
     border-radius: 999px;
     background: linear-gradient(90deg, #6b1aa8, #b700b7, #e783e7);
+    transform: scaleX(0);
+    transform-origin: left;
     animation: fillProgress 1.4s ease forwards;
   }
 
@@ -106,11 +111,11 @@ nav_order: 3
 
   @keyframes fillProgress {
     from {
-      width: 0;
+      transform: scaleX(0);
     }
 
     to {
-      width: var(--progress);
+      transform: scaleX(1);
     }
   }
 
@@ -162,8 +167,9 @@ nav_order: 3
 
     <details class="project-card">
       <summary>
-        <span>Doctoral Research</span>
+        <span class="project-summary-title">Doctoral Research</span>
         <span class="project-progress">
+          <span class="project-progress-label">Progress:</span>
           <span class="project-progress-track">
             <span class="project-progress-fill" style="--progress: 90%;"></span>
           </span>
@@ -197,10 +203,10 @@ nav_order: 3
   <section class="project-section">
     <h2 class="project-section-title">Personal Project</h2>
 
-    <details class="project-card">
       <summary>
-        <span>Conceptual Framework</span>
+        <span class="project-summary-title">Conceptual Framework</span>
         <span class="project-progress">
+          <span class="project-progress-label">Progress:</span>
           <span class="project-progress-track">
             <span class="project-progress-fill" style="--progress: 30%;"></span>
           </span>
