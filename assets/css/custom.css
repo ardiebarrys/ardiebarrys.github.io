@@ -1,7 +1,15 @@
 /* Back to top button */
 
 .vanilla-back-to-top {
-  bottom: 5.5rem !important;
+  bottom: 6.5rem !important;
+  z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+  
+  .vanilla-back-to-top {
+    bottom: 6.8rem !important;
+  }
 }
 
 /* Global typography */
