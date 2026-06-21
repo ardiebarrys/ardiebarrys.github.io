@@ -230,7 +230,7 @@ nav_order: 5
 
         <div class="support-helps">
           <strong>Support helps with:</strong><br>
-          Website hosting | Open educational resources | Research communication
+          Website maintenance | Open educational resources | Research communication
         </div>
 
         <div class="support-note">
