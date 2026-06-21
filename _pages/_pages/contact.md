@@ -91,6 +91,9 @@ nav_order: 5
     margin-bottom: 1rem;
     color: #444444;
     line-height: 1.55;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
   }
 
   .coffee-button {
@@ -135,6 +138,9 @@ nav_order: 5
     color: #666666;
     font-size: 0.88rem;
     line-height: 1.5;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
   }
 
   .contact-form label {
@@ -220,7 +226,7 @@ nav_order: 5
         <h2>Support Independent Academic Work</h2>
 
         <p>
-          I write independent academic summaries, research commentary, and educational resources on toxicology, reproductive health, and biomedical science. Optional support helps maintain this website and support open science communication.
+          Apart from my doctoral thesis and institutional research, I also write independent academic summaries, research commentary, and scholarly resources on toxicology, reproductive health, and biomedical science. If you find these personal academic projects useful, you may support their continuation through the “Buy Me a Coffee” button.
         </p>
 
         <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
