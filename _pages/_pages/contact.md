@@ -68,6 +68,40 @@ nav_order: 5
     color: #666666;
   }
 
+  .support-card {
+    text-align: center;
+  }
+
+  .support-card p {
+    margin-bottom: 1.2rem;
+    color: #444444;
+    line-height: 1.55;
+  }
+
+  .coffee-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.9rem 1.35rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7b1fa2, #b700b7, #e783e7);
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 10px 24px rgba(183, 0, 183, 0.22);
+  }
+
+  .coffee-button:hover {
+    color: #ffffff !important;
+    opacity: 0.92;
+  }
+
+  .coffee-icon {
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
   .contact-form label {
     display: block;
     margin-top: 1rem;
@@ -138,6 +172,19 @@ nav_order: 5
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
+    </section>
+
+    <section class="contact-card support-card">
+      <h2>Support Independent Work</h2>
+
+      <p>
+        If you find my independent research writing useful, you can support its continuation through Buy Me a Coffee.
+      </p>
+
+      <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
+        <span class="coffee-icon">☕</span>
+        <span>Buy Me a Coffee</span>
+      </a>
     </section>
 
     <section class="contact-card">
