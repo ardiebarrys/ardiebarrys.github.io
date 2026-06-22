@@ -354,11 +354,11 @@ social: true
 
 **Ardie Barry Sailis** is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.
 
-His doctoral research focuses on the toxicological effects of e-cigarette exposure, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.
+His doctoral research focuses on the <strong>toxicological effects of e-cigarette exposure</strong>, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.
 
 His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.
 
-In parallel, he is developing a conceptual research framework titled _Cellular Signaling as Dynamic Regulatory Circuits_. This work applies control theory principles to reinterpret canonical signaling pathways as dynamic regulatory systems, with attention to temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
+In parallel, he develops the <em>Cellular Signaling as Dynamic Regulatory Circuits</em> framework, through which he introduced and formalized the <strong>redoxostat</strong> concept in NRF2–KEAP1 biology, reframing canonical signaling pathways as dynamic control systems governed by temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
 
 <p class="about-support-note">
   Some works on this website are independent scholarly projects outside Ardie’s doctoral thesis and institutional research. If you find them useful, you may support his work through
