@@ -195,7 +195,7 @@ nav_order: 3
         </p>
 
         <p>
-          This work was supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022).
+          Some of these works were supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022). Refer to the Acknowledgement section on the publication page.
         </p>
 
         <ul class="project-list">
