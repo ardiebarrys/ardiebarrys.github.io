@@ -1,1 +1,59 @@
+{% include metadata.liquid %}
 
+{% if page.pretty_table %}
+  {% include pretty_table.liquid %}
+{% endif %}
+
+{% if page.toc and page.toc.sidebar %}
+  {% include toc.liquid %}
+{% endif %}
+
+{% if page.pseudocode %}
+  {% include pseudocode.liquid %}
+{% endif %}
+
+<!-- Custom favicon / site icon -->
+<link rel="icon" href="{{ '/assets/img/abs.png' | relative_url }}" type="image/png">
+<link rel="shortcut icon" href="{{ '/assets/img/abs.png' | relative_url }}" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/img/abs.png' | relative_url }}">
+
+{% if site.enable_darkmode %}
+  {% include darkmode.liquid %}
+{% endif %}
+
+{% if page.map %}
+  {% include map.liquid %}
+{% endif %}
+
+{% if page.code_diff %}
+  {% include code_diff.liquid %}
+{% endif %}
+
+{% if page.images %}
+  {% if page.images.compare %}
+    {% include img/compare.liquid %}
+  {% endif %}
+  {% if page.images.lightbox2 %}
+    {% include img/lightbox2.liquid %}
+  {% endif %}
+  {% if page.images.photoswipe %}
+    {% include img/photoswipe.liquid %}
+  {% endif %}
+  {% if page.images.slider %}
+    {% include img/slider.liquid %}
+  {% endif %}
+  {% if page.images.spotlight %}
+    {% include img/spotlight.liquid %}
+  {% endif %}
+  {% if page.images.venobox %}
+    {% include img/venobox.liquid %}
+  {% endif %}
+{% endif %}
+
+{% if page.tikzjax %}
+  {% include tikzjax.liquid %}
+{% endif %}
+
+{% if site.enable_cookie_consent %}
+  {% include cookie_consent.liquid %}
+{% endif %}
