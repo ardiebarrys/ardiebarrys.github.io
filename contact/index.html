@@ -214,12 +214,8 @@
     color: #ffffff !important;
     border-radius: 999px !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
-    opacity: 1 !important;
+    opacity: 1;
     transition: opacity 0.45s ease !important;
-  }
-
-  .back-to-top-faded {
-    opacity: 0.18 !important;
   }
 
   #back-to-top *,
@@ -251,7 +247,9 @@
     }
   }
 </style> <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  (function () {
+    let fadeTimer;
+
     const selectors = [
       "#back-to-top",
       ".back-to-top",
@@ -259,36 +257,55 @@
       'button[aria-label="Back to top"]',
       'button[title="Back to top"]',
       'a[aria-label="Back to top"]',
-      'a[title="Back to top"]'
+      'a[title="Back to top"]',
+      'div[style*="position: fixed"][style*="bottom"]',
+      'button[style*="position: fixed"][style*="bottom"]',
+      'a[style*="position: fixed"][style*="bottom"]'
     ];
 
-    let fadeTimer;
-
     function getButtons() {
-      return document.querySelectorAll(selectors.join(","));
+      return Array.from(document.querySelectorAll(selectors.join(",")));
     }
 
-    function showButton() {
+    function showThenFade() {
       getButtons().forEach(function (button) {
-        button.classList.remove("back-to-top-faded");
+        button.style.opacity = "1";
+        button.style.transition = "opacity 0.45s ease";
       });
 
       clearTimeout(fadeTimer);
 
       fadeTimer = setTimeout(function () {
         getButtons().forEach(function (button) {
-          button.classList.add("back-to-top-faded");
+          button.style.opacity = "0.18";
         });
       }, 3000);
     }
 
-    showButton();
+    function start() {
+      showThenFade();
 
-    window.addEventListener("scroll", showButton, { passive: true });
-    window.addEventListener("mousemove", showButton, { passive: true });
-    window.addEventListener("touchstart", showButton, { passive: true });
-    window.addEventListener("keydown", showButton);
-  });
+      window.addEventListener("scroll", showThenFade, { passive: true });
+      window.addEventListener("mousemove", showThenFade, { passive: true });
+      window.addEventListener("touchstart", showThenFade, { passive: true });
+      window.addEventListener("keydown", showThenFade);
+
+      const observer = new MutationObserver(showThenFade);
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ["style", "class"]
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start);
+    } else {
+      start();
+    }
+  })();
 </script> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
