@@ -1,3 +1,216 @@
+---
+layout: page
+permalink: /publications/
+title: Publications
+description: All journal articles and literature reviews
+nav: true
+nav_order: 2
+---
+
+<style>
+  .post,
+  .page,
+  .container,
+  main {
+    max-width: 1280px !important;
+  }
+
+  .navbar .nav-link.active,
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    color: var(--global-theme-color) !important;
+    font-weight: 700 !important;
+  }
+
+  .manual-publications {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .manual-pub-year {
+    margin: 2rem 0 1rem;
+    color: #0b174f !important;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  .pub-year-group {
+    margin: 2rem 0 1.4rem;
+    border: 1px solid rgba(183, 0, 183, 0.2);
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    overflow: hidden;
+  }
+
+  .pub-year-group summary {
+    padding: 0.9rem 1.1rem;
+    color: var(--global-theme-color);
+    font-size: 1.35rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style-position: inside;
+  }
+
+  .pub-year-group summary:hover {
+    background: rgba(183, 0, 183, 0.06);
+  }
+
+  .pub-year-content {
+    padding: 0 1.1rem 0.4rem;
+    background: #ffffff;
+  }
+
+  .pub-year-content .manual-pub-item:last-child {
+    border-bottom: 0 !important;
+  }
+
+  .manual-pub-item {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 300px !important;
+    gap: 2rem !important;
+    align-items: start !important;
+    width: 100% !important;
+    padding: 1.5rem 0 !important;
+    border-bottom: 1px solid #cccccc !important;
+  }
+
+  .manual-pub-info {
+    min-width: 0;
+  }
+
+  .manual-pub-title {
+    margin: 0 0 0.5rem !important;
+    color: #111111 !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+
+  .manual-pub-authors,
+  .manual-pub-journal,
+  .manual-pub-doi {
+    margin: 0 0 0.4rem !important;
+    color: #111111 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .manual-pub-journal {
+    font-style: italic !important;
+  }
+
+  .manual-pub-doi a {
+    color: #2447a8 !important;
+  }
+
+  .manual-pub-abstract {
+    margin-top: 0.85rem !important;
+    color: #111111 !important;
+  }
+
+  .manual-pub-abstract p {
+    margin: 0 0 0.55rem !important;
+    font-size: 0.98rem !important;
+    line-height: 1.45 !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+  }
+
+  .manual-pub-abstract strong {
+    color: #0b174f !important;
+  }
+
+  .manual-pub-metrics {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    padding: 0.85rem !important;
+    border: 1px solid #dddddd !important;
+    border-radius: 10px !important;
+    background: #ffffff !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+    box-sizing: border-box !important;
+  }
+
+  .manual-pub-metrics::before {
+    display: block;
+    margin-bottom: 0.65rem;
+    color: #0b174f;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+    content: "Metrics";
+  }
+
+  .plumx-top {
+    width: 100% !important;
+    margin: 0 0 0.85rem !important;
+    padding-bottom: 0.85rem !important;
+    border-bottom: 1px solid #eeeeee !important;
+    text-align: center !important;
+  }
+
+  .plumx-frame {
+    display: flex !important;
+    width: 260px !important;
+    min-height: 230px !important;
+    margin: 0 auto !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  .plumx-frame .plumx-summary,
+  .plumx-frame iframe {
+    width: 260px !important;
+    min-width: 260px !important;
+    max-width: 260px !important;
+  }
+
+  .metrics-box {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .metric-block {
+    display: flex !important;
+    min-height: 94px !important;
+    padding: 0.65rem !important;
+    border: 1px solid #eeeeee !important;
+    border-radius: 8px !important;
+    background: #fafafa !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: visible !important;
+    text-align: center !important;
+  }
+
+  .altmetric-embed,
+  .__dimensions_badge_embed__ {
+    display: inline-block !important;
+    max-width: 100% !important;
+  }
+
+  @media (max-width: 900px) {
+    .manual-pub-item {
+      grid-template-columns: 1fr !important;
+    }
+
+    .manual-pub-metrics {
+      width: 300px !important;
+      min-width: 300px !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
+
+{% include journal-metrics-summary.html %}
+
 <div class="manual-publications">
   <details class="pub-year-group" open>
     <summary>2026</summary>
