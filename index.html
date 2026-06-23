@@ -300,13 +300,19 @@
   a[style*="position: fixed"][style*="bottom"] {
     width: 4rem !important;
     height: 4rem !important;
-    bottom: 5.2rem !important;
+    bottom: 4.7rem !important;
     right: 1.6rem !important;
     z-index: 99999 !important;
     background: #111111 !important;
     color: #ffffff !important;
     border-radius: 999px !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
+    opacity: 1 !important;
+    transition: opacity 0.45s ease !important;
+  }
+
+  .back-to-top-faded {
+    opacity: 0.18 !important;
   }
 
   #back-to-top *,
@@ -333,11 +339,50 @@
     a[style*="position: fixed"][style*="bottom"] {
       width: 3.6rem !important;
       height: 3.6rem !important;
-      bottom: 5.5rem !important;
+      bottom: 4.9rem !important;
       right: 1rem !important;
     }
   }
-</style> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
+</style> <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const selectors = [
+      "#back-to-top",
+      ".back-to-top",
+      ".vanilla-back-to-top",
+      'button[aria-label="Back to top"]',
+      'button[title="Back to top"]',
+      'a[aria-label="Back to top"]',
+      'a[title="Back to top"]'
+    ];
+
+    let fadeTimer;
+
+    function getButtons() {
+      return document.querySelectorAll(selectors.join(","));
+    }
+
+    function showButton() {
+      getButtons().forEach(function (button) {
+        button.classList.remove("back-to-top-faded");
+      });
+
+      clearTimeout(fadeTimer);
+
+      fadeTimer = setTimeout(function () {
+        getButtons().forEach(function (button) {
+          button.classList.add("back-to-top-faded");
+        });
+      }, 3000);
+    }
+
+    showButton();
+
+    window.addEventListener("scroll", showButton, { passive: true });
+    window.addEventListener("mousemove", showButton, { passive: true });
+    window.addEventListener("touchstart", showButton, { passive: true });
+    window.addEventListener("keydown", showButton);
+  });
+</script> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
