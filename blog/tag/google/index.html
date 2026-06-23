@@ -22,8 +22,27 @@
     color: #ffffff !important;
     border-radius: 999px !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
-    opacity: 1;
-    transition: opacity 0.45s ease !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(0.4rem) !important;
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease !important;
+  }
+
+  #back-to-top.is-visible,
+  .back-to-top.is-visible,
+  .vanilla-back-to-top.is-visible,
+  button[aria-label="Back to top"].is-visible,
+  button[title="Back to top"].is-visible,
+  a[aria-label="Back to top"].is-visible,
+  a[title="Back to top"].is-visible,
+  div[style*="position: fixed"][style*="bottom"].is-visible,
+  button[style*="position: fixed"][style*="bottom"].is-visible,
+  a[style*="position: fixed"][style*="bottom"].is-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
   }
 
   #back-to-top *,
@@ -31,6 +50,19 @@
   .vanilla-back-to-top * {
     color: #ffffff !important;
     fill: #ffffff !important;
+  }
+
+  footer,
+  footer.fixed-bottom,
+  .fixed-bottom {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    font-size: 0.85rem !important;
+  }
+
+  footer *,
+  .fixed-bottom * {
+    color: #ffffff !important;
   }
 
   body {
@@ -50,15 +82,16 @@
     a[style*="position: fixed"][style*="bottom"] {
       width: 3.6rem !important;
       height: 3.6rem !important;
-      bottom: 4.9rem !important;
+      bottom: 4.7rem !important;
       right: 1rem !important;
     }
   }
 </style> <script>
   (function () {
-    let fadeTimer;
+    var fadeTimer;
+    var scrollThreshold = 180;
 
-    const selectors = [
+    var selectors = [
       "#back-to-top",
       ".back-to-top",
       ".vanilla-back-to-top",
@@ -72,39 +105,49 @@
     ];
 
     function getButtons() {
-      return Array.from(document.querySelectorAll(selectors.join(",")));
+      return Array.prototype.slice.call(
+        document.querySelectorAll(selectors.join(","))
+      );
     }
 
-    function showThenFade() {
+    function hideButtons() {
       getButtons().forEach(function (button) {
-        button.style.opacity = "1";
-        button.style.transition = "opacity 0.45s ease";
+        button.classList.remove("is-visible");
+      });
+    }
+
+    function showButtons() {
+      if (window.scrollY <= scrollThreshold) {
+        hideButtons();
+        return;
+      }
+
+      getButtons().forEach(function (button) {
+        button.classList.add("is-visible");
       });
 
       clearTimeout(fadeTimer);
 
       fadeTimer = setTimeout(function () {
-        getButtons().forEach(function (button) {
-          button.style.opacity = "0.18";
-        });
+        hideButtons();
       }, 3000);
     }
 
     function start() {
-      showThenFade();
+      hideButtons();
 
-      window.addEventListener("scroll", showThenFade, { passive: true });
-      window.addEventListener("mousemove", showThenFade, { passive: true });
-      window.addEventListener("touchstart", showThenFade, { passive: true });
-      window.addEventListener("keydown", showThenFade);
+      window.addEventListener("scroll", showButtons, { passive: true });
+      window.addEventListener("mousemove", showButtons, { passive: true });
+      window.addEventListener("touchstart", showButtons, { passive: true });
+      window.addEventListener("keydown", showButtons);
 
-      const observer = new MutationObserver(showThenFade);
+      var observer = new MutationObserver(function () {
+        showButtons();
+      });
 
       observer.observe(document.body, {
         childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ["style", "class"]
+        subtree: true
       });
     }
 
