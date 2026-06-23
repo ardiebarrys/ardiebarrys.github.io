@@ -178,6 +178,8 @@ nav_order: 2
   }
 </style>
 
+{% include journal-metrics-summary.html %}
+
 <div class="manual-publications">
   <div class="manual-pub-year">2026</div>
 
