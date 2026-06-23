@@ -13,6 +13,7 @@ description: >
   University of Malaya. Research interests include e-cigarette toxicology, mitochondrial dysfunction,
   reproductive health, endocrine disruption, erectile dysfunction, and molecular stress signaling.
 footer_text: ""
+custom_head: custom_head.liquid
 keywords: e-cigarette toxicology, mitochondrial dysfunction, reproductive health, erectile dysfunction, endocrine disruption, redox signaling, toxicology
 lang: en
 icon: abs.png
