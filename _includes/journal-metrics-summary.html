@@ -324,6 +324,7 @@
     <table class="journal-metrics-table">
       <thead>
         <tr>
+          <th class="number-cell">No.</th>
           <th>Journal</th>
           <th class="number-cell">
             <button class="table-sort-button" data-sort="papers">
@@ -377,6 +378,7 @@
         .map(function (item, index) {
           return `
             <tr>
+              <td class="number-cell">${index + 1}</td>
               <td>${item.journal}</td>
               <td class="number-cell">${item.papers}</td>
               <td>${item.category}</td>
