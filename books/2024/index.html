@@ -116,7 +116,7 @@
       });
     }
 
-    function showButtons() {
+    function showButtonsWhileScrolling() {
       if (window.scrollY <= scrollThreshold) {
         hideButtons();
         return;
@@ -136,13 +136,12 @@
     function start() {
       hideButtons();
 
-      window.addEventListener("scroll", showButtons, { passive: true });
-      window.addEventListener("mousemove", showButtons, { passive: true });
-      window.addEventListener("touchstart", showButtons, { passive: true });
-      window.addEventListener("keydown", showButtons);
+      window.addEventListener("scroll", showButtonsWhileScrolling, {
+        passive: true
+      });
 
       var observer = new MutationObserver(function () {
-        showButtons();
+        hideButtons();
       });
 
       observer.observe(document.body, {
