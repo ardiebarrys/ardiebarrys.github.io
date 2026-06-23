@@ -1,28 +1,49 @@
-/* Keep back-to-top button above the fixed footer */
+/* Keep fixed footer from covering page content */
+html,
+body {
+  padding-bottom: 7rem !important;
+}
+
+/* Move every possible back-to-top button above the footer */
 #back-to-top,
 .back-to-top,
 .vanilla-back-to-top,
 button[aria-label="Back to top"],
 button[title="Back to top"],
 a[aria-label="Back to top"],
-a[title="Back to top"] {
-  bottom: 6.5rem !important;
-  z-index: 9999 !important;
+a[title="Back to top"],
+div[style*="position: fixed"][style*="bottom"],
+button[style*="position: fixed"][style*="bottom"],
+a[style*="position: fixed"][style*="bottom"] {
+  bottom: 7rem !important;
+  right: 1.5rem !important;
+  z-index: 99999 !important;
 }
 
-/* Add space so page content is not hidden behind the fixed footer */
-body {
-  padding-bottom: 5rem !important;
+/* If the theme uses an inner icon element */
+#back-to-top *,
+.back-to-top *,
+.vanilla-back-to-top * {
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
+  html,
+  body {
+    padding-bottom: 8rem !important;
+  }
+
   #back-to-top,
   .back-to-top,
   .vanilla-back-to-top,
   button[aria-label="Back to top"],
   button[title="Back to top"],
   a[aria-label="Back to top"],
-  a[title="Back to top"] {
-    bottom: 6.8rem !important;
+  a[title="Back to top"],
+  div[style*="position: fixed"][style*="bottom"],
+  button[style*="position: fixed"][style*="bottom"],
+  a[style*="position: fixed"][style*="bottom"] {
+    bottom: 8rem !important;
+    right: 1rem !important;
   }
 }
