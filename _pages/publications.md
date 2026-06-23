@@ -1,0 +1,251 @@
+<div class="manual-publications">
+  <details class="pub-year-group" open>
+    <summary>2026</summary>
+
+    <div class="pub-year-content">
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh</p>
+          <p class="manual-pub-journal">Diabetes, Obesity and Metabolism, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1111/dom.70818">DOI: 10.1111/dom.70818</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract</strong></p>
+            <p><strong>Background.</strong> Obesity and erectile dysfunction (ED) are increasingly co-prevalent, yet adipose tissue is often viewed as a secondary contributor rather than a primary driver of erectile impairment.</p>
+            <p><strong>Objective.</strong> To evaluate an adipose-centric framework in which depot-specific adipose dysfunction regulates vascular, neuroendocrine, and smooth muscle processes essential for erection.</p>
+            <p><strong>Methods.</strong> A narrative synthesis of mechanistic, preclinical, and clinical studies was conducted, focusing on inflammation, cellular senescence, extracellular vesicle signaling, ferroptosis, mitochondrial dysfunction, and glycocalyx injury across visceral, perivascular, and periprostatic adipose depots.</p>
+            <p><strong>Results.</strong> Dysfunctional adipose tissue remodels systemic and local microenvironments through adipokines, cytokines, extracellular vesicle cargo, and oxidized lipid mediators. These processes reduce nitric oxide bioavailability, increase vascular stiffness, disrupt neuroendocrine signaling, and promote cavernosal fibrosis. Perivascular adipose tissue exerts localized effects on penile hemodynamics. Clinical and genetic evidence supports a causal link between central adiposity and ED, while weight loss and adipose-targeted interventions improve erectile outcomes.</p>
+            <p><strong>Conclusion.</strong> Adipose tissue functions as an upstream regulator of ED pathogenesis. Targeting adipose dysfunction through lifestyle, pharmacological, and emerging strategies such as senolytics and extracellular vesicle modulation may modify disease progression rather than provide symptomatic relief.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1111%2Fdom.70818" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1111/dom.70818"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1111/dom.70818"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
+          <p class="manual-pub-journal">Molecular and Cellular Endocrinology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.mce.2026.112786">DOI: 10.1016/j.mce.2026.112786</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> The rising prevalence of e-cigarette use has raised concerns regarding potential adverse effects on male reproductive and endocrine health, yet its impact on testosterone regulation remains poorly defined. This narrative review critically synthesizes evidence from preclinical in vivo and in vitro models and from human observational studies to evaluate how e-cigarette exposure may influence testosterone homeostasis and hypothalamic-pituitary-gonadal axis function. Across experimental models, e-cigarette aerosols and their constituents consistently impair Leydig cell function and testosterone biosynthesis through convergent mechanisms involving oxidative stress, inflammatory signaling, mitochondrial dysfunction, epigenetic modification, and suppression of key steroidogenic enzymes. Several of these mechanisms overlap with those described for combustible cigarette exposure, whereas others, particularly those related to aerosolized solvents, flavoring agents, and device-derived metals, appear more specific to e-cigarettes. In contrast, the available human evidence is limited to cross-sectional studies and yields inconsistent findings, with the largest population-based study reporting no significant differences in circulating testosterone concentrations between e-cigarette users and non-users. Collectively, the evidence supports biological plausibility for e-cigarette-associated disruption of testosterone steroidogenesis but remains insufficient to establish causality in humans. This review therefore identifies critical methodological gaps and highlights priorities for longitudinal, biomarker-anchored human studies required to determine the clinical relevance and reversibility of e-cigarette-associated endocrine disruption.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.mce.2026.112786" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.mce.2026.112786"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.mce.2026.112786"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
+          <p class="manual-pub-journal">Environmental Toxicology and Pharmacology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.etap.2026.104994">DOI: 10.1016/j.etap.2026.104994</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> Electronic cigarette (e-cigarette) use is increasing worldwide, yet its effects on male endocrine and reproductive health remain poorly defined. Beyond nicotine, e-cigarette aerosols contain aldehydes, metals, and particulate matter capable of perturbing pathways essential for steroidogenesis. MicroRNAs (miRNAs) have emerged as key post-transcriptional regulators of hypothalamic-pituitary-gonadal axis signaling and Leydig cell function, and multiple miRNAs involved in GnRH release, gonadotropin synthesis, and testosterone biosynthesis are responsive to oxidative and metabolic stressors present in e-cigarette aerosols. Although direct evidence in e-cigarette users is limited, findings from studies of nicotine, flavoring agents, and metal exposures support the plausibility that e-cigarettes may alter miRNA expression and impair steroidogenic processes. This hypothesis-generating review synthesizes current evidence linking miRNA dysregulation to testosterone biosynthesis, proposes candidate e-cigarette constituents capable of modulating these miRNAs, and highlights critical gaps requiring experimental validation. Overall, miRNAs may represent integrative mediators and potential biomarkers of e-cigarette-associated testicular toxicity.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.etap.2026.104994" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.etap.2026.104994"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.etap.2026.104994"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Progress in Biophysics and Molecular Biology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">DOI: 10.1016/j.pbiomolbio.2026.03.005</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> The NRF2-KEAP1 pathway is classically described as an inducible antioxidant switch, yet this binary framework fails to explain why transient NRF2 activation is broadly cytoprotective whereas sustained activation drives pathology across cancer, fibrosis, and metabolic disease. In this conceptual synthesis, we integrate evidence from redox biology, proteostasis, autophagy, metabolism, and systems biology to reinterpret NRF2-KEAP1 signaling using concepts from control theory. We propose that the pathway functions as a redoxostat, a signal-resolution control circuit that detects oxidative and electrophilic stress, encodes signal magnitude and duration, executes graded transcriptional responses, and actively promotes its own termination through genetically encoded feedback mechanisms. Central to this architecture is a resolution module involving KEAP1 resynthesis, ubiquitin-proteasome and autophagic turnover, and metabolic restoration of redox-sensitive cysteines. Within this framework, pathological outcomes arise primarily from failure of signal resolution rather than excessive activation, and distinct disease phenotypes can be mapped to specific circuit failure modes including sensor dysfunction, controller impairment, amplifier escape, and feedback disruption. This model reconciles the protective and pathogenic roles of NRF2 under a unified explanatory logic, clarifies why chronic activation is deleterious while transient activation is adaptive, and shifts experimental and therapeutic emphasis from endpoint activation toward restoration of signaling dynamics and resolution.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.pbiomolbio.2026.03.005" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.pbiomolbio.2026.03.005"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.pbiomolbio.2026.03.005"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Hui Yin Yow; Anne Yee; Maw Shin Sim</p>
+          <p class="manual-pub-journal">International Journal of Impotence Research, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1038/s41443-026-01300-0">DOI: 10.1038/s41443-026-01300-0</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> Electronic cigarettes are widely promoted as harm-reduction alternatives to conventional tobacco smoking, yet their potential effects on male sexual health remain incompletely characterised. Erectile dysfunction is a predominantly vascular condition with important neuroendocrine regulation and is highly sensitive to endothelial injury, oxidative stress, hormonal imbalance, and autonomic dysregulation, all of which may plausibly be influenced by electronic cigarette use. Despite increasing global prevalence, direct evidence linking electronic cigarette use to erectile dysfunction remains limited. This narrative review synthesises current experimental, clinical, and epidemiological evidence examining the association between electronic cigarette use and erectile dysfunction, with emphasis on underlying biological mechanisms and key research gaps. Emerging evidence implicates endothelial dysfunction, impaired nitric oxide bioavailability, oxidative stress, inflammation, hormonal disturbance, autonomic imbalance, sleep disturbance, and exposure to aerosolised substances and metals as interconnected pathways that may contribute to erectile dysfunction. Overall, the existing literature remains preliminary and largely hypothesis-generating, with no longitudinal studies capable of establishing causality or dose-response relationships. Well-designed prospective studies are required to clarify the long-term sexual health outcomes associated with electronic cigarette use.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1038%2Fs41443-026-01300-0" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1038/s41443-026-01300-0"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1038/s41443-026-01300-0"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Toxicology Mechanisms and Methods, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1080/15376516.2026.2658739">DOI: 10.1080/15376516.2026.2658739</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> E-cigarettes are promoted as reduced-harm alternatives to combustible tobacco, yet their aerosols contain metals, aldehydes, solvents, and other bioactive chemicals capable of disrupting metabolic regulation. This review synthesizes evidence from cellular, animal, and early human studies on how e-cigarette aerosol exposure affects metabolic homeostasis across mitochondrial, redox, circadian, and neurobehavioral systems. A systems-level model is proposed in which mitochondrial dysfunction, oxidative stress, circadian misalignment, and neurobehavioral alterations form a feed-forward network that drives metabolic inflexibility. Across experimental systems, e-cigarette exposure is associated with mitochondrial impairment, oxidative stress, AMPK suppression, disrupted lipid oxidation, adipose inflammation, and reduced thermogenic capacity, changes consistent with insulin resistance. Evidence also indicates disruption of circadian clock signaling and modulation of reward and appetite circuits, further biasing energy balance. These findings support a model in which e-cigarette aerosols act as multi-system metabolic disruptors affecting both peripheral organs and central regulatory pathways. However, important uncertainties remain regarding dose-response relationships, exposure patterns, device variability, and long-term human risk. This review provides an integrated framework to clarify potential links between e-cigarette aerosol exposure and metabolic dysfunction and highlights priorities for future translational and human research.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1080%2F15376516.2026.2658739" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1080/15376516.2026.2658739"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2658739"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Archives of Toxicology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s00204-026-04384-1">DOI: 10.1007/s00204-026-04384-1</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> Cytochrome P450 1A1 (CYP1A1) is traditionally described as a xenobiotic detoxification enzyme induced by the aryl hydrocarbon receptor (AhR). However, its tight inducible regulation, evolutionary conservation, and prominent expression in immune and barrier tissues where xenobiotic metabolism operates alongside environmental sensing and immune regulation suggest a broader regulatory role. This review proposes that CYP1A1 functions as a metabolic feedback regulator that controls the duration and intensity of AhR signaling. AhR rapidly senses diverse environmental, dietary, microbial, and endogenous ligands, while delayed induction of CYP1A1 limits signaling by metabolizing susceptible ligands and reducing their availability. Through this feedback architecture, ligand metabolism determines signal persistence and shapes downstream transcriptional and immune outcomes. Evidence from evolutionary analyses, signaling kinetics, tissue biology, and immunology indicates that CYP1A1-mediated metabolic feedback calibrates immune differentiation and barrier homeostasis across tissues. Disruption of this feedback, through persistent ligands or impaired CYP1A1 activity, uncouples environmental sensing from signal resolution and promotes sustained AhR activation. This framework reframes the AhR-CYP1A1 axis as a regulatory control circuit rather than a linear detoxification pathway and highlights signal duration and feedback integrity as key determinants of environmental immunotoxicity.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1007%2Fs00204-026-04384-1" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00204-026-04384-1"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1007/s00204-026-04384-1"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
+          <p class="manual-pub-journal">Journal of Public Health, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s10389-026-02740-0">DOI: 10.1007/s10389-026-02740-0</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract</strong></p>
+            <p><strong>Objective.</strong> This review assesses the respiratory effects of passive exposure to e-cigarette aerosols in adolescents, healthy adults, and individuals with pre-existing respiratory conditions.</p>
+            <p><strong>Methods.</strong> We systematically searched for observational and experimental studies on secondhand e-cigarette aerosol (SHA) exposure. Outcomes included respiratory symptoms, pulmonary function, airway resistance or reactivity, inflammatory biomarkers, and environmental exposure metrics. Five studies met criteria: longitudinal cohorts, cross-sectional surveys, and controlled chamber experiments.</p>
+            <p><strong>Results.</strong> Evidence suggests that SHA exposure is associated with adverse respiratory outcomes. In adolescents and young adults, household SHA increased bronchitic symptoms, wheeze, shortness of breath, and asthma outcomes. Risk rose with more frequent exposure. Controlled chamber studies in healthy non-smokers have found that 30 min of passive exposure causes immediate sensory irritation (in the eyes, nose, and throat), increased airway resistance, and a decrease in exhaled nitric oxide. In COPD patients, short-term exposure affected surfactant protein-A, increased plasma inflammatory biomarkers, and caused throat irritation, with borderline lung function decline. Environmental monitoring confirmed the presence of ultrafine particles and volatile organic compounds during exposure.</p>
+            <p><strong>Conclusion.</strong> SHA exposure is not benign. It can cause respiratory irritation, functional impairment, and inflammation in various populations. Effects are generally less pronounced than those of combustible cigarette smoke. Nonetheless, these findings support public health measures such as regulations restricting SHA exposure in public settings, especially to protect adolescents and vulnerable individuals. Long-term studies are still needed to determine chronic health consequences and guide evidence-based policy decisions.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1007%2Fs10389-026-02740-0" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s10389-026-02740-0"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1007/s10389-026-02740-0"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+
+  <details class="pub-year-group" open>
+    <summary>2025</summary>
+
+    <div class="pub-year-content">
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Mitochondrial dysfunction induced by E-cigarettes</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong>; Muhamad Alfakri Mat Noh; Bey Fen Leo; Farid Nazer Faruqu; Anne Yee; Maw Shin Sim</p>
+          <p class="manual-pub-journal">Toxicology, 2025</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.tox.2025.154339">DOI: 10.1016/j.tox.2025.154339</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> E-cigarette use has been linked to mitochondrial dysfunction through exposure to reactive oxygen species (ROS), toxic aldehydes, metals, and flavoring agents. These constituents can damage mitochondrial DNA, impair oxidative phosphorylation, and disrupt calcium homeostasis, resulting in oxidative stress, inflammation, and programmed cell death. Mitochondrial impairment contributes to many systemic disorders, including respiratory, cardiovascular, and metabolic conditions. Preclinical findings suggest altered mitochondrial morphology, reduced adenosine triphosphate (ATP) production, and increased ROS, all of which can contribute to mitochondrial dysfunction following e-cigarette exposure. Certain flavorings and metals intensify these effects. While early human data suggest systemic mitochondrial stress, most research remains in vitro or animal-based. This review identifies mitochondrial dysfunction as a key mechanism in e-cigarette toxicity and calls for longitudinal research to elucidate its long-term health consequences.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.tox.2025.154339" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.tox.2025.154339"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.tox.2025.154339"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<script src="https://cdn.plu.mx/widget-summary.js"></script>
+<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script async src="https://integration-badge.dimensions.ai/static/ai/badge.js" charset="utf-8"></script>
