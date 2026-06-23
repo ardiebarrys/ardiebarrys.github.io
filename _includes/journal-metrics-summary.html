@@ -1,1 +1,487 @@
+<style>
+  .journal-summary-section {
+    width: 100%;
+    margin: 1.5rem 0 2.2rem;
+  }
 
+  .journal-summary-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .journal-summary-header h2 {
+    margin: 0;
+    color: #0b174f;
+    font-size: 1.45rem;
+    font-weight: 700;
+  }
+
+  .journal-sort-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .journal-sort-control label {
+    color: #333333;
+    font-weight: 700;
+  }
+
+  .journal-sort-control select {
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(183, 0, 183, 0.24);
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111111;
+    font: inherit;
+  }
+
+  .journal-visuals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .journal-chart-card {
+    padding: 1.1rem 1.2rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-left: 5px solid var(--global-theme-color);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  }
+
+  .journal-chart-card h3 {
+    margin: 0 0 0.9rem;
+    color: #0b174f;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .donut-layout {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .donut-chart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#dddddd 0deg 360deg);
+    position: relative;
+  }
+
+  .donut-chart::after {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  .donut-center {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b174f;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .donut-legend {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: #222222;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .donut-swatch {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+
+  .journal-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid rgba(183, 0, 183, 0.18);
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  .journal-metrics-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .journal-metrics-table th,
+  .journal-metrics-table td {
+    padding: 0.75rem 0.8rem;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 1px solid #eeeeee;
+    color: #111111;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    vertical-align: top;
+  }
+
+  .journal-metrics-table th {
+    background: rgba(183, 0, 183, 0.08);
+    color: #0b174f;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .journal-metrics-table td.number-cell,
+  .journal-metrics-table th.number-cell {
+    text-align: right;
+  }
+
+  .journal-metrics-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .journal-metrics-table tbody tr:hover {
+    background: rgba(183, 0, 183, 0.035);
+  }
+
+  .quartile-badge {
+    display: inline-flex;
+    min-width: 2.4rem;
+    justify-content: center;
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(183, 0, 183, 0.09);
+    color: var(--global-theme-color);
+    font-weight: 700;
+  }
+
+  @media (max-width: 900px) {
+    .journal-summary-header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .journal-visuals {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .donut-layout {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .donut-legend {
+      width: 100%;
+    }
+  }
+</style>
+
+<section class="journal-summary-section">
+  <div class="journal-summary-header">
+    <h2>Journal Metrics Summary</h2>
+
+    <div class="journal-sort-control">
+      <label for="journal-sort">Sort by</label>
+      <select id="journal-sort">
+        <option value="default">Default order</option>
+        <option value="quartile">Quartile</option>
+        <option value="jif">JIF 2025</option>
+        <option value="papers">No. of Papers</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="journal-visuals">
+    <div class="journal-chart-card">
+      <h3>Papers by Field / Category</h3>
+      <div class="donut-layout">
+        <div id="category-donut" class="donut-chart">
+          <div class="donut-center">11<br>Papers</div>
+        </div>
+        <div id="category-legend" class="donut-legend"></div>
+      </div>
+    </div>
+
+    <div class="journal-chart-card">
+      <h3>Papers by Quartile</h3>
+      <div class="donut-layout">
+        <div id="quartile-donut" class="donut-chart">
+          <div class="donut-center">11<br>Papers</div>
+        </div>
+        <div id="quartile-legend" class="donut-legend"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journal-table-wrap">
+    <table class="journal-metrics-table">
+      <thead>
+        <tr>
+          <th class="number-cell">No.</th>
+          <th>Journal</th>
+          <th class="number-cell">No. of Papers</th>
+          <th>Field / Category</th>
+          <th>Indexing</th>
+          <th class="number-cell">JIF 2025</th>
+          <th>Quartile</th>
+          <th>Rank</th>
+        </tr>
+      </thead>
+      <tbody id="journal-table-body"></tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  const journalData = [
+    {
+      no: 1,
+      journal: "Archives of Toxicology",
+      papers: 2,
+      category: "Toxicology",
+      indexing: "SCIE",
+      jif: 10.9,
+      quartile: "Q1",
+      rank: "5/106"
+    },
+    {
+      no: 2,
+      journal: "Diabetes, Obesity and Metabolism",
+      papers: 1,
+      category: "Endocrinology & Metabolism",
+      indexing: "SCIE",
+      jif: 6.1,
+      quartile: "Q1",
+      rank: "32/198"
+    },
+    {
+      no: 3,
+      journal: "Toxicology",
+      papers: 1,
+      category: "Toxicology",
+      indexing: "SCIE",
+      jif: 5.2,
+      quartile: "Q1",
+      rank: "16/106"
+    },
+    {
+      no: 4,
+      journal: "Environmental Toxicology and Pharmacology",
+      papers: 1,
+      category: "Toxicology",
+      indexing: "SCIE",
+      jif: 4.6,
+      quartile: "Q1",
+      rank: "23/106"
+    },
+    {
+      no: 5,
+      journal: "Progress in Biophysics and Molecular Biology",
+      papers: 1,
+      category: "Biophysics",
+      indexing: "SCIE",
+      jif: 4.5,
+      quartile: "Q1",
+      rank: "13/81"
+    },
+    {
+      no: 6,
+      journal: "Molecular and Cellular Endocrinology",
+      papers: 1,
+      category: "Endocrinology & Metabolism",
+      indexing: "SCIE",
+      jif: 3.4,
+      quartile: "Q2",
+      rank: "95/198"
+    },
+    {
+      no: 7,
+      journal: "Toxicology Mechanisms and Methods",
+      papers: 1,
+      category: "Toxicology",
+      indexing: "SCIE",
+      jif: 2.9,
+      quartile: "Q3",
+      rank: "57/106"
+    },
+    {
+      no: 8,
+      journal: "International Journal of Impotence Research",
+      papers: 1,
+      category: "Urology & Nephrology",
+      indexing: "SCIE",
+      jif: 2.5,
+      quartile: "Q2",
+      rank: "54/134"
+    },
+    {
+      no: 9,
+      journal: "Journal of Public Health-Heidelberg",
+      papers: 1,
+      category: "Public, Environmental & Occupational Health",
+      indexing: "ESCI",
+      jif: 1.6,
+      quartile: "Q3",
+      rank: "301/443"
+    }
+  ];
+
+  const chartColors = [
+    "#b700b7",
+    "#d85bd8",
+    "#8b2bb8",
+    "#efb3ef",
+    "#6d1f9a",
+    "#f3d7f3"
+  ];
+
+  function renderJournalTable(rows) {
+    const tbody = document.getElementById("journal-table-body");
+    tbody.innerHTML = rows
+      .map(function (item, index) {
+        return `
+          <tr>
+            <td class="number-cell">${index + 1}</td>
+            <td>${item.journal}</td>
+            <td class="number-cell">${item.papers}</td>
+            <td>${item.category}</td>
+            <td>${item.indexing}</td>
+            <td class="number-cell">${item.jif.toFixed(1)}</td>
+            <td><span class="quartile-badge">${item.quartile}</span></td>
+            <td>${item.rank}</td>
+          </tr>
+        `;
+      })
+      .join("");
+  }
+
+  function groupByPapers(key) {
+    return journalData.reduce(function (groups, item) {
+      groups[item[key]] = (groups[item[key]] || 0) + item.papers;
+      return groups;
+    }, {});
+  }
+
+  function buildConicGradient(groups, progress) {
+    const total = Object.values(groups).reduce(function (sum, value) {
+      return sum + value;
+    }, 0);
+
+    let current = 0;
+    let colorIndex = 0;
+
+    const segments = Object.entries(groups).map(function ([label, value]) {
+      const start = current * progress;
+      const end = (current + (value / total) * 360) * progress;
+      const color = chartColors[colorIndex % chartColors.length];
+
+      current += (value / total) * 360;
+      colorIndex += 1;
+
+      return `${color} ${start}deg ${end}deg`;
+    });
+
+    if (progress < 1) {
+      segments.push(`#eeeeee ${360 * progress}deg 360deg`);
+    }
+
+    return `conic-gradient(${segments.join(", ")})`;
+  }
+
+  function renderLegend(containerId, groups) {
+    const legend = document.getElementById(containerId);
+
+    legend.innerHTML = Object.entries(groups)
+      .map(function ([label, value], index) {
+        return `
+          <div class="donut-legend-item">
+            <span class="donut-swatch" style="background:${chartColors[index % chartColors.length]}"></span>
+            <span>${label}: <strong>${value}</strong></span>
+          </div>
+        `;
+      })
+      .join("");
+  }
+
+  function animateDonut(donutId, groups) {
+    const donut = document.getElementById(donutId);
+    let start = null;
+    const duration = 1200;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+
+      donut.style.background = buildConicGradient(groups, progress);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  function sortJournalData(sortType) {
+    const rows = [...journalData];
+
+    if (sortType === "quartile") {
+      rows.sort(function (a, b) {
+        return a.quartile.localeCompare(b.quartile) || b.jif - a.jif;
+      });
+    }
+
+    if (sortType === "jif") {
+      rows.sort(function (a, b) {
+        return b.jif - a.jif;
+      });
+    }
+
+    if (sortType === "papers") {
+      rows.sort(function (a, b) {
+        return b.papers - a.papers || b.jif - a.jif;
+      });
+    }
+
+    return rows;
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const categoryGroups = groupByPapers("category");
+    const quartileGroups = groupByPapers("quartile");
+
+    renderJournalTable(journalData);
+    renderLegend("category-legend", categoryGroups);
+    renderLegend("quartile-legend", quartileGroups);
+    animateDonut("category-donut", categoryGroups);
+    animateDonut("quartile-donut", quartileGroups);
+
+    document.getElementById("journal-sort").addEventListener("change", function (event) {
+      renderJournalTable(sortJournalData(event.target.value));
+    });
+  });
+</script>
