@@ -1,1 +1,43 @@
+<style>
+  /* Keep the back-to-top button above the fixed footer */
+  #back-to-top,
+  .back-to-top,
+  .vanilla-back-to-top,
+  button[aria-label="Back to top"],
+  button[title="Back to top"],
+  a[aria-label="Back to top"],
+  a[title="Back to top"],
+  div[style*="position: fixed"][style*="bottom"],
+  button[style*="position: fixed"][style*="bottom"],
+  a[style*="position: fixed"][style*="bottom"] {
+    bottom: 6.5rem !important;
+    right: 1.5rem !important;
+    z-index: 99999 !important;
+  }
 
+  body {
+    padding-bottom: 5rem !important;
+  }
+
+  @media (max-width: 768px) {
+    #back-to-top,
+    .back-to-top,
+    .vanilla-back-to-top,
+    button[aria-label="Back to top"],
+    button[title="Back to top"],
+    a[aria-label="Back to top"],
+    a[title="Back to top"],
+    div[style*="position: fixed"][style*="bottom"],
+    button[style*="position: fixed"][style*="bottom"],
+    a[style*="position: fixed"][style*="bottom"] {
+      bottom: 7rem !important;
+      right: 1rem !important;
+    }
+  }
+</style>
+
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright {{ site.time | date: "%Y" }} Ardie Barry Sailis.
+  </div>
+</footer>
