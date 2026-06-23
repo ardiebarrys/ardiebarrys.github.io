@@ -1,5 +1,4 @@
 <style>
-  /* Keep the back-to-top button above the fixed footer */
   #back-to-top,
   .back-to-top,
   .vanilla-back-to-top,
@@ -10,9 +9,22 @@
   div[style*="position: fixed"][style*="bottom"],
   button[style*="position: fixed"][style*="bottom"],
   a[style*="position: fixed"][style*="bottom"] {
-    bottom: 6.5rem !important;
-    right: 1.5rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
+    bottom: 5.2rem !important;
+    right: 1.6rem !important;
     z-index: 99999 !important;
+    background: #111111 !important;
+    color: #ffffff !important;
+    border-radius: 999px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
+  }
+
+  #back-to-top *,
+  .back-to-top *,
+  .vanilla-back-to-top * {
+    color: #ffffff !important;
+    fill: #ffffff !important;
   }
 
   body {
@@ -30,7 +42,9 @@
     div[style*="position: fixed"][style*="bottom"],
     button[style*="position: fixed"][style*="bottom"],
     a[style*="position: fixed"][style*="bottom"] {
-      bottom: 7rem !important;
+      width: 3.6rem !important;
+      height: 3.6rem !important;
+      bottom: 5.5rem !important;
       right: 1rem !important;
     }
   }
