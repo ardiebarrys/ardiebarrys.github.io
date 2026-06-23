@@ -68,6 +68,11 @@
     fill: none;
     stroke-width: 18;
     stroke-linecap: round;
+    cursor: pointer;
+  }
+
+  .donut-segment:hover {
+    stroke-width: 21;
   }
 
   .donut-center {
@@ -80,6 +85,7 @@
     color: #0b174f;
     font-weight: 700;
     text-align: center;
+    pointer-events: none;
   }
 
   .donut-legend {
@@ -101,6 +107,22 @@
     height: 0.8rem;
     border-radius: 50%;
     flex: 0 0 auto;
+  }
+
+  .donut-tooltip {
+    position: fixed;
+    z-index: 9999;
+    display: none;
+    max-width: 240px;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(183, 0, 183, 0.22);
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111111;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+    font-size: 0.9rem;
+    line-height: 1.35;
+    pointer-events: none;
   }
 
   .journal-table-wrap {
@@ -151,22 +173,34 @@
   }
 
   .table-sort-button {
-    padding: 0;
-    border: 0;
-    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.55rem;
+    border: 1px solid rgba(183, 0, 183, 0.24);
+    border-radius: 999px;
+    background: #ffffff;
     color: #0b174f;
     font: inherit;
+    font-size: 0.88rem;
     font-weight: 700;
     cursor: pointer;
+    box-shadow: 0 3px 10px rgba(183, 0, 183, 0.08);
   }
 
-  .table-sort-button::after {
-    content: " ↕";
+  .table-sort-button:hover,
+  .table-sort-button.active {
+    border-color: var(--global-theme-color);
+    background: rgba(183, 0, 183, 0.08);
     color: var(--global-theme-color);
   }
 
-  .table-sort-button.active::after {
-    content: " ↓";
+  .table-sort-state {
+    color: var(--global-theme-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
 
   .quartile-badge {
@@ -233,6 +267,8 @@
     </div>
   </div>
 
+  <div id="donut-tooltip" class="donut-tooltip"></div>
+
   <div class="journal-table-wrap">
     <table class="journal-metrics-table">
       <thead>
@@ -240,15 +276,21 @@
           <th class="number-cell">No.</th>
           <th>Journal</th>
           <th class="number-cell">
-            <button class="table-sort-button" data-sort="papers">No. of Papers</button>
+            <button class="table-sort-button" data-sort="papers">
+              Sort: Papers <span class="table-sort-state">DEFAULT</span>
+            </button>
           </th>
           <th>Field / Category</th>
           <th>Indexing</th>
           <th class="number-cell">
-            <button class="table-sort-button" data-sort="jif">JIF 2025</button>
+            <button class="table-sort-button" data-sort="jif">
+              Sort: JIF <span class="table-sort-state">DEFAULT</span>
+            </button>
           </th>
           <th>
-            <button class="table-sort-button" data-sort="quartile">Quartile</button>
+            <button class="table-sort-button" data-sort="quartile">
+              Sort: Quartile <span class="table-sort-state">DEFAULT</span>
+            </button>
           </th>
           <th>Rank</th>
         </tr>
@@ -272,7 +314,11 @@
       { no: 9, journal: "Journal of Public Health-Heidelberg", papers: 1, category: "Public, Environmental & Occupational Health", indexing: "ESCI", jif: 1.6, quartile: "Q3", rank: "301/443" }
     ];
 
-    const chartColors = ["#b700b7", "#d85bd8", "#8b2bb8", "#efb3ef", "#6d1f9a", "#f3d7f3"];
+    const chartColors = ["#0b174f", "#b700b7", "#2f80ed", "#00a676", "#f2994a", "#eb5757"];
+    const sortState = {
+      key: null,
+      direction: "default"
+    };
 
     function renderJournalTable(rows) {
       const tbody = document.getElementById("journal-table-body");
@@ -317,13 +363,14 @@
         .join("");
     }
 
-    function easeOutCubic(value) {
-      return 1 - Math.pow(1 - value, 3);
+    function easeOutQuart(value) {
+      return 1 - Math.pow(1 - value, 4);
     }
 
     function animateDonut(donutId, groups) {
       const donut = document.getElementById(donutId);
       const segmentGroup = donut.querySelector(".donut-segments");
+      const tooltip = document.getElementById("donut-tooltip");
       const radius = 58;
       const circumference = 2 * Math.PI * radius;
       const entries = Object.entries(groups);
@@ -331,13 +378,17 @@
         return sum + entry[1];
       }, 0);
 
-      let offset = 0;
+      let accumulatedLength = 0;
 
       segmentGroup.innerHTML = entries
         .map(function ([label, value], index) {
           const length = (value / total) * circumference;
           const color = chartColors[index % chartColors.length];
-          const circle = `
+          const startOffset = accumulatedLength;
+
+          accumulatedLength += length;
+
+          return `
             <circle
               class="donut-segment"
               cx="80"
@@ -345,29 +396,57 @@
               r="${radius}"
               stroke="${color}"
               stroke-dasharray="0 ${circumference}"
-              stroke-dashoffset="${-offset}">
+              stroke-dashoffset="${-startOffset}"
+              data-label="${label}"
+              data-value="${value}"
+              data-total="${total}"
+              data-start="${startOffset}"
+              data-length="${length}">
             </circle>
           `;
-
-          offset += length;
-          return circle;
         })
         .join("");
 
       const segments = donut.querySelectorAll(".donut-segment");
+
+      segments.forEach(function (segment) {
+        segment.addEventListener("mouseenter", function () {
+          const label = segment.dataset.label;
+          const value = Number(segment.dataset.value);
+          const totalValue = Number(segment.dataset.total);
+          const percent = ((value / totalValue) * 100).toFixed(1);
+
+          tooltip.innerHTML = `<strong>${label}</strong><br>${value} papers (${percent}%)`;
+          tooltip.style.display = "block";
+        });
+
+        segment.addEventListener("mousemove", function (event) {
+          tooltip.style.left = event.clientX + 14 + "px";
+          tooltip.style.top = event.clientY + 14 + "px";
+        });
+
+        segment.addEventListener("mouseleave", function () {
+          tooltip.style.display = "none";
+        });
+      });
+
       let start = null;
-      const duration = 1600;
+      const duration = 1800;
 
       function step(timestamp) {
         if (!start) start = timestamp;
 
         const elapsed = timestamp - start;
-        const progress = easeOutCubic(Math.min(elapsed / duration, 1));
+        const progress = easeOutQuart(Math.min(elapsed / duration, 1));
+        const globalVisibleLength = circumference * progress;
 
-        segments.forEach(function (segment, index) {
-          const value = entries[index][1];
-          const length = (value / total) * circumference;
-          const visibleLength = length * progress;
+        segments.forEach(function (segment) {
+          const startOffset = Number(segment.dataset.start);
+          const segmentLength = Number(segment.dataset.length);
+          const visibleLength = Math.max(
+            0,
+            Math.min(segmentLength, globalVisibleLength - startOffset)
+          );
 
           segment.setAttribute(
             "stroke-dasharray",
@@ -383,28 +462,64 @@
       requestAnimationFrame(step);
     }
 
-    function sortJournalData(sortType) {
+    function getNextSortDirection(buttonKey) {
+      if (sortState.key !== buttonKey) {
+        return "desc";
+      }
+
+      if (sortState.direction === "desc") {
+        return "asc";
+      }
+
+      if (sortState.direction === "asc") {
+        return "default";
+      }
+
+      return "desc";
+    }
+
+    function sortJournalData(sortType, direction) {
       const rows = [...journalData];
+
+      if (direction === "default") {
+        return rows;
+      }
 
       if (sortType === "quartile") {
         rows.sort(function (a, b) {
-          return a.quartile.localeCompare(b.quartile) || b.jif - a.jif;
+          const result = a.quartile.localeCompare(b.quartile) || b.jif - a.jif;
+          return direction === "asc" ? result : -result;
         });
       }
 
       if (sortType === "jif") {
         rows.sort(function (a, b) {
-          return b.jif - a.jif;
+          return direction === "asc" ? a.jif - b.jif : b.jif - a.jif;
         });
       }
 
       if (sortType === "papers") {
         rows.sort(function (a, b) {
-          return b.papers - a.papers || b.jif - a.jif;
+          const result = b.papers - a.papers || b.jif - a.jif;
+          return direction === "asc" ? -result : result;
         });
       }
 
       return rows;
+    }
+
+    function updateSortButtons(activeButton, direction) {
+      document.querySelectorAll(".table-sort-button").forEach(function (button) {
+        const stateLabel = button.querySelector(".table-sort-state");
+
+        button.classList.remove("active");
+        stateLabel.textContent = "DEFAULT";
+      });
+
+      if (direction !== "default") {
+        activeButton.classList.add("active");
+        activeButton.querySelector(".table-sort-state").textContent = direction.toUpperCase();
+      }
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -419,12 +534,14 @@
 
       document.querySelectorAll(".table-sort-button").forEach(function (button) {
         button.addEventListener("click", function () {
-          document.querySelectorAll(".table-sort-button").forEach(function (item) {
-            item.classList.remove("active");
-          });
+          const sortKey = button.dataset.sort;
+          const nextDirection = getNextSortDirection(sortKey);
 
-          button.classList.add("active");
-          renderJournalTable(sortJournalData(button.dataset.sort));
+          sortState.key = nextDirection === "default" ? null : sortKey;
+          sortState.direction = nextDirection;
+
+          updateSortButtons(button, nextDirection);
+          renderJournalTable(sortJournalData(sortKey, nextDirection));
         });
       });
     });
