@@ -1,4 +1,4 @@
-/* Back to top button */
+/* Keep back-to-top button above the fixed footer */
 #back-to-top,
 .back-to-top,
 .vanilla-back-to-top,
@@ -10,6 +10,11 @@ a[title="Back to top"] {
   z-index: 9999 !important;
 }
 
+/* Add space so page content is not hidden behind the fixed footer */
+body {
+  padding-bottom: 5rem !important;
+}
+
 @media (max-width: 768px) {
   #back-to-top,
   .back-to-top,
@@ -17,210 +22,7 @@ a[title="Back to top"] {
   button[aria-label="Back to top"],
   button[title="Back to top"],
   a[aria-label="Back to top"],
-  a[title="Back to top"],
-  div[style*="bottom"][style*="position: fixed"],
-  button[style*="bottom"][style*="position: fixed"] {
+  a[title="Back to top"] {
     bottom: 6.8rem !important;
   }
-}
-
-/* Global typography */
-body {
-  background: #ffffff !important;
-  color: #111111 !important;
-  font-family: "Times New Roman", Times, serif !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-li,
-a,
-.navbar-brand,
-.nav-link {
-  font-family: "Times New Roman", Times, serif !important;
-}
-
-h1 {
-  font-weight: 700 !important;
-}
-
-/* Links */
-a {
-  color: #2447a8 !important;
-}
-
-a:hover {
-  color: #0b174f !important;
-}
-
-/* Navbar */
-.navbar,
-.navbar.navbar-light,
-.navbar.navbar-expand-sm {
-  background-color: #0b174f !important;
-  border-bottom: none !important;
-}
-
-.navbar a,
-.navbar-brand,
-.navbar-nav .nav-link,
-.navbar-light .navbar-brand,
-.navbar-light .navbar-nav .nav-link {
-  color: #ffffff !important;
-}
-
-.navbar-nav .nav-link,
-.navbar-brand {
-  font-weight: 400 !important;
-  letter-spacing: 0 !important;
-  text-transform: capitalize !important;
-}
-
-.navbar-nav .nav-link[href*="cv"],
-.navbar-nav .nav-link[href*="CV"] {
-  text-transform: uppercase !important;
-}
-
-.navbar a:hover,
-.navbar-brand:hover,
-.navbar-nav .nav-link:hover {
-  color: #d6d9ff !important;
-  font-weight: 700 !important;
-}
-
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-item.active .nav-link,
-.navbar-nav .nav-link[aria-current="page"] {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-}
-
-.navbar i,
-.navbar svg,
-.navbar .fa,
-.navbar .fas,
-.navbar .far,
-.navbar .fab {
-  color: #ffffff !important;
-}
-
-/* Footer */
-footer,
-footer.fixed-bottom,
-.fixed-bottom,
-footer .container,
-footer .container-fluid,
-footer div {
-  background-color: #0b174f !important;
-  color: #ffffff !important;
-}
-
-footer *,
-.fixed-bottom * {
-  color: #ffffff !important;
-}
-
-footer a,
-.fixed-bottom a {
-  color: #ffffff !important;
-}
-
-footer a:hover,
-.fixed-bottom a:hover {
-  color: #d6d9ff !important;
-}
-
-footer,
-.fixed-bottom {
-  font-size: 0.85rem !important;
-}
-
-/* Biography text */
-.bio-text,
-.bio-text p,
-.post .bio-text,
-.post .bio-text p,
-article > p {
-  display: block !important;
-  width: 100% !important;
-  text-align: justify !important;
-  text-align-last: left !important;
-  text-justify: inter-word !important;
-  hyphens: auto !important;
-}
-
-/* Keep profile/sidebar text left-aligned */
-.profile,
-.profile p,
-.profile-info,
-.profile-info p,
-.post .profile p,
-.post .profile-info p {
-  text-align: left !important;
-  text-align-last: left !important;
-}
-
-/* Profile sidebar font */
-.profile-info,
-.profile-info p,
-.profile-info a,
-.profile-info strong {
-  font-family: "Times New Roman", Times, serif !important;
-  font-size: 1rem !important;
-  line-height: 1.45 !important;
-  letter-spacing: 0 !important;
-}
-
-.profile-info p {
-  margin-bottom: 0.35rem !important;
-}
-
-/* Smaller bottom social icons */
-.social,
-.contact-icons {
-  font-size: 0 !important;
-}
-
-.social a,
-.contact-icons a {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 1.2rem !important;
-  width: 1.2rem !important;
-  height: 1.2rem !important;
-  margin: 0 0.35rem !important;
-}
-
-.social i,
-.contact-icons i,
-.social svg,
-.contact-icons svg,
-.contact-icons .ai,
-.contact-icons .fab,
-.contact-icons .fas,
-.contact-icons .far {
-  font-size: 1.2rem !important;
-  width: 1.2rem !important;
-  height: 1.2rem !important;
-  line-height: 1.2rem !important;
-}
-
-.social i::before,
-.contact-icons i::before {
-  font-size: 1.2rem !important;
-}
-
-/* Project category headings */
-.projects .category {
-  color: #0b174f !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  font-size: 1.6rem !important;
-  opacity: 1 !important;
 }
