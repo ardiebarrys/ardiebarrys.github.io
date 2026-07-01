@@ -199,6 +199,8 @@ nav_order: 3
         </p>
 
         <ul class="project-list">
+          <li>Ferroptosis in e-cigarette aerosol-associated respiratory injury (DOI: 10.1007/s00204-026-04486-w)</li>
+          <li>Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance (DOI: 10.1080/15376516.2026.2695155)</li>
           <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li>
           <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li>
           <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
