@@ -175,6 +175,9 @@ nav_order: 6
     height: 420px;
     object-fit: cover;
     display: block;
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   @media (max-width: 768px) {
@@ -291,8 +294,13 @@ nav_order: 6
   </p>
 </article>
 
-<figure class="bio-image-card">
-  <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis during laboratory research">
+<figure class="bio-image-card" oncontextmenu="return false;">
+  <img
+    src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}"
+    alt="Ardie Barry Sailis during laboratory research"
+    draggable="false"
+    oncontextmenu="return false;"
+  >
 </figure>
 
 </div>
