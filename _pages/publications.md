@@ -215,6 +215,7 @@ nav_order: 2
   <details class="pub-year-group" open>
     <summary>2026</summary>
 
+    <div class="pub-year-content">
       <div class="manual-pub-item">
         <div class="manual-pub-info">
           <p class="manual-pub-title">Ferroptosis in e-cigarette aerosol-associated respiratory injury</p>
@@ -265,7 +266,6 @@ nav_order: 2
         </div>
       </div>
 
-    <div class="pub-year-content">
       <div class="manual-pub-item">
         <div class="manual-pub-info">
           <p class="manual-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction</p>
