@@ -215,6 +215,56 @@ nav_order: 2
   <details class="pub-year-group" open>
     <summary>2026</summary>
 
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Ferroptosis in e-cigarette aerosol-associated respiratory injury</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Archives of Toxicology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1007/s00204-026-04486-w">DOI: 10.1007/s00204-026-04486-w</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> E-cigarette use has increased substantially, particularly among adolescents and young adults, yet its long-term respiratory effects remain incompletely understood. E-cigarette aerosol contains biologically active constituents, including nicotine, propylene glycol, vegetable glycerin, flavoring chemicals, aldehydes, metals, particles, and reactive oxygen species, which may disrupt respiratory epithelial homeostasis. This review synthesizes experimental, preclinical, and human-relevant evidence linking e-cigarette aerosol exposure to respiratory epithelial injury, with emphasis on ferroptosis-related mechanisms. Available evidence indicates that e-cigarette aerosol can impair epithelial barrier integrity, alter mucociliary defense, increase MUC5AC expression, induce oxidative stress, and promote inflammatory signaling. Emerging preclinical data suggest that electronic nicotine delivery system exposure may induce ferroptosis-associated lung injury through increased CD71/TFR1 and ACSL4 expression, reduced GPX4, altered lipid profiles, BODIPY-C11-positive lipid peroxidation, epithelial cell death, inflammation, mucus accumulation, emphysema-like pathology, and fibrosis. Mechanistically, e-cigarette aerosol may create a ferroptosis-permissive epithelial environment by promoting redox imbalance, GPX4/GSH/SLC7A11 antioxidant defense impairment, altered iron handling, ACSL4-mediated PUFA-phospholipid remodeling, NRF2/ARE stress responses, mitochondrial dysfunction, and lipid peroxide accumulation. Ferroptotic epithelial injury may further amplify airway inflammation and remodeling through DAMP release, macrophage recruitment, cytokine production, barrier disruption, mucus dysregulation, and extracellular matrix deposition. However, direct human evidence remains limited, and many mechanistic links are extrapolated from cigarette smoke, particulate matter, and broader lung injury models. Future studies should use standardized exposure systems, human-relevant airway and alveolar models, comprehensive ferroptosis markers, and ferroptosis-specific rescue experiments to determine whether ferroptosis is a driver, amplifier, or downstream marker of e-cigarette-associated respiratory injury.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1007%2Fs00204-026-04486-w" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1007/s00204-026-04486-w"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1007/s00204-026-04486-w"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Journal of Toxicology and Environmental Health, Part A, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1080/15376516.2026.2695155">DOI: 10.1080/15376516.2026.2695155</a></p>
+
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> Electronic cigarettes are widely used by individuals in their reproductive years, yet polymer materials in pods, wicks, seals, and casings remain underexamined as possible contributors to inhaled particulate exposure. This narrative review evaluates whether e-cigarette device components could plausibly generate microplastics or nanoplastics during use and whether such particles, if present, could have reproductive relevance. Evidence from device-material studies, polymer degradation chemistry, aerosol physics, inhalation toxicology, and reproductive microplastic models was synthesized. Current devices place polycarbonate, polydimethylsiloxane, nylon, and other polymers near heating and aerosolization zones, where thermal cycling, solvent contact, and mechanical stress could theoretically promote oxidation, chain scission, embrittlement, or fragmentation. However, no study has chemically identified or quantified device-derived microplastics or nanoplastics in e-cigarette aerosols using polymer-resolving methods. Thus, links between e-cigarette use, inhaled polymer particles, and reproductive harm remain hypothetical. Evidence from non-e-cigarette models shows that micro- and nanoplastics can induce oxidative stress, inflammation, endocrine disruption, barrier interaction, and cellular injury, but these findings cannot be extrapolated without confirming particle formation, polymer identity, dose, and biodistribution. Future research should prioritize polymer-resolved aerosol testing under realistic puffing regimens, including unused and aged devices, e-liquids, condensates, and emitted aerosols. Key endpoints should include polymer identity, particles per puff, particles per mL of e-liquid consumed, particle size distribution, polymer mass, pulmonary deposition, systemic translocation, and reproductive or placental effects. Device-derived microplastics should be treated as a plausible particle-safety concern requiring direct experimental evaluation.</p>
+          </div>
+        </div>
+
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1080%2F15376516.2026.2695155" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1080/15376516.2026.2695155"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1080/15376516.2026.2695155"></span></div>
+          </div>
+        </div>
+      </div>
+
     <div class="pub-year-content">
       <div class="manual-pub-item">
         <div class="manual-pub-info">
