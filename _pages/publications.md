@@ -509,6 +509,6 @@ nav_order: 2
   </details>
 </div>
 
-<script src="https://cdn.plu.mx/widget-summary.js"></script>
-<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-<script async src="https://integration-badge.dimensions.ai/static/ai/badge.js" charset="utf-8"></script>
+<script src="https://cdn.plu.mx/widget-summary.js" defer></script>
+<script src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js" defer></script>
+<script src="https://integration-badge.dimensions.ai/static/ai/badge.js" defer charset="utf-8"></script>
