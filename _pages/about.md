@@ -159,6 +159,14 @@ social: true
     display: block;
   }
 
+    .profile img,
+  .profile-logo-links img,
+  .profile-info img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   .bio-text p {
     text-align: justify !important;
     text-align-last: left !important;
@@ -405,3 +413,17 @@ In parallel, he develops the <em>Cellular Signaling as Dynamic Regulatory Circui
 </div>
 
 </div>
+
+<script>
+  document.querySelectorAll('.profile img, .profile-logo-links img, .profile-info img').forEach((img) => {
+    img.setAttribute('draggable', 'false');
+
+    img.addEventListener('dragstart', (event) => {
+      event.preventDefault();
+    });
+
+    img.addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
+  });
+</script>
