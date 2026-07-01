@@ -43,6 +43,8 @@ nav_order: 6
     background-size: cover;
     background-position: center;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .bio-hero-content {
@@ -212,7 +214,7 @@ nav_order: 6
 
 <div class="bio-page">
 
-<section class="bio-hero">
+<section class="bio-hero" oncontextmenu="return false;">
   <div class="bio-hero-content">
     <h1>Biography</h1>
     <p>
