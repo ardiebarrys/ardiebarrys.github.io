@@ -368,6 +368,20 @@
     padding-bottom: 5rem !important;
   }
 
+  #chatbase-bubble-button {
+    left: 1.6rem !important;
+    right: auto !important;
+    bottom: 1.4rem !important;
+    z-index: 99998 !important;
+  }
+
+  #chatbase-message-bubbles,
+  iframe[src*="chatbase"],
+  div[id*="chatbase"] {
+    left: 1.6rem !important;
+    right: auto !important;
+  }
+
   @media (max-width: 768px) {
     #back-to-top,
     .back-to-top,
@@ -380,6 +394,14 @@
       height: 3.6rem !important;
       bottom: 4.7rem !important;
       right: 1rem !important;
+    }
+
+    #chatbase-bubble-button,
+    #chatbase-message-bubbles,
+    iframe[src*="chatbase"],
+    div[id*="chatbase"] {
+      left: 1rem !important;
+      right: auto !important;
     }
   }
 </style> <script>
