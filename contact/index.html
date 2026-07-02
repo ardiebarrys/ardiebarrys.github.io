@@ -201,10 +201,7 @@
   button[aria-label="Back to top"],
   button[title="Back to top"],
   a[aria-label="Back to top"],
-  a[title="Back to top"],
-  div[style*="position: fixed"][style*="bottom"],
-  button[style*="position: fixed"][style*="bottom"],
-  a[style*="position: fixed"][style*="bottom"] {
+  a[title="Back to top"] {
     width: 4rem !important;
     height: 4rem !important;
     bottom: 4.7rem !important;
@@ -228,10 +225,7 @@
   button[aria-label="Back to top"].is-visible,
   button[title="Back to top"].is-visible,
   a[aria-label="Back to top"].is-visible,
-  a[title="Back to top"].is-visible,
-  div[style*="position: fixed"][style*="bottom"].is-visible,
-  button[style*="position: fixed"][style*="bottom"].is-visible,
-  a[style*="position: fixed"][style*="bottom"].is-visible {
+  a[title="Back to top"].is-visible {
     opacity: 1 !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
@@ -268,10 +262,7 @@
     button[aria-label="Back to top"],
     button[title="Back to top"],
     a[aria-label="Back to top"],
-    a[title="Back to top"],
-    div[style*="position: fixed"][style*="bottom"],
-    button[style*="position: fixed"][style*="bottom"],
-    a[style*="position: fixed"][style*="bottom"] {
+    a[title="Back to top"] {
       width: 3.6rem !important;
       height: 3.6rem !important;
       bottom: 4.7rem !important;
@@ -290,10 +281,7 @@
       'button[aria-label="Back to top"]',
       'button[title="Back to top"]',
       'a[aria-label="Back to top"]',
-      'a[title="Back to top"]',
-      'div[style*="position: fixed"][style*="bottom"]',
-      'button[style*="position: fixed"][style*="bottom"]',
-      'a[style*="position: fixed"][style*="bottom"]'
+      'a[title="Back to top"]'
     ];
 
     function getButtons() {
@@ -342,14 +330,47 @@
       });
     }
 
- if (document.readyState === "loading") {
+    if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", start);
     } else {
       start();
     }
   })();
 </script> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="dxCY_mFoNPQu83GSntHvw";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  (function () {
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...arguments) => {
+        if (!window.chatbase.q) {
+          window.chatbase.q = [];
+        }
+        window.chatbase.q.push(arguments);
+      };
+
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === "q") {
+            return target.q;
+          }
+
+          return (...args) => target(prop, ...args);
+        }
+      });
+    }
+
+    const onLoad = function () {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "dxCY_mFoNPQu83GSntHvw";
+      script.domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
+
+    if (document.readyState === "complete") {
+      onLoad();
+    } else {
+      window.addEventListener("load", onLoad);
+    }
+  })();
 </script> <script>
   window.alFolio = {
     compatBootstrap: false
