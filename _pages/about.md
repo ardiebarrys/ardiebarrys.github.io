@@ -360,13 +360,13 @@ social: true
 
 <div class="bio-text" markdown="1">
 
-**Ardie Barry Sailis** is a researcher in pharmaceutical sciences at Universiti Malaya, with research interests in toxicology, pharmacology, toxicogenomics, and molecular systems biology.
+<p><strong>Ardie Barry Sailis</strong> is a pharmaceutical sciences researcher at Universiti Malaya, working at the intersection of toxicology, pharmacology, toxicogenomics, and molecular systems biology.</p>
 
-His doctoral research focuses on the <strong>toxicological effects of e-cigarette exposure</strong>, with particular emphasis on reproductive health. His work integrates molecular, cellular, and systems-level approaches to investigate how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and intercellular communication networks.
+<p>His doctoral work looks at the <strong>toxicological effects of e-cigarette exposure</strong>, with a particular focus on reproductive health. He combines molecular, cellular, and systems-level approaches to understand how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and the way cells communicate with one another.</p>
 
-His research has addressed mechanisms including mitochondrial dysfunction, impairment of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and the broader effects of secondhand e-cigarette aerosol exposure on lung health.
+<p>His research has explored mitochondrial dysfunction, disruption of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and how secondhand e-cigarette aerosol exposure affects lung health.</p>
 
-In parallel, he develops the <em>Cellular Signaling as Dynamic Regulatory Circuits</em> framework, through which he introduced and formalized the <strong>redoxostat</strong> concept in NRF2–KEAP1 biology, reframing canonical signaling pathways as dynamic control systems governed by temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and disease-associated failures in signal resolution.
+<p>Alongside this, he's developing a framework he calls <em>Cellular Signaling as Dynamic Regulatory Circuits</em>, through which he introduced the <strong>redoxostat</strong> concept in NRF2–KEAP1 biology — reframing well-known signaling pathways as dynamic control systems shaped by temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and the breakdowns in signal resolution that underlie disease.</p>
 
 <p class="about-support-note">
   Some works on this website are independent scholarly projects outside Ardie’s doctoral thesis and institutional research. If you find them useful, you may support his work through
