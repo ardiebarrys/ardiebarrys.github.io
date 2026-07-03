@@ -210,18 +210,30 @@
     bottom: 9.4rem !important;
     z-index: 99998 !important;
     overflow: visible !important;
+    background: transparent !important;
     filter: none !important;
     box-shadow: none !important;
   }
 
-  #chatbase-message-bubbles * {
+  #chatbase-message-bubbles,
+  #chatbase-message-bubbles *,
+  #chatbase-message-bubbles > div {
     filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
   }
 
   #chatbase-message-bubbles > div {
     position: relative !important;
     overflow: visible !important;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.14) !important;
+  }
+
+  #chatbase-message-bubbles::before,
+  #chatbase-message-bubbles > div::before {
+    display: none !important;
+    content: none !important;
   }
 
   #chatbase-message-bubbles::after {
@@ -232,8 +244,8 @@
     height: 1.15rem !important;
     content: "" !important;
     background: #ffffff !important;
-    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.14) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14) !important;
     transform: rotate(45deg) !important;
     z-index: -1 !important;
   }
