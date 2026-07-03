@@ -77,13 +77,28 @@
     z-index: 99998 !important;
   }
 
-  iframe[src*="chatbase"],
-  div[id*="chatbase"] {
+  #chatbase-bubble-window {
     left: 1.6rem !important;
     right: auto !important;
+    bottom: 9.4rem !important;
+    width: min(420px, calc(100vw - 3.2rem)) !important;
+    max-width: calc(100vw - 3.2rem) !important;
   }
 
   @media (max-width: 768px) {
+    #back-to-top,
+    .back-to-top,
+    .vanilla-back-to-top,
+    button[aria-label="Back to top"],
+    button[title="Back to top"],
+    a[aria-label="Back to top"],
+    a[title="Back to top"] {
+      width: 3.6rem !important;
+      height: 3.6rem !important;
+      bottom: 4.7rem !important;
+      right: 1rem !important;
+    }
+
     #chatbase-bubble-button {
       left: 1rem !important;
       right: auto !important;
@@ -96,10 +111,12 @@
       bottom: 9.1rem !important;
     }
 
-    iframe[src*="chatbase"],
-    div[id*="chatbase"] {
+    #chatbase-bubble-window {
       left: 1rem !important;
       right: auto !important;
+      bottom: 9.1rem !important;
+      width: calc(100vw - 2rem) !important;
+      max-width: calc(100vw - 2rem) !important;
     }
   }
 </style> <script>
