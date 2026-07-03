@@ -308,6 +308,44 @@
     });
   });
 </script> </div> <div class="social"> <div class="contact-icons"> <a href="mailto:17205246@siswa.um.edu.my" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://orcid.org/0009-0009-8994-2793" title="Orcid id" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i></a> <a href="https://scholar.google.com/citations?user=saKP688AAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/ardiebarrysailis" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </div> <div class="contact-note">For academic correspondence, please contact me through the query box under Contact tab. Last updated: 1 July 2026. </div> </div> </article> </div> </div> <style>
+  html,
+  body {
+    min-height: 100%;
+    background:
+      radial-gradient(circle at 8% 18%, rgba(183, 0, 183, 0.11), transparent 24rem),
+      radial-gradient(circle at 92% 28%, rgba(36, 71, 168, 0.10), transparent 24rem),
+      radial-gradient(circle at 12% 82%, rgba(14, 159, 122, 0.08), transparent 22rem),
+      linear-gradient(90deg, #f7f8fb 0%, #ffffff 24%, #ffffff 76%, #f7f8fb 100%) !important;
+    background-attachment: fixed !important;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    padding-bottom: 5rem !important;
+  }
+
+  body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(11, 23, 79, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(183, 0, 183, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
+    -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
+  }
+
+  .post,
+  .page,
+  .container,
+  main {
+    background: transparent !important;
+  }
+
   #back-to-top,
   .back-to-top,
   .vanilla-back-to-top,
@@ -362,10 +400,6 @@
   footer *,
   .fixed-bottom * {
     color: #ffffff !important;
-  }
-
-  body {
-    padding-bottom: 5rem !important;
   }
 
   #chatbase-bubble-button {
