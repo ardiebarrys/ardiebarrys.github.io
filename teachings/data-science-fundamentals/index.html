@@ -117,8 +117,7 @@
   }
 
   #chatbase-message-bubbles,
-  #chatbase-message-bubbles *,
-  #chatbase-message-bubbles > div {
+  #chatbase-message-bubbles * {
     filter: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
@@ -133,15 +132,16 @@
   }
 
   #chatbase-message-bubbles::before,
+  #chatbase-message-bubbles::after,
   #chatbase-message-bubbles > div::before {
     display: none !important;
     content: none !important;
   }
 
-  #chatbase-message-bubbles::after {
+  #chatbase-message-bubbles > div::after {
     position: absolute !important;
-    left: 2.15rem !important;
-    bottom: -0.45rem !important;
+    left: 2rem !important;
+    bottom: -0.42rem !important;
     width: 1rem !important;
     height: 1rem !important;
     content: "" !important;
@@ -174,8 +174,8 @@
       bottom: 9.1rem !important;
     }
 
-    #chatbase-message-bubbles::after {
-      left: 1.8rem !important;
+    #chatbase-message-bubbles > div::after {
+      left: 2rem !important;
     }
 
     #chatbase-bubble-window {
