@@ -204,32 +204,38 @@
   }
 
   #chatbase-message-bubbles {
+    position: fixed !important;
     left: 1.6rem !important;
     right: auto !important;
     bottom: 9.4rem !important;
     z-index: 99998 !important;
+    overflow: visible !important;
     filter: none !important;
     box-shadow: none !important;
-    overflow: visible !important;
+  }
+
+  #chatbase-message-bubbles * {
+    filter: none !important;
   }
 
   #chatbase-message-bubbles > div {
     position: relative !important;
     overflow: visible !important;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10) !important;
   }
 
-  #chatbase-message-bubbles > div::after {
-    position: absolute;
-    left: 1.35rem;
-    bottom: -0.72rem;
-    width: 1.1rem;
-    height: 1.1rem;
-    content: "";
-    background: #ffffff;
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-    transform: rotate(45deg);
+  #chatbase-message-bubbles::after {
+    position: absolute !important;
+    left: 2rem !important;
+    bottom: -0.62rem !important;
+    width: 1.15rem !important;
+    height: 1.15rem !important;
+    content: "" !important;
+    background: #ffffff !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12) !important;
+    transform: rotate(45deg) !important;
+    z-index: -1 !important;
   }
 
   #chatbase-bubble-window {
@@ -241,19 +247,6 @@
   }
 
   @media (max-width: 768px) {
-    #back-to-top,
-    .back-to-top,
-    .vanilla-back-to-top,
-    button[aria-label="Back to top"],
-    button[title="Back to top"],
-    a[aria-label="Back to top"],
-    a[title="Back to top"] {
-      width: 3.6rem !important;
-      height: 3.6rem !important;
-      bottom: 4.7rem !important;
-      right: 1rem !important;
-    }
-
     #chatbase-bubble-button {
       left: 1rem !important;
       right: auto !important;
@@ -266,8 +259,8 @@
       bottom: 9.1rem !important;
     }
 
-    #chatbase-message-bubbles > div::after {
-      left: 1.25rem;
+    #chatbase-message-bubbles::after {
+      left: 1.8rem !important;
     }
 
     #chatbase-bubble-window {
