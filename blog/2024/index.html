@@ -50,8 +50,8 @@
   a[title="Back to top"] {
     width: 4rem !important;
     height: 4rem !important;
-    bottom: 4.7rem !important;
     right: 1.6rem !important;
+    bottom: 4.7rem !important;
     z-index: 99999 !important;
     background: #111111 !important;
     color: #ffffff !important;
@@ -117,7 +117,8 @@
   }
 
   #chatbase-message-bubbles,
-  #chatbase-message-bubbles * {
+  #chatbase-message-bubbles *,
+  #chatbase-message-bubbles > div {
     filter: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
@@ -131,19 +132,13 @@
     border-radius: 14px !important;
   }
 
-  #chatbase-message-bubbles::before,
-  #chatbase-message-bubbles::after,
-  #chatbase-message-bubbles > div::before {
-    display: none !important;
-    content: none !important;
-  }
-
-  #chatbase-message-bubbles > div::after {
+  #chatbase-message-bubbles::before {
     position: absolute !important;
-    left: 2rem !important;
-    bottom: -0.42rem !important;
+    left: 2.15rem !important;
+    bottom: -0.45rem !important;
     width: 1rem !important;
     height: 1rem !important;
+    display: block !important;
     content: "" !important;
     background: #ffffff !important;
     border: 0 !important;
@@ -151,6 +146,13 @@
     filter: none !important;
     transform: rotate(45deg) !important;
     z-index: -1 !important;
+  }
+
+  #chatbase-message-bubbles::after,
+  #chatbase-message-bubbles > div::before,
+  #chatbase-message-bubbles > div::after {
+    display: none !important;
+    content: none !important;
   }
 
   #chatbase-bubble-window {
@@ -162,6 +164,19 @@
   }
 
   @media (max-width: 768px) {
+    #back-to-top,
+    .back-to-top,
+    .vanilla-back-to-top,
+    button[aria-label="Back to top"],
+    button[title="Back to top"],
+    a[aria-label="Back to top"],
+    a[title="Back to top"] {
+      width: 3.6rem !important;
+      height: 3.6rem !important;
+      right: 1rem !important;
+      bottom: 4.7rem !important;
+    }
+
     #chatbase-bubble-button {
       left: 1rem !important;
       right: auto !important;
@@ -174,7 +189,7 @@
       bottom: 9.1rem !important;
     }
 
-    #chatbase-message-bubbles > div::after {
+    #chatbase-message-bubbles::before {
       left: 2rem !important;
     }
 
