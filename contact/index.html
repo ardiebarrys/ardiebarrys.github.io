@@ -314,12 +314,24 @@
     font-size: 0.98rem !important;
     line-height: 1.35 !important;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14) !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transform: translateY(0) !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(0.35rem) !important;
     transition:
       opacity 0.55s ease,
       transform 0.55s ease !important;
+  }
+
+  #custom-chatbase-greeting.is-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+
+  #custom-chatbase-greeting.is-hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(0.35rem) !important;
   }
 
   #custom-chatbase-greeting::after {
@@ -333,12 +345,6 @@
     border-left: 0.68rem solid transparent;
     border-right: 0.68rem solid transparent;
     border-top: 0.68rem solid #ffffff;
-  }
-
-  #custom-chatbase-greeting.is-hidden {
-    opacity: 0 !important;
-    pointer-events: none !important;
-    transform: translateY(0.35rem) !important;
   }
 
   #chatbase-bubble-window {
@@ -531,11 +537,32 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var greeting = document.getElementById("custom-chatbase-greeting");
+    var showTimer;
+    var hideTimer;
+    var greetingDismissed = false;
+
+    function showGreeting() {
+      if (!greeting || greetingDismissed) {
+        return;
+      }
+
+      greeting.classList.remove("is-hidden");
+      greeting.classList.add("is-visible");
+
+      hideTimer = setTimeout(fadeGreeting, 5000);
+    }
 
     function fadeGreeting() {
-      if (greeting) {
-        greeting.classList.add("is-hidden");
+      if (!greeting) {
+        return;
       }
+
+      greetingDismissed = true;
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+
+      greeting.classList.remove("is-visible");
+      greeting.classList.add("is-hidden");
     }
 
     document.addEventListener("click", function (event) {
@@ -547,7 +574,7 @@
       }
     });
 
-    setTimeout(fadeGreeting, 5000);
+    showTimer = setTimeout(showGreeting, 2000);
   });
 </script> <script>
   window.alFolio = {
