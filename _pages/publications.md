@@ -245,7 +245,7 @@ nav_order: 2
         <div class="manual-pub-info">
           <p class="manual-pub-title">Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance</p>
           <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
-          <p class="manual-pub-journal">Journal of Toxicology and Environmental Health, Part A, 2026</p>
+          <p class="manual-pub-journal">Toxicology Mechanisms and Methods, 2026</p>
           <p class="manual-pub-doi"><a href="https://doi.org/10.1080/15376516.2026.2695155">DOI: 10.1080/15376516.2026.2695155</a></p>
 
           <div class="manual-pub-abstract">
