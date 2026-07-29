@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-subtitle: PhD Student, Faculty of Pharmacy, University of Malaya
+subtitle: Resolution Biologist and Toxicologist
 
 profile:
   align: right
