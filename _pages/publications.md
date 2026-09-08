@@ -481,6 +481,52 @@ nav_order: 2
     <summary>2025</summary>
 
     <div class="pub-year-content">
+
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Transcriptional condensates as kinetic filters for temporal control of gene expression</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Gene Reports, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.genrep.2026.102599">DOI: 10.1016/j.genrep.2026.102599</a></p>
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> Transcriptional regulation is often described as a spatial process in which transcription factors, cofactors, and RNA polymerase II assemble at enhancers and promoters. However, this framework does not fully explain how transcriptional systems interpret fluctuating signaling inputs. This review integrates evidence from condensate biology, signaling dynamics, chromatin regulation, and transcriptional bursting to examine transcriptional condensates as candidate kinetic intermediaries in temporal signal decoding. Established findings show that transcription-associated condensates can enrich regulatory factors, exchange components dynamically, undergo signal-dependent remodeling, and associate with transcriptional activity. We propose a kinetic-filter model in which concentration thresholds, nucleation delays, finite assembly and exchange kinetics, persistence, and regulated dissolution support duration-dependent integration, attenuation of rapid fluctuations, and short-term molecular memory. These properties are predicted to influence transcriptional burst frequency, duration, and output, while cellular metabolic and physicochemical conditions define the operating regime of condensate responsiveness. The model can be tested using live-cell imaging, fluorescence recovery after photobleaching, optogenetic pulsing, nascent RNA reporters, perturbation of multivalent interactions, orthogonal controls, and quantitative kinetic modeling. The complete causal sequence linking defined temporal inputs, condensate kinetics, and endogenous nascent transcription remains unproven. Establishing when this sequence operates will determine whether condensate-mediated temporal filtering is a general regulatory principle or a context-dependent mechanism.</p>
+          </div>
+        </div>
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.genrep.2026.102599" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1016/j.genrep.2026.102599"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1016/j.genrep.2026.102599"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="manual-pub-item">
+        <div class="manual-pub-info">
+          <p class="manual-pub-title">Mitochondrial mechanisms in the potential male reproductive toxicity of e-cigarette-derived metal-containing nanoparticles</p>
+          <p class="manual-pub-authors"><strong>Ardie Barry Sailis</strong></p>
+          <p class="manual-pub-journal">Journal of Applied Toxicology, 2026</p>
+          <p class="manual-pub-doi"><a href="https://doi.org/10.1002/jat.70382">DOI: 10.1002/jat.70382</a></p>
+          <div class="manual-pub-abstract">
+            <p><strong>Abstract.</strong> E-cigarette devices emit ultrafine metal-containing particles from heating coils, solder joints, and other wetted components, but their reproductive toxicology remains poorly defined. This review integrates evidence from aerosol chemistry, nanoparticle toxicology, and male reproductive biology to evaluate whether these particles may contribute to male reproductive dysfunction through mitochondrial injury. E-cigarette aerosols can contain nanoscale and ultrafine particles bearing chromium, nickel, iron, copper, zinc, tin, and lead. These particles may deposit in the distal lung and, based on broader nanoparticle toxicokinetics, could enter the systemic circulation. However, direct particle-resolved evidence of their accumulation in testicular tissue is currently absent. Mechanistic evidence therefore derives mainly from engineered nanoparticle and soluble-metal models. These studies indicate that metal exposure can disrupt blood-testis barrier integrity, impair Sertoli- and Leydig-cell function, alter steroidogenesis, damage germ cells, and reduce sperm quality. Mitochondria represent a plausible point of convergence because particle- and ion-mediated mechanisms can promote mitochondrial reactive oxygen species generation, lipid peroxidation, respiratory dysfunction, mitochondrial DNA damage, altered fusion-fission balance, defective mitophagy, apoptosis, and inflammatory signaling. These pathways provide a biologically plausible framework linking inhaled metal-containing particles to impaired spermatogenesis and steroidogenesis, without establishing causality under realistic vaping conditions. Future studies should combine inhalation-relevant exposure models with particle-resolved biodistribution, dosimetry, and mechanistic reproductive endpoints to determine whether these pathways operate following e-cigarette exposure.</p>
+          </div>
+        </div>
+        <div class="manual-pub-metrics">
+          <div class="plumx-top">
+            <div class="plumx-frame">
+              <a href="https://plu.mx/plum/a/?doi=10.1002%2Fjat.70382" data-orientation="vertical" class="plumx-summary" data-site="plum"></a>
+            </div>
+          </div>
+          <div class="metrics-box">
+            <div class="metric-block"><div class="altmetric-embed" data-badge-type="donut" data-doi="10.1002/jat.70382"></div></div>
+            <div class="metric-block"><span class="__dimensions_badge_embed__" data-doi="10.1002/jat.70382"></span></div>
+          </div>
+        </div>
+      </div>
+    
       <div class="manual-pub-item">
         <div class="manual-pub-info">
           <p class="manual-pub-title">Mitochondrial dysfunction induced by E-cigarettes</p>
@@ -489,7 +535,7 @@ nav_order: 2
           <p class="manual-pub-doi"><a href="https://doi.org/10.1016/j.tox.2025.154339">DOI: 10.1016/j.tox.2025.154339</a></p>
 
           <div class="manual-pub-abstract">
-            <p><strong>Abstract.</strong> E-cigarette use has been linked to mitochondrial dysfunction through exposure to reactive oxygen species (ROS), toxic aldehydes, metals, and flavoring agents. These constituents can damage mitochondrial DNA, impair oxidative phosphorylation, and disrupt calcium homeostasis, resulting in oxidative stress, inflammation, and programmed cell death. Mitochondrial impairment contributes to many systemic disorders, including respiratory, cardiovascular, and metabolic conditions. Preclinical findings suggest altered mitochondrial morphology, reduced adenosine triphosphate (ATP) production, and increased ROS, all of which can contribute to mitochondrial dysfunction following e-cigarette exposure. Certain flavorings and metals intensify these effects. While early human data suggest systemic mitochondrial stress, most research remains in vitro or animal-based. This review identifies mitochondrial dysfunction as a key mechanism in e-cigarette toxicity and calls for longitudinal research to elucidate its long-term health consequences.</p>
+            <p><strong>Abstract.</strong> E-cigarette use has been linked to mitochondrial dysfunction through exposure to reactive oxygen species (ROS), toxic aldehydes, metals, and flavoring agents. These constituents can damage mitochondrial DNA, impair oxidative phosphorylation, and disrupt calcium homeostasis, resulting in oxidative stress, inflammation, and programmed cell death. Mitochondrial impairment contributes to many systemic disorders, including respiratory, cardiovascular, and metabolic conditions. Praeclinical findings suggest altered mitochondrial morphology, reduced adenosine triphosphate (ATP) production, and increased ROS, all of which can contribute to mitochondrial dysfunction following e-cigarette exposure. Certain flavorings and metals intensify these effects. While early human data suggest systemic mitochondrial stress, most research remains in vitro or animal-based. This review identifies mitochondrial dysfunction as a key mechanism in e-cigarette toxicity and calls for longitudinal research to elucidate its long-term health consequences.</p>
           </div>
         </div>
 
