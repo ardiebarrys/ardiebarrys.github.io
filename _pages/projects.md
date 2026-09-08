@@ -207,6 +207,8 @@ nav_order: 3
           <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
           <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
           <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li>
+          <li>Vaping metals and male reproductive mitochondria (DOI: 10.1002/jat.70382)</li>
+          <li>More coming soon!</li>
         </ul>
       </div>
     </details>
@@ -231,12 +233,13 @@ nav_order: 3
         <h2>Cellular Signaling as Dynamic Regulatory Circuits</h2>
 
         <p>
-          This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding.
+          This independent project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding.
         </p>
 
         <ul class="project-list">
           <li>NRF2-KEAP1 as a redox signal-resolution circuit (DOI: 10.1016/j.pbiomolbio.2026.03.005)</li>
           <li>CYP1A1 as an environmental sensing feedback circuit (DOI: 10.1007/s00204-026-04384-1)</li>
+          <li>Transcriptional condensates as kinetic filters (DOI: 10.1016/j.genrep.2026.102599)</li>
           <li>More coming soon!</li>
         </ul>
       </div>
