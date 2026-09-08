@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-subtitle: Resolution Biologist and Toxicologist
+subtitle: Doctoral Researcher
 
 profile:
   align: right
@@ -360,16 +360,16 @@ social: true
 
 <div class="bio-text" markdown="1">
 
-<p><strong>Ardie Barry Sailis</strong> is a pharmaceutical sciences researcher at Universiti Malaya, working at the intersection of toxicology, pharmacology, toxicogenomics, and molecular systems biology.</p>
+<p>I study what inhaled toxicants do to the body, and specifically what e-cigarettes do to male reproductive health.</p>
 
-<p>His doctoral work looks at the <strong>toxicological effects of e-cigarette exposure</strong>, with a particular focus on reproductive health. He combines molecular, cellular, and systems-level approaches to understand how inhaled toxicants disrupt redox signaling, gene regulation, mitochondrial function, steroidogenic pathways, and the way cells communicate with one another.</p>
+<p>That means tracing a chain: an aerosol enters the lung, something in it reaches the bloodstream, and somewhere downstream a cell stops working the way it should. My doctoral research follows that chain through mitochondrial dysfunction, disrupted steroidogenesis in Leydig cells, microRNA regulation of testosterone signalling, and changes in blood cells. I also work on what secondhand aerosol exposure does to the lungs.</p>
 
-<p>His research has explored mitochondrial dysfunction, disruption of Leydig cell steroidogenesis, microRNA-mediated regulation of testosterone signaling, and how secondhand e-cigarette aerosol exposure affects lung health.</p>
+<p>Alongside the thesis, I've been building something of my own. I call it Cellular Signalling as Dynamic Regulatory Circuits, and the argument is that we tend to describe signalling pathways as switches when they behave more like control systems, shaped by timing, phase-separated states, and how a cell integrates stress. Out of that came the redoxostat concept in NRF2–KEAP1 biology. Nobody asked me to write it, which is partly why I wanted to.</p>
 
-<p>Alongside this, he's developing a framework he calls <em>Cellular Signaling as Dynamic Regulatory Circuits</em>, through which he introduced the <strong>redoxostat</strong> concept in NRF2–KEAP1 biology — reframing well-known signaling pathways as dynamic control systems shaped by temporal signal encoding, phase-separated regulatory states, stress-integration circuits, and the breakdowns in signal resolution that underlie disease.</p>
+<p>Thirteen peer-reviewed papers so far (as of 8 September 2026), which all either as sole or first author. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
 
 <p class="about-support-note">
-  Some works on this website are independent scholarly projects outside Ardie’s doctoral thesis and institutional research. If you find them useful, you may support his work through
+  Some works on this website are independent scholarly projects outside of my doctoral thesis and institutional research. If you find them useful, you may support my work through
   <a class="about-coffee-button" href="/contact/">
     <span class="about-coffee-icon">&#9749;</span>
     <span>Buy Me a Coffee</span>
@@ -387,8 +387,8 @@ social: true
     <span>Oxidative stress</span>
     <span>microRNA regulation</span>
     <span>Molecular toxicology</span>
-    <span>Environmental exposure</span>
-    <span>Systems toxicology</span>
+    <span>Scientific writing</span>
+    <span>Literature review</span>
     <span>Pharmaceutical sciences</span>
   </div>
 </div>
