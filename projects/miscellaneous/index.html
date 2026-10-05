@@ -20,14 +20,50 @@
     --max-content-width: 930px;
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/abs.png?v=16f3fc1a968a07a7aa9e621945725166"> <link rel="stylesheet" href="/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://ardiebarrysailis.com/projects/miscellaneous/"> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Ardie Barry Sailis </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">Projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">Curriculum Vitae </a> </li> <li class="nav-item "> <a class="nav-link" href="/contact/">Contact </a> </li> <li class="nav-item "> <a class="nav-link" href="/biography/">Biography </a> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Miscellaneous Sole-Author Works</h1> <p class="post-description">Sole-author papers and writing that do not belong directly to the PhD thesis or cellular signaling project.</p> </header> <article> <p>This section collects sole-author works and scholarly writing that are not directly part of my PhD thesis project or the cellular signaling framework.</p> </article> </div> </div> <style>
+  /* Site palette: dark navy and blue. Also set in assets/css/main.scss. */
+  :root {
+    color-scheme: dark;
+    --global-bg-color: #0a1330;
+    --global-code-bg-color: rgba(96, 165, 250, 0.08);
+    --global-text-color: #e6ecf8;
+    --global-text-color-light: #a3b1cf;
+    --global-theme-color: #60a5fa;
+    --global-hover-color: #93c5fd;
+    --global-hover-text-color: #0a1330;
+    --global-footer-bg-color: #060d24;
+    --global-footer-text-color: #a3b1cf;
+    --global-footer-link-color: #ffffff;
+    --global-distill-app-color: #a3b1cf;
+    --global-divider-color: rgba(255, 255, 255, 0.12);
+    --global-card-bg-color: #101c44;
+    --global-highlight-color: #fca5a5;
+    --global-back-to-top-bg-color: rgba(255, 255, 255, 0.12);
+    --global-back-to-top-text-color: #ffffff;
+    --global-newsletter-bg-color: #101c44;
+    --global-newsletter-text-color: #e6ecf8;
+    --global-tip-block-bg: #123b2c;
+    --global-tip-block-text: #beffe2;
+    --global-tip-block-title: #e2f5ec;
+    --global-warning-block-bg: #4a3d00;
+    --global-warning-block-text: #fff2af;
+    --global-warning-block-title: #fff8d8;
+    --global-danger-block-bg: #4a1010;
+    --global-danger-block-text: #ffb9b9;
+    --global-danger-block-title: #ffe0e0;
+  }
+
+  /* Chat widget button in the site blue */
+  #chatbase-bubble-button {
+    background-color: #2563eb !important;
+  }
+
   html,
   body {
     min-height: 100%;
     background:
-      radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.11), transparent 24rem),
-      radial-gradient(circle at 92% 28%, rgba(36, 71, 168, 0.1), transparent 24rem),
-      radial-gradient(circle at 12% 82%, rgba(56, 189, 248, 0.08), transparent 22rem),
-      linear-gradient(90deg, #f7f8fb 0%, #ffffff 24%, #ffffff 76%, #f7f8fb 100%) !important;
+      radial-gradient(circle at 10% 12%, rgba(37, 99, 235, 0.28), transparent 32rem),
+      radial-gradient(circle at 92% 30%, rgba(59, 130, 246, 0.16), transparent 28rem),
+      radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.08), transparent 24rem), #0a1330 !important;
     background-attachment: fixed !important;
   }
 
@@ -44,7 +80,7 @@
     content: '';
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(11, 23, 79, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
     -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
@@ -69,10 +105,10 @@
     right: 1.6rem !important;
     bottom: 4.7rem !important;
     z-index: 99999 !important;
-    background: #111111 !important;
+    background: #2563eb !important;
     color: #ffffff !important;
     border-radius: 999px !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
     opacity: 0 !important;
     pointer-events: none !important;
     transform: translateY(0.4rem) !important;
@@ -103,7 +139,7 @@
   footer,
   footer.fixed-bottom,
   .fixed-bottom {
-    background-color: #0b174f !important;
+    background-color: #060d24 !important;
     color: #ffffff !important;
     font-size: 0.85rem !important;
   }
@@ -133,11 +169,11 @@
     padding: 0.85rem 1rem !important;
     border: 0 !important;
     border-radius: 16px !important;
-    background: #ffffff !important;
-    color: #111111 !important;
+    background: #2563eb !important;
+    color: #ffffff !important;
     font-size: 0.98rem !important;
     line-height: 1.35 !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42) !important;
     opacity: 0 !important;
     pointer-events: none !important;
     transform: translateY(0.35rem) !important;
@@ -168,7 +204,7 @@
     transform: translateX(-50%);
     border-left: 0.68rem solid transparent;
     border-right: 0.68rem solid transparent;
-    border-top: 0.68rem solid #ffffff;
+    border-top: 0.68rem solid #2563eb;
   }
 
   #chatbase-bubble-window {

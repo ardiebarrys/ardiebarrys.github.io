@@ -63,10 +63,10 @@
   .contact-card {
     width: 100%;
     padding: 1.8rem 2rem;
-    border: 1px solid rgba(37, 99, 235, 0.22);
+    border: 1px solid rgba(96, 165, 250, 0.286);
     border-radius: 12px;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.025));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
   }
 
@@ -91,7 +91,7 @@
 
   .contact-note {
     margin-bottom: 1.2rem;
-    color: #666666;
+    color: #a3b1cf;
   }
 
   .support-card {
@@ -103,7 +103,7 @@
 
   .support-card p {
     margin-bottom: 1rem;
-    color: #444444;
+    color: #c3cee6;
     line-height: 1.55;
     text-align: justify;
     text-align-last: left;
@@ -118,10 +118,10 @@
     width: fit-content;
     margin: 0.3rem 0 1rem;
     padding: 0.78rem 1.15rem;
-    border: 1px solid rgba(37, 99, 235, 0.24);
+    border: 1px solid rgba(96, 165, 250, 0.312);
     border-radius: 999px;
-    background: #ffffff;
-    color: #2563eb !important;
+    background: #101c44;
+    color: #60a5fa !important;
     font-weight: 700;
     text-decoration: none !important;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
@@ -141,15 +141,15 @@
   .support-helps {
     margin-top: 0.4rem;
     padding-top: 0.85rem;
-    border-top: 1px solid rgba(37, 99, 235, 0.16);
-    color: #333333;
+    border-top: 1px solid rgba(96, 165, 250, 0.208);
+    color: #c3cee6;
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
   .support-note {
     margin-top: 0.85rem;
-    color: #666666;
+    color: #a3b1cf;
     font-size: 0.88rem;
     line-height: 1.5;
     text-align: justify;
@@ -169,10 +169,10 @@
   .contact-form textarea {
     width: 100%;
     padding: 0.75rem 0.85rem;
-    border: 1px solid #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
-    background: #ffffff;
-    color: #111111;
+    background: #101c44;
+    color: #e6ecf8;
     font: inherit;
     box-sizing: border-box;
   }
@@ -180,6 +180,10 @@
   .contact-form textarea {
     min-height: 190px;
     resize: vertical;
+  }
+
+  .contact-form ::placeholder {
+    color: #8796b8;
   }
 
   .contact-form button {
@@ -213,14 +217,50 @@
     }
   }
 </style> <div class="contact-page"> <div class="contact-layout"> <div class="contact-top-grid"> <section class="contact-card"> <h2>Address</h2> <div class="contact-address"> <strong>Department of Pharmaceutical Life Sciences</strong><br> Faculty of Pharmacy<br> University of Malaya<br> 50603 Kuala Lumpur, Malaysia </div> <iframe class="contact-map" src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe> </section> <section class="contact-card support-card"> <h2>Support Independent Academic Work</h2> <p> Apart from my doctoral thesis and institutional research, I also write independent academic summaries, research commentary, and scholarly resources on toxicology, reproductive health, and biomedical science. If you find these personal academic projects useful, you may support their continuation through the “Buy Me a Coffee” button. </p> <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener"> <span class="coffee-icon">☕</span> <span>Support via Buy Me a Coffee</span> </a> <div class="support-helps"> <strong>Support helps with:</strong><br> Website maintenance | Open educational resources | Research communication </div> <div class="support-note"> Contributions are voluntary and personal. They do not influence research findings, academic judgment, supervision, peer review, or institutional decisions. This page does not represent institutional fundraising unless stated otherwise. </div> </section> </div> <section class="contact-card"> <h2>Send a Message</h2> <p class="contact-note"> Please allow up to seven business days for a response. </p> <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST"> <label for="email">Your Email</label> <input id="email" type="email" name="email" required=""> <label for="topic">Topic</label> <select id="topic" name="topic" required=""> <option value="">Select a topic</option> <option value="Inquiry">Inquiry</option> <option value="Collaboration">Collaboration</option> <option value="Publication">Publication</option> <option value="Speaking invitation">Speaking Invitation</option> <option value="Media or writing">Media or Writing</option> <option value="Other">Other</option> </select> <label for="message">Question</label> <textarea id="message" name="message" required=""></textarea> <button type="submit">Send Message</button> </form> </section> </div> </div> </article> </div> </div> <style>
+  /* Site palette: dark navy and blue. Also set in assets/css/main.scss. */
+  :root {
+    color-scheme: dark;
+    --global-bg-color: #0a1330;
+    --global-code-bg-color: rgba(96, 165, 250, 0.08);
+    --global-text-color: #e6ecf8;
+    --global-text-color-light: #a3b1cf;
+    --global-theme-color: #60a5fa;
+    --global-hover-color: #93c5fd;
+    --global-hover-text-color: #0a1330;
+    --global-footer-bg-color: #060d24;
+    --global-footer-text-color: #a3b1cf;
+    --global-footer-link-color: #ffffff;
+    --global-distill-app-color: #a3b1cf;
+    --global-divider-color: rgba(255, 255, 255, 0.12);
+    --global-card-bg-color: #101c44;
+    --global-highlight-color: #fca5a5;
+    --global-back-to-top-bg-color: rgba(255, 255, 255, 0.12);
+    --global-back-to-top-text-color: #ffffff;
+    --global-newsletter-bg-color: #101c44;
+    --global-newsletter-text-color: #e6ecf8;
+    --global-tip-block-bg: #123b2c;
+    --global-tip-block-text: #beffe2;
+    --global-tip-block-title: #e2f5ec;
+    --global-warning-block-bg: #4a3d00;
+    --global-warning-block-text: #fff2af;
+    --global-warning-block-title: #fff8d8;
+    --global-danger-block-bg: #4a1010;
+    --global-danger-block-text: #ffb9b9;
+    --global-danger-block-title: #ffe0e0;
+  }
+
+  /* Chat widget button in the site blue */
+  #chatbase-bubble-button {
+    background-color: #2563eb !important;
+  }
+
   html,
   body {
     min-height: 100%;
     background:
-      radial-gradient(circle at 8% 18%, rgba(37, 99, 235, 0.11), transparent 24rem),
-      radial-gradient(circle at 92% 28%, rgba(36, 71, 168, 0.1), transparent 24rem),
-      radial-gradient(circle at 12% 82%, rgba(56, 189, 248, 0.08), transparent 22rem),
-      linear-gradient(90deg, #f7f8fb 0%, #ffffff 24%, #ffffff 76%, #f7f8fb 100%) !important;
+      radial-gradient(circle at 10% 12%, rgba(37, 99, 235, 0.28), transparent 32rem),
+      radial-gradient(circle at 92% 30%, rgba(59, 130, 246, 0.16), transparent 28rem),
+      radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.08), transparent 24rem), #0a1330 !important;
     background-attachment: fixed !important;
   }
 
@@ -237,7 +277,7 @@
     content: '';
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(11, 23, 79, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
     -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
@@ -262,10 +302,10 @@
     right: 1.6rem !important;
     bottom: 4.7rem !important;
     z-index: 99999 !important;
-    background: #111111 !important;
+    background: #2563eb !important;
     color: #ffffff !important;
     border-radius: 999px !important;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
     opacity: 0 !important;
     pointer-events: none !important;
     transform: translateY(0.4rem) !important;
@@ -296,7 +336,7 @@
   footer,
   footer.fixed-bottom,
   .fixed-bottom {
-    background-color: #0b174f !important;
+    background-color: #060d24 !important;
     color: #ffffff !important;
     font-size: 0.85rem !important;
   }
@@ -326,11 +366,11 @@
     padding: 0.85rem 1rem !important;
     border: 0 !important;
     border-radius: 16px !important;
-    background: #ffffff !important;
-    color: #111111 !important;
+    background: #2563eb !important;
+    color: #ffffff !important;
     font-size: 0.98rem !important;
     line-height: 1.35 !important;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14) !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42) !important;
     opacity: 0 !important;
     pointer-events: none !important;
     transform: translateY(0.35rem) !important;
@@ -361,7 +401,7 @@
     transform: translateX(-50%);
     border-left: 0.68rem solid transparent;
     border-right: 0.68rem solid transparent;
-    border-top: 0.68rem solid #ffffff;
+    border-top: 0.68rem solid #2563eb;
   }
 
   #chatbase-bubble-window {
