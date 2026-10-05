@@ -212,7 +212,7 @@
     min-height: 100%;
     background:
       radial-gradient(circle at 8% 18%, rgba(183, 0, 183, 0.11), transparent 24rem),
-      radial-gradient(circle at 92% 28%, rgba(36, 71, 168, 0.10), transparent 24rem),
+      radial-gradient(circle at 92% 28%, rgba(36, 71, 168, 0.1), transparent 24rem),
       radial-gradient(circle at 12% 82%, rgba(14, 159, 122, 0.08), transparent 22rem),
       linear-gradient(90deg, #f7f8fb 0%, #ffffff 24%, #ffffff 76%, #f7f8fb 100%) !important;
     background-attachment: fixed !important;
@@ -228,11 +228,10 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    content: "";
+    content: '';
     pointer-events: none;
     background-image:
-      linear-gradient(rgba(11, 23, 79, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(183, 0, 183, 0.045) 1px, transparent 1px);
+      linear-gradient(rgba(11, 23, 79, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(183, 0, 183, 0.045) 1px, transparent 1px);
     background-size: 44px 44px;
     mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
     -webkit-mask-image: linear-gradient(90deg, black 0%, transparent 26%, transparent 74%, black 100%);
@@ -248,10 +247,10 @@
   #back-to-top,
   .back-to-top,
   .vanilla-back-to-top,
-  button[aria-label="Back to top"],
-  button[title="Back to top"],
-  a[aria-label="Back to top"],
-  a[title="Back to top"] {
+  button[aria-label='Back to top'],
+  button[title='Back to top'],
+  a[aria-label='Back to top'],
+  a[title='Back to top'] {
     width: 4rem !important;
     height: 4rem !important;
     right: 1.6rem !important;
@@ -272,10 +271,10 @@
   #back-to-top.is-visible,
   .back-to-top.is-visible,
   .vanilla-back-to-top.is-visible,
-  button[aria-label="Back to top"].is-visible,
-  button[title="Back to top"].is-visible,
-  a[aria-label="Back to top"].is-visible,
-  a[title="Back to top"].is-visible {
+  button[aria-label='Back to top'].is-visible,
+  button[title='Back to top'].is-visible,
+  a[aria-label='Back to top'].is-visible,
+  a[title='Back to top'].is-visible {
     opacity: 1 !important;
     pointer-events: auto !important;
     transform: translateY(0) !important;
@@ -352,7 +351,7 @@
     bottom: -0.62rem;
     width: 0;
     height: 0;
-    content: "";
+    content: '';
     transform: translateX(-50%);
     border-left: 0.68rem solid transparent;
     border-right: 0.68rem solid transparent;
@@ -371,10 +370,10 @@
     #back-to-top,
     .back-to-top,
     .vanilla-back-to-top,
-    button[aria-label="Back to top"],
-    button[title="Back to top"],
-    a[aria-label="Back to top"],
-    a[title="Back to top"] {
+    button[aria-label='Back to top'],
+    button[title='Back to top'],
+    a[aria-label='Back to top'],
+    a[title='Back to top'] {
       width: 3.6rem !important;
       height: 3.6rem !important;
       right: 1rem !important;
@@ -447,24 +446,22 @@
     var scrollThreshold = 180;
 
     var selectors = [
-      "#back-to-top",
-      ".back-to-top",
-      ".vanilla-back-to-top",
+      '#back-to-top',
+      '.back-to-top',
+      '.vanilla-back-to-top',
       'button[aria-label="Back to top"]',
       'button[title="Back to top"]',
       'a[aria-label="Back to top"]',
-      'a[title="Back to top"]'
+      'a[title="Back to top"]',
     ];
 
     function getButtons() {
-      return Array.prototype.slice.call(
-        document.querySelectorAll(selectors.join(","))
-      );
+      return Array.prototype.slice.call(document.querySelectorAll(selectors.join(',')));
     }
 
     function hideButtons() {
       getButtons().forEach(function (button) {
-        button.classList.remove("is-visible");
+        button.classList.remove('is-visible');
       });
     }
 
@@ -475,7 +472,7 @@
       }
 
       getButtons().forEach(function (button) {
-        button.classList.add("is-visible");
+        button.classList.add('is-visible');
       });
 
       clearTimeout(fadeTimer);
@@ -488,8 +485,8 @@
     function start() {
       hideButtons();
 
-      window.addEventListener("scroll", showButtonsWhileScrolling, {
-        passive: true
+      window.addEventListener('scroll', showButtonsWhileScrolling, {
+        passive: true,
       });
 
       var observer = new MutationObserver(function () {
@@ -498,19 +495,19 @@
 
       observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
       });
     }
 
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", start);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start);
     } else {
       start();
     }
   })();
-</script> <footer class="fixed-bottom"> <div class="container mt-0"> © Copyright 2026 Ardie Barry Sailis. </div> </footer> <div id="custom-chatbase-greeting"> Hi! I am an AI assistant. Ask me anything. </div> <script>
+</script> <footer class="fixed-bottom"> <div class="container mt-0">© Copyright 2026 Ardie Barry Sailis.</div> </footer> <div id="custom-chatbase-greeting">Hi! I am an AI assistant. Ask me anything.</div> <script>
   (function () {
-    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+    if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
       window.chatbase = function () {
         if (!window.chatbase.q) {
           window.chatbase.q = [];
@@ -521,34 +518,57 @@
 
       window.chatbase = new Proxy(window.chatbase, {
         get: function (target, prop) {
-          if (prop === "q") {
+          if (prop === 'q') {
             return target.q;
           }
 
           return function () {
             return target(prop, Array.prototype.slice.call(arguments));
           };
-        }
+        },
       });
     }
 
     function onLoad() {
-      var script = document.createElement("script");
-      script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = "dxCY_mFoNPQu83GSntHvw";
-      script.domain = "www.chatbase.co";
+      var script = document.createElement('script');
+      script.src = 'https://www.chatbase.co/embed.min.js';
+      script.id = 'dxCY_mFoNPQu83GSntHvw';
+      script.domain = 'www.chatbase.co';
       document.body.appendChild(script);
     }
 
-    if (document.readyState === "complete") {
+    var chatLoaded = false;
+
+    function loadChatOnce() {
+      if (chatLoaded) {
+        return;
+      }
+      chatLoaded = true;
       onLoad();
+    }
+
+    function scheduleChat() {
+      ['scroll', 'pointerdown', 'keydown', 'touchstart'].forEach(function (evt) {
+        window.addEventListener(evt, loadChatOnce, { once: true, passive: true });
+      });
+      setTimeout(function () {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadChatOnce, { timeout: 2000 });
+        } else {
+          loadChatOnce();
+        }
+      }, 4000);
+    }
+
+    if (document.readyState === 'complete') {
+      scheduleChat();
     } else {
-      window.addEventListener("load", onLoad);
+      window.addEventListener('load', scheduleChat);
     }
   })();
 
-  document.addEventListener("DOMContentLoaded", function () {
-    var greeting = document.getElementById("custom-chatbase-greeting");
+  document.addEventListener('DOMContentLoaded', function () {
+    var greeting = document.getElementById('custom-chatbase-greeting');
     var showTimer;
     var hideTimer;
     var greetingDismissed = false;
@@ -558,8 +578,8 @@
         return;
       }
 
-      greeting.classList.remove("is-hidden");
-      greeting.classList.add("is-visible");
+      greeting.classList.remove('is-hidden');
+      greeting.classList.add('is-visible');
 
       hideTimer = setTimeout(fadeGreeting, 5000);
     }
@@ -573,15 +593,12 @@
       clearTimeout(showTimer);
       clearTimeout(hideTimer);
 
-      greeting.classList.remove("is-visible");
-      greeting.classList.add("is-hidden");
+      greeting.classList.remove('is-visible');
+      greeting.classList.add('is-hidden');
     }
 
-    document.addEventListener("click", function (event) {
-      if (
-        event.target.closest("#chatbase-bubble-button") ||
-        event.target.closest("#custom-chatbase-greeting")
-      ) {
+    document.addEventListener('click', function (event) {
+      if (event.target.closest('#chatbase-bubble-button') || event.target.closest('#custom-chatbase-greeting')) {
         fadeGreeting();
       }
     });
@@ -592,6 +609,6 @@
   window.alFolio = {
     compatBootstrap: false
   };
-</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
   </script> </body> </html>
