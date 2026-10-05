@@ -33,7 +33,7 @@ nav_order: 3
 
   .project-section-title {
     margin-bottom: 1rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -41,11 +41,11 @@ nav_order: 3
   .project-card {
     width: 100%;
     padding: 0;
-    border: 1px solid rgba(37, 99, 235, 0.22);
+    border: 1px solid rgba(96, 165, 250, 0.286);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
     overflow: hidden;
     box-sizing: border-box;
   }
@@ -70,7 +70,7 @@ nav_order: 3
   }
 
   .project-card[open] summary {
-    border-bottom: 1px solid rgba(37, 99, 235, 0.16);
+    border-bottom: 1px solid rgba(96, 165, 250, 0.208);
   }
 
   .project-summary-title {
@@ -104,7 +104,7 @@ nav_order: 3
     width: var(--progress);
     height: 100%;
     border-radius: 999px;
-    background: linear-gradient(90deg, #0b174f, #2563eb, #60a5fa);
+    background: linear-gradient(90deg, #1d4ed8, #2563eb, #60a5fa);
     transform: scaleX(0);
     transform-origin: left;
     animation: fillProgress 1.4s ease forwards;
@@ -112,7 +112,7 @@ nav_order: 3
 
   .project-progress-value {
     min-width: 38px;
-    color: #1e40af;
+    color: #93c5fd;
     font-size: 0.78rem;
     font-weight: 700;
     text-align: right;

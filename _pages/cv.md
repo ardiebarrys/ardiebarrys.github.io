@@ -17,6 +17,8 @@ nav_title: CV
   }
 
   .cv {
+    --global-text-color: #1e293b;
+    --global-text-color-light: #5b6478;
     --cv-ink: #0b174f;
     --cv-blue: #2563eb;
     --cv-text: #1e293b;
@@ -299,6 +301,7 @@ nav_title: CV
     }
 
     html:root {
+      color-scheme: light;
       font-size: 13px !important;
     }
 

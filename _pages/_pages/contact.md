@@ -49,10 +49,10 @@ nav_order: 5
   .contact-card {
     width: 100%;
     padding: 1.8rem 2rem;
-    border: 1px solid rgba(37, 99, 235, 0.22);
+    border: 1px solid rgba(96, 165, 250, 0.286);
     border-radius: 12px;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.025));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
   }
 
@@ -77,7 +77,7 @@ nav_order: 5
 
   .contact-note {
     margin-bottom: 1.2rem;
-    color: #666666;
+    color: #a3b1cf;
   }
 
   .support-card {
@@ -89,7 +89,7 @@ nav_order: 5
 
   .support-card p {
     margin-bottom: 1rem;
-    color: #444444;
+    color: #c3cee6;
     line-height: 1.55;
     text-align: justify;
     text-align-last: left;
@@ -104,10 +104,10 @@ nav_order: 5
     width: fit-content;
     margin: 0.3rem 0 1rem;
     padding: 0.78rem 1.15rem;
-    border: 1px solid rgba(37, 99, 235, 0.24);
+    border: 1px solid rgba(96, 165, 250, 0.312);
     border-radius: 999px;
-    background: #ffffff;
-    color: #2563eb !important;
+    background: #101c44;
+    color: #60a5fa !important;
     font-weight: 700;
     text-decoration: none !important;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
@@ -127,15 +127,15 @@ nav_order: 5
   .support-helps {
     margin-top: 0.4rem;
     padding-top: 0.85rem;
-    border-top: 1px solid rgba(37, 99, 235, 0.16);
-    color: #333333;
+    border-top: 1px solid rgba(96, 165, 250, 0.208);
+    color: #c3cee6;
     font-size: 0.95rem;
     line-height: 1.5;
   }
 
   .support-note {
     margin-top: 0.85rem;
-    color: #666666;
+    color: #a3b1cf;
     font-size: 0.88rem;
     line-height: 1.5;
     text-align: justify;
@@ -155,10 +155,10 @@ nav_order: 5
   .contact-form textarea {
     width: 100%;
     padding: 0.75rem 0.85rem;
-    border: 1px solid #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 8px;
-    background: #ffffff;
-    color: #111111;
+    background: #101c44;
+    color: #e6ecf8;
     font: inherit;
     box-sizing: border-box;
   }
@@ -166,6 +166,10 @@ nav_order: 5
   .contact-form textarea {
     min-height: 190px;
     resize: vertical;
+  }
+
+  .contact-form ::placeholder {
+    color: #8796b8;
   }
 
   .contact-form button {

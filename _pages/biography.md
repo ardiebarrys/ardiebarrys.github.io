@@ -61,7 +61,7 @@ nav_order: 6
     color: #ffffff !important;
     font-size: 3rem;
     font-weight: 700;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   }
 
   .bio-hero-content p {
@@ -70,16 +70,16 @@ nav_order: 6
     color: #ffffff !important;
     font-size: 1.2rem;
     line-height: 1.65;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
 
   .bio-card,
   .bio-image-card {
     width: 100%;
-    border: 1px solid rgba(37, 99, 235, 0.12);
+    border: 1px solid rgba(96, 165, 250, 0.156);
     border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.045);
+    background: #101c44;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.135);
     box-sizing: border-box;
   }
 
@@ -89,14 +89,14 @@ nav_order: 6
 
   .bio-card h2 {
     margin-top: 0;
-    color: #0b174f !important;
+    color: #e0ebff !important;
     font-weight: 700;
   }
 
   .bio-card h3 {
     margin-top: 1.4rem;
     margin-bottom: 0.45rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-size: 1.15rem;
     font-weight: 700;
   }
@@ -132,10 +132,10 @@ nav_order: 6
 
   .bio-focus-tag {
     padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(37, 99, 235, 0.22);
+    border: 1px solid rgba(96, 165, 250, 0.286);
     border-radius: 999px;
-    background: #ffffff;
-    color: #111111;
+    background: #101c44;
+    color: #e6ecf8;
     font-size: 0.95rem;
   }
 
@@ -151,7 +151,7 @@ nav_order: 6
 
   .bio-inline-quote blockquote {
     margin: 0;
-    color: #111111;
+    color: #e6ecf8;
     font-size: 1.08rem;
     font-weight: 600;
     line-height: 1.7;
@@ -161,7 +161,7 @@ nav_order: 6
   .bio-inline-quote cite {
     display: block;
     margin-top: 0.85rem;
-    color: #555555;
+    color: #a3b1cf;
     font-style: italic;
     font-weight: 700;
     text-align: center;
