@@ -105,6 +105,19 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      - name: Generate CV PDF 📄
+        # Prints the live /cv/ page to PDF so the download button always matches the CV page.
+        # If this step fails, the committed copy in assets/pdf is used instead.
+        continue-on-error: true
+        run: |
+          python3 -m http.server 8080 --directory _site >/dev/null 2>&1 &
+          sleep 2
+          mkdir -p _site/assets/pdf
+          google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
+            --virtual-time-budget=15000 \
+            --print-to-pdf=_site/assets/pdf/Ardie_Barry_Sailis_CV.pdf \
+            http://localhost:8080/cv/
+          ls -la _site/assets/pdf/Ardie_Barry_Sailis_CV.pdf
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

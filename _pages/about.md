@@ -356,7 +356,104 @@ social: true
       max-height: 44px;
     }
   }
-/* Motion: reveal on scroll, hover polish */
+/* Homepage: selected papers and latest news */
+  .home-section {
+    margin: 2rem 0 2.25rem;
+  }
+
+  .home-section-title {
+    margin-bottom: 0.9rem;
+    color: #0b174f;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .selected-papers {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .bio-text a.selected-paper {
+    display: block;
+    padding: 0.95rem 1.1rem;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111111 !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .bio-text a.selected-paper:hover {
+    transform: translateY(-3px);
+    border-color: #2563eb;
+    box-shadow: 0 12px 26px rgba(37, 99, 235, 0.14);
+  }
+
+  .selected-paper-journal {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #2563eb;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .selected-paper-title {
+    display: block;
+    color: #0b174f;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .news-list {
+    margin: 0;
+    padding: 0 0 0 1.1rem;
+    border-left: 2px solid rgba(37, 99, 235, 0.25);
+    list-style: none;
+  }
+
+  .news-list li {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .news-list li::before {
+    content: "";
+    position: absolute;
+    top: 0.45rem;
+    left: calc(-1.1rem - 6px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+  }
+
+  .news-date {
+    flex: 0 0 5.2rem;
+    color: #0b174f;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 576px) {
+    .news-list li {
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .news-date {
+      flex: none;
+    }
+  }
+
+  /* Motion: reveal on scroll, hover polish */
   .reveal {
     opacity: 0;
     transform: translateY(18px);
@@ -434,7 +531,8 @@ social: true
     .post-title,
     .profile-logo-links a,
     .keyword-list span,
-    .highlight-study {
+    .highlight-study,
+    .bio-text a.selected-paper {
       animation: none !important;
       transition: none !important;
       transform: none !important;
@@ -497,6 +595,30 @@ social: true
   <a href="/publications/">View related publications</a>
 </div>
 
+<div class="home-section">
+  <div class="home-section-title">Selected Papers</div>
+  <div class="selected-papers">
+    {%- for paper in site.data.selected_papers %}
+    <a class="selected-paper" href="https://doi.org/{{ paper.doi }}">
+      <span class="selected-paper-journal">{{ paper.journal }}, {{ paper.year }}</span>
+      <span class="selected-paper-title">{{ paper.title }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</div>
+
+<div class="home-section">
+  <div class="home-section-title">Latest News</div>
+  <ul class="news-list">
+    {%- for item in site.data.news limit: 5 %}
+    <li>
+      <span class="news-date">{{ item.date }}</span>
+      <span class="news-text">{% if item.link %}<a href="{{ item.link }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+
 </div>
 
 <script>
@@ -514,17 +636,18 @@ social: true
   (function () {
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
-      ".bio-text > p, .keyword-box, .highlight-study, .profile-logo-links a, .profile-info > p"
+      ".bio-text > p, .keyword-box, .highlight-study, .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
     );
 
     if (reduce || !("IntersectionObserver" in window)) {
       return;
     }
 
-    targets.forEach(function (el, i) {
+    targets.forEach(function (el) {
       el.classList.add("reveal");
-      if (el.matches(".profile-logo-links a")) {
-        el.style.setProperty("--reveal-delay", (i % 7) * 0.06 + "s");
+      if (el.matches(".profile-logo-links a, .selected-paper, .news-list li")) {
+        var index = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.setProperty("--reveal-delay", index * 0.07 + "s");
       }
     });
 

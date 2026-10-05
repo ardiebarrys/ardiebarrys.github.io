@@ -205,6 +205,124 @@ toc:
       padding: 0.55rem 0;
     }
   }
+
+  .cv-download {
+    margin: -0.75rem 0 1.75rem;
+  }
+
+  .cv-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cv-download-btn:hover {
+    background: #0b174f;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(11, 23, 79, 0.25);
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 12mm 12mm 14mm;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html:root {
+      font-size: 12.5px !important;
+    }
+
+    html:root,
+    html:root body {
+      background: #ffffff !important;
+      padding-top: 0 !important;
+      margin: 0 !important;
+    }
+
+    html:root body::before,
+    #navbar,
+    footer,
+    .fixed-bottom,
+    .progress-container,
+    #progress,
+    #toc-sidebar,
+    .col-sm-3,
+    .post-header,
+    .cv-download,
+    #custom-chatbase-greeting,
+    #chatbase-bubble-button,
+    #chatbase-bubble-window,
+    iframe {
+      display: none !important;
+    }
+
+    .container,
+    .row,
+    .col-sm-9 {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .cv-hero {
+      margin: 0 0 1rem !important;
+      padding: 1rem 1.25rem !important;
+      box-shadow: none !important;
+      break-inside: avoid;
+    }
+
+    .cv-hero h1 {
+      font-size: 2rem !important;
+    }
+
+    .cv-card {
+      margin-bottom: 0.7rem !important;
+      padding: 0.75rem 1rem !important;
+      background: #ffffff !important;
+      border: 1px solid #d6e0f5 !important;
+      box-shadow: none !important;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+
+    .cv-page h2 {
+      margin: 1.1rem 0 0.5rem !important;
+      font-size: 1.35rem !important;
+      break-after: avoid;
+    }
+
+    .cv-page li,
+    .cv-page tr,
+    .cv-page p {
+      break-inside: avoid;
+    }
+
+    .cv-date,
+    .cv-item-title {
+      break-after: avoid;
+    }
+
+    .cv-page a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+  }
 </style>
 
 <div class="cv-page" markdown="1">
@@ -215,6 +333,10 @@ toc:
     PhD Candidate in Pharmaceutical Sciences (Health), Department of Pharmaceutical Life Sciences,
     Faculty of Pharmacy, Universiti Malaya.
   </p>
+</div>
+
+<div class="cv-download">
+  <a class="cv-download-btn" href="/assets/pdf/Ardie_Barry_Sailis_CV.pdf" download>&#8681; Download CV (PDF)</a>
 </div>
 
 ## Contact Information

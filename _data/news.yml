@@ -1,0 +1,21 @@
+# Latest news on the homepage. Put the newest item at the top.
+# The homepage shows the first 5. "link" is optional.
+
+- date: Sep 2026
+  text: Reached 13 peer-reviewed papers, all as sole or first author.
+
+- date: Aug 2026
+  text: New paper in Gene Reports on transcriptional condensates as kinetic filters for gene expression.
+  link: https://doi.org/10.1016/j.genrep.2026.102599
+
+- date: Jun 2026
+  text: New paper in Archives of Toxicology on ferroptosis in e-cigarette aerosol-associated respiratory injury.
+  link: https://doi.org/10.1007/s00204-026-04486-w
+
+- date: Jun 2026
+  text: New review in International Journal of Impotence Research on e-cigarettes and erectile dysfunction.
+  link: https://doi.org/10.1038/s41443-026-01300-0
+
+- date: Apr 2026
+  text: New paper in Diabetes, Obesity and Metabolism on obesity-related erectile dysfunction.
+  link: https://doi.org/10.1111/dom.70818
