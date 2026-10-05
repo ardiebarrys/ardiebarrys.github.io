@@ -140,7 +140,7 @@ social: true
     justify-content: center;
     min-height: 88px;
     padding: 1rem 1.1rem;
-    border: 1px solid rgba(183, 0, 183, 0.28);
+    border: 1px solid rgba(37, 99, 235, 0.28);
     border-radius: 10px;
     background: #ffffff !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
@@ -149,7 +149,7 @@ social: true
 
   .profile-logo-links a:hover {
     border-color: var(--global-theme-color);
-    box-shadow: 0 7px 18px rgba(183, 0, 183, 0.12);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.12);
   }
 
   .profile-logo-links img {
@@ -187,19 +187,19 @@ social: true
     gap: 0.55rem;
     margin-left: 0.35rem;
     padding: 0.42rem 0.75rem;
-    border: 1px solid rgba(183, 0, 183, 0.24);
+    border: 1px solid rgba(37, 99, 235, 0.24);
     border-radius: 999px;
     background: #ffffff;
-    color: #b700b7 !important;
+    color: #2563eb !important;
     font-weight: 700;
     text-decoration: none !important;
-    box-shadow: 0 6px 16px rgba(183, 0, 183, 0.1);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
     white-space: nowrap;
   }
 
   .bio-text a.about-coffee-button:hover {
     border-color: var(--global-theme-color);
-    background: rgba(183, 0, 183, 0.08);
+    background: rgba(37, 99, 235, 0.08);
     color: var(--global-theme-color) !important;
   }
 
@@ -220,7 +220,7 @@ social: true
     padding: 1.15rem 1.25rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
   }
 
   .keyword-title {
@@ -238,7 +238,7 @@ social: true
 
   .keyword-list span {
     padding: 0.42rem 0.68rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.22);
     border-radius: 999px;
     background: #ffffff;
     color: #111111;
@@ -250,7 +250,7 @@ social: true
     padding: 1.25rem 1.4rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.1), rgba(183, 0, 183, 0.03));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.03));
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
@@ -277,7 +277,7 @@ social: true
   .highlight-citation {
     padding: 0.75rem 0.85rem;
     border-radius: 8px;
-    background: rgba(183, 0, 183, 0.08);
+    background: rgba(37, 99, 235, 0.08);
   }
 
   .highlight-study a {
@@ -377,7 +377,7 @@ social: true
 
   .profile img:hover {
     transform: scale(1.015);
-    box-shadow: 0 14px 34px rgba(183, 0, 183, 0.16);
+    box-shadow: 0 14px 34px rgba(37, 99, 235, 0.16);
   }
 
   @keyframes profile-in {
@@ -387,7 +387,7 @@ social: true
 
   .post-header .post-title,
   header .post-title {
-    background: linear-gradient(90deg, #111111 0%, #b700b7 50%, #111111 100%);
+    background: linear-gradient(90deg, #0b174f 0%, #2563eb 50%, #0b174f 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -414,9 +414,9 @@ social: true
 
   .keyword-list span:hover {
     transform: translateY(-2px);
-    background-color: #b700b7 !important;
+    background-color: #2563eb !important;
     color: #ffffff !important;
-    box-shadow: 0 6px 14px rgba(183, 0, 183, 0.22);
+    box-shadow: 0 6px 14px rgba(37, 99, 235, 0.22);
   }
 
   .highlight-study {

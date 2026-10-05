@@ -102,7 +102,7 @@ toc:
     padding: 1.8rem 2rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
   }
 
@@ -128,7 +128,7 @@ toc:
   .cv-card {
     margin-bottom: 1.3rem;
     padding: 1.35rem 1.5rem;
-    border: 1px solid rgba(183, 0, 183, 0.18);
+    border: 1px solid rgba(37, 99, 235, 0.18);
     border-radius: 10px;
     background: #ffffff;
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.045);
@@ -186,9 +186,9 @@ toc:
 
   .cv-tag {
     padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.22);
     border-radius: 999px;
-    background: rgba(183, 0, 183, 0.055);
+    background: rgba(37, 99, 235, 0.055);
     color: #111111;
     font-size: 0.95rem;
   }

@@ -36,10 +36,10 @@ nav_order: 2
 
   .pub-year-group {
     margin: 2rem 0 1.4rem;
-    border: 1px solid rgba(183, 0, 183, 0.2);
+    border: 1px solid rgba(37, 99, 235, 0.2);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
     overflow: hidden;
   }
 
@@ -53,7 +53,7 @@ nav_order: 2
   }
 
   .pub-year-group summary:hover {
-    background: rgba(183, 0, 183, 0.06);
+    background: rgba(37, 99, 235, 0.06);
   }
 
   .pub-year-content {
