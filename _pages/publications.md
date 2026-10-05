@@ -29,14 +29,14 @@ nav_order: 2
 
   .manual-pub-year {
     margin: 2rem 0 1rem;
-    color: #0b174f !important;
+    color: #e0ebff !important;
     font-size: 1.8rem;
     font-weight: 700;
   }
 
   .pub-year-group {
     margin: 2rem 0 1.4rem;
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(96, 165, 250, 0.26);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
@@ -58,7 +58,7 @@ nav_order: 2
 
   .pub-year-content {
     padding: 0 1.1rem 0.4rem;
-    background: #ffffff;
+    background: #101c44;
   }
 
   .pub-year-content .manual-pub-item:last-child {
@@ -72,7 +72,7 @@ nav_order: 2
     align-items: start !important;
     width: 100% !important;
     padding: 1.5rem 0 !important;
-    border-bottom: 1px solid #cccccc !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
   }
 
   .manual-pub-info {
@@ -81,7 +81,7 @@ nav_order: 2
 
   .manual-pub-title {
     margin: 0 0 0.5rem !important;
-    color: #111111 !important;
+    color: #e6ecf8 !important;
     font-size: 1.15rem !important;
     font-weight: 700 !important;
     line-height: 1.35 !important;
@@ -91,7 +91,7 @@ nav_order: 2
   .manual-pub-journal,
   .manual-pub-doi {
     margin: 0 0 0.4rem !important;
-    color: #111111 !important;
+    color: #e6ecf8 !important;
     font-size: 0.98rem !important;
     line-height: 1.45 !important;
   }
@@ -101,12 +101,12 @@ nav_order: 2
   }
 
   .manual-pub-doi a {
-    color: #2447a8 !important;
+    color: #93c5fd !important;
   }
 
   .manual-pub-abstract {
     margin-top: 0.85rem !important;
-    color: #111111 !important;
+    color: #e6ecf8 !important;
   }
 
   .manual-pub-abstract p {
@@ -118,7 +118,7 @@ nav_order: 2
   }
 
   .manual-pub-abstract strong {
-    color: #0b174f !important;
+    color: #e0ebff !important;
   }
 
   .manual-pub-metrics {
@@ -126,17 +126,17 @@ nav_order: 2
     min-width: 300px !important;
     max-width: 300px !important;
     padding: 0.85rem !important;
-    border: 1px solid #dddddd !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: 10px !important;
-    background: #ffffff !important;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05) !important;
+    background: #101c44 !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15) !important;
     box-sizing: border-box !important;
   }
 
   .manual-pub-metrics::before {
     display: block;
     margin-bottom: 0.65rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -149,11 +149,12 @@ nav_order: 2
     width: 100% !important;
     margin: 0 0 0.85rem !important;
     padding-bottom: 0.85rem !important;
-    border-bottom: 1px solid #eeeeee !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
     text-align: center !important;
   }
 
   .plumx-frame {
+    --global-text-color: #1e293b;
     display: flex !important;
     width: 260px !important;
     min-height: 230px !important;
@@ -161,6 +162,8 @@ nav_order: 2
     align-items: flex-start !important;
     justify-content: center !important;
     overflow: hidden !important;
+    border-radius: 8px !important;
+    background: #f4f7fd !important;
   }
 
   .plumx-frame .plumx-summary,
@@ -178,12 +181,13 @@ nav_order: 2
   }
 
   .metric-block {
+    --global-text-color: #1e293b;
     display: flex !important;
     min-height: 94px !important;
     padding: 0.65rem !important;
-    border: 1px solid #eeeeee !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
     border-radius: 8px !important;
-    background: #fafafa !important;
+    background: #f4f7fd !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: visible !important;

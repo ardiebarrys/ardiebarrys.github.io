@@ -72,8 +72,8 @@ social: true
   }
 
   body {
-    background: #ffffff !important;
-    color: #111111 !important;
+    background: #0a1330 !important;
+    color: #e6ecf8 !important;
   }
 
   h1 {
@@ -95,7 +95,7 @@ social: true
 
   .bio-text a,
   .profile-info a {
-    color: #2447a8 !important;
+    color: #93c5fd !important;
   }
 
   .profile-info,
@@ -140,10 +140,10 @@ social: true
     justify-content: center;
     min-height: 88px;
     padding: 1rem 1.1rem;
-    border: 1px solid rgba(37, 99, 235, 0.28);
+    border: 1px solid rgba(96, 165, 250, 0.364);
     border-radius: 10px;
-    background: #ffffff !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    background: #f4f7fd !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
   }
 
@@ -187,10 +187,10 @@ social: true
     gap: 0.55rem;
     margin-left: 0.35rem;
     padding: 0.42rem 0.75rem;
-    border: 1px solid rgba(37, 99, 235, 0.24);
+    border: 1px solid rgba(96, 165, 250, 0.312);
     border-radius: 999px;
-    background: #ffffff;
-    color: #2563eb !important;
+    background: #101c44;
+    color: #60a5fa !important;
     font-weight: 700;
     text-decoration: none !important;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
@@ -225,7 +225,7 @@ social: true
 
   .keyword-title {
     margin-bottom: 0.8rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-size: 1rem;
     font-weight: 700;
   }
@@ -238,10 +238,10 @@ social: true
 
   .keyword-list span {
     padding: 0.42rem 0.68rem;
-    border: 1px solid rgba(37, 99, 235, 0.22);
+    border: 1px solid rgba(96, 165, 250, 0.286);
     border-radius: 999px;
-    background: #ffffff;
-    color: #111111;
+    background: #101c44;
+    color: #e6ecf8;
     font-size: 0.95rem;
   }
 
@@ -251,7 +251,7 @@ social: true
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.03));
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
   }
 
   .highlight-label {
@@ -363,7 +363,7 @@ social: true
 
   .home-section-title {
     margin-bottom: 0.9rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-size: 1.2rem;
     font-weight: 700;
   }
@@ -376,12 +376,12 @@ social: true
   .bio-text a.selected-paper {
     display: block;
     padding: 0.95rem 1.1rem;
-    border: 1px solid rgba(37, 99, 235, 0.2);
+    border: 1px solid rgba(96, 165, 250, 0.26);
     border-radius: 10px;
-    background: #ffffff;
-    color: #111111 !important;
+    background: #101c44;
+    color: #e6ecf8 !important;
     text-decoration: none !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   }
 
@@ -394,7 +394,7 @@ social: true
   .selected-paper-journal {
     display: block;
     margin-bottom: 0.3rem;
-    color: #2563eb;
+    color: #60a5fa;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -403,7 +403,7 @@ social: true
 
   .selected-paper-title {
     display: block;
-    color: #0b174f;
+    color: #e0ebff;
     font-weight: 600;
     line-height: 1.45;
   }
@@ -411,7 +411,7 @@ social: true
   .news-list {
     margin: 0;
     padding: 0 0 0 1.1rem;
-    border-left: 2px solid rgba(37, 99, 235, 0.25);
+    border-left: 2px solid rgba(96, 165, 250, 0.325);
     list-style: none;
   }
 
@@ -437,7 +437,7 @@ social: true
 
   .news-date {
     flex: 0 0 5.2rem;
-    color: #0b174f;
+    color: #e0ebff;
     font-weight: 700;
     white-space: nowrap;
   }
@@ -484,7 +484,7 @@ social: true
 
   .post-header .post-title,
   header .post-title {
-    background: linear-gradient(90deg, #0b174f 0%, #2563eb 50%, #0b174f 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #60a5fa 50%, #ffffff 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -522,7 +522,7 @@ social: true
 
   .highlight-study:hover {
     transform: translateY(-3px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
   }
 
   @media (prefers-reduced-motion: reduce) {

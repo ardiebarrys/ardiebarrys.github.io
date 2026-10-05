@@ -34,10 +34,35 @@
 @use "typograms";
 
 /*******************************************************************************
- * Site palette: navy and blue (overrides the theme's default purple)
+ * Site palette: dark navy and blue (overrides the theme's default colors)
  ******************************************************************************/
 :root {
-  --global-theme-color: #2563eb;
-  --global-hover-color: #0b174f;
-  --global-footer-bg-color: #0b174f;
+  color-scheme: dark;
+  --global-bg-color: #0a1330;
+  --global-code-bg-color: rgba(96, 165, 250, 0.08);
+  --global-text-color: #e6ecf8;
+  --global-text-color-light: #a3b1cf;
+  --global-theme-color: #60a5fa;
+  --global-hover-color: #93c5fd;
+  --global-hover-text-color: #0a1330;
+  --global-footer-bg-color: #060d24;
+  --global-footer-text-color: #a3b1cf;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #a3b1cf;
+  --global-divider-color: rgba(255, 255, 255, 0.12);
+  --global-card-bg-color: #101c44;
+  --global-highlight-color: #fca5a5;
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.12);
+  --global-back-to-top-text-color: #ffffff;
+  --global-newsletter-bg-color: #101c44;
+  --global-newsletter-text-color: #e6ecf8;
+  --global-tip-block-bg: #123b2c;
+  --global-tip-block-text: #beffe2;
+  --global-tip-block-title: #e2f5ec;
+  --global-warning-block-bg: #4a3d00;
+  --global-warning-block-text: #fff2af;
+  --global-warning-block-title: #fff8d8;
+  --global-danger-block-bg: #4a1010;
+  --global-danger-block-text: #ffb9b9;
+  --global-danger-block-title: #ffe0e0;
 }
