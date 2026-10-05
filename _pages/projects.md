@@ -41,10 +41,10 @@ nav_order: 3
   .project-card {
     width: 100%;
     padding: 0;
-    border: 1px solid rgba(183, 0, 183, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.22);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     box-sizing: border-box;
@@ -66,11 +66,11 @@ nav_order: 3
   }
 
   .project-card summary:hover {
-    background: rgba(183, 0, 183, 0.06);
+    background: rgba(37, 99, 235, 0.06);
   }
 
   .project-card[open] summary {
-    border-bottom: 1px solid rgba(183, 0, 183, 0.16);
+    border-bottom: 1px solid rgba(37, 99, 235, 0.16);
   }
 
   .project-summary-title {
@@ -95,7 +95,7 @@ nav_order: 3
     width: 150px;
     height: 9px;
     border-radius: 999px;
-    background: rgba(183, 0, 183, 0.14);
+    background: rgba(37, 99, 235, 0.14);
     overflow: hidden;
   }
 
@@ -104,7 +104,7 @@ nav_order: 3
     width: var(--progress);
     height: 100%;
     border-radius: 999px;
-    background: linear-gradient(90deg, #6b1aa8, #b700b7, #e783e7);
+    background: linear-gradient(90deg, #0b174f, #2563eb, #60a5fa);
     transform: scaleX(0);
     transform-origin: left;
     animation: fillProgress 1.4s ease forwards;
@@ -112,7 +112,7 @@ nav_order: 3
 
   .project-progress-value {
     min-width: 38px;
-    color: #8a008a;
+    color: #1e40af;
     font-size: 0.78rem;
     font-weight: 700;
     text-align: right;

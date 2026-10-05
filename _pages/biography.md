@@ -76,7 +76,7 @@ nav_order: 6
   .bio-card,
   .bio-image-card {
     width: 100%;
-    border: 1px solid rgba(183, 0, 183, 0.12);
+    border: 1px solid rgba(37, 99, 235, 0.12);
     border-radius: 12px;
     background: #ffffff;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.045);
@@ -113,7 +113,7 @@ nav_order: 6
     padding: 1.25rem 1.4rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.07), rgba(183, 0, 183, 0.018));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
     text-align: center;
   }
 
@@ -132,7 +132,7 @@ nav_order: 6
 
   .bio-focus-tag {
     padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.22);
     border-radius: 999px;
     background: #ffffff;
     color: #111111;
@@ -145,7 +145,7 @@ nav_order: 6
     padding: 1.35rem 1.5rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
     text-align: center;
   }
 

@@ -49,9 +49,9 @@ nav_order: 5
   .contact-card {
     width: 100%;
     padding: 1.8rem 2rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
+    border: 1px solid rgba(37, 99, 235, 0.22);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.025));
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.025));
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
   }
@@ -104,18 +104,18 @@ nav_order: 5
     width: fit-content;
     margin: 0.3rem 0 1rem;
     padding: 0.78rem 1.15rem;
-    border: 1px solid rgba(183, 0, 183, 0.24);
+    border: 1px solid rgba(37, 99, 235, 0.24);
     border-radius: 999px;
     background: #ffffff;
-    color: #b700b7 !important;
+    color: #2563eb !important;
     font-weight: 700;
     text-decoration: none !important;
-    box-shadow: 0 6px 16px rgba(183, 0, 183, 0.1);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
   }
 
   .coffee-button:hover {
     border-color: var(--global-theme-color);
-    background: rgba(183, 0, 183, 0.08);
+    background: rgba(37, 99, 235, 0.08);
     color: var(--global-theme-color) !important;
   }
 
@@ -127,7 +127,7 @@ nav_order: 5
   .support-helps {
     margin-top: 0.4rem;
     padding-top: 0.85rem;
-    border-top: 1px solid rgba(183, 0, 183, 0.16);
+    border-top: 1px solid rgba(37, 99, 235, 0.16);
     color: #333333;
     font-size: 0.95rem;
     line-height: 1.5;

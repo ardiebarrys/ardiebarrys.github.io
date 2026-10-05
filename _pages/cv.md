@@ -5,473 +5,631 @@ permalink: /cv/
 nav: true
 nav_order: 4
 nav_title: CV
-toc:
-  sidebar: left
 ---
 
 <style>
-  .post,
-  .page,
-  .container,
-  main {
-    max-width: 1280px !important;
+  @font-face {
+    font-family: "Spectral";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/assets/fonts/spectral-latin-600-normal.woff2") format("woff2");
   }
 
-  .navbar .nav-link.active,
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
-    color: var(--global-theme-color) !important;
-    font-weight: 700 !important;
-  }
-
-  #toc-sidebar ul ul,
-  .toc-sidebar ul ul,
-  #toc-sidebar .nav .nav,
-  .toc-sidebar .nav .nav {
-    display: none !important;
-  }
-
-  @media (min-width: 992px) {
-    .row:has(#toc-sidebar),
-    .row:has(.toc-sidebar) {
-      display: grid !important;
-      grid-template-columns: 210px minmax(0, 1fr) !important;
-      column-gap: 0.75rem !important;
-      align-items: start !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    .row:has(#toc-sidebar) > [class*="col-"],
-    .row:has(.toc-sidebar) > [class*="col-"] {
-      width: auto !important;
-      max-width: none !important;
-      flex: none !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .row:has(#toc-sidebar) > [class*="col-"]:first-child,
-    .row:has(.toc-sidebar) > [class*="col-"]:first-child {
-      width: 210px !important;
-      max-width: 210px !important;
-      position: sticky !important;
-      top: 5.5rem !important;
-      align-self: start !important;
-      height: fit-content !important;
-      max-height: calc(100vh - 6rem) !important;
-      overflow-y: auto !important;
-    }
-
-    .row:has(#toc-sidebar) > [class*="col-"]:last-child,
-    .row:has(.toc-sidebar) > [class*="col-"]:last-child {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    #toc-sidebar,
-    .toc-sidebar,
-    #toc-sidebar.sticky-top,
-    .toc-sidebar.sticky-top {
-      width: 210px !important;
-      max-width: 210px !important;
-      position: sticky !important;
-      top: 5.5rem !important;
-      align-self: start !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      padding-left: 0 !important;
-      padding-right: 0.5rem !important;
-      max-height: calc(100vh - 6rem) !important;
-      overflow-y: auto !important;
-    }
-
-    #toc-sidebar .nav,
-    .toc-sidebar .nav {
-      margin-left: 0 !important;
-      padding-left: 0 !important;
-    }
-  }
-
-  .cv-page {
-    width: 100%;
-  }
-
-  .cv-hero {
-    margin: 1rem 0 2rem;
-    padding: 1.8rem 2rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(183, 0, 183, 0.08), rgba(183, 0, 183, 0.02));
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-  }
-
-  .cv-hero h1 {
-    margin: 0 0 0.6rem;
-    font-size: 2.4rem;
-    font-weight: 700;
-  }
-
-  .cv-hero p {
-    margin: 0;
-    line-height: 1.55;
-  }
-
-  .cv-page h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #0b174f !important;
-    font-size: 1.65rem;
-    font-weight: 700;
-  }
-
-  .cv-card {
-    margin-bottom: 1.3rem;
-    padding: 1.35rem 1.5rem;
-    border: 1px solid rgba(183, 0, 183, 0.18);
-    border-radius: 10px;
+  .cv {
+    --cv-ink: #0b174f;
+    --cv-blue: #2563eb;
+    --cv-text: #1e293b;
+    --cv-muted: #5b6478;
+    --cv-line: #dfe5f1;
+    max-width: 880px;
+    margin: 0.25rem auto 3rem;
+    padding: 3rem 3.25rem 2.5rem;
+    border: 1px solid var(--cv-line);
+    border-radius: 14px;
     background: #ffffff;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.045);
+    box-shadow: 0 24px 60px rgba(11, 23, 79, 0.08);
+    color: var(--cv-text);
+    font-size: 0.97rem;
+    line-height: 1.6;
   }
 
-  .cv-card p,
-  .cv-card li {
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 1.65;
-  }
-
-  .cv-info-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .cv-info-table th,
-  .cv-info-table td {
-    padding: 0.75rem 0.9rem;
-    border-bottom: 1px solid #eeeeee;
+  .cv p {
+    margin: 0;
     text-align: left;
-    vertical-align: top;
   }
 
-  .cv-info-table th {
-    width: 220px;
-    color: #0b174f;
+  .cv a {
+    color: var(--cv-blue) !important;
+    text-decoration: none !important;
+  }
+
+  .cv a:hover {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+  }
+
+  .cv a:focus-visible {
+    outline: 2px solid var(--cv-blue);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  .cv-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+    padding-bottom: 1.6rem;
+    border-bottom: 2px solid var(--cv-ink);
+  }
+
+  .cv-head > div {
+    flex: 1 1 28rem;
+    min-width: 0;
+  }
+
+  .cv-name {
+    margin: 0 0 0.4rem;
+    color: var(--cv-ink);
+    font-family: "Spectral", Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  .cv-role {
+    color: var(--cv-text);
+    font-weight: 600;
+  }
+
+  .cv-org {
+    color: var(--cv-muted);
+  }
+
+  .cv-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 1.3rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--cv-muted);
+    font-size: 0.9rem;
+  }
+
+  .cv-contact li {
+    color: var(--cv-muted);
+  }
+
+  .cv a.cv-pdf {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.05rem;
+    border-radius: 8px;
+    background: var(--cv-ink);
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+  }
+
+  .cv a.cv-pdf:hover {
+    background: var(--cv-blue);
+    text-decoration: none !important;
+  }
+
+  .cv-pdf svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .cv-section {
+    display: grid;
+    grid-template-columns: 9.5rem minmax(0, 1fr);
+    gap: 0 2rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--cv-line);
+  }
+
+  .cv-section:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .cv .cv-section > h2 {
+    margin: 0;
+    color: var(--cv-ink) !important;
+    font-family: "Spectral", Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.45;
+  }
+
+  .cv-entry + .cv-entry {
+    margin-top: 1.15rem;
+  }
+
+  .cv-entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 1rem;
+  }
+
+  .cv-entry-title {
+    color: var(--cv-ink);
     font-weight: 700;
   }
 
   .cv-date {
-    color: var(--global-theme-color);
+    color: var(--cv-muted);
+    font-size: 0.88rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .cv-entry-org {
+    color: var(--cv-muted);
+  }
+
+  .cv-entry .cv-detail {
+    margin-top: 0.4rem;
+  }
+
+  .cv-entry ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+  }
+
+  .cv-entry li {
+    margin-bottom: 0.2rem;
+  }
+
+  .cv-note {
+    margin-bottom: 0.9rem !important;
+    color: var(--cv-muted);
+  }
+
+  .cv-pubs {
+    margin: 0;
+    padding-left: 2rem;
+  }
+
+  .cv-pubs li {
+    margin-bottom: 0.9rem;
+    padding-left: 0.35rem;
+  }
+
+  .cv-pubs li::marker {
+    color: var(--cv-blue);
     font-weight: 700;
-    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
   }
 
-  .cv-item-title {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-    font-size: 1.15rem;
-    font-weight: 700;
+  .cv-pub-title,
+  .cv-pub-authors,
+  .cv-pub-venue {
+    display: block;
   }
 
-  .cv-muted {
-    color: #555555;
+  .cv-pub-title {
+    color: var(--cv-ink);
+    font-weight: 600;
   }
 
-  .cv-tags {
+  .cv-pub-authors,
+  .cv-pub-venue {
+    font-size: 0.92rem;
+  }
+
+  .cv-pub-authors strong {
+    color: var(--cv-text);
+  }
+
+  .cv-rows {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cv-rows li {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-top: 0.5rem;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
   }
 
-  .cv-tag {
-    padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(183, 0, 183, 0.22);
-    border-radius: 999px;
-    background: rgba(183, 0, 183, 0.055);
-    color: #111111;
-    font-size: 0.95rem;
+  .cv-pairs {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 0.45rem 1.25rem;
+    margin: 0;
   }
 
-  @media (max-width: 768px) {
-    .cv-hero {
-      padding: 1.25rem;
+  .cv-pairs dt {
+    color: var(--cv-ink);
+    font-weight: 700;
+  }
+
+  .cv-pairs dd {
+    margin: 0;
+  }
+
+  @media (max-width: 720px) {
+    .cv {
+      padding: 1.75rem 1.25rem 1.5rem;
+      border-radius: 12px;
     }
 
-    .cv-info-table th,
-    .cv-info-table td {
+    .cv-name {
+      font-size: 2.1rem;
+    }
+
+    .cv-section {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+
+    .cv-pairs {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .cv-pairs dd {
+      margin-bottom: 0.55rem;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 13mm 13mm 15mm;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    html:root {
+      font-size: 13px !important;
+    }
+
+    html:root,
+    html:root body {
+      background: #ffffff !important;
+      padding-top: 0 !important;
+      margin: 0 !important;
+    }
+
+    html:root body::before,
+    #navbar,
+    footer,
+    .fixed-bottom,
+    .progress-container,
+    #progress,
+    .post-header,
+    .cv a.cv-pdf,
+    #custom-chatbase-greeting,
+    #chatbase-bubble-button,
+    #chatbase-bubble-window,
+    iframe {
+      display: none !important;
+    }
+
+    .container,
+    .row,
+    [class*="col-"] {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .cv {
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .cv-section {
       display: block;
-      width: 100%;
-      padding: 0.55rem 0;
+      padding: 1.1rem 0;
+    }
+
+    .cv-section::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .cv .cv-section > h2 {
+      float: left;
+      width: 9.5rem;
+    }
+
+    .cv-section > div,
+    .cv-section > dl {
+      margin-left: 11.5rem;
+    }
+
+    .cv .cv-section > h2 {
+      break-after: avoid;
+    }
+
+    .cv-entry,
+    .cv-pubs li,
+    .cv-rows li,
+    .cv-pairs dt,
+    .cv-pairs dd {
+      break-inside: avoid;
     }
   }
 </style>
 
-<div class="cv-page" markdown="1">
+<div class="cv">
+  <header class="cv-head">
+    <div>
+      <p class="cv-name">Ardie Barry Sailis</p>
+      <p class="cv-role">PhD Candidate in Pharmaceutical Sciences (Health)</p>
+      <p class="cv-org">Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya</p>
+      <ul class="cv-contact">
+        <li><a href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a></li>
+        <li><a href="https://ardiebarrysailis.com">ardiebarrysailis.com</a></li>
+        <li><a href="https://orcid.org/0009-0009-8994-2793">ORCID 0009-0009-8994-2793</a></li>
+        <li><a href="https://scholar.google.com/citations?user=saKP688AAAAJ">Google Scholar</a></li>
+        <li><a href="https://www.linkedin.com/in/ardiebarrysailis">linkedin.com/in/ardiebarrysailis</a></li>
+        <li>Kuala Lumpur, Malaysia</li>
+      </ul>
+    </div>
+    <a class="cv-pdf" href="/assets/pdf/Ardie_Barry_Sailis_CV.pdf" download>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v12" />
+        <path d="m7 10 5 5 5-5" />
+        <path d="M5 21h14" />
+      </svg>
+      Download PDF
+    </a>
+  </header>
 
-<div class="cv-hero">
-  <h1>Ardie Barry Sailis</h1>
-  <p>
-    PhD Candidate in Pharmaceutical Sciences (Health), Department of Pharmaceutical Life Sciences,
-    Faculty of Pharmacy, Universiti Malaya.
-  </p>
-</div>
+  <section class="cv-section">
+    <h2>Profile</h2>
+    <div>
+      <p>
+        Toxicology researcher studying how e-cigarette use affects male reproductive health. My PhD at Universiti Malaya compares cigarette
+        smokers, e-cigarette users and dual users in Malaysia, linking exposure to testosterone-related microRNAs, mitochondrial function and
+        blood cell changes. I have published 13 peer-reviewed papers, all as sole or first author, and review manuscripts for seven
+        international journals.
+      </p>
+    </div>
+  </section>
 
-## Contact Information
+  <section class="cv-section">
+    <h2>Education</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Doctor of Philosophy in Pharmacy (Health)</span>
+          <span class="cv-date">Dec 2023 &ndash; Dec 2026 (expected)</span>
+        </div>
+        <p class="cv-entry-org">Universiti Malaya, Kuala Lumpur</p>
+        <p class="cv-detail">
+          Thesis on testosterone-related microRNAs, blood cell abnormalities and sexual desire in Malaysian cigarette smokers, e-cigarette users
+          and dual users.
+        </p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Bachelor of Science in Microbiology, With Distinction</span>
+          <span class="cv-date">2019 &ndash; 2023</span>
+        </div>
+        <p class="cv-entry-org">Universiti Malaya, Kuala Lumpur</p>
+      </div>
+    </div>
+  </section>
 
-<div class="cv-card">
-  <table class="cv-info-table">
-    <tr>
-      <th>Name</th>
-      <td>Ardie Barry Sailis</td>
-    </tr>
-    <tr>
-      <th>Professional Title</th>
-      <td>PhD Candidate in Pharmaceutical Sciences (Health)</td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td>ardiebarrys@gmail.com</td>
-    </tr>
-    <tr>
-      <th>Affiliation</th>
-      <td>Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya</td>
-    </tr>
-    <tr>
-      <th>Location</th>
-      <td>Kuala Lumpur 50603, Malaysia</td>
-    </tr>
-  </table>
-</div>
+  <section class="cv-section">
+    <h2>Experience</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Doctoral Researcher</span>
+          <span class="cv-date">Dec 2023 &ndash; present</span>
+        </div>
+        <p class="cv-entry-org">Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya</p>
+        <ul>
+          <li>Conducted a comparative study of cigarette smokers, e-cigarette users and dual users in Malaysia.</li>
+          <li>Analyzed testosterone-related microRNAs by qPCR alongside hormone and blood cell profiles.</li>
+          <li>Used transmission electron microscopy to assess mitochondrial damage in e-cigarette users and controls.</li>
+          <li>Wrote mechanistic and systematic reviews on e-cigarette toxicology, reproductive health and redox signaling.</li>
+          <li>
+            Started an independent project, Cellular Signalling as Dynamic Regulatory Circuits, which produced the redoxostat concept in
+            NRF2&ndash;KEAP1 biology.
+          </li>
+        </ul>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Peer Reviewer</span>
+          <span class="cv-date">2025 &ndash; present</span>
+        </div>
+        <p class="cv-entry-org">Seven international journals</p>
+        <p class="cv-detail">
+          Reviews manuscripts in toxicology, pharmacology, reproductive health and public health for American Journal of Preventive Medicine,
+          Journal of Hazardous Materials Advances, Pharmacological Reviews, Progress in Biophysics and Molecular Biology, Toxicology Reports,
+          PLOS One and International Journal of General Medicine.
+        </p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Intern</span>
+          <span class="cv-date">Oct 2022 &ndash; Jan 2023</span>
+        </div>
+        <p class="cv-entry-org">Indah Water Konsortium Sdn Bhd</p>
+        <p class="cv-detail">
+          Supported laboratory operations during a full-time internship, covering microbiology procedures, water quality testing, sample
+          handling, documentation and technical reporting under standard operating procedures.
+        </p>
+      </div>
+    </div>
+  </section>
 
-## Professional Summary
+  <section class="cv-section">
+    <h2>Publications</h2>
+    <div>
+      <p class="cv-note">13 peer-reviewed journal articles, all as sole or first author.</p>
+      <ol class="cv-pubs" reversed>
+      <li>
+        <span class="cv-pub-title">Transcriptional condensates as kinetic filters for temporal control of gene expression.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Gene Reports</em>, 2026. <a href="https://doi.org/10.1016/j.genrep.2026.102599">doi.org/10.1016/j.genrep.2026.102599</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Mitochondrial mechanisms in the potential male reproductive toxicity of e-cigarette-derived metal-containing nanoparticles.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Journal of Applied Toxicology</em>, 2026. <a href="https://doi.org/10.1002/jat.70382">doi.org/10.1002/jat.70382</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Ferroptosis in e-cigarette aerosol-associated respiratory injury.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Archives of Toxicology</em>, 2026. <a href="https://doi.org/10.1007/s00204-026-04486-w">doi.org/10.1007/s00204-026-04486-w</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Toxicology Mechanisms and Methods</em>, 2026. <a href="https://doi.org/10.1080/15376516.2026.2695155">doi.org/10.1080/15376516.2026.2695155</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh</span>
+        <span class="cv-pub-venue"><em>Diabetes, Obesity and Metabolism</em>, 2026. <a href="https://doi.org/10.1111/dom.70818">doi.org/10.1111/dom.70818</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
+        <span class="cv-pub-venue"><em>Molecular and Cellular Endocrinology</em>, 2026. <a href="https://doi.org/10.1016/j.mce.2026.112786">doi.org/10.1016/j.mce.2026.112786</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
+        <span class="cv-pub-venue"><em>Environmental Toxicology and Pharmacology</em>, 2026. <a href="https://doi.org/10.1016/j.etap.2026.104994">doi.org/10.1016/j.etap.2026.104994</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Progress in Biophysics and Molecular Biology</em>, 2026. <a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">doi.org/10.1016/j.pbiomolbio.2026.03.005</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">E-cigarettes and erectile dysfunction: biological mechanisms and research challenges.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Hui Yin Yow, Anne Yee, Maw Shin Sim</span>
+        <span class="cv-pub-venue"><em>International Journal of Impotence Research</em>, 2026. <a href="https://doi.org/10.1038/s41443-026-01300-0">doi.org/10.1038/s41443-026-01300-0</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Toxicology Mechanisms and Methods</em>, 2026. <a href="https://doi.org/10.1080/15376516.2026.2658739">doi.org/10.1080/15376516.2026.2658739</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
+        <span class="cv-pub-venue"><em>Archives of Toxicology</em>, 2026. <a href="https://doi.org/10.1007/s00204-026-04384-1">doi.org/10.1007/s00204-026-04384-1</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
+        <span class="cv-pub-venue"><em>Journal of Public Health</em>, 2026. <a href="https://doi.org/10.1007/s10389-026-02740-0">doi.org/10.1007/s10389-026-02740-0</a></span>
+      </li>
+      <li>
+        <span class="cv-pub-title">Mitochondrial dysfunction induced by E-cigarettes.</span>
+        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
+        <span class="cv-pub-venue"><em>Toxicology</em>, 2025. <a href="https://doi.org/10.1016/j.tox.2025.154339">doi.org/10.1016/j.tox.2025.154339</a></span>
+      </li>
+      </ol>
+    </div>
+  </section>
 
-<div class="cv-card">
-  <p>
-    PhD candidate in Pharmaceutical Sciences (Health) at Universiti Malaya, specializing in tobacco and
-    e-cigarette toxicology, pharmacology, and molecular systems biology. My doctoral research examines
-    the endocrine, reproductive, and hematological effects of cigarette smoking, e-cigarette use, and dual
-    use in Malaysian cohorts, with emphasis on miRNA-mediated testosterone regulation, mitochondrial
-    dysfunction, oxidative stress, and blood cell abnormalities.
-  </p>
+  <section class="cv-section">
+    <h2>Conferences</h2>
+    <div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">
+            Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users, and Dual Users in Malaysia: A Comparative Study
+          </span>
+          <span class="cv-date">2024</span>
+        </div>
+        <p class="cv-entry-org">Poster presentation, ISAM Regional Meeting</p>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">Early Career Researchers&ndash;Postgraduates Research Symposium</span>
+          <span class="cv-date">2024</span>
+        </div>
+      </div>
+      <div class="cv-entry">
+        <div class="cv-entry-head">
+          <span class="cv-entry-title">ic-PHIR Conference</span>
+          <span class="cv-date">2023</span>
+        </div>
+        <p class="cv-entry-org">UiTM Puncak Alam</p>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    My broader research integrates molecular, cellular, and systems-level approaches to investigate how
-    inhaled toxicants disrupt redox signaling, gene regulation, intercellular communication, and reproductive
-    health. I also develop conceptual work on cellular signaling as dynamic regulatory circuits, applying
-    systems and control-theory perspectives to reinterpret canonical signaling pathways as temporally
-    regulated biological networks.
-  </p>
-</div>
+  <section class="cv-section">
+    <h2>Training</h2>
+    <div>
+      <ul class="cv-rows">
+        <li><span>Systematic Literature Review and Meta-Analysis Workshop</span><span class="cv-date">2025</span></li>
+        <li><span>UV-Visible Double Beam Spectrophotometer Workshop, Shimadzu</span><span class="cv-date">2025</span></li>
+        <li><span>Quantitative PCR (qPCR) Workshop, Vazyme, Universiti Malaya</span><span class="cv-date">2024</span></li>
+        <li><span>ic-PHIR Metabolic Workshop, UiTM Puncak Alam</span><span class="cv-date">2023</span></li>
+      </ul>
+    </div>
+  </section>
 
-## Experience
+  <section class="cv-section">
+    <h2>Skills</h2>
+    <dl class="cv-pairs">
+      <dt>Laboratory</dt>
+      <dd>qPCR, transmission electron microscopy, molecular biology techniques</dd>
+      <dt>Data</dt>
+      <dd>SPSS, bioinformatics, data interpretation</dd>
+      <dt>Evidence</dt>
+      <dd>Systematic reviews, literature synthesis, mechanistic toxicology</dd>
+      <dt>Writing</dt>
+      <dd>Scientific writing, manuscript preparation, peer review, research conceptualization</dd>
+      <dt>Research areas</dt>
+      <dd>E-cigarette and tobacco toxicology, reproductive health, pharmacology, toxicogenomics, molecular systems biology</dd>
+    </dl>
+  </section>
 
-<div class="cv-card">
-  <div class="cv-date">Dec 2023 - Ongoing</div>
-  <div class="cv-item-title">PhD Candidate / Researcher</div>
-  <p class="cv-muted">
-    Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya, Kuala Lumpur, Malaysia
-  </p>
+  <section class="cv-section">
+    <h2>Languages</h2>
+    <dl class="cv-pairs">
+      <dt>Malay</dt>
+      <dd>Native or bilingual proficiency</dd>
+      <dt>English</dt>
+      <dd>Professional working proficiency</dd>
+    </dl>
+  </section>
 
-  <p>
-    Research focus: e-cigarette and tobacco toxicology, reproductive health, testosterone regulation,
-    miRNA biology, mitochondrial dysfunction, oxidative stress, and hematological effects.
-  </p>
-
-  <ul>
-    <li>Conducting doctoral research on smokers, e-cigarette users, and dual users in Malaysia.</li>
-    <li>Investigating miRNA-mediated testosterone regulation and blood cell abnormalities.</li>
-    <li>Developing publication projects on e-cigarette toxicology, reproductive health, and systems biology.</li>
-    <li>Writing narrative reviews, systematic reviews, and conceptual research articles.</li>
-  </ul>
-</div>
-
-<div class="cv-card">
-  <div class="cv-date">2025 - Ongoing</div>
-  <div class="cv-item-title">Peer Reviewer</div>
-  <p>
-    Provides peer-review support for scholarly manuscripts in toxicology, pharmacology, reproductive health,
-    public health, molecular biology, and environmental health.
-  </p>
-  <p>
-    Reviewed manuscripts for American Journal of Preventive Medicine, Journal of Hazardous Materials Advances,
-    Pharmacological Reviews, Progress in Biophysics and Molecular Biology, Toxicology Reports, PLOS One,
-    and International Journal of General Medicine.
-  </p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-date">Oct 2022 - Jan 2023</div>
-  <div class="cv-item-title">Intern</div>
-  <p>
-    Completed a full-time internship at Indah Water Konsortium Sdn Bhd, gaining hands-on exposure to
-    laboratory operations, microbiology-related procedures, water quality assessment, analytical workflows,
-    and research support activities.
-  </p>
-  <p>
-    Assisted with sample handling, test preparation, equipment use, documentation, and technical reporting
-    while following laboratory safety practices and standard operating procedures within a professional
-    environmental services setting.
-  </p>
-</div>
-
-## Education
-
-<div class="cv-card">
-  <div class="cv-item-title">Doctor of Philosophy in Pharmacy - Health</div>
-  <p>Universiti Malaya, Kuala Lumpur, Malaysia</p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Bachelor of Science in Microbiology</div>
-  <p><em>With Distinction</em></p>
-  <p>Universiti Malaya, Kuala Lumpur, Malaysia</p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Science, Biology</div>
-  <p>Labuan Matriculation College, Malaysia</p>
-</div>
-
-## Publications
-
-<div class="cv-card">
-  <div class="cv-item-title">Accepted / In Press</div>
-  <ul>
-    <li>Ferroptosis in e-cigarette aerosol-associated respiratory injury.</li>
-  </ul>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Peer-Reviewed Publications</div>
-  <ul>
-    <li><strong>E-cigarettes and erectile dysfunction: biological mechanisms and research challenges.</strong> International Journal of Impotence Research, 2026.</li>
-    <li><strong>Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction.</strong> Diabetes, Obesity and Metabolism, 2026.</li>
-    <li><strong>E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms.</strong> Toxicology Mechanisms and Methods, 2026.</li>
-    <li><strong>CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation.</strong> Archives of Toxicology, 2026.</li>
-    <li><strong>Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review.</strong> Journal of Public Health, 2026.</li>
-    <li><strong>MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure.</strong> Environmental Toxicology and Pharmacology, 2026.</li>
-    <li><strong>NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch.</strong> Progress in Biophysics and Molecular Biology, 2026.</li>
-    <li><strong>E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models.</strong> Molecular and Cellular Endocrinology, 2026.</li>
-    <li><strong>Mitochondrial dysfunction induced by E-cigarettes.</strong> Toxicology, 2025.</li>
-  </ul>
-</div>
-
-## Skills
-
-<div class="cv-card">
-  <div class="cv-item-title">Research Areas</div>
-  <div class="cv-tags">
-    <span class="cv-tag">E-cigarette toxicology</span>
-    <span class="cv-tag">Tobacco toxicology</span>
-    <span class="cv-tag">Reproductive health</span>
-    <span class="cv-tag">Molecular systems biology</span>
-    <span class="cv-tag">Pharmacology</span>
-    <span class="cv-tag">Toxicogenomics</span>
-  </div>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Laboratory and Analytical Skills</div>
-  <div class="cv-tags">
-    <span class="cv-tag">Molecular biology</span>
-    <span class="cv-tag">qPCR</span>
-    <span class="cv-tag">Transmission Electron Microscopy</span>
-    <span class="cv-tag">SPSS</span>
-    <span class="cv-tag">Bioinformatics</span>
-    <span class="cv-tag">Data interpretation</span>
-    <span class="cv-tag">Literature synthesis</span>
-    <span class="cv-tag">Systematic review methods</span>
-    <span class="cv-tag">Mechanistic toxicology</span>
-  </div>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Scholarly Skills</div>
-  <div class="cv-tags">
-    <span class="cv-tag">Scientific writing</span>
-    <span class="cv-tag">Peer review</span>
-    <span class="cv-tag">Research conceptualization</span>
-    <span class="cv-tag">Manuscript preparation</span>
-  </div>
-</div>
-
-## Languages
-
-<div class="cv-card">
-  <table class="cv-info-table">
-    <tr>
-      <th>English</th>
-      <td>Professional working proficiency</td>
-    </tr>
-    <tr>
-      <th>Malay</th>
-      <td>Native or bilingual proficiency</td>
-    </tr>
-  </table>
-</div>
-
-## Certificates
-
-<div class="cv-card">
-  <div class="cv-item-title">Workshops</div>
-  <ul>
-    <li>ic-PHIR Metabolic Workshop, UiTM Puncak Alam (2023)</li>
-    <li>Quantitative PCR (qPCR) Workshop, Vazyme, University of Malaya (2024)</li>
-    <li>UV-Visible Double Beam Spectrophotometer (Shimadzu) Workshop (2025)</li>
-    <li>Systematic Literature Review and Meta-Analysis Workshop (2025)</li>
-  </ul>
-
-  <div class="cv-item-title">Conferences</div>
-  <ul>
-    <li>ic-PHIR Conference at UiTM Puncak Alam (2023)</li>
-    <li>
-      Sailis AB, et al. "Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users,
-      and Dual Users in Malaysia: A Comparative Study" ISAM Regional Meeting 2024 Conference -
-      Poster Presentation
-    </li>
-    <li>Early Career Researchers-Postgraduates Research Symposium (2024)</li>
-  </ul>
-</div>
-
-## Projects
-
-<div class="cv-card">
-  <div class="cv-item-title">Doctoral Research Project</div>
-  <p>
-    E-cigarette toxicology and reproductive health, with focus on sexual function, testosterone signaling,
-    Leydig cell steroidogenesis, mitochondrial dysfunction, and secondhand aerosol exposure.
-  </p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Cellular Signaling as Dynamic Regulatory Circuits</div>
-  <p>
-    Conceptual framework interpreting canonical signaling pathways as dynamic regulatory systems with
-    attention to feedback, signal duration, stress integration, and resolution failure.
-  </p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">E-Cigarette Toxicology and Reproductive Health</div>
-  <p>
-    Research and writing project integrating mechanistic evidence on endocrine, vascular, inflammatory,
-    and mitochondrial pathways affected by e-cigarette exposure.
-  </p>
-</div>
-
-<div class="cv-card">
-  <div class="cv-item-title">Secondhand E-Cigarette Aerosol and Lung Health</div>
-  <p>
-    Systematic review project assessing respiratory outcomes associated with passive exposure to
-    e-cigarette aerosols.
-  </p>
-</div>
-
-## References
-
-<div class="cv-card">
-  <p>Available upon request.</p>
-</div>
-
+  <section class="cv-section">
+    <h2>References</h2>
+    <div>
+      <p>Available on request.</p>
+    </div>
+  </section>
 </div>

@@ -1,4 +1,5 @@
 ---
+published: false # template example page, hidden from the live site
 layout: book-shelf
 title: bookshelf
 permalink: /books/
