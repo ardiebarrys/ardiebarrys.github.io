@@ -30,31 +30,31 @@ profile:
 
       <div class="profile-logo-links">
         <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en" aria-label="Google Scholar">
-          <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar">
+          <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
-          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities">
+          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
-          <img src="/assets/img/kudos-logo.png" alt="Kudos">
+          <img src="/assets/img/kudos-logo.png" alt="Kudos" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate">
-          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate">
+          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation">
-          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation">
+          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID">
-          <img src="/assets/img/orcid-logo.png" alt="ORCID">
+          <img src="/assets/img/orcid-logo.png" alt="ORCID" width="480" height="240" loading="lazy" decoding="async">
         </a>
 
         <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn">
-          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn">
+          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn" width="480" height="240" loading="lazy" decoding="async">
         </a>
       </div>
     </div>
@@ -356,6 +356,91 @@ social: true
       max-height: 44px;
     }
   }
+/* Motion: reveal on scroll, hover polish */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .profile img {
+    animation: profile-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .profile img:hover {
+    transform: scale(1.015);
+    box-shadow: 0 14px 34px rgba(183, 0, 183, 0.16);
+  }
+
+  @keyframes profile-in {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .post-header .post-title,
+  header .post-title {
+    background: linear-gradient(90deg, #111111 0%, #b700b7 50%, #111111 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    animation: title-shine 6s ease-in-out infinite;
+  }
+
+  @keyframes title-shine {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+  }
+
+  .profile-logo-links a {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .profile-logo-links a:hover {
+    transform: translateY(-3px);
+  }
+
+  .keyword-list span {
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .keyword-list span:hover {
+    transform: translateY(-2px);
+    background-color: #b700b7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 14px rgba(183, 0, 183, 0.22);
+  }
+
+  .highlight-study {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .highlight-study:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .profile img,
+    .post-title,
+    .profile-logo-links a,
+    .keyword-list span,
+    .highlight-study {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
 </style>
 
 <div class="bio-text" markdown="1">
@@ -366,7 +451,7 @@ social: true
 
 <p>Alongside the thesis, I've been building something of my own. I call it Cellular Signalling as Dynamic Regulatory Circuits, and the argument is that we tend to describe signalling pathways as switches when they behave more like control systems, shaped by timing, phase-separated states, and how a cell integrates stress. Out of that came the redoxostat concept in NRF2–KEAP1 biology. Nobody asked me to write it, which is partly why I wanted to.</p>
 
-<p>Thirteen peer-reviewed papers so far (as of 8 September 2026), which all either as sole or first author. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
+<p>Thirteen peer-reviewed papers so far (as of 8 September 2026), all as sole or first author. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
 
 <p class="about-support-note">
   Some works on this website are independent scholarly projects outside of my doctoral thesis and institutional research. If you find them useful, you may support my work through
@@ -426,4 +511,32 @@ social: true
       event.preventDefault();
     });
   });
+  (function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var targets = document.querySelectorAll(
+      ".bio-text > p, .keyword-box, .highlight-study, .profile-logo-links a, .profile-info > p"
+    );
+
+    if (reduce || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    targets.forEach(function (el, i) {
+      el.classList.add("reveal");
+      if (el.matches(".profile-logo-links a")) {
+        el.style.setProperty("--reveal-delay", (i % 7) * 0.06 + "s");
+      }
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    targets.forEach(function (el) { io.observe(el); });
+  })();
 </script>
