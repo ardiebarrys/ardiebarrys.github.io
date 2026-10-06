@@ -289,8 +289,6 @@ nav_order: 2
           data-style="small_circle"></span>
   </div>
 </aside>
-        <div class="pub-metric"><span class="lazy-badge" data-badge="dimensions" data-doi="{{ p.doi }}" data-style="small_circle"></span></div>
-      </aside>
     </article>
     {%- endfor %}
   </section>
@@ -385,7 +383,7 @@ nav_order: 2
       });
     });
 
-    // Load the PlumX, Altmetric and Dimensions badges only when a paper scrolls into view.
+    // Load the Altmetric and Dimensions badges only when a paper scrolls into view.
     var sources = {
       altmetric: {
         className: "altmetric-embed",
