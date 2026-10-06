@@ -33,7 +33,7 @@ nav_order: 3
 
   .project-section-title {
     margin-bottom: 1rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -41,10 +41,10 @@ nav_order: 3
   .project-card {
     width: 100%;
     padding: 0;
-    border: 1px solid rgba(96, 165, 250, 0.286);
+    border: 1px solid var(--line);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
+    background: var(--surface);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
     overflow: hidden;
     box-sizing: border-box;
@@ -66,11 +66,11 @@ nav_order: 3
   }
 
   .project-card summary:hover {
-    background: rgba(37, 99, 235, 0.06);
+    background: var(--surface-strong);
   }
 
   .project-card[open] summary {
-    border-bottom: 1px solid rgba(96, 165, 250, 0.208);
+    border-bottom: 1px solid var(--line);
   }
 
   .project-summary-title {
@@ -95,7 +95,7 @@ nav_order: 3
     width: 150px;
     height: 9px;
     border-radius: 999px;
-    background: rgba(37, 99, 235, 0.14);
+    background: var(--surface-strong);
     overflow: hidden;
   }
 
@@ -112,7 +112,7 @@ nav_order: 3
 
   .project-progress-value {
     min-width: 38px;
-    color: #93c5fd;
+    color: var(--accent);
     font-size: 0.78rem;
     font-weight: 700;
     text-align: right;
@@ -152,6 +152,10 @@ nav_order: 3
   .project-list li {
     margin-bottom: 0.35rem;
     line-height: 1.45;
+  }
+
+  .project-list a {
+    color: var(--accent) !important;
   }
 
   @media (max-width: 768px) {
@@ -195,20 +199,15 @@ nav_order: 3
         </p>
 
         <p>
-          Some of these works were supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022). Refer to the Acknowledgement section on the publication page.
+          Some of these works were supported by the Ministry of Higher Education Malaysia through the Fundamental Research Grant Scheme (FRGS/1/2020/SKK05/UM/02/1) and the UMSC C.A.R.E Fund (UMG010C-2022).
         </p>
 
         <ul class="project-list">
-          <li>Ferroptosis in e-cigarette aerosol-associated respiratory injury (DOI: 10.1007/s00204-026-04486-w)</li>
-          <li>Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance (DOI: 10.1080/15376516.2026.2695155)</li>
-          <li>E-cigarettes and erectile dysfunction (DOI: 10.1038/s41443-026-01300-0)</li>
-          <li>Leydig cell steroidogenic pathways (DOI: 10.1016/j.mce.2026.112786)</li>
-          <li>MicroRNA-mediated testosterone signaling (DOI: 10.1016/j.etap.2026.104994)</li>
-          <li>Mitochondrial dysfunction (DOI: 10.1016/j.tox.2025.154339)</li>
-          <li>Secondhand aerosol exposure and lung health (DOI: 10.1007/s10389-026-02740-0)</li>
-          <li>E-cigarettes as metabolic disruptors (DOI: 10.1080/15376516.2026.2658739)</li>
-          <li>Vaping metals and male reproductive mitochondria (DOI: 10.1002/jat.70382)</li>
-          <li>More coming soon!</li>
+          {%- assign project_papers = site.data.papers | where: "project", "thesis" -%}
+          {%- for p in project_papers %}
+          <li><a href="https://doi.org/{{ p.doi }}">{{ p.short }}</a></li>
+          {%- endfor -%}
+          <li>More coming soon</li>
         </ul>
       </div>
     </details>
@@ -237,10 +236,11 @@ nav_order: 3
         </p>
 
         <ul class="project-list">
-          <li>NRF2-KEAP1 as a redox signal-resolution circuit (DOI: 10.1016/j.pbiomolbio.2026.03.005)</li>
-          <li>CYP1A1 as an environmental sensing feedback circuit (DOI: 10.1007/s00204-026-04384-1)</li>
-          <li>Transcriptional condensates as kinetic filters (DOI: 10.1016/j.genrep.2026.102599)</li>
-          <li>More coming soon!</li>
+          {%- assign project_papers = site.data.papers | where: "project", "framework" -%}
+          {%- for p in project_papers %}
+          <li><a href="https://doi.org/{{ p.doi }}">{{ p.short }}</a></li>
+          {%- endfor -%}
+          <li>More coming soon</li>
         </ul>
       </div>
     </details>
@@ -260,7 +260,10 @@ nav_order: 3
         </p>
 
         <ul class="project-list">
-          <li>Adipose-driven erectile dysfunction (DOI: 10.1111/dom.70818)</li>
+          {%- assign project_papers = site.data.papers | where: "project", "other" -%}
+          {%- for p in project_papers %}
+          <li><a href="https://doi.org/{{ p.doi }}">{{ p.short }}</a></li>
+          {%- endfor -%}
         </ul>
       </div>
     </details>

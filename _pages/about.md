@@ -13,8 +13,7 @@ profile:
   more_info: |
     <div class="profile-info">
       <p><strong>Department of Pharmaceutical Life Sciences</strong></p>
-      <p>Faculty of Pharmacy</p>
-      <p>University of Malaya</p>
+      <p>Faculty of Pharmacy, Universiti Malaya</p>
       <p>Kuala Lumpur, Malaysia</p>
 
       <hr>
@@ -60,7 +59,7 @@ profile:
     </div>
 
 selected_papers: false
-social: true
+social: false
 ---
 
 <style>
@@ -72,8 +71,7 @@ social: true
   }
 
   body {
-    background: #0a1330 !important;
-    color: #e6ecf8 !important;
+    color: var(--text) !important;
   }
 
   h1 {
@@ -95,7 +93,7 @@ social: true
 
   .bio-text a,
   .profile-info a {
-    color: #93c5fd !important;
+    color: var(--accent) !important;
   }
 
   .profile-info,
@@ -140,9 +138,9 @@ social: true
     justify-content: center;
     min-height: 88px;
     padding: 1rem 1.1rem;
-    border: 1px solid rgba(96, 165, 250, 0.364);
+    border: 1px solid var(--line-strong);
     border-radius: 10px;
-    background: #f4f7fd !important;
+    background: #ffffff !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
   }
@@ -187,10 +185,10 @@ social: true
     gap: 0.55rem;
     margin-left: 0.35rem;
     padding: 0.42rem 0.75rem;
-    border: 1px solid rgba(96, 165, 250, 0.312);
+    border: 1px solid var(--line);
     border-radius: 999px;
-    background: #101c44;
-    color: #60a5fa !important;
+    background: var(--surface);
+    color: var(--accent) !important;
     font-weight: 700;
     text-decoration: none !important;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
@@ -199,7 +197,7 @@ social: true
 
   .bio-text a.about-coffee-button:hover {
     border-color: var(--global-theme-color);
-    background: rgba(37, 99, 235, 0.08);
+    background: var(--surface-strong);
     color: var(--global-theme-color) !important;
   }
 
@@ -220,12 +218,12 @@ social: true
     padding: 1.15rem 1.25rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
+    background: var(--surface);
   }
 
   .keyword-title {
     margin-bottom: 0.8rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1rem;
     font-weight: 700;
   }
@@ -238,10 +236,10 @@ social: true
 
   .keyword-list span {
     padding: 0.42rem 0.68rem;
-    border: 1px solid rgba(96, 165, 250, 0.286);
+    border: 1px solid var(--line);
     border-radius: 999px;
-    background: #101c44;
-    color: #e6ecf8;
+    background: var(--surface);
+    color: var(--text);
     font-size: 0.95rem;
   }
 
@@ -250,7 +248,7 @@ social: true
     padding: 1.25rem 1.4rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.03));
+    background: var(--surface);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
   }
 
@@ -277,7 +275,7 @@ social: true
   .highlight-citation {
     padding: 0.75rem 0.85rem;
     border-radius: 8px;
-    background: rgba(37, 99, 235, 0.08);
+    background: var(--surface-strong);
   }
 
   .highlight-study a {
@@ -356,14 +354,82 @@ social: true
       max-height: 44px;
     }
   }
-/* Homepage: selected papers and latest news */
+  .open-roles {
+    margin: 1.75rem 0 2rem;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+  }
+
+  .open-roles .home-section-title {
+    margin: 0 0 0.5rem;
+  }
+
+  .open-roles p {
+    margin-bottom: 0.6rem !important;
+    text-align: left !important;
+  }
+
+  .open-roles ul {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+  }
+
+  .open-roles li {
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+  }
+
+  .open-roles-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .bio-text a.open-roles-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    color: var(--text-strong) !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .bio-text a.open-roles-link.is-primary {
+    border-color: var(--button);
+    background: var(--button);
+  }
+
+  .bio-text a.open-roles-link:hover {
+    border-color: var(--accent);
+    background: var(--surface-strong);
+  }
+
+  .bio-text a.open-roles-link.is-primary:hover {
+    border-color: var(--button-hover);
+    background: var(--button-hover);
+  }
+
+  .social {
+    margin-top: 2.5rem;
+  }
+
+  .contact-note {
+    color: var(--muted);
+  }
+
+  /* Homepage: selected papers and latest news */
   .home-section {
     margin: 2rem 0 2.25rem;
   }
 
   .home-section-title {
     margin-bottom: 0.9rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1.2rem;
     font-weight: 700;
   }
@@ -376,10 +442,10 @@ social: true
   .bio-text a.selected-paper {
     display: block;
     padding: 0.95rem 1.1rem;
-    border: 1px solid rgba(96, 165, 250, 0.26);
+    border: 1px solid var(--line);
     border-radius: 10px;
-    background: #101c44;
-    color: #e6ecf8 !important;
+    background: var(--surface);
+    color: var(--text) !important;
     text-decoration: none !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -387,14 +453,14 @@ social: true
 
   .bio-text a.selected-paper:hover {
     transform: translateY(-3px);
-    border-color: #2563eb;
+    border-color: var(--line-strong);
     box-shadow: 0 12px 26px rgba(37, 99, 235, 0.14);
   }
 
   .selected-paper-journal {
     display: block;
     margin-bottom: 0.3rem;
-    color: #60a5fa;
+    color: var(--accent);
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -403,7 +469,7 @@ social: true
 
   .selected-paper-title {
     display: block;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-weight: 600;
     line-height: 1.45;
   }
@@ -411,7 +477,7 @@ social: true
   .news-list {
     margin: 0;
     padding: 0 0 0 1.1rem;
-    border-left: 2px solid rgba(96, 165, 250, 0.325);
+    border-left: 2px solid var(--line);
     list-style: none;
   }
 
@@ -437,7 +503,7 @@ social: true
 
   .news-date {
     flex: 0 0 5.2rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-weight: 700;
     white-space: nowrap;
   }
@@ -466,13 +532,13 @@ social: true
     transform: none;
   }
 
-  .profile img {
+  .profile figure img {
     animation: profile-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
     border-radius: 12px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
-  .profile img:hover {
+  .profile figure img:hover {
     transform: scale(1.015);
     box-shadow: 0 14px 34px rgba(37, 99, 235, 0.16);
   }
@@ -527,7 +593,7 @@ social: true
 
   @media (prefers-reduced-motion: reduce) {
     .reveal,
-    .profile img,
+    .profile figure img,
     .post-title,
     .profile-logo-links a,
     .keyword-list span,
@@ -549,7 +615,11 @@ social: true
 
 <p>Alongside the thesis, I've been building something of my own. I call it Cellular Signalling as Dynamic Regulatory Circuits, and the argument is that we tend to describe signalling pathways as switches when they behave more like control systems, shaped by timing, phase-separated states, and how a cell integrates stress. Out of that came the redoxostat concept in NRF2–KEAP1 biology. Nobody asked me to write it, which is partly why I wanted to.</p>
 
-<p>Thirteen peer-reviewed papers so far (as of 8 September 2026), all as sole or first author. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
+{%- assign paper_count = site.data.papers | size -%}
+{%- assign number_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty" | split: "," -%}
+{%- if paper_count < number_words.size -%}{%- assign paper_count_text = number_words[paper_count] -%}{%- else -%}{%- assign paper_count_text = paper_count -%}{%- endif %}
+
+<p>So far I've published {{ paper_count_text }} peer-reviewed papers. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
 
 <p class="about-support-note">
   Some works on this website are independent scholarly projects outside of my doctoral thesis and institutional research. If you find them useful, you may support my work through
@@ -558,6 +628,21 @@ social: true
     <span>Buy Me a Coffee</span>
   </a>
 </p>
+
+<div class="open-roles">
+  <h2 class="home-section-title">Open to roles</h2>
+  <p>I'm looking for roles in research, medical affairs, regulatory science and science communication. Here is what I bring:</p>
+  <ul>
+    <li>Evidence synthesis across toxicology, endocrinology and public health, from systematic reviews to mechanistic reviews</li>
+    <li>Lab work from a human cohort study, including qPCR and transmission electron microscopy</li>
+    <li>Critical appraisal as a peer reviewer for seven international journals</li>
+    <li>Clear writing that turns complex findings into plain language</li>
+  </ul>
+  <div class="open-roles-actions">
+    <a class="open-roles-link is-primary" href="/contact/">Get in touch</a>
+    <a class="open-roles-link" href="/cv/">View CV</a>
+  </div>
+</div>
 
 <div class="keyword-box">
   <div class="keyword-title">Keywords</div>
@@ -576,29 +661,27 @@ social: true
   </div>
 </div>
 
+{%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
+{%- if highlight %}
+
 <div class="highlight-study">
   <div class="highlight-label">Highlighted Study</div>
-
-  <h2>E-cigarettes and Erectile Dysfunction</h2>
-
+  <h2>{{ highlight.short }}</h2>
   <p class="highlight-citation">
-    <strong>E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</strong><br>
-    June 2026, <em>International Journal of Impotence Research</em><br>
-    DOI:
-    <a href="https://doi.org/10.1038/s41443-026-01300-0">10.1038/s41443-026-01300-0</a>
+    <strong>{{ highlight.title }}</strong><br>
+    {{ highlight.published | date: "%B %Y" }}, <em>{{ highlight.journal }}</em><br>
+    DOI: <a href="https://doi.org/{{ highlight.doi }}">{{ highlight.doi }}</a>
   </p>
-
-  <p>
-    This review explains that vaping may affect men's sexual health because e-cigarette aerosols can disturb blood vessel function, hormones, inflammation, and other systems involved in erections. However, the current evidence is still early, so stronger long-term studies are needed before we can say whether vaping directly causes erectile dysfunction.
-  </p>
-
+  <p>{{ highlight.highlight }}</p>
   <a href="/publications/">View related publications</a>
 </div>
+{%- endif %}
 
 <div class="home-section">
   <div class="home-section-title">Selected Papers</div>
   <div class="selected-papers">
-    {%- for paper in site.data.selected_papers %}
+    {%- assign selected_papers = site.data.papers | where: "selected", true -%}
+    {%- for paper in selected_papers %}
     <a class="selected-paper" href="https://doi.org/{{ paper.doi }}">
       <span class="selected-paper-journal">{{ paper.journal }}, {{ paper.year }}</span>
       <span class="selected-paper-title">{{ paper.title }}</span>
@@ -607,21 +690,53 @@ social: true
   </div>
 </div>
 
+{%- capture news_rows -%}
+  {%- for item in site.data.news -%}
+    {{ item.date | date: "%Y-%m-%d" }}~~{{ item.date | date: "%b %Y" }}~~{{ item.text }}~~{{ item.link }}@@
+  {%- endfor -%}
+  {%- for p in site.data.papers -%}
+    {%- if p.news -%}
+      {%- assign news_line = p.news -%}
+    {%- else -%}
+      {%- capture news_line -%}New paper in {{ p.journal }}: {{ p.title }}{%- endcapture -%}
+    {%- endif -%}
+    {{ p.published | date: "%Y-%m-%d" }}~~{{ p.published | date: "%b %Y" }}~~{{ news_line }}~~https://doi.org/{{ p.doi }}@@
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign news_items = news_rows | split: "@@" | sort | reverse %}
+
 <div class="home-section">
   <div class="home-section-title">Latest News</div>
   <ul class="news-list">
-    {%- for item in site.data.news limit: 5 %}
+    {%- assign news_shown = 0 -%}
+    {%- for row in news_items -%}
+      {%- assign parts = row | strip | split: "~~" -%}
+      {%- if parts.size > 2 and news_shown < 5 -%}
+        {%- assign news_shown = news_shown | plus: 1 %}
     <li>
-      <span class="news-date">{{ item.date }}</span>
-      <span class="news-text">{% if item.link %}<a href="{{ item.link }}">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}</span>
+      <span class="news-date">{{ parts[1] }}</span>
+      <span class="news-text">{% if parts[3] != blank %}<a href="{{ parts[3] }}">{{ parts[2] }}</a>{% else %}{{ parts[2] }}{% endif %}</span>
     </li>
+      {%- endif -%}
     {%- endfor %}
   </ul>
 </div>
 
 </div>
 
+<div class="social">
+  <div class="contact-icons">{% social_links %}</div>
+  <div class="contact-note">
+    For academic correspondence, please use the form on the <a href="/contact/">Contact page</a>. Last updated: {{ site.time | date: "%-d %B %Y" }}.
+  </div>
+</div>
+
 <script>
+  var profilePhoto = document.querySelector('.profile figure img');
+  if (profilePhoto) {
+    profilePhoto.alt = 'Ardie Barry Sailis';
+  }
+
   document.querySelectorAll('.profile img, .profile-logo-links img, .profile-info img').forEach((img) => {
     img.setAttribute('draggable', 'false');
 
@@ -636,7 +751,7 @@ social: true
   (function () {
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
-      ".bio-text > p, .keyword-box, .highlight-study, .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
+      ".bio-text > p, .open-roles, .keyword-box, .highlight-study, .home-section > .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
     );
 
     if (reduce || !("IntersectionObserver" in window)) {

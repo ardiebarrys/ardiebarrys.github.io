@@ -1,29 +1,9 @@
-# Latest news on the homepage. Put the newest item at the top.
-# The homepage shows the first 5. "link" is optional.
+# Latest News on the homepage.
+# New papers in _data/papers.yml appear in Latest News automatically,
+# so this file is only for other news. The homepage shows the 5 most recent items.
 
-- date: Sep 2026
-  text: Reached 13 peer-reviewed papers, all as sole or first author.
+- date: 2026-10-06
+  text: Updated the whole website.
 
-- date: Aug 2026
-  text: New paper in Journal of Applied Toxicology on how metal-containing nanoparticles from e-cigarettes may harm male reproduction through mitochondria.
-  link: https://doi.org/10.1002/jat.70382
-
-- date: Aug 2026
-  text: New paper in Gene Reports on transcriptional condensates as kinetic filters for gene expression.
-  link: https://doi.org/10.1016/j.genrep.2026.102599
-
-- date: Jul 2026
-  text: New paper in Toxicology Mechanisms and Methods asking whether e-cigarette devices could release inhalable micro- and nanoplastics.
-  link: https://doi.org/10.1080/15376516.2026.2695155
-
-- date: Jun 2026
-  text: New paper in Archives of Toxicology on ferroptosis in e-cigarette aerosol-associated respiratory injury.
-  link: https://doi.org/10.1007/s00204-026-04486-w
-
-- date: Jun 2026
-  text: New review in International Journal of Impotence Research on e-cigarettes and erectile dysfunction.
-  link: https://doi.org/10.1038/s41443-026-01300-0
-
-- date: Apr 2026
-  text: New paper in Diabetes, Obesity and Metabolism on obesity-related erectile dysfunction.
-  link: https://doi.org/10.1111/dom.70818
+- date: 2026-10-01
+  text: Presented my PhD thesis seminar.

@@ -3,8 +3,9 @@ layout: page
 title: Curriculum Vitae
 permalink: /cv/
 nav: true
-nav_order: 4
+nav_order: 5
 nav_title: CV
+description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences at Universiti Malaya, with publications, experience and training
 ---
 
 <style>
@@ -14,6 +15,10 @@ nav_title: CV
     font-weight: 600;
     font-display: swap;
     src: url("/assets/fonts/spectral-latin-600-normal.woff2") format("woff2");
+  }
+
+  .post-description {
+    display: none;
   }
 
   .cv {
@@ -194,10 +199,6 @@ nav_title: CV
     margin-bottom: 0.2rem;
   }
 
-  .cv-note {
-    margin-bottom: 0.9rem !important;
-    color: var(--cv-muted);
-  }
 
   .cv-pubs {
     margin: 0;
@@ -413,8 +414,8 @@ nav_title: CV
       <p>
         Toxicology researcher studying how e-cigarette use affects male reproductive health. My PhD at Universiti Malaya compares cigarette
         smokers, e-cigarette users and dual users in Malaysia, linking exposure to testosterone-related microRNAs, mitochondrial function and
-        blood cell changes. I have published 13 peer-reviewed papers, all as sole or first author, and review manuscripts for seven
-        international journals.
+        blood cell changes. I have published {{ site.data.papers | size }} peer-reviewed papers as sole or first author and review manuscripts
+        for seven international journals. Open to roles in research, medical affairs, regulatory science and science communication.
       </p>
     </div>
   </section>
@@ -492,102 +493,42 @@ nav_title: CV
   <section class="cv-section">
     <h2>Publications</h2>
     <div>
-      <p class="cv-note">13 peer-reviewed journal articles, all as sole or first author.</p>
+      {%- assign me = "Ardie Barry Sailis" %}
       <ol class="cv-pubs" reversed>
-      <li>
-        <span class="cv-pub-title">Transcriptional condensates as kinetic filters for temporal control of gene expression.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Gene Reports</em>, 2026. <a href="https://doi.org/10.1016/j.genrep.2026.102599">doi.org/10.1016/j.genrep.2026.102599</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Mitochondrial mechanisms in the potential male reproductive toxicity of e-cigarette-derived metal-containing nanoparticles.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Journal of Applied Toxicology</em>, 2026. <a href="https://doi.org/10.1002/jat.70382">doi.org/10.1002/jat.70382</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Ferroptosis in e-cigarette aerosol-associated respiratory injury.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Archives of Toxicology</em>, 2026. <a href="https://doi.org/10.1007/s00204-026-04486-w">doi.org/10.1007/s00204-026-04486-w</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Toxicology Mechanisms and Methods</em>, 2026. <a href="https://doi.org/10.1080/15376516.2026.2695155">doi.org/10.1080/15376516.2026.2695155</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh</span>
-        <span class="cv-pub-venue"><em>Diabetes, Obesity and Metabolism</em>, 2026. <a href="https://doi.org/10.1111/dom.70818">doi.org/10.1111/dom.70818</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
-        <span class="cv-pub-venue"><em>Molecular and Cellular Endocrinology</em>, 2026. <a href="https://doi.org/10.1016/j.mce.2026.112786">doi.org/10.1016/j.mce.2026.112786</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
-        <span class="cv-pub-venue"><em>Environmental Toxicology and Pharmacology</em>, 2026. <a href="https://doi.org/10.1016/j.etap.2026.104994">doi.org/10.1016/j.etap.2026.104994</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Progress in Biophysics and Molecular Biology</em>, 2026. <a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005">doi.org/10.1016/j.pbiomolbio.2026.03.005</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">E-cigarettes and erectile dysfunction: biological mechanisms and research challenges.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Hui Yin Yow, Anne Yee, Maw Shin Sim</span>
-        <span class="cv-pub-venue"><em>International Journal of Impotence Research</em>, 2026. <a href="https://doi.org/10.1038/s41443-026-01300-0">doi.org/10.1038/s41443-026-01300-0</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Toxicology Mechanisms and Methods</em>, 2026. <a href="https://doi.org/10.1080/15376516.2026.2658739">doi.org/10.1080/15376516.2026.2658739</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong></span>
-        <span class="cv-pub-venue"><em>Archives of Toxicology</em>, 2026. <a href="https://doi.org/10.1007/s00204-026-04384-1">doi.org/10.1007/s00204-026-04384-1</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
-        <span class="cv-pub-venue"><em>Journal of Public Health</em>, 2026. <a href="https://doi.org/10.1007/s10389-026-02740-0">doi.org/10.1007/s10389-026-02740-0</a></span>
-      </li>
-      <li>
-        <span class="cv-pub-title">Mitochondrial dysfunction induced by E-cigarettes.</span>
-        <span class="cv-pub-authors"><strong>Ardie Barry Sailis</strong>, Muhamad Alfakri Mat Noh, Bey Fen Leo, Farid Nazer Faruqu, Anne Yee, Maw Shin Sim</span>
-        <span class="cv-pub-venue"><em>Toxicology</em>, 2025. <a href="https://doi.org/10.1016/j.tox.2025.154339">doi.org/10.1016/j.tox.2025.154339</a></span>
-      </li>
+        {%- for p in site.data.papers %}
+        {%- assign last_char = p.title | slice: -1 %}
+        <li>
+          <span class="cv-pub-title">{{ p.title }}{% unless last_char == "." or last_char == "?" %}.{% endunless %}</span>
+          <span class="cv-pub-authors">
+            {%- for a in p.authors -%}
+              {%- if a == me -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}
+              {%- unless forloop.last %}, {% endunless -%}
+            {%- endfor -%}
+          </span>
+          <span class="cv-pub-venue"><em>{{ p.journal }}</em>, {{ p.year }}. <a href="https://doi.org/{{ p.doi }}">doi.org/{{ p.doi }}</a></span>
+        </li>
+        {%- endfor %}
       </ol>
     </div>
   </section>
 
   <section class="cv-section">
-    <h2>Conferences</h2>
+    <h2>Talks and conferences</h2>
     <div>
+      {%- assign events = site.data.talks | where_exp: "t", "t.kind != 'workshop'" -%}
+      {%- for t in events %}
       <div class="cv-entry">
         <div class="cv-entry-head">
-          <span class="cv-entry-title">
-            Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users, and Dual Users in Malaysia: A Comparative Study
-          </span>
-          <span class="cv-date">2024</span>
+          <span class="cv-entry-title">{{ t.title }}</span>
+          <span class="cv-date">{{ t.date }}</span>
         </div>
-        <p class="cv-entry-org">Poster presentation, ISAM Regional Meeting</p>
+        {%- if t.kind == "poster" %}
+        <p class="cv-entry-org">Poster presentation{% if t.where %}, {{ t.where }}{% endif %}</p>
+        {%- elsif t.where %}
+        <p class="cv-entry-org">{{ t.where }}</p>
+        {%- endif %}
       </div>
-      <div class="cv-entry">
-        <div class="cv-entry-head">
-          <span class="cv-entry-title">Early Career Researchers&ndash;Postgraduates Research Symposium</span>
-          <span class="cv-date">2024</span>
-        </div>
-      </div>
-      <div class="cv-entry">
-        <div class="cv-entry-head">
-          <span class="cv-entry-title">ic-PHIR Conference</span>
-          <span class="cv-date">2023</span>
-        </div>
-        <p class="cv-entry-org">UiTM Puncak Alam</p>
-      </div>
+      {%- endfor %}
     </div>
   </section>
 
@@ -595,10 +536,10 @@ nav_title: CV
     <h2>Training</h2>
     <div>
       <ul class="cv-rows">
-        <li><span>Systematic Literature Review and Meta-Analysis Workshop</span><span class="cv-date">2025</span></li>
-        <li><span>UV-Visible Double Beam Spectrophotometer Workshop, Shimadzu</span><span class="cv-date">2025</span></li>
-        <li><span>Quantitative PCR (qPCR) Workshop, Vazyme, Universiti Malaya</span><span class="cv-date">2024</span></li>
-        <li><span>ic-PHIR Metabolic Workshop, UiTM Puncak Alam</span><span class="cv-date">2023</span></li>
+        {%- assign workshops = site.data.talks | where: "kind", "workshop" -%}
+        {%- for t in workshops %}
+        <li><span>{{ t.title }}{% if t.where %}, {{ t.where }}{% endif %}</span><span class="cv-date">{{ t.date }}</span></li>
+        {%- endfor %}
       </ul>
     </div>
   </section>

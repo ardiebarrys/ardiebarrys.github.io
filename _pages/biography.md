@@ -2,11 +2,15 @@
 layout: page
 title: Biography
 permalink: /biography/
+description: Biography of Ardie Barry Sailis, a toxicology researcher from Sabah studying how e-cigarettes affect male reproductive health
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 <style>
+  .post-description {
+    display: none;
+  }
 
   .post,
   .page,
@@ -76,9 +80,9 @@ nav_order: 6
   .bio-card,
   .bio-image-card {
     width: 100%;
-    border: 1px solid rgba(96, 165, 250, 0.156);
+    border: 1px solid var(--line);
     border-radius: 12px;
-    background: #101c44;
+    background: var(--surface);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.135);
     box-sizing: border-box;
   }
@@ -89,14 +93,14 @@ nav_order: 6
 
   .bio-card h2 {
     margin-top: 0;
-    color: #e0ebff !important;
+    color: var(--text-strong) !important;
     font-weight: 700;
   }
 
   .bio-card h3 {
     margin-top: 1.4rem;
     margin-bottom: 0.45rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1.15rem;
     font-weight: 700;
   }
@@ -113,7 +117,7 @@ nav_order: 6
     padding: 1.25rem 1.4rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0.018));
+    background: var(--surface);
     text-align: center;
   }
 
@@ -132,10 +136,10 @@ nav_order: 6
 
   .bio-focus-tag {
     padding: 0.45rem 0.7rem;
-    border: 1px solid rgba(96, 165, 250, 0.286);
+    border: 1px solid var(--line);
     border-radius: 999px;
-    background: #101c44;
-    color: #e6ecf8;
+    background: var(--surface);
+    color: var(--text);
     font-size: 0.95rem;
   }
 
@@ -145,13 +149,13 @@ nav_order: 6
     padding: 1.35rem 1.5rem;
     border-left: 5px solid var(--global-theme-color);
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
+    background: var(--surface);
     text-align: center;
   }
 
   .bio-inline-quote blockquote {
     margin: 0;
-    color: #e6ecf8;
+    color: var(--text);
     font-size: 1.08rem;
     font-weight: 600;
     line-height: 1.7;
@@ -161,7 +165,7 @@ nav_order: 6
   .bio-inline-quote cite {
     display: block;
     margin-top: 0.85rem;
-    color: #a3b1cf;
+    color: var(--muted);
     font-style: italic;
     font-weight: 700;
     text-align: center;
@@ -255,11 +259,11 @@ nav_order: 6
 
   <h3>Doctoral Research</h3>
   <p>
-    He came to the subject sideways. While looking for research assistant positions online, he found a project on vaping and reproductive health and could not let go of the arithmetic. Millions of users worldwide, and almost nothing known about what the aerosol does to sexual and hormonal function. That gap seemed worth closing.
+    He came to the subject sideways. While looking for research assistant positions online, he found a project on e-cigarettes and reproductive health and could not let go of the arithmetic. Millions of users worldwide, and almost nothing known about what the aerosol does to sexual and hormonal function. That gap seemed worth closing.
   </p>
 
   <p>
-    His doctoral work examines what e-cigarette exposure does to male reproductive and endocrine health, at the Faculty of Pharmacy, Universiti Malaya. Vaping is usually discussed as a lung problem. He is interested in what happens further downstream, in Leydig cell steroidogenesis, testosterone signalling, mitochondrial function, redox imbalance, and microRNA regulation.
+    His doctoral work examines what e-cigarette exposure does to male reproductive and endocrine health, at the Faculty of Pharmacy, Universiti Malaya. E-cigarette use is usually discussed as a lung problem. He is interested in what happens further downstream, in Leydig cell steroidogenesis, testosterone signalling, mitochondrial function, redox imbalance, and microRNA regulation.
   </p>
 
   <p>
