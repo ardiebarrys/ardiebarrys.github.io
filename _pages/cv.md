@@ -309,8 +309,17 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     html:root,
     html:root body {
       background: #ffffff !important;
-      padding-top: 0 !important;
+      padding: 0 !important;
       margin: 0 !important;
+      min-height: 0 !important;
+    }
+
+    .post,
+    article,
+    main,
+    .container.mt-5 {
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     html:root body::before,

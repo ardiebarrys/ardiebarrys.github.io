@@ -345,12 +345,18 @@ social: false
       margin-left: 0;
     }
 
+    .profile-logo-links {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+
     .profile-logo-links a {
-      min-height: 72px;
+      min-height: 64px;
+      padding: 0.6rem 0.7rem;
     }
 
     .profile-logo-links img {
-      max-height: 44px;
+      max-height: 36px;
     }
   }
   .open-roles {
