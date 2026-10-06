@@ -207,11 +207,6 @@ nav_order: 2
     height: 72px;
   }
 
-  .pub-metric > a {
-    color: #1d4ed8 !important;
-    font-size: 0.75rem;
-  }
-
   @media (max-width: 860px) {
     .pub {
       grid-template-columns: 1fr;
@@ -270,9 +265,30 @@ nav_order: 2
         </div>
         <div class="pub-abstract-body" id="abstract-{{ p.doi | slugify }}">{{ p.abstract | markdownify }}</div>
       </div>
-      <aside class="pub-metrics" aria-label="Metrics for this paper">
-        <div class="pub-metric"><a class="lazy-badge" data-badge="plumx" href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}" data-popup="bottom" data-size="medium" data-site="plum">PlumX</a></div>
-        <div class="pub-metric"><div class="lazy-badge" data-badge="altmetric" data-badge-type="donut" data-doi="{{ p.doi }}"></div></div>
+<aside class="pub-metrics" aria-label="Metrics for this paper">
+  <div class="pub-metric">
+    <a
+      href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}"
+      class="plumx-plum-print-popup"
+      data-popup="bottom"
+      data-size="medium">
+    </a>
+  </div>
+
+  <div class="pub-metric">
+    <div class="lazy-badge"
+         data-badge="altmetric"
+         data-badge-type="donut"
+         data-doi="{{ p.doi }}"></div>
+  </div>
+
+  <div class="pub-metric">
+    <span class="lazy-badge"
+          data-badge="dimensions"
+          data-doi="{{ p.doi }}"
+          data-style="small_circle"></span>
+  </div>
+</aside>
         <div class="pub-metric"><span class="lazy-badge" data-badge="dimensions" data-doi="{{ p.doi }}" data-style="small_circle"></span></div>
       </aside>
     </article>
@@ -371,13 +387,6 @@ nav_order: 2
 
     // Load the PlumX, Altmetric and Dimensions badges only when a paper scrolls into view.
     var sources = {
-      plumx: {
-        className: "plumx-plum-print-popup",
-        src: "https://cdn.plu.mx/widget-popup.js",
-        init: function () {
-          if (window.__plumX && window.__plumX.widgets && window.__plumX.widgets.init) window.__plumX.widgets.init();
-        },
-      },
       altmetric: {
         className: "altmetric-embed",
         src: "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js",
