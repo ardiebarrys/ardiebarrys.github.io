@@ -58,13 +58,6 @@ jobs:
             --print-to-pdf=_site/assets/pdf/Ardie_Barry_Sailis_CV.pdf \
             http://localhost:8080/cv/
           ls -la _site/assets/pdf/Ardie_Barry_Sailis_CV.pdf
-      - name: Preview build 🔍
-        if: github.event_name == 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: _site
-          branch: site-preview
-          single-commit: true
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
