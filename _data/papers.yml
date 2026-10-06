@@ -1,0 +1,221 @@
+# Every paper on the site comes from this list.
+# To add a paper, copy an entry, paste it at the top and change the details.
+# The Publications page, CV, CV PDF, homepage, Projects page, journal charts
+# and Latest News all update from here. If the journal is new, also add it
+# to _data/journals.yml.
+#
+# Fields
+#   published: date it came out online (YYYY-MM-DD, use 01 if the day is unknown)
+#   project:   thesis, framework or other (which Projects list it appears in)
+#   short:     short name used on the Projects page
+#   selected:  true to show it under Selected Papers on the homepage
+#   news:      optional custom line for Latest News
+#   highlight: optional plain-language summary for the homepage Highlighted Study
+
+- title: Transcriptional condensates as kinetic filters for temporal control of gene expression
+  authors:
+    - Ardie Barry Sailis
+  journal: Gene Reports
+  year: 2026
+  published: 2026-08-04
+  doi: 10.1016/j.genrep.2026.102599
+  project: framework
+  short: Transcriptional condensates as kinetic filters
+  news: New paper in Gene Reports on transcriptional condensates as kinetic filters for gene expression.
+  abstract: |-
+    Transcriptional regulation is often described as a spatial process in which transcription factors, cofactors, and RNA polymerase II assemble at enhancers and promoters. However, this framework does not fully explain how transcriptional systems interpret fluctuating signaling inputs. This review integrates evidence from condensate biology, signaling dynamics, chromatin regulation, and transcriptional bursting to examine transcriptional condensates as candidate kinetic intermediaries in temporal signal decoding. Established findings show that transcription-associated condensates can enrich regulatory factors, exchange components dynamically, undergo signal-dependent remodeling, and associate with transcriptional activity. We propose a kinetic-filter model in which concentration thresholds, nucleation delays, finite assembly and exchange kinetics, persistence, and regulated dissolution support duration-dependent integration, attenuation of rapid fluctuations, and short-term molecular memory. These properties are predicted to influence transcriptional burst frequency, duration, and output, while cellular metabolic and physicochemical conditions define the operating regime of condensate responsiveness. The model can be tested using live-cell imaging, fluorescence recovery after photobleaching, optogenetic pulsing, nascent RNA reporters, perturbation of multivalent interactions, orthogonal controls, and quantitative kinetic modeling. The complete causal sequence linking defined temporal inputs, condensate kinetics, and endogenous nascent transcription remains unproven. Establishing when this sequence operates will determine whether condensate-mediated temporal filtering is a general regulatory principle or a context-dependent mechanism.
+
+- title: Mitochondrial mechanisms in the potential male reproductive toxicity of e-cigarette-derived metal-containing nanoparticles
+  authors:
+    - Ardie Barry Sailis
+  journal: Journal of Applied Toxicology
+  year: 2026
+  published: 2026-08-05
+  doi: 10.1002/jat.70382
+  project: thesis
+  short: E-cigarette metals and male reproductive mitochondria
+  news: New paper in Journal of Applied Toxicology on how metal-containing nanoparticles from e-cigarettes may harm male reproduction through mitochondria.
+  abstract: |-
+    E-cigarette devices emit ultrafine metal-containing particles from heating coils, solder joints, and other wetted components, but their reproductive toxicology remains poorly defined. This review integrates evidence from aerosol chemistry, nanoparticle toxicology, and male reproductive biology to evaluate whether these particles may contribute to male reproductive dysfunction through mitochondrial injury. E-cigarette aerosols can contain nanoscale and ultrafine particles bearing chromium, nickel, iron, copper, zinc, tin, and lead. These particles may deposit in the distal lung and, based on broader nanoparticle toxicokinetics, could enter the systemic circulation. However, direct particle-resolved evidence of their accumulation in testicular tissue is currently absent. Mechanistic evidence therefore derives mainly from engineered nanoparticle and soluble-metal models. These studies indicate that metal exposure can disrupt blood-testis barrier integrity, impair Sertoli- and Leydig-cell function, alter steroidogenesis, damage germ cells, and reduce sperm quality. Mitochondria represent a plausible point of convergence because particle- and ion-mediated mechanisms can promote mitochondrial reactive oxygen species generation, lipid peroxidation, respiratory dysfunction, mitochondrial DNA damage, altered fusion-fission balance, defective mitophagy, apoptosis, and inflammatory signaling. These pathways provide a biologically plausible framework linking inhaled metal-containing particles to impaired spermatogenesis and steroidogenesis, without establishing causality under realistic vaping conditions. Future studies should combine inhalation-relevant exposure models with particle-resolved biodistribution, dosimetry, and mechanistic reproductive endpoints to determine whether these pathways operate following e-cigarette exposure.
+
+- title: Ferroptosis in e-cigarette aerosol-associated respiratory injury
+  authors:
+    - Ardie Barry Sailis
+  journal: Archives of Toxicology
+  year: 2026
+  published: 2026-06-27
+  doi: 10.1007/s00204-026-04486-w
+  project: thesis
+  short: Ferroptosis in e-cigarette aerosol-associated respiratory injury
+  news: New paper in Archives of Toxicology on ferroptosis in e-cigarette aerosol-associated respiratory injury.
+  abstract: |-
+    E-cigarette use has increased substantially, particularly among adolescents and young adults, yet its long-term respiratory effects remain incompletely understood. E-cigarette aerosol contains biologically active constituents, including nicotine, propylene glycol, vegetable glycerin, flavoring chemicals, aldehydes, metals, particles, and reactive oxygen species, which may disrupt respiratory epithelial homeostasis. This review synthesizes experimental, preclinical, and human-relevant evidence linking e-cigarette aerosol exposure to respiratory epithelial injury, with emphasis on ferroptosis-related mechanisms. Available evidence indicates that e-cigarette aerosol can impair epithelial barrier integrity, alter mucociliary defense, increase MUC5AC expression, induce oxidative stress, and promote inflammatory signaling. Emerging preclinical data suggest that electronic nicotine delivery system exposure may induce ferroptosis-associated lung injury through increased CD71/TFR1 and ACSL4 expression, reduced GPX4, altered lipid profiles, BODIPY-C11-positive lipid peroxidation, epithelial cell death, inflammation, mucus accumulation, emphysema-like pathology, and fibrosis. Mechanistically, e-cigarette aerosol may create a ferroptosis-permissive epithelial environment by promoting redox imbalance, GPX4/GSH/SLC7A11 antioxidant defense impairment, altered iron handling, ACSL4-mediated PUFA-phospholipid remodeling, NRF2/ARE stress responses, mitochondrial dysfunction, and lipid peroxide accumulation. Ferroptotic epithelial injury may further amplify airway inflammation and remodeling through DAMP release, macrophage recruitment, cytokine production, barrier disruption, mucus dysregulation, and extracellular matrix deposition. However, direct human evidence remains limited, and many mechanistic links are extrapolated from cigarette smoke, particulate matter, and broader lung injury models. Future studies should use standardized exposure systems, human-relevant airway and alveolar models, comprehensive ferroptosis markers, and ferroptosis-specific rescue experiments to determine whether ferroptosis is a driver, amplifier, or downstream marker of e-cigarette-associated respiratory injury.
+
+- title: Could e-cigarette devices generate inhalable micro- and nanoplastics? Exposure plausibility and reproductive relevance
+  authors:
+    - Ardie Barry Sailis
+  journal: Toxicology Mechanisms and Methods
+  year: 2026
+  published: 2026-07-06
+  doi: 10.1080/15376516.2026.2695155
+  project: thesis
+  short: E-cigarette devices and inhalable micro- and nanoplastics
+  news: New paper in Toxicology Mechanisms and Methods asking whether e-cigarette devices could release inhalable micro- and nanoplastics.
+  abstract: |-
+    Electronic cigarettes are widely used by individuals in their reproductive years, yet polymer materials in pods, wicks, seals, and casings remain underexamined as possible contributors to inhaled particulate exposure. This narrative review evaluates whether e-cigarette device components could plausibly generate microplastics or nanoplastics during use and whether such particles, if present, could have reproductive relevance. Evidence from device-material studies, polymer degradation chemistry, aerosol physics, inhalation toxicology, and reproductive microplastic models was synthesized. Current devices place polycarbonate, polydimethylsiloxane, nylon, and other polymers near heating and aerosolization zones, where thermal cycling, solvent contact, and mechanical stress could theoretically promote oxidation, chain scission, embrittlement, or fragmentation. However, no study has chemically identified or quantified device-derived microplastics or nanoplastics in e-cigarette aerosols using polymer-resolving methods. Thus, links between e-cigarette use, inhaled polymer particles, and reproductive harm remain hypothetical. Evidence from non-e-cigarette models shows that micro- and nanoplastics can induce oxidative stress, inflammation, endocrine disruption, barrier interaction, and cellular injury, but these findings cannot be extrapolated without confirming particle formation, polymer identity, dose, and biodistribution. Future research should prioritize polymer-resolved aerosol testing under realistic puffing regimens, including unused and aged devices, e-liquids, condensates, and emitted aerosols. Key endpoints should include polymer identity, particles per puff, particles per mL of e-liquid consumed, particle size distribution, polymer mass, pulmonary deposition, systemic translocation, and reproductive or placental effects. Device-derived microplastics should be treated as a plausible particle-safety concern requiring direct experimental evaluation.
+
+- title: "Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction"
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+  journal: "Diabetes, Obesity and Metabolism"
+  year: 2026
+  published: 2026-04-01
+  doi: 10.1111/dom.70818
+  project: other
+  short: Adipose-driven erectile dysfunction
+  news: "New paper in Diabetes, Obesity and Metabolism on obesity-related erectile dysfunction."
+  abstract: |-
+    **Background.** Obesity and erectile dysfunction (ED) are increasingly co-prevalent, yet adipose tissue is often viewed as a secondary contributor rather than a primary driver of erectile impairment.
+
+    **Objective.** To evaluate an adipose-centric framework in which depot-specific adipose dysfunction regulates vascular, neuroendocrine, and smooth muscle processes essential for erection.
+
+    **Methods.** A narrative synthesis of mechanistic, preclinical, and clinical studies was conducted, focusing on inflammation, cellular senescence, extracellular vesicle signaling, ferroptosis, mitochondrial dysfunction, and glycocalyx injury across visceral, perivascular, and periprostatic adipose depots.
+
+    **Results.** Dysfunctional adipose tissue remodels systemic and local microenvironments through adipokines, cytokines, extracellular vesicle cargo, and oxidized lipid mediators. These processes reduce nitric oxide bioavailability, increase vascular stiffness, disrupt neuroendocrine signaling, and promote cavernosal fibrosis. Perivascular adipose tissue exerts localized effects on penile hemodynamics. Clinical and genetic evidence supports a causal link between central adiposity and ED, while weight loss and adipose-targeted interventions improve erectile outcomes.
+
+    **Conclusion.** Adipose tissue functions as an upstream regulator of ED pathogenesis. Targeting adipose dysfunction through lifestyle, pharmacological, and emerging strategies such as senolytics and extracellular vesicle modulation may modify disease progression rather than provide symptomatic relief.
+
+- title: "E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models"
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+    - Bey Fen Leo
+    - Farid Nazer Faruqu
+    - Anne Yee
+    - Maw Shin Sim
+  journal: Molecular and Cellular Endocrinology
+  year: 2026
+  published: 2026-03-01
+  doi: 10.1016/j.mce.2026.112786
+  project: thesis
+  short: Leydig cell steroidogenic pathways
+  selected: true
+  abstract: |-
+    The rising prevalence of e-cigarette use has raised concerns regarding potential adverse effects on male reproductive and endocrine health, yet its impact on testosterone regulation remains poorly defined. This narrative review critically synthesizes evidence from preclinical in vivo and in vitro models and from human observational studies to evaluate how e-cigarette exposure may influence testosterone homeostasis and hypothalamic-pituitary-gonadal axis function. Across experimental models, e-cigarette aerosols and their constituents consistently impair Leydig cell function and testosterone biosynthesis through convergent mechanisms involving oxidative stress, inflammatory signaling, mitochondrial dysfunction, epigenetic modification, and suppression of key steroidogenic enzymes. Several of these mechanisms overlap with those described for combustible cigarette exposure, whereas others, particularly those related to aerosolized solvents, flavoring agents, and device-derived metals, appear more specific to e-cigarettes. In contrast, the available human evidence is limited to cross-sectional studies and yields inconsistent findings, with the largest population-based study reporting no significant differences in circulating testosterone concentrations between e-cigarette users and non-users. Collectively, the evidence supports biological plausibility for e-cigarette-associated disruption of testosterone steroidogenesis but remains insufficient to establish causality in humans. This review therefore identifies critical methodological gaps and highlights priorities for longitudinal, biomarker-anchored human studies required to determine the clinical relevance and reversibility of e-cigarette-associated endocrine disruption.
+
+- title: MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+    - Bey Fen Leo
+    - Farid Nazer Faruqu
+    - Anne Yee
+    - Maw Shin Sim
+  journal: Environmental Toxicology and Pharmacology
+  year: 2026
+  published: 2026-03-01
+  doi: 10.1016/j.etap.2026.104994
+  project: thesis
+  short: MicroRNA-mediated testosterone signaling
+  selected: true
+  abstract: |-
+    Electronic cigarette (e-cigarette) use is increasing worldwide, yet its effects on male endocrine and reproductive health remain poorly defined. Beyond nicotine, e-cigarette aerosols contain aldehydes, metals, and particulate matter capable of perturbing pathways essential for steroidogenesis. MicroRNAs (miRNAs) have emerged as key post-transcriptional regulators of hypothalamic-pituitary-gonadal axis signaling and Leydig cell function, and multiple miRNAs involved in GnRH release, gonadotropin synthesis, and testosterone biosynthesis are responsive to oxidative and metabolic stressors present in e-cigarette aerosols. Although direct evidence in e-cigarette users is limited, findings from studies of nicotine, flavoring agents, and metal exposures support the plausibility that e-cigarettes may alter miRNA expression and impair steroidogenic processes. This hypothesis-generating review synthesizes current evidence linking miRNA dysregulation to testosterone biosynthesis, proposes candidate e-cigarette constituents capable of modulating these miRNAs, and highlights critical gaps requiring experimental validation. Overall, miRNAs may represent integrative mediators and potential biomarkers of e-cigarette-associated testicular toxicity.
+
+- title: "NRF2-KEAP1 as a redox signal-resolution circuit: Beyond the antioxidant switch"
+  authors:
+    - Ardie Barry Sailis
+  journal: Progress in Biophysics and Molecular Biology
+  year: 2026
+  published: 2026-03-01
+  doi: 10.1016/j.pbiomolbio.2026.03.005
+  project: framework
+  short: NRF2-KEAP1 as a redox signal-resolution circuit
+  abstract: |-
+    The NRF2-KEAP1 pathway is classically described as an inducible antioxidant switch, yet this binary framework fails to explain why transient NRF2 activation is broadly cytoprotective whereas sustained activation drives pathology across cancer, fibrosis, and metabolic disease. In this conceptual synthesis, we integrate evidence from redox biology, proteostasis, autophagy, metabolism, and systems biology to reinterpret NRF2-KEAP1 signaling using concepts from control theory. We propose that the pathway functions as a redoxostat, a signal-resolution control circuit that detects oxidative and electrophilic stress, encodes signal magnitude and duration, executes graded transcriptional responses, and actively promotes its own termination through genetically encoded feedback mechanisms. Central to this architecture is a resolution module involving KEAP1 resynthesis, ubiquitin-proteasome and autophagic turnover, and metabolic restoration of redox-sensitive cysteines. Within this framework, pathological outcomes arise primarily from failure of signal resolution rather than excessive activation, and distinct disease phenotypes can be mapped to specific circuit failure modes including sensor dysfunction, controller impairment, amplifier escape, and feedback disruption. This model reconciles the protective and pathogenic roles of NRF2 under a unified explanatory logic, clarifies why chronic activation is deleterious while transient activation is adaptive, and shifts experimental and therapeutic emphasis from endpoint activation toward restoration of signaling dynamics and resolution.
+
+- title: "E-cigarettes and erectile dysfunction: biological mechanisms and research challenges"
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+    - Bey Fen Leo
+    - Farid Nazer Faruqu
+    - Hui Yin Yow
+    - Anne Yee
+    - Maw Shin Sim
+  journal: International Journal of Impotence Research
+  year: 2026
+  published: 2026-06-15
+  doi: 10.1038/s41443-026-01300-0
+  project: thesis
+  short: E-cigarettes and erectile dysfunction
+  news: New review in International Journal of Impotence Research on e-cigarettes and erectile dysfunction.
+  highlight: >-
+    This review explains how e-cigarette use may affect men's sexual health. E-cigarette aerosols can disturb blood vessel function, hormones, inflammation and other systems involved in erections. The evidence is still early, so stronger long-term studies are needed before we can say whether e-cigarette use directly causes erectile dysfunction.
+  abstract: |-
+    Electronic cigarettes are widely promoted as harm-reduction alternatives to conventional tobacco smoking, yet their potential effects on male sexual health remain incompletely characterised. Erectile dysfunction is a predominantly vascular condition with important neuroendocrine regulation and is highly sensitive to endothelial injury, oxidative stress, hormonal imbalance, and autonomic dysregulation, all of which may plausibly be influenced by electronic cigarette use. Despite increasing global prevalence, direct evidence linking electronic cigarette use to erectile dysfunction remains limited. This narrative review synthesises current experimental, clinical, and epidemiological evidence examining the association between electronic cigarette use and erectile dysfunction, with emphasis on underlying biological mechanisms and key research gaps. Emerging evidence implicates endothelial dysfunction, impaired nitric oxide bioavailability, oxidative stress, inflammation, hormonal disturbance, autonomic imbalance, sleep disturbance, and exposure to aerosolised substances and metals as interconnected pathways that may contribute to erectile dysfunction. Overall, the existing literature remains preliminary and largely hypothesis-generating, with no longitudinal studies capable of establishing causality or dose-response relationships. Well-designed prospective studies are required to clarify the long-term sexual health outcomes associated with electronic cigarette use.
+
+- title: "E-cigarette aerosols as systemic metabolic disruptors: integrated mitochondrial, circadian, and neurobehavioral mechanisms"
+  authors:
+    - Ardie Barry Sailis
+  journal: Toxicology Mechanisms and Methods
+  year: 2026
+  published: 2026-04-01
+  doi: 10.1080/15376516.2026.2658739
+  project: thesis
+  short: E-cigarettes as metabolic disruptors
+  abstract: |-
+    E-cigarettes are promoted as reduced-harm alternatives to combustible tobacco, yet their aerosols contain metals, aldehydes, solvents, and other bioactive chemicals capable of disrupting metabolic regulation. This review synthesizes evidence from cellular, animal, and early human studies on how e-cigarette aerosol exposure affects metabolic homeostasis across mitochondrial, redox, circadian, and neurobehavioral systems. A systems-level model is proposed in which mitochondrial dysfunction, oxidative stress, circadian misalignment, and neurobehavioral alterations form a feed-forward network that drives metabolic inflexibility. Across experimental systems, e-cigarette exposure is associated with mitochondrial impairment, oxidative stress, AMPK suppression, disrupted lipid oxidation, adipose inflammation, and reduced thermogenic capacity, changes consistent with insulin resistance. Evidence also indicates disruption of circadian clock signaling and modulation of reward and appetite circuits, further biasing energy balance. These findings support a model in which e-cigarette aerosols act as multi-system metabolic disruptors affecting both peripheral organs and central regulatory pathways. However, important uncertainties remain regarding dose-response relationships, exposure patterns, device variability, and long-term human risk. This review provides an integrated framework to clarify potential links between e-cigarette aerosol exposure and metabolic dysfunction and highlights priorities for future translational and human research.
+
+- title: CYP1A1 as a conserved metabolic circuit linking environmental sensing to immune regulation
+  authors:
+    - Ardie Barry Sailis
+  journal: Archives of Toxicology
+  year: 2026
+  published: 2026-03-01
+  doi: 10.1007/s00204-026-04384-1
+  project: framework
+  short: CYP1A1 as an environmental sensing feedback circuit
+  abstract: |-
+    Cytochrome P450 1A1 (CYP1A1) is traditionally described as a xenobiotic detoxification enzyme induced by the aryl hydrocarbon receptor (AhR). However, its tight inducible regulation, evolutionary conservation, and prominent expression in immune and barrier tissues where xenobiotic metabolism operates alongside environmental sensing and immune regulation suggest a broader regulatory role. This review proposes that CYP1A1 functions as a metabolic feedback regulator that controls the duration and intensity of AhR signaling. AhR rapidly senses diverse environmental, dietary, microbial, and endogenous ligands, while delayed induction of CYP1A1 limits signaling by metabolizing susceptible ligands and reducing their availability. Through this feedback architecture, ligand metabolism determines signal persistence and shapes downstream transcriptional and immune outcomes. Evidence from evolutionary analyses, signaling kinetics, tissue biology, and immunology indicates that CYP1A1-mediated metabolic feedback calibrates immune differentiation and barrier homeostasis across tissues. Disruption of this feedback, through persistent ligands or impaired CYP1A1 activity, uncouples environmental sensing from signal resolution and promotes sustained AhR activation. This framework reframes the AhR-CYP1A1 axis as a regulatory control circuit rather than a linear detoxification pathway and highlights signal duration and feedback integrity as key determinants of environmental immunotoxicity.
+
+- title: "Effects of secondhand exposure to e-cigarette aerosol on lung health: a systematic review"
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+    - Bey Fen Leo
+    - Farid Nazer Faruqu
+    - Anne Yee
+    - Maw Shin Sim
+  journal: Journal of Public Health
+  year: 2026
+  published: 2026-03-01
+  doi: 10.1007/s10389-026-02740-0
+  project: thesis
+  short: Secondhand aerosol exposure and lung health
+  abstract: |-
+    **Objective.** This review assesses the respiratory effects of passive exposure to e-cigarette aerosols in adolescents, healthy adults, and individuals with pre-existing respiratory conditions.
+
+    **Methods.** We systematically searched for observational and experimental studies on secondhand e-cigarette aerosol (SHA) exposure. Outcomes included respiratory symptoms, pulmonary function, airway resistance or reactivity, inflammatory biomarkers, and environmental exposure metrics. Five studies met criteria: longitudinal cohorts, cross-sectional surveys, and controlled chamber experiments.
+
+    **Results.** Evidence suggests that SHA exposure is associated with adverse respiratory outcomes. In adolescents and young adults, household SHA increased bronchitic symptoms, wheeze, shortness of breath, and asthma outcomes. Risk rose with more frequent exposure. Controlled chamber studies in healthy non-smokers have found that 30 min of passive exposure causes immediate sensory irritation (in the eyes, nose, and throat), increased airway resistance, and a decrease in exhaled nitric oxide. In COPD patients, short-term exposure affected surfactant protein-A, increased plasma inflammatory biomarkers, and caused throat irritation, with borderline lung function decline. Environmental monitoring confirmed the presence of ultrafine particles and volatile organic compounds during exposure.
+
+    **Conclusion.** SHA exposure is not benign. It can cause respiratory irritation, functional impairment, and inflammation in various populations. Effects are generally less pronounced than those of combustible cigarette smoke. Nonetheless, these findings support public health measures such as regulations restricting SHA exposure in public settings, especially to protect adolescents and vulnerable individuals. Long-term studies are still needed to determine chronic health consequences and guide evidence-based policy decisions.
+
+- title: Mitochondrial dysfunction induced by E-cigarettes
+  authors:
+    - Ardie Barry Sailis
+    - Muhamad Alfakri Mat Noh
+    - Bey Fen Leo
+    - Farid Nazer Faruqu
+    - Anne Yee
+    - Maw Shin Sim
+  journal: Toxicology
+  year: 2025
+  published: 2025-11-01
+  doi: 10.1016/j.tox.2025.154339
+  project: thesis
+  short: Mitochondrial dysfunction
+  selected: true
+  abstract: |-
+    E-cigarette use has been linked to mitochondrial dysfunction through exposure to reactive oxygen species (ROS), toxic aldehydes, metals, and flavoring agents. These constituents can damage mitochondrial DNA, impair oxidative phosphorylation, and disrupt calcium homeostasis, resulting in oxidative stress, inflammation, and programmed cell death. Mitochondrial impairment contributes to many systemic disorders, including respiratory, cardiovascular, and metabolic conditions. Praeclinical findings suggest altered mitochondrial morphology, reduced adenosine triphosphate (ATP) production, and increased ROS, all of which can contribute to mitochondrial dysfunction following e-cigarette exposure. Certain flavorings and metals intensify these effects. While early human data suggest systemic mitochondrial stress, most research remains in vitro or animal-based. This review identifies mitochondrial dysfunction as a key mechanism in e-cigarette toxicity and calls for longitudinal research to elucidate its long-term health consequences.

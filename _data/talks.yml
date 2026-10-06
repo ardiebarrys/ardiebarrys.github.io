@@ -1,0 +1,40 @@
+# Talks, conferences and workshops. Used on the Talks page and the CV.
+# kind: talk, poster, conference or workshop. Keep the newest at the top.
+
+- title: PhD thesis seminar
+  where: Universiti Malaya
+  date: 1 Oct 2026
+  kind: talk
+
+- title: "Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users, and Dual Users in Malaysia: A Comparative Study"
+  where: ISAM Regional Meeting
+  date: "2024"
+  kind: poster
+
+- title: Early Career Researchers–Postgraduates Research Symposium
+  date: "2024"
+  kind: conference
+
+- title: ic-PHIR Conference
+  where: UiTM Puncak Alam
+  date: "2023"
+  kind: conference
+
+- title: Systematic Literature Review and Meta-Analysis Workshop
+  date: "2025"
+  kind: workshop
+
+- title: UV-Visible Double Beam Spectrophotometer Workshop
+  where: Shimadzu
+  date: "2025"
+  kind: workshop
+
+- title: Quantitative PCR (qPCR) Workshop
+  where: Vazyme, Universiti Malaya
+  date: "2024"
+  kind: workshop
+
+- title: ic-PHIR Metabolic Workshop
+  where: UiTM Puncak Alam
+  date: "2023"
+  kind: workshop

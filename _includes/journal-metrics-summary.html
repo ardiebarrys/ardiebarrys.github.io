@@ -10,7 +10,7 @@
 
   .journal-summary-header h2 {
     margin: 0;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1.45rem;
     font-weight: 700;
   }
@@ -24,16 +24,16 @@
 
   .journal-chart-card {
     padding: 1.1rem 1.2rem;
-    border: 1px solid rgba(96, 165, 250, 0.286);
+    border: 1px solid var(--line);
     border-left: 5px solid var(--global-theme-color);
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.02));
+    background: var(--surface);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   }
 
   .journal-chart-card h3 {
     margin: 0 0 0.9rem;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-size: 1.05rem;
     font-weight: 700;
   }
@@ -82,7 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e0ebff;
+    color: var(--text-strong);
     font-weight: 700;
     text-align: center;
     pointer-events: none;
@@ -97,7 +97,7 @@
     display: flex;
     align-items: center;
     gap: 0.45rem;
-    color: #e6ecf8;
+    color: var(--text);
     font-size: 0.95rem;
     line-height: 1.35;
   }
@@ -115,10 +115,10 @@
     display: none;
     max-width: 240px;
     padding: 0.45rem 0.65rem;
-    border: 1px solid rgba(96, 165, 250, 0.286);
+    border: 1px solid var(--line);
     border-radius: 8px;
-    background: #101c44;
-    color: #e6ecf8;
+    background: var(--surface);
+    color: var(--text);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.36);
     font-size: 0.9rem;
     line-height: 1.35;
@@ -129,9 +129,9 @@
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    border: 1px solid rgba(96, 165, 250, 0.234);
+    border: 1px solid var(--line);
     border-radius: 10px;
-    background: #101c44;
+    background: var(--surface);
   }
 
   .journal-metrics-table {
@@ -147,16 +147,16 @@
     padding: 0.75rem 0.9rem;
     border-right: 0 !important;
     border-left: 0 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    color: #e6ecf8;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
     font-size: 0.95rem;
     line-height: 1.35;
     vertical-align: top;
   }
 
   .journal-metrics-table th {
-    background: rgba(37, 99, 235, 0.08);
-    color: #e0ebff;
+    background: var(--surface-strong);
+    color: var(--text-strong);
     font-weight: 700;
     text-align: left;
     white-space: nowrap;
@@ -213,7 +213,7 @@
   }
 
   .journal-metrics-table tbody tr:hover {
-    background: rgba(37, 99, 235, 0.035);
+    background: var(--surface);
   }
 
   .table-sort-button {
@@ -226,7 +226,7 @@
     padding: 0;
     border: 0;
     background: transparent;
-    color: #e0ebff;
+    color: var(--text-strong);
     font: inherit;
     font-weight: 700;
     text-align: inherit;
@@ -239,18 +239,18 @@
     justify-content: center;
     width: 1.1rem;
     height: 1.1rem;
-    border: 1px solid rgba(96, 165, 250, 0.312);
+    border: 1px solid var(--line);
     border-radius: 50%;
     color: var(--global-theme-color);
     font-size: 0.72rem;
     line-height: 1;
-    background: #101c44;
+    background: var(--surface);
   }
 
   .table-sort-button:hover .table-sort-arrow,
   .table-sort-button.active .table-sort-arrow {
     border-color: var(--global-theme-color);
-    background: rgba(37, 99, 235, 0.08);
+    background: var(--surface-strong);
   }
 
   .quartile-badge {
@@ -259,7 +259,7 @@
     justify-content: center;
     padding: 0.18rem 0.45rem;
     border-radius: 999px;
-    background: rgba(37, 99, 235, 0.09);
+    background: var(--surface-strong);
     color: var(--global-theme-color);
     font-weight: 700;
   }
@@ -296,7 +296,7 @@
             <circle class="donut-track" cx="80" cy="80" r="58"></circle>
             <g class="donut-segments"></g>
           </svg>
-          <div class="donut-center">13<br>Papers</div>
+          <div class="donut-center">{{ site.data.papers | size }}<br>Papers</div>
         </div>
         <div id="category-legend" class="donut-legend"></div>
       </div>
@@ -310,7 +310,7 @@
             <circle class="donut-track" cx="80" cy="80" r="58"></circle>
             <g class="donut-segments"></g>
           </svg>
-          <div class="donut-center">13<br>Papers</div>
+          <div class="donut-center">{{ site.data.papers | size }}<br>Papers</div>
         </div>
         <div id="quartile-legend" class="donut-legend"></div>
       </div>
@@ -356,18 +356,13 @@
 <script>
   (function () {
     const journalData = [
-      { no: 1, journal: "Archives of Toxicology", papers: 2, category: "Toxicology", indexing: "SCIE", jif: 10.9, quartile: "Q1", rank: "5/106" },
-      { no: 2, journal: "Diabetes, Obesity and Metabolism", papers: 1, category: "Endocrinology & Metabolism", indexing: "SCIE", jif: 6.1, quartile: "Q1", rank: "32/198" },
-      { no: 3, journal: "Toxicology", papers: 1, category: "Toxicology", indexing: "SCIE", jif: 5.2, quartile: "Q1", rank: "16/106" },
-      { no: 4, journal: "Environmental Toxicology and Pharmacology", papers: 1, category: "Toxicology", indexing: "SCIE", jif: 4.6, quartile: "Q1", rank: "23/106" },
-      { no: 5, journal: "Progress in Biophysics and Molecular Biology", papers: 1, category: "Biophysics", indexing: "SCIE", jif: 4.5, quartile: "Q1", rank: "13/81" },
-      { no: 6, journal: "Molecular and Cellular Endocrinology", papers: 1, category: "Endocrinology & Metabolism", indexing: "SCIE", jif: 3.4, quartile: "Q2", rank: "95/198" },
-      { no: 7, journal: "Toxicology Mechanisms and Methods", papers: 2, category: "Toxicology", indexing: "SCIE", jif: 2.9, quartile: "Q3", rank: "57/106" },
-      { no: 8, journal: "Journal of Applied Toxicology", papers: 1, category: "Toxicology", indexing: "SCIE", jif: 3.1, quartile: "Q2", rank: "52/106" },
-      { no: 9, journal: "International Journal of Impotence Research", papers: 1, category: "Urology & Nephrology", indexing: "SCIE", jif: 2.5, quartile: "Q2", rank: "54/134" },
-      { no: 10, journal: "Journal of Public Health-Heidelberg", papers: 1, category: "Public, Environmental & Occupational Health", indexing: "ESCI", jif: 1.6, quartile: "Q3", rank: "301/443" },
-      { no: 11, journal: "Gene Reports", papers: 1, category: "Genetics & Heredity", indexing: "ESCI", jif: 1.2, quartile: "Q4", rank: "167/192" },
-    ];
+      {%- for j in site.data.journals %}
+      {%- assign journal_papers = site.data.papers | where: "journal", j.name %}
+      { journal: {{ j.wos_name | default: j.name | jsonify }}, papers: {{ journal_papers | size }}, category: {{ j.category | jsonify }}, indexing: {{ j.indexing | jsonify }}, jif: {{ j.jif }}, quartile: {{ j.quartile | jsonify }}, rank: {{ j.rank | jsonify }} },
+      {%- endfor %}
+    ].filter(function (item) {
+      return item.papers > 0;
+    });
 
     const chartColors = ["#93c5fd", "#2563eb", "#22d3ee", "#34d399", "#fbbf24", "#f87171"];
     const sortState = { key: null, direction: "default" };

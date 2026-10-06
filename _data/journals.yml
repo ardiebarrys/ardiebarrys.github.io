@@ -1,0 +1,81 @@
+# Journal metrics shown on the Publications page (Web of Science).
+# name must match the journal field in _data/papers.yml.
+# Paper counts are worked out automatically.
+
+- name: "Archives of Toxicology"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 10.9
+  quartile: Q1
+  rank: "5/106"
+
+- name: "Diabetes, Obesity and Metabolism"
+  category: "Endocrinology & Metabolism"
+  indexing: SCIE
+  jif: 6.1
+  quartile: Q1
+  rank: "32/198"
+
+- name: "Toxicology"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 5.2
+  quartile: Q1
+  rank: "16/106"
+
+- name: "Environmental Toxicology and Pharmacology"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 4.6
+  quartile: Q1
+  rank: "23/106"
+
+- name: "Progress in Biophysics and Molecular Biology"
+  category: "Biophysics"
+  indexing: SCIE
+  jif: 4.5
+  quartile: Q1
+  rank: "13/81"
+
+- name: "Molecular and Cellular Endocrinology"
+  category: "Endocrinology & Metabolism"
+  indexing: SCIE
+  jif: 3.4
+  quartile: Q2
+  rank: "95/198"
+
+- name: "Toxicology Mechanisms and Methods"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 2.9
+  quartile: Q3
+  rank: "57/106"
+
+- name: "Journal of Applied Toxicology"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 3.1
+  quartile: Q2
+  rank: "52/106"
+
+- name: "International Journal of Impotence Research"
+  category: "Urology & Nephrology"
+  indexing: SCIE
+  jif: 2.5
+  quartile: Q2
+  rank: "54/134"
+
+- name: "Journal of Public Health"
+  wos_name: "Journal of Public Health-Heidelberg"
+  category: "Public, Environmental & Occupational Health"
+  indexing: ESCI
+  jif: 1.6
+  quartile: Q3
+  rank: "301/443"
+
+- name: "Gene Reports"
+  category: "Genetics & Heredity"
+  indexing: ESCI
+  jif: 1.2
+  quartile: Q4
+  rank: "167/192"
