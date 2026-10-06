@@ -288,7 +288,6 @@ social: false
     font-size: 0 !important;
   }
 
-  .social a,
   .contact-icons a {
     display: inline-flex !important;
     align-items: center !important;
@@ -420,6 +419,11 @@ social: false
 
   .contact-note {
     color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .contact-note a {
+    color: var(--accent) !important;
   }
 
   /* Homepage: selected papers and latest news */

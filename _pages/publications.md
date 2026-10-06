@@ -42,7 +42,8 @@ nav_order: 2
 
   .pub {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
     gap: 1.75rem;
     margin-bottom: 1rem;
     padding: 1.4rem 1.5rem;
@@ -187,47 +188,28 @@ nav_order: 2
   }
 
   .pub-metrics {
-    display: grid;
-    align-content: start;
-    gap: 0;
-    min-height: 330px;
-    padding: 0.85rem;
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
     background: #ffffff;
     color: #1e293b;
     --global-text-color: #1e293b;
     --global-theme-color: #1d4ed8;
   }
 
-  .pub-metric-plumx {
-    display: flex;
-    justify-content: center;
-    min-height: 220px;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e2e8f0;
-  }
-
-  .pub-metric-plumx > a {
-    align-self: center;
-    color: #1d4ed8 !important;
-    font-size: 0.85rem;
-  }
-
-  .pub-metric-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 0.75rem;
-  }
-
   .pub-metric {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90px;
+    width: 64px;
+    height: 72px;
   }
 
-  .pub-metric + .pub-metric {
-    border-left: 1px solid #e2e8f0;
+  .pub-metric > a {
+    color: #1d4ed8 !important;
+    font-size: 0.75rem;
   }
 
   @media (max-width: 860px) {
@@ -238,8 +220,7 @@ nav_order: 2
     }
 
     .pub-metrics {
-      max-width: 320px;
-      min-height: 0;
+      justify-self: start;
     }
   }
 
@@ -290,13 +271,9 @@ nav_order: 2
         <div class="pub-abstract-body" id="abstract-{{ p.doi | slugify }}">{{ p.abstract | markdownify }}</div>
       </div>
       <aside class="pub-metrics" aria-label="Metrics for this paper">
-        <div class="pub-metric-plumx">
-          <a class="lazy-badge" data-badge="plumx" href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}" data-orientation="vertical" data-site="plum">PlumX Metrics</a>
-        </div>
-        <div class="pub-metric-row">
-          <div class="pub-metric"><div class="lazy-badge" data-badge="altmetric" data-badge-type="donut" data-doi="{{ p.doi }}"></div></div>
-          <div class="pub-metric"><span class="lazy-badge" data-badge="dimensions" data-doi="{{ p.doi }}"></span></div>
-        </div>
+        <div class="pub-metric"><a class="lazy-badge" data-badge="plumx" href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}" data-popup="bottom" data-size="medium" data-site="plum">PlumX</a></div>
+        <div class="pub-metric"><div class="lazy-badge" data-badge="altmetric" data-badge-type="donut" data-doi="{{ p.doi }}"></div></div>
+        <div class="pub-metric"><span class="lazy-badge" data-badge="dimensions" data-doi="{{ p.doi }}" data-style="small_circle"></span></div>
       </aside>
     </article>
     {%- endfor %}
@@ -395,8 +372,8 @@ nav_order: 2
     // Load the PlumX, Altmetric and Dimensions badges only when a paper scrolls into view.
     var sources = {
       plumx: {
-        className: "plumx-summary",
-        src: "https://cdn.plu.mx/widget-summary.js",
+        className: "plumx-plum-print-popup",
+        src: "https://cdn.plu.mx/widget-popup.js",
         init: function () {
           if (window.__plumX && window.__plumX.widgets && window.__plumX.widgets.init) window.__plumX.widgets.init();
         },

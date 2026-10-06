@@ -222,7 +222,7 @@ nav_order: 7
   <div class="bio-hero-content">
     <h1>Biography</h1>
     <p>
-      PhD student in Pharmaceutical Sciences working at the intersection of toxicology,
+      PhD candidate in Pharmaceutical Sciences working at the intersection of toxicology,
       molecular regulation, and reproductive health.
     </p>
   </div>
