@@ -633,176 +633,27 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
 </div>
 
 <script>
-(function () {
-  const root = document.getElementById("deep-numbers");
-  if (!root) return;
-
-  const views = {
-    play: document.getElementById("dn-play"),
-    about: document.getElementById("dn-about"),
-    support: document.getElementById("dn-support")
-  };
-
-  const navButtons = root.querySelectorAll("[data-dn-view]");
-
-  function showView(name) {
-    Object.keys(views).forEach(function (key) {
-      if (views[key]) {
-        views[key].classList.toggle("is-active", key === name);
-      }
-    });
-
-    if (name !== "play") {
-      views.play.style.display = "none";
-    } else {
-      views.play.style.display = "";
-    }
-
-    views.about.classList.toggle("is-active", name === "about");
-    views.support.classList.toggle("is-active", name === "support");
-
-    navButtons.forEach(function (button) {
-      button.classList.toggle("is-active", button.dataset.dnView === name);
-    });
-
-    root.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  navButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      showView(button.dataset.dnView);
-    });
-  });
-
-  const form = document.getElementById("dn-form");
-  const input = document.getElementById("dn-number");
-  const hint = document.getElementById("dn-hint");
-  const result = document.getElementById("dn-result");
-  const explorers = document.getElementById("dn-explorers");
-  const deepest = document.getElementById("dn-deepest");
-
-  const crowd = [];
-  for (let i = 0; i < 42; i++) {
-    crowd.push(Math.floor(1 + Math.random() * 1000000));
-  }
-
-  explorers.textContent = String(crowd.length);
-  deepest.textContent = "—";
-
-  function density(value) {
-    let score = 0;
-    const h = 1000;
-
-    crowd.forEach(function (pick) {
-      score += Math.exp(-Math.abs(value - pick) / h);
-    });
-
-    return score;
-  }
-
-  function rarity(value) {
-    const distances = crowd.map(function (pick) {
-      return {
-        pick: pick,
-        distance: Math.abs(value - pick)
-      };
-    }).sort(function (a, b) {
-      return a.distance - b.distance;
-    });
-
-    let rank = distances.findIndex(function (item) {
-      return item.pick === value;
-    });
-
-    if (rank < 0) {
-      rank = distances.length;
-    }
-
-    return Math.min(99.99, Math.max(.01, 100 * (1 - rank / (distances.length + 1))));
-  }
-
-  function distanceFor(percentile) {
-    const milestones = [
-      [0, 400, "Low Earth Orbit"],
-      [20, 384400, "Moon"],
-      [40, 78000000, "Mars"],
-      [55, 628000000, "Jupiter"],
-      [65, 1200000000, "Saturn"],
-      [72, 2900000000, "Uranus"],
-      [80, 4350000000, "Neptune"],
-      [95, 5760000000, "Pluto"],
-      [97, 7350000000, "Kuiper Belt"],
-      [99, 18000000000, "Heliopause"],
-      [99.9, 300000000000, "Oort Cloud"],
-      [99.99, 40000000000000, "Proxima Centauri"],
-      [100, 246000000000000000, "Galactic Center"]
-    ];
-
-    for (let i = 1; i < milestones.length; i++) {
-      if (percentile <= milestones[i][0]) {
-        const a = milestones[i - 1];
-        const b = milestones[i];
-        const t = (percentile - a[0]) / (b[0] - a[0]);
-        const logA = Math.log10(a[1]);
-        const logB = Math.log10(b[1]);
-        const km = Math.pow(10, logA + t * (logB - logA));
-        return { km: km, zone: b[2] };
-      }
-    }
-
-    return { km: milestones[milestones.length - 1][1], zone: "Galactic Center" };
-  }
-
-  function formatDistance(km) {
-    if (km >= 9.46e12) return (km / 9.46e12).toFixed(2) + " ly";
-    if (km >= 1e9) return (km / 1e9).toFixed(2) + " billion km";
-    if (km >= 1e6) return (km / 1e6).toFixed(2) + " million km";
-    return Math.round(km).toLocaleString() + " km";
-  }
-
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const value = Number(input.value.replace(/,/g, "").trim());
-
-    if (!Number.isInteger(value) || value < 1 || value > 1000000) {
-      hint.textContent = "Choose a whole number from 1 to 1,000,000.";
-      return;
-    }
-
-    if (!crowd.includes(value)) {
-      crowd.push(value);
-    }
-
-    const rankData = crowd.slice().sort(function (a, b) {
-      return density(a) - density(b);
-    });
-
-    const rank = rankData.indexOf(value) + 1;
-    const pct = rarity(value);
-    const trajectory = distanceFor(pct);
-    const nearby = crowd.filter(function (pick) {
-      return pick !== value && Math.abs(pick - value) <= 1000;
-    }).length;
-
-    document.getElementById("dn-r-number").textContent = value.toLocaleString();
-    document.getElementById("dn-r-distance").textContent = formatDistance(trajectory.km);
-    document.getElementById("dn-r-zone").textContent = trajectory.zone;
-    document.getElementById("dn-r-rarity").textContent = pct.toFixed(2) + "%";
-    document.getElementById("dn-r-rank").textContent = "#" + rank;
-    document.getElementById("dn-r-near").textContent = nearby;
-
-    deepest.textContent = trajectory.zone;
-    hint.textContent = "Launch complete. Your number is now on its trajectory.";
-    result.classList.remove("is-visible");
-    void result.offsetWidth;
-    result.classList.add("is-visible");
-
-    result.scrollIntoView({ behavior: "smooth", block: "center" });
-  });
-
-  window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", function () {
-    root.classList.toggle("reduced-motion", this.matches);
-  });
+(function(){
+const root=document.getElementById("deep-numbers"); if(!root)return;
+const qs=[
+["How many hours of sleep do you think most people get per night?","Think about the number an average person would type.",0,16,7,1.5,7],
+["How many times do you think most people check their phone in a day?","Predict the crowd, not your own behaviour.",1,300,80,25,80],
+["What year do you think most people would guess the first Moon landing happened?","Famous dates are often remembered as memorable numbers.",1900,2100,1969,15,1969],
+["How many kilometres do you think the Moon is from Earth?","You do not need to know astronomy. Estimate what ordinary people might type.",100000,1000000,400000,100000,384400],
+["How many countries do you think most people would say there are in the world?","Think about the number people are likely to remember or round toward.",100,250,195,15,195]
+];
+let i=0,ans=[];
+const q=document.getElementById("dn-question"),e=document.getElementById("dn-explain"),input=document.getElementById("dn-number"),hint=document.getElementById("dn-hint"),round=document.getElementById("dn-round-label"),prog=document.getElementById("dn-deepest"),form=document.getElementById("dn-form"),res=document.getElementById("dn-result");
+const score=document.getElementById("dn-r-rarity"),acc=document.getElementById("dn-r-rank"),type=document.getElementById("dn-r-near"),distance=document.getElementById("dn-r-distance"),zone=document.getElementById("dn-r-zone");
+function render(){let x=qs[i];round.textContent="ROUND "+(i+1)+" / 5";prog.textContent=(i+1)+" / 5";q.textContent=x[0];e.textContent=x[1];input.value="";input.min=x[2];input.max=x[3];input.placeholder=x[2].toLocaleString()+"–"+x[3].toLocaleString();hint.textContent="One guess. No feedback until the mission is complete.";input.focus();}
+function gauss(v,c,t){return 100*Math.exp(-Math.pow((v-c)/t,2)/2);}
+function dest(s){if(s>=98)return["Interstellar space","You predicted the crowd exceptionally well."];if(s>=94)return["Kuiper Belt","You went beyond the outer planets."];if(s>=90)return["Pluto","You reached the edge of the familiar solar system."];if(s>=82)return["Neptune","You made it past the giant planets."];if(s>=72)return["Saturn","You travelled deep into the outer solar system."];if(s>=62)return["Jupiter","You made a serious journey beyond Mars."];if(s>=50)return["Mars","You left Earth's neighbourhood."];if(s>=35)return["Moon","You made it beyond Earth."];return["Earth orbit","The crowd was hard to predict this time."];}
+function simpleDistance(s){if(s>=98)return"Far beyond our solar system";if(s>=94)return"Billions of km away";if(s>=90)return"About 6 billion km";if(s>=82)return"About 4.5 billion km";if(s>=72)return"About 1.2 billion km";if(s>=62)return"About 780 million km";if(s>=50)return"About 78 million km";if(s>=35)return"About 384,000 km";return"A few hundred km above Earth";}
+function ptype(s,a){if(s>=90&&a>=90)return"Human Calculator";if(s>=90)return"Social Thinker";if(a>=90)return"Fact Checker";if(s<45)return"Contrarian";return"Crowd Watcher";}
+form.addEventListener("submit",function(ev){ev.preventDefault();let x=qs[i],v=Number(input.value.replace(/,/g,"").trim());if(!Number.isFinite(v)||v<x[2]||v>x[3]){hint.textContent="Enter a number between "+x[2].toLocaleString()+" and "+x[3].toLocaleString()+".";return;}ans.push({v:v,x:x});if(i<4){i++;q.animate([{opacity:1,transform:"translateX(0)"},{opacity:0,transform:"translateX(-14px)"},{opacity:1,transform:"translateX(0)"}],{duration:420,easing:"ease-out"});setTimeout(render,180);return;}
+let ss=ans.map(a=>gauss(a.v,a.x[4],a.x[5])),aa=ans.map(a=>gauss(a.v,a.x[6],a.x[5])),s=ss.reduce((a,b)=>a+b,0)/5,a=aa.reduce((a,b)=>a+b,0)/5,d=dest(s);
+score.textContent=s.toFixed(1);acc.textContent=Math.round(a)+"%";type.textContent=ptype(s,a);distance.textContent=simpleDistance(s);zone.textContent=d[0];hint.textContent=d[1];res.classList.remove("is-visible");void res.offsetWidth;res.classList.add("is-visible");res.scrollIntoView({behavior:"smooth",block:"center"});});
+root.querySelectorAll("[data-dn-view]").forEach(function(b){b.addEventListener("click",function(){let n=b.dataset.dnView;["play","about","support"].forEach(function(k){let el=document.getElementById("dn-"+k);if(el){el.classList.toggle("is-active",k===n);if(k==="play")el.style.display=n==="play"?"":"none";}});root.querySelectorAll("[data-dn-view]").forEach(x=>x.classList.toggle("is-active",x===b));root.scrollIntoView({behavior:"smooth",block:"start"});});});
+render();
 })();
 </script>
