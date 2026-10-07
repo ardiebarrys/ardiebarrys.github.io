@@ -437,12 +437,15 @@ nav_order: 3
   display: flex;
   justify-content: center;
   height: 2.7rem;
+  padding-top: .58rem;
+  box-sizing: border-box;
 }
 
 .story-node {
   position: relative;
   display: grid;
   place-items: center;
+  flex: 0 0 2rem;
   width: 2rem;
   height: 2rem;
   border: 1px solid rgba(147,197,253,.55);
@@ -489,12 +492,17 @@ nav_order: 3
 
 .story-index {
   position: absolute;
-  top: -.15rem;
-  right: calc(50% - 1.25rem);
-  transform: translateX(50%);
+  top: -.05rem;
+  left: 50%;
+  width: max-content;
+  transform: translateX(-50%);
   color: var(--text-muted);
   font-size: .48rem;
+  font-weight: 700;
   letter-spacing: .08em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .story-step h4 {
@@ -859,8 +867,8 @@ nav_order: 3
 }
 
 .story-visual[data-theme="framework"] .story-core {
-  border-radius: 18%;
-  transform: translate(-50%,-50%) rotate(45deg) scale(.75);
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(.75);
 }
 
 .project-card[open] .story-visual[data-theme="framework"] .story-core {
@@ -868,7 +876,7 @@ nav_order: 3
 }
 
 @keyframes frameworkCore {
-  to { transform:translate(-50%,-50%) rotate(45deg) scale(1); }
+  to { transform:translate(-50%,-50%) scale(1); }
 }
 
 .story-visual[data-theme="framework"] .story-orbit {
@@ -946,6 +954,64 @@ nav_order: 3
 }
 
 @media (max-width: 600px) {
+  /* On phones the story becomes a readable vertical sequence.
+     This removes horizontal clipping and keeps every node/text pair centered. */
+  .project-story-track {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .9rem;
+    overflow: visible;
+    padding: 1rem .15rem .35rem;
+  }
+
+  .project-story-track::before {
+    top: 2.15rem;
+    bottom: 2.1rem;
+    left: 50%;
+    right: auto;
+    width: 1px;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: top center;
+    background: linear-gradient(
+      180deg,
+      transparent,
+      rgba(147,197,253,.42) 8%,
+      rgba(147,197,253,.18) 92%,
+      transparent
+    );
+  }
+
+  .project-card[open] .project-story-track::before {
+    animation: storyLineDrawMobile 1.4s .18s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+
+  @keyframes storyLineDrawMobile {
+    to { transform: scaleY(1); }
+  }
+
+  .story-step {
+    min-width: 0;
+    width: 100%;
+    padding: .15rem .5rem .7rem;
+    box-sizing: border-box;
+  }
+
+  .story-step h4,
+  .story-step p {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .story-node-wrap {
+    height: 3rem;
+  }
+
+  .story-index {
+    top: .05rem;
+  }
+
   .project-card {
     border-left-width: 3px;
     border-radius: 9px;
@@ -1135,8 +1201,8 @@ nav_order: 3
 
           <div class="project-metrics">
             <div class="project-metric" style="--metric:0;">
-              <span class="project-metric-value">9+</span>
-              <span class="project-metric-label">thesis-linked papers on the site</span>
+              <span class="project-metric-value">5</span>
+              <span class="project-metric-label">coauthored thesis-linked papers</span>
             </div>
             <div class="project-metric" style="--metric:1;">
               <span class="project-metric-value">6</span>
@@ -1418,17 +1484,16 @@ nav_order: 3
         <h2>Miscellaneous Sole-Author Works</h2>
 
         <p>
-          This section collects articles that do not belong directly to the PhD thesis project or the cellular signaling framework.
+          This section collects sole-author articles that do not belong to the cellular signaling framework. Thesis-related papers are included here when they were authored solely by me, while coauthored thesis work remains under Doctoral Research.
         </p>
 
         <div class="project-story">
           <div class="project-story-intro">
             <div>
               <p class="project-story-kicker">Independent synthesis</p>
-              <h3 class="project-story-title">Following the upstream regulator</h3>
+              <h3 class="project-story-title">Independent synthesis across biological systems</h3>
               <p class="project-story-caption">
-                This work asks whether erectile dysfunction associated with obesity can be interpreted through adipose tissue as an upstream regulator of vascular, metabolic and neuroendocrine dysfunction.
-              </p>
+                These sole-author papers extend the research beyond the thesis and signaling framework, moving from upstream regulation and mitochondrial biology to respiratory injury, environmental sensing, and emerging exposure questions.
             </div>
             <span class="project-story-status"><i></i> Independent work</span>
           </div>
@@ -1441,46 +1506,46 @@ nav_order: 3
             <span class="story-particle" style="--x:28%;--y:68%;--dx:-13px;--dy:-20px;--delay:.9s;--dur:5.2s;"></span>
             <span class="story-particle" style="--x:75%;--y:28%;--dx:17px;--dy:-15px;--delay:1.3s;--dur:4.8s;"></span>
             <span class="story-particle" style="--x:88%;--y:67%;--dx:-16px;--dy:-17px;--delay:1.7s;--dur:5.5s;"></span>
-            <span class="story-visual-label"><strong>Adipose</strong> → signaling → erectile function</span>
+            <span class="story-visual-label"><strong>Mechanism</strong> → synthesis → new question</span>
           </div>
 
           <div class="project-story-track" style="--story-count:4;">
             <article class="story-step" style="--step:0;">
               <div class="story-node-wrap"><span class="story-node">01</span></div>
-              <span class="story-index">OBSERVE</span>
-              <h4>Two conditions converge</h4>
-              <p>Obesity and erectile dysfunction frequently coexist, but coexistence alone does not explain mechanism.</p>
+              <span class="story-index">SCOPE</span>
+              <h4>Start with a biological question</h4>
+              <p>Independent reviews begin from a mechanistic or exposure problem that needs a clearer synthesis.</p>
             </article>
             <article class="story-step" style="--step:1;">
               <div class="story-node-wrap"><span class="story-node">02</span></div>
-              <span class="story-index">REFRAME</span>
-              <h4>Look upstream</h4>
-              <p>Adipose dysfunction can act through inflammatory, metabolic and signaling mediators.</p>
+              <span class="story-index">CONNECT</span>
+              <h4>Link mechanisms</h4>
+              <p>Signals, organ systems, exposure pathways and cellular responses are connected across levels.</p>
             </article>
             <article class="story-step" style="--step:2;">
               <div class="story-node-wrap"><span class="story-node">03</span></div>
-              <span class="story-index">INTEGRATE</span>
-              <h4>Connect mechanisms</h4>
-              <p>Vascular, neuroendocrine, mitochondrial and extracellular signaling pathways converge.</p>
+              <span class="story-index">SYNTHESIZE</span>
+              <h4>Separate evidence from inference</h4>
+              <p>Established findings are distinguished from mechanistic plausibility and unresolved questions.</p>
             </article>
             <article class="story-step" style="--step:3;">
               <div class="story-node-wrap"><span class="story-node">04</span></div>
-              <span class="story-index">IMPLICATION</span>
-              <h4>Target the driver</h4>
-              <p>The synthesis points toward upstream adipose dysfunction as a potential therapeutic target.</p>
+              <span class="story-index">OUTPUT</span>
+              <h4>Define the next experiment</h4>
+              <p>The result is a structured research question and a clearer map of what still needs direct testing.</p>
             </article>
           </div>
 
           <div class="project-evidence">
             <div class="project-evidence-box" style="--evidence-delay:850;">
-              <p class="project-evidence-label">Published work</p>
+              <p class="project-evidence-label">Independent-writing collection</p>
               <p>
-                <strong>Adipose as a Driver, Not a Bystander: A Modern Synthesis of Obesity-Related Erectile Dysfunction</strong>, Diabetes, Obesity and Metabolism, 2026.
+                Includes the sole-author e-cigarette reviews on metal-containing nanoparticles, ferroptosis, device-derived micro/nanoplastics, and systemic metabolic disruption, alongside the coauthored obesity/erectile-dysfunction synthesis.
               </p>
             </div>
             <div class="project-evidence-box" style="--evidence-delay:990;">
-              <p class="project-evidence-label">DOI</p>
-              <p><a href="https://doi.org/10.1111/dom.70818">10.1111/dom.70818</a></p>
+              <p class="project-evidence-label">Example</p>
+              <p><a href="https://doi.org/10.1111/dom.70818">Adipose as a Driver, Not a Bystander</a><br>Diabetes, Obesity and Metabolism · 2026</p>
             </div>
           </div>
         </div>
