@@ -1251,7 +1251,7 @@ nav_order: 3
        02. CELLULAR SIGNALING FRAMEWORK
        ======================================================== -->
   <section class="project-section">
-    <h2 class="project-section-title">Personal Project</h2>
+    <h2 class="project-section-title">Independent Work</h2>
 
     <details class="project-card project-card--framework">
       <summary>
@@ -1470,14 +1470,14 @@ nav_order: 3
   </section>
 
   <!-- ========================================================
-       04. MISCELLANEOUS
+       04. INDEPENDENT WORK
        ======================================================== -->
   <section class="project-section">
-    <h2 class="project-section-title">Miscellaneous</h2>
+    <h2 class="project-section-title">Independent Work</h2>
 
     <details class="project-card project-card--misc">
       <summary>
-        <span class="project-summary-title">Independent Writing</span>
+        <span class="project-summary-title">Independent Writing &amp; Synthesis</span>
       </summary>
 
       <div class="project-card-content">
@@ -1494,6 +1494,7 @@ nav_order: 3
               <h3 class="project-story-title">Independent synthesis across biological systems</h3>
               <p class="project-story-caption">
                 These sole-author papers extend the research beyond the thesis and signaling framework, moving from upstream regulation and mitochondrial biology to respiratory injury, environmental sensing, and emerging exposure questions.
+              </p>
             </div>
             <span class="project-story-status"><i></i> Independent work</span>
           </div>
