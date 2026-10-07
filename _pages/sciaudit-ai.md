@@ -4,15 +4,10 @@ title: SciAudit AI
 permalink: /sciaudit-ai/
 nav: true
 nav_order: 7
-description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence auditing for biomedical research
+description: SciAudit AI by Ardie Barry Sailis, an AI-assisted scientific evidence auditing project for biomedical research
 ---
 
 <style>
-  /* ============================================================
-     SCI AUDIT AI — PROJECT PAGE
-     AI-native scientific evidence auditing
-     ============================================================ */
-
   .post,
   .page,
   .container,
@@ -29,24 +24,18 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   .sciaudit-page {
     --sa-accent: var(--global-theme-color);
-    --sa-accent-soft: rgba(37, 99, 235, 0.14);
-    --sa-accent-faint: rgba(37, 99, 235, 0.06);
-    --sa-line: var(--line);
     --sa-surface: var(--surface);
     --sa-surface-strong: var(--surface-strong);
     --sa-text: var(--text);
     --sa-text-strong: var(--text-strong);
     --sa-muted: var(--muted);
+    --sa-line: var(--line);
 
     position: relative;
     width: 100%;
     margin: 0 auto 4rem;
     overflow: hidden;
   }
-
-  /* ============================================================
-     AMBIENT BACKGROUND
-     ============================================================ */
 
   .sciaudit-page::before {
     content: "";
@@ -55,74 +44,32 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     pointer-events: none;
     z-index: 0;
     background:
-      radial-gradient(
-        circle at 50% 9%,
-        rgba(37, 99, 235, 0.16),
-        transparent 34%
-      ),
-      radial-gradient(
-        circle at 92% 48%,
-        rgba(96, 165, 250, 0.08),
-        transparent 28%
-      ),
-      radial-gradient(
-        circle at 5% 70%,
-        rgba(29, 78, 216, 0.07),
-        transparent 25%
-      );
+      radial-gradient(circle at 50% 8%, rgba(37, 99, 235, 0.16), transparent 34%),
+      radial-gradient(circle at 92% 45%, rgba(96, 165, 250, 0.08), transparent 28%),
+      radial-gradient(circle at 7% 72%, rgba(29, 78, 216, 0.07), transparent 25%);
     animation: saAmbient 12s ease-in-out infinite alternate;
   }
 
-  .sciaudit-page::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(96, 165, 250, 0.08),
-      transparent
-    );
-    pointer-events: none;
-    z-index: 0;
-  }
-
   @keyframes saAmbient {
-    from {
-      transform: scale(1);
-      opacity: 0.75;
-    }
-    to {
-      transform: scale(1.08);
-      opacity: 1;
-    }
+    from { transform: scale(1); opacity: 0.75; }
+    to { transform: scale(1.08); opacity: 1; }
   }
-
-  /* ============================================================
-     HERO
-     ============================================================ */
 
   .sciaudit-hero {
     position: relative;
     z-index: 2;
-    min-height: 650px;
+    min-height: 660px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4.5rem 2rem 4rem;
-    margin: 0 0 2.5rem;
+    margin: 0 0 2.6rem;
     border: 1px solid rgba(96, 165, 250, 0.16);
-    border-radius: 22px;
+    border-radius: 24px;
     overflow: hidden;
     background:
-      linear-gradient(
-        180deg,
-        rgba(15, 23, 42, 0.96),
-        rgba(15, 23, 42, 0.89)
-      );
+      radial-gradient(circle at center, rgba(37, 99, 235, 0.08), transparent 42%),
+      linear-gradient(180deg, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.90));
     box-shadow:
       0 28px 80px rgba(0, 0, 0, 0.30),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -132,96 +79,72 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.44;
+    opacity: 0.42;
     background-image:
-      linear-gradient(
-        rgba(96, 165, 250, 0.07) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(96, 165, 250, 0.07) 1px,
-        transparent 1px
-      );
+      linear-gradient(rgba(96, 165, 250, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
     background-size: 58px 58px;
-    mask-image: radial-gradient(
-      ellipse at center,
-      black 25%,
-      transparent 78%
-    );
+    mask-image: radial-gradient(ellipse at center, black 25%, transparent 80%);
     animation: saGridMove 20s linear infinite;
   }
 
   @keyframes saGridMove {
-    from {
-      background-position: 0 0, 0 0;
-    }
-    to {
-      background-position: 58px 58px, 58px 58px;
-    }
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 58px 58px, 58px 58px; }
   }
 
-  .sciaudit-hero-orb {
+  .sciaudit-orb {
     position: absolute;
-    width: 360px;
-    height: 360px;
     border-radius: 50%;
     border: 1px solid rgba(96, 165, 250, 0.10);
-    box-shadow:
-      0 0 70px rgba(37, 99, 235, 0.10),
-      inset 0 0 60px rgba(37, 99, 235, 0.08);
-    animation: saOrbFloat 9s ease-in-out infinite;
     pointer-events: none;
   }
 
-  .sciaudit-hero-orb::before,
-  .sciaudit-hero-orb::after {
+  .sciaudit-orb.one {
+    width: 390px;
+    height: 390px;
+    top: -120px;
+    left: -110px;
+    box-shadow: 0 0 80px rgba(37, 99, 235, 0.10);
+    animation: saOrbFloat 9s ease-in-out infinite;
+  }
+
+  .sciaudit-orb.two {
+    width: 460px;
+    height: 460px;
+    right: -130px;
+    bottom: -135px;
+    box-shadow: 0 0 100px rgba(37, 99, 235, 0.12);
+    animation: saOrbFloat 11s ease-in-out -3s infinite;
+  }
+
+  .sciaudit-orb::before,
+  .sciaudit-orb::after {
     content: "";
     position: absolute;
     inset: 12%;
     border-radius: 50%;
-    border: 1px dashed rgba(96, 165, 250, 0.11);
+    border: 1px dashed rgba(96, 165, 250, 0.10);
   }
 
-  .sciaudit-hero-orb::after {
+  .sciaudit-orb::after {
     inset: 24%;
     border-style: solid;
     border-color: rgba(96, 165, 250, 0.07);
   }
 
-  .sciaudit-hero-orb.one {
-    top: -100px;
-    left: -90px;
-  }
-
-  .sciaudit-hero-orb.two {
-    right: -100px;
-    bottom: -120px;
-    width: 440px;
-    height: 440px;
-    animation-delay: -3s;
-  }
-
   @keyframes saOrbFloat {
-    0%, 100% {
-      transform: translate3d(0, 0, 0) rotate(0deg);
-    }
-    50% {
-      transform: translate3d(0, -16px, 0) rotate(6deg);
-    }
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    50% { transform: translate3d(0, -16px, 0) rotate(5deg); }
   }
 
   .sciaudit-hero-content {
     position: relative;
     z-index: 5;
-    width: min(900px, 100%);
+    width: min(960px, 100%);
     text-align: center;
     transform:
-      translate3d(
-        calc(var(--sa-mx, 0px) * 0.18),
-        calc(var(--sa-my, 0px) * 0.18),
-        0
-      );
+      translate3d(calc(var(--sa-mx, 0px) * 0.16), calc(var(--sa-my, 0px) * 0.16), 0);
     transition: transform 0.25s ease-out;
   }
 
@@ -229,14 +152,14 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.15rem;
     padding: 0.48rem 0.85rem;
     border: 1px solid rgba(96, 165, 250, 0.22);
     border-radius: 999px;
     background: rgba(37, 99, 235, 0.08);
     color: #93c5fd;
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.13em;
     text-transform: uppercase;
     box-shadow: 0 0 24px rgba(37, 99, 235, 0.08);
@@ -253,40 +176,27 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   }
 
   @keyframes saPulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.75;
-    }
-    50% {
-      transform: scale(1.55);
-      opacity: 1;
-    }
+    0%, 100% { transform: scale(1); opacity: 0.75; }
+    50% { transform: scale(1.55); opacity: 1; }
   }
 
-  /* Large personal identity */
   .sciaudit-brand {
     margin: 0;
-    font-size: clamp(3.3rem, 8vw, 7.4rem);
+    font-size: clamp(3.6rem, 9vw, 8.2rem);
     line-height: 0.92;
     font-weight: 850;
     letter-spacing: -0.065em;
     color: #ffffff;
     text-shadow:
       0 0 25px rgba(96, 165, 250, 0.16),
-      0 12px 45px rgba(0, 0, 0, 0.30);
+      0 14px 48px rgba(0, 0, 0, 0.30);
     animation: saBrandIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .sciaudit-brand span {
     display: inline-block;
     background:
-      linear-gradient(
-        100deg,
-        #ffffff 5%,
-        #93c5fd 47%,
-        #60a5fa 70%,
-        #ffffff 95%
-      );
+      linear-gradient(100deg, #ffffff 5%, #93c5fd 46%, #60a5fa 70%, #ffffff 95%);
     background-size: 250% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -299,47 +209,40 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   @keyframes saBrandIn {
     from {
       opacity: 0;
-      transform:
-        translateY(24px)
-        scale(0.95);
+      transform: translateY(24px) scale(0.95);
       filter: blur(7px);
     }
     to {
       opacity: 1;
-      transform:
-        translateY(0)
-        scale(1);
+      transform: translateY(0) scale(1);
       filter: blur(0);
     }
   }
 
   @keyframes saShimmer {
-    0%, 100% {
-      background-position: 0% center;
-    }
-    50% {
-      background-position: 100% center;
-    }
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
   }
 
   .sciaudit-founder {
-    margin-top: 1.1rem;
+    margin-top: 1.15rem;
     color: #bfdbfe;
-    font-size: clamp(0.85rem, 1.8vw, 1.05rem);
-    font-weight: 700;
-    letter-spacing: 0.19em;
+    font-size: clamp(0.82rem, 1.7vw, 1.05rem);
+    font-weight: 750;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     opacity: 0.92;
+    animation: saFadeUp 1s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .sciaudit-tagline {
-    max-width: 760px;
+    max-width: 780px;
     margin: 1.45rem auto 0;
-    color: rgba(255, 255, 255, 0.83);
-    font-size: clamp(1.05rem, 2.2vw, 1.38rem);
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(1.04rem, 2.15vw, 1.36rem);
     font-weight: 500;
-    line-height: 1.6;
-    animation: saFadeUp 1s 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+    line-height: 1.62;
+    animation: saFadeUp 1s 0.20s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   .sciaudit-hero-actions {
@@ -347,19 +250,13 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.75rem;
-    margin-top: 1.8rem;
-    animation: saFadeUp 1s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    margin-top: 1.85rem;
+    animation: saFadeUp 1s 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
   @keyframes saFadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(18px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .sciaudit-button {
@@ -367,8 +264,8 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    min-height: 44px;
-    padding: 0.65rem 1rem;
+    min-height: 45px;
+    padding: 0.66rem 1rem;
     border: 1px solid rgba(147, 197, 253, 0.26);
     border-radius: 9px;
     background: rgba(255, 255, 255, 0.045);
@@ -392,35 +289,21 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   .sciaudit-button.primary {
     border-color: rgba(96, 165, 250, 0.55);
-    background:
-      linear-gradient(
-        135deg,
-        rgba(37, 99, 235, 0.88),
-        rgba(29, 78, 216, 0.70)
-      );
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.88), rgba(29, 78, 216, 0.70));
     color: #ffffff !important;
     box-shadow:
       0 10px 30px rgba(37, 99, 235, 0.22),
       inset 0 1px 0 rgba(255, 255, 255, 0.16);
   }
 
-  .sciaudit-button.primary:hover {
-    background:
-      linear-gradient(
-        135deg,
-        rgba(59, 130, 246, 0.96),
-        rgba(37, 99, 235, 0.84)
-      );
-  }
-
   .sciaudit-scroll {
     position: absolute;
-    bottom: 1.35rem;
+    bottom: 1.25rem;
     left: 50%;
     z-index: 5;
     transform: translateX(-50%);
     color: rgba(191, 219, 254, 0.64);
-    font-size: 0.7rem;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
@@ -430,37 +313,21 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     content: "";
     display: block;
     width: 1px;
-    height: 32px;
+    height: 30px;
     margin: 0.45rem auto 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(147, 197, 253, 0.65),
-      transparent
-    );
+    background: linear-gradient(to bottom, rgba(147, 197, 253, 0.65), transparent);
     animation: saScrollLine 1.8s ease-in-out infinite;
   }
 
   @keyframes saScrollLine {
-    0%, 100% {
-      opacity: 0.35;
-      transform: scaleY(0.6);
-      transform-origin: top;
-    }
-    50% {
-      opacity: 1;
-      transform: scaleY(1);
-      transform-origin: top;
-    }
+    0%, 100% { opacity: 0.35; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
   }
-
-  /* ============================================================
-     SECTION WRAPPER
-     ============================================================ */
 
   .sciaudit-section {
     position: relative;
     z-index: 2;
-    margin: 0 0 1.9rem;
+    margin: 0 0 2.15rem;
   }
 
   .sciaudit-section-heading {
@@ -475,7 +342,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     margin-bottom: 0.25rem;
     color: var(--sa-accent);
     font-size: 0.72rem;
-    font-weight: 800;
+    font-weight: 850;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
@@ -490,16 +357,18 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   .sciaudit-section-heading p {
     margin: 0;
-    max-width: 600px;
+    max-width: 610px;
     color: var(--sa-muted);
     font-size: 0.9rem;
     line-height: 1.5;
     text-align: right;
   }
 
-  /* ============================================================
-     CARDS
-     ============================================================ */
+  .sciaudit-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
+    gap: 1.35rem;
+  }
 
   .sciaudit-card {
     position: relative;
@@ -507,11 +376,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     border: 1px solid var(--sa-line);
     border-radius: 15px;
     background:
-      linear-gradient(
-        145deg,
-        rgba(255, 255, 255, 0.018),
-        transparent 50%
-      ),
+      linear-gradient(145deg, rgba(255, 255, 255, 0.018), transparent 50%),
       var(--sa-surface);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     box-sizing: border-box;
@@ -525,18 +390,12 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     left: 0;
     width: 100%;
     height: 1px;
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(96, 165, 250, 0.45),
-        transparent
-      );
+    background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.45), transparent);
     opacity: 0.55;
   }
 
   .sciaudit-card:hover {
-    border-color: rgba(96, 165, 250, 0.23);
+    border-color: rgba(96, 165, 250, 0.24);
   }
 
   .sciaudit-card h3 {
@@ -557,20 +416,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     margin-bottom: 0;
   }
 
-  /* ============================================================
-     OVERVIEW
-     ============================================================ */
-
-  .sciaudit-overview {
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-    gap: 1.35rem;
-  }
-
-  .sciaudit-overview-main {
-    min-height: 100%;
-  }
-
   .sciaudit-overview-main .lead {
     font-size: 1.06rem;
     line-height: 1.72;
@@ -581,21 +426,12 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     padding: 1rem 1.05rem;
     border-left: 3px solid var(--sa-accent);
     border-radius: 7px;
-    background: var(--sa-accent-faint);
+    background: rgba(37, 99, 235, 0.06);
+    color: var(--sa-text);
   }
 
   .sciaudit-principle strong {
     color: var(--sa-text-strong);
-  }
-
-  /* ============================================================
-     STATUS PANEL
-     ============================================================ */
-
-  .sciaudit-status-panel {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
   }
 
   .sciaudit-status-live {
@@ -607,7 +443,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     padding: 0.4rem 0.7rem;
     border: 1px solid rgba(96, 165, 250, 0.22);
     border-radius: 999px;
-    background: var(--sa-accent-faint);
+    background: rgba(37, 99, 235, 0.06);
     color: var(--sa-accent);
     font-size: 0.76rem;
     font-weight: 800;
@@ -656,10 +492,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     line-height: 1.45;
   }
 
-  /* ============================================================
-     WHAT IS BEING BUILT
-     ============================================================ */
-
   .sciaudit-feature-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -668,7 +500,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   .sciaudit-feature {
     position: relative;
-    min-height: 154px;
+    min-height: 160px;
     padding: 1.2rem;
     border: 1px solid var(--sa-line);
     border-radius: 13px;
@@ -706,7 +538,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     margin-bottom: 0.75rem;
     color: var(--sa-accent);
     font-size: 0.72rem;
-    font-weight: 800;
+    font-weight: 850;
     letter-spacing: 0.13em;
   }
 
@@ -721,26 +553,14 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     line-height: 1.52;
   }
 
-  /* ============================================================
-     DISTINCTIVE DIRECTION
-     ============================================================ */
-
   .sciaudit-difference {
     position: relative;
     padding: 1.8rem;
-    border: 1px solid rgba(96, 165, 250, 0.15);
+    border: 1px solid rgba(96, 165, 250, 0.16);
     border-radius: 17px;
     background:
-      radial-gradient(
-        circle at 75% 20%,
-        rgba(37, 99, 235, 0.12),
-        transparent 28%
-      ),
-      linear-gradient(
-        145deg,
-        rgba(37, 99, 235, 0.055),
-        rgba(255, 255, 255, 0.012)
-      ),
+      radial-gradient(circle at 75% 20%, rgba(37, 99, 235, 0.12), transparent 28%),
+      linear-gradient(145deg, rgba(37, 99, 235, 0.055), rgba(255, 255, 255, 0.012)),
       var(--sa-surface);
     box-shadow:
       0 18px 48px rgba(0, 0, 0, 0.19),
@@ -757,7 +577,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   .sciaudit-difference-title {
     margin: 0;
     color: var(--sa-text-strong);
-    font-size: 1.85rem;
+    font-size: 1.9rem;
     font-weight: 800;
     line-height: 1.13;
     letter-spacing: -0.035em;
@@ -802,24 +622,16 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     line-height: 1.5;
   }
 
-  /* ============================================================
-     EVIDENCE FLOW VISUAL
-     ============================================================ */
-
   .sciaudit-flow {
     position: relative;
-    min-height: 390px;
+    min-height: 400px;
     margin-top: 0.8rem;
     padding: 1rem;
     border: 1px solid var(--sa-line);
     border-radius: 16px;
     overflow: hidden;
     background:
-      radial-gradient(
-        circle at center,
-        rgba(37, 99, 235, 0.09),
-        transparent 33%
-      ),
+      radial-gradient(circle at center, rgba(37, 99, 235, 0.09), transparent 33%),
       var(--sa-surface);
   }
 
@@ -828,15 +640,8 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(
-        rgba(96, 165, 250, 0.045) 1px,
-        transparent 1px
-      ),
-      linear-gradient(
-        90deg,
-        rgba(96, 165, 250, 0.045) 1px,
-        transparent 1px
-      );
+      linear-gradient(rgba(96, 165, 250, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96, 165, 250, 0.045) 1px, transparent 1px);
     background-size: 40px 40px;
     animation: saGridMove 22s linear infinite;
     pointer-events: none;
@@ -847,27 +652,18 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     left: 50%;
     top: 50%;
     z-index: 5;
-    width: 150px;
-    height: 150px;
+    width: 154px;
+    height: 154px;
     display: flex;
     align-items: center;
     justify-content: center;
     transform:
       translate(-50%, -50%)
-      translate3d(
-        calc(var(--sa-mx, 0px) * 0.13),
-        calc(var(--sa-my, 0px) * 0.13),
-        0
-      );
+      translate3d(calc(var(--sa-mx, 0px) * 0.12), calc(var(--sa-my, 0px) * 0.12), 0);
     border: 1px solid rgba(147, 197, 253, 0.25);
     border-radius: 50%;
     background:
-      radial-gradient(
-        circle at 35% 30%,
-        rgba(96, 165, 250, 0.22),
-        rgba(37, 99, 235, 0.08) 46%,
-        rgba(15, 23, 42, 0.94) 74%
-      );
+      radial-gradient(circle at 35% 30%, rgba(96, 165, 250, 0.22), rgba(37, 99, 235, 0.08) 46%, rgba(15, 23, 42, 0.94) 74%);
     box-shadow:
       0 0 0 11px rgba(37, 99, 235, 0.035),
       0 0 60px rgba(37, 99, 235, 0.17);
@@ -876,14 +672,10 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   @keyframes saCorePulse {
     0%, 100% {
-      box-shadow:
-        0 0 0 11px rgba(37, 99, 235, 0.035),
-        0 0 60px rgba(37, 99, 235, 0.17);
+      box-shadow: 0 0 0 11px rgba(37, 99, 235, 0.035), 0 0 60px rgba(37, 99, 235, 0.17);
     }
     50% {
-      box-shadow:
-        0 0 0 17px rgba(37, 99, 235, 0.025),
-        0 0 85px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 0 0 17px rgba(37, 99, 235, 0.025), 0 0 85px rgba(37, 99, 235, 0.25);
     }
   }
 
@@ -903,37 +695,33 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     margin-top: 0.2rem;
     color: #93c5fd;
     font-size: 0.69rem;
-    font-weight: 700;
+    font-weight: 750;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
-  .sciaudit-orbit {
+  .sciaudit-orbit-ring {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 285px;
-    height: 285px;
+    width: 290px;
+    height: 290px;
     border: 1px dashed rgba(147, 197, 253, 0.13);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     animation: saOrbit 18s linear infinite;
   }
 
-  .sciaudit-orbit.two {
-    width: 455px;
-    height: 455px;
+  .sciaudit-orbit-ring.two {
+    width: 465px;
+    height: 465px;
     opacity: 0.55;
     animation-duration: 28s;
     animation-direction: reverse;
   }
 
   @keyframes saOrbit {
-    to {
-      transform:
-        translate(-50%, -50%)
-        rotate(360deg);
-    }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
   }
 
   .sciaudit-node {
@@ -941,8 +729,8 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 105px;
-    min-height: 52px;
+    width: 108px;
+    min-height: 54px;
     padding: 0.5rem 0.55rem;
     border: 1px solid rgba(147, 197, 253, 0.18);
     border-radius: 10px;
@@ -950,7 +738,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     color: #dbeafe;
     font-size: 0.73rem;
     font-weight: 750;
-    letter-spacing: 0.01em;
     text-align: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.20);
     backdrop-filter: blur(8px);
@@ -958,43 +745,23 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   .sciaudit-node-a {
     top: -27px;
-    left: calc(50% - 52px);
+    left: calc(50% - 54px);
   }
 
   .sciaudit-node-b {
-    right: -52px;
-    top: calc(50% - 26px);
+    right: -54px;
+    top: calc(50% - 27px);
   }
 
   .sciaudit-node-c {
     bottom: -27px;
-    left: calc(50% - 52px);
+    left: calc(50% - 54px);
   }
 
   .sciaudit-node-d {
-    left: -52px;
-    top: calc(50% - 26px);
+    left: -54px;
+    top: calc(50% - 27px);
   }
-
-  .sciaudit-node.evidence {
-    border-color: rgba(96, 165, 250, 0.32);
-  }
-
-  .sciaudit-node.methods {
-    border-color: rgba(147, 197, 253, 0.21);
-  }
-
-  .sciaudit-node.context {
-    border-color: rgba(59, 130, 246, 0.26);
-  }
-
-  .sciaudit-node.uncertainty {
-    border-color: rgba(191, 219, 254, 0.20);
-  }
-
-  /* ============================================================
-     ROADMAP
-     ============================================================ */
 
   .sciaudit-roadmap {
     display: grid;
@@ -1018,23 +785,13 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     bottom: 0;
     width: var(--roadmap-progress);
     height: 3px;
-    background:
-      linear-gradient(
-        90deg,
-        rgba(37, 99, 235, 0.45),
-        rgba(96, 165, 250, 0.95)
-      );
-    transform-origin: left;
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.45), rgba(96, 165, 250, 0.95));
     animation: saProgressIn 1.4s ease both;
   }
 
   @keyframes saProgressIn {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
+    from { transform: scaleX(0); transform-origin: left; }
+    to { transform: scaleX(1); transform-origin: left; }
   }
 
   .sciaudit-roadmap-year {
@@ -1059,10 +816,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     line-height: 1.48;
   }
 
-  /* ============================================================
-     COLLABORATION
-     ============================================================ */
-
   .sciaudit-collab {
     position: relative;
     display: grid;
@@ -1073,16 +826,8 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     border: 1px solid rgba(96, 165, 250, 0.20);
     border-radius: 16px;
     background:
-      radial-gradient(
-        circle at 90% 10%,
-        rgba(96, 165, 250, 0.10),
-        transparent 30%
-      ),
-      linear-gradient(
-        135deg,
-        rgba(37, 99, 235, 0.075),
-        transparent 62%
-      ),
+      radial-gradient(circle at 90% 10%, rgba(96, 165, 250, 0.10), transparent 30%),
+      linear-gradient(135deg, rgba(37, 99, 235, 0.075), transparent 62%),
       var(--sa-surface);
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
     overflow: hidden;
@@ -1101,9 +846,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   }
 
   @keyframes saCollabOrbit {
-    to {
-      transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
   }
 
   .sciaudit-collab h2 {
@@ -1123,11 +866,9 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   .sciaudit-collab-actions {
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    z-index: 2;
   }
-
-  /* ============================================================
-     RESPONSIBLE AI NOTE
-     ============================================================ */
 
   .sciaudit-note {
     margin-top: 1.8rem;
@@ -1143,10 +884,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   .sciaudit-note strong {
     color: var(--sa-text-strong);
   }
-
-  /* ============================================================
-     TAGS
-     ============================================================ */
 
   .sciaudit-identity {
     display: flex;
@@ -1179,10 +916,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     color: var(--sa-text-strong);
   }
 
-  /* ============================================================
-     SCROLL REVEALS
-     ============================================================ */
-
   .sciaudit-reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -1196,10 +929,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     opacity: 1;
     transform: none;
   }
-
-  /* ============================================================
-     MOBILE
-     ============================================================ */
 
   @media (max-width: 1000px) {
     .sciaudit-overview,
@@ -1235,13 +964,13 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
   @media (max-width: 650px) {
     .sciaudit-hero {
-      min-height: 570px;
+      min-height: 560px;
       padding: 3rem 1.15rem 3.3rem;
       border-radius: 17px;
     }
 
     .sciaudit-brand {
-      font-size: clamp(3rem, 15vw, 5.1rem);
+      font-size: clamp(3rem, 15vw, 5.2rem);
     }
 
     .sciaudit-founder {
@@ -1266,12 +995,12 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
       min-height: 330px;
     }
 
-    .sciaudit-orbit {
+    .sciaudit-orbit-ring {
       width: 220px;
       height: 220px;
     }
 
-    .sciaudit-orbit.two {
+    .sciaudit-orbit-ring.two {
       width: 340px;
       height: 340px;
     }
@@ -1301,10 +1030,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     }
   }
 
-  /* ============================================================
-     REDUCED MOTION
-     ============================================================ */
-
   @media (prefers-reduced-motion: reduce) {
     .sciaudit-page *,
     .sciaudit-page *::before,
@@ -1325,16 +1050,11 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
 <div class="sciaudit-page">
 
-  <!-- ==========================================================
-       HERO
-       ========================================================== -->
-
   <section class="sciaudit-hero">
 
     <div class="sciaudit-hero-grid"></div>
-
-    <div class="sciaudit-hero-orb one"></div>
-    <div class="sciaudit-hero-orb two"></div>
+    <div class="sciaudit-orb one"></div>
+    <div class="sciaudit-orb two"></div>
 
     <div class="sciaudit-hero-content">
 
@@ -1351,27 +1071,19 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
       </div>
 
       <p class="sciaudit-tagline">
-        AI-native scientific evidence auditing for biomedical research.
+        AI-assisted scientific evidence auditing for biomedical research.
         Designed to help researchers move from literature overload to
         structured, traceable and critically examined evidence.
       </p>
 
       <div class="sciaudit-hero-actions">
-
-        <a
-          class="sciaudit-button primary"
-          href="#sciaudit-what"
-        >
+        <a class="sciaudit-button primary" href="#sciaudit-what">
           Explore the project
         </a>
 
-        <a
-          class="sciaudit-button"
-          href="/contact/"
-        >
+        <a class="sciaudit-button" href="/contact/">
           Discuss collaboration
         </a>
-
       </div>
 
     </div>
@@ -1383,14 +1095,9 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       OVERVIEW
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">01 · Overview</div>
         <h2>A researcher-built evidence system</h2>
@@ -1399,10 +1106,9 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
       <p>
         SciAudit AI starts from a practical problem encountered directly
         in biomedical research: evaluating large, fragmented literatures
-        without losing the context, limitations and uncertainty behind the
-        conclusions.
+        without losing the context, limitations and uncertainty behind
+        the conclusions.
       </p>
-
     </div>
 
 
@@ -1429,7 +1135,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
           Instead of treating an AI-generated summary as the endpoint,
           SciAudit AI is being designed around the underlying evidence:
           what was reported, where it was reported, how the study was
-          conducted, how strong the support is, what studies disagree,
+          conducted, how strong the support is, which studies disagree,
           and what limitations remain.
         </p>
 
@@ -1442,62 +1148,57 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
       </section>
 
 
-      <section class="sciaudit-card sciaudit-status-panel">
+      <section class="sciaudit-card">
 
-        <div>
+        <div class="sciaudit-status-live">
+          Early-stage development
+        </div>
 
-          <div class="sciaudit-status-live">
-            Early-stage development
+        <div class="sciaudit-meta">
+
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Founder</div>
+            <div class="sciaudit-meta-value">
+              Ardie Barry Sailis
+            </div>
           </div>
 
-          <div class="sciaudit-meta">
-
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Founder</div>
-              <div class="sciaudit-meta-value">
-                Ardie Barry Sailis
-              </div>
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Started</div>
+            <div class="sciaudit-meta-value">
+              2025
             </div>
+          </div>
 
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Started</div>
-              <div class="sciaudit-meta-value">
-                2025
-              </div>
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Stage</div>
+            <div class="sciaudit-meta-value">
+              Prototype / self-validation
             </div>
+          </div>
 
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Stage</div>
-              <div class="sciaudit-meta-value">
-                Prototype / self-validation
-              </div>
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Development</div>
+            <div class="sciaudit-meta-value">
+              Independent and bootstrapped
             </div>
+          </div>
 
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Development</div>
-              <div class="sciaudit-meta-value">
-                Independent and bootstrapped
-              </div>
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Approach</div>
+            <div class="sciaudit-meta-value">
+              AI-native, evidence-grounded and researcher-led
             </div>
+          </div>
 
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Approach</div>
-              <div class="sciaudit-meta-value">
-                AI-native, evidence-grounded and researcher-led
-              </div>
+          <div class="sciaudit-meta-row">
+            <div class="sciaudit-meta-label">Target release</div>
+            <div class="sciaudit-meta-value">
+              Approximately 2029
             </div>
-
-            <div class="sciaudit-meta-row">
-              <div class="sciaudit-meta-label">Target release</div>
-              <div class="sciaudit-meta-value">
-                Approximately 2029
-              </div>
-            </div>
-
           </div>
 
         </div>
-
       </section>
 
     </div>
@@ -1505,17 +1206,9 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       WHAT I AM BUILDING
-       ========================================================== -->
-
-  <section
-    class="sciaudit-section sciaudit-reveal"
-    id="sciaudit-what"
-  >
+  <section class="sciaudit-section sciaudit-reveal" id="sciaudit-what">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">02 · Product direction</div>
         <h2>What I am building</h2>
@@ -1526,7 +1219,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         scientific evidence evaluation rather than around generic
         text generation.
       </p>
-
     </div>
 
 
@@ -1542,7 +1234,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </p>
       </article>
 
-
       <article class="sciaudit-feature">
         <div class="sciaudit-feature-number">02</div>
         <h3>Cross-study comparison</h3>
@@ -1553,7 +1244,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </p>
       </article>
 
-
       <article class="sciaudit-feature">
         <div class="sciaudit-feature-number">03</div>
         <h3>Claim auditing</h3>
@@ -1562,7 +1252,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
           supported, overstated, qualified or unresolved.
         </p>
       </article>
-
 
       <article class="sciaudit-feature">
         <div class="sciaudit-feature-number">04</div>
@@ -1573,7 +1262,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </p>
       </article>
 
-
       <article class="sciaudit-feature">
         <div class="sciaudit-feature-number">05</div>
         <h3>Evidence organization</h3>
@@ -1582,7 +1270,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
           inspectable evidence records that researchers can revisit.
         </p>
       </article>
-
 
       <article class="sciaudit-feature">
         <div class="sciaudit-feature-number">06</div>
@@ -1599,19 +1286,19 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       DISTINCTIVE DIRECTION
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">03 · Distinctive direction</div>
         <h2>What I want SciAudit AI to do differently</h2>
       </div>
 
+      <p>
+        The distinction is not that scientific AI is new. The aim is to
+        combine a biomedical research workflow with explicit evidence
+        structure, provenance, disagreement and uncertainty.
+      </p>
     </div>
 
 
@@ -1628,11 +1315,10 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </div>
 
         <p class="sciaudit-difference-intro">
-          Existing scientific AI systems already demonstrate the value
-          of automated literature search, synthesis and claim
-          verification. SciAudit AI is being developed with a narrower
-          biomedical research orientation: make the structure of the
-          evidence itself easier to inspect, challenge and revisit.
+          SciAudit AI is being developed from the perspective of a
+          biomedical researcher who repeatedly has to determine not only
+          what papers say, but how well the evidence supports what is
+          being concluded.
         </p>
 
       </div>
@@ -1643,54 +1329,52 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         <div class="sciaudit-difference-item">
           <strong>Biomedical-first</strong>
           <span>
-            Designed around biomedical literature and the kinds of
-            differences that matter across biological and clinical
-            studies.
+            The initial scope is biomedical literature and the
+            differences that matter across biological, toxicological and
+            health studies.
           </span>
         </div>
-
 
         <div class="sciaudit-difference-item">
           <strong>Evidence-chain thinking</strong>
           <span>
-            Connect claims to supporting evidence, study characteristics,
-            methodological considerations and uncertainty.
+            The intended workflow connects claims with their sources,
+            study characteristics, methodological considerations and
+            uncertainty.
           </span>
         </div>
-
 
         <div class="sciaudit-difference-item">
           <strong>Disagreement stays visible</strong>
           <span>
-            The intended workflow does not hide conflicting findings
-            simply because one interpretation appears more convenient.
+            Conflicting findings are treated as part of the evidence
+            landscape rather than something to quietly remove from a
+            synthesis.
           </span>
         </div>
-
 
         <div class="sciaudit-difference-item">
-          <strong>Built from research practice</strong>
+          <strong>Researcher-built</strong>
           <span>
-            The project originates from firsthand biomedical research,
-            literature review and scientific peer-review workflows.
+            The project originates from direct experience with biomedical
+            research, scientific writing, literature review and peer
+            review.
           </span>
         </div>
-
 
         <div class="sciaudit-difference-item">
-          <strong>AI-native but source-conscious</strong>
+          <strong>AI-native, source-conscious</strong>
           <span>
-            AI is central to the workflow, while primary literature,
-            provenance and explicit uncertainty remain visible.
+            AI is intended to be the central computational layer while
+            primary evidence and provenance remain visible.
           </span>
         </div>
-
 
         <div class="sciaudit-difference-item">
           <strong>Designed for auditability</strong>
           <span>
-            The long-term goal is not simply a better answer, but a
-            research output that can be inspected and challenged.
+            The long-term objective is not simply a better answer, but a
+            research output that can be inspected, challenged and revisited.
           </span>
         </div>
 
@@ -1701,60 +1385,50 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       VISUAL EVIDENCE ENGINE
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">04 · Concept</div>
         <h2>From question to auditable evidence</h2>
       </div>
 
       <p>
-        A conceptual representation of the direction in which the
-        system is being developed.
+        A visual representation of the conceptual workflow currently
+        guiding development.
       </p>
-
     </div>
 
 
     <div class="sciaudit-flow">
 
-      <div class="sciaudit-orbit">
+      <div class="sciaudit-orbit-ring">
 
-        <div class="sciaudit-node evidence sciaudit-node-a">
+        <div class="sciaudit-node sciaudit-node-a">
           Source evidence
         </div>
 
-        <div class="sciaudit-node methods sciaudit-node-b">
+        <div class="sciaudit-node sciaudit-node-b">
           Methods
         </div>
 
-        <div class="sciaudit-node context sciaudit-node-c">
+        <div class="sciaudit-node sciaudit-node-c">
           Study context
         </div>
 
-        <div class="sciaudit-node uncertainty sciaudit-node-d">
+        <div class="sciaudit-node sciaudit-node-d">
           Uncertainty
         </div>
 
       </div>
 
-
-      <div class="sciaudit-orbit two"></div>
-
+      <div class="sciaudit-orbit-ring two"></div>
 
       <div class="sciaudit-core">
-
         <div class="sciaudit-core-text">
           <strong>SciAudit AI</strong>
           <span>Evidence layer</span>
         </div>
-
       </div>
 
     </div>
@@ -1762,19 +1436,13 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       INITIAL USE CASE
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">05 · Initial use</div>
         <h2>Built on a real research workflow</h2>
       </div>
-
     </div>
 
 
@@ -1805,29 +1473,23 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       RESEARCH PROBLEM
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">06 · The problem</div>
         <h2>Why this matters</h2>
       </div>
-
     </div>
 
 
     <section class="sciaudit-card">
 
       <p>
-        Biomedical researchers routinely work across large and
-        fragmented literatures in which studies differ in population,
-        exposure or intervention, measurement methods, endpoints,
-        statistical approaches and evidentiary strength.
+        Biomedical researchers routinely work across large and fragmented
+        literatures in which studies differ in population, exposure or
+        intervention, measurement methods, endpoints, statistical
+        approaches and evidentiary strength.
       </p>
 
       <p>
@@ -1847,33 +1509,25 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       ROADMAP
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">07 · Roadmap</div>
         <h2>Toward a broader release</h2>
       </div>
 
       <p>
-        The timeline is deliberately long because the project is being
-        developed through validation rather than a rapid product launch.
+        The timeline is intentionally long because the project is being
+        developed through validation and iteration rather than a rapid
+        product launch.
       </p>
-
     </div>
 
 
     <div class="sciaudit-roadmap">
 
-      <div
-        class="sciaudit-roadmap-item"
-        style="--roadmap-progress: 100%;"
-      >
+      <div class="sciaudit-roadmap-item" style="--roadmap-progress: 100%;">
         <span class="sciaudit-roadmap-year">2025</span>
         <strong>Origin</strong>
         <span>
@@ -1881,11 +1535,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </span>
       </div>
 
-
-      <div
-        class="sciaudit-roadmap-item"
-        style="--roadmap-progress: 68%;"
-      >
+      <div class="sciaudit-roadmap-item" style="--roadmap-progress: 68%;">
         <span class="sciaudit-roadmap-year">2026–2027</span>
         <strong>Prototype</strong>
         <span>
@@ -1894,11 +1544,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </span>
       </div>
 
-
-      <div
-        class="sciaudit-roadmap-item"
-        style="--roadmap-progress: 35%;"
-      >
+      <div class="sciaudit-roadmap-item" style="--roadmap-progress: 35%;">
         <span class="sciaudit-roadmap-year">2027–2028</span>
         <strong>Validation</strong>
         <span>
@@ -1907,11 +1553,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         </span>
       </div>
 
-
-      <div
-        class="sciaudit-roadmap-item"
-        style="--roadmap-progress: 12%;"
-      >
+      <div class="sciaudit-roadmap-item" style="--roadmap-progress: 12%;">
         <span class="sciaudit-roadmap-year">~2029</span>
         <strong>Broader release target</strong>
         <span>
@@ -1924,41 +1566,35 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
 
     <div class="sciaudit-note">
-
       <strong>Timeline note:</strong>
-      The approximately 2029 release target is a development goal, not
-      a fixed launch commitment. The project may move faster or slower
+      The approximately 2029 release target is a development goal, not a
+      fixed launch commitment. The project may move faster or slower
       depending on validation results and the technical requirements
       that emerge during development.
-
     </div>
 
   </section>
 
 
-  <!-- ==========================================================
-       COLLABORATION
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-section-heading">
-
       <div>
         <div class="sciaudit-section-kicker">08 · Collaboration</div>
         <h2>Open to collaboration</h2>
       </div>
 
+      <p>
+        Conversations with researchers can directly inform the next stage
+        of the project.
+      </p>
     </div>
 
 
     <div class="sciaudit-collab">
 
       <div>
-
-        <h2>
-          Help shape the research workflow
-        </h2>
+        <h2>Help shape the research workflow</h2>
 
         <p>
           I am interested in conversations with biomedical researchers,
@@ -1966,19 +1602,12 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
           who are interested in trustworthy AI-assisted scientific
           evidence analysis.
         </p>
-
       </div>
 
-
       <div class="sciaudit-collab-actions">
-
-        <a
-          class="sciaudit-button primary"
-          href="/contact/"
-        >
+        <a class="sciaudit-button primary" href="/contact/">
           Discuss collaboration
         </a>
-
       </div>
 
     </div>
@@ -1986,62 +1615,29 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
   </section>
 
 
-  <!-- ==========================================================
-       RESPONSIBLE AI
-       ========================================================== -->
-
   <section class="sciaudit-section sciaudit-reveal">
 
     <div class="sciaudit-note">
-
       <strong>Research philosophy:</strong>
       SciAudit AI is intended to assist scientific reasoning, not replace
       researchers or declare scientific truth autonomously. The project
       is being designed around source visibility, evidence provenance,
       uncertainty and critical human review.
-
     </div>
 
   </section>
 
 
-  <!-- ==========================================================
-       IDENTITY TAGS
-       ========================================================== -->
-
   <div class="sciaudit-identity sciaudit-reveal">
 
-    <span class="sciaudit-chip">
-      SciAudit AI
-    </span>
-
-    <span class="sciaudit-chip">
-      Ardie Barry Sailis
-    </span>
-
-    <span class="sciaudit-chip">
-      Biomedical Research
-    </span>
-
-    <span class="sciaudit-chip">
-      Scientific Evidence Auditing
-    </span>
-
-    <span class="sciaudit-chip">
-      AI-Assisted Research
-    </span>
-
-    <span class="sciaudit-chip">
-      Literature Synthesis
-    </span>
-
-    <span class="sciaudit-chip">
-      Research Methodology
-    </span>
-
-    <span class="sciaudit-chip">
-      Evidence Provenance
-    </span>
+    <span class="sciaudit-chip">SciAudit AI</span>
+    <span class="sciaudit-chip">Ardie Barry Sailis</span>
+    <span class="sciaudit-chip">Biomedical Research</span>
+    <span class="sciaudit-chip">Scientific Evidence Auditing</span>
+    <span class="sciaudit-chip">AI-Assisted Research</span>
+    <span class="sciaudit-chip">Literature Synthesis</span>
+    <span class="sciaudit-chip">Research Methodology</span>
+    <span class="sciaudit-chip">Evidence Provenance</span>
 
   </div>
 
@@ -2051,28 +1647,18 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 <script>
   (function () {
 
-    /*
-     * ============================================================
-     * SciAudit AI interaction layer
-     * ============================================================
-     */
-
     var page = document.querySelector(".sciaudit-page");
 
     if (!page) {
       return;
     }
 
-
-    /*
-     * ------------------------------------------------------------
-     * Mouse parallax
-     * ------------------------------------------------------------
-     */
-
     var reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
+
+
+    /* Mouse parallax */
 
     if (!reduceMotion) {
 
@@ -2080,11 +1666,8 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
 
         var rect = page.getBoundingClientRect();
 
-        var x =
-          ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-
-        var y =
-          ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+        var x = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+        var y = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
 
         page.style.setProperty(
           "--sa-mx",
@@ -2109,11 +1692,7 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
     }
 
 
-    /*
-     * ------------------------------------------------------------
-     * Scroll reveal
-     * ------------------------------------------------------------
-     */
+    /* Scroll reveal */
 
     var revealItems = page.querySelectorAll(
       ".sciaudit-reveal"
@@ -2128,58 +1707,53 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
         item.classList.add("is-visible");
       });
 
-      return;
+    } else {
+
+      revealItems.forEach(function (item, index) {
+
+        item.style.setProperty(
+          "--sa-delay",
+          Math.min(index * 0.035, 0.28) + "s"
+        );
+
+      });
+
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "is-visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          rootMargin: "0px 0px -8% 0px",
+          threshold: 0.08
+        }
+      );
+
+
+      revealItems.forEach(function (item) {
+        observer.observe(item);
+      });
 
     }
 
 
-    revealItems.forEach(function (item, index) {
-
-      item.style.setProperty(
-        "--sa-delay",
-        Math.min(index * 0.035, 0.28) + "s"
-      );
-
-    });
-
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-
-        entries.forEach(function (entry) {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add(
-              "is-visible"
-            );
-
-            observer.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        rootMargin: "0px 0px -8% 0px",
-        threshold: 0.08
-      }
-    );
-
-
-    revealItems.forEach(function (item) {
-      observer.observe(item);
-    });
-
-
-    /*
-     * ------------------------------------------------------------
-     * Smooth internal navigation
-     * ------------------------------------------------------------
-     */
+    /* Smooth internal navigation */
 
     page.querySelectorAll(
       'a[href^="#"]'
@@ -2216,40 +1790,6 @@ description: SciAudit AI by Ardie Barry Sailis — AI-native scientific evidence
       );
 
     });
-
-
-    /*
-     * ------------------------------------------------------------
-     * Subtle active-status breathing
-     * ------------------------------------------------------------
-     */
-
-    var status =
-      page.querySelector(
-        ".sciaudit-status-live"
-      );
-
-    if (status && !reduceMotion) {
-
-      var phase = 0;
-
-      window.setInterval(
-        function () {
-
-          phase += 0.04;
-
-          var opacity =
-            0.82 +
-            Math.sin(phase) * 0.10;
-
-          status.style.opacity =
-            opacity.toFixed(3);
-
-        },
-        60
-      );
-
-    }
 
   })();
 </script>
