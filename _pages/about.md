@@ -583,6 +583,323 @@ social: false
     }
   }
 
+  /* Research identity map */
+  .research-map {
+    position: relative;
+    margin: 0 0 1.6rem;
+    padding: 1.3rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(37,99,235,.09), transparent 30%),
+      radial-gradient(circle at 85% 75%, rgba(96,165,250,.07), transparent 32%),
+      var(--surface);
+    box-shadow: 0 18px 42px rgba(0,0,0,.14);
+  }
+
+  .research-map::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .45;
+    background-image:
+      linear-gradient(rgba(96,165,250,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,165,250,.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+  }
+
+  .research-map-head,
+  .timeline-head {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .research-map-head h2 {
+    margin: .35rem 0 0;
+    color: var(--text-strong);
+    font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+    letter-spacing: -.035em;
+  }
+
+  .research-map-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .35rem .6rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .research-map-status i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96,165,250,.12), 0 0 12px rgba(96,165,250,.6);
+    animation: research-pulse 2s ease-in-out infinite;
+  }
+
+  .research-map-stage {
+    position: relative;
+    min-height: 360px;
+    margin: .5rem auto 0;
+    max-width: 760px;
+  }
+
+  .research-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid rgba(96,165,250,.12);
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+  }
+
+  .orbit-one { width: 180px; height: 180px; animation: orbit-spin 18s linear infinite; }
+  .orbit-two { width: 300px; height: 300px; animation: orbit-spin 28s linear infinite reverse; }
+  .orbit-three { width: 430px; height: 430px; animation: orbit-spin 40s linear infinite; }
+
+  .research-core {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 112px;
+    height: 112px;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%,-50%);
+    border: 1px solid rgba(96,165,250,.42);
+    border-radius: 50%;
+    background:
+      radial-gradient(circle, rgba(37,99,235,.25), rgba(15,23,42,.75) 68%);
+    box-shadow:
+      0 0 0 10px rgba(37,99,235,.035),
+      0 0 45px rgba(37,99,235,.16),
+      inset 0 0 30px rgba(96,165,250,.08);
+    z-index: 3;
+  }
+
+  .research-core-ring {
+    position: absolute;
+    inset: -7px;
+    border: 1px solid rgba(96,165,250,.15);
+    border-radius: 50%;
+    animation: core-ring 3.5s ease-in-out infinite;
+  }
+
+  .research-core-label {
+    position: relative;
+    color: #dbeafe;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .13em;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .research-core-label b { color: #60a5fa; }
+
+  .research-node {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 170px;
+    padding: .8rem .9rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--surface) 90%, transparent);
+    color: var(--text);
+    box-shadow: 0 12px 28px rgba(0,0,0,.16);
+    cursor: pointer;
+    text-align: left;
+    transition: transform .3s cubic-bezier(.2,.7,.2,1), border-color .3s ease, box-shadow .3s ease;
+  }
+
+  .research-node:hover,
+  .research-node.is-active {
+    border-color: rgba(96,165,250,.55);
+    box-shadow: 0 15px 34px rgba(37,99,235,.14);
+  }
+
+  .research-node.is-active { transform: translateY(-5px); }
+
+  .node-exposure { left: 1%; top: 12%; }
+  .node-mechanism { right: 1%; top: 38%; }
+  .node-evidence { left: 8%; bottom: 7%; }
+
+  .node-index {
+    margin-bottom: .25rem;
+    color: #60a5fa;
+    font-size: .65rem;
+    font-weight: 900;
+    letter-spacing: .1em;
+  }
+
+  .research-node strong {
+    color: var(--text-strong);
+    font-size: .94rem;
+  }
+
+  .research-node small {
+    margin-top: .18rem;
+    color: var(--muted);
+    font-size: .7rem;
+    line-height: 1.35;
+  }
+
+  .research-map-detail {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 44px minmax(0,1fr);
+    gap: .8rem;
+    align-items: start;
+    margin-top: -.1rem;
+    padding: .95rem;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: var(--surface-strong);
+    animation: detail-in .35s ease both;
+  }
+
+  .research-detail-index {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(37,99,235,.09);
+    color: #60a5fa;
+    font-size: .7rem;
+    font-weight: 900;
+  }
+
+  .research-map-detail h3 {
+    margin: 0 0 .25rem;
+    color: var(--text-strong);
+    font-size: .98rem;
+  }
+
+  .research-map-detail p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .84rem;
+    line-height: 1.5;
+    text-align: left !important;
+  }
+
+  /* Research trajectory */
+  .research-timeline {
+    position: relative;
+    margin: 0 0 1.6rem;
+    padding: 1.25rem 1.3rem 1.4rem;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .timeline-caption {
+    color: var(--muted);
+    font-size: .75rem;
+  }
+
+  .timeline-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 10px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(96,165,250,.38), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-top: 1.25rem;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--surface);
+    border-radius: 50%;
+    background: var(--muted);
+    box-shadow: 0 0 0 1px var(--line);
+  }
+
+  .timeline-item.is-current .timeline-dot {
+    background: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96,165,250,.12), 0 0 18px rgba(96,165,250,.38);
+  }
+
+  .timeline-year {
+    color: #60a5fa;
+    font-size: .67rem;
+    font-weight: 850;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .timeline-item h3 {
+    margin: .35rem 0 .25rem;
+    color: var(--text-strong);
+    font-size: .95rem;
+  }
+
+  .timeline-item p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .8rem;
+    line-height: 1.5;
+    text-align: left !important;
+  }
+
+  @keyframes research-pulse {
+    0%,100% { transform: scale(.9); opacity: .65; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  @keyframes orbit-spin {
+    from { transform: translate(-50%,-50%) rotate(0deg); }
+    to { transform: translate(-50%,-50%) rotate(360deg); }
+  }
+
+  @keyframes core-ring {
+    0%,100% { transform: scale(.96); opacity: .35; }
+    50% { transform: scale(1.05); opacity: .9; }
+  }
+
+  @keyframes detail-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+
   @media (max-width: 768px) {
     .about-stats {
       grid-template-columns: repeat(2, 1fr);
@@ -590,6 +907,50 @@ social: false
 
     .about-two-column {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .research-map-stage {
+      min-height: 420px;
+    }
+
+    .research-node {
+      min-width: 145px;
+      max-width: 155px;
+    }
+
+    .node-exposure { left: 0; top: 8%; }
+    .node-mechanism { right: 0; top: 42%; }
+    .node-evidence { left: 0; bottom: 5%; }
+
+    .orbit-three { width: 360px; height: 360px; }
+    .orbit-two { width: 260px; height: 260px; }
+    .orbit-one { width: 155px; height: 155px; }
+
+    .timeline-track {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding-left: .15rem;
+    }
+
+    .timeline-line {
+      left: 5px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      height: auto;
+      background: linear-gradient(180deg, rgba(96,165,250,.38), transparent);
+    }
+
+    .timeline-item {
+      padding-left: 1.25rem;
+      padding-top: 0;
+    }
+
+    .timeline-dot {
+      left: 0;
+      top: .2rem;
     }
   }
 
@@ -915,7 +1276,8 @@ social: false
 </div>
 
 <div class="about-stats reveal">
-  <div><strong>{{ paper_count_text }}</strong><span>peer-reviewed papers</span></div>
+  {%- assign total_papers = site.data.papers | size -%}
+  <div><strong>{{ total_papers }}</strong><span>peer-reviewed papers</span></div>
   <div><strong>7</strong><span>international journals reviewed</span></div>
   <div><strong>PhD</strong><span>Pharmaceutical Sciences</span></div>
   <div><strong>AI + Science</strong><span>building SciAudit AI</span></div>
@@ -992,6 +1354,81 @@ social: false
     <a href="/sciaudit-ai/">Explore SciAudit AI</a>
   </div>
 
+</div>
+
+<div class="research-map reveal" aria-label="Research identity map">
+  <div class="research-map-head">
+    <div>
+      <span class="about-eyebrow">Research identity</span>
+      <h2>From exposure → mechanism → evidence</h2>
+    </div>
+    <span class="research-map-status"><i></i> active</span>
+  </div>
+
+  <div class="research-map-stage">
+    <div class="research-orbit orbit-one"></div>
+    <div class="research-orbit orbit-two"></div>
+    <div class="research-orbit orbit-three"></div>
+
+    <button class="research-node node-exposure is-active" type="button" data-node="exposure">
+      <span class="node-index">01</span>
+      <strong>Exposure</strong>
+      <small>What enters the system?</small>
+    </button>
+
+    <button class="research-node node-mechanism" type="button" data-node="mechanism">
+      <span class="node-index">02</span>
+      <strong>Mechanism</strong>
+      <small>What changes biologically?</small>
+    </button>
+
+    <button class="research-node node-evidence" type="button" data-node="evidence">
+      <span class="node-index">03</span>
+      <strong>Evidence</strong>
+      <small>How strong is the conclusion?</small>
+    </button>
+
+    <div class="research-core">
+      <span class="research-core-ring"></span>
+      <span class="research-core-label">ARDIE<br><b>SCIENCE</b></span>
+    </div>
+  </div>
+
+  <div class="research-map-detail" aria-live="polite">
+    <span class="research-detail-index">01</span>
+    <div>
+      <h3>Exposure biology</h3>
+      <p>Inhaled toxicants, tobacco and e-cigarette aerosol, exposure patterns and their implications for biological systems.</p>
+    </div>
+  </div>
+</div>
+
+<div class="research-timeline reveal">
+  <div class="timeline-head">
+    <span class="about-eyebrow">Trajectory</span>
+    <span class="timeline-caption">research → synthesis → technology</span>
+  </div>
+  <div class="timeline-track">
+    <div class="timeline-line"></div>
+    <article class="timeline-item is-current">
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">2020–2026</span>
+      <h3>Doctoral research</h3>
+      <p>Toxicology, reproductive health, molecular mechanisms and scientific evidence.</p>
+    </article>
+    <article class="timeline-item">
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">Independent</span>
+      <h3>Framework development</h3>
+      <p>Dynamic regulatory circuits and mechanistic thinking beyond static pathway diagrams.</p>
+    </article>
+    <article class="timeline-item">
+      <span class="timeline-dot"></span>
+      <span class="timeline-year">2025 →</span>
+      <h3>SciAudit AI</h3>
+      <p>Turning evidence-critical research workflows into an auditable AI-assisted system.</p>
+    </article>
+  </div>
 </div>
 
 <div class="open-roles reveal">
@@ -1081,7 +1518,6 @@ social: false
 </div>
 
 <div class="social">
-  <div class="contact-icons">{% social_links %}</div><div class="social">
   <div class="contact-icons">{% social_links %}</div>
   <div class="contact-note">
     For academic correspondence, please use the form on the <a href="/contact/">Contact page</a>. Last updated: {{ site.time | date: "%-d %B %Y" }}.
@@ -1106,6 +1542,47 @@ social: false
     });
   });
   (function () {
+    var nodeData = {
+      exposure: {
+        index: "01",
+        title: "Exposure biology",
+        text: "Inhaled toxicants, tobacco and e-cigarette aerosol, exposure patterns and their implications for biological systems."
+      },
+      mechanism: {
+        index: "02",
+        title: "Mechanistic biology",
+        text: "Molecular responses including mitochondrial dysfunction, steroidogenesis, microRNA regulation, testosterone signalling and cellular stress."
+      },
+      evidence: {
+        index: "03",
+        title: "Evidence integrity",
+        text: "Comparing studies, interrogating methodology, tracing claims to supporting evidence and making uncertainty visible."
+      }
+    };
+
+    var researchNodes = document.querySelectorAll(".research-node");
+    var researchDetail = document.querySelector(".research-map-detail");
+
+    researchNodes.forEach(function (node) {
+      node.addEventListener("click", function () {
+        var key = node.getAttribute("data-node");
+        var data = nodeData[key];
+        if (!data || !researchDetail) return;
+
+        researchNodes.forEach(function (item) {
+          item.classList.toggle("is-active", item === node);
+        });
+
+        researchDetail.innerHTML =
+          '<span class="research-detail-index">' + data.index + '</span>' +
+          '<div><h3>' + data.title + '</h3><p>' + data.text + '</p></div>';
+
+        researchDetail.style.animation = "none";
+        void researchDetail.offsetWidth;
+        researchDetail.style.animation = "detail-in .35s ease both";
+      });
+    });
+
     var tabs = document.querySelectorAll(".about-tab");
     var panels = document.querySelectorAll(".about-panel");
 
