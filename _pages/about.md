@@ -128,8 +128,8 @@ social: false
   .profile-logo-links {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.85rem;
-    margin-top: 0.75rem;
+    gap: 0.65rem;
+    margin-top: 0.25rem;
   }
 
   .profile-logo-links a {
