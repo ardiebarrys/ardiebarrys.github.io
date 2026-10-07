@@ -1251,7 +1251,7 @@ nav_order: 3
        02. CELLULAR SIGNALING FRAMEWORK
        ======================================================== -->
   <section class="project-section">
-    <h2 class="project-section-title">Independent Work</h2>
+    <h2 class="project-section-title">Independent Research Framework</h2>
 
     <details class="project-card project-card--framework">
       <summary>
