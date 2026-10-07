@@ -187,9 +187,7 @@ description: SciAudit AI by Ardie Barry Sailis, an AI-assisted scientific eviden
     font-weight: 850;
     letter-spacing: -0.065em;
     color: #ffffff;
-    text-shadow:
-      0 0 25px rgba(96, 165, 250, 0.16),
-      0 14px 48px rgba(0, 0, 0, 0.30);
+    text-shadow: none;
     animation: saBrandIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
@@ -201,6 +199,9 @@ description: SciAudit AI by Ardie Barry Sailis, an AI-assisted scientific eviden
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    filter:
+      drop-shadow(0 0 9px rgba(96, 165, 250, 0.20))
+      drop-shadow(0 7px 22px rgba(0, 0, 0, 0.24));
     animation:
       saBrandIn 1.05s cubic-bezier(0.16, 1, 0.3, 1) both,
       saShimmer 6s ease-in-out infinite;
