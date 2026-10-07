@@ -1046,10 +1046,26 @@ description: SciAudit AI by Ardie Barry Sailis, an AI-assisted scientific eviden
       transform: none !important;
     }
   }
+
+  /* Ambient floating particles */
+  .sa-particles { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
+  .sa-particle { position:absolute; width:3px; height:3px; border-radius:50%; background:rgba(147,197,253,.72); box-shadow:0 0 13px rgba(96,165,250,.7); opacity:.3; animation:saParticleFloat var(--sa-duration,14s) ease-in-out var(--sa-delay,0s) infinite alternate; }
+  @keyframes saParticleFloat { 0% { transform:translate3d(0,28px,0) scale(.65); opacity:.12; } 50% { opacity:.62; } 100% { transform:translate3d(var(--sa-dx,24px),-105px,0) scale(1.2); opacity:.04; } }
+  @media(prefers-reduced-motion:reduce){.sa-particle{animation:none!important;opacity:.18}}
 </style>
 
 
-<div class="sciaudit-page">
+<div class="sciaudit-page"><div class="sa-particles" aria-hidden="true">
+  <span class="sa-particle" style="left:7%;top:74%;--sa-dx:26px;--sa-duration:15s;--sa-delay:-5s"></span>
+  <span class="sa-particle" style="left:16%;top:34%;--sa-dx:-20px;--sa-duration:18s;--sa-delay:-10s"></span>
+  <span class="sa-particle" style="left:29%;top:83%;--sa-dx:22px;--sa-duration:13s;--sa-delay:-3s"></span>
+  <span class="sa-particle" style="left:43%;top:21%;--sa-dx:-28px;--sa-duration:16s;--sa-delay:-8s"></span>
+  <span class="sa-particle" style="left:58%;top:79%;--sa-dx:20px;--sa-duration:14s;--sa-delay:-6s"></span>
+  <span class="sa-particle" style="left:72%;top:31%;--sa-dx:-24px;--sa-duration:19s;--sa-delay:-12s"></span>
+  <span class="sa-particle" style="left:86%;top:67%;--sa-dx:27px;--sa-duration:12s;--sa-delay:-4s"></span>
+  <span class="sa-particle" style="left:94%;top:43%;--sa-dx:-18px;--sa-duration:17s;--sa-delay:-9s"></span>
+</div>
+
 
   <section class="sciaudit-hero">
 
