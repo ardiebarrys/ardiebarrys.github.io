@@ -1262,6 +1262,112 @@ social: false
       opacity: 1 !important;
     }
   }
+
+  /* Mobile layout hardening */
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .post, .page, .container, main, .post-content, .bio-text, .about-modern {
+    width: 100%; max-width: 100% !important; box-sizing: border-box; min-width: 0;
+  }
+  .bio-text { overflow-wrap: anywhere; word-break: normal; }
+  .profile { width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0; }
+  .profile figure { max-width: 100%; box-sizing: border-box; margin-left: auto; margin-right: auto; }
+  .profile figure img { display: block; max-width: 100%; height: auto; box-sizing: border-box; }
+  .profile-info, .profile-info * { max-width: 100%; box-sizing: border-box; }
+  .profile-info { overflow-wrap: anywhere; }
+  .profile-logo-links { width: 100%; min-width: 0; }
+  .profile-logo-links a { width: 100%; min-width: 0; overflow: hidden; }
+  .profile-logo-links img { width: auto; max-width: 100%; height: auto; }
+  .about-intro, .about-explorer, .about-two-column, .research-map, .research-timeline,
+  .open-roles, .keyword-box, .highlight-study, .home-section {
+    width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0;
+  }
+  .about-intro h2, .about-intro .about-lead, .about-panel h3, .about-panel p,
+  .about-mini-card h3, .about-mini-card p, .research-map-head h2, .research-map-detail h3,
+  .research-map-detail p, .timeline-item h3, .timeline-item p, .highlight-study h2,
+  .highlight-study p, .selected-paper-title, .news-text { overflow-wrap: anywhere; }
+
+  @media (max-width: 991.98px) {
+    .bio-text { max-width: 100% !important; }
+    .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-two-column { grid-template-columns: 1fr; }
+    .research-map-stage { min-height: 420px; }
+    .research-node { min-width: 0; width: 31%; }
+    .node-exposure { left: 0; top: 8%; }
+    .node-mechanism { right: 0; top: 36%; }
+    .node-evidence { left: 0; bottom: 4%; }
+  }
+
+  @media (max-width: 767.98px) {
+    .post, .page, .container, main { padding-left: .9rem; padding-right: .9rem; }
+    .post-content, .bio-text { padding-left: 0 !important; padding-right: 0 !important; }
+    .profile { margin-bottom: 1.25rem; }
+    .profile figure { width: min(220px, 70vw); }
+    .profile-info, .profile-info p { width: 100%; text-align: left !important; text-align-last: left !important; }
+
+    .about-intro { padding: 1.2rem 1rem; border-radius: 13px; }
+    .about-intro h2 { font-size: clamp(1.55rem, 8vw, 2.15rem); line-height: 1.1; letter-spacing: -.035em; }
+    .about-intro .about-lead { font-size: .93rem; line-height: 1.55; }
+
+    .about-stats { grid-template-columns: 1fr 1fr; gap: .55rem; margin-bottom: 1.15rem; }
+    .about-stats > div { min-width: 0; padding: .8rem .75rem; }
+    .about-stats strong { font-size: 1.05rem; }
+    .about-stats span { font-size: .7rem; }
+
+    .about-explorer { padding: .9rem; border-radius: 13px; }
+    .about-explorer-heading { display: block; margin-bottom: .7rem; }
+    .about-explorer-heading p { margin-top: .25rem; }
+    .about-tabs { display: grid; grid-template-columns: 1fr; gap: .4rem; }
+    .about-tab { width: 100%; min-height: 42px; padding: .58rem .7rem; }
+    .about-panel-wrap { min-height: 0; }
+    .about-panel { grid-template-columns: 38px minmax(0,1fr); gap: .7rem; padding: .9rem; }
+    .about-panel-icon { width: 38px; height: 38px; font-size: .68rem; }
+    .about-panel h3 { font-size: .98rem; }
+    .about-panel p { font-size: .82rem; line-height: 1.5; }
+
+    .about-mini-card { padding: 1rem; }
+    .research-map { padding: 1rem; }
+    .research-map-head { display: block; }
+    .research-map-status { margin-top: .65rem; }
+    .research-map-stage { min-height: 455px; margin-top: .2rem; }
+    .orbit-three { width: min(92vw,330px); height: min(92vw,330px); }
+    .orbit-two { width: min(70vw,250px); height: min(70vw,250px); }
+    .orbit-one { width: min(48vw,170px); height: min(48vw,170px); }
+    .research-core { width: 86px; height: 86px; }
+    .research-core-label { font-size: .58rem; }
+    .research-node { width: min(44%,170px); padding: .65rem; border-radius: 10px; }
+    .node-exposure { left: 0; top: 3%; }
+    .node-mechanism { right: 0; top: 36%; }
+    .node-evidence { left: 0; bottom: 3%; }
+    .research-node strong { font-size: .82rem; }
+    .research-node small { font-size: .64rem; }
+    .research-map-detail { grid-template-columns: 36px minmax(0,1fr); gap: .65rem; padding: .8rem; }
+    .research-detail-index { width: 36px; height: 36px; }
+    .research-map-detail p { font-size: .78rem; }
+
+    .timeline-track { overflow: visible; }
+    .timeline-item { margin-left: 0 !important; padding-left: 1.1rem !important; }
+    .open-roles-actions { display: grid; grid-template-columns: 1fr; }
+    .bio-text a.open-roles-link { width: 100%; box-sizing: border-box; justify-content: center; }
+    .keyword-list { gap: .4rem; }
+    .keyword-list span { max-width: 100%; font-size: .8rem; padding: .38rem .55rem; }
+    .highlight-study { padding: 1rem; }
+    .selected-paper { overflow: hidden; }
+    .news-list li, .news-text { min-width: 0; }
+    .bio-text a.about-coffee-button { margin-left: 0; margin-top: .45rem; }
+  }
+
+  @media (max-width: 420px) {
+    .post, .page, .container, main { padding-left: .7rem; padding-right: .7rem; }
+    .about-stats { grid-template-columns: 1fr; }
+    .research-map-stage { min-height: 470px; }
+    .research-node { width: 48%; }
+    .node-mechanism { top: 40%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-intro::after, .research-map-status i, .research-orbit, .research-core-ring { animation: none !important; }
+  }
+
 </style>
 
 <div class="bio-text about-modern" markdown="1">
