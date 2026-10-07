@@ -620,8 +620,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
           can help cover hosting, domain costs, infrastructure and continued
           development of new missions.
         </p>
-        <a class="dn-support-button" href="https://ko-fi.com/deepnumbers" target="_blank" rel="noopener">
-          Support Deep Numbers on Ko-fi
+        <a class="dn-support-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
+          Support Deep Numbers
         </a>
         <p class="dn-note">
           Support is optional and does not affect scores, rarity, rankings or gameplay.
