@@ -1110,7 +1110,7 @@ nav_order: 3
 }
 </style>
 
-<div class="projects-page">
+<div class="projects-page" markdown="0">
 
   <!-- ========================================================
        01. PHD THESIS
