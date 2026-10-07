@@ -66,3 +66,91 @@
   --global-danger-block-text: #ffb9b9;
   --global-danger-block-title: #ffe0e0;
 }
+
+/*******************************************************************************
+ * Global content width and navigation
+ * Match the Contact page layout across the entire site and make the
+ * active navigation item visually unmistakable.
+ ******************************************************************************/
+.post,
+.page,
+.container,
+main {
+  max-width: 1280px !important;
+}
+
+.navbar .navbar-nav {
+  align-items: center;
+}
+
+.navbar .nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  margin: 0.18rem 0.08rem;
+  padding: 0.42rem 0.68rem !important;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--global-hover-color) !important;
+  background: rgba(147, 197, 253, 0.07);
+  border-color: rgba(147, 197, 253, 0.15);
+}
+
+.navbar .nav-item.active .nav-link,
+.navbar .nav-link[aria-current="page"] {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.28),
+      rgba(96, 165, 250, 0.12)
+    );
+  border-color: rgba(147, 197, 253, 0.38);
+  box-shadow:
+    0 0 0 1px rgba(147, 197, 253, 0.04),
+    0 6px 18px rgba(37, 99, 235, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.navbar .nav-item.active .nav-link::before,
+.navbar .nav-link[aria-current="page"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  box-shadow:
+    0 0 0 3px rgba(147, 197, 253, 0.10),
+    0 0 12px rgba(147, 197, 253, 0.52);
+}
+
+.navbar .nav-link .sr-only {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .navbar .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0.12rem 0;
+    padding: 0.6rem 0.8rem !important;
+  }
+
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-link[aria-current="page"] {
+    transform: none;
+  }
+}
