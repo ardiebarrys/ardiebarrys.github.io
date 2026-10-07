@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-subtitle: Doctoral Researcher
+subtitle: Doctoral Researcher · Toxicology · Scientific Evidence
 
 profile:
   align: right
@@ -1366,6 +1366,212 @@ social: false
 
   @media (prefers-reduced-motion: reduce) {
     .about-intro::after, .research-map-status i, .research-orbit, .research-core-ring { animation: none !important; }
+  }
+
+
+  /* ==========================================================
+     PROFILE HERO
+     Turn the default profile block into a compact visual identity
+     card so the page reaches the substantive research content faster.
+     ========================================================== */
+
+  .profile {
+    position: relative;
+    padding: 1.35rem 1.25rem 1.15rem;
+    border: 1px solid rgba(96,165,250,.22);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(96,165,250,.15), transparent 30%),
+      radial-gradient(circle at 88% 88%, rgba(37,99,235,.12), transparent 34%),
+      linear-gradient(145deg, rgba(15,35,82,.92), rgba(7,20,48,.96));
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.22),
+      inset 0 1px 0 rgba(255,255,255,.06);
+    overflow: hidden;
+  }
+
+  .profile::before {
+    content: "RESEARCH IDENTITY";
+    position: absolute;
+    top: .8rem;
+    right: 1rem;
+    color: rgba(147,197,253,.72);
+    font-size: .56rem;
+    font-weight: 850;
+    letter-spacing: .16em;
+  }
+
+  .profile::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -105px;
+    top: 42px;
+    border: 1px solid rgba(96,165,250,.12);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: profile-orbit 14s linear infinite;
+  }
+
+  .profile figure {
+    position: relative;
+    z-index: 2;
+    margin: .7rem auto 1rem !important;
+  }
+
+  .profile figure img {
+    width: 170px !important;
+    height: 170px !important;
+    object-fit: cover;
+    border-radius: 28px !important;
+    border: 2px solid rgba(147,197,253,.45);
+    box-shadow:
+      0 14px 32px rgba(0,0,0,.3),
+      0 0 0 8px rgba(96,165,250,.055);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .profile figure img:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow:
+      0 20px 40px rgba(0,0,0,.32),
+      0 0 0 10px rgba(96,165,250,.07);
+  }
+
+  .profile-info {
+    position: relative;
+    z-index: 2;
+    padding: .95rem 0 0;
+  }
+
+  .profile-info p {
+    margin-bottom: .48rem !important;
+  }
+
+  .profile-info p:first-child strong {
+    color: #dbeafe !important;
+    font-size: 1.02rem !important;
+  }
+
+  .profile-info hr {
+    margin: .9rem 0 !important;
+    border-color: rgba(147,197,253,.25) !important;
+    opacity: 1;
+  }
+
+  .profile-logo-links {
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: .55rem;
+    margin-top: .55rem;
+  }
+
+  .profile-logo-links a {
+    min-height: 62px;
+    height: 62px;
+    padding: .55rem .65rem;
+    border-radius: 12px;
+    border-color: rgba(147,197,253,.22);
+    box-shadow: 0 7px 18px rgba(0,0,0,.16);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+
+  .profile-logo-links a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(96,165,250,.65);
+    box-shadow: 0 12px 24px rgba(37,99,235,.16);
+  }
+
+  .profile-logo-links img {
+    max-width: 125px;
+    max-height: 34px;
+  }
+
+  @keyframes profile-orbit {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 767.98px) {
+    .profile {
+      padding: 1rem .85rem .9rem;
+      border-radius: 18px;
+    }
+
+    .profile::before {
+      top: .7rem;
+      right: .8rem;
+      font-size: .5rem;
+    }
+
+    .profile figure {
+      width: 150px !important;
+      margin-top: .75rem !important;
+      margin-bottom: .8rem !important;
+    }
+
+    .profile figure img {
+      width: 150px !important;
+      height: 150px !important;
+      border-radius: 24px !important;
+    }
+
+    .profile-info {
+      padding-top: .55rem;
+    }
+
+    .profile-info p {
+      text-align: center !important;
+      text-align-last: center !important;
+    }
+
+    .profile-info p:first-child strong {
+      font-size: .94rem !important;
+    }
+
+    .profile-logo-links {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .5rem;
+    }
+
+    .profile-logo-links a {
+      min-height: 54px;
+      height: 54px;
+      padding: .45rem .55rem;
+      border-radius: 10px;
+    }
+
+    .profile-logo-links img {
+      max-width: 105px;
+      max-height: 30px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .profile {
+      padding-left: .7rem;
+      padding-right: .7rem;
+    }
+
+    .profile figure,
+    .profile figure img {
+      width: 138px !important;
+      height: 138px !important;
+    }
+
+    .profile-logo-links a {
+      min-height: 50px;
+      height: 50px;
+    }
+
+    .profile-logo-links img {
+      max-width: 95px;
+      max-height: 27px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .profile::after,
+    .profile figure img { animation: none !important; }
   }
 
 </style>
