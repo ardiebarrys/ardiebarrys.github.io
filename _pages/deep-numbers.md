@@ -515,7 +515,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
   .dn-card-grid { grid-template-columns: 1fr; }
   .dn-support { padding: 1.3rem; }
 }
-</style>
+
+.dn-question{color:#fff;font-size:clamp(1.2rem,3vw,1.65rem);line-height:1.25;font-weight:800;letter-spacing:-.025em;margin-bottom:.5rem}.dn-explain{color:var(--dn-muted);font-size:.8rem;line-height:1.5;margin:0 0 1rem}.dn-rule-strip{display:flex;justify-content:center;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1.25rem auto 0;color:#cbd5e1;font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}.dn-rule-strip i{width:3px;height:3px;border-radius:50%;background:var(--dn-blue);box-shadow:0 0 8px var(--dn-blue)}.dn-launch-panel{animation:dn-float 6s ease-in-out infinite}.dn-hero>div:last-child{animation:dn-hero-in .9s cubic-bezier(.16,1,.3,1) both}.dn-orbit{animation:dn-spin 30s linear infinite,dn-breathe 5s ease-in-out infinite}.dn-mark{animation:dn-pulse 3s ease-in-out infinite}.dn-result.is-visible{animation:dn-reveal .9s cubic-bezier(.16,1,.3,1) both}.dn-simple-scale{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.2rem}.dn-simple-scale div{padding:1rem;border:1px solid var(--dn-line);border-radius:12px;background:rgba(148,163,184,.025)}.dn-simple-scale strong{display:block;color:#fff;font-size:.7rem;letter-spacing:.08em}.dn-simple-scale span{display:block;color:var(--dn-muted);font-size:.78rem;margin-top:.3rem;line-height:1.5}@keyframes dn-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}@keyframes dn-breathe{0%,100%{opacity:.5}50%{opacity:1}}@keyframes dn-pulse{0%,100%{box-shadow:0 0 28px rgba(96,165,250,.2)}50%{box-shadow:0 0 42px rgba(96,165,250,.45)}}@keyframes dn-hero-in{from{opacity:0;transform:translateY(22px) scale(.98)}to{opacity:1;transform:none}}@keyframes dn-reveal{0%{opacity:0;transform:translateY(28px) scale(.94)}60%{opacity:1;transform:translateY(-5px) scale(1.015)}100%{opacity:1;transform:none}}@media(max-width:760px){.dn-simple-scale{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){.dn-launch-panel,.dn-hero>div:last-child,.dn-orbit,.dn-mark{animation:none!important}}</style>
 
 <div class="deep-numbers-page" id="deep-numbers">
   <div class="dn-shell">
@@ -551,10 +552,11 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
           <span>ONE GUESS EACH</span>
         </div>
         <form id="dn-form" novalidate>
+          <div class="dn-question" id="dn-question">How many hours of sleep do you think most people get per night?</div>
+          <p class="dn-explain" id="dn-explain">Think about the number an average person would type.</p>
           <div class="dn-number-row">
-            <input id="dn-number" class="dn-number" type="text" inputmode="numeric"
-              autocomplete="off" placeholder="Choose a number" aria-label="Choose a number">
-            <button class="dn-launch" type="submit">LAUNCH</button>
+            <input id="dn-number" class="dn-number" type="text" inputmode="decimal" autocomplete="off" placeholder="Your guess" aria-label="Your numerical guess">
+            <button class="dn-launch" type="submit">LOCK ANSWER</button>
           </div>
           <p class="dn-hint" id="dn-hint">One guess. No feedback until the mission is complete.</p>
         </form>
@@ -568,15 +570,15 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
 
       <div class="dn-result" id="dn-result" aria-live="polite">
         <div class="dn-readout">
-          <div class="dn-readout-label">Mission complete</div>
-          <div class="dn-readout-number" id="dn-r-number">0</div>
-          <div class="dn-distance" id="dn-r-distance">0 km</div>
-          <div class="dn-zone" id="dn-r-zone">Low Earth Orbit</div>
+          <div class="dn-readout-label">MISSION COMPLETE</div>
+          <div class="dn-readout-number" id="dn-r-number">—</div>
+          <div class="dn-distance" id="dn-r-distance">0 / 100</div>
+          <div class="dn-zone" id="dn-r-zone">Earth</div>
         </div>
         <div class="dn-stats">
-          <div class="dn-stat"><span>Crowd score</span><strong id="dn-r-rarity">0%</strong></div>
-          <div class="dn-stat"><span>Accuracy</span><strong id="dn-r-rank">#0</strong></div>
-          <div class="dn-stat"><span>Your type</span><strong id="dn-r-near">0</strong></div>
+          <div class="dn-stat"><span>Crowd score</span><strong id="dn-r-rarity">0</strong></div>
+          <div class="dn-stat"><span>Accuracy</span><strong id="dn-r-rank">—</strong></div>
+          <div class="dn-stat"><span>Your type</span><strong id="dn-r-near">—</strong></div>
         </div>
       </div>
     </section>
