@@ -536,8 +536,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
       <div class="dn-hero">
         <div class="dn-orbit" aria-hidden="true"></div>
         <div>
-          <div class="dn-eyebrow">Daily number mission · 001</div>
-          <h1>How deep can your <span class="dn-gradient">number</span> go?</h1>
+          <div class="dn-eyebrow">Daily crowd mission · 001</div>
+          <h1>Guess the number <span class="dn-gradient">everyone else</span> will choose.</h1>
           <p class="dn-lede">
             Pick a number. Launch it into space. The rarer your number,
             the farther it travels.
@@ -547,8 +547,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
 
       <div class="dn-launch-panel">
         <div class="dn-mission">
-          <span>MISSION 001</span>
-          <span>1 → 1,000,000</span>
+          <span>MISSION 001 · 5 QUESTIONS</span>
+          <span>ONE GUESS EACH</span>
         </div>
         <form id="dn-form" novalidate>
           <div class="dn-number-row">
@@ -556,34 +556,34 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
               autocomplete="off" placeholder="Choose a number" aria-label="Choose a number">
             <button class="dn-launch" type="submit">LAUNCH</button>
           </div>
-          <p class="dn-hint" id="dn-hint">One number. One launch. Choose carefully.</p>
+          <p class="dn-hint" id="dn-hint">One guess. No feedback until the mission is complete.</p>
         </form>
 
         <dl class="dn-telemetry">
-          <div><dt>Explorers</dt><dd id="dn-explorers">—</dd></div>
-          <div><dt>Deepest</dt><dd id="dn-deepest">—</dd></div>
-          <div><dt>Mode</dt><dd>Demo</dd></div>
+          <div><dt>Questions</dt><dd id="dn-explorers">5</dd></div>
+          <div><dt>Progress</dt><dd id="dn-deepest">1 / 5</dd></div>
+          <div><dt>Scoring</dt><dd>Crowd match</dd></div>
         </dl>
       </div>
 
       <div class="dn-result" id="dn-result" aria-live="polite">
         <div class="dn-readout">
-          <div class="dn-readout-label">Your trajectory</div>
+          <div class="dn-readout-label">Mission complete</div>
           <div class="dn-readout-number" id="dn-r-number">0</div>
           <div class="dn-distance" id="dn-r-distance">0 km</div>
           <div class="dn-zone" id="dn-r-zone">Low Earth Orbit</div>
         </div>
         <div class="dn-stats">
-          <div class="dn-stat"><span>Rarity</span><strong id="dn-r-rarity">0%</strong></div>
-          <div class="dn-stat"><span>World rank</span><strong id="dn-r-rank">#0</strong></div>
-          <div class="dn-stat"><span>Nearby picks</span><strong id="dn-r-near">0</strong></div>
+          <div class="dn-stat"><span>Crowd score</span><strong id="dn-r-rarity">0%</strong></div>
+          <div class="dn-stat"><span>Accuracy</span><strong id="dn-r-rank">#0</strong></div>
+          <div class="dn-stat"><span>Your type</span><strong id="dn-r-near">0</strong></div>
         </div>
       </div>
     </section>
 
     <section class="dn-section" id="dn-about">
       <div class="dn-eyebrow">The idea</div>
-      <h2>Turn numerical rarity into a journey.</h2>
+      <h2>Don't find the right answer. Find the answer everyone else will give.</h2>
       <p>
         Deep Numbers is a daily game built around a simple experiment:
         everyone receives the same numerical space, everyone makes one
@@ -592,19 +592,19 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
 
       <div class="dn-card-grid">
         <article class="dn-card">
-          <span class="dn-card-number">01 / PICK</span>
-          <h3>Choose one number</h3>
-          <p>The same range opens for everyone. Your choice is your launch.</p>
+          <span class="dn-card-number">01 / GUESS</span>
+          <h3>One guess per question</h3>
+          <p>Everyone sees the same five questions. You lock one numerical answer for each.</p>
         </article>
         <article class="dn-card">
-          <span class="dn-card-number">02 / CROWD</span>
-          <h3>Rarity becomes distance</h3>
-          <p>Numbers surrounded by fewer neighboring choices travel deeper into space.</p>
+          <span class="dn-card-number">02 / THINK</span>
+          <h3>Think like everyone else</h3>
+          <p>Round numbers, familiar dates, common habits and human bias become part of the strategy.</p>
         </article>
         <article class="dn-card">
-          <span class="dn-card-number">03 / LOCK</span>
-          <h3>The mission closes</h3>
-          <p>When the mission ends, the final trajectory and rankings are locked.</p>
+          <span class="dn-card-number">03 / REVEAL</span>
+          <h3>No feedback until the end</h3>
+          <p>Your answers stay hidden while you play. The crowd and your final trajectory are revealed together.</p>
         </article>
       </div>
 
