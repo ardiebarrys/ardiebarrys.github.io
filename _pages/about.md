@@ -1712,7 +1712,7 @@ social: false
 
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
-      ".bio-text > p, .open-roles, .keyword-box, .highlight-study, .home-section > .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
+      ".about-modern .reveal, .bio-text > p, .open-roles, .keyword-box, .highlight-study, .home-section > .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
     );
 
     if (reduce || !("IntersectionObserver" in window)) {
