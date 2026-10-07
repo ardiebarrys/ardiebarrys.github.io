@@ -540,9 +540,10 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
           <div class="dn-eyebrow">Daily crowd mission · 001</div>
           <h1>Guess the number <span class="dn-gradient">everyone else</span> will choose.</h1>
           <p class="dn-lede">
-            Pick a number. Launch it into space. The rarer your number,
-            the farther it travels.
+            There is no correct answer. You get five questions and one guess each.
+            The closer you are to the crowd, the farther your journey goes.
           </p>
+          <div class="dn-rule-strip"><span>5 questions</span><i></i><span>1 guess each</span><i></i><span>reveal at the end</span></div>
         </div>
       </div>
 
@@ -587,9 +588,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
       <div class="dn-eyebrow">The idea</div>
       <h2>Don't find the right answer. Find the answer everyone else will give.</h2>
       <p>
-        Deep Numbers is a daily game built around a simple experiment:
-        everyone receives the same numerical space, everyone makes one
-        irreversible pick, and the crowd determines how far each number travels.
+        Deep Numbers is a five-question daily game about predicting people. Sometimes you may know the factual answer. That does not mean it will score highest. The winning move is to predict what the crowd is most likely to enter.
       </p>
 
       <div class="dn-card-grid">
@@ -610,13 +609,18 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
         </article>
       </div>
 
+      <div class="dn-simple-scale">
+        <div><strong>LOW SCORE</strong><span>You thought differently from the crowd.</span></div>
+        <div><strong>HIGH SCORE</strong><span>You predicted what other people would choose.</span></div>
+      </div>
+
       <a class="dn-back" href="/projects/">Back to Ardie's projects</a>
     </section>
 
     <section class="dn-section" id="dn-support">
       <div class="dn-support">
         <div class="dn-eyebrow">Project support</div>
-        <h2>Keep the rockets flying.</h2>
+        <h2>Keep Deep Numbers moving.</h2>
         <p>
           Deep Numbers is intended to remain free and ad-free. Contributions
           can help cover hosting, domain costs, infrastructure and continued
