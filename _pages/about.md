@@ -172,6 +172,266 @@ social: false
     hyphens: auto !important;
   }
 
+  /* Modern about page */
+  .about-modern {
+    position: relative;
+  }
+
+  .about-intro {
+    position: relative;
+    margin: 0 0 1.35rem;
+    padding: 1.7rem 1.8rem 1.65rem;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 90% 15%, rgba(37, 99, 235, 0.12), transparent 32%),
+      linear-gradient(135deg, var(--surface), var(--surface-strong));
+    box-shadow: 0 16px 38px rgba(0,0,0,0.14);
+  }
+
+  .about-intro::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -90px;
+    bottom: -100px;
+    border: 1px solid rgba(96,165,250,0.18);
+    border-radius: 50%;
+    animation: about-orbit 12s linear infinite;
+  }
+
+  .about-eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .about-intro h2 {
+    max-width: 850px;
+    margin: 0.55rem 0 0.55rem;
+    color: var(--text-strong);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+  }
+
+  .about-intro .about-lead {
+    max-width: 760px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.02rem;
+    line-height: 1.62;
+    text-align: left !important;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    margin: 0 0 1.6rem;
+  }
+
+  .about-stats > div {
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .about-stats > div:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: 0 12px 25px rgba(37,99,235,0.10);
+  }
+
+  .about-stats strong,
+  .about-stats span {
+    display: block;
+  }
+
+  .about-stats strong {
+    color: var(--text-strong);
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  .about-stats span {
+    margin-top: 0.2rem;
+    color: var(--muted);
+    font-size: 0.77rem;
+    line-height: 1.35;
+  }
+
+  .about-explorer {
+    margin: 0 0 1.6rem;
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: var(--surface);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  .about-explorer-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .about-explorer-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .about-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .about-tab {
+    appearance: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.5rem 0.78rem;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.22s ease;
+  }
+
+  .about-tab:hover,
+  .about-tab.is-active {
+    border-color: var(--global-theme-color);
+    background: var(--global-theme-color);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .about-panel-wrap {
+    min-height: 125px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-panel {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+    padding: 1.1rem;
+    border-radius: 11px;
+    background: var(--surface-strong);
+    animation: about-panel-in 0.4s cubic-bezier(0.2,0.7,0.2,1) both;
+  }
+
+  .about-panel[hidden] { display: none; }
+
+  .about-panel-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(96,165,250,0.22);
+    border-radius: 10px;
+    background: rgba(37,99,235,0.08);
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 850;
+  }
+
+  .about-panel h3 {
+    margin: 0 0 0.3rem;
+    color: var(--text-strong);
+    font-size: 1.05rem;
+  }
+
+  .about-panel p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    text-align: left !important;
+  }
+
+  .about-two-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .about-mini-card {
+    padding: 1.25rem 1.3rem;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: var(--surface);
+    transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  }
+
+  .about-mini-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-strong);
+    box-shadow: 0 15px 32px rgba(0,0,0,0.15);
+  }
+
+  .about-card-label {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .about-mini-card h3 {
+    margin: 0 0 0.45rem;
+    color: var(--text-strong);
+    font-size: 1.02rem;
+  }
+
+  .about-mini-card p {
+    margin: 0 0 0.8rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    text-align: left !important;
+  }
+
+  .about-mini-card a {
+    color: var(--accent) !important;
+    font-size: 0.82rem;
+    font-weight: 750;
+  }
+
+  .about-sciaudit-card {
+    background:
+      radial-gradient(circle at 90% 10%, rgba(37,99,235,0.10), transparent 34%),
+      var(--surface);
+  }
+
+  @keyframes about-panel-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @keyframes about-orbit {
+    to { transform: rotate(360deg); }
+  }
+
   .about-support-note {
     margin: 1rem 0 1.4rem;
     text-align: left !important;
@@ -320,6 +580,32 @@ social: false
   @media (min-width: 992px) {
     .bio-text {
       max-width: calc(100% - 430px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-two-column {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-intro {
+      padding: 1.3rem;
+    }
+
+    .about-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-panel {
+      grid-template-columns: 42px minmax(0,1fr);
+      gap: 0.75rem;
+      padding: 0.9rem;
     }
   }
 
@@ -617,64 +903,124 @@ social: false
   }
 </style>
 
-<div class="bio-text" markdown="1">
+<div class="bio-text about-modern" markdown="1">
 
-<p>I study what inhaled toxicants do to the body, and specifically what e-cigarettes do to male reproductive health.</p>
+<div class="about-intro reveal">
+  <div class="about-eyebrow">Pharmaceutical Sciences · Toxicology · Scientific Evidence</div>
+  <h2>Researcher. Scientific writer. Evidence-focused problem solver.</h2>
+  <p class="about-lead">
+    I study how inhaled toxicants affect biological systems, with a focus on
+    e-cigarette exposure, male reproductive health and molecular mechanisms.
+  </p>
+</div>
 
-<p>That means tracing a chain: an aerosol enters the lung, something in it reaches the bloodstream, and somewhere downstream a cell stops working the way it should. My doctoral research follows that chain through mitochondrial dysfunction, disrupted steroidogenesis in Leydig cells, microRNA regulation of testosterone signalling, and changes in blood cells. I also work on what secondhand aerosol exposure does to the lungs.</p>
+<div class="about-stats reveal">
+  <div><strong>{{ paper_count_text }}</strong><span>peer-reviewed papers</span></div>
+  <div><strong>7</strong><span>international journals reviewed</span></div>
+  <div><strong>PhD</strong><span>Pharmaceutical Sciences</span></div>
+  <div><strong>AI + Science</strong><span>building SciAudit AI</span></div>
+</div>
 
-<p>Alongside the thesis, I've been building something of my own. I call it Cellular Signalling as Dynamic Regulatory Circuits, and the argument is that we tend to describe signalling pathways as switches when they behave more like control systems, shaped by timing, phase-separated states, and how a cell integrates stress. Out of that came the redoxostat concept in NRF2–KEAP1 biology. Nobody asked me to write it, which is partly why I wanted to.</p>
+<div class="about-explorer reveal">
+  <div class="about-explorer-heading">
+    <span class="about-eyebrow">Explore my work</span>
+    <p>Select a focus.</p>
+  </div>
 
-{%- assign paper_count = site.data.papers | size -%}
-{%- assign number_words = "zero,one,two,three,four,five,six,seven,eight,nine,ten,eleven,twelve,thirteen,fourteen,fifteen,sixteen,seventeen,eighteen,nineteen,twenty" | split: "," -%}
-{%- if paper_count < number_words.size -%}{%- assign paper_count_text = number_words[paper_count] -%}{%- else -%}{%- assign paper_count_text = paper_count -%}{%- endif %}
+  <div class="about-tabs" role="tablist" aria-label="Research areas">
+    <button class="about-tab is-active" type="button" role="tab" aria-selected="true" data-about-panel="toxicology">Toxicology</button>
+    <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="mechanisms">Mechanisms</button>
+    <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="evidence">Evidence & writing</button>
+  </div>
 
-<p>So far I've published {{ paper_count_text }} peer-reviewed papers. I also review manuscripts for seven international journals, which has taught me as much about writing as writing has.</p>
+  <div class="about-panel-wrap">
+    <div class="about-panel is-active" id="about-panel-toxicology" role="tabpanel">
+      <div class="about-panel-icon">01</div>
+      <div>
+        <h3>Inhaled toxicants</h3>
+        <p>
+          E-cigarette and tobacco exposure, respiratory effects, secondhand
+          aerosol, and implications for human health.
+        </p>
+      </div>
+    </div>
 
-<p class="about-support-note">
-  Some works on this website are independent scholarly projects outside of my doctoral thesis and institutional research. If you find them useful, you may support my work through
-  <a class="about-coffee-button" href="/contact/">
-    <span class="about-coffee-icon">&#9749;</span>
-    <span>Buy Me a Coffee</span>
-  </a>
-</p>
+    <div class="about-panel" id="about-panel-mechanisms" role="tabpanel" hidden>
+      <div class="about-panel-icon">02</div>
+      <div>
+        <h3>Molecular mechanisms</h3>
+        <p>
+          Mitochondrial dysfunction, steroidogenesis, microRNA regulation,
+          testosterone signalling, oxidative stress and cellular responses.
+        </p>
+      </div>
+    </div>
 
-<div class="open-roles">
+    <div class="about-panel" id="about-panel-evidence" role="tabpanel" hidden>
+      <div class="about-panel-icon">03</div>
+      <div>
+        <h3>Evidence & scientific communication</h3>
+        <p>
+          Literature synthesis, critical appraisal, scientific writing,
+          peer review and structured evidence analysis.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-two-column reveal">
+
+  <div class="about-mini-card">
+    <span class="about-card-label">Independent work</span>
+    <h3>Cellular Signalling as Dynamic Regulatory Circuits</h3>
+    <p>
+      A research framework exploring signalling pathways as dynamic control
+      systems rather than simple molecular switches, including the redoxostat
+      concept in NRF2–KEAP1 biology.
+    </p>
+    <a href="/projects/">Explore projects</a>
+  </div>
+
+  <div class="about-mini-card about-sciaudit-card">
+    <span class="about-card-label">Building</span>
+    <h3>SciAudit AI</h3>
+    <p>
+      An early-stage AI-assisted scientific evidence auditing project,
+      initially developed from my own biomedical research workflow.
+    </p>
+    <a href="/sciaudit-ai/">Explore SciAudit AI</a>
+  </div>
+
+</div>
+
+<div class="open-roles reveal">
   <h2 class="home-section-title">Open to roles</h2>
-  <p>I'm looking for roles in research, medical affairs, regulatory science and science communication. Here is what I bring:</p>
-  <ul>
-    <li>Evidence synthesis across toxicology, endocrinology and public health, from systematic reviews to mechanistic reviews</li>
-    <li>Lab work from a human cohort study, including qPCR and transmission electron microscopy</li>
-    <li>Critical appraisal as a peer reviewer for seven international journals</li>
-    <li>Clear writing that turns complex findings into plain language</li>
-  </ul>
+  <p>Research, medical affairs, regulatory science and scientific communication.</p>
   <div class="open-roles-actions">
     <a class="open-roles-link is-primary" href="/contact/">Get in touch</a>
     <a class="open-roles-link" href="/cv/">View CV</a>
   </div>
 </div>
 
-<div class="keyword-box">
-  <div class="keyword-title">Keywords</div>
+<div class="keyword-box reveal">
+  <div class="keyword-title">Focus</div>
   <div class="keyword-list">
     <span>E-cigarette toxicology</span>
     <span>Reproductive toxicology</span>
-    <span>Male reproductive health</span>
     <span>Endocrine disruption</span>
     <span>Mitochondrial dysfunction</span>
-    <span>Oxidative stress</span>
     <span>microRNA regulation</span>
     <span>Molecular toxicology</span>
     <span>Scientific writing</span>
-    <span>Literature review</span>
-    <span>Pharmaceutical sciences</span>
+    <span>Evidence synthesis</span>
   </div>
 </div>
 
 {%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
 {%- if highlight %}
 
-<div class="highlight-study">
+<div class="highlight-study reveal">
   <div class="highlight-label">Highlighted Study</div>
   <h2>{{ highlight.short }}</h2>
   <p class="highlight-citation">
@@ -687,7 +1033,7 @@ social: false
 </div>
 {%- endif %}
 
-<div class="home-section">
+<div class="home-section reveal">
   <div class="home-section-title">Selected Papers</div>
   <div class="selected-papers">
     {%- assign selected_papers = site.data.papers | where: "selected", true -%}
@@ -715,7 +1061,7 @@ social: false
 {%- endcapture -%}
 {%- assign news_items = news_rows | split: "@@" | sort | reverse %}
 
-<div class="home-section">
+<div class="home-section reveal">
   <div class="home-section-title">Latest News</div>
   <ul class="news-list">
     {%- assign news_shown = 0 -%}
@@ -735,6 +1081,7 @@ social: false
 </div>
 
 <div class="social">
+  <div class="contact-icons">{% social_links %}</div><div class="social">
   <div class="contact-icons">{% social_links %}</div>
   <div class="contact-note">
     For academic correspondence, please use the form on the <a href="/contact/">Contact page</a>. Last updated: {{ site.time | date: "%-d %B %Y" }}.
@@ -759,6 +1106,27 @@ social: false
     });
   });
   (function () {
+    var tabs = document.querySelectorAll(".about-tab");
+    var panels = document.querySelectorAll(".about-panel");
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        var key = tab.getAttribute("data-about-panel");
+
+        tabs.forEach(function (item) {
+          var active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        panels.forEach(function (panel) {
+          var active = panel.id === "about-panel-" + key;
+          panel.hidden = !active;
+          panel.classList.toggle("is-active", active);
+        });
+      });
+    });
+
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
       ".bio-text > p, .open-roles, .keyword-box, .highlight-study, .home-section > .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
