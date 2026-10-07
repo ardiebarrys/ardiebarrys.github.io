@@ -247,6 +247,49 @@ nav_order: 3
   </section>
 
   <section class="project-section">
+    <h2 class="project-section-title">AI Research Technology</h2>
+
+    <details class="project-card">
+      <summary>
+        <span class="project-summary-title">SciAudit AI</span>
+        <span class="project-progress">
+          <span class="project-progress-label">Stage:</span>
+          <span class="project-progress-track">
+            <span class="project-progress-fill" style="--progress: 30%;"></span>
+          </span>
+          <span class="project-progress-value">Early</span>
+        </span>
+      </summary>
+
+      <div class="project-card-content">
+        <h2>SciAudit AI</h2>
+
+        <p>
+          An independent, early-stage research technology project developing
+          an AI-assisted scientific evidence auditing workflow for biomedical
+          research.
+        </p>
+
+        <p>
+          The project is initially being developed and tested within my own
+          research workflow, with a focus on literature synthesis, cross-study
+          evidence comparison, identification of unsupported claims and
+          methodological limitations, and structured organization of scientific
+          evidence.
+        </p>
+
+        <ul class="project-list">
+          <li>Biomedical scientific evidence auditing</li>
+          <li>AI-assisted literature synthesis and comparison</li>
+          <li>Evidence provenance, uncertainty and methodological critique</li>
+          <li>Initial broader-release target: approximately 2029, subject to validation and development</li>
+          <li><a href="/sciaudit-ai/">Explore SciAudit AI</a></li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section class="project-section">
     <h2 class="project-section-title">Miscellaneous</h2>
 
     <details class="project-card">
