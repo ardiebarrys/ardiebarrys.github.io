@@ -1135,7 +1135,7 @@ nav_order: 3
           This project brings together my doctoral research on the toxicological effects of e-cigarette exposure, with emphasis on reproductive health, sexual function, Leydig cell steroidogenesis, testosterone signaling, mitochondrial dysfunction, and secondhand aerosol exposure.
         </p>
 
-        <div class="project-story">
+        <section class="project-story">
           <div class="project-story-intro">
             <div>
               <p class="project-story-kicker">Research story</p>
@@ -1228,7 +1228,7 @@ nav_order: 3
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         <ul class="project-paper-list">
           {%- assign project_papers = site.data.papers | where: "project", "thesis" -%}
@@ -1270,7 +1270,7 @@ nav_order: 3
           This independent project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. Its sole objective is to advance scientific understanding, and therefore it does not receive any funding.
         </p>
 
-        <div class="project-story">
+        <section class="project-story">
           <div class="project-story-intro">
             <div>
               <p class="project-story-kicker">Framework story</p>
@@ -1340,7 +1340,7 @@ nav_order: 3
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
         <ul class="project-paper-list">
           {%- assign project_papers = site.data.papers | where: "project", "framework" -%}
@@ -1386,7 +1386,7 @@ nav_order: 3
           The project is initially being developed and tested within my own research workflow, with a focus on literature synthesis, cross-study evidence comparison, identification of unsupported claims and methodological limitations, and structured organization of scientific evidence.
         </p>
 
-        <div class="project-story">
+        <section class="project-story">
           <div class="project-story-intro">
             <div>
               <p class="project-story-kicker">Technology story</p>
@@ -1487,7 +1487,7 @@ nav_order: 3
           This section collects sole-author articles that do not belong to the cellular signaling framework. Thesis-related papers are included here when they were authored solely by me, while coauthored thesis work remains under Doctoral Research.
         </p>
 
-        <div class="project-story">
+        <section class="project-story">
           <div class="project-story-intro">
             <div>
               <p class="project-story-kicker">Independent synthesis</p>
@@ -1548,7 +1548,7 @@ nav_order: 3
               <p><a href="https://doi.org/10.1111/dom.70818">Adipose as a Driver, Not a Bystander</a><br>Diabetes, Obesity and Metabolism · 2026</p>
             </div>
           </div>
-        </div>
+        </section>
 
         <ul class="project-paper-list">
           {%- assign project_papers = site.data.papers | where: "project", "other" -%}
