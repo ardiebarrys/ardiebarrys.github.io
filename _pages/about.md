@@ -1437,6 +1437,14 @@ social: false
   </div>
 </div>
 
+<div class="about-support-note reveal">
+  If you find my research, writing, or open scientific projects useful, you can support my independent work.
+  <a class="about-coffee-button" href="https://buymeacoffee.com/ardiebarrys" target="_blank" rel="noopener noreferrer">
+    <span class="about-coffee-icon" aria-hidden="true">☕</span>
+    Buy Me a Coffee
+  </a>
+</div>
+
 <div class="about-two-column reveal">
 
   <div class="about-mini-card">
