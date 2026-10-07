@@ -1336,7 +1336,7 @@ social: false
     .research-core-label { font-size: .58rem; }
     .research-node { width: min(44%,170px); padding: .65rem; border-radius: 10px; }
     .node-exposure { left: 0; top: 3%; }
-    .node-mechanism { right: 0; top: 36%; }
+    .node-mechanism { right: 0; top: 22%; }
     .node-evidence { left: 0; bottom: 3%; }
     .research-node strong { font-size: .82rem; }
     .research-node small { font-size: .64rem; }
@@ -1361,7 +1361,7 @@ social: false
     .about-stats { grid-template-columns: 1fr; }
     .research-map-stage { min-height: 470px; }
     .research-node { width: 48%; }
-    .node-mechanism { top: 40%; }
+    .node-mechanism { top: 22%; }
   }
 
   @media (prefers-reduced-motion: reduce) {
