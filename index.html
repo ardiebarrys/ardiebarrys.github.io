@@ -1220,6 +1220,112 @@
       opacity: 1 !important;
     }
   }
+
+  /* Mobile layout hardening */
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .post, .page, .container, main, .post-content, .bio-text, .about-modern {
+    width: 100%; max-width: 100% !important; box-sizing: border-box; min-width: 0;
+  }
+  .bio-text { overflow-wrap: anywhere; word-break: normal; }
+  .profile { width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0; }
+  .profile figure { max-width: 100%; box-sizing: border-box; margin-left: auto; margin-right: auto; }
+  .profile figure img { display: block; max-width: 100%; height: auto; box-sizing: border-box; }
+  .profile-info, .profile-info * { max-width: 100%; box-sizing: border-box; }
+  .profile-info { overflow-wrap: anywhere; }
+  .profile-logo-links { width: 100%; min-width: 0; }
+  .profile-logo-links a { width: 100%; min-width: 0; overflow: hidden; }
+  .profile-logo-links img { width: auto; max-width: 100%; height: auto; }
+  .about-intro, .about-explorer, .about-two-column, .research-map, .research-timeline,
+  .open-roles, .keyword-box, .highlight-study, .home-section {
+    width: 100%; max-width: 100%; box-sizing: border-box; min-width: 0;
+  }
+  .about-intro h2, .about-intro .about-lead, .about-panel h3, .about-panel p,
+  .about-mini-card h3, .about-mini-card p, .research-map-head h2, .research-map-detail h3,
+  .research-map-detail p, .timeline-item h3, .timeline-item p, .highlight-study h2,
+  .highlight-study p, .selected-paper-title, .news-text { overflow-wrap: anywhere; }
+
+  @media (max-width: 991.98px) {
+    .bio-text { max-width: 100% !important; }
+    .about-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-two-column { grid-template-columns: 1fr; }
+    .research-map-stage { min-height: 420px; }
+    .research-node { min-width: 0; width: 31%; }
+    .node-exposure { left: 0; top: 8%; }
+    .node-mechanism { right: 0; top: 36%; }
+    .node-evidence { left: 0; bottom: 4%; }
+  }
+
+  @media (max-width: 767.98px) {
+    .post, .page, .container, main { padding-left: .9rem; padding-right: .9rem; }
+    .post-content, .bio-text { padding-left: 0 !important; padding-right: 0 !important; }
+    .profile { margin-bottom: 1.25rem; }
+    .profile figure { width: min(220px, 70vw); }
+    .profile-info, .profile-info p { width: 100%; text-align: left !important; text-align-last: left !important; }
+
+    .about-intro { padding: 1.2rem 1rem; border-radius: 13px; }
+    .about-intro h2 { font-size: clamp(1.55rem, 8vw, 2.15rem); line-height: 1.1; letter-spacing: -.035em; }
+    .about-intro .about-lead { font-size: .93rem; line-height: 1.55; }
+
+    .about-stats { grid-template-columns: 1fr 1fr; gap: .55rem; margin-bottom: 1.15rem; }
+    .about-stats > div { min-width: 0; padding: .8rem .75rem; }
+    .about-stats strong { font-size: 1.05rem; }
+    .about-stats span { font-size: .7rem; }
+
+    .about-explorer { padding: .9rem; border-radius: 13px; }
+    .about-explorer-heading { display: block; margin-bottom: .7rem; }
+    .about-explorer-heading p { margin-top: .25rem; }
+    .about-tabs { display: grid; grid-template-columns: 1fr; gap: .4rem; }
+    .about-tab { width: 100%; min-height: 42px; padding: .58rem .7rem; }
+    .about-panel-wrap { min-height: 0; }
+    .about-panel { grid-template-columns: 38px minmax(0,1fr); gap: .7rem; padding: .9rem; }
+    .about-panel-icon { width: 38px; height: 38px; font-size: .68rem; }
+    .about-panel h3 { font-size: .98rem; }
+    .about-panel p { font-size: .82rem; line-height: 1.5; }
+
+    .about-mini-card { padding: 1rem; }
+    .research-map { padding: 1rem; }
+    .research-map-head { display: block; }
+    .research-map-status { margin-top: .65rem; }
+    .research-map-stage { min-height: 455px; margin-top: .2rem; }
+    .orbit-three { width: min(92vw,330px); height: min(92vw,330px); }
+    .orbit-two { width: min(70vw,250px); height: min(70vw,250px); }
+    .orbit-one { width: min(48vw,170px); height: min(48vw,170px); }
+    .research-core { width: 86px; height: 86px; }
+    .research-core-label { font-size: .58rem; }
+    .research-node { width: min(44%,170px); padding: .65rem; border-radius: 10px; }
+    .node-exposure { left: 0; top: 3%; }
+    .node-mechanism { right: 0; top: 36%; }
+    .node-evidence { left: 0; bottom: 3%; }
+    .research-node strong { font-size: .82rem; }
+    .research-node small { font-size: .64rem; }
+    .research-map-detail { grid-template-columns: 36px minmax(0,1fr); gap: .65rem; padding: .8rem; }
+    .research-detail-index { width: 36px; height: 36px; }
+    .research-map-detail p { font-size: .78rem; }
+
+    .timeline-track { overflow: visible; }
+    .timeline-item { margin-left: 0 !important; padding-left: 1.1rem !important; }
+    .open-roles-actions { display: grid; grid-template-columns: 1fr; }
+    .bio-text a.open-roles-link { width: 100%; box-sizing: border-box; justify-content: center; }
+    .keyword-list { gap: .4rem; }
+    .keyword-list span { max-width: 100%; font-size: .8rem; padding: .38rem .55rem; }
+    .highlight-study { padding: 1rem; }
+    .selected-paper { overflow: hidden; }
+    .news-list li, .news-text { min-width: 0; }
+    .bio-text a.about-coffee-button { margin-left: 0; margin-top: .45rem; }
+  }
+
+  @media (max-width: 420px) {
+    .post, .page, .container, main { padding-left: .7rem; padding-right: .7rem; }
+    .about-stats { grid-template-columns: 1fr; }
+    .research-map-stage { min-height: 470px; }
+    .research-node { width: 48%; }
+    .node-mechanism { top: 40%; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-intro::after, .research-map-status i, .research-orbit, .research-core-ring { animation: none !important; }
+  }
+
 </style> <div class="bio-text about-modern"> <div class="about-intro reveal"> <div class="about-eyebrow">Pharmaceutical Sciences · Toxicology · Scientific Evidence</div> <h2>Researcher. Scientific writer. Evidence-focused problem solver.</h2> <p class="about-lead"> I study how inhaled toxicants affect biological systems, with a focus on e-cigarette exposure, male reproductive health and molecular mechanisms. </p> </div> <div class="about-stats reveal"> <div> <strong>13</strong><span>peer-reviewed papers</span> </div> <div> <strong>7</strong><span>international journals reviewed</span> </div> <div> <strong>PhD</strong><span>Pharmaceutical Sciences</span> </div> <div> <strong>AI + Science</strong><span>building SciAudit AI</span> </div> </div> <div class="about-explorer reveal"> <div class="about-explorer-heading"> <span class="about-eyebrow">Explore my work</span> <p>Select a focus.</p> </div> <div class="about-tabs" role="tablist" aria-label="Research areas"> <button class="about-tab is-active" type="button" role="tab" aria-selected="true" data-about-panel="toxicology">Toxicology</button> <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="mechanisms">Mechanisms</button> <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="evidence">Evidence &amp; writing</button> </div> <div class="about-panel-wrap"> <div class="about-panel is-active" id="about-panel-toxicology" role="tabpanel"> <div class="about-panel-icon">01</div> <div> <h3>Inhaled toxicants</h3> <p> E-cigarette and tobacco exposure, respiratory effects, secondhand aerosol, and implications for human health. </p> </div> </div> <div class="about-panel" id="about-panel-mechanisms" role="tabpanel" hidden=""> <div class="about-panel-icon">02</div> <div> <h3>Molecular mechanisms</h3> <p> Mitochondrial dysfunction, steroidogenesis, microRNA regulation, testosterone signalling, oxidative stress and cellular responses. </p> </div> </div> <div class="about-panel" id="about-panel-evidence" role="tabpanel" hidden=""> <div class="about-panel-icon">03</div> <div> <h3>Evidence &amp; scientific communication</h3> <p> Literature synthesis, critical appraisal, scientific writing, peer review and structured evidence analysis. </p> </div> </div> </div> </div> <div class="about-two-column reveal"> <div class="about-mini-card"> <span class="about-card-label">Independent work</span> <h3>Cellular Signalling as Dynamic Regulatory Circuits</h3> <p> A research framework exploring signalling pathways as dynamic control systems rather than simple molecular switches, including the redoxostat concept in NRF2–KEAP1 biology. </p> <a href="/projects/">Explore projects</a> </div> <div class="about-mini-card about-sciaudit-card"> <span class="about-card-label">Building</span> <h3>SciAudit AI</h3> <p> An early-stage AI-assisted scientific evidence auditing project, initially developed from my own biomedical research workflow. </p> <a href="/sciaudit-ai/">Explore SciAudit AI</a> </div> </div> <div class="research-map reveal" aria-label="Research identity map"> <div class="research-map-head"> <div> <span class="about-eyebrow">Research identity</span> <h2>From exposure → mechanism → evidence</h2> </div> <span class="research-map-status"><i></i> active</span> </div> <div class="research-map-stage"> <div class="research-orbit orbit-one"></div> <div class="research-orbit orbit-two"></div> <div class="research-orbit orbit-three"></div> <button class="research-node node-exposure is-active" type="button" data-node="exposure"> <span class="node-index">01</span> <strong>Exposure</strong> <small>What enters the system?</small> </button> <button class="research-node node-mechanism" type="button" data-node="mechanism"> <span class="node-index">02</span> <strong>Mechanism</strong> <small>What changes biologically?</small> </button> <button class="research-node node-evidence" type="button" data-node="evidence"> <span class="node-index">03</span> <strong>Evidence</strong> <small>How strong is the conclusion?</small> </button> <div class="research-core"> <span class="research-core-ring"></span> <span class="research-core-label">ARDIE<br><b>SCIENCE</b></span> </div> </div> <div class="research-map-detail" aria-live="polite"> <span class="research-detail-index">01</span> <div> <h3>Exposure biology</h3> <p>Inhaled toxicants, tobacco and e-cigarette aerosol, exposure patterns and their implications for biological systems.</p> </div> </div> </div> <div class="research-timeline reveal"> <div class="timeline-head"> <span class="about-eyebrow">Trajectory</span> <span class="timeline-caption">research → synthesis → technology</span> </div> <div class="timeline-track"> <div class="timeline-line"></div> <article class="timeline-item is-current"> <span class="timeline-dot"></span> <span class="timeline-year">2020–2026</span> <h3>Doctoral research</h3> <p>Toxicology, reproductive health, molecular mechanisms and scientific evidence.</p> </article> <article class="timeline-item"> <span class="timeline-dot"></span> <span class="timeline-year">Independent</span> <h3>Framework development</h3> <p>Dynamic regulatory circuits and mechanistic thinking beyond static pathway diagrams.</p> </article> <article class="timeline-item"> <span class="timeline-dot"></span> <span class="timeline-year">2025 →</span> <h3>SciAudit AI</h3> <p>Turning evidence-critical research workflows into an auditable AI-assisted system.</p> </article> </div> </div> <div class="open-roles reveal"> <h2 class="home-section-title">Open to roles</h2> <p>Research, medical affairs, regulatory science and scientific communication.</p> <div class="open-roles-actions"> <a class="open-roles-link is-primary" href="/contact/">Get in touch</a> <a class="open-roles-link" href="/cv/">View CV</a> </div> </div> <div class="keyword-box reveal"> <div class="keyword-title">Focus</div> <div class="keyword-list"> <span>E-cigarette toxicology</span> <span>Reproductive toxicology</span> <span>Endocrine disruption</span> <span>Mitochondrial dysfunction</span> <span>microRNA regulation</span> <span>Molecular toxicology</span> <span>Scientific writing</span> <span>Evidence synthesis</span> </div> </div> <div class="highlight-study reveal"> <div class="highlight-label">Highlighted Study</div> <h2>E-cigarettes and erectile dysfunction</h2> <p class="highlight-citation"> <strong>E-cigarettes and erectile dysfunction: biological mechanisms and research challenges</strong><br> June 2026, <em>International Journal of Impotence Research</em><br> DOI: <a href="https://doi.org/10.1038/s41443-026-01300-0" rel="external nofollow noopener" target="_blank">10.1038/s41443-026-01300-0</a> </p> <p>This review explains how e-cigarette use may affect men's sexual health. E-cigarette aerosols can disturb blood vessel function, hormones, inflammation and other systems involved in erections. The evidence is still early, so stronger long-term studies are needed before we can say whether e-cigarette use directly causes erectile dysfunction.</p> <a href="/publications/">View related publications</a> </div> <div class="home-section reveal"> <div class="home-section-title">Selected Papers</div> <div class="selected-papers"> <a class="selected-paper" href="https://doi.org/10.1016/j.mce.2026.112786" rel="external nofollow noopener" target="_blank"> <span class="selected-paper-journal">Molecular and Cellular Endocrinology, 2026</span> <span class="selected-paper-title">E-cigarette aerosol constituents modulate Leydig cell steroidogenic pathways: Evidence from experimental models</span> </a> <a class="selected-paper" href="https://doi.org/10.1016/j.etap.2026.104994" rel="external nofollow noopener" target="_blank"> <span class="selected-paper-journal">Environmental Toxicology and Pharmacology, 2026</span> <span class="selected-paper-title">MicroRNA-mediated disruption of testosterone signaling associated with e-cigarette exposure</span> </a> <a class="selected-paper" href="https://doi.org/10.1016/j.tox.2025.154339" rel="external nofollow noopener" target="_blank"> <span class="selected-paper-journal">Toxicology, 2025</span> <span class="selected-paper-title">Mitochondrial dysfunction induced by E-cigarettes</span> </a> </div> </div> <div class="home-section reveal"> <div class="home-section-title">Latest News</div> <ul class="news-list"> <li> <span class="news-date">Oct 2026</span> <span class="news-text">Updated the whole website.</span> </li> <li> <span class="news-date">Oct 2026</span> <span class="news-text">Presented my PhD thesis seminar.</span> </li> <li> <span class="news-date">Aug 2026</span> <span class="news-text"><a href="https://doi.org/10.1002/jat.70382" rel="external nofollow noopener" target="_blank">New paper in Journal of Applied Toxicology on how metal-containing nanoparticles from e-cigarettes may harm male reproduction through mitochondria.</a></span> </li> <li> <span class="news-date">Aug 2026</span> <span class="news-text"><a href="https://doi.org/10.1016/j.genrep.2026.102599" rel="external nofollow noopener" target="_blank">New paper in Gene Reports on transcriptional condensates as kinetic filters for gene expression.</a></span> </li> <li> <span class="news-date">Jul 2026</span> <span class="news-text"><a href="https://doi.org/10.1080/15376516.2026.2695155" rel="external nofollow noopener" target="_blank">New paper in Toxicology Mechanisms and Methods asking whether e-cigarette devices could release inhalable micro- and nanoplastics.</a></span> </li> </ul> </div> </div> <div class="social"> <div class="contact-icons"> <a href="mailto:ardiebarrys@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://orcid.org/0009-0009-8994-2793" title="Orcid id" rel="external nofollow noopener" target="_blank"><i class="ai ai-orcid"></i></a> <a href="https://scholar.google.com/citations?user=saKP688AAAAJ" title="Scholar userid" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://www.linkedin.com/in/ardiebarrysailis" title="Linkedin username" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </div> <div class="contact-note"> For academic correspondence, please use the form on the <a href="/contact/">Contact page</a>. Last updated: 8 October 2026. </div> </div> <script>
   var profilePhoto = document.querySelector('.profile figure img');
   if (profilePhoto) {
