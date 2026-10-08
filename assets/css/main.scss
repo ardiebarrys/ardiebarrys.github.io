@@ -652,9 +652,9 @@ header:has(> #navbar) {
   }
 }
 
-/* Keep standalone Deep Numbers content close to the fixed site navigation. */
+/* Deep Numbers starts immediately below the fixed navbar. */
 body.deep-numbers-active .deep-numbers-page {
-  margin-top: -0.75rem !important;
+  margin-top: -2rem !important;
 }
 
 /* Deep Numbers owns the page backdrop, including the fixed footer. */
