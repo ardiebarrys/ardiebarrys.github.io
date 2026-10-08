@@ -399,13 +399,28 @@ header:has(> #navbar) {
   opacity: .85;
 }
 
-#navbar .nav-sciaudit > .nav-link:hover,
-#navbar .nav-sciaudit.active > .nav-link {
+#navbar .nav-sciaudit > .nav-link:hover {
   color: #e9d5ff !important;
   background: linear-gradient(90deg, #c4b5fd 0%, #93c5fd 58%, #67e8f9 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#navbar .nav-sciaudit.active > .nav-link {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: linear-gradient(135deg, rgba(124,58,237,.30), rgba(37,99,235,.16)) !important;
+  border-color: rgba(167,139,250,.42) !important;
+  box-shadow:
+    0 5px 16px rgba(124,58,237,.16),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+#navbar .nav-sciaudit.active > .nav-link::after {
+  color: #93c5fd !important;
+  -webkit-text-fill-color: #93c5fd !important;
+  background: transparent !important;
 }
 
 /* Deep Numbers: product / game identity. */
@@ -604,4 +619,3 @@ body.deep-numbers-active footer.fixed-bottom {
     background: #02030a !important;
     border-top-color: rgba(129,140,248,.12) !important;
   }
-
