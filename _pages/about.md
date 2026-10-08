@@ -2653,6 +2653,17 @@ social: false
     </div>
   </div>
 
+  <div class="bio-text about-modern" markdown="1">
+
+<div class="about-intro reveal">
+  <div class="about-eyebrow">Pharmaceutical Sciences · Toxicology · Scientific Evidence</div>
+  <h2>Researcher. Scientific writer. Evidence-focused problem solver.</h2>
+  <p class="about-lead">
+    I study how inhaled toxicants affect biological systems, with a focus on
+    e-cigarette exposure, male reproductive health and molecular mechanisms.
+  </p>
+</div>
+
 {%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
 {%- if highlight %}
 
@@ -2764,17 +2775,6 @@ social: false
   </figcaption>
 </figure>
 {%- endif %}
-
-  <div class="bio-text about-modern" markdown="1">
-
-<div class="about-intro reveal">
-  <div class="about-eyebrow">Pharmaceutical Sciences · Toxicology · Scientific Evidence</div>
-  <h2>Researcher. Scientific writer. Evidence-focused problem solver.</h2>
-  <p class="about-lead">
-    I study how inhaled toxicants affect biological systems, with a focus on
-    e-cigarette exposure, male reproductive health and molecular mechanisms.
-  </p>
-</div>
 
 <div class="about-explorer reveal">
   <div class="about-explorer-heading">
