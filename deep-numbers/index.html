@@ -31,9 +31,13 @@
   --dn-green: #86efac;
   --dn-purple: #c4b5fd;
   position: relative;
+  display: block;
+  width: calc(100% + 2rem);
+  max-width: none;
   overflow: hidden;
-  margin: -1.5rem 0 0;
-  padding: 0 0 4rem;
+  margin: -1.5rem -1rem 0;
+  padding: 0 1rem 4rem;
+  box-sizing: border-box;
   min-height: 900px;
   color: var(--dn-text);
   background:
@@ -59,8 +63,18 @@
 .dn-shell {
   position: relative;
   z-index: 2;
-  max-width: 1080px;
+  width: 100%;
+  max-width: 1080px !important;
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.deep-numbers-page .dn-deluxe {
+  width: 100%;
+  max-width: 1040px !important;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .dn-nav {
@@ -506,6 +520,7 @@
 
 @media (max-width: 760px) {
   .deep-numbers-page {
+    width: calc(100% + 1rem);
     margin-left: -.5rem;
     margin-right: -.5rem;
     padding-left: .75rem;
