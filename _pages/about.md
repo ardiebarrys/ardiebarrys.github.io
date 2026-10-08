@@ -1376,13 +1376,17 @@ social: false
      ========================================================== */
 
   .profile {
+    float: none !important;
     width: 100%;
     max-width: 1100px;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin: 0 auto 1.35rem !important;
     box-sizing: border-box;
     position: relative;
-    padding: 1.35rem 1.25rem 1.15rem;
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 1.35rem 1.5rem;
+    align-items: center;
+    padding: 1.2rem 1.25rem 1.15rem;
     border: 1px solid rgba(96,165,250,.22);
     border-radius: 20px;
     background:
@@ -1422,7 +1426,8 @@ social: false
   .profile figure {
     position: relative;
     z-index: 2;
-    margin: .7rem auto 1rem !important;
+    grid-row: 1 / span 2;
+    margin: 0 auto !important;
   }
 
   .profile figure img {
@@ -1447,7 +1452,7 @@ social: false
   .profile-info {
     position: relative;
     z-index: 2;
-    padding: .95rem 0 0;
+    padding: 0;
   }
 
   .profile-info p {
@@ -1466,7 +1471,7 @@ social: false
   }
 
   .profile-logo-links {
-    grid-template-columns: repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(4, minmax(0,1fr));
     gap: .55rem;
     margin-top: .55rem;
   }
@@ -1498,6 +1503,7 @@ social: false
 
   @media (max-width: 767.98px) {
     .profile {
+      display: block;
       padding: 1rem .85rem .9rem;
       border-radius: 18px;
     }
@@ -1510,8 +1516,7 @@ social: false
 
     .profile figure {
       width: 150px !important;
-      margin-top: .75rem !important;
-      margin-bottom: .8rem !important;
+      margin: .2rem auto .8rem !important;
     }
 
     .profile figure img {
