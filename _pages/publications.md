@@ -268,12 +268,11 @@ nav_order: 2
           {%- endfor -%}
         </p>
         <p class="pub-venue"><em>{{ p.journal }}</em>, {{ p.year }}. <a href="https://doi.org/{{ p.doi }}">doi.org/{{ p.doi }}</a></p>
-        {%- if p.received or p.revised or p.accepted or p.published %}
-        <p class="pub-timeline" aria-label="Publication timeline">
-          {%- if p.received %}<span><strong>Received</strong> {{ p.received | date: "%-d %B %Y" }}</span>{% endif -%}
-          {%- if p.revised %}<span><strong>Revised</strong> {{ p.revised | date: "%-d %B %Y" }}</span>{% endif -%}
+        {%- if p.accepted or p.volume or p.issue %}
+        <p class="pub-timeline" aria-label="Publication details">
           {%- if p.accepted %}<span><strong>Accepted</strong> {{ p.accepted | date: "%-d %B %Y" }}</span>{% endif -%}
-          {%- if p.published %}<span><strong>Online</strong> {{ p.published | date: "%-d %B %Y" }}</span>{% endif -%}
+          {%- if p.volume %}<span><strong>Volume</strong> {{ p.volume }}</span>{% endif -%}
+          {%- if p.issue %}<span><strong>Issue</strong> {{ p.issue }}</span>{% endif -%}
         </p>
         {%- endif %}
         <div class="pub-tools">
@@ -285,6 +284,10 @@ nav_order: 2
             data-year="{{ p.year }}"
             data-title="{{ p.title | escape }}"
             data-journal="{{ p.journal | escape }}"
+            data-volume="{{ p.volume }}"
+            data-issue="{{ p.issue }}"
+            data-pages="{{ p.pages }}"
+            data-article="{{ p.article }}"
             data-doi="{{ p.doi }}"
           >
             Copy citation
@@ -371,7 +374,16 @@ nav_order: 2
       var d = button.dataset;
       var title = d.title.trim();
       if (!/[.?!]$/.test(title)) title += ".";
-      return apaAuthors(d.authors.split(";")) + " (" + d.year + "). " + title + " " + d.journal + ". https://doi.org/" + d.doi;
+      var journal = d.journal.trim();
+      var volume = d.volume && d.volume !== "undefined" ? d.volume.trim() : "";
+      var issue = d.issue && d.issue !== "undefined" ? d.issue.trim() : "";
+      var pages = d.pages && d.pages !== "undefined" ? d.pages.trim() : "";
+      var article = d.article && d.article !== "undefined" ? d.article.trim() : "";
+      var journalPart = journal + (volume ? ", " + volume : "") + (issue ? "(" + issue + ")" : "");
+      if (pages) journalPart += ", " + pages;
+      else if (article) journalPart += ", Article " + article;
+      journalPart += ".";
+      return apaAuthors(d.authors.split(";")) + " (" + d.year + "). " + title + " " + journalPart + " https://doi.org/" + d.doi;
     }
 
     function copyText(text) {
