@@ -8,6 +8,8 @@
   accepted: 2026-10-06
   published: 2026-10-07
   doi: 10.1016/j.pbiomolbio.2026.101960
+  accepted: 2026-10-06
+  volume: 202
   project: framework
   short: YAP/TAZ as a mechanochemical signal-resolution circuit
   selected: true
@@ -38,6 +40,7 @@
   year: 2026
   published: 2026-08-04
   doi: 10.1016/j.genrep.2026.102599
+  accepted: 2026-08-02
   volume: 45
   article: 102599
   project: framework
@@ -68,6 +71,7 @@
   year: 2026
   published: 2026-06-27
   doi: 10.1007/s00204-026-04486-w
+  accepted: 2026-06-10
   project: other
   short: Ferroptosis in e-cigarette aerosol-associated respiratory injury
   news: New paper in Archives of Toxicology on ferroptosis in e-cigarette aerosol-associated respiratory injury.
@@ -98,7 +102,6 @@
   year: 2026
   published: 2026-04-01
   doi: 10.1111/dom.70818
-  accepted: 2026-04-18
   volume: 28
   issue: 7
   pages: "5508–5526"
@@ -128,6 +131,7 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.mce.2026.112786
+  accepted: 2026-03-13
   volume: 617
   article: 112786
   project: thesis
@@ -148,6 +152,7 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.etap.2026.104994
+  accepted: 2026-03-10
   volume: 124
   article: 104994
   project: thesis
@@ -163,8 +168,8 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.pbiomolbio.2026.03.005
+  accepted: 2026-03-10
   volume: 200
-  issue: 1
   pages: "68–80"
   project: framework
   short: NRF2-KEAP1 as a redox signal-resolution circuit
@@ -184,6 +189,7 @@
   year: 2026
   published: 2026-06-15
   doi: 10.1038/s41443-026-01300-0
+  accepted: 2026-06-02
   project: thesis
   short: E-cigarettes and erectile dysfunction
   news: New review in International Journal of Impotence Research on e-cigarettes and erectile dysfunction.
@@ -215,6 +221,7 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1007/s00204-026-04384-1
+  accepted: 2026-03-19
   volume: 100
   issue: 7
   pages: "2729–2745"
@@ -236,7 +243,6 @@
   published: 2026-03-01
   doi: 10.1007/s10389-026-02740-0
   accepted: 2026-03-04
-  pages: "1–10"
   project: thesis
   short: Secondhand aerosol exposure and lung health
   abstract: |-
