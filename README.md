@@ -6,7 +6,7 @@ Personal academic website of Ardie Barry Sailis, built with Jekyll and the al-fo
 
 1. Open `_data/papers.yml`.
 2. Copy an existing entry and paste it at the top of the list.
-3. Change the details: title, authors, journal, year, published date, DOI, project, short name and abstract.
+3. Change the details: title, authors, journal, year, received/revised/accepted dates when available, published date, DOI, project, short name and abstract.
 4. Commit the change. The site updates in a few minutes.
 
 The paper count, Publications page, CV, CV PDF, Projects page, journal charts and Latest News all update from that one file. If the paper is in a journal that isn't listed yet, also add the journal to `_data/journals.yml`.
