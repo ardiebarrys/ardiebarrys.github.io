@@ -77,19 +77,23 @@ main {
   max-width: 1280px !important;
 }
 
-/* Desktop navbar: center the navigation independently of the page brand. */
+/* Stable desktop geometry: the brand occupies the same column on every page,
+   including About, while the nine navigation items are centered in the space
+   that remains. */
 .navbar > .container {
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
   align-items: center;
   min-width: 0;
 }
 
 .navbar .navbar-brand {
-  flex: 0 0 auto;
+  grid-column: 1;
+  width: 180px;
+  min-width: 0;
+  margin-right: 0;
   white-space: nowrap;
-  width: 218px;
-  margin-right: 0.65rem;
+  overflow: hidden;
 }
 
 .navbar .navbar-brand-placeholder {
@@ -98,22 +102,21 @@ main {
 }
 
 .navbar .navbar-collapse-main {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(1242px, calc(100% - 20px));
+  grid-column: 2;
   min-width: 0;
+  width: 100%;
   display: flex;
   justify-content: center !important;
-  transform: translate(-50%, -50%);
+  overflow: visible;
 }
 
 .navbar .navbar-menu-list {
-  display: grid;
-  grid-template-columns: repeat(9, minmax(0, 1fr));
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  gap: .15rem;
+  width: max-content;
+  max-width: 100%;
   margin: 0 !important;
   padding: 0;
 }
@@ -122,8 +125,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   min-width: 0;
-  width: 100%;
 }
 
 .navbar .nav-link {
@@ -131,49 +134,35 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  max-width: 100%;
+  width: auto;
   min-height: 40px;
-  gap: 0.5rem;
-  margin: 0.08rem 0;
-  padding: 0.48rem 0.88rem !important;
+  gap: .5rem;
+  margin: .08rem 0;
+  padding: .46rem .72rem !important;
   box-sizing: border-box;
   white-space: nowrap;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 500;
   line-height: 1.1;
   border: 1px solid transparent;
   border-radius: 999px;
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
 .navbar .nav-link:hover {
   color: var(--global-hover-color) !important;
-  background: rgba(147, 197, 253, 0.07);
-  border-color: rgba(147, 197, 253, 0.15);
+  background: rgba(147, 197, 253, .07);
+  border-color: rgba(147, 197, 253, .15);
 }
 
 .navbar .nav-item.active .nav-link,
 .navbar .nav-link[aria-current="page"] {
-  color: #ffffff !important;
+  color: #fff !important;
   font-weight: 750 !important;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(37, 99, 235, 0.28),
-      rgba(96, 165, 250, 0.12)
-    );
-  border-color: rgba(147, 197, 253, 0.38);
-  box-shadow:
-    0 0 0 1px rgba(147, 197, 253, 0.04),
-    0 5px 16px rgba(37, 99, 235, 0.16),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(37,99,235,.28), rgba(96,165,250,.12));
+  border-color: rgba(147,197,253,.38);
+  box-shadow: 0 0 0 1px rgba(147,197,253,.04), 0 5px 16px rgba(37,99,235,.16), inset 0 1px 0 rgba(255,255,255,.08);
   transform: translateY(-1px);
 }
 
@@ -186,41 +175,29 @@ main {
   height: 6px;
   border-radius: 50%;
   background: var(--global-theme-color);
-  box-shadow:
-    0 0 0 3px rgba(147, 197, 253, 0.10),
-    0 0 10px rgba(147, 197, 253, 0.48);
+  box-shadow: 0 0 0 3px rgba(147,197,253,.10), 0 0 10px rgba(147,197,253,.48);
 }
 
 .navbar .nav-link .sr-only {
   display: none;
 }
 
-/* Intermediate desktop widths: preserve the same centered architecture. */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .navbar .navbar-collapse-main {
-    width: calc(100% - 10px);
+  .navbar > .container {
+    grid-template-columns: 150px minmax(0, 1fr);
   }
 
   .navbar .navbar-brand {
-    width: 180px;
+    width: 150px;
   }
 
   .navbar .nav-link {
-    min-height: 38px;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    font-size: 0.84rem;
-  }
-
-  .navbar .nav-item.active .nav-link::before,
-  .navbar .nav-link[aria-current="page"]::before {
-    flex-basis: 5px;
-    width: 5px;
-    height: 5px;
+    font-size: .87rem;
+    padding-left: .45rem !important;
+    padding-right: .45rem !important;
   }
 }
 
-/* Collapsed mobile navigation. */
 @media (max-width: 767.98px) {
   .navbar > .container {
     display: flex;
@@ -229,6 +206,7 @@ main {
 
   .navbar .navbar-brand {
     width: auto;
+    min-width: 0;
     margin-right: 0;
   }
 
@@ -237,11 +215,9 @@ main {
   }
 
   .navbar .navbar-collapse-main {
-    position: static;
     flex: 1 1 100%;
     width: 100%;
-    transform: none;
-    justify-content: flex-start !important;
+    display: block;
   }
 
   .navbar .navbar-nav {
@@ -253,17 +229,15 @@ main {
   }
 
   .navbar .nav-item {
-    flex: 0 0 auto;
     width: 100%;
-    min-width: 0;
   }
 
   .navbar .nav-link {
     width: 100%;
     justify-content: flex-start;
     white-space: normal;
-    margin: 0.12rem 0;
-    padding: 0.6rem 0.8rem !important;
+    margin: .12rem 0;
+    padding: .6rem .8rem !important;
   }
 
   .navbar .nav-item.active .nav-link::before,
