@@ -467,7 +467,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-cosmic-atlas-canvas {
     display: block;
     width: 100%;
-    height: 190px;
+    height: 250px;
     min-width: 760px;
     cursor: crosshair;
   }
@@ -529,7 +529,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
     .dn-cosmic-atlas-canvas {
       min-width: 760px;
-      height: 170px;
+      height: 220px;
     }
 
     .dn-cosmic-atlas-scale {
@@ -1963,6 +1963,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   var stars = [];
   var starAnimation = 0;
   var effectAnimation = 0;
+  var atlasAnimation = 0;
+  var atlasGuesses = [];
 
   function seededRandom() {
     seedState = (seedState * 1664525 + 1013904223) >>> 0;
@@ -2240,6 +2242,18 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   var submitting = false;
 
+
+  function queueAtlasGuess(value, score, round) {
+    var colors = ["#60a5fa", "#67e8f9", "#a78bfa", "#f0abfc", "#86efac"];
+    atlasGuesses.push({
+      value: value,
+      score: score,
+      round: round,
+      color: colors[(round - 1) % colors.length],
+      born: performance.now()
+    });
+  }
+
   function submitGuess(event) {
     event.preventDefault();
 
@@ -2274,6 +2288,11 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     feedbackEl.style.color = "#67e8f9";
 
     answers.push({ question: q, value: value });
+    queueAtlasGuess(
+      value,
+      similarity(value, q.b, q.t),
+      index + 1
+    );
     liveTelemetry();
 
     if (index < missionSize - 1) {
@@ -2294,6 +2313,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   function replayMission() {
     answers = [];
+    atlasGuesses = [];
     index = 0;
     submitting = false;
     inputEl.disabled = false;
@@ -2346,173 +2366,500 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     root.style.setProperty("--dn-py", pointerY.toFixed(3));
   }, { passive: true });
 
-  function drawCosmicAtlas() {
+  function drawCosmicAtlas(time) {
     var canvas = document.getElementById("dn-cosmic-canvas");
     if (!canvas) return;
 
     var rect = canvas.getBoundingClientRect();
     var ratio = Math.min(2, window.devicePixelRatio || 1);
     var width = Math.max(760, Math.floor(rect.width));
-    var height = Math.max(170, Math.floor(rect.height));
+    var height = Math.max(220, Math.floor(rect.height));
 
-    canvas.width = Math.floor(width * ratio);
-    canvas.height = Math.floor(height * ratio);
+    if (canvas.width !== Math.floor(width * ratio) || canvas.height !== Math.floor(height * ratio)) {
+      canvas.width = Math.floor(width * ratio);
+      canvas.height = Math.floor(height * ratio);
+    }
 
     var ctx = canvas.getContext("2d");
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
     ctx.clearRect(0, 0, width, height);
 
-    var bg = ctx.createLinearGradient(0, 0, width, 0);
-    bg.addColorStop(0, "#020718");
-    bg.addColorStop(.5, "#0a0820");
-    bg.addColorStop(1, "#03040e");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, width, height);
+    var now = Number(time || performance.now());
+    var pulse = (Math.sin(now * .0022) + 1) / 2;
 
-    // Tiny stars, generated deterministically so the atlas does not flicker on resize.
-    var seed = 7919;
-    function rnd() {
-      seed = (seed * 48271) % 2147483647;
-      return seed / 2147483647;
+    function rgba(hex, alpha) {
+      var value = hex.replace("#", "");
+      var r = parseInt(value.slice(0, 2), 16);
+      var g = parseInt(value.slice(2, 4), 16);
+      var b = parseInt(value.slice(4, 6), 16);
+      return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
     }
 
-    for (var s = 0; s < 115; s += 1) {
-      var sx = rnd() * width;
-      var sy = 16 + rnd() * (height - 42);
-      var sr = rnd() * 1.15 + .25;
-      ctx.fillStyle = "rgba(220,228,255," + (rnd() * .45 + .18) + ")";
-      ctx.fillRect(Math.round(sx), Math.round(sy), sr, sr);
+    function seeded(seed) {
+      var value = Math.sin(seed * 12.9898) * 43758.5453;
+      return value - Math.floor(value);
     }
 
-    var entities = [
-      ["EARTH", "#60a5fa", "#4ade80"],
-      ["MARS", "#fb7185", "#9f3b3b"],
-      ["JUPITER", "#d6a06b", "#e8c39e"],
-      ["SATURN", "#fde68a", "#bfa16c"],
-      ["URANUS", "#67e8f9", "#59cfe0"],
-      ["NEPTUNE", "#93c5fd", "#3154c5"],
-      ["PLUTO", "#ddd6fe", "#9a7f91"],
-      ["KUIPER", "#a78bfa", "#7c3aed"],
-      ["OORT", "#67e8f9", "#4f46e5"],
-      ["MILKY WAY", "#c4b5fd", "#7c3aed"],
-      ["ANDROMEDA", "#bfdbfe", "#60a5fa"],
-      ["DEEP SPACE", "#e9d5ff", "#4c1d95"]
-    ];
-
-    var left = 54;
-    var usable = width - 108;
-    var step = usable / (entities.length - 1);
-    var cy = Math.floor(height * .45);
-
-    var route = ctx.createLinearGradient(left, 0, width - left, 0);
-    route.addColorStop(0, "rgba(96,165,250,.14)");
-    route.addColorStop(.5, "rgba(167,139,250,.65)");
-    route.addColorStop(1, "rgba(103,232,249,.12)");
-
-    ctx.beginPath();
-    ctx.moveTo(left, cy);
-    ctx.lineTo(width - left, cy);
-    ctx.strokeStyle = route;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([2, 10]);
-    ctx.stroke();
-    ctx.setLineDash([]);
-
-    function glow(x, y, color, radius) {
-      var g = ctx.createRadialGradient(x, y, 0, x, y, radius);
-      g.addColorStop(0, color.replace(")", ",.28)").replace("rgb(", "rgba("));
-      g.addColorStop(1, color.replace(")", ",0)").replace("rgb(", "rgba("));
-      ctx.fillStyle = g;
+    function circleGlow(x, y, color, radius, alpha) {
+      var gradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      gradient.addColorStop(0, rgba(color, alpha));
+      gradient.addColorStop(1, rgba(color, 0));
+      ctx.fillStyle = gradient;
       ctx.beginPath();
       ctx.arc(x, y, radius, 0, Math.PI * 2);
       ctx.fill();
     }
 
-    entities.forEach(function (entity, index) {
-      var x = left + step * index;
-      var radius = index === 2 || index === 3 ? 29 : (index > 8 ? 24 : 25);
-      var primary = entity[1];
-      var secondary = entity[2];
-
-      glow(x, cy, primary, radius * 2.1);
-
-      ctx.save();
-      ctx.translate(x, cy);
-
-      if (index === 3) {
-        ctx.strokeStyle = "rgba(253,230,138,.55)";
-        ctx.lineWidth = 4;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, radius + 14, radius * .38, -.08, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-
-      if (index === 9 || index === 10) {
-        ctx.strokeStyle = primary;
-        ctx.globalAlpha = .42;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.ellipse(0, 0, radius + 12, radius * .48, -.18, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.globalAlpha = 1;
-      }
-
-      var planet = ctx.createRadialGradient(-radius * .32, -radius * .35, 2, 0, 0, radius);
-      planet.addColorStop(0, "#ffffff");
-      planet.addColorStop(.12, primary);
-      planet.addColorStop(.72, secondary);
-      planet.addColorStop(1, "#070a18");
-      ctx.fillStyle = planet;
+    function sphere(x, y, radius, light, mid, dark) {
+      var gradient = ctx.createRadialGradient(
+        x - radius * .34, y - radius * .38, radius * .05,
+        x, y, radius
+      );
+      gradient.addColorStop(0, "#ffffff");
+      gradient.addColorStop(.08, light);
+      gradient.addColorStop(.42, mid);
+      gradient.addColorStop(.82, dark);
+      gradient.addColorStop(1, "#02040d");
+      ctx.fillStyle = gradient;
       ctx.beginPath();
-      ctx.arc(0, 0, radius, 0, Math.PI * 2);
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
       ctx.fill();
 
-      if (index < 7) {
-        ctx.globalAlpha = .24;
-        ctx.fillStyle = "#ffffff";
-        for (var band = -1; band <= 1; band += 1) {
-          ctx.fillRect(-radius * .75, band * radius * .22, radius * 1.5, Math.max(1, radius * .055));
-        }
-        ctx.globalAlpha = 1;
-      }
+      var shade = ctx.createRadialGradient(
+        x + radius * .45, y + radius * .45, radius * .05,
+        x + radius * .35, y + radius * .35, radius * 1.05
+      );
+      shade.addColorStop(0, "rgba(0,0,0,.02)");
+      shade.addColorStop(1, "rgba(0,0,0,.62)");
+      ctx.fillStyle = shade;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
 
-      if (index === 7 || index === 8) {
-        for (var rock = 0; rock < 9; rock += 1) {
-          var a = rock * .72;
-          var rr = radius + 9 + (rock % 3) * 5;
-          ctx.fillStyle = primary;
-          ctx.globalAlpha = .45;
-          ctx.fillRect(Math.cos(a) * rr, Math.sin(a) * rr, 2, 2);
-        }
-        ctx.globalAlpha = 1;
-      }
+    var bg = ctx.createLinearGradient(0, 0, width, 0);
+    bg.addColorStop(0, "#020714");
+    bg.addColorStop(.42, "#07091b");
+    bg.addColorStop(.72, "#0b0920");
+    bg.addColorStop(1, "#02040e");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, width, height);
 
-      if (index >= 9) {
-        for (var star = 0; star < 7; star += 1) {
-          var a2 = star * .9;
-          ctx.fillStyle = "#ffffff";
-          ctx.globalAlpha = .7;
-          ctx.fillRect(Math.cos(a2) * (radius + 9), Math.sin(a2) * (radius + 9), 2, 2);
-        }
-        ctx.globalAlpha = 1;
-      }
+    var nebula = ctx.createRadialGradient(width * .68, height * .48, 0, width * .68, height * .48, width * .42);
+    nebula.addColorStop(0, "rgba(124,58,237,.13)");
+    nebula.addColorStop(.42, "rgba(37,99,235,.045)");
+    nebula.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = nebula;
+    ctx.fillRect(0, 0, width, height);
 
+    // Deep-space background field.
+    for (var s = 0; s < 170; s += 1) {
+      var sx = seeded(s + 3) * width;
+      var sy = 12 + seeded(s + 91) * (height - 48);
+      var sr = .35 + seeded(s + 177) * 1.15;
+      var twinkle = .18 + seeded(s + 311) * .55;
+      if (s % 23 === 0) {
+        ctx.fillStyle = "rgba(255,255,255," + (.45 + pulse * .35) + ")";
+      } else {
+        ctx.fillStyle = "rgba(190,205,255," + twinkle + ")";
+      }
+      ctx.beginPath();
+      ctx.arc(sx, sy, sr, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    var labels = [
+      "EARTH", "MOON", "MARS", "JUPITER", "SATURN", "URANUS",
+      "NEPTUNE", "PLUTO", "KUIPER", "OORT", "MILKY WAY", "ANDROMEDA", "DEEP"
+    ];
+    var colors = [
+      "#60a5fa", "#cbd5e1", "#fb7185", "#d6a06b", "#fde68a", "#67e8f9",
+      "#93c5fd", "#ddd6fe", "#a78bfa", "#67e8f9", "#c4b5fd", "#bfdbfe", "#e9d5ff"
+    ];
+
+    var left = 48;
+    var right = width - 48;
+    var step = (right - left) / (labels.length - 1);
+    var cy = Math.floor(height * .47);
+    var planetR = Math.max(16, Math.min(27, step * .31));
+
+    // Route line, with subtle direction arrows.
+    var route = ctx.createLinearGradient(left, 0, right, 0);
+    route.addColorStop(0, "rgba(96,165,250,.22)");
+    route.addColorStop(.35, "rgba(103,232,249,.38)");
+    route.addColorStop(.62, "rgba(167,139,250,.58)");
+    route.addColorStop(1, "rgba(240,171,252,.16)");
+
+    ctx.beginPath();
+    ctx.moveTo(left, cy);
+    ctx.lineTo(right, cy);
+    ctx.strokeStyle = route;
+    ctx.lineWidth = 1.5;
+    ctx.setLineDash([2, 8]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    for (var arrow = 0; arrow < 8; arrow += 1) {
+      var ax = left + (right - left) * (.08 + arrow * .12);
+      ctx.strokeStyle = "rgba(167,139,250,.22)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(ax, cy - 4);
+      ctx.lineTo(ax + 5, cy);
+      ctx.lineTo(ax, cy + 4);
+      ctx.stroke();
+    }
+
+    function drawEarth(x, y, r) {
+      circleGlow(x, y, "#60a5fa", r * 2.3, .20);
+      sphere(x, y, r, "#dbeafe", "#3b82f6", "#123b83");
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * .98, 0, Math.PI * 2);
+      ctx.clip();
+
+      ctx.fillStyle = "#4ade80";
+      [
+        [-.22,-.18,.28,.22], [.08,-.28,.18,.16], [.27,.02,.25,.19],
+        [-.30,.18,.19,.15], [.02,.16,.30,.17]
+      ].forEach(function (land) {
+        ctx.beginPath();
+        ctx.ellipse(
+          x + land[0] * r, y + land[1] * r,
+          land[2] * r, land[3] * r,
+          land[0] * 3, 0, Math.PI * 2
+        );
+        ctx.fill();
+      });
+
+      ctx.fillStyle = "rgba(255,255,255,.26)";
+      ctx.fillRect(x - r, y - r * .16, r * 2, r * .07);
+      ctx.restore();
+    }
+
+    function drawMoon(x, y, r) {
+      circleGlow(x, y, "#cbd5e1", r * 2.0, .11);
+      sphere(x, y, r, "#f8fafc", "#a8b0bd", "#555d6b");
+      for (var c = 0; c < 8; c += 1) {
+        var ca = seeded(c + 42) * Math.PI * 2;
+        var cr = r * (.06 + seeded(c + 82) * .09);
+        var cx = x + Math.cos(ca) * r * .55;
+        var cy2 = y + Math.sin(ca) * r * .55;
+        ctx.fillStyle = "rgba(45,52,65,.35)";
+        ctx.beginPath();
+        ctx.arc(cx, cy2, cr, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function drawMars(x, y, r) {
+      circleGlow(x, y, "#fb7185", r * 2.2, .16);
+      sphere(x, y, r, "#fed7aa", "#d64b43", "#6f211f");
+      ctx.fillStyle = "rgba(83,29,29,.35)";
+      ctx.beginPath();
+      ctx.ellipse(x - r * .28, y + r * .02, r * .18, r * .11, -.5, 0, Math.PI * 2);
+      ctx.ellipse(x + r * .27, y - r * .18, r * .12, r * .08, .4, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "rgba(255,255,255,.65)";
+      ctx.beginPath();
+      ctx.ellipse(x - r * .18, y - r * .78, r * .28, r * .08, -.1, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawJupiter(x, y, r) {
+      circleGlow(x, y, "#d6a06b", r * 2.4, .13);
+      sphere(x, y, r, "#fff7ed", "#c58a61", "#70483d");
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      var bands = [
+        ["rgba(255,245,230,.68)", -.66, .10],
+        ["rgba(112,72,61,.48)", -.48, .09],
+        ["rgba(250,220,191,.65)", -.31, .12],
+        ["rgba(118,76,61,.48)", -.10, .08],
+        ["rgba(245,212,181,.62)", .08, .12],
+        ["rgba(107,69,58,.48)", .30, .09],
+        ["rgba(239,203,169,.58)", .52, .13]
+      ];
+      bands.forEach(function (band) {
+        ctx.fillStyle = band[0];
+        ctx.fillRect(x - r, y + band[1] * r, r * 2, band[2] * r);
+      });
+
+      ctx.fillStyle = "#b85b4a";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .42, y + r * .22, r * .22, r * .12, -.05, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function drawSaturn(x, y, r) {
+      circleGlow(x, y, "#fde68a", r * 2.5, .13);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(-.14);
+      for (var ring = 0; ring < 5; ring += 1) {
+        ctx.beginPath();
+        ctx.ellipse(0, 0, r * (1.48 + ring * .10), r * (.32 + ring * .028), 0, 0, Math.PI * 2);
+        ctx.strokeStyle = [
+          "rgba(255,246,196,.72)", "rgba(191,161,108,.52)",
+          "rgba(255,238,180,.48)", "rgba(137,113,78,.42)", "rgba(255,246,196,.34)"
+        ][ring];
+        ctx.lineWidth = 2.2;
+        ctx.stroke();
+      }
       ctx.restore();
 
+      sphere(x, y, r, "#fff8d8", "#d8b66d", "#80633e");
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * 1.01, 0, Math.PI * 2);
+      ctx.clip();
+      ctx.fillStyle = "rgba(255,250,220,.48)";
+      ctx.fillRect(x - r, y - r * .20, r * 2, r * .10);
+      ctx.fillRect(x - r, y + r * .16, r * 2, r * .08);
+      ctx.restore();
+    }
+
+    function drawIceGiant(x, y, r, primary, secondary, ringed) {
+      circleGlow(x, y, primary, r * 2.3, .12);
+      sphere(x, y, r, "#effcff", primary, secondary);
+      if (ringed) {
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(-.18);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, r * 1.42, r * .35, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(180,240,255,.30)";
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
+    function drawPluto(x, y, r) {
+      circleGlow(x, y, "#ddd6fe", r * 2.2, .09);
+      sphere(x, y, r, "#fff7ed", "#bda7a0", "#62535d");
+      ctx.fillStyle = "rgba(246,231,224,.58)";
+      ctx.beginPath();
+      ctx.ellipse(x - r * .20, y - r * .10, r * .30, r * .18, -.18, 0, Math.PI * 2);
+      ctx.ellipse(x + r * .20, y - r * .03, r * .19, r * .13, .15, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    function drawKuiper(x, y, r) {
+      circleGlow(x, y, "#a78bfa", r * 2.7, .08);
+      ctx.strokeStyle = "rgba(167,139,250,.34)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.ellipse(x, y, r * 1.32, r * .46, -.10, 0, Math.PI * 2);
+      ctx.stroke();
+
+      for (var k = 0; k < 24; k += 1) {
+        var ka = seeded(k + 180) * Math.PI * 2;
+        var kr = r * (1.15 + seeded(k + 210) * .55);
+        ctx.fillStyle = k % 4 === 0 ? "#e9d5ff" : "#8b7bb6";
+        ctx.globalAlpha = .45 + seeded(k + 250) * .45;
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(ka) * kr, y + Math.sin(ka) * kr * .38, 1 + seeded(k + 290) * 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    function drawOort(x, y, r) {
+      circleGlow(x, y, "#67e8f9", r * 3.4, .09);
+      for (var o = 0; o < 48; o += 1) {
+        var oa = seeded(o + 320) * Math.PI * 2;
+        var orr = r * (1.0 + seeded(o + 350) * 1.65);
+        ctx.fillStyle = o % 5 === 0 ? "#ffffff" : "#67e8f9";
+        ctx.globalAlpha = .20 + seeded(o + 380) * .55;
+        ctx.beginPath();
+        ctx.arc(x + Math.cos(oa) * orr, y + Math.sin(oa) * orr * .58, .7 + seeded(o + 410) * 1.1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = "rgba(103,232,249,.16)";
+      ctx.setLineDash([1, 5]);
+      ctx.beginPath();
+      ctx.ellipse(x, y, r * 1.9, r * .8, -.08, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    function drawGalaxy(x, y, r, tilt, core, arm) {
+      circleGlow(x, y, core, r * 2.6, .12);
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(tilt);
+
+      var galaxy = ctx.createRadialGradient(0, 0, 0, 0, 0, r * 1.45);
+      galaxy.addColorStop(0, "#ffffff");
+      galaxy.addColorStop(.12, core);
+      galaxy.addColorStop(.42, rgba(arm, .42));
+      galaxy.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = galaxy;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, r * 1.55, r * .55, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      for (var armIndex = 0; armIndex < 2; armIndex += 1) {
+        ctx.beginPath();
+        for (var p = 0; p <= 60; p += 1) {
+          var t = p / 60 * Math.PI * 1.9 + armIndex * Math.PI;
+          var rr = .16 * r + p / 60 * 1.18 * r;
+          var px = Math.cos(t) * rr;
+          var py = Math.sin(t) * rr * .34;
+          if (p === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        }
+        ctx.strokeStyle = rgba(arm, .42);
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      for (var dust = 0; dust < 26; dust += 1) {
+        var da = seeded(dust + 510) * Math.PI * 2;
+        var dr = r * (.25 + seeded(dust + 540) * 1.1);
+        ctx.fillStyle = dust % 4 === 0 ? "#ffffff" : arm;
+        ctx.globalAlpha = .25 + seeded(dust + 570) * .55;
+        ctx.fillRect(Math.cos(da) * dr, Math.sin(da) * dr * .34, 1.5, 1.5);
+      }
+      ctx.restore();
+      ctx.globalAlpha = 1;
+    }
+
+    function drawDeepField(x, y, r) {
+      circleGlow(x, y, "#e9d5ff", r * 3.0, .10);
+      for (var g = 0; g < 42; g += 1) {
+        var gx = x + (seeded(g + 610) - .5) * r * 3.1;
+        var gy = y + (seeded(g + 640) - .5) * r * 1.55;
+        var gr = .7 + seeded(g + 670) * 2.4;
+        ctx.fillStyle = g % 7 === 0 ? "#ffffff" : (g % 3 === 0 ? "#c4b5fd" : "#60a5fa");
+        ctx.globalAlpha = .18 + seeded(g + 700) * .65;
+        ctx.beginPath();
+        ctx.arc(gx, gy, gr, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    // Draw the physical/cosmic reference points.
+    for (var i = 0; i < labels.length; i += 1) {
+      var x = left + step * i;
+      var r = planetR;
+
+      if (i === 0) drawEarth(x, cy, r);
+      if (i === 1) drawMoon(x, cy, r * .82);
+      if (i === 2) drawMars(x, cy, r * .90);
+      if (i === 3) drawJupiter(x, cy, r * 1.18);
+      if (i === 4) drawSaturn(x, cy, r * 1.08);
+      if (i === 5) drawIceGiant(x, cy, r * .94, "#67e8f9", "#2d9fb3", true);
+      if (i === 6) drawIceGiant(x, cy, r * .94, "#93c5fd", "#2448a8", false);
+      if (i === 7) drawPluto(x, cy, r * .70);
+      if (i === 8) drawKuiper(x, cy, r * .82);
+      if (i === 9) drawOort(x, cy, r * .80);
+      if (i === 10) drawGalaxy(x, cy, r * 1.05, -.22, "#f8e9ff", "#a78bfa");
+      if (i === 11) drawGalaxy(x, cy, r * 1.00, .20, "#eef5ff", "#60a5fa");
+      if (i === 12) drawDeepField(x, cy, r * .90);
+
       ctx.textAlign = "center";
-      ctx.font = "800 9px ui-monospace, SFMono-Regular, Menlo, monospace";
-      ctx.fillStyle = primary;
-      ctx.fillText(entity[0], x, cy + radius + 22);
+      ctx.font = "850 8px ui-monospace, SFMono-Regular, Menlo, monospace";
+      ctx.fillStyle = colors[i];
+      ctx.fillText(labels[i], x, height - 27);
+    }
+
+    // Animated user trajectories. Each submitted number travels from Earth to
+    // a distance determined by its hidden crowd-match score, then remains as a marker.
+    atlasGuesses = atlasGuesses.filter(function (guess) {
+      return now - guess.born < 240000;
+    });
+
+    atlasGuesses.forEach(function (guess, guessIndex) {
+      var age = Math.max(0, now - guess.born);
+      var progress = Math.min(1, age / 1150);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var destinationX = left + (right - left) * Math.max(.08, Math.min(.94, guess.score / 100));
+      var markerX = left + (destinationX - left) * eased;
+      var arc = Math.sin(eased * Math.PI) * (14 + guessIndex * 3);
+      var markerY = cy - arc;
+
+      ctx.beginPath();
+      ctx.moveTo(left, cy);
+      ctx.quadraticCurveTo(
+        (left + destinationX) / 2,
+        cy - (20 + guessIndex * 4),
+        destinationX,
+        cy
+      );
+      ctx.strokeStyle = rgba(guess.color, progress < 1 ? .48 : .22);
+      ctx.lineWidth = progress < 1 ? 2.2 : 1;
+      ctx.setLineDash(progress < 1 ? [3, 5] : [2, 8]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      circleGlow(markerX, markerY, guess.color, 25, .15 + pulse * .05);
+
+      ctx.fillStyle = "#02040d";
+      ctx.strokeStyle = guess.color;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.arc(markerX, markerY, 6 + pulse * 1.2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath();
+      ctx.arc(markerX - 1.7, markerY - 1.8, 1.8, 0, Math.PI * 2);
+      ctx.fill();
+
+      var numberText = String(guess.value);
+      var tagWidth = Math.max(48, numberText.length * 7 + 24);
+      var tagY = markerY - 24 - guessIndex * 2;
+
+      ctx.fillStyle = "rgba(2,4,14,.92)";
+      ctx.strokeStyle = rgba(guess.color, .72);
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.roundRect(markerX - tagWidth / 2, tagY - 10, tagWidth, 19, 7);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.textAlign = "center";
+      ctx.font = "900 8px ui-monospace, SFMono-Regular, Menlo, monospace";
+      ctx.fillStyle = guess.color;
+      ctx.fillText("Q" + guess.round + "  " + numberText + "%", markerX, tagY + 3);
+
+      if (progress < 1) {
+        ctx.beginPath();
+        ctx.arc(markerX, markerY, 11 + pulse * 5, 0, Math.PI * 2);
+        ctx.strokeStyle = rgba(guess.color, .16);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
     });
 
     ctx.textAlign = "left";
     ctx.font = "800 8px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillStyle = "rgba(148,163,184,.6)";
-    ctx.fillText("SOLAR SYSTEM", left, height - 12);
-    ctx.textAlign = "right";
-    ctx.fillText("DEEP UNIVERSE", width - left, height - 12);
-  }
+    ctx.fillStyle = "rgba(148,163,184,.62)";
+    ctx.fillText("SOLAR SYSTEM", left, 14);
 
+    ctx.textAlign = "right";
+    ctx.fillStyle = "rgba(196,181,253,.62)";
+    ctx.fillText("DEEP UNIVERSE", right, 14);
+
+    if (atlasGuesses.length) {
+      ctx.textAlign = "left";
+      ctx.fillStyle = "rgba(103,232,249,.70)";
+      ctx.fillText("YOUR TRAJECTORY", left, height - 8);
+    }
+
+    atlasAnimation = requestAnimationFrame(drawCosmicAtlas);
+  }
   function resizeCanvas(canvas, ctx) {
     var ratio = Math.min(2, window.devicePixelRatio || 1);
     canvas.width = Math.floor(window.innerWidth * ratio);
@@ -2660,8 +3007,10 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
     cancelAnimationFrame(starAnimation);
     cancelAnimationFrame(effectAnimation);
+    cancelAnimationFrame(atlasAnimation);
     starAnimation = requestAnimationFrame(drawStars);
     effectAnimation = requestAnimationFrame(effectLoop);
+    atlasAnimation = requestAnimationFrame(drawCosmicAtlas);
 
     setInterval(function () {
       countdown();
@@ -2669,6 +3018,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       if (todayKey() !== currentDateKey) {
         buildDailyMission(false);
         answers = [];
+        atlasGuesses = [];
         index = 0;
         revealEl.classList.remove("is-open");
         liveTelemetry();
@@ -2682,7 +3032,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     resizeCanvas(starCanvas, starCtx);
     resizeCanvas(effectCanvas, effectCtx);
     makeStars();
-    drawCosmicAtlas();
   });
 
   init();
