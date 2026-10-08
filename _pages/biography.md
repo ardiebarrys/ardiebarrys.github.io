@@ -252,6 +252,8 @@ nav_order: 7
       <span class="bio-focus-tag">E-cigarette exposure</span>
       <span class="bio-focus-tag">Reproductive health</span>
       <span class="bio-focus-tag">Molecular regulation</span>
+      <span class="bio-focus-tag">Mechanotransduction</span>
+      <span class="bio-focus-tag">YAP/TAZ signaling</span>
       <span class="bio-focus-tag">Mitochondrial stress</span>
       <span class="bio-focus-tag">microRNA signaling</span>
     </div>
@@ -276,7 +278,7 @@ nav_order: 7
   </p>
 
   <p>
-    That conviction produced work nobody asked him to do. Biology never runs cleanly from A to B. Something always intervenes, and the question of what intervenes is the one he keeps returning to. His framework, Cellular Signalling as Dynamic Regulatory Circuits, treats canonical pathways as control systems rather than linear cascades, with attention to feedback, timing, phase-separated states, and failures of signal resolution. He wrote it because research should add to what is known, not only to what is required.
+    That conviction produced work nobody asked him to do. Biology never runs cleanly from A to B. Something always intervenes, and the question of what intervenes is the one he keeps returning to. His framework, Cellular Signalling as Dynamic Regulatory Circuits, treats canonical pathways as control systems rather than linear cascades, with attention to feedback, timing, phase-separated states, mechanotransduction, and failures of signal resolution. His work on NRF2–KEAP1 frames redox signaling as a resolution circuit, while his YAP/TAZ review extends the same logic to mechanical signaling, asking how cells sense force, integrate it over time, terminate the response, and restore mechanosensitivity. He wrote these frameworks because research should add to what is known, not only to what is required.
   </p>
 
   <div class="bio-inline-quote">
