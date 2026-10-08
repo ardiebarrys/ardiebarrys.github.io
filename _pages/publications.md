@@ -101,6 +101,25 @@ nav_order: 2
     word-break: break-word;
   }
 
+  .pub-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem .85rem;
+    margin: .55rem 0 0;
+    color: var(--muted);
+    font-size: .78rem;
+    line-height: 1.45;
+  }
+
+  .pub-timeline span {
+    white-space: nowrap;
+  }
+
+  .pub-timeline strong {
+    color: var(--text);
+    font-weight: 650;
+  }
+
   .pub-tools {
     display: flex;
     flex-wrap: wrap;
@@ -249,6 +268,14 @@ nav_order: 2
           {%- endfor -%}
         </p>
         <p class="pub-venue"><em>{{ p.journal }}</em>, {{ p.year }}. <a href="https://doi.org/{{ p.doi }}">doi.org/{{ p.doi }}</a></p>
+        {%- if p.received or p.revised or p.accepted or p.published %}
+        <p class="pub-timeline" aria-label="Publication timeline">
+          {%- if p.received %}<span><strong>Received</strong> {{ p.received | date: "%-d %B %Y" }}</span>{% endif -%}
+          {%- if p.revised %}<span><strong>Revised</strong> {{ p.revised | date: "%-d %B %Y" }}</span>{% endif -%}
+          {%- if p.accepted %}<span><strong>Accepted</strong> {{ p.accepted | date: "%-d %B %Y" }}</span>{% endif -%}
+          {%- if p.published %}<span><strong>Online</strong> {{ p.published | date: "%-d %B %Y" }}</span>{% endif -%}
+        </p>
+        {%- endif %}
         <div class="pub-tools">
           <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abstract-{{ p.doi | slugify }}" hidden>Show abstract</button>
           <button
