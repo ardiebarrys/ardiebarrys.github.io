@@ -20,13 +20,15 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
   --dn-purple: #c4b5fd;
   position: relative;
   display: block;
-  width: calc(100% + 2rem);
-  max-width: none;
+  width: min(1080px, calc(100vw - 40px));
+  max-width: none !important;
+  left: 50%;
   overflow: hidden;
-  margin: -1.5rem -1rem 0;
+  margin: -1.5rem 0 0;
   padding: 0 1rem 4rem;
   box-sizing: border-box;
   min-height: 900px;
+  transform: translateX(-50%);
   color: var(--dn-text);
   background:
     radial-gradient(circle at 50% 0%, rgba(37,99,235,.18), transparent 34rem),
@@ -508,11 +510,13 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
 
 @media (max-width: 760px) {
   .deep-numbers-page {
-    width: calc(100% + 1rem);
-    margin-left: -.5rem;
-    margin-right: -.5rem;
+    width: calc(100vw - 1rem);
+    left: 50%;
+    margin-left: 0;
+    margin-right: 0;
     padding-left: .75rem;
     padding-right: .75rem;
+    transform: translateX(-50%);
   }
   .dn-nav {
     align-items: flex-start;
