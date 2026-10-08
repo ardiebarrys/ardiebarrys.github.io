@@ -134,22 +134,26 @@ main {
   letter-spacing: .01em;
 }
 
-#navbar .navbar-toggler .icon-bar {
+#navbar .navbar-toggler .menu-icon {
+  position: relative;
   display: block;
-  width: 15px;
+  width: 18px;
+  height: 14px;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  border-radius: 2px;
+}
+
+#navbar .navbar-toggler .menu-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
   height: 2px;
-  margin: 0;
   border-radius: 2px;
   background: currentColor;
-}
-
-#navbar .navbar-toggler .top-bar,
-#navbar .navbar-toggler .bottom-bar {
-  transform: none;
-}
-
-#navbar .navbar-toggler .middle-bar {
-  opacity: 1;
+  opacity: 0;
 }
 
 #navbar .navbar-collapse-main {
