@@ -12,7 +12,7 @@ nav_order: 2
   .page,
   .container,
   main {
-    max-width: 1180px !important;
+    max-width: 1280px !important;
   }
 
   .pubs {
