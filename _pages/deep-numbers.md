@@ -9,6 +9,21 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
 <style>
   /*
+   * Deep Numbers is a standalone experience. Hide the generic Jekyll page
+   * heading and description above it, while retaining the game's own title.
+   */
+  body:has(#deep-numbers-app) .post-title,
+  body:has(#deep-numbers-app) .post-description,
+  body:has(#deep-numbers-app) .post-header {
+    display: none !important;
+  }
+
+  body:has(#deep-numbers-app) .post {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /*
    * Deep Numbers is deliberately self-contained.
    * It uses no external game framework, chart library, icon library, or font.
    * The page owns its background, star field, controls, and game state.
