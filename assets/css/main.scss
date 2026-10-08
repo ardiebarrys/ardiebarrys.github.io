@@ -340,6 +340,7 @@ header:has(> #navbar) {
   border: 1px solid transparent;
   border-radius: 12px;
   color: var(--global-text-color) !important;
+  -webkit-text-fill-color: currentColor !important;
   font-size: .95rem;
   font-weight: 550;
   line-height: 1.15;
@@ -451,13 +452,22 @@ header:has(> #navbar) {
   opacity: .8;
 }
 
-#navbar .nav-deep-numbers > .nav-link:hover,
-#navbar .nav-deep-numbers.active > .nav-link {
+#navbar .nav-deep-numbers > .nav-link:hover {
   color: #dbeafe !important;
   background: linear-gradient(90deg, #93c5fd 0%, #818cf8 52%, #c4b5fd 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+#navbar .nav-deep-numbers.active > .nav-link {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: linear-gradient(135deg, rgba(124,58,237,.30), rgba(37,99,235,.16)) !important;
+  border-color: rgba(167,139,250,.42) !important;
+  box-shadow:
+    0 5px 16px rgba(124,58,237,.16),
+    inset 0 1px 0 rgba(255,255,255,.08);
 }
 
 /* Keep the active-state treatment consistent while retaining each project's
@@ -612,6 +622,11 @@ header:has(> #navbar) {
   #navbar .navbar-collapse-main {
     transition: none !important;
   }
+}
+
+/* Keep standalone Deep Numbers content close to the fixed site navigation. */
+body.deep-numbers-active .deep-numbers-page {
+  margin-top: -0.75rem !important;
 }
 
 /* Deep Numbers owns the page backdrop, including the fixed footer. */
