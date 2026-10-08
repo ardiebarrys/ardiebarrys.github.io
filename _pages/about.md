@@ -1159,44 +1159,499 @@ social: false
     font-size: 0.95rem;
   }
 
+  /* ==========================================================
+     HIGHLIGHTED STUDY FIGURE
+     A figure-like translation of the paper's proposed
+     mechanochemical signal-resolution circuit.
+     ========================================================== */
   .highlight-study {
+    position: relative;
     margin: 2rem 0 2.5rem;
-    padding: 1.25rem 1.4rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 10px;
-    background: var(--surface);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
+    padding: 0;
+    border: 1px solid rgba(96,165,250,.25);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 92% 5%, rgba(37,99,235,.13), transparent 28%),
+      linear-gradient(145deg, rgba(10,26,58,.98), rgba(5,15,35,.99));
+    box-shadow:
+      0 20px 48px rgba(0,0,0,.20),
+      inset 0 1px 0 rgba(255,255,255,.045);
+    overflow: hidden;
+  }
+
+  .highlight-study::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #93c5fd, #2563eb, #60a5fa);
+    box-shadow: 0 0 20px rgba(96,165,250,.22);
+    z-index: 4;
+  }
+
+  .highlight-figure-head {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.35rem 1.45rem 1.05rem;
+    border-bottom: 1px solid rgba(96,165,250,.12);
   }
 
   .highlight-label {
-    margin-bottom: 0.4rem;
-    color: var(--global-theme-color);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    margin-bottom: .35rem;
+    color: #93c5fd;
+    font-size: .66rem;
+    font-weight: 850;
+    letter-spacing: .13em;
+    text-transform: uppercase;
   }
 
   .highlight-study h2 {
-    margin: 0 0 0.65rem;
-    font-size: 1.35rem;
-    font-weight: 700;
+    max-width: 820px;
+    margin: 0;
+    color: #e7f0ff;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    font-weight: 750;
+    line-height: 1.12;
+    letter-spacing: -.035em;
   }
 
-  .highlight-study p {
-    margin-bottom: 0.75rem;
+  .highlight-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+    justify-content: flex-end;
+    max-width: 360px;
+  }
+
+  .highlight-meta span,
+  .highlight-meta a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: .28rem .55rem;
+    border: 1px solid rgba(147,197,253,.18);
+    border-radius: 999px;
+    background: rgba(15,35,82,.42);
+    color: #9fb6d9 !important;
+    font-size: .61rem;
+    font-weight: 750;
+    letter-spacing: .04em;
+    text-decoration: none !important;
+  }
+
+  .highlight-meta a:hover {
+    border-color: rgba(147,197,253,.55);
+    color: #e5efff !important;
+  }
+
+  .highlight-figure-intro {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: .85rem 1.45rem 1.1rem;
+    color: #aebfda !important;
+    font-size: .83rem !important;
+    line-height: 1.55 !important;
     text-align: left !important;
-    line-height: 1.55;
   }
 
-  .highlight-citation {
-    padding: 0.75rem 0.85rem;
+  .highlight-circuit {
+    position: relative;
+    margin: 0 1.1rem 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(96,165,250,.15);
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(37,99,235,.10), transparent 35%),
+      rgba(2,10,26,.46);
+    overflow: hidden;
+  }
+
+  .highlight-circuit::before {
+    content: "FIGURE 1 · MECHANOCHEMICAL SIGNAL-RESOLUTION CIRCUIT";
+    display: block;
+    margin-bottom: .85rem;
+    color: rgba(147,197,253,.55);
+    font-size: .56rem;
+    font-weight: 850;
+    letter-spacing: .13em;
+  }
+
+  .highlight-flow-row {
+    display: grid;
+    grid-template-columns: repeat(6,minmax(0,1fr));
+    gap: .45rem;
+    align-items: stretch;
+  }
+
+  .highlight-flow-node {
+    position: relative;
+    min-width: 0;
+    padding: .75rem .65rem .7rem;
+    border: 1px solid rgba(96,165,250,.18);
+    border-radius: 11px;
+    background:
+      linear-gradient(160deg, rgba(20,46,96,.72), rgba(7,20,48,.86));
+    box-shadow: 0 8px 20px rgba(0,0,0,.14);
+    opacity: 0;
+    transform: translateY(10px);
+    animation: highlight-node-in .5s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay: calc(var(--flow-index) * 90ms + 100ms);
+    transition:
+      transform .25s cubic-bezier(.2,.7,.2,1),
+      border-color .25s ease,
+      background .25s ease,
+      box-shadow .25s ease;
+  }
+
+  .highlight-flow-node:hover {
+    transform: translateY(-4px);
+    border-color: rgba(147,197,253,.46);
+    background: linear-gradient(160deg, rgba(30,64,125,.80), rgba(9,26,58,.92));
+    box-shadow: 0 14px 26px rgba(0,0,0,.20);
+  }
+
+  .highlight-flow-node::after {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    right: -.6rem;
+    transform: translateY(-50%);
+    color: rgba(147,197,253,.55);
+    font-size: .85rem;
+    font-weight: 800;
+    z-index: 3;
+  }
+
+  .highlight-flow-node:last-child::after {
+    display: none;
+  }
+
+  .highlight-flow-number {
+    display: inline-grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    margin-bottom: .45rem;
+    border: 1px solid rgba(147,197,253,.23);
     border-radius: 8px;
-    background: var(--surface-strong);
+    background: rgba(37,99,235,.10);
+    color: #93c5fd;
+    font-size: .58rem;
+    font-weight: 900;
+    letter-spacing: .05em;
   }
 
-  .highlight-study a {
-    color: var(--global-theme-color) !important;
+  .highlight-flow-node strong {
+    display: block;
+    color: #deebff;
+    font-size: .72rem;
+    line-height: 1.25;
+  }
+
+  .highlight-flow-node small {
+    display: block;
+    margin-top: .22rem;
+    color: #7f96bc;
+    font-size: .59rem;
+    line-height: 1.38;
+  }
+
+  .highlight-circuit-branches {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    gap: .55rem;
+    margin-top: .65rem;
+  }
+
+  .highlight-branch {
+    position: relative;
+    padding: .7rem .78rem;
+    border: 1px solid rgba(96,165,250,.12);
+    border-radius: 10px;
+    background: rgba(15,35,82,.28);
+  }
+
+  .highlight-branch::before {
+    content: "";
+    position: absolute;
+    top: -.65rem;
+    left: 12%;
+    width: 1px;
+    height: .65rem;
+    background: linear-gradient(180deg, rgba(96,165,250,0), rgba(96,165,250,.28));
+  }
+
+  .highlight-branch-label {
+    display: block;
+    margin-bottom: .18rem;
+    color: #7dd3fc;
+    font-size: .58rem;
+    font-weight: 850;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .highlight-branch strong {
+    display: block;
+    color: #cfe1fc;
+    font-size: .68rem;
+  }
+
+  .highlight-branch p {
+    margin: .2rem 0 0;
+    color: #7e96bb !important;
+    font-size: .61rem !important;
+    line-height: 1.4 !important;
+    text-align: left !important;
+  }
+
+  .highlight-resolution-band {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 34px minmax(0,1fr);
+    gap: .55rem;
+    align-items: stretch;
+    margin: .85rem 0 .2rem;
+  }
+
+  .highlight-state {
+    position: relative;
+    padding: .8rem .85rem;
+    border-radius: 11px;
+    border: 1px solid rgba(96,165,250,.15);
+    background: rgba(15,35,82,.34);
+  }
+
+  .highlight-state.is-adaptive {
+    border-color: rgba(74,222,128,.20);
+    background: linear-gradient(145deg, rgba(20,76,60,.25), rgba(15,35,82,.34));
+  }
+
+  .highlight-state.is-pathological {
+    border-color: rgba(248,113,113,.20);
+    background: linear-gradient(145deg, rgba(94,32,46,.24), rgba(15,35,82,.34));
+  }
+
+  .highlight-state-label {
+    display: block;
+    margin-bottom: .2rem;
+    color: #93c5fd;
+    font-size: .59rem;
+    font-weight: 850;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .highlight-state.is-adaptive .highlight-state-label { color: #86efac; }
+  .highlight-state.is-pathological .highlight-state-label { color: #fca5a5; }
+
+  .highlight-state strong {
+    display: block;
+    color: #dceaff;
+    font-size: .76rem;
+    line-height: 1.3;
+  }
+
+  .highlight-state p {
+    margin: .28rem 0 0 !important;
+    color: #8399bd !important;
+    font-size: .62rem !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+  }
+
+  .highlight-state-arrow {
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    color: #8198bd;
+    font-size: .9rem;
+  }
+
+  .highlight-failure-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .42rem;
+    margin: .7rem 0 0;
+    padding-top: .7rem;
+    border-top: 1px solid rgba(96,165,250,.10);
+  }
+
+  .highlight-failure-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: .32rem .48rem;
+    border: 1px solid rgba(248,113,113,.15);
+    border-radius: 999px;
+    background: rgba(127,29,29,.10);
+    color: #c6a6aa;
+    font-size: .57rem;
     font-weight: 700;
+  }
+
+  .highlight-test {
+    margin: .85rem 1.1rem 0;
+    padding: .8rem .9rem;
+    border: 1px solid rgba(147,197,253,.13);
+    border-radius: 11px;
+    background: rgba(15,35,82,.22);
+  }
+
+  .highlight-test-label {
+    display: block;
+    margin-bottom: .25rem;
+    color: #93c5fd;
+    font-size: .58rem;
+    font-weight: 850;
+    letter-spacing: .11em;
+    text-transform: uppercase;
+  }
+
+  .highlight-test strong {
+    color: #dbeafe;
+    font-size: .72rem;
+    font-weight: 750;
+  }
+
+  .highlight-test p {
+    margin: .22rem 0 0 !important;
+    color: #8399bd !important;
+    font-size: .62rem !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+  }
+
+  .highlight-study-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: .95rem;
+    padding: .9rem 1.1rem 1.05rem;
+    border-top: 1px solid rgba(96,165,250,.10);
+  }
+
+  .highlight-footer-note {
+    color: #7e95ba;
+    font-size: .64rem;
+    line-height: 1.45;
+  }
+
+  .highlight-footer-note strong {
+    color: #a8bfdf;
+  }
+
+  .highlight-related-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    flex: 0 0 auto;
+    padding: .48rem .7rem;
+    border: 1px solid rgba(147,197,253,.22);
+    border-radius: 8px;
+    background: rgba(30,64,125,.22);
+    color: #bfdbfe !important;
+    font-size: .65rem;
+    font-weight: 800;
+    text-decoration: none !important;
+    transition: transform .22s ease, border-color .22s ease, background .22s ease;
+  }
+
+  .highlight-related-link:hover {
+    transform: translateY(-2px);
+    border-color: rgba(147,197,253,.52);
+    background: rgba(37,99,235,.28);
+  }
+
+  @keyframes highlight-node-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .highlight-flow-row {
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      row-gap: .65rem;
+    }
+
+    .highlight-flow-node:nth-child(3)::after {
+      display: none;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .highlight-figure-head {
+      grid-template-columns: 1fr;
+      padding: 1.15rem 1rem .9rem;
+    }
+
+    .highlight-meta {
+      justify-content: flex-start;
+      max-width: none;
+    }
+
+    .highlight-figure-intro {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .highlight-circuit {
+      margin-left: .7rem;
+      margin-right: .7rem;
+      padding: .75rem;
+    }
+
+    .highlight-flow-row {
+      grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .highlight-flow-node::after {
+      display: none;
+    }
+
+    .highlight-circuit-branches {
+      grid-template-columns: 1fr;
+    }
+
+    .highlight-resolution-band {
+      grid-template-columns: 1fr;
+    }
+
+    .highlight-state-arrow {
+      min-height: 22px;
+      transform: rotate(90deg);
+    }
+
+    .highlight-test {
+      margin-left: .7rem;
+      margin-right: .7rem;
+    }
+
+    .highlight-study-footer {
+      align-items: stretch;
+      flex-direction: column;
+      padding-left: .9rem;
+      padding-right: .9rem;
+    }
+
+    .highlight-related-link {
+      justify-content: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .highlight-flow-node {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 
   .social,
@@ -2573,17 +3028,113 @@ social: false
 {%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
 {%- if highlight %}
 
-<div class="highlight-study reveal">
-  <div class="highlight-label">Highlighted Study</div>
-  <h2>{{ highlight.short }}</h2>
-  <p class="highlight-citation">
-    <strong>{{ highlight.title }}</strong><br>
-    {{ highlight.published | date: "%B %Y" }}, <em>{{ highlight.journal }}</em><br>
-    DOI: <a href="https://doi.org/{{ highlight.doi }}">{{ highlight.doi }}</a>
+<figure class="highlight-study reveal" aria-labelledby="highlight-study-title">
+  <div class="highlight-figure-head">
+    <div>
+      <div class="highlight-label">Highlighted Study · Conceptual Framework</div>
+      <h2 id="highlight-study-title">{{ highlight.short }}</h2>
+    </div>
+    <div class="highlight-meta">
+      <span>{{ highlight.published | date: "%B %Y" }}</span>
+      <span><em>{{ highlight.journal }}</em></span>
+      <a href="https://doi.org/{{ highlight.doi }}" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+    </div>
+  </div>
+
+  <p class="highlight-figure-intro">
+    {{ highlight.highlight }}
   </p>
-  <p>{{ highlight.highlight }}</p>
-  <a href="/publications/">View related publications</a>
-</div>
+
+  <div class="highlight-circuit" aria-label="YAP/TAZ mechanochemical signal-resolution circuit figure">
+    <div class="highlight-flow-row">
+      <div class="highlight-flow-node" style="--flow-index:0;">
+        <span class="highlight-flow-number">01</span>
+        <strong>Mechanical inputs</strong>
+        <small>Stiffness · stretch · shear · pressure</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:1;">
+        <span class="highlight-flow-number">02</span>
+        <strong>Distributed sensing</strong>
+        <small>Adhesions · junctions · cytoskeleton · LINC</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:2;">
+        <span class="highlight-flow-number">03</span>
+        <strong>State control</strong>
+        <small>Hippo + parallel inputs regulate YAP/TAZ</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:3;">
+        <span class="highlight-flow-number">04</span>
+        <strong>Nuclear decoding</strong>
+        <small>Transport · TEAD · chromatin · timing</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:4;">
+        <span class="highlight-flow-number">05</span>
+        <strong>Signal termination</strong>
+        <small>Phosphorylation · export · degradation · AMOT</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:5;">
+        <span class="highlight-flow-number">06</span>
+        <strong>Baseline restoration</strong>
+        <small>Adhesion · cytoskeleton · LINC · matrix recovery</small>
+      </div>
+    </div>
+
+    <div class="highlight-circuit-branches">
+      <div class="highlight-branch">
+        <span class="highlight-branch-label">Temporal decoding</span>
+        <strong>Magnitude is not enough</strong>
+        <p>Output depends on signaling duration, nuclear residence, transcriptional context and feedback, not nuclear abundance alone.</p>
+      </div>
+      <div class="highlight-branch">
+        <span class="highlight-branch-label">Resolution logic</span>
+        <strong>Termination is an active program</strong>
+        <p>Force relaxation and reversible trafficking reduce activity, while AMOT stabilization and degradation can consolidate the mechano-OFF state.</p>
+      </div>
+    </div>
+
+    <div class="highlight-resolution-band">
+      <div class="highlight-state is-adaptive">
+        <span class="highlight-state-label">Efficient resolution</span>
+        <strong>Adaptive response → restored mechanosensitivity → homeostasis / regeneration</strong>
+        <p>The signal is decoded, terminated and followed by recovery of the mechanical baseline.</p>
+      </div>
+
+      <div class="highlight-state-arrow" aria-hidden="true">→</div>
+
+      <div class="highlight-state is-pathological">
+        <span class="highlight-state-label">Incomplete resolution</span>
+        <strong>Persistent state → mechanical memory → self-reinforcement → pathology</strong>
+        <p>Residual chromatin, cytoskeletal, nuclear, metabolic or extracellular changes can bias later responses and stabilize dysfunction.</p>
+      </div>
+    </div>
+
+    <div class="highlight-failure-strip" aria-label="Predicted circuit failure modes">
+      <span class="highlight-failure-chip">Abnormal sensing</span>
+      <span class="highlight-failure-chip">Controller failure</span>
+      <span class="highlight-failure-chip">Effector escape</span>
+      <span class="highlight-failure-chip">Resolution failure</span>
+      <span class="highlight-failure-chip">Memory lock</span>
+    </div>
+  </div>
+
+  <div class="highlight-test">
+    <span class="highlight-test-label">Testable prediction</span>
+    <strong>Distinguish activation from resolution by measuring the system after the mechanical input is withdrawn.</strong>
+    <p>
+      The framework predicts that baseline recovery should be evaluated with reversible mechanical perturbations,
+      endogenous live-cell reporters, temporally controlled YAP/TAZ manipulation, and integrated measurements
+      of signaling, transcription, chromatin and mechanics.
+    </p>
+  </div>
+
+  <figcaption class="highlight-study-footer">
+    <span class="highlight-footer-note">
+      <strong>Ardie Barry Sailis.</strong> {{ highlight.title }} ·
+      {{ highlight.journal }} · {{ highlight.year }} · Conceptual signal-resolution circuit framework.
+    </span>
+    <a class="highlight-related-link" href="/publications/">View related publications ↗</a>
+  </figcaption>
+</figure>
 {%- endif %}
 
 <div class="home-section reveal">
