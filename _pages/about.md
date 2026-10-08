@@ -14,8 +14,8 @@ social: false
 <style>
   /* About uses a normal page title so the navbar label remains "About". */
   .post-header {
-    width: min(1100px, 100%);
-    max-width: 1100px !important;
+    width: min(1280px, 100%);
+    max-width: 1280px !important;
     margin: 0 auto 1.15rem !important;
     box-sizing: border-box;
   }
@@ -41,7 +41,7 @@ social: false
      floating profile component. This prevents layout collisions.
      ========================================================== */
   .about-shell {
-    width: min(1100px, 100%);
+    width: min(1280px, 100%);
     margin: 0 auto;
   }
 
@@ -54,7 +54,7 @@ social: false
   .post-header,
   .post > article {
     width: min(1100px, 100%);
-    max-width: 1100px !important;
+    max-width: 1280px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     box-sizing: border-box;
