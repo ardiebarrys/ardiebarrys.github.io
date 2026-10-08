@@ -463,73 +463,446 @@ social: false
     margin-bottom: 0.8rem;
   }
 
+  /* Focus explorer: restrained active state + interactive research workflow. */
   .about-tab {
+    position: relative;
     appearance: none;
-    border: 1px solid var(--line);
+    border: 1px solid rgba(96,165,250,.22);
     border-radius: 999px;
-    padding: 0.5rem 0.78rem;
-    background: transparent;
-    color: var(--muted);
+    padding: 0.5rem 0.82rem;
+    background: rgba(15,35,82,.22);
+    color: #a9bfe9;
     font: inherit;
     font-size: 0.82rem;
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.22s ease;
+    overflow: hidden;
+    isolation: isolate;
+    transition:
+      transform .22s cubic-bezier(.2,.7,.2,1),
+      background-color .22s ease,
+      border-color .22s ease,
+      color .22s ease,
+      box-shadow .22s ease;
   }
 
-  .about-tab:hover,
-  .about-tab.is-active {
-    border-color: var(--global-theme-color);
-    background: var(--global-theme-color);
-    color: #fff;
+  .about-tab::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(100deg, transparent, rgba(147,197,253,.11), transparent);
+    transform: translateX(-110%);
+    transition: transform .55s ease;
+  }
+
+  .about-tab:hover {
+    border-color: rgba(96,165,250,.42);
+    background: rgba(30,64,125,.42);
+    color: #dbeafe;
     transform: translateY(-2px);
   }
 
+  .about-tab:hover::before { transform: translateX(110%); }
+
+  .about-tab.is-active {
+    border-color: rgba(96,165,250,.55);
+    background: linear-gradient(180deg, rgba(37,99,235,.72), rgba(29,78,216,.62));
+    color: #eaf3ff;
+    box-shadow:
+      0 8px 20px rgba(15,23,42,.22),
+      inset 0 1px 0 rgba(255,255,255,.10);
+    transform: translateY(-1px);
+  }
+
+  .about-tab:focus-visible {
+    outline: 2px solid rgba(147,197,253,.72);
+    outline-offset: 3px;
+  }
+
   .about-panel-wrap {
-    min-height: 125px;
+    min-height: 360px;
     position: relative;
     overflow: hidden;
+    border-radius: 12px;
   }
 
   .about-panel {
-    display: grid;
-    grid-template-columns: 52px minmax(0, 1fr);
-    gap: 1rem;
-    align-items: start;
-    padding: 1.1rem;
-    border-radius: 11px;
-    background: var(--surface-strong);
-    animation: about-panel-in 0.4s cubic-bezier(0.2,0.7,0.2,1) both;
+    position: relative;
+    display: block;
+    min-height: 330px;
+    padding: 1.15rem;
+    border: 1px solid rgba(96,165,250,.13);
+    border-radius: 12px;
+    background:
+      radial-gradient(circle at 92% 12%, var(--focus-glow, rgba(37,99,235,.12)), transparent 32%),
+      linear-gradient(145deg, rgba(15,35,82,.72), rgba(7,20,48,.86));
+    overflow: hidden;
+    animation: focus-panel-in .48s cubic-bezier(.2,.7,.2,1) both;
   }
 
   .about-panel[hidden] { display: none; }
 
-  .about-panel-icon {
-    display: flex;
+  .about-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .42;
+    background-image:
+      linear-gradient(rgba(147,197,253,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(147,197,253,.035) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(to bottom, black, transparent 92%);
+  }
+
+  .about-panel::after {
+    content: "";
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    right: -125px;
+    bottom: -130px;
+    border: 1px solid var(--focus-line, rgba(96,165,250,.14));
+    border-radius: 50%;
+    animation: focus-orbit 16s linear infinite;
+    pointer-events: none;
+  }
+
+  .focus-panel-head,
+  .focus-panel-body {
+    position: relative;
+    z-index: 2;
+  }
+
+  .focus-panel-head {
+    display: grid;
+    grid-template-columns: 48px minmax(0,1fr) auto;
+    gap: .8rem;
     align-items: center;
-    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .about-panel-icon {
+    display: grid;
+    place-items: center;
     width: 42px;
     height: 42px;
-    border: 1px solid rgba(96,165,250,0.22);
-    border-radius: 10px;
-    background: rgba(37,99,235,0.08);
-    color: var(--accent);
-    font-size: 0.75rem;
+    border: 1px solid var(--focus-line, rgba(96,165,250,.22));
+    border-radius: 11px;
+    background: var(--focus-chip, rgba(37,99,235,.10));
+    color: var(--focus-accent, #93c5fd);
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .08em;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  }
+
+  .focus-kicker {
+    display: block;
+    margin-bottom: .18rem;
+    color: var(--focus-accent, #93c5fd);
+    font-size: .62rem;
     font-weight: 850;
+    letter-spacing: .12em;
+    text-transform: uppercase;
   }
 
   .about-panel h3 {
-    margin: 0 0 0.3rem;
-    color: var(--text-strong);
-    font-size: 1.05rem;
+    margin: 0;
+    color: #e7f0ff;
+    font-size: 1.08rem;
+    letter-spacing: -.015em;
   }
 
-  .about-panel p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.9rem;
-    line-height: 1.55;
+  .focus-status {
+    display: inline-flex;
+    align-items: center;
+    gap: .38rem;
+    padding: .32rem .52rem;
+    border: 1px solid var(--focus-line, rgba(96,165,250,.18));
+    border-radius: 999px;
+    color: #9fb6df;
+    font-size: .61rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .focus-status::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--focus-accent, #60a5fa);
+    box-shadow: 0 0 0 4px var(--focus-chip, rgba(37,99,235,.10));
+    animation: focus-status-pulse 2s ease-in-out infinite;
+  }
+
+  .focus-intro {
+    max-width: 780px;
+    margin: 0 0 1rem !important;
+    color: #afc1df !important;
+    font-size: .86rem !important;
+    line-height: 1.55 !important;
     text-align: left !important;
+  }
+
+  .focus-workflow {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: .55rem;
+    margin: .9rem 0 1rem;
+    padding: .85rem;
+    border: 1px solid var(--focus-line, rgba(96,165,250,.14));
+    border-radius: 11px;
+    background: rgba(3,12,30,.24);
+    overflow: hidden;
+  }
+
+  .focus-workflow::before {
+    content: "";
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    top: 1.72rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--focus-line, rgba(96,165,250,.24)), transparent);
+  }
+
+  .focus-signal {
+    position: absolute;
+    top: 1.69rem;
+    left: 8%;
+    width: 22%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--focus-accent, #60a5fa), transparent);
+    filter: blur(.15px);
+    animation: focus-signal-flow 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .focus-step {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+    padding: .35rem .25rem .25rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: focus-step-in .42s ease forwards;
+    animation-delay: calc(var(--step-index) * 90ms + 80ms);
+  }
+
+  .focus-step-node {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto .38rem;
+    border: 1px solid var(--focus-line, rgba(96,165,250,.25));
+    border-radius: 50%;
+    background: rgba(7,20,48,.96);
+    color: var(--focus-accent, #93c5fd);
+    font-size: .61rem;
+    font-weight: 900;
+    box-shadow: 0 0 0 5px rgba(37,99,235,.035);
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+  }
+
+  .focus-step:hover .focus-step-node {
+    transform: scale(1.12);
+    background: var(--focus-chip, rgba(37,99,235,.12));
+    box-shadow: 0 0 0 7px var(--focus-chip, rgba(37,99,235,.08));
+  }
+
+  .focus-step strong {
+    display: block;
+    color: #dbeafe;
+    font-size: .72rem;
+    line-height: 1.25;
+  }
+
+  .focus-step small {
+    display: block;
+    margin-top: .18rem;
+    color: #8198be;
+    font-size: .59rem;
+    line-height: 1.35;
+  }
+
+  .focus-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: .55rem;
+  }
+
+  .focus-detail-card {
+    min-width: 0;
+    padding: .72rem .78rem;
+    border: 1px solid rgba(96,165,250,.12);
+    border-radius: 10px;
+    background: rgba(15,35,82,.38);
+    transition: transform .25s ease, border-color .25s ease, background-color .25s ease;
+  }
+
+  .focus-detail-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--focus-line, rgba(96,165,250,.3));
+    background: rgba(30,64,125,.34);
+  }
+
+  .focus-detail-card span {
+    display: block;
+    margin-bottom: .3rem;
+    color: var(--focus-accent, #93c5fd);
+    font-size: .59rem;
+    font-weight: 850;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .focus-detail-card strong {
+    display: block;
+    color: #dbeafe;
+    font-size: .76rem;
+    line-height: 1.35;
+  }
+
+  .focus-detail-card p {
+    margin: .25rem 0 0 !important;
+    color: #8ea5ca !important;
+    font-size: .68rem !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+  }
+
+  .focus-output {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .8rem;
+    margin-top: .65rem;
+    padding: .58rem .72rem;
+    border-left: 2px solid var(--focus-accent, #60a5fa);
+    border-radius: 7px;
+    background: rgba(3,12,30,.25);
+  }
+
+  .focus-output span {
+    color: #7891ba;
+    font-size: .61rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .focus-output strong {
+    color: #dbeafe;
+    font-size: .7rem;
+    font-weight: 750;
+    text-align: right;
+  }
+
+  .focus-panel[data-focus="toxicology"] {
+    --focus-accent: #93c5fd;
+    --focus-line: rgba(96,165,250,.25);
+    --focus-chip: rgba(37,99,235,.11);
+    --focus-glow: rgba(37,99,235,.15);
+  }
+
+  .focus-panel[data-focus="mechanisms"] {
+    --focus-accent: #a5b4fc;
+    --focus-line: rgba(129,140,248,.25);
+    --focus-chip: rgba(79,70,229,.11);
+    --focus-glow: rgba(79,70,229,.14);
+  }
+
+  .focus-panel[data-focus="evidence"] {
+    --focus-accent: #7dd3fc;
+    --focus-line: rgba(56,189,248,.24);
+    --focus-chip: rgba(14,116,144,.12);
+    --focus-glow: rgba(14,116,144,.13);
+  }
+
+  @keyframes focus-panel-in {
+    from { opacity: 0; transform: translateY(10px) scale(.99); filter: blur(2px); }
+    to { opacity: 1; transform: none; filter: none; }
+  }
+
+  @keyframes focus-step-in {
+    to { opacity: 1; transform: none; }
+  }
+
+  @keyframes focus-signal-flow {
+    0% { transform: translateX(-15%); opacity: 0; }
+    15%,70% { opacity: 1; }
+    100% { transform: translateX(330%); opacity: 0; }
+  }
+
+  @keyframes focus-status-pulse {
+    0%,100% { transform: scale(.85); opacity: .55; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  @keyframes focus-orbit {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 767.98px) {
+    .focus-panel-head {
+      grid-template-columns: 42px minmax(0,1fr);
+    }
+
+    .focus-status {
+      grid-column: 2;
+      justify-self: start;
+      margin-top: -.3rem;
+    }
+
+    .focus-workflow {
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: .65rem;
+    }
+
+    .focus-workflow::before {
+      display: none;
+    }
+
+    .focus-signal {
+      display: none;
+    }
+
+    .focus-detail-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .focus-output {
+      display: block;
+    }
+
+    .focus-output strong {
+      display: block;
+      margin-top: .22rem;
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-tab,
+    .about-panel,
+    .focus-step,
+    .focus-signal,
+    .focus-status::before,
+    .about-panel::after {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+      filter: none !important;
+      opacity: 1 !important;
+    }
   }
 
   .about-two-column {
@@ -1525,7 +1898,8 @@ social: false
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .about-intro::after, .research-map-status i, .research-orbit, .research-core-ring { animation: none !important; }
+    .about-intro::after, .research-map-status i, .research-orbit, .research-core-ring,
+    .about-tab::before, .focus-panel::after, .focus-status::before, .focus-step, .focus-signal { animation: none !important; }
   }
 
 
@@ -1824,42 +2198,117 @@ social: false
   </div>
 
   <div class="about-tabs" role="tablist" aria-label="Research areas">
-    <button class="about-tab is-active" type="button" role="tab" aria-selected="true" data-about-panel="toxicology">Toxicology</button>
-    <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="mechanisms">Mechanisms</button>
-    <button class="about-tab" type="button" role="tab" aria-selected="false" data-about-panel="evidence">Evidence & writing</button>
+    <button class="about-tab is-active" id="focus-tab-toxicology" type="button" role="tab" aria-selected="true" aria-controls="about-panel-toxicology" data-about-panel="toxicology">Toxicology</button>
+    <button class="about-tab" id="focus-tab-mechanisms" type="button" role="tab" aria-selected="false" aria-controls="about-panel-mechanisms" data-about-panel="mechanisms">Mechanisms</button>
+    <button class="about-tab" id="focus-tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="about-panel-evidence" data-about-panel="evidence">Evidence & writing</button>
   </div>
 
-  <div class="about-panel-wrap">
-    <div class="about-panel is-active" id="about-panel-toxicology" role="tabpanel">
-      <div class="about-panel-icon">01</div>
-      <div>
-        <h3>Inhaled toxicants</h3>
-        <p>
-          E-cigarette and tobacco exposure, respiratory effects, secondhand
-          aerosol, and implications for human health.
+  <div class="about-panel-wrap" aria-live="polite">
+    <div class="about-panel focus-panel is-active"
+         id="about-panel-toxicology"
+         data-focus="toxicology"
+         role="tabpanel"
+         aria-labelledby="focus-tab-toxicology"
+         style="--step-index: 0;">
+      <div class="focus-panel-head">
+        <div class="about-panel-icon">01</div>
+        <div>
+          <span class="focus-kicker">Exposure → response</span>
+          <h3>Inhaled toxicants</h3>
+        </div>
+        <span class="focus-status">active focus</span>
+      </div>
+      <div class="focus-panel-body">
+        <p class="focus-intro">
+          Exposure is treated as the starting condition: characterize what enters the system,
+          define dose and context, trace biological response, then assess what the evidence
+          supports about human relevance.
         </p>
+        <div class="focus-workflow" aria-label="Toxicology workflow">
+          <span class="focus-signal" aria-hidden="true"></span>
+          <div class="focus-step" style="--step-index:0;"><span class="focus-step-node">01</span><strong>Exposure</strong><small>Aerosol, tobacco, route</small></div>
+          <div class="focus-step" style="--step-index:1;"><span class="focus-step-node">02</span><strong>Dose & context</strong><small>Concentration, timing</small></div>
+          <div class="focus-step" style="--step-index:2;"><span class="focus-step-node">03</span><strong>Biological response</strong><small>Organ, cell, pathway</small></div>
+          <div class="focus-step" style="--step-index:3;"><span class="focus-step-node">04</span><strong>Human relevance</strong><small>Risk, uncertainty</small></div>
+        </div>
+        <div class="focus-detail-grid">
+          <div class="focus-detail-card"><span>Questions</span><strong>What is inhaled?</strong><p>Which constituents, particles, doses and exposure patterns are biologically plausible?</p></div>
+          <div class="focus-detail-card"><span>Evidence</span><strong>What changes?</strong><p>Integrate respiratory, reproductive, metabolic and systemic endpoints across models.</p></div>
+          <div class="focus-detail-card"><span>Decision</span><strong>What can be concluded?</strong><p>Separate exposure plausibility, mechanistic evidence and demonstrated human effects.</p></div>
+        </div>
+        <div class="focus-output"><span>Workflow output</span><strong>Exposure profile → biological endpoint → human-health interpretation</strong></div>
       </div>
     </div>
 
-    <div class="about-panel" id="about-panel-mechanisms" role="tabpanel" hidden>
-      <div class="about-panel-icon">02</div>
-      <div>
-        <h3>Molecular mechanisms</h3>
-        <p>
-          Mitochondrial dysfunction, steroidogenesis, microRNA regulation,
-          testosterone signalling, oxidative stress, mechanotransduction and cellular responses.
+    <div class="about-panel focus-panel"
+         id="about-panel-mechanisms"
+         data-focus="mechanisms"
+         role="tabpanel"
+         aria-labelledby="focus-tab-mechanisms"
+         hidden>
+      <div class="focus-panel-head">
+        <div class="about-panel-icon">02</div>
+        <div>
+          <span class="focus-kicker">Trigger → network → resolution</span>
+          <h3>Molecular mechanisms</h3>
+        </div>
+        <span class="focus-status">active focus</span>
+      </div>
+      <div class="focus-panel-body">
+        <p class="focus-intro">
+          Mechanistic analysis follows the causal chain from an initiating perturbation
+          through molecular nodes and network behavior to adaptation, feedback,
+          termination or persistent dysfunction.
         </p>
+        <div class="focus-workflow" aria-label="Mechanistic biology workflow">
+          <span class="focus-signal" aria-hidden="true"></span>
+          <div class="focus-step" style="--step-index:0;"><span class="focus-step-node">01</span><strong>Trigger</strong><small>Stress, ligand, force</small></div>
+          <div class="focus-step" style="--step-index:1;"><span class="focus-step-node">02</span><strong>Molecular node</strong><small>Receptor, kinase, factor</small></div>
+          <div class="focus-step" style="--step-index:2;"><span class="focus-step-node">03</span><strong>Network response</strong><small>Feedback, crosstalk</small></div>
+          <div class="focus-step" style="--step-index:3;"><span class="focus-step-node">04</span><strong>Resolution</strong><small>Adaptation, persistence</small></div>
+        </div>
+        <div class="focus-detail-grid">
+          <div class="focus-detail-card"><span>Core systems</span><strong>NRF2–KEAP1 · CYP1A1</strong><p>Redox sensing, environmental response and signal-resolution behavior.</p></div>
+          <div class="focus-detail-card"><span>Mechanochemical</span><strong>YAP/TAZ signaling</strong><p>Mechanical inputs, transcriptional control, feedback and cellular state.</p></div>
+          <div class="focus-detail-card"><span>Temporal control</span><strong>Condensates · microRNA</strong><p>Signal timing, translational control and kinetic filtering of responses.</p></div>
+        </div>
+        <div class="focus-output"><span>Workflow output</span><strong>Perturbation → signaling circuit → feedback state → resolved phenotype</strong></div>
       </div>
     </div>
 
-    <div class="about-panel" id="about-panel-evidence" role="tabpanel" hidden>
-      <div class="about-panel-icon">03</div>
-      <div>
-        <h3>Evidence & scientific communication</h3>
-        <p>
-          Literature synthesis, critical appraisal, scientific writing,
-          peer review and structured evidence analysis.
+    <div class="about-panel focus-panel"
+         id="about-panel-evidence"
+         data-focus="evidence"
+         role="tabpanel"
+         aria-labelledby="focus-tab-evidence"
+         hidden>
+      <div class="focus-panel-head">
+        <div class="about-panel-icon">03</div>
+        <div>
+          <span class="focus-kicker">Question → audit → synthesis</span>
+          <h3>Evidence & scientific communication</h3>
+        </div>
+        <span class="focus-status">active focus</span>
+      </div>
+      <div class="focus-panel-body">
+        <p class="focus-intro">
+          Evidence work turns a broad scientific question into an auditable chain:
+          retrieve relevant literature, interrogate study quality, map claims to evidence,
+          synthesize agreement and uncertainty, and communicate the conclusion precisely.
         </p>
+        <div class="focus-workflow" aria-label="Evidence workflow">
+          <span class="focus-signal" aria-hidden="true"></span>
+          <div class="focus-step" style="--step-index:0;"><span class="focus-step-node">01</span><strong>Question</strong><small>Scope the claim</small></div>
+          <div class="focus-step" style="--step-index:1;"><span class="focus-step-node">02</span><strong>Retrieve</strong><small>Find the evidence</small></div>
+          <div class="focus-step" style="--step-index:2;"><span class="focus-step-node">03</span><strong>Appraise</strong><small>Test quality, bias</small></div>
+          <div class="focus-step" style="--step-index:3;"><span class="focus-step-node">04</span><strong>Synthesize</strong><small>Claim + uncertainty</small></div>
+        </div>
+        <div class="focus-detail-grid">
+          <div class="focus-detail-card"><span>Audit</span><strong>Claim → source → support</strong><p>Trace statements to the evidence that actually supports them, not merely related citations.</p></div>
+          <div class="focus-detail-card"><span>Writing</span><strong>Precision over volume</strong><p>Make methods, limitations, effect direction and uncertainty visible to the reader.</p></div>
+          <div class="focus-detail-card"><span>Technology</span><strong>SciAudit AI</strong><p>Explore how evidence-critical research workflows can become structured and auditable.</p></div>
+        </div>
+        <div class="focus-output"><span>Workflow output</span><strong>Question → evidence map → calibrated conclusion → transparent communication</strong></div>
       </div>
     </div>
   </div>
@@ -2135,23 +2584,74 @@ social: false
     var tabs = document.querySelectorAll(".about-tab");
     var panels = document.querySelectorAll(".about-panel");
 
-    tabs.forEach(function (tab) {
+    function restartFocusAnimation(panel) {
+      if (!panel) return;
+      panel.classList.remove("focus-animation-restart");
+      void panel.offsetWidth;
+      panel.classList.add("focus-animation-restart");
+
+      var steps = panel.querySelectorAll(".focus-step");
+      steps.forEach(function (step, index) {
+        step.style.animation = "none";
+        step.style.opacity = "0";
+        step.style.transform = "translateY(8px)";
+        void step.offsetWidth;
+        step.style.animation = "";
+        step.style.setProperty("--step-index", index);
+      });
+    }
+
+    function activateFocus(key, announce) {
+      tabs.forEach(function (item) {
+        var active = item.getAttribute("data-about-panel") === key;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-selected", active ? "true" : "false");
+        item.setAttribute("tabindex", active ? "0" : "-1");
+      });
+
+      panels.forEach(function (panel) {
+        var active = panel.getAttribute("data-focus") === key;
+        panel.hidden = !active;
+        panel.classList.toggle("is-active", active);
+        if (active) {
+          restartFocusAnimation(panel);
+        }
+      });
+
+      if (announce) {
+        var activeTab = document.getElementById("focus-tab-" + key);
+        if (activeTab) activeTab.focus();
+      }
+    }
+
+    tabs.forEach(function (tab, index) {
       tab.addEventListener("click", function () {
-        var key = tab.getAttribute("data-about-panel");
+        activateFocus(tab.getAttribute("data-about-panel"), false);
+      });
 
-        tabs.forEach(function (item) {
-          var active = item === tab;
-          item.classList.toggle("is-active", active);
-          item.setAttribute("aria-selected", active ? "true" : "false");
-        });
+      tab.addEventListener("keydown", function (event) {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft" &&
+            event.key !== "Home" && event.key !== "End") return;
 
-        panels.forEach(function (panel) {
-          var active = panel.id === "about-panel-" + key;
-          panel.hidden = !active;
-          panel.classList.toggle("is-active", active);
-        });
+        event.preventDefault();
+        var next = index;
+        if (event.key === "ArrowRight") next = (index + 1) % tabs.length;
+        if (event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = tabs.length - 1;
+
+        var nextKey = tabs[next].getAttribute("data-about-panel");
+        activateFocus(nextKey, true);
       });
     });
+
+    panels.forEach(function (panel) {
+      panel.addEventListener("animationend", function () {
+        panel.classList.remove("focus-animation-restart");
+      });
+    });
+
+    activateFocus("toxicology", false);
 
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
