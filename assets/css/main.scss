@@ -98,8 +98,29 @@ main {
 -------------------------------------------------------------------------- */
 
 #navbar {
-  position: relative;
-  z-index: 10000;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 10000 !important;
+}
+
+/*
+  The theme normally manages spacing for its own fixed navbar. Because this
+  site uses a custom navbar, provide one explicit spacer instead. This prevents
+  the navbar from appearing several hundred pixels down the page while still
+  keeping page content below the fixed header.
+*/
+header:has(> #navbar) {
+  display: block !important;
+  width: 100% !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #navbar > .navbar-layout {
@@ -195,7 +216,7 @@ main {
   outline-offset: 3px;
 }
 
-/* Three visible bars. These are deliberately independent of icon fonts. */
+/* Three visible bars. */
 #navbar .menu-icon {
   display: flex;
   flex-direction: column;
@@ -218,7 +239,7 @@ main {
     opacity .2s ease;
 }
 
-/* Change the hamburger into an X while open. */
+/* Hamburger -> X while open. */
 #navbar .navbar-menu-toggle:checked + .navbar-menu-trigger .menu-icon > span:nth-child(1) {
   transform: translateY(6px) rotate(45deg);
 }
@@ -236,14 +257,15 @@ main {
   border-color: rgba(147,197,253,.55);
 }
 
-/* Never let the theme's .collapse rule control this menu. */
+/* Custom dropdown panel. Never let the theme's collapse rules control it. */
 #navbar .navbar-collapse-main {
   position: absolute !important;
-  top: calc(100% - 1px);
-  right: 1.2rem;
-  left: auto;
-  width: min(920px, calc(100% - 2.4rem));
-  max-height: calc(100vh - 90px);
+  top: 100% !important;
+  right: 1.2rem !important;
+  left: auto !important;
+  width: min(920px, calc(100% - 2.4rem)) !important;
+  max-height: calc(100vh - 76px);
+  overflow-x: hidden;
   overflow-y: auto;
   z-index: 10002;
 
@@ -260,21 +282,28 @@ main {
     0 0 0 1px rgba(147,197,253,.04),
     inset 0 1px 0 rgba(255,255,255,.06);
 
-  /* Closed by default. */
   display: none !important;
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-6px);
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    visibility 0s linear .18s;
 }
 
-/* The checkbox is the ONLY source of truth for open/closed state. */
+/* Checkbox state is the only open/closed state. */
 #navbar .navbar-menu-toggle:checked ~ .navbar-collapse-main {
   display: block !important;
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+  transition:
+    opacity .18s ease,
+    transform .18s ease,
+    visibility 0s linear 0s;
 }
 
 #navbar .navbar-menu-list {
@@ -366,15 +395,25 @@ main {
   margin: -1px !important;
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%);
   white-space: nowrap !important;
   border: 0 !important;
 }
 
 /* Tablet. */
 @media (max-width: 991.98px) {
+  header:has(> #navbar) {
+    height: 54px !important;
+    min-height: 54px !important;
+  }
+
+  #navbar > .navbar-layout {
+    min-height: 54px;
+  }
+
   #navbar .navbar-collapse-main {
-    right: .8rem;
-    width: min(760px, calc(100% - 1.6rem));
+    right: .8rem !important;
+    width: min(760px, calc(100% - 1.6rem)) !important;
   }
 
   #navbar .navbar-menu-list {
@@ -384,6 +423,11 @@ main {
 
 /* Phone. */
 @media (max-width: 575.98px) {
+  header:has(> #navbar) {
+    height: 54px !important;
+    min-height: 54px !important;
+  }
+
   #navbar > .navbar-layout {
     min-height: 54px;
     padding: .38rem .8rem;
@@ -401,10 +445,10 @@ main {
   }
 
   #navbar .navbar-collapse-main {
-    top: calc(100% - 1px);
-    right: .6rem;
-    width: calc(100% - 1.2rem);
-    max-height: calc(100vh - 78px);
+    top: 100% !important;
+    right: .6rem !important;
+    width: calc(100% - 1.2rem) !important;
+    max-height: calc(100vh - 72px);
     padding: .55rem !important;
     border-radius: 15px;
   }
@@ -439,8 +483,8 @@ main {
   }
 
   #navbar .navbar-collapse-main {
-    right: .45rem;
-    width: calc(100% - .9rem);
+    right: .45rem !important;
+    width: calc(100% - .9rem) !important;
   }
 }
 
