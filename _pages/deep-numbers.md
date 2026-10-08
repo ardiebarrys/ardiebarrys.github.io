@@ -20,8 +20,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis. Support th
   --dn-purple: #c4b5fd;
   position: relative;
   overflow: hidden;
-  margin: -1.5rem -1rem 0;
-  padding: 0 1rem 4rem;
+  margin: -1.5rem 0 0;
+  padding: 0 0 4rem;
   min-height: 900px;
   color: var(--dn-text);
   background:
