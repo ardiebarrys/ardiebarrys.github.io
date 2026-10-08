@@ -294,7 +294,7 @@ nav_order: 7
 
   <h3>Long-Term Direction</h3>
   <p>
-    He wants to do work that is both mechanistically detailed and conceptually integrative, connecting exposure science, cellular stress, endocrine regulation, and systems-level disease models. Good research should explain not just whether something causes harm, but how systems respond, adapt, compensate, and eventually fail.
+    He wants to do work that is both mechanistically detailed and conceptually integrative, connecting exposure science, cellular stress, endocrine regulation, mechanotransduction, and systems-level disease models. Good research should explain not just whether something causes harm, but how systems sense inputs, encode them over time, adapt, compensate, resolve the response, and eventually fail.
   </p>
 
 </article>
