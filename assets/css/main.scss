@@ -401,7 +401,11 @@ header:has(> #navbar) {
 
 #navbar .nav-sciaudit > .nav-link:hover,
 #navbar .nav-sciaudit.active > .nav-link {
-  color: #e0f2fe !important;
+  color: #e9d5ff !important;
+  background: linear-gradient(90deg, #c4b5fd 0%, #93c5fd 58%, #67e8f9 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Deep Numbers: product / game identity. */
@@ -434,7 +438,11 @@ header:has(> #navbar) {
 
 #navbar .nav-deep-numbers > .nav-link:hover,
 #navbar .nav-deep-numbers.active > .nav-link {
-  color: #f0f9ff !important;
+  color: #dbeafe !important;
+  background: linear-gradient(90deg, #93c5fd 0%, #818cf8 52%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Keep the active-state treatment consistent while retaining each project's
@@ -590,3 +598,10 @@ header:has(> #navbar) {
     transition: none !important;
   }
 }
+
+/* Deep Numbers owns the page backdrop, including the fixed footer. */
+body.deep-numbers-active footer.fixed-bottom {
+    background: #02030a !important;
+    border-top-color: rgba(129,140,248,.12) !important;
+  }
+
