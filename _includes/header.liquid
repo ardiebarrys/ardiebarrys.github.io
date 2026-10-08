@@ -1,6 +1,7 @@
 <header>
-  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
-<div class="container navbar-layout">
+  <nav id="navbar" class="navbar navbar-light {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation" aria-label="Primary navigation">
+    <div class="container navbar-layout">
+
       <div class="navbar-brand-slot">
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
           {% if site.title == 'blank' %}
@@ -13,26 +14,39 @@
         </a>
       </div>
 
-      <button
-        class="navbar-toggler collapsed navbar-toggler-main"
-        type="button"
-        data-nav-toggle="navbarNav"
+      <!--
+        Native checkbox control.
+        The mobile navigation does NOT depend on Bootstrap JavaScript.
+        CSS opens/closes the menu from the checked state, so it remains
+        functional even if theme JavaScript changes or fails to load.
+      -->
+      <input
+        type="checkbox"
+        id="navbar-menu-toggle"
+        class="navbar-menu-toggle"
         aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
       >
-        <span class="sr-only">Toggle navigation</span>
-        <span class="menu-icon" aria-hidden="true">
-          <span></span><span></span><span></span>
-        </span>
-      </button>
 
-      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
-        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+      <label
+        for="navbar-menu-toggle"
+        class="navbar-menu-trigger"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="menu-label">Menu</span>
+      </label>
+
+      <div class="navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-menu-list">
           <!-- About is rendered exactly once. -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
             <a class="nav-link" href="{{ '/' | relative_url }}">
-              About
+              {% if page.permalink == '/' %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+              <span>About</span>
               {% if page.permalink == '/' %}<span class="sr-only">(current)</span>{% endif %}
             </a>
           </li>
@@ -49,7 +63,8 @@
                   {%- assign url = p.url -%}
                 {%- endif -%}
                 <a class="nav-link" href="{{ url | relative_url }}">
-                  {{- p.title -}}
+                  {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                  <span>{{- p.title -}}</span>
                   {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
                 </a>
               </li>
@@ -57,39 +72,9 @@
           {% endfor %}
         </ul>
       </div>
+
     </div>
   </nav>
-
-  <script>
-    (function () {
-      var nav = document.getElementById('navbarNav');
-      var toggle = document.querySelector('[data-nav-toggle="navbarNav"]');
-      if (!nav || !toggle) return;
-
-      function setOpen(open) {
-        nav.classList.toggle('show', open);
-        toggle.classList.toggle('collapsed', !open);
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      }
-
-      toggle.addEventListener('click', function (event) {
-        event.preventDefault();
-        setOpen(!nav.classList.contains('show'));
-      });
-
-      nav.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () { setOpen(false); });
-      });
-
-      document.addEventListener('click', function (event) {
-        if (!toggle.contains(event.target) && !nav.contains(event.target)) setOpen(false);
-      });
-
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') setOpen(false);
-      });
-    })();
-  </script>
 
   {% if site.enable_progressbar %}
     <progress id="progress" value="0">
