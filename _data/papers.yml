@@ -38,6 +38,8 @@
   year: 2026
   published: 2026-08-04
   doi: 10.1016/j.genrep.2026.102599
+  volume: 45
+  article: 102599
   project: framework
   short: Transcriptional condensates as kinetic filters
   news: New paper in Gene Reports on transcriptional condensates as kinetic filters for gene expression.
@@ -51,6 +53,8 @@
   year: 2026
   published: 2026-08-05
   doi: 10.1002/jat.70382
+  accepted: 2026-07-28
+  pages: "1–22"
   project: other
   short: E-cigarette metals and male reproductive mitochondria
   news: New paper in Journal of Applied Toxicology on how metal-containing nanoparticles from e-cigarettes may harm male reproduction through mitochondria.
@@ -77,6 +81,9 @@
   year: 2026
   published: 2026-07-06
   doi: 10.1080/15376516.2026.2695155
+  volume: 36
+  issue: 8
+  pages: "1305–1324"
   project: other
   short: E-cigarette devices and inhalable micro- and nanoplastics
   news: New paper in Toxicology Mechanisms and Methods asking whether e-cigarette devices could release inhalable micro- and nanoplastics.
@@ -91,6 +98,10 @@
   year: 2026
   published: 2026-04-01
   doi: 10.1111/dom.70818
+  accepted: 2026-04-18
+  volume: 28
+  issue: 7
+  pages: "5508–5526"
   project: other
   short: Adipose-driven erectile dysfunction
   news: "New paper in Diabetes, Obesity and Metabolism on obesity-related erectile dysfunction."
@@ -117,6 +128,8 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.mce.2026.112786
+  volume: 617
+  article: 112786
   project: thesis
   short: Leydig cell steroidogenic pathways
   selected: true
@@ -135,6 +148,8 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.etap.2026.104994
+  volume: 124
+  article: 104994
   project: thesis
   short: MicroRNA-mediated testosterone signaling
   selected: true
@@ -148,6 +163,9 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1016/j.pbiomolbio.2026.03.005
+  volume: 200
+  issue: 1
+  pages: "68–80"
   project: framework
   short: NRF2-KEAP1 as a redox signal-resolution circuit
   abstract: |-
@@ -181,6 +199,10 @@
   year: 2026
   published: 2026-04-01
   doi: 10.1080/15376516.2026.2658739
+  accepted: 2026-04-07
+  volume: 36
+  issue: 7
+  pages: "1003–1028"
   project: other
   short: E-cigarettes as metabolic disruptors
   abstract: |-
@@ -193,6 +215,9 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1007/s00204-026-04384-1
+  volume: 100
+  issue: 7
+  pages: "2729–2745"
   project: framework
   short: CYP1A1 as an environmental sensing feedback circuit
   abstract: |-
@@ -210,6 +235,8 @@
   year: 2026
   published: 2026-03-01
   doi: 10.1007/s10389-026-02740-0
+  accepted: 2026-03-04
+  pages: "1–10"
   project: thesis
   short: Secondhand aerosol exposure and lung health
   abstract: |-
@@ -233,6 +260,9 @@
   year: 2025
   published: 2025-11-01
   doi: 10.1016/j.tox.2025.154339
+  accepted: 2025-11-13
+  volume: 519
+  article: 154339
   project: thesis
   short: Mitochondrial dysfunction
   selected: true
