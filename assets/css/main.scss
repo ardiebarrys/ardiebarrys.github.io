@@ -76,6 +76,16 @@ main {
   max-width: 1280px !important;
 }
 
+/*
+ * The custom fixed navbar already has a real header spacer. The theme's
+ * default Bootstrap-style mt-5 on <main> adds a second vertical offset,
+ * creating the large blank band below the navbar on every page.
+ */
+main.mt-5,
+main.container.mt-5 {
+  margin-top: 0 !important;
+}
+
 /* --------------------------------------------------------------------------
    Navigation
    --------------------------------------------------------------------------
