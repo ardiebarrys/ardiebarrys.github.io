@@ -87,7 +87,13 @@ main {
 .navbar .navbar-brand {
   flex: 0 0 auto;
   white-space: nowrap;
+  width: 218px;
   margin-right: 0.65rem;
+}
+
+.navbar .navbar-brand-placeholder {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .navbar .navbar-collapse-main {
@@ -109,9 +115,9 @@ main {
 }
 
 .navbar .nav-item {
-  flex: 0 0 96px;
-  width: 96px;
-  min-width: 96px;
+  flex: 0 0 104px;
+  width: 104px;
+  min-width: 104px;
 }
 
 .navbar .nav-link {
@@ -119,10 +125,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 96px;
+  width: 104px;
   min-height: 36px;
   margin: 0.12rem 0;
-  padding: 0.4rem 0.2rem !important;
+  padding: 0.4rem 0.45rem !important;
   box-sizing: border-box;
   white-space: nowrap;
   text-align: center;
@@ -217,7 +223,12 @@ main {
   }
 
   .navbar .navbar-brand {
+    width: auto;
     margin-right: 0;
+  }
+
+  .navbar .navbar-brand-placeholder {
+    display: none;
   }
 
   .navbar .navbar-collapse-main {
