@@ -115,9 +115,9 @@ main {
 }
 
 .navbar .nav-item {
-  flex: 0 0 104px;
-  width: 104px;
-  min-width: 104px;
+  flex: 0 0 110px;
+  width: 110px;
+  min-width: 110px;
 }
 
 .navbar .nav-link {
@@ -125,7 +125,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 104px;
+  width: 110px;
   min-height: 36px;
   margin: 0.12rem 0;
   padding: 0.4rem 0.45rem !important;
@@ -152,6 +152,7 @@ main {
 
 .navbar .nav-item.active .nav-link,
 .navbar .nav-link[aria-current="page"] {
+  padding-left: 1.05rem !important;
   color: #ffffff !important;
   font-weight: 700 !important;
   background:
