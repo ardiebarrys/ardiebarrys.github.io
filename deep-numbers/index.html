@@ -2225,33 +2225,237 @@
     }
 
     function drawEarth(x, y, r) {
-      circleGlow(x, y, "#60a5fa", r * 2.3, .20);
-      sphere(x, y, r, "#dbeafe", "#3b82f6", "#123b83");
+      // Stylized Earth based on the visual components emphasized in NASA
+      // global Earth imagery: blue ocean, recognizable continental masses,
+      // cloud systems, polar ice, atmospheric limb, and city-light hints.
+      circleGlow(x, y, "#60a5fa", r * 2.8, .24);
+
+      // Atmospheric halo.
+      var atmosphere = ctx.createRadialGradient(
+        x - r * .20, y - r * .25, r * .78,
+        x, y, r * 1.30
+      );
+      atmosphere.addColorStop(0, "rgba(103,232,249,0)");
+      atmosphere.addColorStop(.82, "rgba(96,165,250,.08)");
+      atmosphere.addColorStop(.94, "rgba(125,211,252,.34)");
+      atmosphere.addColorStop(1, "rgba(96,165,250,0)");
+      ctx.fillStyle = atmosphere;
+      ctx.beginPath();
+      ctx.arc(x, y, r * 1.30, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Ocean sphere.
+      sphere(x, y, r, "#dbeafe", "#1677d2", "#062b68");
 
       ctx.save();
       ctx.beginPath();
-      ctx.arc(x, y, r * .98, 0, Math.PI * 2);
+      ctx.arc(x, y, r * .985, 0, Math.PI * 2);
       ctx.clip();
 
-      ctx.fillStyle = "#4ade80";
-      [
-        [-.22,-.18,.28,.22], [.08,-.28,.18,.16], [.27,.02,.25,.19],
-        [-.30,.18,.19,.15], [.02,.16,.30,.17]
-      ].forEach(function (land) {
+      // Ocean-depth shading and subtle equatorial band.
+      var oceanShade = ctx.createLinearGradient(x - r, y - r, x + r, y + r);
+      oceanShade.addColorStop(0, "rgba(96,165,250,.08)");
+      oceanShade.addColorStop(.52, "rgba(14,116,144,.05)");
+      oceanShade.addColorStop(1, "rgba(2,18,55,.38)");
+      ctx.fillStyle = oceanShade;
+      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
+      // Approximate continental silhouettes. These are intentionally
+      // recognizable at atlas scale rather than cartographic boundaries.
+      function land(points, fill, opacity) {
         ctx.beginPath();
-        ctx.ellipse(
-          x + land[0] * r, y + land[1] * r,
-          land[2] * r, land[3] * r,
-          land[0] * 3, 0, Math.PI * 2
-        );
+        points.forEach(function (p, i) {
+          var px = x + p[0] * r;
+          var py = y + p[1] * r;
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        });
+        ctx.closePath();
+        ctx.fillStyle = fill;
+        ctx.globalAlpha = opacity;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+
+      var landBase = "#43b96a";
+      var landLight = "#74d47b";
+      var landDark = "#24734d";
+      var desert = "#c9a65d";
+
+      // North America.
+      land([
+        [-.88,-.30],[-.75,-.55],[-.50,-.62],[-.31,-.50],[-.20,-.33],
+        [-.34,-.18],[-.46,-.12],[-.48,.02],[-.65,.05],[-.73,-.10],
+        [-.87,-.14]
+      ], landBase, .95);
+
+      // Greenland.
+      land([
+        [-.18,-.76],[.02,-.83],[.16,-.70],[.10,-.54],[-.08,-.50],[-.20,-.61]
+      ], "#eaf6ff", .95);
+
+      // Central America.
+      land([
+        [-.33,.02],[-.24,.08],[-.18,.17],[-.24,.27],[-.34,.19],[-.38,.08]
+      ], landDark, .95);
+
+      // South America.
+      land([
+        [-.28,.25],[-.12,.19],[.02,.31],[.08,.48],[.02,.69],[-.10,.88],
+        [-.23,.74],[-.31,.53],[-.38,.38]
+      ], landLight, .95);
+
+      // Europe.
+      land([
+        [.02,-.38],[.14,-.46],[.25,-.43],[.34,-.31],[.29,-.22],
+        [.16,-.24],[.10,-.16],[.01,-.25]
+      ], landLight, .96);
+
+      // Africa.
+      land([
+        [.04,-.17],[.22,-.21],[.36,-.08],[.38,.13],[.28,.40],
+        [.12,.63],[-.01,.46],[-.08,.19],[-.04,.01]
+      ], landBase, .98);
+
+      // Arabian Peninsula.
+      land([
+        [.27,-.19],[.39,-.17],[.47,-.07],[.38,.04],[.28,-.02]
+      ], desert, .92);
+
+      // Asia.
+      land([
+        [.23,-.42],[.42,-.49],[.63,-.42],[.84,-.27],[.91,-.05],
+        [.76,.06],[.60,.00],[.51,-.12],[.38,-.10],[.29,-.20]
+      ], landLight, .96);
+
+      // India.
+      land([
+        [.43,.02],[.53,.08],[.50,.28],[.39,.22],[.35,.08]
+      ], landBase, .95);
+
+      // Southeast Asia.
+      land([
+        [.57,.03],[.68,.10],[.66,.24],[.57,.19],[.53,.09]
+      ], landDark, .96);
+
+      // Japan / island arc.
+      land([
+        [.80,-.10],[.85,-.02],[.83,.06],[.78,.01]
+      ], landLight, .9);
+
+      // Australia.
+      land([
+        [.55,.42],[.74,.36],[.88,.47],[.84,.66],[.68,.75],
+        [.51,.65],[.47,.51]
+      ], landLight, .98);
+
+      // Madagascar.
+      land([
+        [.36,.43],[.41,.50],[.39,.64],[.33,.58]
+      ], landBase, .9);
+
+      // Antarctica / southern polar cap.
+      land([
+        [-.82,.83],[-.56,.90],[-.25,.94],[.08,.92],[.42,.91],
+        [.72,.86],[.86,.78],[.68,.72],[.35,.77],[.04,.73],
+        [-.25,.77],[-.54,.73]
+      ], "#eaf6ff", .88);
+
+      // Regional terrain color patches.
+      land([[-.68,-.39],[-.48,-.49],[-.35,-.39],[-.45,-.25],[-.61,-.27]], "#9bc66b", .70);
+      land([[-.04,.08],[.08,.04],[.18,.19],[.08,.34],[-.03,.29]], desert, .66);
+      land([[.39,-.12],[.54,-.18],[.64,-.08],[.52,.02],[.43,-.02]], desert, .58);
+      land([[.58,.44],[.74,.39],[.81,.50],[.72,.60],[.59,.56]], "#6fba6c", .62);
+
+      // Polar cap at the north edge.
+      ctx.fillStyle = "rgba(240,249,255,.88)";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .02, y - r * .87, r * .44, r * .14, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Major cloud belts and weather systems.
+      function cloud(points, alpha) {
+        ctx.beginPath();
+        points.forEach(function (p, i) {
+          var px = x + p[0] * r;
+          var py = y + p[1] * r;
+          if (i === 0) ctx.moveTo(px, py);
+          else ctx.lineTo(px, py);
+        });
+        ctx.strokeStyle = "rgba(255,255,255," + alpha + ")";
+        ctx.lineWidth = Math.max(2, r * .075);
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.stroke();
+      }
+
+      cloud([[-.86,-.05],[-.65,-.14],[-.44,-.06],[-.26,-.15]], .42);
+      cloud([[-.20,.38],[.00,.31],[.18,.40],[.34,.31]], .48);
+      cloud([[.30,-.51],[.49,-.43],[.69,-.51],[.87,-.43]], .38);
+      cloud([[-.55,.58],[-.37,.50],[-.17,.60]], .32);
+
+      // Spiral cloud system over the western Pacific.
+      ctx.strokeStyle = "rgba(255,255,255,.58)";
+      ctx.lineWidth = Math.max(1.5, r * .055);
+      ctx.beginPath();
+      for (var spiral = 0; spiral < 28; spiral += 1) {
+        var sa = spiral * .52;
+        var sr2 = .025 + spiral * .008;
+        var spx = x + .55 * r + Math.cos(sa) * sr2 * r;
+        var spy = y + .16 * r + Math.sin(sa) * sr2 * r;
+        if (spiral === 0) ctx.moveTo(spx, spy);
+        else ctx.lineTo(spx, spy);
+      }
+      ctx.stroke();
+
+      // Day/night terminator.
+      var terminator = ctx.createLinearGradient(x - r, y, x + r, y);
+      terminator.addColorStop(0, "rgba(255,255,255,0)");
+      terminator.addColorStop(.58, "rgba(0,0,0,.02)");
+      terminator.addColorStop(.84, "rgba(1,8,24,.22)");
+      terminator.addColorStop(1, "rgba(1,4,16,.58)");
+      ctx.fillStyle = terminator;
+      ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
+      // Sparse city-light hints on the night-side continents.
+      var cityPoints = [
+        [-.50,-.16],[-.36,-.25],[-.18,.18],[.12,-.28],[.18,-.05],
+        [.25,.16],[.48,-.20],[.58,-.03],[.68,.15],[.72,.52]
+      ];
+      cityPoints.forEach(function (p, idx) {
+        var lx = x + p[0] * r;
+        var ly = y + p[1] * r;
+        var intensity = .18 + .14 * Math.sin(idx * 2.7 + now * .001);
+        ctx.fillStyle = "rgba(255,214,112," + Math.max(.08, intensity) + ")";
+        ctx.beginPath();
+        ctx.arc(lx, ly, Math.max(.8, r * .018), 0, Math.PI * 2);
         ctx.fill();
       });
 
-      ctx.fillStyle = "rgba(255,255,255,.26)";
-      ctx.fillRect(x - r, y - r * .16, r * 2, r * .07);
       ctx.restore();
-    }
 
+      // Crisp atmospheric rim over the clipped globe.
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(125,211,252,.55)";
+      ctx.lineWidth = Math.max(1, r * .035);
+      ctx.stroke();
+
+      // Tiny orbital satellite marker to make Earth read as the mission origin.
+      var satAngle = now * .00045;
+      var satX = x + Math.cos(satAngle) * r * 1.34;
+      var satY = y + Math.sin(satAngle) * r * .48;
+      ctx.strokeStyle = "rgba(148,163,184,.25)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.ellipse(x, y, r * 1.34, r * .48, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = "#ffffff";
+      ctx.shadowColor = "#67e8f9";
+      ctx.shadowBlur = 7;
+      ctx.fillRect(satX - 1, satY - 1, 2, 2);
+      ctx.shadowBlur = 0;
+    }
     function drawMoon(x, y, r) {
       circleGlow(x, y, "#cbd5e1", r * 2.0, .11);
       sphere(x, y, r, "#f8fafc", "#a8b0bd", "#555d6b");
