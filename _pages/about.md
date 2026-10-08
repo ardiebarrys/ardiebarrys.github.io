@@ -114,7 +114,7 @@ social: false
     height: 170px;
     margin: 0 auto;
     object-fit: cover;
-    border-radius: 24px;
+    border-radius: 28px;
     border: 2px solid rgba(147,197,253,.45);
     box-shadow:
       0 14px 32px rgba(0,0,0,.30),
@@ -199,15 +199,15 @@ social: false
     }
 
     .research-profile-photo {
-      width: 150px;
-      height: 150px;
-      margin: .1rem auto .85rem;
-      border-radius: 22px;
+      width: 175px;
+      height: 175px;
+      margin: .1rem auto .9rem;
+      border-radius: 24px;
     }
 
     .research-profile-info p {
-      text-align: center !important;
-      text-align-last: center !important;
+      text-align: left !important;
+      text-align-last: left !important;
     }
 
     .research-links {
@@ -221,8 +221,8 @@ social: false
 
   @media (max-width: 420px) {
     .research-profile-photo {
-      width: 138px;
-      height: 138px;
+      width: 158px;
+      height: 158px;
     }
 
     .research-links a {
@@ -323,12 +323,15 @@ social: false
     display: block;
   }
 
-    .profile img,
+    .research-profile-photo,
+  .profile img,
   .profile-logo-links img,
   .profile-info img {
     -webkit-user-drag: none;
-    user-select: none;
     -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    pointer-events: none;
   }
 
   .bio-text p {
@@ -394,31 +397,6 @@ social: false
     text-align: left !important;
   }
 
-  .about-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.7rem;
-    margin: 0 0 1.6rem;
-  }
-
-  .about-stats > div {
-    padding: 1rem 1.05rem;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .about-stats > div:hover {
-    transform: translateY(-4px);
-    border-color: var(--line-strong);
-    box-shadow: 0 12px 25px rgba(37,99,235,0.10);
-  }
-
-  .about-stats strong,
-  .about-stats span {
-    display: block;
-  }
 
   .about-stats strong {
     color: var(--text-strong);
@@ -2103,65 +2081,6 @@ social: false
       max-height: 36px;
     }
   }
-  .open-roles {
-    margin: 1.75rem 0 2rem;
-    padding: 1.25rem 1.4rem;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface);
-  }
-
-  .open-roles .home-section-title {
-    margin: 0 0 0.5rem;
-  }
-
-  .open-roles p {
-    margin-bottom: 0.6rem !important;
-    text-align: left !important;
-  }
-
-  .open-roles ul {
-    margin: 0 0 1rem;
-    padding-left: 1.2rem;
-  }
-
-  .open-roles li {
-    margin-bottom: 0.3rem;
-    line-height: 1.5;
-  }
-
-  .open-roles-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-
-  .bio-text a.open-roles-link {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--line-strong);
-    border-radius: 8px;
-    color: var(--text-strong) !important;
-    font-weight: 600;
-    text-decoration: none !important;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-
-  .bio-text a.open-roles-link.is-primary {
-    border-color: var(--button);
-    background: var(--button);
-  }
-
-  .bio-text a.open-roles-link:hover {
-    border-color: var(--accent);
-    background: var(--surface-strong);
-  }
-
-  .bio-text a.open-roles-link.is-primary:hover {
-    border-color: var(--button-hover);
-    background: var(--button-hover);
-  }
 
   .social {
     margin-top: 2.5rem;
@@ -2443,8 +2362,6 @@ social: false
 
     .timeline-track { overflow: visible; }
     .timeline-item { margin-left: 0 !important; padding-left: 1.1rem !important; }
-    .open-roles-actions { display: grid; grid-template-columns: 1fr; }
-    .bio-text a.open-roles-link { width: 100%; box-sizing: border-box; justify-content: center; }
     .keyword-list { gap: .4rem; }
     .keyword-list span { max-width: 100%; font-size: .8rem; padding: .38rem .55rem; }
     .highlight-study { padding: 1rem; }
@@ -2736,6 +2653,118 @@ social: false
     </div>
   </div>
 
+{%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
+{%- if highlight %}
+
+<figure class="highlight-study reveal" aria-labelledby="highlight-study-title">
+  <div class="highlight-figure-head">
+    <div>
+      <div class="highlight-label">Highlighted Study · Conceptual Framework</div>
+      <h2 id="highlight-study-title">{{ highlight.short }}</h2>
+    </div>
+    <div class="highlight-meta">
+      <span>{{ highlight.published | date: "%B %Y" }}</span>
+      <span><em>{{ highlight.journal }}</em></span>
+      <a href="https://doi.org/{{ highlight.doi }}" target="_blank" rel="noopener noreferrer">DOI ↗</a>
+    </div>
+  </div>
+
+  <p class="highlight-figure-intro">
+    {{ highlight.highlight }}
+  </p>
+
+  <div class="highlight-circuit" aria-label="YAP/TAZ mechanochemical signal-resolution circuit figure">
+    <div class="highlight-flow-row">
+      <div class="highlight-flow-node" style="--flow-index:0;">
+        <span class="highlight-flow-number">01</span>
+        <strong>Mechanical inputs</strong>
+        <small>Stiffness · stretch · shear · pressure</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:1;">
+        <span class="highlight-flow-number">02</span>
+        <strong>Distributed sensing</strong>
+        <small>Adhesions · junctions · cytoskeleton · LINC</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:2;">
+        <span class="highlight-flow-number">03</span>
+        <strong>State control</strong>
+        <small>Hippo + parallel inputs regulate YAP/TAZ</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:3;">
+        <span class="highlight-flow-number">04</span>
+        <strong>Nuclear decoding</strong>
+        <small>Transport · TEAD · chromatin · timing</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:4;">
+        <span class="highlight-flow-number">05</span>
+        <strong>Signal termination</strong>
+        <small>Phosphorylation · export · degradation · AMOT</small>
+      </div>
+      <div class="highlight-flow-node" style="--flow-index:5;">
+        <span class="highlight-flow-number">06</span>
+        <strong>Baseline restoration</strong>
+        <small>Adhesion · cytoskeleton · LINC · matrix recovery</small>
+      </div>
+    </div>
+
+    <div class="highlight-circuit-branches">
+      <div class="highlight-branch">
+        <span class="highlight-branch-label">Temporal decoding</span>
+        <strong>Magnitude is not enough</strong>
+        <p>Output depends on signaling duration, nuclear residence, transcriptional context and feedback, not nuclear abundance alone.</p>
+      </div>
+      <div class="highlight-branch">
+        <span class="highlight-branch-label">Resolution logic</span>
+        <strong>Termination is an active program</strong>
+        <p>Force relaxation and reversible trafficking reduce activity, while AMOT stabilization and degradation can consolidate the mechano-OFF state.</p>
+      </div>
+    </div>
+
+    <div class="highlight-resolution-band">
+      <div class="highlight-state is-adaptive">
+        <span class="highlight-state-label">Efficient resolution</span>
+        <strong>Adaptive response → restored mechanosensitivity → homeostasis / regeneration</strong>
+        <p>The signal is decoded, terminated and followed by recovery of the mechanical baseline.</p>
+      </div>
+
+      <div class="highlight-state-arrow" aria-hidden="true">→</div>
+
+      <div class="highlight-state is-pathological">
+        <span class="highlight-state-label">Incomplete resolution</span>
+        <strong>Persistent state → mechanical memory → self-reinforcement → pathology</strong>
+        <p>Residual chromatin, cytoskeletal, nuclear, metabolic or extracellular changes can bias later responses and stabilize dysfunction.</p>
+      </div>
+    </div>
+
+    <div class="highlight-failure-strip" aria-label="Predicted circuit failure modes">
+      <span class="highlight-failure-chip">Abnormal sensing</span>
+      <span class="highlight-failure-chip">Controller failure</span>
+      <span class="highlight-failure-chip">Effector escape</span>
+      <span class="highlight-failure-chip">Resolution failure</span>
+      <span class="highlight-failure-chip">Memory lock</span>
+    </div>
+  </div>
+
+  <div class="highlight-test">
+    <span class="highlight-test-label">Testable prediction</span>
+    <strong>Distinguish activation from resolution by measuring the system after the mechanical input is withdrawn.</strong>
+    <p>
+      The framework predicts that baseline recovery should be evaluated with reversible mechanical perturbations,
+      endogenous live-cell reporters, temporally controlled YAP/TAZ manipulation, and integrated measurements
+      of signaling, transcription, chromatin and mechanics.
+    </p>
+  </div>
+
+  <figcaption class="highlight-study-footer">
+    <span class="highlight-footer-note">
+      <strong>Ardie Barry Sailis.</strong> {{ highlight.title }} ·
+      {{ highlight.journal }} · {{ highlight.year }} · Conceptual signal-resolution circuit framework.
+    </span>
+    <a class="highlight-related-link" href="/publications/">View related publications ↗</a>
+  </figcaption>
+</figure>
+{%- endif %}
+
   <div class="bio-text about-modern" markdown="1">
 
 <div class="about-intro reveal">
@@ -2745,14 +2774,6 @@ social: false
     I study how inhaled toxicants affect biological systems, with a focus on
     e-cigarette exposure, male reproductive health and molecular mechanisms.
   </p>
-</div>
-
-<div class="about-stats reveal">
-  {%- assign total_papers = site.data.papers | size -%}
-  <div><strong>{{ total_papers }}</strong><span>peer-reviewed papers</span></div>
-  <div><strong>7</strong><span>international journals reviewed</span></div>
-  <div><strong>PhD</strong><span>Pharmaceutical Sciences</span></div>
-  <div><strong>AI + Science</strong><span>building SciAudit AI</span></div>
 </div>
 
 <div class="about-explorer reveal">
@@ -2991,15 +3012,6 @@ social: false
   </div>
 </div>
 
-<div class="open-roles reveal">
-  <h2 class="home-section-title">Open to roles</h2>
-  <p>Research, medical affairs, regulatory science and scientific communication.</p>
-  <div class="open-roles-actions">
-    <a class="open-roles-link is-primary" href="/contact/">Get in touch</a>
-    <a class="open-roles-link" href="/cv/">View CV</a>
-  </div>
-</div>
-
 <div class="keyword-box reveal">
   <div class="keyword-title">Focus</div>
   <div class="keyword-list">
@@ -3017,130 +3029,7 @@ social: false
   </div>
 </div>
 
-{%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
-{%- if highlight %}
 
-<figure class="highlight-study reveal" aria-labelledby="highlight-study-title">
-  <div class="highlight-figure-head">
-    <div>
-      <div class="highlight-label">Highlighted Study · Conceptual Framework</div>
-      <h2 id="highlight-study-title">{{ highlight.short }}</h2>
-    </div>
-    <div class="highlight-meta">
-      <span>{{ highlight.published | date: "%B %Y" }}</span>
-      <span><em>{{ highlight.journal }}</em></span>
-      <a href="https://doi.org/{{ highlight.doi }}" target="_blank" rel="noopener noreferrer">DOI ↗</a>
-    </div>
-  </div>
-
-  <p class="highlight-figure-intro">
-    {{ highlight.highlight }}
-  </p>
-
-  <div class="highlight-circuit" aria-label="YAP/TAZ mechanochemical signal-resolution circuit figure">
-    <div class="highlight-flow-row">
-      <div class="highlight-flow-node" style="--flow-index:0;">
-        <span class="highlight-flow-number">01</span>
-        <strong>Mechanical inputs</strong>
-        <small>Stiffness · stretch · shear · pressure</small>
-      </div>
-      <div class="highlight-flow-node" style="--flow-index:1;">
-        <span class="highlight-flow-number">02</span>
-        <strong>Distributed sensing</strong>
-        <small>Adhesions · junctions · cytoskeleton · LINC</small>
-      </div>
-      <div class="highlight-flow-node" style="--flow-index:2;">
-        <span class="highlight-flow-number">03</span>
-        <strong>State control</strong>
-        <small>Hippo + parallel inputs regulate YAP/TAZ</small>
-      </div>
-      <div class="highlight-flow-node" style="--flow-index:3;">
-        <span class="highlight-flow-number">04</span>
-        <strong>Nuclear decoding</strong>
-        <small>Transport · TEAD · chromatin · timing</small>
-      </div>
-      <div class="highlight-flow-node" style="--flow-index:4;">
-        <span class="highlight-flow-number">05</span>
-        <strong>Signal termination</strong>
-        <small>Phosphorylation · export · degradation · AMOT</small>
-      </div>
-      <div class="highlight-flow-node" style="--flow-index:5;">
-        <span class="highlight-flow-number">06</span>
-        <strong>Baseline restoration</strong>
-        <small>Adhesion · cytoskeleton · LINC · matrix recovery</small>
-      </div>
-    </div>
-
-    <div class="highlight-circuit-branches">
-      <div class="highlight-branch">
-        <span class="highlight-branch-label">Temporal decoding</span>
-        <strong>Magnitude is not enough</strong>
-        <p>Output depends on signaling duration, nuclear residence, transcriptional context and feedback, not nuclear abundance alone.</p>
-      </div>
-      <div class="highlight-branch">
-        <span class="highlight-branch-label">Resolution logic</span>
-        <strong>Termination is an active program</strong>
-        <p>Force relaxation and reversible trafficking reduce activity, while AMOT stabilization and degradation can consolidate the mechano-OFF state.</p>
-      </div>
-    </div>
-
-    <div class="highlight-resolution-band">
-      <div class="highlight-state is-adaptive">
-        <span class="highlight-state-label">Efficient resolution</span>
-        <strong>Adaptive response → restored mechanosensitivity → homeostasis / regeneration</strong>
-        <p>The signal is decoded, terminated and followed by recovery of the mechanical baseline.</p>
-      </div>
-
-      <div class="highlight-state-arrow" aria-hidden="true">→</div>
-
-      <div class="highlight-state is-pathological">
-        <span class="highlight-state-label">Incomplete resolution</span>
-        <strong>Persistent state → mechanical memory → self-reinforcement → pathology</strong>
-        <p>Residual chromatin, cytoskeletal, nuclear, metabolic or extracellular changes can bias later responses and stabilize dysfunction.</p>
-      </div>
-    </div>
-
-    <div class="highlight-failure-strip" aria-label="Predicted circuit failure modes">
-      <span class="highlight-failure-chip">Abnormal sensing</span>
-      <span class="highlight-failure-chip">Controller failure</span>
-      <span class="highlight-failure-chip">Effector escape</span>
-      <span class="highlight-failure-chip">Resolution failure</span>
-      <span class="highlight-failure-chip">Memory lock</span>
-    </div>
-  </div>
-
-  <div class="highlight-test">
-    <span class="highlight-test-label">Testable prediction</span>
-    <strong>Distinguish activation from resolution by measuring the system after the mechanical input is withdrawn.</strong>
-    <p>
-      The framework predicts that baseline recovery should be evaluated with reversible mechanical perturbations,
-      endogenous live-cell reporters, temporally controlled YAP/TAZ manipulation, and integrated measurements
-      of signaling, transcription, chromatin and mechanics.
-    </p>
-  </div>
-
-  <figcaption class="highlight-study-footer">
-    <span class="highlight-footer-note">
-      <strong>Ardie Barry Sailis.</strong> {{ highlight.title }} ·
-      {{ highlight.journal }} · {{ highlight.year }} · Conceptual signal-resolution circuit framework.
-    </span>
-    <a class="highlight-related-link" href="/publications/">View related publications ↗</a>
-  </figcaption>
-</figure>
-{%- endif %}
-
-<div class="home-section reveal">
-  <div class="home-section-title">Selected Papers</div>
-  <div class="selected-papers">
-    {%- assign selected_papers = site.data.papers | where: "selected", true -%}
-    {%- for paper in selected_papers %}
-    <a class="selected-paper" href="https://doi.org/{{ paper.doi }}">
-      <span class="selected-paper-journal">{{ paper.journal }}, {{ paper.year }}</span>
-      <span class="selected-paper-title">{{ paper.title }}</span>
-    </a>
-    {%- endfor %}
-  </div>
-</div>
 
 {%- capture news_rows -%}
   {%- for item in site.data.news -%}
@@ -3188,11 +3077,18 @@ social: false
 
 <script>
   var profilePhoto = document.querySelector('.profile figure img');
+  var customProfilePhoto = document.querySelector('.research-profile-photo');
+
   if (profilePhoto) {
     profilePhoto.alt = 'Ardie Barry Sailis';
   }
 
-  document.querySelectorAll('.profile img, .profile-logo-links img, .profile-info img').forEach((img) => {
+  if (customProfilePhoto) {
+    customProfilePhoto.setAttribute('draggable', 'false');
+    customProfilePhoto.setAttribute('aria-label', 'Ardie Barry Sailis profile photograph');
+  }
+
+  document.querySelectorAll('.research-profile-photo, .profile img, .profile-logo-links img, .profile-info img').forEach((img) => {
     img.setAttribute('draggable', 'false');
 
     img.addEventListener('dragstart', (event) => {
@@ -3319,7 +3215,7 @@ social: false
 
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var targets = document.querySelectorAll(
-      ".about-modern .reveal, .bio-text > p, .open-roles, .keyword-box, .highlight-study, .home-section > .home-section-title, .selected-paper, .news-list li, .profile-logo-links a, .profile-info > p"
+      ".about-modern .reveal, .bio-text > p, .keyword-box, .highlight-study, .news-list li, .profile-logo-links a, .profile-info > p"
     );
 
     if (reduce || !("IntersectionObserver" in window)) {
@@ -3328,7 +3224,7 @@ social: false
 
     targets.forEach(function (el) {
       el.classList.add("reveal");
-      if (el.matches(".profile-logo-links a, .selected-paper, .news-list li")) {
+      if (el.matches(".profile-logo-links a, .news-list li")) {
         var index = Array.prototype.indexOf.call(el.parentNode.children, el);
         el.style.setProperty("--reveal-delay", index * 0.07 + "s");
       }
