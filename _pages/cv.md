@@ -468,8 +468,8 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
           <li>Used transmission electron microscopy to assess mitochondrial damage in e-cigarette users and controls.</li>
           <li>Wrote mechanistic and systematic reviews on e-cigarette toxicology, reproductive health and redox signaling.</li>
           <li>
-            Started an independent project, Cellular Signalling as Dynamic Regulatory Circuits, which produced the redoxostat concept in
-            NRF2&ndash;KEAP1 biology.
+            Developed an independent project, Cellular Signalling as Dynamic Regulatory Circuits, producing conceptual models of signal
+            resolution in NRF2&ndash;KEAP1 redox signaling and YAP/TAZ mechanotransduction.
           </li>
         </ul>
       </div>
@@ -565,7 +565,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
       <dt>Writing</dt>
       <dd>Scientific writing, manuscript preparation, peer review, research conceptualization</dd>
       <dt>Research areas</dt>
-      <dd>E-cigarette and tobacco toxicology, reproductive health, pharmacology, toxicogenomics, molecular systems biology</dd>
+      <dd>E-cigarette and tobacco toxicology, reproductive health, pharmacology, toxicogenomics, molecular systems biology, mechanotransduction and YAP/TAZ signaling</dd>
     </dl>
   </section>
 
