@@ -387,6 +387,157 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     animation: dn-scroll-line 1.8s ease-in-out infinite;
   }
 
+  .dn-cosmic-atlas {
+    position: relative;
+    margin: 0 auto 2.4rem;
+    padding: 1rem;
+    border: 1px solid rgba(129,140,248,.14);
+    border-radius: 20px;
+    background:
+      linear-gradient(135deg, rgba(124,58,237,.055), rgba(37,99,235,.035)),
+      rgba(3,5,14,.62);
+    box-shadow:
+      0 24px 70px rgba(0,0,0,.30),
+      inset 0 1px 0 rgba(255,255,255,.025);
+    overflow: hidden;
+  }
+
+  .dn-cosmic-atlas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 22% 50%, rgba(251,146,60,.06), transparent 20%),
+      radial-gradient(circle at 52% 50%, rgba(96,165,250,.08), transparent 20%),
+      radial-gradient(circle at 84% 50%, rgba(167,139,250,.08), transparent 20%);
+  }
+
+  .dn-cosmic-atlas-head {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: .8rem;
+  }
+
+  .dn-cosmic-atlas-kicker {
+    color: #6e7ba0;
+    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .dn-cosmic-atlas-head strong {
+    display: block;
+    margin-top: .28rem;
+    color: #e8edff;
+    font-size: .9rem;
+    letter-spacing: -.02em;
+  }
+
+  .dn-cosmic-atlas-head span:last-child {
+    color: #56617e;
+    font: 750 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .dn-cosmic-atlas-frame {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border: 1px solid rgba(148,163,184,.08);
+    border-radius: 14px;
+    background: #010208;
+  }
+
+  .dn-cosmic-atlas-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 145px;
+    object-fit: cover;
+    object-position: center;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    opacity: .93;
+    filter:
+      saturate(.92)
+      contrast(1.04)
+      drop-shadow(0 0 24px rgba(96,165,250,.08));
+  }
+
+  .dn-cosmic-atlas-scale {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0,1fr));
+    gap: .4rem;
+    margin-top: .55rem;
+  }
+
+  .dn-cosmic-entity {
+    padding: .58rem .45rem;
+    border: 1px solid rgba(148,163,184,.07);
+    border-radius: 9px;
+    background: rgba(2,4,12,.72);
+    color: #667292;
+    font: 800 .52rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .05em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .dn-cosmic-entity b {
+    display: block;
+    color: #aab5d5;
+    font-size: .58rem;
+  }
+
+  .dn-cosmic-entity span {
+    display: block;
+    margin-top: .2rem;
+  }
+
+  .dn-cosmic-entity:nth-child(1) b { color: #93c5fd; }
+  .dn-cosmic-entity:nth-child(2) b { color: #60a5fa; }
+  .dn-cosmic-entity:nth-child(3) b { color: #67e8f9; }
+  .dn-cosmic-entity:nth-child(4) b { color: #a78bfa; }
+  .dn-cosmic-entity:nth-child(5) b { color: #f0abfc; }
+
+  @media (max-width: 650px) {
+    .dn-cosmic-atlas {
+      padding: .65rem;
+      margin-bottom: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .dn-cosmic-atlas-head {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
+    .dn-cosmic-atlas-head span:last-child {
+      white-space: normal;
+    }
+
+    .dn-cosmic-atlas-image {
+      min-height: 92px;
+    }
+
+    .dn-cosmic-atlas-scale {
+      grid-template-columns: repeat(5, minmax(70px,1fr));
+      overflow-x: auto;
+      padding-bottom: .2rem;
+      scrollbar-width: thin;
+    }
+  }
+
   .dn-game-wrap {
     position: relative;
     margin: 0 auto;
@@ -1402,6 +1553,49 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       <div class="dn-scroll-hint">
         Enter the mission
         <span></span>
+      </div>
+    </section>
+
+    <section class="dn-cosmic-atlas" aria-labelledby="dn-cosmic-map-title">
+      <div class="dn-cosmic-atlas-head">
+        <div>
+          <span class="dn-cosmic-atlas-kicker">Entity map</span>
+          <strong id="dn-cosmic-map-title">From Earth to the deep universe</strong>
+        </div>
+        <span>visual progression atlas</span>
+      </div>
+
+      <div class="dn-cosmic-atlas-frame">
+        <img
+          class="dn-cosmic-atlas-image"
+          src="{{ '/assets/img/deep-numbers-cosmos.png' | relative_url }}"
+          alt="Pixel-art cosmic progression from the Sun and planets through Pluto, the Kuiper Belt, distant galaxies, and the deep universe."
+          loading="eager"
+          decoding="async"
+        >
+      </div>
+
+      <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression">
+        <div class="dn-cosmic-entity">
+          <b>Earth</b>
+          <span>home orbit</span>
+        </div>
+        <div class="dn-cosmic-entity">
+          <b>Moon → Mars</b>
+          <span>planetary reach</span>
+        </div>
+        <div class="dn-cosmic-entity">
+          <b>Jupiter → Pluto</b>
+          <span>outer system</span>
+        </div>
+        <div class="dn-cosmic-entity">
+          <b>Kuiper → Oort</b>
+          <span>deep system</span>
+        </div>
+        <div class="dn-cosmic-entity">
+          <b>Galaxies → Deep</b>
+          <span>cosmic scale</span>
+        </div>
       </div>
     </section>
 
