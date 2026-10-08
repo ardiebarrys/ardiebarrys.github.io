@@ -596,6 +596,19 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     transform: translateY(0);
   }
 
+  .dn-submit:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+    transform: none !important;
+    filter: grayscale(.22);
+    box-shadow: none;
+  }
+
+  .dn-input:disabled {
+    cursor: not-allowed;
+    opacity: .62;
+  }
+
   .dn-feedback {
     position: relative;
     z-index: 2;
@@ -1918,9 +1931,11 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     destinationEl.textContent = destination.name;
 
     var deg = Math.max(0, Math.min(360, average * 3.6));
+    var blueStop = Math.min(deg, 150);
     scoreRingEl.style.background =
-      "conic-gradient(#7c3aed 0deg, #60a5fa 110deg, #67e8f9 " +
-      Math.min(220, deg) + "deg, rgba(148,163,184,.07) " +
+      "conic-gradient(#7c3aed 0deg, #60a5fa " +
+      blueStop + "deg, #67e8f9 " +
+      deg + "deg, rgba(148,163,184,.07) " +
       deg + "deg)";
 
     trajectoryTitleEl.textContent =
@@ -1998,8 +2013,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     );
   }
 
+  var submitting = false;
+
   function submitGuess(event) {
     event.preventDefault();
+
+    if (submitting || !mission[index]) return;
 
     var q = mission[index];
     var value = Number(String(inputEl.value).replace(/,/g, "").trim());
@@ -2021,6 +2040,11 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       return;
     }
 
+    submitting = true;
+    inputEl.disabled = true;
+    var submitButton = $("dn-submit");
+    if (submitButton) submitButton.disabled = true;
+
     feedbackEl.textContent = "LOCKED. The benchmark remains hidden.";
     feedbackEl.style.color = "#67e8f9";
 
@@ -2028,16 +2052,28 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     liveTelemetry();
 
     if (index < missionSize - 1) {
-      index += 1;
-      setTimeout(renderQuestion, 260);
+      setTimeout(function () {
+        index += 1;
+        submitting = false;
+        inputEl.disabled = false;
+        if (submitButton) submitButton.disabled = false;
+        renderQuestion();
+      }, 260);
     } else {
-      setTimeout(launchReport, 440);
+      setTimeout(function () {
+        submitting = false;
+        launchReport();
+      }, 440);
     }
   }
 
   function replayMission() {
     answers = [];
     index = 0;
+    submitting = false;
+    inputEl.disabled = false;
+    var submitButton = $("dn-submit");
+    if (submitButton) submitButton.disabled = false;
     revealEl.classList.remove("is-open");
     buildDailyMission(true);
     liveTelemetry();
