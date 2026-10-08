@@ -2,9 +2,8 @@
 layout: page
 title: About
 permalink: /
-nav: true
+nav: false
 nav_order: 1
-nav_title: About
 description: Doctoral Researcher · Toxicology · Scientific Evidence
 
 
