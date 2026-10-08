@@ -1441,7 +1441,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   @media (max-width: 650px) {
     .deep-numbers-page {
       width: 100vw;
-      margin-top: -5rem !important;
+      margin-top: 0 !important;
       padding-left: .6rem;
       padding-right: .6rem;
     }
