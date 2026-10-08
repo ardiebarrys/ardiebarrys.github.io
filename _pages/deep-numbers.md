@@ -1630,7 +1630,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       </div>
     </section>
 
-    <section class="dn-game-wrap id="dn-game" aria-label="Deep Numbers game">
+    <section class="dn-game-wrap" id="dn-game" aria-label="Deep Numbers game">
       <div class="dn-game-shell">
         <div class="dn-command">
           <div class="dn-command-side left">
