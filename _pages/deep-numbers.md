@@ -2137,6 +2137,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       spawnShootingStar();
     }
 
+    drawShootingStars();
     starAnimation = requestAnimationFrame(drawStars);
   }
 
