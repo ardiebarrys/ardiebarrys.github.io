@@ -408,12 +408,32 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-cosmic-atlas::before {
     content: "";
     position: absolute;
-    inset: 0;
+    z-index: 0;
+    left: -18vw;
+    right: -18vw;
+    top: -18rem;
+    bottom: -18rem;
     pointer-events: none;
     background:
-      radial-gradient(circle at 22% 50%, rgba(251,146,60,.045), transparent 18%),
-      radial-gradient(circle at 52% 50%, rgba(96,165,250,.055), transparent 20%),
-      radial-gradient(circle at 84% 50%, rgba(167,139,250,.065), transparent 22%);
+      radial-gradient(ellipse 38% 58% at 48% 50%, rgba(124,58,237,.18), transparent 68%),
+      radial-gradient(ellipse 24% 42% at 70% 50%, rgba(96,165,250,.075), transparent 72%),
+      radial-gradient(ellipse 20% 34% at 24% 50%, rgba(167,139,250,.055), transparent 74%);
+    filter: blur(22px);
+    opacity: .95;
+  }
+
+  .dn-cosmic-atlas::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: -10vw;
+    right: -10vw;
+    top: 10%;
+    height: 80%;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at center, rgba(124,58,237,.075), transparent 62%);
+    filter: blur(42px);
   }
 
   .dn-cosmic-atlas-head {
@@ -458,12 +478,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     overflow: hidden;
     border: 0;
     border-radius: 0;
-    background:
-      radial-gradient(circle at 50% 48%, rgba(23,37,84,.18), transparent 48%),
-      #010208;
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,.025),
-      inset 0 -1px 0 rgba(255,255,255,.018);
+    background: transparent;
+    box-shadow: none;
   }
 
   .dn-cosmic-atlas-canvas {
@@ -2452,17 +2468,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       ctx.fill();
     }
 
-    var bg = ctx.createLinearGradient(0, 0, width, 0);
-    bg.addColorStop(0, "#020714");
-    bg.addColorStop(.42, "#07091b");
-    bg.addColorStop(.72, "#0b0920");
-    bg.addColorStop(1, "#02040e");
-    ctx.fillStyle = bg;
-    ctx.fillRect(0, 0, width, height);
-
-    var nebula = ctx.createRadialGradient(width * .68, height * .48, 0, width * .68, height * .48, width * .42);
-    nebula.addColorStop(0, "rgba(124,58,237,.13)");
-    nebula.addColorStop(.42, "rgba(37,99,235,.045)");
+    // Keep the atlas canvas transparent so the ambient cosmic glow can
+    // continue beyond the canvas edges instead of reading as a rectangular panel.
+    var nebula = ctx.createRadialGradient(width * .62, height * .50, 0, width * .62, height * .50, width * .58);
+    nebula.addColorStop(0, "rgba(124,58,237,.10)");
+    nebula.addColorStop(.38, "rgba(37,99,235,.035)");
+    nebula.addColorStop(.72, "rgba(0,0,0,0)");
     nebula.addColorStop(1, "rgba(0,0,0,0)");
     ctx.fillStyle = nebula;
     ctx.fillRect(0, 0, width, height);
