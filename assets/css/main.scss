@@ -128,11 +128,11 @@ header:has(> #navbar) {
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  width: 100% !important;
-  max-width: none !important;
+  width: min(1280px, calc(100% - 2.4rem)) !important;
+  max-width: 1280px !important;
   min-height: 58px;
-  margin: 0 !important;
-  padding: .45rem 1.2rem;
+  margin: 0 auto !important;
+  padding: .45rem 0;
   box-sizing: border-box;
 }
 
