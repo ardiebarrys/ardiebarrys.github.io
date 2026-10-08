@@ -1,68 +1,196 @@
 ---
-layout: about
-title: About
+layout: page
+title: Ardie Barry Sailis
 permalink: /
 nav: false
 nav_order: 1
-subtitle: Doctoral Researcher · Toxicology · Scientific Evidence
+description: Doctoral Researcher · Toxicology · Scientific Evidence
 
-profile:
-  align: right
-  image: ardie-profile.jpg
-  image_circular: false
-  more_info: |
-    <div class="profile-info">
-      <p><strong>Department of Pharmaceutical Life Sciences</strong></p>
-      <p>Faculty of Pharmacy, Universiti Malaya</p>
-      <p>Kuala Lumpur, Malaysia</p>
-
-      <hr>
-
-      <p>
-        <strong>ORCID:</strong>
-        <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
-      </p>
-
-      <p><strong>Scopus Author ID:</strong> 60192026900</p>
-
-      <hr>
-
-      <div class="profile-logo-links">
-        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en" aria-label="Google Scholar">
-          <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
-          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
-          <img src="/assets/img/kudos-logo.png" alt="Kudos" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate">
-          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation">
-          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID">
-          <img src="/assets/img/orcid-logo.png" alt="ORCID" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-
-        <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn">
-          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn" width="480" height="240" loading="lazy" decoding="async">
-        </a>
-      </div>
-    </div>
 
 selected_papers: false
 social: false
 ---
 
 <style>
+
+  /* ==========================================================
+     ABOUT IDENTITY CARD
+     Rendered inside the page body rather than through the theme's
+     floating profile component. This prevents layout collisions.
+     ========================================================== */
+  .about-shell {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+  }
+
+  .research-profile {
+    position: relative;
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 1.35rem 1.5rem;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 1.35rem;
+    padding: 1.2rem 1.25rem;
+    border: 1px solid rgba(96,165,250,.22);
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 8%, rgba(96,165,250,.15), transparent 30%),
+      radial-gradient(circle at 88% 88%, rgba(37,99,235,.12), transparent 34%),
+      linear-gradient(145deg, rgba(15,35,82,.94), rgba(7,20,48,.98));
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.22),
+      inset 0 1px 0 rgba(255,255,255,.06);
+  }
+
+  .research-profile::before {
+    content: "RESEARCH IDENTITY";
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    color: rgba(147,197,253,.72);
+    font-size: .55rem;
+    font-weight: 850;
+    letter-spacing: .16em;
+  }
+
+  .research-profile::after {
+    content: "";
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    right: -95px;
+    top: 38px;
+    border: 1px solid rgba(96,165,250,.12);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .research-profile-photo {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 2px solid rgba(147,197,253,.45);
+    box-shadow:
+      0 14px 32px rgba(0,0,0,.30),
+      0 0 0 8px rgba(96,165,250,.055);
+  }
+
+  .research-profile-info {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+  }
+
+  .research-profile-info p {
+    margin: 0 0 .42rem !important;
+    color: var(--text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: .96rem !important;
+    line-height: 1.45 !important;
+    text-align: left !important;
+  }
+
+  .research-profile-info p:first-child {
+    margin-top: .05rem !important;
+  }
+
+  .research-profile-info strong {
+    color: #dbeafe !important;
+  }
+
+  .research-profile-info a {
+    color: var(--accent) !important;
+  }
+
+  .research-profile-info hr {
+    margin: .78rem 0 !important;
+    border-color: rgba(147,197,253,.25) !important;
+    opacity: 1;
+  }
+
+  .research-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: .5rem;
+    margin-top: .55rem;
+  }
+
+  .research-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    padding: .4rem .5rem;
+    border: 1px solid rgba(147,197,253,.22);
+    border-radius: 10px;
+    background: rgba(255,255,255,.96);
+    box-sizing: border-box;
+    transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+
+  .research-links a:hover {
+    transform: translateY(-2px);
+    border-color: rgba(96,165,250,.7);
+    box-shadow: 0 9px 20px rgba(37,99,235,.16);
+  }
+
+  .research-links img {
+    display: block;
+    max-width: 105px;
+    max-height: 29px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 767.98px) {
+    .about-shell {
+      width: 100%;
+    }
+
+    .research-profile {
+      display: block;
+      padding: 1rem .85rem .9rem;
+      border-radius: 18px;
+    }
+
+    .research-profile-photo {
+      width: 150px;
+      height: 150px;
+      margin: .1rem auto .85rem;
+      border-radius: 22px;
+    }
+
+    .research-profile-info p {
+      text-align: center !important;
+      text-align-last: center !important;
+    }
+
+    .research-links {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .research-links a {
+      height: 52px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .research-profile-photo {
+      width: 138px;
+      height: 138px;
+    }
+
+    .research-links a {
+      height: 50px;
+    }
+  }
   .post,
   .page,
   .container,
@@ -1586,7 +1714,58 @@ social: false
 
 </style>
 
-<div class="bio-text about-modern" markdown="1">
+<div class="about-shell">
+  <div class="research-profile">
+    <img class="research-profile-photo"
+         src="/assets/img/ardie-profile.jpg"
+         alt="Ardie Barry Sailis"
+         width="170"
+         height="170"
+         loading="eager"
+         decoding="async">
+
+    <div class="research-profile-info">
+      <p><strong>Department of Pharmaceutical Life Sciences</strong></p>
+      <p>Faculty of Pharmacy, Universiti Malaya</p>
+      <p>Kuala Lumpur, Malaysia</p>
+
+      <hr>
+
+      <p>
+        <strong>ORCID:</strong>
+        <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a>
+        &nbsp; <strong>Scopus Author ID:</strong> 60192026900
+      </p>
+
+      <hr>
+
+      <div class="research-links">
+        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en" aria-label="Google Scholar">
+          <img src="/assets/img/google-scholar-logo.png" alt="Google Scholar" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis" aria-label="Springer Nature Research Communities">
+          <img src="/assets/img/springer-nature-logo.png" alt="Springer Nature Research Communities" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://www.growkudos.com/profile/ardie_barry_sailis" aria-label="Kudos">
+          <img src="/assets/img/kudos-logo.png" alt="Kudos" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://www.researchgate.net/profile/Ardie-Sailis?ev=hdr_xprf" aria-label="ResearchGate">
+          <img src="/assets/img/researchgate-logo.png" alt="ResearchGate" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news" aria-label="The Conversation">
+          <img src="/assets/img/the-conversation-logo.png" alt="The Conversation" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://orcid.org/0009-0009-8994-2793" aria-label="ORCID">
+          <img src="/assets/img/orcid-logo.png" alt="ORCID" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+        <a href="https://www.linkedin.com/in/ardiebarrysailis" aria-label="LinkedIn">
+          <img src="/assets/img/linkedin-logo.png" alt="LinkedIn" width="480" height="240" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio-text about-modern" markdown="1">
 
 <div class="about-intro reveal">
   <div class="about-eyebrow">Pharmaceutical Sciences · Toxicology · Scientific Evidence</div>
@@ -1847,11 +2026,14 @@ social: false
 
 </div>
 
-<div class="social">
+  </div>
+
+  <div class="social">
   <div class="contact-icons">{% social_links %}</div>
   <div class="contact-note">
     For academic correspondence, please use the form on the <a href="/contact/">Contact page</a>. Last updated: {{ site.time | date: "%-d %B %Y" }}.
   </div>
+
 </div>
 
 <script>
