@@ -81,7 +81,7 @@
     min-height: 100vh;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    margin-top: -1.5rem;
+    margin-top: -5rem !important;
     padding: 0 1rem 5rem;
     overflow: hidden;
     isolation: isolate;
@@ -1283,6 +1283,20 @@
     line-height: 1.4;
   }
 
+  /* Force the game and information tabs to touch without the theme's
+     default section spacing introducing a visible gap. */
+  .deep-numbers-page .dn-game-wrap {
+    margin-bottom: 0 !important;
+  }
+
+  .deep-numbers-page .dn-game-shell {
+    margin-bottom: 0 !important;
+  }
+
+  .deep-numbers-page .dn-tabs {
+    margin-top: -0.05rem !important;
+  }
+
   .dn-tabs {
     display: flex;
     justify-content: center;
@@ -1500,6 +1514,7 @@
   @media (max-width: 650px) {
     .deep-numbers-page {
       width: 100vw;
+      margin-top: -3.7rem !important;
       padding-left: .6rem;
       padding-right: .6rem;
     }
