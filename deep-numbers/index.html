@@ -550,6 +550,105 @@
     }
   }
 
+  .dn-entity-map {
+    position: relative;
+    width: min(1180px, 100%);
+    margin: 0 auto 2.2rem;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(129,140,248,.13);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(37,99,235,.07), transparent 30%),
+      radial-gradient(circle at 80% 50%, rgba(124,58,237,.08), transparent 32%),
+      rgba(3,6,16,.58);
+    box-shadow: 0 24px 80px rgba(0,0,0,.24);
+    overflow: hidden;
+  }
+
+  .dn-entity-heading {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: .8rem;
+    align-items: baseline;
+    margin-bottom: .85rem;
+  }
+
+  .dn-entity-kicker {
+    color: #8b8fd4;
+    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .13em;
+  }
+
+  .dn-entity-heading h2 {
+    margin: 0 !important;
+    color: #f7f8ff !important;
+    font-size: 1.18rem !important;
+    letter-spacing: -.03em !important;
+  }
+
+  .dn-entity-heading p {
+    grid-column: 2;
+    margin: .25rem 0 0;
+    color: #6f789b;
+    font-size: .7rem;
+    line-height: 1.55;
+  }
+
+  .dn-entity-frame {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid rgba(148,163,184,.08);
+    border-radius: 15px;
+    background: #02030a;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .dn-entity-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(2,3,10,.8), transparent 5%, transparent 95%, rgba(2,3,10,.8));
+    z-index: 2;
+  }
+
+  .dn-entity-frame img {
+    display: block;
+    width: 100%;
+    min-width: 920px;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  @media (max-width: 650px) {
+    .dn-entity-map {
+      padding: .7rem;
+      border-radius: 16px;
+      margin-bottom: 1.2rem;
+    }
+
+    .dn-entity-heading {
+      display: block;
+    }
+
+    .dn-entity-kicker {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .dn-entity-heading p {
+      margin-top: .35rem;
+    }
+
+    .dn-entity-frame img {
+      min-width: 900px;
+    }
+  }
+
   .dn-game-wrap {
     position: relative;
     margin: 0 auto;
@@ -1508,7 +1607,7 @@
       scroll-behavior: auto !important;
     }
   }
-</style> <div class="deep-numbers-page" id="deep-numbers-app"> <canvas class="dn-star-canvas" id="dn-stars" aria-hidden="true"></canvas> <canvas class="dn-effects-canvas" id="dn-effects" aria-hidden="true"></canvas> <div class="dn-app"> <div class="dn-topbar"> <a class="dn-brand" href="/" aria-label="Back to homepage"> <span class="dn-brand-mark" aria-hidden="true"></span> <span class="dn-brand-copy"> <strong>Deep Numbers</strong> <span>Daily crowd intelligence game</span> </span> </a> <div class="dn-top-actions" aria-label="Game statistics"> <span class="dn-stat-chip"><span class="dn-live"></span> LIVE</span> <span class="dn-stat-chip">STREAK <b id="dn-streak">0</b></span> <span class="dn-stat-chip">BEST <b id="dn-best">0</b></span> </div> </div> <section class="dn-hero" aria-labelledby="dn-title"> <div class="dn-hero-orbit" aria-hidden="true"></div> <div class="dn-hero-content"> <span class="dn-eyebrow"><span class="dn-eyebrow-dot"></span> DAILY MISSION · <span id="dn-mission-date">--</span></span> <h1 class="dn-title" id="dn-title"> <span class="dn-title-gradient">Deep Numbers</span> </h1> <p class="dn-subtitle"> Five questions. Five guesses. One hidden crowd benchmark. The closer you think, the farther your rocket travels. </p> <div class="dn-hero-metrics"> <div class="dn-hero-metric"> <small>Mission</small> <strong id="dn-mission-code">DN-000</strong> </div> <div class="dn-hero-metric"> <small>Questions</small> <strong>05</strong> </div> <div class="dn-hero-metric"> <small>Reset</small> <strong id="dn-reset-timer">--:--:--</strong> </div> </div> </div> <div class="dn-scroll-hint"> Enter the mission <span></span> </div> </section> <section class="dn-cosmic-atlas" aria-labelledby="dn-cosmic-map-title"> <div class="dn-cosmic-atlas-head"> <div> <span class="dn-cosmic-atlas-kicker">Entity map</span> <strong id="dn-cosmic-map-title">From Earth to the deep universe</strong> </div> <span>visual progression atlas</span> </div> <div class="dn-cosmic-atlas-frame"> <img class="dn-cosmic-atlas-image" src="/assets/img/deep-numbers-cosmos.png" alt="Pixel-art cosmic progression from the Sun and planets through Pluto, the Kuiper Belt, distant galaxies, and the deep universe." loading="eager" decoding="async"> </div> <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression"> <div class="dn-cosmic-entity"> <b>Earth</b> <span>home orbit</span> </div> <div class="dn-cosmic-entity"> <b>Moon → Mars</b> <span>planetary reach</span> </div> <div class="dn-cosmic-entity"> <b>Jupiter → Pluto</b> <span>outer system</span> </div> <div class="dn-cosmic-entity"> <b>Kuiper → Oort</b> <span>deep system</span> </div> <div class="dn-cosmic-entity"> <b>Galaxies → Deep</b> <span>cosmic scale</span> </div> </div> </section> <section class="dn-game-wrap" id="dn-game" aria-label="Deep Numbers game"> <div class="dn-game-shell"> <div class="dn-command"> <div class="dn-command-side left"> <span class="dn-command-label">Mission</span> <span class="dn-command-value" id="dn-command-mission">DN-000</span> </div> <div class="dn-command-center">DEEP NUMBERS</div> <div class="dn-command-side right"> <span class="dn-command-label">Window</span> <span class="dn-command-value">05 ESTIMATES</span> </div> </div> <div class="dn-game-grid"> <section class="dn-question-card" aria-live="polite"> <div class="dn-question-head"> <span class="dn-badge"><span class="dn-badge-dot"></span><span id="dn-category">ESTIMATION</span></span> <span class="dn-round" id="dn-round">ROUND 01 / 05</span> </div> <h2 class="dn-question" id="dn-question"> Loading today's question... </h2> <p class="dn-hint" id="dn-hint"> Your first instinct is usually the most useful. </p> <form id="dn-form" novalidate=""> <div class="dn-estimate-zone"> <input class="dn-input" id="dn-input" name="guess" type="number" inputmode="numeric" min="0" max="100" step="1" autocomplete="off" placeholder="0–100" aria-label="Your percentage estimate" required=""> <button class="dn-submit" id="dn-submit" type="submit">Lock Guess</button> </div> <p class="dn-feedback" id="dn-feedback" aria-live="polite"></p> </form> <div class="dn-progress-wrap"> <div class="dn-progress-head"> <span>Mission progress</span> <span id="dn-progress-label">01 / 05</span> </div> <div class="dn-progress-track"> <div class="dn-progress-fill" id="dn-progress-fill"></div> </div> </div> <p class="dn-small-rule"> The benchmark stays hidden until all five guesses are locked. Deep Numbers uses a curated game benchmark, not a claim of real-time survey data. </p> </section> <aside class="dn-score-panel" aria-label="Mission telemetry"> <div class="dn-score-top"> <span class="dn-score-title">Trajectory telemetry</span> <span class="dn-destination" id="dn-destination">READY</span> </div> <div class="dn-score-ring" id="dn-score-ring"> <div class="dn-score-inner"> <div class="dn-score-number" id="dn-live-score">0.0</div> <div class="dn-score-unit">crowd match</div> </div> </div> <div class="dn-score-micro"> <div class="dn-score-micro-item"> <small>Locked</small> <strong id="dn-locked">0 / 5</strong> </div> <div class="dn-score-micro-item"> <small>Best round</small> <strong id="dn-best-round">--</strong> </div> </div> <div class="dn-rocket-stage" aria-hidden="true"> <div class="dn-trajectory"></div> <div class="dn-rocket"> <span class="dn-rocket-nose"></span> <span class="dn-rocket-body"></span> <span class="dn-rocket-window"></span> <span class="dn-rocket-fin left"></span> <span class="dn-rocket-fin right"></span> <span class="dn-flame"></span> <span class="dn-trail"></span> </div> </div> <div class="dn-trajectory-copy"> <p class="dn-trajectory-title" id="dn-trajectory-title">Awaiting launch.</p> <p class="dn-trajectory-text" id="dn-trajectory-text"> Finish five estimates to calculate your trajectory. </p> </div> </aside> </div> <section class="dn-reveal" id="dn-reveal" aria-live="polite"> <div class="dn-reveal-head"> <div> <span class="dn-reveal-kicker">Mission report</span> <h2 id="dn-reveal-title">Trajectory locked.</h2> </div> <button class="dn-replay" id="dn-replay" type="button">Launch another mission</button> </div> <div class="dn-reveal-grid" id="dn-reveal-grid"></div> </section> </div> <div class="dn-tabs" role="tablist" aria-label="Deep Numbers information"> <button class="dn-tab is-active" type="button" role="tab" aria-selected="true" data-dn-tab="play">Play</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="about">How it works</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="support">Support</button> </div> <div class="dn-info-section"> <section class="dn-panel is-active" id="dn-panel-play" role="tabpanel"> <h2>Trust the estimate.</h2> <p> Deep Numbers is designed around one simple tension: you are not trying to know the answer, you are trying to predict the answer the crowd is likely to produce. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>01 · Estimate</b> <span>Enter one percentage from 0 to 100. Do not overthink it.</span> </div> <div class="dn-panel-card"> <b>02 · Lock</b> <span>Your benchmark stays hidden until all five rounds are complete.</span> </div> <div class="dn-panel-card"> <b>03 · Launch</b> <span>Your overall similarity becomes your rocket's trajectory score.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-about" role="tabpanel" hidden=""> <h2>How the scoring works.</h2> <p> Each question has a hidden benchmark and tolerance. A close estimate scores higher than a distant one. The final mission score is the average of the five round scores. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>100</b> <span>Near-perfect crowd match.</span> </div> <div class="dn-panel-card"> <b>50</b> <span>Mixed trajectory. You caught part of the pattern.</span> </div> <div class="dn-panel-card"> <b>0</b> <span>Wildly off-course. The crowd went another way.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-support" role="tabpanel" hidden=""> <div class="dn-support-box"> <div> <strong>Keep the rockets flying.</strong> <span>Deep Numbers is a small independent project by Ardie Barry Sailis.</span> </div> <a class="dn-support-link" href="/contact/">Get in touch</a> </div> </section> </div> <div class="dn-footer-note"> DEEP NUMBERS · A SMALL INTERACTIVE EXPERIMENT IN HUMAN ESTIMATION </div> </section> </div> </div> <script>
+</style> <div class="deep-numbers-page" id="deep-numbers-app"> <canvas class="dn-star-canvas" id="dn-stars" aria-hidden="true"></canvas> <canvas class="dn-effects-canvas" id="dn-effects" aria-hidden="true"></canvas> <div class="dn-app"> <div class="dn-topbar"> <a class="dn-brand" href="/" aria-label="Back to homepage"> <span class="dn-brand-mark" aria-hidden="true"></span> <span class="dn-brand-copy"> <strong>Deep Numbers</strong> <span>Daily crowd intelligence game</span> </span> </a> <div class="dn-top-actions" aria-label="Game statistics"> <span class="dn-stat-chip"><span class="dn-live"></span> LIVE</span> <span class="dn-stat-chip">STREAK <b id="dn-streak">0</b></span> <span class="dn-stat-chip">BEST <b id="dn-best">0</b></span> </div> </div> <section class="dn-hero" aria-labelledby="dn-title"> <div class="dn-hero-orbit" aria-hidden="true"></div> <div class="dn-hero-content"> <span class="dn-eyebrow"><span class="dn-eyebrow-dot"></span> DAILY MISSION · <span id="dn-mission-date">--</span></span> <h1 class="dn-title" id="dn-title"> <span class="dn-title-gradient">Deep Numbers</span> </h1> <p class="dn-subtitle"> Five questions. Five guesses. One hidden crowd benchmark. The closer you think, the farther your rocket travels. </p> <div class="dn-hero-metrics"> <div class="dn-hero-metric"> <small>Mission</small> <strong id="dn-mission-code">DN-000</strong> </div> <div class="dn-hero-metric"> <small>Questions</small> <strong>05</strong> </div> <div class="dn-hero-metric"> <small>Reset</small> <strong id="dn-reset-timer">--:--:--</strong> </div> </div> </div> <div class="dn-scroll-hint"> Enter the mission <span></span> </div> </section> <section class="dn-cosmic-atlas" aria-labelledby="dn-cosmic-map-title"> <div class="dn-cosmic-atlas-head"> <div> <span class="dn-cosmic-atlas-kicker">Entity map</span> <strong id="dn-cosmic-map-title">From Earth to the deep universe</strong> </div> <span>visual progression atlas</span> </div> <div class="dn-cosmic-atlas-frame"> <img class="dn-cosmic-atlas-image" src="/assets/img/deep-numbers-cosmos.png" alt="Pixel-art cosmic progression from the Sun and planets through Pluto, the Kuiper Belt, distant galaxies, and the deep universe." loading="eager" decoding="async"> </div> <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression"> <div class="dn-cosmic-entity"> <b>Earth</b> <span>home orbit</span> </div> <div class="dn-cosmic-entity"> <b>Moon → Mars</b> <span>planetary reach</span> </div> <div class="dn-cosmic-entity"> <b>Jupiter → Pluto</b> <span>outer system</span> </div> <div class="dn-cosmic-entity"> <b>Kuiper → Oort</b> <span>deep system</span> </div> <div class="dn-cosmic-entity"> <b>Galaxies → Deep</b> <span>cosmic scale</span> </div> </div> </section> <section class="dn-entity-map" aria-labelledby="dn-entity-title"> <div class="dn-entity-heading"> <span class="dn-entity-kicker">ENTITY TRAJECTORY</span> <h2 id="dn-entity-title">How deep can your estimate travel?</h2> <p>Every score pushes the mission farther from Earth, through the Solar System, and into deep space.</p> </div> <div class="dn-entity-frame"> <img src="/assets/img/deep-numbers-entities.svg" alt="Pixel-art trajectory from Earth through the planets, Pluto, and deep space" loading="eager" decoding="async"> </div> </section> <section class="dn-game-wrap" id="dn-game" aria-label="Deep Numbers game"> <div class="dn-game-shell"> <div class="dn-command"> <div class="dn-command-side left"> <span class="dn-command-label">Mission</span> <span class="dn-command-value" id="dn-command-mission">DN-000</span> </div> <div class="dn-command-center">DEEP NUMBERS</div> <div class="dn-command-side right"> <span class="dn-command-label">Window</span> <span class="dn-command-value">05 ESTIMATES</span> </div> </div> <div class="dn-game-grid"> <section class="dn-question-card" aria-live="polite"> <div class="dn-question-head"> <span class="dn-badge"><span class="dn-badge-dot"></span><span id="dn-category">ESTIMATION</span></span> <span class="dn-round" id="dn-round">ROUND 01 / 05</span> </div> <h2 class="dn-question" id="dn-question"> Loading today's question... </h2> <p class="dn-hint" id="dn-hint"> Your first instinct is usually the most useful. </p> <form id="dn-form" novalidate=""> <div class="dn-estimate-zone"> <input class="dn-input" id="dn-input" name="guess" type="number" inputmode="numeric" min="0" max="100" step="1" autocomplete="off" placeholder="0–100" aria-label="Your percentage estimate" required=""> <button class="dn-submit" id="dn-submit" type="submit">Lock Guess</button> </div> <p class="dn-feedback" id="dn-feedback" aria-live="polite"></p> </form> <div class="dn-progress-wrap"> <div class="dn-progress-head"> <span>Mission progress</span> <span id="dn-progress-label">01 / 05</span> </div> <div class="dn-progress-track"> <div class="dn-progress-fill" id="dn-progress-fill"></div> </div> </div> <p class="dn-small-rule"> The benchmark stays hidden until all five guesses are locked. Deep Numbers uses a curated game benchmark, not a claim of real-time survey data. </p> </section> <aside class="dn-score-panel" aria-label="Mission telemetry"> <div class="dn-score-top"> <span class="dn-score-title">Trajectory telemetry</span> <span class="dn-destination" id="dn-destination">READY</span> </div> <div class="dn-score-ring" id="dn-score-ring"> <div class="dn-score-inner"> <div class="dn-score-number" id="dn-live-score">0.0</div> <div class="dn-score-unit">crowd match</div> </div> </div> <div class="dn-score-micro"> <div class="dn-score-micro-item"> <small>Locked</small> <strong id="dn-locked">0 / 5</strong> </div> <div class="dn-score-micro-item"> <small>Best round</small> <strong id="dn-best-round">--</strong> </div> </div> <div class="dn-rocket-stage" aria-hidden="true"> <div class="dn-trajectory"></div> <div class="dn-rocket"> <span class="dn-rocket-nose"></span> <span class="dn-rocket-body"></span> <span class="dn-rocket-window"></span> <span class="dn-rocket-fin left"></span> <span class="dn-rocket-fin right"></span> <span class="dn-flame"></span> <span class="dn-trail"></span> </div> </div> <div class="dn-trajectory-copy"> <p class="dn-trajectory-title" id="dn-trajectory-title">Awaiting launch.</p> <p class="dn-trajectory-text" id="dn-trajectory-text"> Finish five estimates to calculate your trajectory. </p> </div> </aside> </div> <section class="dn-reveal" id="dn-reveal" aria-live="polite"> <div class="dn-reveal-head"> <div> <span class="dn-reveal-kicker">Mission report</span> <h2 id="dn-reveal-title">Trajectory locked.</h2> </div> <button class="dn-replay" id="dn-replay" type="button">Launch another mission</button> </div> <div class="dn-reveal-grid" id="dn-reveal-grid"></div> </section> </div> <div class="dn-tabs" role="tablist" aria-label="Deep Numbers information"> <button class="dn-tab is-active" type="button" role="tab" aria-selected="true" data-dn-tab="play">Play</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="about">How it works</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="support">Support</button> </div> <div class="dn-info-section"> <section class="dn-panel is-active" id="dn-panel-play" role="tabpanel"> <h2>Trust the estimate.</h2> <p> Deep Numbers is designed around one simple tension: you are not trying to know the answer, you are trying to predict the answer the crowd is likely to produce. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>01 · Estimate</b> <span>Enter one percentage from 0 to 100. Do not overthink it.</span> </div> <div class="dn-panel-card"> <b>02 · Lock</b> <span>Your benchmark stays hidden until all five rounds are complete.</span> </div> <div class="dn-panel-card"> <b>03 · Launch</b> <span>Your overall similarity becomes your rocket's trajectory score.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-about" role="tabpanel" hidden=""> <h2>How the scoring works.</h2> <p> Each question has a hidden benchmark and tolerance. A close estimate scores higher than a distant one. The final mission score is the average of the five round scores. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>100</b> <span>Near-perfect crowd match.</span> </div> <div class="dn-panel-card"> <b>50</b> <span>Mixed trajectory. You caught part of the pattern.</span> </div> <div class="dn-panel-card"> <b>0</b> <span>Wildly off-course. The crowd went another way.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-support" role="tabpanel" hidden=""> <div class="dn-support-box"> <div> <strong>Keep the rockets flying.</strong> <span>Deep Numbers is a small independent project by Ardie Barry Sailis.</span> </div> <a class="dn-support-link" href="/contact/">Get in touch</a> </div> </section> </div> <div class="dn-footer-note"> DEEP NUMBERS · A SMALL INTERACTIVE EXPERIMENT IN HUMAN ESTIMATION </div> </section> </div> </div> <script>
 (function () {
   "use strict";
 
