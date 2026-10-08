@@ -81,14 +81,14 @@ main {
 
 .navbar .navbar-nav {
   display: grid;
-  grid-template-columns: repeat(9, 100px);
+  grid-template-columns: repeat(9, 112px);
   align-items: center;
   width: max-content;
   margin-left: auto;
 }
 
 .navbar .nav-item {
-  width: 100px;
+  width: 112px;
 }
 
 .navbar .nav-link {
@@ -101,6 +101,9 @@ main {
   margin: 0.18rem 0.08rem;
   padding: 0.42rem 0.68rem !important;
   box-sizing: border-box;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 0.9rem;
   border: 1px solid transparent;
   border-radius: 999px;
   transition:
@@ -167,6 +170,7 @@ main {
   .navbar .nav-link {
     width: 100%;
     justify-content: flex-start;
+    white-space: normal;
     margin: 0.12rem 0;
     padding: 0.6rem 0.8rem !important;
   }
