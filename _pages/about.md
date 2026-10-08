@@ -67,7 +67,7 @@ social: false
   .page,
   .container,
   main {
-    max-width: 1280px !important;
+    max-width: 1100px !important;
   }
 
   body {
@@ -1376,6 +1376,11 @@ social: false
      ========================================================== */
 
   .profile {
+    width: 100%;
+    max-width: 1100px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
     position: relative;
     padding: 1.35rem 1.25rem 1.15rem;
     border: 1px solid rgba(96,165,250,.22);
