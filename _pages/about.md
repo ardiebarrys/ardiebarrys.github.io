@@ -1847,7 +1847,7 @@ social: false
         <h3>Molecular mechanisms</h3>
         <p>
           Mitochondrial dysfunction, steroidogenesis, microRNA regulation,
-          testosterone signalling, oxidative stress and cellular responses.
+          testosterone signalling, oxidative stress, mechanotransduction and cellular responses.
         </p>
       </div>
     </div>
@@ -1881,7 +1881,8 @@ social: false
     <p>
       A research framework exploring signalling pathways as dynamic control
       systems rather than simple molecular switches, including the redoxostat
-      concept in NRF2–KEAP1 biology.
+      concept in NRF2–KEAP1 biology and the YAP/TAZ mechanochemical
+      signal-resolution circuit.
     </p>
     <a href="/projects/">Explore projects</a>
   </div>
@@ -1962,7 +1963,7 @@ social: false
       <span class="timeline-dot"></span>
       <span class="timeline-year">Independent</span>
       <h3>Framework development</h3>
-      <p>Dynamic regulatory circuits and mechanistic thinking beyond static pathway diagrams.</p>
+      <p>Dynamic regulatory circuits spanning redox and mechanical signaling, temporal decoding, feedback, termination and cellular memory.</p>
     </article>
     <article class="timeline-item">
       <span class="timeline-dot"></span>
@@ -1991,6 +1992,9 @@ social: false
     <span>Mitochondrial dysfunction</span>
     <span>microRNA regulation</span>
     <span>Molecular toxicology</span>
+    <span>Mechanotransduction</span>
+    <span>YAP/TAZ signaling</span>
+    <span>Signal resolution</span>
     <span>Scientific writing</span>
     <span>Evidence synthesis</span>
   </div>
