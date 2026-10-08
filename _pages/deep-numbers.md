@@ -538,6 +538,105 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     }
   }
 
+  .dn-entity-map {
+    position: relative;
+    width: min(1180px, 100%);
+    margin: 0 auto 2.2rem;
+    padding: 1.25rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(129,140,248,.13);
+    border-radius: 20px;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(37,99,235,.07), transparent 30%),
+      radial-gradient(circle at 80% 50%, rgba(124,58,237,.08), transparent 32%),
+      rgba(3,6,16,.58);
+    box-shadow: 0 24px 80px rgba(0,0,0,.24);
+    overflow: hidden;
+  }
+
+  .dn-entity-heading {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: .8rem;
+    align-items: baseline;
+    margin-bottom: .85rem;
+  }
+
+  .dn-entity-kicker {
+    color: #8b8fd4;
+    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .13em;
+  }
+
+  .dn-entity-heading h2 {
+    margin: 0 !important;
+    color: #f7f8ff !important;
+    font-size: 1.18rem !important;
+    letter-spacing: -.03em !important;
+  }
+
+  .dn-entity-heading p {
+    grid-column: 2;
+    margin: .25rem 0 0;
+    color: #6f789b;
+    font-size: .7rem;
+    line-height: 1.55;
+  }
+
+  .dn-entity-frame {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid rgba(148,163,184,.08);
+    border-radius: 15px;
+    background: #02030a;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .dn-entity-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(2,3,10,.8), transparent 5%, transparent 95%, rgba(2,3,10,.8));
+    z-index: 2;
+  }
+
+  .dn-entity-frame img {
+    display: block;
+    width: 100%;
+    min-width: 920px;
+    height: auto;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  @media (max-width: 650px) {
+    .dn-entity-map {
+      padding: .7rem;
+      border-radius: 16px;
+      margin-bottom: 1.2rem;
+    }
+
+    .dn-entity-heading {
+      display: block;
+    }
+
+    .dn-entity-kicker {
+      display: block;
+      margin-bottom: .35rem;
+    }
+
+    .dn-entity-heading p {
+      margin-top: .35rem;
+    }
+
+    .dn-entity-frame img {
+      min-width: 900px;
+    }
+  }
+
   .dn-game-wrap {
     position: relative;
     margin: 0 auto;
@@ -1596,6 +1695,22 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
           <b>Galaxies → Deep</b>
           <span>cosmic scale</span>
         </div>
+      </div>
+    </section>
+
+    <section class="dn-entity-map" aria-labelledby="dn-entity-title">
+      <div class="dn-entity-heading">
+        <span class="dn-entity-kicker">ENTITY TRAJECTORY</span>
+        <h2 id="dn-entity-title">How deep can your estimate travel?</h2>
+        <p>Every score pushes the mission farther from Earth, through the Solar System, and into deep space.</p>
+      </div>
+      <div class="dn-entity-frame">
+        <img
+          src="{{ '/assets/img/deep-numbers-entities.svg' | relative_url }}"
+          alt="Pixel-art trajectory from Earth through the planets, Pluto, and deep space"
+          loading="eager"
+          decoding="async"
+        >
       </div>
     </section>
 
