@@ -69,8 +69,8 @@
 
 /*******************************************************************************
  * Global content width and navigation
- * Match the Contact page layout across the entire site and make the
- * active navigation item visually unmistakable.
+ * Keep the theme's navbar structure intact while giving all navigation items
+ * equal geometry and a stable centered position.
  ******************************************************************************/
 .post,
 .page,
@@ -79,41 +79,52 @@ main {
   max-width: 1280px !important;
 }
 
-.navbar .navbar-nav {
-  display: grid;
-  grid-template-columns: repeat(9, 130px);
+/* Desktop navbar: site brand + centered equal-width navigation grid. */
+.navbar > .container {
+  display: flex;
   align-items: center;
-  width: max-content;
-  margin-left: 0;
-  margin-right: 0;
 }
 
-.navbar .nav-item {
-  width: 130px;
+.navbar .navbar-brand {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  margin-right: 1rem;
 }
 
 .navbar .navbar-collapse-main {
+  flex: 1 1 auto;
+  min-width: 0;
   justify-content: center !important;
 }
 
 .navbar .navbar-menu-list {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  width: min(945px, 100%);
+  margin: 0 auto !important;
+  align-items: center;
+}
+
+.navbar .nav-item {
+  width: 105px;
+  min-width: 0;
 }
 
 .navbar .nav-link {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  gap: 0.38rem;
-  margin: 0.18rem 0.08rem;
-  padding: 0.42rem 0.68rem !important;
+  width: 105px;
+  min-height: 38px;
+  gap: 0;
+  margin: 0.16rem 0;
+  padding: 0.42rem 0.28rem !important;
   box-sizing: border-box;
   white-space: nowrap;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.1;
   border: 1px solid transparent;
   border-radius: 999px;
   transition:
@@ -151,6 +162,9 @@ main {
 .navbar .nav-item.active .nav-link::before,
 .navbar .nav-link[aria-current="page"]::before {
   content: "";
+  position: absolute;
+  left: 9px;
+  top: 50%;
   width: 6px;
   height: 6px;
   flex: 0 0 6px;
@@ -159,13 +173,54 @@ main {
   box-shadow:
     0 0 0 3px rgba(147, 197, 253, 0.10),
     0 0 12px rgba(147, 197, 253, 0.52);
+  transform: translateY(-50%);
 }
 
 .navbar .nav-link .sr-only {
   display: none;
 }
 
+/* Medium desktop: preserve equal geometry while keeping the full navbar usable. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .navbar .navbar-menu-list {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .navbar .nav-item,
+  .navbar .nav-link {
+    width: 100%;
+  }
+
+  .navbar .nav-link {
+    font-size: 0.74rem;
+    padding-left: 0.16rem !important;
+    padding-right: 0.16rem !important;
+  }
+
+  .navbar .nav-item.active .nav-link::before,
+  .navbar .nav-link[aria-current="page"]::before {
+    left: 5px;
+    width: 5px;
+    height: 5px;
+  }
+}
+
+/* Collapsed navbar. */
 @media (max-width: 767.98px) {
+  .navbar > .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .navbar .navbar-brand {
+    margin-right: 0;
+  }
+
+  .navbar .navbar-collapse-main {
+    flex: 1 1 100%;
+  }
+
   .navbar .navbar-nav {
     display: flex;
     flex-direction: column;
@@ -183,6 +238,11 @@ main {
     white-space: normal;
     margin: 0.12rem 0;
     padding: 0.6rem 0.8rem !important;
+  }
+
+  .navbar .nav-item.active .nav-link::before,
+  .navbar .nav-link[aria-current="page"]::before {
+    left: 0.55rem;
   }
 
   .navbar .nav-item.active .nav-link,
