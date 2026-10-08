@@ -1,3 +1,19 @@
+- title: "YAP/TAZ as a mechanochemical signal-resolution circuit"
+  authors:
+    - Ardie Barry Sailis
+  journal: Progress in Biophysics and Molecular Biology
+  year: 2026
+  published: 2026-10-07
+  doi: 10.1016/j.pbiomolbio.2026.101960
+  project: framework
+  short: YAP/TAZ as a mechanochemical signal-resolution circuit
+  selected: true
+  news: New review in Progress in Biophysics and Molecular Biology proposing YAP/TAZ as a mechanochemical signal-resolution circuit.
+  highlight: >-
+    This review develops a mechanochemical signal-resolution circuit framework for YAP/TAZ, integrating mechanical sensing, signal integration, temporal decoding, active termination, and restoration of cellular mechanosensitivity and tissue mechanical homeostasis.
+  abstract: |-
+    Mechanical forces regulate cell fate, tissue homeostasis, regeneration, fibrosis and cancer through interconnected mechanotransduction networks in which Yes-associated protein (YAP) and transcriptional coactivator with PDZ-binding motif (TAZ) serve as major transcriptional effectors. This review develops a mechanochemical signal-resolution circuit framework that integrates evidence from mechanobiology, Hippo signaling, nuclear transport, chromatin regulation, extracellular matrix remodeling and mechanical memory. The framework defines YAP/TAZ regulation as a distributed process in which mechanical inputs are sensed, integrated, temporally decoded, actively terminated and followed by restoration of cellular mechanosensitivity and tissue mechanical homeostasis. Current evidence indicates that YAP/TAZ output depends not only on nuclear abundance but also on signaling duration, nucleocytoplasmic dynamics, transcriptional context, feedback control and the persistence of chromatin, cytoskeletal, metabolic and extracellular changes. Failure at different circuit components may produce abnormal sensing, controller failure, effector escape, resolution failure or memory lock, thereby converting adaptive responses into fibrosis, cancer and other chronic tissue states. This model also explains why transient YAP/TAZ activation can support regeneration, whereas sustained or poorly resolved activation promotes pathological remodeling. Testing the framework will require reversible mechanical perturbations, endogenous live-cell reporters, temporally controlled YAP/TAZ manipulation and integrated single-cell analysis of signaling, transcription, chromatin and mechanics. Therapeutically, restoring signal termination and the mechanical baseline may preserve beneficial YAP/TAZ functions while limiting pathological persistence more selectively than continuous pathway suppression.
+
 # Every paper on the site comes from this list.
 # To add a paper, copy an entry, paste it at the top and change the details.
 # The Publications page, CV, CV PDF, homepage, Projects page, journal charts
