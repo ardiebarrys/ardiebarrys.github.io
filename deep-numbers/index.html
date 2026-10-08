@@ -410,17 +410,11 @@
 
   .dn-cosmic-atlas {
     position: relative;
-    margin: 0 auto 2.4rem;
-    padding: 1rem;
-    border: 1px solid rgba(129,140,248,.14);
-    border-radius: 20px;
-    background:
-      linear-gradient(135deg, rgba(124,58,237,.055), rgba(37,99,235,.035)),
-      rgba(3,5,14,.62);
-    box-shadow:
-      0 24px 70px rgba(0,0,0,.30),
-      inset 0 1px 0 rgba(255,255,255,.025);
-    overflow: hidden;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw) 2.6rem;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
   }
 
   .dn-cosmic-atlas::before {
@@ -429,19 +423,21 @@
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(circle at 22% 50%, rgba(251,146,60,.06), transparent 20%),
-      radial-gradient(circle at 52% 50%, rgba(96,165,250,.08), transparent 20%),
-      radial-gradient(circle at 84% 50%, rgba(167,139,250,.08), transparent 20%);
+      radial-gradient(circle at 22% 50%, rgba(251,146,60,.045), transparent 18%),
+      radial-gradient(circle at 52% 50%, rgba(96,165,250,.055), transparent 20%),
+      radial-gradient(circle at 84% 50%, rgba(167,139,250,.065), transparent 22%);
   }
 
   .dn-cosmic-atlas-head {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 1rem;
-    margin-bottom: .8rem;
+    width: min(1180px, calc(100vw - 1.5rem));
+    margin: 0 auto .55rem;
+    padding: 0 .25rem;
   }
 
   .dn-cosmic-atlas-kicker {
@@ -470,63 +466,88 @@
   .dn-cosmic-atlas-frame {
     position: relative;
     z-index: 2;
+    width: 100vw;
     overflow: hidden;
-    border: 1px solid rgba(148,163,184,.08);
-    border-radius: 14px;
-    background: #010208;
+    border: 0;
+    border-radius: 0;
+    background:
+      radial-gradient(circle at 50% 48%, rgba(23,37,84,.18), transparent 48%),
+      #010208;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.025),
+      inset 0 -1px 0 rgba(255,255,255,.018);
   }
 
   .dn-cosmic-atlas-canvas {
     display: block;
     width: 100%;
-    height: 250px;
-    min-width: 760px;
+    height: 360px;
+    min-width: 0;
     cursor: crosshair;
   }
 
   .dn-cosmic-atlas-scale {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0,1fr));
-    gap: .4rem;
-    margin-top: .55rem;
+    grid-template-columns: repeat(15, minmax(72px, 1fr));
+    gap: 0;
+    width: min(1180px, calc(100vw - 1.5rem));
+    margin: .65rem auto 0;
+    overflow-x: auto;
+    padding: 0 .25rem .25rem;
+    scrollbar-width: thin;
   }
 
   .dn-cosmic-entity {
-    padding: .58rem .45rem;
-    border: 1px solid rgba(148,163,184,.07);
-    border-radius: 9px;
-    background: rgba(2,4,12,.72);
+    min-width: 72px;
+    padding: .45rem .3rem .5rem;
+    border: 0;
+    border-right: 1px solid rgba(148,163,184,.07);
+    border-radius: 0;
+    background: transparent;
     color: #667292;
-    font: 800 .52rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
-    letter-spacing: .05em;
+    font: 800 .48rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+    letter-spacing: .04em;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .dn-cosmic-entity:first-child {
+    border-left: 1px solid rgba(148,163,184,.07);
   }
 
   .dn-cosmic-entity b {
     display: block;
     color: #aab5d5;
-    font-size: .58rem;
+    font-size: .55rem;
   }
 
   .dn-cosmic-entity span {
     display: block;
     margin-top: .2rem;
+    color: #586484;
   }
 
-  .dn-cosmic-entity:nth-child(1) b { color: #93c5fd; }
-  .dn-cosmic-entity:nth-child(2) b { color: #60a5fa; }
-  .dn-cosmic-entity:nth-child(3) b { color: #67e8f9; }
-  .dn-cosmic-entity:nth-child(4) b { color: #a78bfa; }
-  .dn-cosmic-entity:nth-child(5) b { color: #f0abfc; }
+  .dn-cosmic-entity:nth-child(1) b { color: #d1d5db; }
+  .dn-cosmic-entity:nth-child(2) b { color: #f7c7a5; }
+  .dn-cosmic-entity:nth-child(3) b { color: #93c5fd; }
+  .dn-cosmic-entity:nth-child(4) b { color: #cbd5e1; }
+  .dn-cosmic-entity:nth-child(5) b { color: #fb7185; }
+  .dn-cosmic-entity:nth-child(6) b { color: #d6a06b; }
+  .dn-cosmic-entity:nth-child(7) b { color: #fde68a; }
+  .dn-cosmic-entity:nth-child(8) b { color: #67e8f9; }
+  .dn-cosmic-entity:nth-child(9) b { color: #93c5fd; }
+  .dn-cosmic-entity:nth-child(10) b { color: #ddd6fe; }
+  .dn-cosmic-entity:nth-child(11) b { color: #a78bfa; }
+  .dn-cosmic-entity:nth-child(12) b { color: #67e8f9; }
+  .dn-cosmic-entity:nth-child(13) b { color: #c4b5fd; }
+  .dn-cosmic-entity:nth-child(14) b { color: #bfdbfe; }
+  .dn-cosmic-entity:nth-child(15) b { color: #e9d5ff; }
 
   @media (max-width: 650px) {
     .dn-cosmic-atlas {
-      padding: .65rem;
-      margin-bottom: 1.5rem;
-      border-radius: 16px;
+      margin-bottom: 1.7rem;
     }
 
     .dn-cosmic-atlas-head {
@@ -540,15 +561,14 @@
     }
 
     .dn-cosmic-atlas-canvas {
-      min-width: 760px;
-      height: 220px;
+      height: 300px;
     }
 
     .dn-cosmic-atlas-scale {
-      grid-template-columns: repeat(5, minmax(70px,1fr));
+      width: 100%;
+      grid-template-columns: repeat(15, minmax(78px, 1fr));
       overflow-x: auto;
-      padding-bottom: .2rem;
-      scrollbar-width: thin;
+      padding-bottom: .25rem;
     }
   }
 
@@ -1525,7 +1545,7 @@
       scroll-behavior: auto !important;
     }
   }
-</style> <div class="deep-numbers-page" id="deep-numbers-app"> <canvas class="dn-star-canvas" id="dn-stars" aria-hidden="true"></canvas> <canvas class="dn-effects-canvas" id="dn-effects" aria-hidden="true"></canvas> <div class="dn-app"> <div class="dn-topbar"> <a class="dn-brand" href="/" aria-label="Back to homepage"> <span class="dn-brand-mark" aria-hidden="true"></span> <span class="dn-brand-copy"> <strong>Deep Numbers</strong> <span>Daily crowd intelligence game</span> </span> </a> <div class="dn-top-actions" aria-label="Game statistics"> <span class="dn-stat-chip"><span class="dn-live"></span> LIVE</span> <span class="dn-stat-chip">STREAK <b id="dn-streak">0</b></span> <span class="dn-stat-chip">BEST <b id="dn-best">0</b></span> </div> </div> <section class="dn-hero" aria-labelledby="dn-title"> <div class="dn-hero-orbit" aria-hidden="true"></div> <div class="dn-hero-content"> <span class="dn-eyebrow"><span class="dn-eyebrow-dot"></span> DAILY MISSION · <span id="dn-mission-date">--</span></span> <h1 class="dn-title" id="dn-title"> <span class="dn-title-gradient">Deep Numbers</span> </h1> <p class="dn-subtitle"> Five questions. Five guesses. One hidden crowd benchmark. The closer you think, the farther your rocket travels. </p> <div class="dn-hero-metrics"> <div class="dn-hero-metric"> <small>Mission</small> <strong id="dn-mission-code">DN-000</strong> </div> <div class="dn-hero-metric"> <small>Questions</small> <strong>05</strong> </div> <div class="dn-hero-metric"> <small>Reset</small> <strong id="dn-reset-timer">--:--:--</strong> </div> </div> </div> <div class="dn-scroll-hint"> Enter the mission <span></span> </div> </section> <section class="dn-cosmic-atlas" aria-labelledby="dn-cosmic-map-title"> <div class="dn-cosmic-atlas-head"> <div> <span class="dn-cosmic-atlas-kicker">Entity map</span> <strong id="dn-cosmic-map-title">From Earth to the deep universe</strong> </div> <span>visual progression atlas</span> </div> <div class="dn-cosmic-atlas-frame"> <canvas class="dn-cosmic-atlas-canvas" id="dn-cosmic-canvas" role="img" aria-label="Animated code-drawn cosmic progression from Earth through Pluto and into deep space."></canvas> </div> <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression"> <div class="dn-cosmic-entity"> <b>Earth</b> <span>home orbit</span> </div> <div class="dn-cosmic-entity"> <b>Moon → Mars</b> <span>planetary reach</span> </div> <div class="dn-cosmic-entity"> <b>Jupiter → Pluto</b> <span>outer system</span> </div> <div class="dn-cosmic-entity"> <b>Kuiper → Oort</b> <span>deep system</span> </div> <div class="dn-cosmic-entity"> <b>Galaxies → Deep</b> <span>cosmic scale</span> </div> </div> </section> <section class="dn-game-wrap" id="dn-game" aria-label="Deep Numbers game"> <div class="dn-game-shell"> <div class="dn-command"> <div class="dn-command-side left"> <span class="dn-command-label">Mission</span> <span class="dn-command-value" id="dn-command-mission">DN-000</span> </div> <div class="dn-command-center">DEEP NUMBERS</div> <div class="dn-command-side right"> <span class="dn-command-label">Window</span> <span class="dn-command-value">05 ESTIMATES</span> </div> </div> <div class="dn-game-grid"> <section class="dn-question-card" aria-live="polite"> <div class="dn-question-head"> <span class="dn-badge"><span class="dn-badge-dot"></span><span id="dn-category">ESTIMATION</span></span> <span class="dn-round" id="dn-round">ROUND 01 / 05</span> </div> <h2 class="dn-question" id="dn-question"> Loading today's question... </h2> <p class="dn-hint" id="dn-hint"> Your first instinct is usually the most useful. </p> <form id="dn-form" novalidate=""> <div class="dn-estimate-zone"> <input class="dn-input" id="dn-input" name="guess" type="number" inputmode="numeric" min="0" max="100" step="1" autocomplete="off" placeholder="0–100" aria-label="Your percentage estimate" required=""> <button class="dn-submit" id="dn-submit" type="submit">Lock Guess</button> </div> <p class="dn-feedback" id="dn-feedback" aria-live="polite"></p> </form> <div class="dn-progress-wrap"> <div class="dn-progress-head"> <span>Mission progress</span> <span id="dn-progress-label">01 / 05</span> </div> <div class="dn-progress-track"> <div class="dn-progress-fill" id="dn-progress-fill"></div> </div> </div> <p class="dn-small-rule"> The benchmark stays hidden until all five guesses are locked. Deep Numbers uses a curated game benchmark, not a claim of real-time survey data. </p> </section> <aside class="dn-score-panel" aria-label="Mission telemetry"> <div class="dn-score-top"> <span class="dn-score-title">Trajectory telemetry</span> <span class="dn-destination" id="dn-destination">READY</span> </div> <div class="dn-score-ring" id="dn-score-ring"> <div class="dn-score-inner"> <div class="dn-score-number" id="dn-live-score">0.0</div> <div class="dn-score-unit">crowd match</div> </div> </div> <div class="dn-score-micro"> <div class="dn-score-micro-item"> <small>Locked</small> <strong id="dn-locked">0 / 5</strong> </div> <div class="dn-score-micro-item"> <small>Best round</small> <strong id="dn-best-round">--</strong> </div> </div> <div class="dn-rocket-stage" aria-hidden="true"> <div class="dn-trajectory"></div> <div class="dn-rocket"> <span class="dn-rocket-nose"></span> <span class="dn-rocket-body"></span> <span class="dn-rocket-window"></span> <span class="dn-rocket-fin left"></span> <span class="dn-rocket-fin right"></span> <span class="dn-flame"></span> <span class="dn-trail"></span> </div> </div> <div class="dn-trajectory-copy"> <p class="dn-trajectory-title" id="dn-trajectory-title">Awaiting launch.</p> <p class="dn-trajectory-text" id="dn-trajectory-text"> Finish five estimates to calculate your trajectory. </p> </div> </aside> </div> <section class="dn-reveal" id="dn-reveal" aria-live="polite"> <div class="dn-reveal-head"> <div> <span class="dn-reveal-kicker">Mission report</span> <h2 id="dn-reveal-title">Trajectory locked.</h2> </div> <button class="dn-replay" id="dn-replay" type="button">Launch another mission</button> </div> <div class="dn-reveal-grid" id="dn-reveal-grid"></div> </section> </div> <div class="dn-tabs" role="tablist" aria-label="Deep Numbers information"> <button class="dn-tab is-active" type="button" role="tab" aria-selected="true" data-dn-tab="play">Play</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="about">How it works</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="support">Support</button> </div> <div class="dn-info-section"> <section class="dn-panel is-active" id="dn-panel-play" role="tabpanel"> <h2>Trust the estimate.</h2> <p> Deep Numbers is designed around one simple tension: you are not trying to know the answer, you are trying to predict the answer the crowd is likely to produce. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>01 · Estimate</b> <span>Enter one percentage from 0 to 100. Do not overthink it.</span> </div> <div class="dn-panel-card"> <b>02 · Lock</b> <span>Your benchmark stays hidden until all five rounds are complete.</span> </div> <div class="dn-panel-card"> <b>03 · Launch</b> <span>Your overall similarity becomes your rocket's trajectory score.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-about" role="tabpanel" hidden=""> <h2>How the scoring works.</h2> <p> Each question has a hidden benchmark and tolerance. A close estimate scores higher than a distant one. The final mission score is the average of the five round scores. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>100</b> <span>Near-perfect crowd match.</span> </div> <div class="dn-panel-card"> <b>50</b> <span>Mixed trajectory. You caught part of the pattern.</span> </div> <div class="dn-panel-card"> <b>0</b> <span>Wildly off-course. The crowd went another way.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-support" role="tabpanel" hidden=""> <div class="dn-support-box"> <div> <strong>Keep the rockets flying.</strong> <span>Deep Numbers is a small independent project by Ardie Barry Sailis.</span> </div> <a class="dn-support-link" href="/contact/">Get in touch</a> </div> </section> </div> <div class="dn-footer-note"> DEEP NUMBERS · A SMALL INTERACTIVE EXPERIMENT IN HUMAN ESTIMATION </div> </section> </div> </div> <script>
+</style> <div class="deep-numbers-page" id="deep-numbers-app"> <canvas class="dn-star-canvas" id="dn-stars" aria-hidden="true"></canvas> <canvas class="dn-effects-canvas" id="dn-effects" aria-hidden="true"></canvas> <div class="dn-app"> <div class="dn-topbar"> <a class="dn-brand" href="/" aria-label="Back to homepage"> <span class="dn-brand-mark" aria-hidden="true"></span> <span class="dn-brand-copy"> <strong>Deep Numbers</strong> <span>Daily crowd intelligence game</span> </span> </a> <div class="dn-top-actions" aria-label="Game statistics"> <span class="dn-stat-chip"><span class="dn-live"></span> LIVE</span> <span class="dn-stat-chip">STREAK <b id="dn-streak">0</b></span> <span class="dn-stat-chip">BEST <b id="dn-best">0</b></span> </div> </div> <section class="dn-hero" aria-labelledby="dn-title"> <div class="dn-hero-orbit" aria-hidden="true"></div> <div class="dn-hero-content"> <span class="dn-eyebrow"><span class="dn-eyebrow-dot"></span> DAILY MISSION · <span id="dn-mission-date">--</span></span> <h1 class="dn-title" id="dn-title"> <span class="dn-title-gradient">Deep Numbers</span> </h1> <p class="dn-subtitle"> Five questions. Five guesses. One hidden crowd benchmark. The closer you think, the farther your rocket travels. </p> <div class="dn-hero-metrics"> <div class="dn-hero-metric"> <small>Mission</small> <strong id="dn-mission-code">DN-000</strong> </div> <div class="dn-hero-metric"> <small>Questions</small> <strong>05</strong> </div> <div class="dn-hero-metric"> <small>Reset</small> <strong id="dn-reset-timer">--:--:--</strong> </div> </div> </div> <div class="dn-scroll-hint"> Enter the mission <span></span> </div> </section> <section class="dn-cosmic-atlas" aria-labelledby="dn-cosmic-map-title"> <div class="dn-cosmic-atlas-head"> <div> <span class="dn-cosmic-atlas-kicker">Entity map</span> <strong id="dn-cosmic-map-title">From the inner planets to the deep universe</strong> </div> <span>continuous procedural atlas · your guesses become trajectories</span> </div> <div class="dn-cosmic-atlas-frame"> <canvas class="dn-cosmic-atlas-canvas" id="dn-cosmic-canvas" role="img" aria-label="Animated code-drawn progression from Mercury and Venus through Earth, the outer planets, Pluto, the Kuiper Belt, the Oort Cloud, nearby galaxies, and the deep universe."></canvas> </div> <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression"> <div class="dn-cosmic-entity"> <b>Mercury</b><span>inner world</span> </div> <div class="dn-cosmic-entity"> <b>Venus</b><span>greenhouse world</span> </div> <div class="dn-cosmic-entity"> <b>Earth</b><span>home world</span> </div> <div class="dn-cosmic-entity"> <b>Moon</b><span>natural satellite</span> </div> <div class="dn-cosmic-entity"> <b>Mars</b><span>rocky frontier</span> </div> <div class="dn-cosmic-entity"> <b>Jupiter</b><span>gas giant</span> </div> <div class="dn-cosmic-entity"> <b>Saturn</b><span>ringed giant</span> </div> <div class="dn-cosmic-entity"> <b>Uranus</b><span>ice giant</span> </div> <div class="dn-cosmic-entity"> <b>Neptune</b><span>outer planet</span> </div> <div class="dn-cosmic-entity"> <b>Pluto</b><span>dwarf planet</span> </div> <div class="dn-cosmic-entity"> <b>Kuiper Belt</b><span>icy reservoir</span> </div> <div class="dn-cosmic-entity"> <b>Oort Cloud</b><span>far reservoir</span> </div> <div class="dn-cosmic-entity"> <b>Milky Way</b><span>home galaxy</span> </div> <div class="dn-cosmic-entity"> <b>Andromeda</b><span>neighbor galaxy</span> </div> <div class="dn-cosmic-entity"> <b>Deep Field</b><span>cosmic scale</span> </div> </div> </section> &lt;section class="dn-game-wrap id="dn-game" aria-label="Deep Numbers game"&gt; <div class="dn-game-shell"> <div class="dn-command"> <div class="dn-command-side left"> <span class="dn-command-label">Mission</span> <span class="dn-command-value" id="dn-command-mission">DN-000</span> </div> <div class="dn-command-center">DEEP NUMBERS</div> <div class="dn-command-side right"> <span class="dn-command-label">Window</span> <span class="dn-command-value">05 ESTIMATES</span> </div> </div> <div class="dn-game-grid"> <section class="dn-question-card" aria-live="polite"> <div class="dn-question-head"> <span class="dn-badge"><span class="dn-badge-dot"></span><span id="dn-category">ESTIMATION</span></span> <span class="dn-round" id="dn-round">ROUND 01 / 05</span> </div> <h2 class="dn-question" id="dn-question"> Loading today's question... </h2> <p class="dn-hint" id="dn-hint"> Your first instinct is usually the most useful. </p> <form id="dn-form" novalidate=""> <div class="dn-estimate-zone"> <input class="dn-input" id="dn-input" name="guess" type="number" inputmode="numeric" min="0" max="100" step="1" autocomplete="off" placeholder="0–100" aria-label="Your percentage estimate" required=""> <button class="dn-submit" id="dn-submit" type="submit">Lock Guess</button> </div> <p class="dn-feedback" id="dn-feedback" aria-live="polite"></p> </form> <div class="dn-progress-wrap"> <div class="dn-progress-head"> <span>Mission progress</span> <span id="dn-progress-label">01 / 05</span> </div> <div class="dn-progress-track"> <div class="dn-progress-fill" id="dn-progress-fill"></div> </div> </div> <p class="dn-small-rule"> The benchmark stays hidden until all five guesses are locked. Deep Numbers uses a curated game benchmark, not a claim of real-time survey data. </p> </section> <aside class="dn-score-panel" aria-label="Mission telemetry"> <div class="dn-score-top"> <span class="dn-score-title">Trajectory telemetry</span> <span class="dn-destination" id="dn-destination">READY</span> </div> <div class="dn-score-ring" id="dn-score-ring"> <div class="dn-score-inner"> <div class="dn-score-number" id="dn-live-score">0.0</div> <div class="dn-score-unit">crowd match</div> </div> </div> <div class="dn-score-micro"> <div class="dn-score-micro-item"> <small>Locked</small> <strong id="dn-locked">0 / 5</strong> </div> <div class="dn-score-micro-item"> <small>Best round</small> <strong id="dn-best-round">--</strong> </div> </div> <div class="dn-rocket-stage" aria-hidden="true"> <div class="dn-trajectory"></div> <div class="dn-rocket"> <span class="dn-rocket-nose"></span> <span class="dn-rocket-body"></span> <span class="dn-rocket-window"></span> <span class="dn-rocket-fin left"></span> <span class="dn-rocket-fin right"></span> <span class="dn-flame"></span> <span class="dn-trail"></span> </div> </div> <div class="dn-trajectory-copy"> <p class="dn-trajectory-title" id="dn-trajectory-title">Awaiting launch.</p> <p class="dn-trajectory-text" id="dn-trajectory-text"> Finish five estimates to calculate your trajectory. </p> </div> </aside> </div> <section class="dn-reveal" id="dn-reveal" aria-live="polite"> <div class="dn-reveal-head"> <div> <span class="dn-reveal-kicker">Mission report</span> <h2 id="dn-reveal-title">Trajectory locked.</h2> </div> <button class="dn-replay" id="dn-replay" type="button">Launch another mission</button> </div> <div class="dn-reveal-grid" id="dn-reveal-grid"></div> </section> </div> <div class="dn-tabs" role="tablist" aria-label="Deep Numbers information"> <button class="dn-tab is-active" type="button" role="tab" aria-selected="true" data-dn-tab="play">Play</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="about">How it works</button> <button class="dn-tab" type="button" role="tab" aria-selected="false" data-dn-tab="support">Support</button> </div> <div class="dn-info-section"> <section class="dn-panel is-active" id="dn-panel-play" role="tabpanel"> <h2>Trust the estimate.</h2> <p> Deep Numbers is designed around one simple tension: you are not trying to know the answer, you are trying to predict the answer the crowd is likely to produce. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>01 · Estimate</b> <span>Enter one percentage from 0 to 100. Do not overthink it.</span> </div> <div class="dn-panel-card"> <b>02 · Lock</b> <span>Your benchmark stays hidden until all five rounds are complete.</span> </div> <div class="dn-panel-card"> <b>03 · Launch</b> <span>Your overall similarity becomes your rocket's trajectory score.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-about" role="tabpanel" hidden=""> <h2>How the scoring works.</h2> <p> Each question has a hidden benchmark and tolerance. A close estimate scores higher than a distant one. The final mission score is the average of the five round scores. </p> <div class="dn-panel-grid"> <div class="dn-panel-card"> <b>100</b> <span>Near-perfect crowd match.</span> </div> <div class="dn-panel-card"> <b>50</b> <span>Mixed trajectory. You caught part of the pattern.</span> </div> <div class="dn-panel-card"> <b>0</b> <span>Wildly off-course. The crowd went another way.</span> </div> </div> </section> <section class="dn-panel" id="dn-panel-support" role="tabpanel" hidden=""> <div class="dn-support-box"> <div> <strong>Keep the rockets flying.</strong> <span>Deep Numbers is a small independent project by Ardie Barry Sailis.</span> </div> <a class="dn-support-link" href="/contact/">Get in touch</a> </div> </section> </div> <div class="dn-footer-note"> DEEP NUMBERS · A SMALL INTERACTIVE EXPERIMENT IN HUMAN ESTIMATION </div> &lt;/section&gt; </div> </div> <script>
 (function () {
   "use strict";
 
@@ -2183,19 +2203,20 @@
     }
 
     var labels = [
-      "EARTH", "MOON", "MARS", "JUPITER", "SATURN", "URANUS",
-      "NEPTUNE", "PLUTO", "KUIPER", "OORT", "MILKY WAY", "ANDROMEDA", "DEEP"
+      "MERCURY", "VENUS", "EARTH", "MOON", "MARS", "JUPITER", "SATURN",
+      "URANUS", "NEPTUNE", "PLUTO", "KUIPER", "OORT", "MILKY WAY", "ANDROMEDA", "DEEP"
     ];
     var colors = [
-      "#60a5fa", "#cbd5e1", "#fb7185", "#d6a06b", "#fde68a", "#67e8f9",
-      "#93c5fd", "#ddd6fe", "#a78bfa", "#67e8f9", "#c4b5fd", "#bfdbfe", "#e9d5ff"
+      "#d1d5db", "#f6d49b", "#60a5fa", "#cbd5e1", "#fb7185", "#d6a06b",
+      "#fde68a", "#67e8f9", "#93c5fd", "#ddd6fe", "#a78bfa", "#67e8f9",
+      "#c4b5fd", "#bfdbfe", "#e9d5ff"
     ];
 
-    var left = 48;
-    var right = width - 48;
+    var left = Math.max(52, width * .035);
+    var right = Math.min(width - 52, width * .965);
     var step = (right - left) / (labels.length - 1);
-    var cy = Math.floor(height * .47);
-    var planetR = Math.max(16, Math.min(27, step * .31));
+    var cy = Math.floor(height * .49);
+    var planetR = Math.max(20, Math.min(38, step * .31));
 
     // Route line, with subtle direction arrows.
     var route = ctx.createLinearGradient(left, 0, right, 0);
@@ -2456,79 +2477,257 @@
       ctx.fillRect(satX - 1, satY - 1, 2, 2);
       ctx.shadowBlur = 0;
     }
-    function drawMoon(x, y, r) {
-      circleGlow(x, y, "#cbd5e1", r * 2.0, .11);
-      sphere(x, y, r, "#f8fafc", "#a8b0bd", "#555d6b");
-      for (var c = 0; c < 8; c += 1) {
-        var ca = seeded(c + 42) * Math.PI * 2;
-        var cr = r * (.06 + seeded(c + 82) * .09);
-        var cx = x + Math.cos(ca) * r * .55;
-        var cy2 = y + Math.sin(ca) * r * .55;
-        ctx.fillStyle = "rgba(45,52,65,.35)";
+    function craterField(x, y, r, count, seedOffset, scale, color) {
+      for (var c = 0; c < count; c += 1) {
+        var angle = seeded(c + seedOffset) * Math.PI * 2;
+        var dist = r * (.18 + seeded(c + seedOffset + 70) * .70);
+        var cx = x + Math.cos(angle) * dist;
+        var cy2 = y + Math.sin(angle) * dist * .88;
+        var cr = r * (.018 + seeded(c + seedOffset + 140) * scale);
+        ctx.strokeStyle = rgba(color, .22 + seeded(c + seedOffset + 210) * .22);
+        ctx.fillStyle = rgba("#101827", .12 + seeded(c + seedOffset + 280) * .20);
+        ctx.lineWidth = Math.max(.65, r * .012);
         ctx.beginPath();
         ctx.arc(cx, cy2, cr, 0, Math.PI * 2);
         ctx.fill();
+        ctx.stroke();
+        if (cr > r * .045) {
+          ctx.strokeStyle = "rgba(255,255,255,.10)";
+          ctx.beginPath();
+          ctx.arc(cx - cr * .24, cy - cr * .24, cr * .78, Math.PI * .9, Math.PI * 1.75);
+          ctx.stroke();
+        }
       }
     }
 
-    function drawMars(x, y, r) {
-      circleGlow(x, y, "#fb7185", r * 2.2, .16);
-      sphere(x, y, r, "#fed7aa", "#d64b43", "#6f211f");
-      ctx.fillStyle = "rgba(83,29,29,.35)";
+    function drawMercury(x, y, r) {
+      circleGlow(x, y, "#d1d5db", r * 2.4, .10);
+      sphere(x, y, r, "#f1f5f9", "#8f96a2", "#3d4654");
+      craterField(x, y, r, 22, 901, .040, "#e5e7eb");
+
+      // Bright crater rays and the large Caloris basin.
+      ctx.save();
       ctx.beginPath();
-      ctx.ellipse(x - r * .28, y + r * .02, r * .18, r * .11, -.5, 0, Math.PI * 2);
-      ctx.ellipse(x + r * .27, y - r * .18, r * .12, r * .08, .4, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.fillStyle = "rgba(255,255,255,.65)";
+      ctx.arc(x, y, r * .98, 0, Math.PI * 2);
+      ctx.clip();
+      ctx.strokeStyle = "rgba(248,250,252,.20)";
+      ctx.lineWidth = Math.max(1, r * .018);
+      for (var ray = 0; ray < 8; ray += 1) {
+        var ra = ray * Math.PI / 4 + .18;
+        ctx.beginPath();
+        ctx.moveTo(x - Math.cos(ra) * r * .07, y - Math.sin(ra) * r * .07);
+        ctx.lineTo(x + Math.cos(ra) * r * .55, y + Math.sin(ra) * r * .55);
+        ctx.stroke();
+      }
+      ctx.strokeStyle = "rgba(250,250,250,.30)";
+      ctx.lineWidth = Math.max(1.2, r * .028);
       ctx.beginPath();
-      ctx.ellipse(x - r * .18, y - r * .78, r * .28, r * .08, -.1, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.arc(x - r * .25, y + r * .12, r * .25, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+
+      // Thin exosphere halo.
+      ctx.strokeStyle = "rgba(226,232,240,.24)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(x, y, r * 1.04, 0, Math.PI * 2);
+      ctx.stroke();
     }
 
-    function drawJupiter(x, y, r) {
-      circleGlow(x, y, "#d6a06b", r * 2.4, .13);
-      sphere(x, y, r, "#fff7ed", "#c58a61", "#70483d");
+    function drawVenus(x, y, r) {
+      circleGlow(x, y, "#f6d49b", r * 2.6, .13);
+      sphere(x, y, r, "#fff1c7", "#d9a45e", "#7c4a2b");
+
       ctx.save();
       ctx.beginPath();
       ctx.arc(x, y, r * .99, 0, Math.PI * 2);
       ctx.clip();
 
-      var bands = [
-        ["rgba(255,245,230,.68)", -.66, .10],
-        ["rgba(112,72,61,.48)", -.48, .09],
-        ["rgba(250,220,191,.65)", -.31, .12],
-        ["rgba(118,76,61,.48)", -.10, .08],
-        ["rgba(245,212,181,.62)", .08, .12],
-        ["rgba(107,69,58,.48)", .30, .09],
-        ["rgba(239,203,169,.58)", .52, .13]
-      ];
-      bands.forEach(function (band) {
-        ctx.fillStyle = band[0];
-        ctx.fillRect(x - r, y + band[1] * r, r * 2, band[2] * r);
-      });
+      // Thick sulfuric-acid cloud deck: layered, high-altitude streaks.
+      for (var band = 0; band < 13; band += 1) {
+        var by = y - r + (band + .45) * (2 * r / 13);
+        ctx.strokeStyle = band % 3 === 0
+          ? "rgba(255,246,202,.34)"
+          : "rgba(255,222,150,.20)";
+        ctx.lineWidth = Math.max(1.4, r * (.035 + seeded(band + 1200) * .025));
+        ctx.beginPath();
+        ctx.moveTo(x - r * 1.1, by);
+        ctx.bezierCurveTo(
+          x - r * .45, by - r * .12,
+          x + r * .30, by + r * .10,
+          x + r * 1.1, by - r * .04
+        );
+        ctx.stroke();
+      }
 
-      ctx.fillStyle = "#b85b4a";
+      // Fast atmospheric super-rotation, represented by diagonal streaks.
+      ctx.strokeStyle = "rgba(255,248,214,.18)";
+      ctx.lineWidth = Math.max(1, r * .018);
+      for (var streak = -3; streak <= 3; streak += 1) {
+        ctx.beginPath();
+        ctx.moveTo(x - r * .90, y + streak * r * .18);
+        ctx.lineTo(x + r * .85, y + (streak + .42) * r * .15);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    function drawMoon(x, y, r) {
+      circleGlow(x, y, "#cbd5e1", r * 2.15, .12);
+      sphere(x, y, r, "#f8fafc", "#a9b0bb", "#4b5563");
+      craterField(x, y, r, 25, 42, .065, "#f8fafc");
+
+      ctx.save();
       ctx.beginPath();
-      ctx.ellipse(x + r * .42, y + r * .22, r * .22, r * .12, -.05, 0, Math.PI * 2);
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      // Mare fields.
+      var maria = [
+        [-.34,-.18,.20,.12],[-.05,.04,.27,.15],[.28,-.18,.16,.11],
+        [.16,.32,.20,.10],[-.30,.35,.13,.09]
+      ];
+      maria.forEach(function (m, i) {
+        ctx.fillStyle = "rgba(72,78,89," + (.12 + (i % 2) * .05) + ")";
+        ctx.beginPath();
+        ctx.ellipse(x + m[0] * r, y + m[1] * r, m[2] * r, m[3] * r, seeded(i + 90) * .7, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      ctx.restore();
+    }
+
+    function drawMars(x, y, r) {
+      circleGlow(x, y, "#fb7185", r * 2.4, .15);
+      sphere(x, y, r, "#ffd7b0", "#bd4d3f", "#641f20");
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      // Iron-oxide terrain and dark basaltic regions.
+      craterField(x, y, r, 15, 1440, .032, "#ffd7b0");
+      ctx.fillStyle = "rgba(86,35,32,.30)";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .30, y - r * .10, r * .26, r * .10, -.25, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.ellipse(x - r * .28, y + r * .18, r * .18, r * .09, .35, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Valles Marineris: a long equatorial canyon system.
+      ctx.strokeStyle = "rgba(74,24,24,.58)";
+      ctx.lineWidth = Math.max(2, r * .055);
+      ctx.beginPath();
+      ctx.moveTo(x - r * .72, y + r * .02);
+      ctx.bezierCurveTo(
+        x - r * .28, y - r * .04,
+        x + r * .18, y + r * .12,
+        x + r * .67, y - r * .02
+      );
+      ctx.stroke();
+
+      // Polar caps and a faint dust storm.
+      ctx.fillStyle = "rgba(245,245,245,.78)";
+      ctx.beginPath();
+      ctx.ellipse(x - r * .03, y - r * .83, r * .31, r * .11, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = "rgba(245,218,186,.20)";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .28, y + r * .05, r * .40, r * .18, -.25, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
 
+    function drawJupiter(x, y, r) {
+      circleGlow(x, y, "#d6a06b", r * 2.55, .14);
+      sphere(x, y, r, "#fff8ec", "#c78c62", "#70493c");
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      // Alternating belts and zones with irregular turbulent edges.
+      var bands = [
+        ["#e9d5bf", -.78, .11], ["#9b6d59", -.62, .09], ["#f6ead8", -.49, .14],
+        ["#a9755b", -.31, .08], ["#f5dfc6", -.17, .13], ["#9d6a57", -.02, .08],
+        ["#f8ead6", .10, .13], ["#a46f59", .27, .09], ["#efd4b9", .43, .12],
+        ["#8f5d4e", .60, .08], ["#f5e2ca", .73, .12]
+      ];
+      bands.forEach(function (band, bi) {
+        ctx.fillStyle = band[0];
+        var yy = y + band[1] * r;
+        ctx.fillRect(x - r, yy, r * 2, band[2] * r);
+
+        ctx.strokeStyle = bi % 2 ? "rgba(255,255,255,.10)" : "rgba(77,45,39,.13)";
+        ctx.lineWidth = Math.max(1, r * .015);
+        for (var wave = 0; wave < 4; wave += 1) {
+          ctx.beginPath();
+          for (var wp = 0; wp <= 24; wp += 1) {
+            var wx = x - r + wp / 24 * r * 2;
+            var wy = yy + band[2] * r * .5 + Math.sin(wp * .75 + wave * 1.7 + bi) * r * .018;
+            if (wp === 0) ctx.moveTo(wx, wy);
+            else ctx.lineTo(wx, wy);
+          }
+          ctx.stroke();
+        }
+      });
+
+      // Great Red Spot and smaller vortices.
+      ctx.fillStyle = "#b85a49";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .38, y + r * .23, r * .22, r * .12, -.08, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255,210,190,.28)";
+      ctx.lineWidth = Math.max(1, r * .018);
+      ctx.beginPath();
+      ctx.ellipse(x + r * .38, y + r * .23, r * .16, r * .075, -.08, 0, Math.PI * 2);
+      ctx.stroke();
+
+      for (var storm = 0; storm < 5; storm += 1) {
+        var stx = x - r * .46 + storm * r * .18;
+        var sty = y - r * .30 + Math.sin(storm * 1.9) * r * .06;
+        ctx.fillStyle = storm % 2 ? "rgba(255,255,255,.65)" : "rgba(170,92,69,.52)";
+        ctx.beginPath();
+        ctx.ellipse(stx, sty, r * .07, r * .035, .1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // Faint polar haze.
+      var pole = ctx.createRadialGradient(x, y - r * .8, 0, x, y - r * .8, r * .42);
+      pole.addColorStop(0, "rgba(255,255,255,.20)");
+      pole.addColorStop(1, "rgba(255,255,255,0)");
+      ctx.fillStyle = pole;
+      ctx.fillRect(x - r, y - r, r * 2, r * .5);
+      ctx.restore();
+    }
+
     function drawSaturn(x, y, r) {
-      circleGlow(x, y, "#fde68a", r * 2.5, .13);
+      circleGlow(x, y, "#fde68a", r * 2.7, .14);
+
+      // Multi-ring system with a Cassini-like dark division.
       ctx.save();
       ctx.translate(x, y);
-      ctx.rotate(-.14);
-      for (var ring = 0; ring < 5; ring += 1) {
+      ctx.rotate(-.16);
+      var ringData = [
+        [1.24,.27,"rgba(214,194,146,.34)",1.3],
+        [1.38,.31,"rgba(255,246,196,.62)",2.0],
+        [1.53,.34,"rgba(187,157,105,.46)",1.6],
+        [1.68,.38,"rgba(255,238,180,.52)",1.8]
+      ];
+      ringData.forEach(function (ring) {
         ctx.beginPath();
-        ctx.ellipse(0, 0, r * (1.48 + ring * .10), r * (.32 + ring * .028), 0, 0, Math.PI * 2);
-        ctx.strokeStyle = [
-          "rgba(255,246,196,.72)", "rgba(191,161,108,.52)",
-          "rgba(255,238,180,.48)", "rgba(137,113,78,.42)", "rgba(255,246,196,.34)"
-        ][ring];
-        ctx.lineWidth = 2.2;
+        ctx.ellipse(0, 0, r * ring[0], r * ring[1], 0, 0, Math.PI * 2);
+        ctx.strokeStyle = ring[2];
+        ctx.lineWidth = ring[3];
         ctx.stroke();
-      }
+      });
+      ctx.beginPath();
+      ctx.ellipse(0, 0, r * 1.46, r * .325, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = "rgba(38,31,23,.58)";
+      ctx.lineWidth = Math.max(2, r * .055);
+      ctx.stroke();
       ctx.restore();
 
       sphere(x, y, r, "#fff8d8", "#d8b66d", "#80633e");
@@ -2537,36 +2736,152 @@
       ctx.beginPath();
       ctx.arc(x, y, r * 1.01, 0, Math.PI * 2);
       ctx.clip();
-      ctx.fillStyle = "rgba(255,250,220,.48)";
-      ctx.fillRect(x - r, y - r * .20, r * 2, r * .10);
-      ctx.fillRect(x - r, y + r * .16, r * 2, r * .08);
+
+      // Subtle atmospheric belts.
+      var satBands = [
+        [-.48,.08,"rgba(255,247,220,.30)"],
+        [-.18,.07,"rgba(117,91,58,.22)"],
+        [.12,.09,"rgba(255,244,206,.26)"],
+        [.37,.06,"rgba(111,84,55,.20)"]
+      ];
+      satBands.forEach(function (b) {
+        ctx.fillStyle = b[2];
+        ctx.fillRect(x - r, y + b[0] * r, r * 2, b[1] * r);
+      });
+
+      // North-polar hexagon.
+      var hx = x;
+      var hy = y - r * .66;
+      ctx.strokeStyle = "rgba(104,83,57,.34)";
+      ctx.lineWidth = Math.max(1, r * .018);
+      ctx.beginPath();
+      for (var h = 0; h <= 6; h += 1) {
+        var ha = -Math.PI / 2 + h * Math.PI / 3;
+        var px = hx + Math.cos(ha) * r * .18;
+        var py = hy + Math.sin(ha) * r * .12;
+        if (h === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
       ctx.restore();
     }
 
-    function drawIceGiant(x, y, r, primary, secondary, ringed) {
-      circleGlow(x, y, primary, r * 2.3, .12);
+    function drawIceGiant(x, y, r, primary, secondary, ringed, isNeptune) {
+      circleGlow(x, y, primary, r * 2.5, .13);
       sphere(x, y, r, "#effcff", primary, secondary);
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      // Methane-rich blue-green atmosphere with subdued latitude bands.
+      for (var ib = 0; ib < 7; ib += 1) {
+        var iy = y - r * .72 + ib * r * .23;
+        ctx.strokeStyle = isNeptune
+          ? "rgba(191,219,254," + (.12 + ib * .012) + ")"
+          : "rgba(207,250,254," + (.11 + ib * .010) + ")";
+        ctx.lineWidth = Math.max(1, r * .024);
+        ctx.beginPath();
+        ctx.moveTo(x - r, iy);
+        ctx.bezierCurveTo(x - r * .3, iy + r * .04, x + r * .35, iy - r * .05, x + r, iy + r * .02);
+        ctx.stroke();
+      }
+
+      if (isNeptune) {
+        // Dark storm oval and bright companion clouds.
+        ctx.fillStyle = "rgba(17,47,104,.55)";
+        ctx.beginPath();
+        ctx.ellipse(x + r * .22, y - r * .12, r * .20, r * .09, -.1, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255,255,255,.46)";
+        ctx.lineWidth = Math.max(1, r * .018);
+        ctx.beginPath();
+        ctx.ellipse(x + r * .20, y - r * .19, r * .18, r * .035, -.15, 0, Math.PI * 2);
+        ctx.stroke();
+      } else {
+        // Uranus is deliberately calmer and paler, with a thin polar hood.
+        var hood = ctx.createLinearGradient(x, y - r, x, y - r * .25);
+        hood.addColorStop(0, "rgba(255,255,255,.20)");
+        hood.addColorStop(1, "rgba(255,255,255,0)");
+        ctx.fillStyle = hood;
+        ctx.fillRect(x - r, y - r, r * 2, r * .8);
+      }
+      ctx.restore();
+
       if (ringed) {
         ctx.save();
         ctx.translate(x, y);
         ctx.rotate(-.18);
         ctx.beginPath();
-        ctx.ellipse(0, 0, r * 1.42, r * .35, 0, 0, Math.PI * 2);
-        ctx.strokeStyle = "rgba(180,240,255,.30)";
-        ctx.lineWidth = 1.5;
+        ctx.ellipse(0, 0, r * 1.38, r * .32, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(180,240,255,.28)";
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(0, 0, r * 1.18, r * .25, 0, 0, Math.PI * 2);
+        ctx.strokeStyle = "rgba(226,232,240,.16)";
         ctx.stroke();
         ctx.restore();
       }
     }
 
     function drawPluto(x, y, r) {
-      circleGlow(x, y, "#ddd6fe", r * 2.2, .09);
-      sphere(x, y, r, "#fff7ed", "#bda7a0", "#62535d");
-      ctx.fillStyle = "rgba(246,231,224,.58)";
+      circleGlow(x, y, "#ddd6fe", r * 2.35, .10);
+      sphere(x, y, r, "#fff7ed", "#bba59f", "#5e515b");
+
+      ctx.save();
       ctx.beginPath();
-      ctx.ellipse(x - r * .20, y - r * .10, r * .30, r * .18, -.18, 0, Math.PI * 2);
-      ctx.ellipse(x + r * .20, y - r * .03, r * .19, r * .13, .15, 0, Math.PI * 2);
+      ctx.arc(x, y, r * .99, 0, Math.PI * 2);
+      ctx.clip();
+
+      // Pluto's high-contrast Tombaugh Regio-inspired heart terrain.
+      ctx.fillStyle = "rgba(246,231,224,.76)";
+      ctx.beginPath();
+      ctx.moveTo(x - r * .47, y - r * .15);
+      ctx.bezierCurveTo(
+        x - r * .28, y - r * .46,
+        x - r * .04, y - r * .38,
+        x + r * .02, y - r * .12
+      );
+      ctx.bezierCurveTo(
+        x + r * .16, y - r * .36,
+        x + r * .42, y - r * .34,
+        x + r * .46, y - r * .05
+      );
+      ctx.bezierCurveTo(
+        x + r * .34, y + r * .18,
+        x + r * .08, y + r * .24,
+        x - r * .02, y + r * .12
+      );
+      ctx.bezierCurveTo(
+        x - r * .18, y + r * .25,
+        x - r * .40, y + r * .12,
+        x - r * .47, y - r * .15
+      );
       ctx.fill();
+
+      // Dark equatorial terrain and impact markings.
+      ctx.fillStyle = "rgba(74,62,70,.28)";
+      ctx.beginPath();
+      ctx.ellipse(x + r * .26, y + r * .38, r * .28, r * .12, -.1, 0, Math.PI * 2);
+      ctx.fill();
+      craterField(x, y, r, 8, 1770, .025, "#f5f5f4");
+      ctx.restore();
+
+      // Charon companion.
+      var ca = now * .00028;
+      var charonX = x + Math.cos(ca) * r * 1.65;
+      var charonY = y + Math.sin(ca) * r * .62;
+      ctx.fillStyle = "#b9a9a9";
+      ctx.beginPath();
+      ctx.arc(charonX, charonY, Math.max(2, r * .19), 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(221,214,254,.20)";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.ellipse(x, y, r * 1.65, r * .62, 0, 0, Math.PI * 2);
+      ctx.stroke();
     }
 
     function drawKuiper(x, y, r) {
@@ -2671,24 +2986,21 @@
       var x = left + step * i;
       var r = planetR;
 
-      if (i === 0) drawEarth(x, cy, r);
-      if (i === 1) drawMoon(x, cy, r * .82);
-      if (i === 2) drawMars(x, cy, r * .90);
-      if (i === 3) drawJupiter(x, cy, r * 1.18);
-      if (i === 4) drawSaturn(x, cy, r * 1.08);
-      if (i === 5) drawIceGiant(x, cy, r * .94, "#67e8f9", "#2d9fb3", true);
-      if (i === 6) drawIceGiant(x, cy, r * .94, "#93c5fd", "#2448a8", false);
-      if (i === 7) drawPluto(x, cy, r * .70);
-      if (i === 8) drawKuiper(x, cy, r * .82);
-      if (i === 9) drawOort(x, cy, r * .80);
-      if (i === 10) drawGalaxy(x, cy, r * 1.05, -.22, "#f8e9ff", "#a78bfa");
-      if (i === 11) drawGalaxy(x, cy, r * 1.00, .20, "#eef5ff", "#60a5fa");
-      if (i === 12) drawDeepField(x, cy, r * .90);
-
-      ctx.textAlign = "center";
-      ctx.font = "850 8px ui-monospace, SFMono-Regular, Menlo, monospace";
-      ctx.fillStyle = colors[i];
-      ctx.fillText(labels[i], x, height - 27);
+      if (i === 0) drawMercury(x, cy, r * .72);
+      if (i === 1) drawVenus(x, cy, r * .90);
+      if (i === 2) drawEarth(x, cy, r * 1.02);
+      if (i === 3) drawMoon(x, cy, r * .78);
+      if (i === 4) drawMars(x, cy, r * .86);
+      if (i === 5) drawJupiter(x, cy, r * 1.24);
+      if (i === 6) drawSaturn(x, cy, r * 1.12);
+      if (i === 7) drawIceGiant(x, cy, r * .96, "#67e8f9", "#2d9fb3", true, false);
+      if (i === 8) drawIceGiant(x, cy, r * .96, "#93c5fd", "#2448a8", false, true);
+      if (i === 9) drawPluto(x, cy, r * .70);
+      if (i === 10) drawKuiper(x, cy, r * .86);
+      if (i === 11) drawOort(x, cy, r * .84);
+      if (i === 12) drawGalaxy(x, cy, r * 1.10, -.22, "#f8e9ff", "#a78bfa");
+      if (i === 13) drawGalaxy(x, cy, r * 1.04, .20, "#eef5ff", "#60a5fa");
+      if (i === 14) drawDeepField(x, cy, r * .94);
     }
 
     // Animated user trajectories. Each submitted number travels from Earth to
@@ -2710,7 +3022,7 @@
       ctx.moveTo(left, cy);
       ctx.quadraticCurveTo(
         (left + destinationX) / 2,
-        cy - (20 + guessIndex * 4),
+        cy - (28 + guessIndex * 5),
         destinationX,
         cy
       );
@@ -2764,11 +3076,11 @@
     ctx.textAlign = "left";
     ctx.font = "800 8px ui-monospace, SFMono-Regular, Menlo, monospace";
     ctx.fillStyle = "rgba(148,163,184,.62)";
-    ctx.fillText("SOLAR SYSTEM", left, 14);
+    ctx.fillText("INNER → OUTER SYSTEM", left, 18);
 
     ctx.textAlign = "right";
     ctx.fillStyle = "rgba(196,181,253,.62)";
-    ctx.fillText("DEEP UNIVERSE", right, 14);
+    ctx.fillText("GALACTIC → DEEP FIELD", right, 18);
 
     if (atlasGuesses.length) {
       ctx.textAlign = "left";
