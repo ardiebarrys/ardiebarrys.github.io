@@ -577,7 +577,7 @@
     }
 
     .dn-cosmic-atlas-canvas {
-      height: 300px;
+      height: 250px;
     }
 
     .dn-cosmic-atlas-scale {
@@ -2122,7 +2122,8 @@
 
     var rect = canvas.getBoundingClientRect();
     var ratio = Math.min(2, window.devicePixelRatio || 1);
-    var width = Math.max(760, Math.floor(rect.width));
+    var isMobile = rect.width < 650;
+    var width = isMobile ? Math.max(300, Math.floor(rect.width)) : Math.max(760, Math.floor(rect.width));
     var height = Math.max(220, Math.floor(rect.height));
 
     if (canvas.width !== Math.floor(width * ratio) || canvas.height !== Math.floor(height * ratio)) {
@@ -2223,11 +2224,13 @@
       "#c4b5fd", "#bfdbfe", "#e9d5ff"
     ];
 
-    var left = Math.max(52, width * .035);
-    var right = Math.min(width - 52, width * .965);
+    var left = isMobile ? 18 : Math.max(52, width * .035);
+    var right = isMobile ? width - 18 : Math.min(width - 52, width * .965);
     var step = (right - left) / (labels.length - 1);
     var cy = Math.floor(height * .49);
-    var planetR = Math.max(20, Math.min(38, step * .31));
+    var planetR = isMobile
+      ? Math.max(8, Math.min(16, step * .20))
+      : Math.max(20, Math.min(38, step * .31));
 
     // Route line, with subtle direction arrows.
     var route = ctx.createLinearGradient(left, 0, right, 0);
