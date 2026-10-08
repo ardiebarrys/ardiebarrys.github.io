@@ -77,8 +77,9 @@ main {
   max-width: 1280px !important;
 }
 
-/* Stable, compact navigation. Every tab has identical geometry. */
+/* Desktop navbar: center the navigation independently of the page brand. */
 .navbar > .container {
+  position: relative;
   display: flex;
   align-items: center;
   min-width: 0;
@@ -97,42 +98,50 @@ main {
 }
 
 .navbar .navbar-collapse-main {
-  flex: 1 1 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(1242px, calc(100% - 20px));
   min-width: 0;
   display: flex;
   justify-content: center !important;
+  transform: translate(-50%, -50%);
 }
 
 .navbar .navbar-menu-list {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
   align-items: center;
   justify-content: center;
-  width: max-content;
-  max-width: 100%;
-  margin: 0 auto !important;
+  width: 100%;
+  margin: 0 !important;
   padding: 0;
 }
 
 .navbar .nav-item {
-  flex: 0 0 110px;
-  width: 110px;
-  min-width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
 }
 
 .navbar .nav-link {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 110px;
-  min-height: 36px;
-  margin: 0.12rem 0;
-  padding: 0.4rem 0.45rem !important;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 40px;
+  gap: 0.5rem;
+  margin: 0.08rem 0;
+  padding: 0.48rem 0.88rem !important;
   box-sizing: border-box;
   white-space: nowrap;
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   line-height: 1.1;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -152,9 +161,8 @@ main {
 
 .navbar .nav-item.active .nav-link,
 .navbar .nav-link[aria-current="page"] {
-  padding-left: 1.05rem !important;
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 750 !important;
   background:
     linear-gradient(
       135deg,
@@ -172,47 +180,43 @@ main {
 .navbar .nav-item.active .nav-link::before,
 .navbar .nav-link[aria-current="page"]::before {
   content: "";
-  position: absolute;
-  left: 8px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
+  position: static;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--global-theme-color);
   box-shadow:
     0 0 0 3px rgba(147, 197, 253, 0.10),
     0 0 10px rgba(147, 197, 253, 0.48);
-  transform: translateY(-50%);
 }
 
 .navbar .nav-link .sr-only {
   display: none;
 }
 
-/* Compact desktop/tablet: keep all nine tabs on one line. */
+/* Intermediate desktop widths: preserve the same centered architecture. */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .navbar .navbar-menu-list {
-    width: 100%;
+  .navbar .navbar-collapse-main {
+    width: calc(100% - 10px);
   }
 
-  .navbar .nav-item {
-    flex-basis: 10.5%;
-    width: 10.5%;
-    min-width: 0;
+  .navbar .navbar-brand {
+    width: 180px;
   }
 
   .navbar .nav-link {
-    width: 100%;
-    font-size: 0.72rem;
-    padding-left: 0.1rem !important;
-    padding-right: 0.1rem !important;
+    min-height: 38px;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.84rem;
   }
 
   .navbar .nav-item.active .nav-link::before,
   .navbar .nav-link[aria-current="page"]::before {
-    left: 4px;
-    width: 4px;
-    height: 4px;
+    flex-basis: 5px;
+    width: 5px;
+    height: 5px;
   }
 }
 
@@ -233,7 +237,10 @@ main {
   }
 
   .navbar .navbar-collapse-main {
+    position: static;
     flex: 1 1 100%;
+    width: 100%;
+    transform: none;
     justify-content: flex-start !important;
   }
 
@@ -261,7 +268,9 @@ main {
 
   .navbar .nav-item.active .nav-link::before,
   .navbar .nav-link[aria-current="page"]::before {
-    left: 0.55rem;
+    flex-basis: 6px;
+    width: 6px;
+    height: 6px;
   }
 
   .navbar .nav-item.active .nav-link,
