@@ -76,8 +76,32 @@ main {
   max-width: 1280px !important;
 }
 
-/* Always-collapsed top navigation.
-   The header itself stays minimal; the full site navigation opens below it. */
+/* --------------------------------------------------------------------------
+   Navigation
+   --------------------------------------------------------------------------
+   This navigation intentionally does not use Bootstrap's collapse component.
+   The theme has Bootstrap compatibility disabled, while the navbar markup
+   historically depended on Bootstrap classes and JavaScript. That combination
+   made the menu fragile.
+
+   The control below is a native checkbox + label:
+     unchecked = menu closed
+     checked   = menu open
+
+   The relationship is entirely CSS based and therefore does not depend on:
+     - Bootstrap JavaScript
+     - jQuery
+     - theme JavaScript
+     - load order
+     - DOMContentLoaded timing
+     - a third-party collapse plugin
+-------------------------------------------------------------------------- */
+
+#navbar {
+  position: relative;
+  z-index: 10000;
+}
+
 #navbar > .navbar-layout {
   position: relative;
   display: flex !important;
@@ -86,12 +110,13 @@ main {
   width: 100% !important;
   max-width: none !important;
   min-height: 58px;
+  margin: 0 !important;
   padding: .45rem 1.2rem;
   box-sizing: border-box;
 }
 
 #navbar .navbar-brand-slot {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   min-width: 0;
   display: flex;
   align-items: center;
@@ -100,41 +125,78 @@ main {
 #navbar .navbar-brand {
   display: block;
   width: auto;
-  max-width: 70vw;
+  max-width: calc(100vw - 150px);
   margin: 0 !important;
   padding: .25rem 0 !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--global-text-color) !important;
   font-size: 1.15rem;
+  line-height: 1.25;
 }
 
-#navbar .navbar-toggler {
+/* Visually hide the real checkbox without disabling it. */
+#navbar .navbar-menu-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* The visible control. */
+#navbar .navbar-menu-trigger {
+  position: relative;
+  z-index: 10003;
   display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  gap: .5rem;
+  gap: .55rem;
   flex: 0 0 auto;
-  width: auto;
   min-width: 88px;
   min-height: 40px;
-  margin-left: auto;
-  padding: .48rem .8rem !important;
+  margin: 0 0 0 auto;
+  padding: .48rem .82rem !important;
+  box-sizing: border-box;
   border: 1px solid rgba(147,197,253,.30);
   border-radius: 999px;
   background: rgba(96,165,250,.07);
   color: var(--global-text-color) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 2px 8px rgba(0,0,0,.08);
+  transition:
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
 }
 
-#navbar .navbar-toggler::after {
-  content: "Menu";
-  font-size: .82rem;
-  font-weight: 750;
-  letter-spacing: .01em;
+#navbar .navbar-menu-trigger:hover {
+  background: rgba(96,165,250,.13);
+  border-color: rgba(147,197,253,.48);
 }
 
-#navbar .navbar-toggler .menu-icon {
+#navbar .navbar-menu-trigger:active {
+  transform: scale(.98);
+}
+
+#navbar .navbar-menu-toggle:focus-visible + .navbar-menu-trigger {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 3px;
+}
+
+/* Three visible bars. These are deliberately independent of icon fonts. */
+#navbar .menu-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -143,34 +205,76 @@ main {
   flex: 0 0 18px;
 }
 
-#navbar .navbar-toggler .menu-icon span {
+#navbar .menu-icon > span {
   display: block;
   width: 18px;
   height: 2px;
-  border-radius: 2px;
+  flex: 0 0 2px;
+  border-radius: 999px;
   background: currentColor;
+  transform-origin: center;
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
 }
 
+/* Change the hamburger into an X while open. */
+#navbar .navbar-menu-toggle:checked + .navbar-menu-trigger .menu-icon > span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+#navbar .navbar-menu-toggle:checked + .navbar-menu-trigger .menu-icon > span:nth-child(2) {
+  opacity: 0;
+}
+
+#navbar .navbar-menu-toggle:checked + .navbar-menu-trigger .menu-icon > span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+#navbar .navbar-menu-toggle:checked + .navbar-menu-trigger {
+  background: rgba(37,99,235,.18);
+  border-color: rgba(147,197,253,.55);
+}
+
+/* Never let the theme's .collapse rule control this menu. */
 #navbar .navbar-collapse-main {
   position: absolute !important;
   top: calc(100% - 1px);
   right: 1.2rem;
+  left: auto;
   width: min(920px, calc(100% - 2.4rem));
-  z-index: 1001;
-  padding: .7rem;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+  z-index: 10002;
+
+  margin: 0 !important;
+  padding: .7rem !important;
+  box-sizing: border-box;
+
   border: 1px solid rgba(147,197,253,.22);
   border-radius: 18px;
   background:
-    linear-gradient(145deg, rgba(10,28,66,.98), rgba(7,20,48,.99));
+    linear-gradient(145deg, rgba(10,28,66,.985), rgba(7,20,48,.995));
   box-shadow:
     0 22px 48px rgba(0,0,0,.30),
     0 0 0 1px rgba(147,197,253,.04),
     inset 0 1px 0 rgba(255,255,255,.06);
+
+  /* Closed by default. */
   display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
 }
 
-#navbar .navbar-collapse-main.show {
+/* The checkbox is the ONLY source of truth for open/closed state. */
+#navbar .navbar-menu-toggle:checked ~ .navbar-collapse-main {
   display: block !important;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 #navbar .navbar-menu-list {
@@ -180,24 +284,26 @@ main {
   align-items: stretch;
   width: 100%;
   margin: 0 !important;
-  padding: 0;
-  list-style: none;
+  padding: 0 !important;
+  list-style: none !important;
 }
 
 #navbar .nav-item {
-  display: flex;
+  display: flex !important;
   min-width: 0;
   width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 #navbar .nav-link {
   position: relative;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
   min-height: 44px;
-  margin: 0;
+  margin: 0 !important;
   padding: .62rem .8rem !important;
   box-sizing: border-box;
   gap: .5rem;
@@ -209,6 +315,7 @@ main {
   font-weight: 550;
   line-height: 1.15;
   text-align: left;
+  text-decoration: none !important;
   transition:
     color .2s ease,
     background .2s ease,
@@ -217,30 +324,33 @@ main {
     box-shadow .2s ease;
 }
 
-#navbar .nav-link:hover {
+#navbar .nav-link:hover,
+#navbar .nav-link:focus-visible {
   background: rgba(96,165,250,.08);
   border-color: rgba(147,197,253,.18);
   color: var(--global-hover-color) !important;
+  text-decoration: none !important;
 }
 
-#navbar .nav-item.active > .nav-link,
-#navbar .nav-link[aria-current="page"] {
+#navbar .nav-item.active > .nav-link {
   color: #fff !important;
   font-weight: 750 !important;
-  background: linear-gradient(135deg, rgba(37,99,235,.30), rgba(96,165,250,.13));
+  background: linear-gradient(
+    135deg,
+    rgba(37,99,235,.30),
+    rgba(96,165,250,.13)
+  );
   border-color: rgba(147,197,253,.38);
   box-shadow:
     0 5px 16px rgba(37,99,235,.16),
     inset 0 1px 0 rgba(255,255,255,.08);
 }
 
-#navbar .nav-item.active > .nav-link::before,
-#navbar .nav-link[aria-current="page"]::before {
-  content: "";
-  position: static;
-  flex: 0 0 7px;
+#navbar .nav-active-dot {
+  display: block;
   width: 7px;
   height: 7px;
+  flex: 0 0 7px;
   border-radius: 50%;
   background: var(--global-theme-color);
   box-shadow:
@@ -249,9 +359,18 @@ main {
 }
 
 #navbar .nav-link .sr-only {
-  display: none;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
+/* Tablet. */
 @media (max-width: 991.98px) {
   #navbar .navbar-collapse-main {
     right: .8rem;
@@ -263,6 +382,7 @@ main {
   }
 }
 
+/* Phone. */
 @media (max-width: 575.98px) {
   #navbar > .navbar-layout {
     min-height: 54px;
@@ -270,28 +390,65 @@ main {
   }
 
   #navbar .navbar-brand {
-    max-width: 68vw;
+    max-width: calc(100vw - 140px);
     font-size: 1rem;
   }
 
-  #navbar .navbar-toggler {
+  #navbar .navbar-menu-trigger {
     min-width: 82px;
     min-height: 38px;
+    padding: .45rem .72rem !important;
   }
 
   #navbar .navbar-collapse-main {
+    top: calc(100% - 1px);
     right: .6rem;
     width: calc(100% - 1.2rem);
-    padding: .55rem;
+    max-height: calc(100vh - 78px);
+    padding: .55rem !important;
     border-radius: 15px;
   }
 
   #navbar .navbar-menu-list {
     grid-template-columns: 1fr;
+    gap: .3rem;
   }
 
   #navbar .nav-link {
     min-height: 42px;
+    padding: .65rem .75rem !important;
     font-size: .92rem;
+  }
+}
+
+/* Very small phones. */
+@media (max-width: 360px) {
+  #navbar .navbar-brand {
+    max-width: calc(100vw - 125px);
+    font-size: .94rem;
+  }
+
+  #navbar .navbar-menu-trigger {
+    min-width: 76px;
+    gap: .4rem;
+  }
+
+  #navbar .menu-icon,
+  #navbar .menu-icon > span {
+    width: 17px;
+  }
+
+  #navbar .navbar-collapse-main {
+    right: .45rem;
+    width: calc(100% - .9rem);
+  }
+}
+
+/* If the user requests reduced motion, keep the control immediate. */
+@media (prefers-reduced-motion: reduce) {
+  #navbar .navbar-menu-trigger,
+  #navbar .menu-icon > span,
+  #navbar .navbar-collapse-main {
+    transition: none !important;
   }
 }
