@@ -12,7 +12,7 @@ description: SciAudit AI by Ardie Barry Sailis, an AI-assisted scientific eviden
   .page,
   .container,
   main {
-    max-width: 1360px !important;
+    max-width: 1280px !important;
   }
 
   .navbar .nav-link.active,
