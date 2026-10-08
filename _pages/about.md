@@ -1005,15 +1005,7 @@ social: false
   }
 
   .about-support-note::after {
-    content: "INDEPENDENT RESEARCH";
-    position: absolute;
-    top: .62rem;
-    right: 1rem;
-    color: rgba(147,197,253,.52);
-    font-size: .54rem;
-    font-weight: 850;
-    letter-spacing: .15em;
-    pointer-events: none;
+    display: none;
   }
 
   .about-support-copy {
