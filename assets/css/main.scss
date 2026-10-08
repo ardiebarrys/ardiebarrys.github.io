@@ -81,14 +81,24 @@ main {
 
 .navbar .navbar-nav {
   display: grid;
-  grid-template-columns: repeat(9, 112px);
+  grid-template-columns: repeat(9, 130px);
   align-items: center;
   width: max-content;
-  margin-left: auto;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .navbar .nav-item {
-  width: 112px;
+  width: 130px;
+}
+
+.navbar .navbar-collapse-main {
+  justify-content: center !important;
+}
+
+.navbar .navbar-menu-list {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .navbar .nav-link {
