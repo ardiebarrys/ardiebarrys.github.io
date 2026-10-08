@@ -971,38 +971,155 @@ social: false
     to { transform: rotate(360deg); }
   }
 
+  /* Independent-work support callout */
   .about-support-note {
-    margin: 1rem 0 1.4rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem 1.35rem;
+    margin: 1.25rem 0 1.6rem;
+    padding: 1.15rem 1.25rem;
+    border: 1px solid rgba(96,165,250,.30);
+    border-radius: 14px;
+    background:
+      radial-gradient(circle at 88% 20%, rgba(37,99,235,.16), transparent 34%),
+      linear-gradient(135deg, rgba(15,35,82,.78), rgba(7,20,48,.94));
+    box-shadow:
+      0 12px 30px rgba(0,0,0,.16),
+      inset 0 1px 0 rgba(255,255,255,.05);
     text-align: left !important;
     line-height: 1.55;
+    overflow: hidden;
+  }
+
+  .about-support-note::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #93c5fd, #2563eb);
+    box-shadow: 0 0 18px rgba(96,165,250,.32);
+  }
+
+  .about-support-note::after {
+    content: "INDEPENDENT RESEARCH";
+    position: absolute;
+    top: .62rem;
+    right: 1rem;
+    color: rgba(147,197,253,.52);
+    font-size: .54rem;
+    font-weight: 850;
+    letter-spacing: .15em;
+    pointer-events: none;
+  }
+
+  .about-support-copy {
+    position: relative;
+    z-index: 1;
+    padding-left: .35rem;
+    color: #b9c9e3;
+    font-size: .9rem;
+  }
+
+  .about-support-label {
+    display: block;
+    margin-bottom: .28rem;
+    color: #93c5fd;
+    font-size: .63rem;
+    font-weight: 850;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+
+  .about-support-copy strong {
+    color: #e5efff;
+    font-weight: 750;
   }
 
   .bio-text a.about-coffee-button {
+    position: relative;
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    margin-left: 0.35rem;
-    padding: 0.42rem 0.75rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--accent) !important;
-    font-weight: 700;
+    min-height: 44px;
+    margin: 0;
+    padding: 0.62rem 1.05rem;
+    border: 1px solid rgba(147,197,253,.50);
+    border-radius: 9px;
+    background: linear-gradient(180deg, #2563eb, #1d4ed8);
+    color: #f8fbff !important;
+    font-size: .84rem;
+    font-weight: 800;
+    letter-spacing: .01em;
     text-decoration: none !important;
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
+    box-shadow:
+      0 8px 20px rgba(29,78,216,.24),
+      inset 0 1px 0 rgba(255,255,255,.14);
     white-space: nowrap;
+    transition:
+      transform .22s cubic-bezier(.2,.7,.2,1),
+      background .22s ease,
+      border-color .22s ease,
+      box-shadow .22s ease;
+  }
+
+  .bio-text a.about-coffee-button::after {
+    content: "↗";
+    margin-left: .05rem;
+    font-size: .9rem;
+    transition: transform .22s ease;
   }
 
   .bio-text a.about-coffee-button:hover {
-    border-color: var(--global-theme-color);
-    background: var(--surface-strong);
-    color: var(--global-theme-color) !important;
+    border-color: #93c5fd;
+    background: linear-gradient(180deg, #3b82f6, #2563eb);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 26px rgba(29,78,216,.34),
+      0 0 0 3px rgba(96,165,250,.08);
+  }
+
+  .bio-text a.about-coffee-button:hover::after {
+    transform: translate(2px,-1px);
+  }
+
+  .bio-text a.about-coffee-button:focus-visible {
+    outline: 2px solid #bfdbfe;
+    outline-offset: 3px;
   }
 
   .about-coffee-icon {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1;
+  }
+
+  @media (max-width: 767.98px) {
+    .about-support-note {
+      grid-template-columns: 1fr;
+      gap: .75rem;
+      padding: 1rem;
+    }
+
+    .about-support-note::after {
+      display: none;
+    }
+
+    .about-support-copy {
+      padding-left: .2rem;
+      padding-right: .2rem;
+    }
+
+    .bio-text a.about-coffee-button {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 46px;
+    }
   }
 
   .keyword-box,
@@ -2314,9 +2431,13 @@ social: false
   </div>
 </div>
 
-<div class="about-support-note reveal">
-  If you find my research, writing, or open scientific projects useful, you can support my independent work.
-  <a class="about-coffee-button" href="https://buymeacoffee.com/ardiebarrys" target="_blank" rel="noopener noreferrer">
+<div class="about-support-note reveal" aria-label="Support independent research">
+  <div class="about-support-copy">
+    <span class="about-support-label">Support independent research</span>
+    If you find my research, writing, or open scientific projects useful, you can
+    <strong>support my independent work.</strong>
+  </div>
+  <a class="about-coffee-button" href="https://buymeacoffee.com/ardiebarrys" target="_blank" rel="noopener noreferrer" aria-label="Buy me a coffee to support independent research">
     <span class="about-coffee-icon" aria-hidden="true">☕</span>
     Buy Me a Coffee
   </a>
