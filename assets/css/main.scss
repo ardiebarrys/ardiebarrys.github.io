@@ -72,56 +72,66 @@
  ******************************************************************************/
 .post,
 .page,
-.container,
 main {
   max-width: 1280px !important;
 }
 
-/* Stable desktop geometry: the brand occupies the same column on every page,
-   including About, while the nine navigation items are centered in the space
-   that remains. */
-.navbar > .container {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
+/* The navbar is deliberately independent of page-content width. */
+#navbar > .navbar-layout {
+  width: 100% !important;
+  max-width: none !important;
+  display: grid !important;
+  grid-template-columns: 250px minmax(0, 1fr);
   align-items: center;
-  min-width: 0;
+  gap: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
 }
 
-.navbar .navbar-brand {
+#navbar .navbar-brand-slot {
   grid-column: 1;
-  width: 180px;
   min-width: 0;
-  margin-right: 0;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#navbar .navbar-brand {
+  display: block;
+  width: auto;
+  min-width: 0;
+  margin: 0 !important;
+  padding: .3125rem 0 !important;
   white-space: nowrap;
-  overflow: hidden;
 }
 
-.navbar .navbar-brand-placeholder {
-  visibility: hidden;
-  pointer-events: none;
+#navbar .navbar-toggler {
+  display: none;
 }
 
-.navbar .navbar-collapse-main {
+#navbar .navbar-collapse-main {
   grid-column: 2;
   min-width: 0;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center !important;
-  overflow: visible;
 }
 
-.navbar .navbar-menu-list {
+#navbar .navbar-menu-list {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: .15rem;
   width: max-content;
   max-width: 100%;
-  margin: 0 !important;
+  margin: 0 auto !important;
   padding: 0;
 }
 
-.navbar .nav-item {
+#navbar .nav-item {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +139,7 @@ main {
   min-width: 0;
 }
 
-.navbar .nav-link {
+#navbar .nav-link {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -138,7 +148,7 @@ main {
   min-height: 40px;
   gap: .5rem;
   margin: .08rem 0;
-  padding: .46rem .72rem !important;
+  padding: .46rem .78rem !important;
   box-sizing: border-box;
   white-space: nowrap;
   text-align: center;
@@ -147,27 +157,35 @@ main {
   line-height: 1.1;
   border: 1px solid transparent;
   border-radius: 999px;
-  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  transition:
+    color .2s ease,
+    background-color .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .2s ease;
 }
 
-.navbar .nav-link:hover {
+#navbar .nav-link:hover {
   color: var(--global-hover-color) !important;
-  background: rgba(147, 197, 253, .07);
-  border-color: rgba(147, 197, 253, .15);
+  background: rgba(147,197,253,.07);
+  border-color: rgba(147,197,253,.15);
 }
 
-.navbar .nav-item.active .nav-link,
-.navbar .nav-link[aria-current="page"] {
+#navbar .nav-item.active > .nav-link,
+#navbar .nav-link[aria-current="page"] {
   color: #fff !important;
   font-weight: 750 !important;
   background: linear-gradient(135deg, rgba(37,99,235,.28), rgba(96,165,250,.12));
   border-color: rgba(147,197,253,.38);
-  box-shadow: 0 0 0 1px rgba(147,197,253,.04), 0 5px 16px rgba(37,99,235,.16), inset 0 1px 0 rgba(255,255,255,.08);
+  box-shadow:
+    0 0 0 1px rgba(147,197,253,.04),
+    0 5px 16px rgba(37,99,235,.16),
+    inset 0 1px 0 rgba(255,255,255,.08);
   transform: translateY(-1px);
 }
 
-.navbar .nav-item.active .nav-link::before,
-.navbar .nav-link[aria-current="page"]::before {
+#navbar .nav-item.active > .nav-link::before,
+#navbar .nav-link[aria-current="page"]::before {
   content: "";
   position: static;
   flex: 0 0 6px;
@@ -175,52 +193,66 @@ main {
   height: 6px;
   border-radius: 50%;
   background: var(--global-theme-color);
-  box-shadow: 0 0 0 3px rgba(147,197,253,.10), 0 0 10px rgba(147,197,253,.48);
+  box-shadow:
+    0 0 0 3px rgba(147,197,253,.10),
+    0 0 10px rgba(147,197,253,.48);
 }
 
-.navbar .nav-link .sr-only {
+#navbar .nav-link .sr-only {
   display: none;
 }
 
+/* Intermediate desktop widths. */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .navbar > .container {
-    grid-template-columns: 150px minmax(0, 1fr);
+  #navbar > .navbar-layout {
+    grid-template-columns: 190px minmax(0, 1fr);
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .navbar .navbar-brand {
-    width: 150px;
+  #navbar .navbar-brand-slot {
+    width: 190px;
   }
 
-  .navbar .nav-link {
-    font-size: .87rem;
-    padding-left: .45rem !important;
-    padding-right: .45rem !important;
+  #navbar .nav-link {
+    font-size: .86rem;
+    padding-left: .48rem !important;
+    padding-right: .48rem !important;
   }
 }
 
+/* Mobile. */
 @media (max-width: 767.98px) {
-  .navbar > .container {
-    display: flex;
+  #navbar > .navbar-layout {
+    display: flex !important;
     flex-wrap: wrap;
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .navbar .navbar-brand {
+  #navbar .navbar-brand-slot {
     width: auto;
-    min-width: 0;
-    margin-right: 0;
+    flex: 1 1 auto;
   }
 
-  .navbar .navbar-brand-placeholder {
-    display: none;
+  #navbar .navbar-brand {
+    width: auto;
   }
 
-  .navbar .navbar-collapse-main {
+  #navbar .navbar-toggler {
+    display: block;
+    margin-left: auto;
+  }
+
+  #navbar .navbar-collapse-main {
     flex: 1 1 100%;
     width: 100%;
     display: block;
   }
 
-  .navbar .navbar-nav {
+  #navbar .navbar-nav {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -228,27 +260,28 @@ main {
     margin: 0;
   }
 
-  .navbar .nav-item {
+  #navbar .nav-item {
     width: 100%;
   }
 
-  .navbar .nav-link {
+  #navbar .nav-link {
     width: 100%;
+    min-height: 0;
     justify-content: flex-start;
     white-space: normal;
     margin: .12rem 0;
     padding: .6rem .8rem !important;
   }
 
-  .navbar .nav-item.active .nav-link::before,
-  .navbar .nav-link[aria-current="page"]::before {
+  #navbar .nav-item.active > .nav-link::before,
+  #navbar .nav-link[aria-current="page"]::before {
     flex-basis: 6px;
     width: 6px;
     height: 6px;
   }
 
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
+  #navbar .nav-item.active > .nav-link,
+  #navbar .nav-link[aria-current="page"] {
     transform: none;
   }
 }
