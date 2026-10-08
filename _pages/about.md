@@ -23,6 +23,21 @@ social: false
     margin: 0 auto;
   }
 
+  .about-shell,
+  .about-shell > .bio-text,
+  .about-shell > .social {
+    box-sizing: border-box;
+  }
+
+  .post-header,
+  .post > article {
+    width: min(1100px, 100%);
+    max-width: 1100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
+  }
+
   .research-profile {
     position: relative;
     display: grid;
@@ -703,12 +718,6 @@ social: false
   .social i::before,
   .contact-icons i::before {
     font-size: 1.2rem !important;
-  }
-
-  @media (min-width: 992px) {
-    .bio-text {
-      max-width: calc(100% - 430px);
-    }
   }
 
   /* Research identity map */
