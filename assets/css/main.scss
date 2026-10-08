@@ -361,6 +361,100 @@ header:has(> #navbar) {
   text-decoration: none !important;
 }
 
+/* --------------------------------------------------------------------------
+   Special project navigation
+   SciAudit AI and Deep Numbers are independent projects, so their navigation
+   labels use distinct typographic treatments rather than looking like ordinary
+   site pages.
+-------------------------------------------------------------------------- */
+
+/* SciAudit AI: technical / research-tool identity. */
+#navbar .nav-sciaudit > .nav-link {
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    monospace !important;
+  font-size: .88rem !important;
+  font-weight: 800 !important;
+  letter-spacing: .025em;
+  color: #bfdbfe !important;
+}
+
+#navbar .nav-sciaudit > .nav-link::after {
+  content: "AI";
+  margin-left: auto;
+  padding: .13rem .34rem;
+  border: 1px solid rgba(147,197,253,.30);
+  border-radius: 5px;
+  color: #93c5fd;
+  font-family: inherit;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1;
+  opacity: .85;
+}
+
+#navbar .nav-sciaudit > .nav-link:hover,
+#navbar .nav-sciaudit.active > .nav-link {
+  color: #e0f2fe !important;
+}
+
+/* Deep Numbers: product / game identity. */
+#navbar .nav-deep-numbers > .nav-link {
+  font-family:
+    "Trebuchet MS",
+    "Segoe UI",
+    system-ui,
+    sans-serif !important;
+  font-size: .98rem !important;
+  font-weight: 850 !important;
+  letter-spacing: .015em;
+  color: #dbeafe !important;
+}
+
+#navbar .nav-deep-numbers > .nav-link::after {
+  content: "PLAY";
+  margin-left: auto;
+  padding: .13rem .34rem;
+  border: 1px solid rgba(96,165,250,.28);
+  border-radius: 5px;
+  color: #93c5fd;
+  font-family: inherit;
+  font-size: .56rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  line-height: 1;
+  opacity: .8;
+}
+
+#navbar .nav-deep-numbers > .nav-link:hover,
+#navbar .nav-deep-numbers.active > .nav-link {
+  color: #f0f9ff !important;
+}
+
+/* Keep the active-state treatment consistent while retaining each project's
+   own typography. */
+#navbar .nav-sciaudit.active > .nav-link,
+#navbar .nav-deep-numbers.active > .nav-link {
+  font-weight: 850 !important;
+}
+
+/* On narrow phones, preserve the distinction without making the labels crowded. */
+@media (max-width: 575.98px) {
+  #navbar .nav-sciaudit > .nav-link {
+    font-size: .84rem !important;
+  }
+
+  #navbar .nav-deep-numbers > .nav-link {
+    font-size: .94rem !important;
+  }
+}
+
 #navbar .nav-item.active > .nav-link {
   color: #fff !important;
   font-weight: 750 !important;
