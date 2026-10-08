@@ -26,10 +26,11 @@ social: false
   }
 
   .about-page-title {
-    margin: 0;
+    margin: 0 0 1.35rem !important;
+    padding-bottom: .15rem;
     color: var(--text-strong);
     font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.05;
+    line-height: 1.08;
     letter-spacing: -0.04em;
     font-weight: 700;
   }
