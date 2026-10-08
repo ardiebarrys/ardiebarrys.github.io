@@ -82,8 +82,21 @@ main {
  * creating the large blank band below the navbar on every page.
  */
 main.mt-5,
-main.container.mt-5 {
+main.container.mt-5,
+body > main,
+body > .container,
+body > .page,
+body > .post {
   margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body > main > .container.mt-5,
+body > main > .page,
+body > main > .post,
+body > .container.mt-5 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -124,11 +137,16 @@ main.container.mt-5 {
   the navbar from appearing several hundred pixels down the page while still
   keeping page content below the fixed header.
 */
+body.fixed-top-nav,
+body:has(> header > #navbar) {
+  padding-top: 0 !important;
+}
+
 header:has(> #navbar) {
   display: block !important;
   width: 100% !important;
-  height: 58px !important;
-  min-height: 58px !important;
+  height: 98px !important;
+  min-height: 98px !important;
   margin: 0 !important;
   padding: 0 !important;
 }
