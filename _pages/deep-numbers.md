@@ -23,6 +23,15 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     margin-top: 0 !important;
   }
 
+  body:has(#deep-numbers-app) main,
+  body:has(#deep-numbers-app) .page,
+  body:has(#deep-numbers-app) .page__inner-wrap,
+  body:has(#deep-numbers-app) .page__content,
+  body:has(#deep-numbers-app) .post-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   /*
    * Deep Numbers is deliberately self-contained.
    * It uses no external game framework, chart library, icon library, or font.
@@ -69,7 +78,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     min-height: 100vh;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    margin-top: -5rem !important;
+    margin-top: -7rem !important;
     padding: 0 1rem 5rem;
     overflow: hidden;
     isolation: isolate;
@@ -455,20 +464,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     background: #010208;
   }
 
-  .dn-cosmic-atlas-image {
+  .dn-cosmic-atlas-canvas {
     display: block;
     width: 100%;
-    height: auto;
-    min-height: 145px;
-    object-fit: cover;
-    object-position: center;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    opacity: .93;
-    filter:
-      saturate(.92)
-      contrast(1.04)
-      drop-shadow(0 0 24px rgba(96,165,250,.08));
+    height: 190px;
+    min-width: 760px;
+    cursor: crosshair;
   }
 
   .dn-cosmic-atlas-scale {
@@ -526,8 +527,9 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       white-space: normal;
     }
 
-    .dn-cosmic-atlas-image {
-      min-height: 92px;
+    .dn-cosmic-atlas-canvas {
+      min-width: 760px;
+      height: 170px;
     }
 
     .dn-cosmic-atlas-scale {
@@ -535,105 +537,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       overflow-x: auto;
       padding-bottom: .2rem;
       scrollbar-width: thin;
-    }
-  }
-
-  .dn-entity-map {
-    position: relative;
-    width: min(1180px, 100%);
-    margin: 0 auto 2.2rem;
-    padding: 1.25rem;
-    box-sizing: border-box;
-    border: 1px solid rgba(129,140,248,.13);
-    border-radius: 20px;
-    background:
-      radial-gradient(circle at 20% 50%, rgba(37,99,235,.07), transparent 30%),
-      radial-gradient(circle at 80% 50%, rgba(124,58,237,.08), transparent 32%),
-      rgba(3,6,16,.58);
-    box-shadow: 0 24px 80px rgba(0,0,0,.24);
-    overflow: hidden;
-  }
-
-  .dn-entity-heading {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: .8rem;
-    align-items: baseline;
-    margin-bottom: .85rem;
-  }
-
-  .dn-entity-kicker {
-    color: #8b8fd4;
-    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
-    letter-spacing: .13em;
-  }
-
-  .dn-entity-heading h2 {
-    margin: 0 !important;
-    color: #f7f8ff !important;
-    font-size: 1.18rem !important;
-    letter-spacing: -.03em !important;
-  }
-
-  .dn-entity-heading p {
-    grid-column: 2;
-    margin: .25rem 0 0;
-    color: #6f789b;
-    font-size: .7rem;
-    line-height: 1.55;
-  }
-
-  .dn-entity-frame {
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border: 1px solid rgba(148,163,184,.08);
-    border-radius: 15px;
-    background: #02030a;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
-
-  .dn-entity-frame::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(90deg, rgba(2,3,10,.8), transparent 5%, transparent 95%, rgba(2,3,10,.8));
-    z-index: 2;
-  }
-
-  .dn-entity-frame img {
-    display: block;
-    width: 100%;
-    min-width: 920px;
-    height: auto;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-  }
-
-  @media (max-width: 650px) {
-    .dn-entity-map {
-      padding: .7rem;
-      border-radius: 16px;
-      margin-bottom: 1.2rem;
-    }
-
-    .dn-entity-heading {
-      display: block;
-    }
-
-    .dn-entity-kicker {
-      display: block;
-      margin-bottom: .35rem;
-    }
-
-    .dn-entity-heading p {
-      margin-top: .35rem;
-    }
-
-    .dn-entity-frame img {
-      min-width: 900px;
     }
   }
 
@@ -1502,7 +1405,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   @media (max-width: 650px) {
     .deep-numbers-page {
       width: 100vw;
-      margin-top: -3.7rem !important;
+      margin-top: -5rem !important;
       padding-left: .6rem;
       padding-right: .6rem;
     }
@@ -1680,13 +1583,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       </div>
 
       <div class="dn-cosmic-atlas-frame">
-        <img
-          class="dn-cosmic-atlas-image"
-          src="{{ '/assets/img/deep-numbers-cosmos.png' | relative_url }}"
-          alt="Pixel-art cosmic progression from the Sun and planets through Pluto, the Kuiper Belt, distant galaxies, and the deep universe."
-          loading="eager"
-          decoding="async"
-        >
+        <canvas
+          class="dn-cosmic-atlas-canvas"
+          id="dn-cosmic-canvas"
+          role="img"
+          aria-label="Animated code-drawn cosmic progression from Earth through Pluto and into deep space."
+        ></canvas>
       </div>
 
       <div class="dn-cosmic-atlas-scale" aria-label="Cosmic entity progression">
@@ -1710,22 +1612,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
           <b>Galaxies → Deep</b>
           <span>cosmic scale</span>
         </div>
-      </div>
-    </section>
-
-    <section class="dn-entity-map" aria-labelledby="dn-entity-title">
-      <div class="dn-entity-heading">
-        <span class="dn-entity-kicker">ENTITY TRAJECTORY</span>
-        <h2 id="dn-entity-title">How deep can your estimate travel?</h2>
-        <p>Every score pushes the mission farther from Earth, through the Solar System, and into deep space.</p>
-      </div>
-      <div class="dn-entity-frame">
-        <img
-          src="{{ '/assets/img/deep-numbers-entities.svg' | relative_url }}"
-          alt="Pixel-art trajectory from Earth through the planets, Pluto, and deep space"
-          loading="eager"
-          decoding="async"
-        >
       </div>
     </section>
 
@@ -2460,6 +2346,173 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     root.style.setProperty("--dn-py", pointerY.toFixed(3));
   }, { passive: true });
 
+  function drawCosmicAtlas() {
+    var canvas = document.getElementById("dn-cosmic-canvas");
+    if (!canvas) return;
+
+    var rect = canvas.getBoundingClientRect();
+    var ratio = Math.min(2, window.devicePixelRatio || 1);
+    var width = Math.max(760, Math.floor(rect.width));
+    var height = Math.max(170, Math.floor(rect.height));
+
+    canvas.width = Math.floor(width * ratio);
+    canvas.height = Math.floor(height * ratio);
+
+    var ctx = canvas.getContext("2d");
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    ctx.clearRect(0, 0, width, height);
+
+    var bg = ctx.createLinearGradient(0, 0, width, 0);
+    bg.addColorStop(0, "#020718");
+    bg.addColorStop(.5, "#0a0820");
+    bg.addColorStop(1, "#03040e");
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, width, height);
+
+    // Tiny stars, generated deterministically so the atlas does not flicker on resize.
+    var seed = 7919;
+    function rnd() {
+      seed = (seed * 48271) % 2147483647;
+      return seed / 2147483647;
+    }
+
+    for (var s = 0; s < 115; s += 1) {
+      var sx = rnd() * width;
+      var sy = 16 + rnd() * (height - 42);
+      var sr = rnd() * 1.15 + .25;
+      ctx.fillStyle = "rgba(220,228,255," + (rnd() * .45 + .18) + ")";
+      ctx.fillRect(Math.round(sx), Math.round(sy), sr, sr);
+    }
+
+    var entities = [
+      ["EARTH", "#60a5fa", "#4ade80"],
+      ["MARS", "#fb7185", "#9f3b3b"],
+      ["JUPITER", "#d6a06b", "#e8c39e"],
+      ["SATURN", "#fde68a", "#bfa16c"],
+      ["URANUS", "#67e8f9", "#59cfe0"],
+      ["NEPTUNE", "#93c5fd", "#3154c5"],
+      ["PLUTO", "#ddd6fe", "#9a7f91"],
+      ["KUIPER", "#a78bfa", "#7c3aed"],
+      ["OORT", "#67e8f9", "#4f46e5"],
+      ["MILKY WAY", "#c4b5fd", "#7c3aed"],
+      ["ANDROMEDA", "#bfdbfe", "#60a5fa"],
+      ["DEEP SPACE", "#e9d5ff", "#4c1d95"]
+    ];
+
+    var left = 54;
+    var usable = width - 108;
+    var step = usable / (entities.length - 1);
+    var cy = Math.floor(height * .45);
+
+    var route = ctx.createLinearGradient(left, 0, width - left, 0);
+    route.addColorStop(0, "rgba(96,165,250,.14)");
+    route.addColorStop(.5, "rgba(167,139,250,.65)");
+    route.addColorStop(1, "rgba(103,232,249,.12)");
+
+    ctx.beginPath();
+    ctx.moveTo(left, cy);
+    ctx.lineTo(width - left, cy);
+    ctx.strokeStyle = route;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([2, 10]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    function glow(x, y, color, radius) {
+      var g = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      g.addColorStop(0, color.replace(")", ",.28)").replace("rgb(", "rgba("));
+      g.addColorStop(1, color.replace(")", ",0)").replace("rgb(", "rgba("));
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    entities.forEach(function (entity, index) {
+      var x = left + step * index;
+      var radius = index === 2 || index === 3 ? 29 : (index > 8 ? 24 : 25);
+      var primary = entity[1];
+      var secondary = entity[2];
+
+      glow(x, cy, primary, radius * 2.1);
+
+      ctx.save();
+      ctx.translate(x, cy);
+
+      if (index === 3) {
+        ctx.strokeStyle = "rgba(253,230,138,.55)";
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius + 14, radius * .38, -.08, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      if (index === 9 || index === 10) {
+        ctx.strokeStyle = primary;
+        ctx.globalAlpha = .42;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, radius + 12, radius * .48, -.18, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+
+      var planet = ctx.createRadialGradient(-radius * .32, -radius * .35, 2, 0, 0, radius);
+      planet.addColorStop(0, "#ffffff");
+      planet.addColorStop(.12, primary);
+      planet.addColorStop(.72, secondary);
+      planet.addColorStop(1, "#070a18");
+      ctx.fillStyle = planet;
+      ctx.beginPath();
+      ctx.arc(0, 0, radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (index < 7) {
+        ctx.globalAlpha = .24;
+        ctx.fillStyle = "#ffffff";
+        for (var band = -1; band <= 1; band += 1) {
+          ctx.fillRect(-radius * .75, band * radius * .22, radius * 1.5, Math.max(1, radius * .055));
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      if (index === 7 || index === 8) {
+        for (var rock = 0; rock < 9; rock += 1) {
+          var a = rock * .72;
+          var rr = radius + 9 + (rock % 3) * 5;
+          ctx.fillStyle = primary;
+          ctx.globalAlpha = .45;
+          ctx.fillRect(Math.cos(a) * rr, Math.sin(a) * rr, 2, 2);
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      if (index >= 9) {
+        for (var star = 0; star < 7; star += 1) {
+          var a2 = star * .9;
+          ctx.fillStyle = "#ffffff";
+          ctx.globalAlpha = .7;
+          ctx.fillRect(Math.cos(a2) * (radius + 9), Math.sin(a2) * (radius + 9), 2, 2);
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      ctx.restore();
+
+      ctx.textAlign = "center";
+      ctx.font = "800 9px ui-monospace, SFMono-Regular, Menlo, monospace";
+      ctx.fillStyle = primary;
+      ctx.fillText(entity[0], x, cy + radius + 22);
+    });
+
+    ctx.textAlign = "left";
+    ctx.font = "800 8px ui-monospace, SFMono-Regular, Menlo, monospace";
+    ctx.fillStyle = "rgba(148,163,184,.6)";
+    ctx.fillText("SOLAR SYSTEM", left, height - 12);
+    ctx.textAlign = "right";
+    ctx.fillText("DEEP UNIVERSE", width - left, height - 12);
+  }
+
   function resizeCanvas(canvas, ctx) {
     var ratio = Math.min(2, window.devicePixelRatio || 1);
     canvas.width = Math.floor(window.innerWidth * ratio);
@@ -2603,6 +2656,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     resizeCanvas(starCanvas, starCtx);
     resizeCanvas(effectCanvas, effectCtx);
     makeStars();
+    drawCosmicAtlas();
 
     cancelAnimationFrame(starAnimation);
     cancelAnimationFrame(effectAnimation);
@@ -2628,6 +2682,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     resizeCanvas(starCanvas, starCtx);
     resizeCanvas(effectCanvas, effectCtx);
     makeStars();
+    drawCosmicAtlas();
   });
 
   init();
