@@ -135,25 +135,20 @@ main {
 }
 
 #navbar .navbar-toggler .menu-icon {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 18px;
   height: 14px;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  border-radius: 2px;
+  flex: 0 0 18px;
 }
 
-#navbar .navbar-toggler .menu-icon::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 5px;
+#navbar .navbar-toggler .menu-icon span {
+  display: block;
+  width: 18px;
   height: 2px;
   border-radius: 2px;
   background: currentColor;
-  opacity: 0;
 }
 
 #navbar .navbar-collapse-main {
