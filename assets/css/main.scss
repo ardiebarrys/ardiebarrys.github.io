@@ -95,9 +95,12 @@ main {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 100%;
   gap: 0.38rem;
   margin: 0.18rem 0.08rem;
   padding: 0.42rem 0.68rem !important;
+  box-sizing: border-box;
   border: 1px solid transparent;
   border-radius: 999px;
   transition:
