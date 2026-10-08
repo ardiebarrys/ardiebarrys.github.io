@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Ardie Barry Sailis
+title: About
 permalink: /
-nav: false
+nav: true
 nav_order: 1
+nav_title: About
 description: Doctoral Researcher · Toxicology · Scientific Evidence
 
 
@@ -12,6 +13,28 @@ social: false
 ---
 
 <style>
+  /* About uses a normal page title so the navbar label remains "About". */
+  .post-header {
+    width: min(1100px, 100%);
+    max-width: 1100px !important;
+    margin: 0 auto 1.15rem !important;
+    box-sizing: border-box;
+  }
+
+  .post-header .post-title,
+  .post-header .post-description {
+    display: none !important;
+  }
+
+  .about-page-title {
+    margin: 0;
+    color: var(--text-strong);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+  }
+
 
   /* ==========================================================
      ABOUT IDENTITY CARD
@@ -1724,6 +1747,7 @@ social: false
 </style>
 
 <div class="about-shell">
+  <h1 class="about-page-title">Ardie Barry Sailis</h1>
   <div class="research-profile">
     <img class="research-profile-photo"
          src="/assets/img/ardie-profile.jpg"
