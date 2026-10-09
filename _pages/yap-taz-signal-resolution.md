@@ -157,7 +157,6 @@ nav_order: 99
         <div class="protein-mobile-step"><span class="step-number">4</span><div><strong>Nuclear gene regulation</strong><p>YAP/TAZ partner with TEAD to regulate target genes</p></div></div>
         <div class="protein-mobile-arrow" aria-hidden="true">↓</div>
         <div class="protein-mobile-step"><span class="step-number">5</span><div><strong>Signal resolution</strong><p>Can the response terminate, sensitivity recover, and the cell respond appropriately again?</p></div></div>
-        <div class="protein-mobile-feedback">The resolution circuit is a proposed framework for organizing these questions, not a single proven molecular pathway.</div>
       </div>
       <svg viewBox="0 0 900 300" aria-hidden="true" focusable="false">
         <defs>
@@ -216,6 +215,8 @@ nav_order: 99
 
   <div class="mobile-figure-hint" aria-hidden="true">Mobile view: the mechanism is arranged vertically for readability.</div>
 
+  <p class="visual-note" style="margin:.4rem .2rem .8rem;color:#91a8ca;font-size:.75rem;line-height:1.4">Figures and interactive outputs are conceptual illustrations, not experimental measurements.</p>
+
   <section class="circuit-section" aria-labelledby="resolution-figure-title">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">The framework at a glance</span><h2 id="resolution-figure-title">Three questions define signal resolution</h2><p>Use this summary to orient yourself before exploring the detailed model.</p></div><span class="circuit-tag">Core figure</span></div>
     <div class="resolution-figure" role="img" aria-label="Three linked questions: activation, termination, and restoration.">
@@ -268,8 +269,6 @@ nav_order: 99
     <p class="plain-language-sources">Read further: <a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">the published signal-resolution review</a> · <a href="https://doi.org/10.1177/29780241261430920" target="_blank" rel="noopener noreferrer">a 2026 review of Hippo signaling in mechanobiology</a>.</p>
   </section>
 
-  <p class="visual-note" style="margin:.4rem .2rem .8rem;color:#91a8ca;font-size:.75rem;line-height:1.4">Figures and interactive outputs are conceptual illustrations, not experimental measurements.</p>
-
   <section class="circuit-section thought-card" id="dynamic-thought-experiment">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under mechanical stress</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
     <p class="thought-intro">Follow the signal from force detection to nuclear gene regulation, then examine how the response changes when the mechanical input stops.</p>
@@ -277,7 +276,7 @@ nav_order: 99
       <div class="cell-stage" id="thought-cell-stage" data-phase="input">
         <svg viewBox="0 0 560 330" role="img" aria-labelledby="cell-visual-title cell-visual-desc">
           <title id="cell-visual-title">Animated conceptual view of a cell responding to a mechanical input</title>
-          <desc id="cell-visual-desc">Yellow arrows show a mechanical force, cyan dots show a conceptual YAP/TAZ-related signal, and a violet shape represents the nucleus. The illustration shows a cell responding to mechanical input.</desc>
+          <desc id="cell-visual-desc">Yellow arrows indicate mechanical force, cyan dots indicate YAP/TAZ-related signaling, and a violet shape represents the nucleus.</desc>
           <defs>
             <linearGradient id="cell-fill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1e40af" stop-opacity=".22"/><stop offset="1" stop-color="#0e7490" stop-opacity=".06"/></linearGradient>
             <marker id="force-arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/></marker>
@@ -303,7 +302,7 @@ nav_order: 99
           <text class="cell-label" x="355" y="286">CYTOSKELETON</text><path d="M390 273 L379 219" stroke="rgba(103,232,249,.55)" fill="none"/>
           <text class="cell-label" x="280" y="310" text-anchor="middle">MECHANICAL INPUT AND CELL RESPONSE</text>
         </svg>
-        <div class="cell-caption"><span><i class="legend-dot force"></i> Mechanical force</span><span><i class="legend-dot"></i> Conceptual signal</span><span><i class="legend-dot nucleus"></i> Nucleus</span></div>
+        <div class="cell-caption"><span><i class="legend-dot force"></i> Mechanical force</span><span><i class="legend-dot"></i> YAP/TAZ-related signal</span><span><i class="legend-dot nucleus"></i> Nucleus</span></div>
       </div>
       <div class="thought-side">
         <div class="thought-step" aria-live="polite">
@@ -325,7 +324,6 @@ nav_order: 99
         </div>
       </div>
     </div>
-    <p class="lab-caveat">This animated cell is an explanatory illustration, not a live-cell recording. The moving dots do not represent measured molecule counts, rates or trajectories.</p>
   </section>
 
   <section class="circuit-section" id="circuit-explorer">
@@ -345,9 +343,9 @@ nav_order: 99
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">02 / Dynamic thought experiment</span><h2>What happens after the mechanical input is removed?</h2><p>Adjust the inputs to explore how exposure duration and recovery capacity can change the response trajectory.</p></div><span class="circuit-tag">Signal lab</span></div>
     <div class="lab-grid">
       <div class="lab-controls">
-        <div class="lab-control"><div class="lab-control-head"><label for="input-strength">Mechanical input strength</label><output id="strength-value" for="input-strength">70%</output></div><input id="input-strength" type="range" min="10" max="100" value="70" step="5"><span class="lab-help">Represents a relative perturbation level, not a physical unit or universal stiffness scale.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-strength">Mechanical input strength</label><output id="strength-value" for="input-strength">70%</output></div><input id="input-strength" type="range" min="10" max="100" value="70" step="5"></div>
         <div class="lab-control"><div class="lab-control-head"><label for="input-duration">Exposure duration</label><output id="duration-value" for="input-duration">60%</output></div><input id="input-duration" type="range" min="10" max="100" value="60" step="5"><span class="lab-help">Longer exposure can increase the chance of persistent downstream changes in some experimental systems.</span></div>
-        <div class="lab-control"><div class="lab-control-head"><label for="input-reset">Resolution capacity</label><output id="reset-value" for="input-reset">65%</output></div><input id="input-reset" type="range" min="10" max="100" value="65" step="5"></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-reset">Resolution capacity</label><output id="reset-value" for="input-reset">65%</output></div><input id="input-reset" type="range" min="10" max="100" value="65" step="5"><span class="lab-help">A combined conceptual measure of how effectively signaling terminates and the cell regains responsiveness.</span></div>
         <div class="lab-control"><div class="lab-control-head"><label for="input-memory">Persistent memory load</label><output id="memory-value" for="input-memory">30%</output></div><input id="input-memory" type="range" min="0" max="100" value="30" step="5"><span class="lab-help">Represents residual chromatin, cytoskeletal, metabolic or extracellular changes after withdrawal.</span></div>
         <div class="circuit-actions"><button class="circuit-btn primary" type="button" id="reset-lab">Reset parameters ↺</button><button class="circuit-btn" type="button" id="preset-persistent">Load persistent-state example</button></div>
       </div>
