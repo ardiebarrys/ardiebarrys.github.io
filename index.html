@@ -1562,12 +1562,21 @@
   }
 
   /* Primary call-to-action for the highlighted YAP/TAZ study. */
-  .highlight-explore-cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: .4rem 1rem 1.5rem;
+  .highlight-study .highlight-explore-cta {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: .4rem 1rem 1.5rem !important;
+    text-align: center !important;
+  }
+
+  .highlight-study .highlight-explore-cta .highlight-explore-primary {
+    float: none !important;
+    position: static !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .highlight-related-link.highlight-explore-primary {
