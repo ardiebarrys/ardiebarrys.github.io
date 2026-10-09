@@ -60,6 +60,7 @@ body:has(#scf-overview) .post-header,body:has(#scf-overview) .page-header{displa
 .scf-paper-card{--scf-accent:#67e8f9;--scf-accent2:#818cf8;position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid rgba(147,197,253,.17);border-radius:18px;background:linear-gradient(145deg,rgba(12,28,56,.98),rgba(5,15,32,.98));box-shadow:0 16px 38px rgba(0,0,0,.12);transition:transform .22s,border-color .22s,box-shadow .22s,opacity .22s}
 .scf-paper-card::before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,var(--scf-accent),var(--scf-accent2));opacity:.9}
 .scf-paper-card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--scf-accent) 38%,rgba(147,197,253,.18));box-shadow:0 22px 48px rgba(0,0,0,.22)}
+.scf-paper-card.is-filtered-out{display:none}
 .scf-yap{--scf-accent:#67e8f9;--scf-accent2:#818cf8}.scf-nrf{--scf-accent:#86efac;--scf-accent2:#67e8f9}.scf-cyp{--scf-accent:#fbbf24;--scf-accent2:#86efac}.scf-cond{--scf-accent:#c4b5fd;--scf-accent2:#67e8f9}
 .scf-card-top{display:flex;align-items:center;gap:.6rem;padding:1rem 1rem .6rem}
 .scf-index{display:grid;place-items:center;width:34px;height:34px;flex:0 0 34px;border:1px solid color-mix(in srgb,var(--scf-accent) 42%,transparent);border-radius:10px;color:var(--scf-accent);background:color-mix(in srgb,var(--scf-accent) 9%,transparent);font-size:.73rem;font-weight:950}
