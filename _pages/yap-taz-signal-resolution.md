@@ -143,7 +143,7 @@ nav_order: 99
 </style>
 
 <div class="circuit-lab" id="yap-circuit-lab">
-  <div class="yap-home-row"><a class="yap-home-button" href="{{ '/' | relative_url }}"><span class="home-arrow" aria-hidden="true">←</span><span>Back to homepage</span></a></div>
+  <div class="yap-home-row"><a class="yap-home-button" href="{{ '/cellular-signaling-circuits/' | relative_url }}"><span class="home-arrow" aria-hidden="true">←</span><span>Back to Cellular Circuits</span></a></div>
   <section class="circuit-hero">
 
     <div class="protein-showcase" role="img" aria-label="Mechanism overview: mechanical cues are integrated through adhesion, cytoskeletal and Hippo-pathway networks. Active LATS1/2 kinases phosphorylate YAP and TAZ, often promoting cytoplasmic retention or degradation. When YAP and TAZ accumulate in the nucleus, they partner with TEAD to regulate target genes. The review's signal-resolution framework adds the questions of termination, recovery and response to a later input. Simplified and context-dependent.">
