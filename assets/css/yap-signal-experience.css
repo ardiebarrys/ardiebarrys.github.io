@@ -683,3 +683,102 @@ html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
     max-width:1240px !important;
   }
 }
+
+
+/* Organize the YAP/TAZ interactive controls into consistent, aligned button groups. */
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+  gap:.55rem !important;
+  margin-top:.7rem !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:46px !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+  padding:.65rem .7rem !important;
+  margin:0 !important;
+  text-align:center !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-restart {
+  grid-column:1 / -1 !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-next {
+  border-color:rgba(103,232,249,.46) !important;
+  background:linear-gradient(120deg,rgba(8,145,178,.33),rgba(37,99,235,.36)) !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+  gap:.55rem !important;
+  margin-top:1rem !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions > .circuit-btn {
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+  min-width:0 !important;
+  min-height:48px !important;
+  height:100% !important;
+  box-sizing:border-box !important;
+  padding:.65rem .75rem !important;
+  margin:0 !important;
+  text-align:center !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches {
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:.5rem !important;
+  align-items:stretch !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches > button {
+  min-width:0 !important;
+  min-height:44px !important;
+  padding:.6rem .7rem !important;
+  line-height:1.35 !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+}
+@media(max-width:760px) {
+  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:.5rem !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn {
+    min-height:48px !important;
+    padding:.65rem .55rem !important;
+    font-size:.82rem !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions {
+    grid-template-columns:1fr !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches {
+    grid-template-columns:1fr !important;
+  }
+}
+@media(max-width:380px) {
+  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
+    grid-template-columns:1fr !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn,
+  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions > .circuit-btn {
+    min-height:44px !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-restart {
+    grid-column:auto !important;
+  }
+}
