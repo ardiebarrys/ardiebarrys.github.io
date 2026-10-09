@@ -8,7 +8,7 @@ nav_order: 99
 ---
 
 <div class="container mt-5" role="main">
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-21">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-22">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
