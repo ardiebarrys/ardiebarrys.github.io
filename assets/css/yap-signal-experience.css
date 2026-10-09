@@ -258,3 +258,40 @@ body:has(#yap-circuit-lab) .page-header *,
 body:has(#yap-circuit-lab) .header-section {
   display: none !important;
 }
+
+/* The research page uses its own wrapper layout, so no theme title banner or
+   header shadow should occupy space above the custom research interface. */
+html:has(#yap-circuit-lab),
+body:has(#yap-circuit-lab) {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+body:has(#yap-circuit-lab) > header,
+body:has(#yap-circuit-lab) > header::before,
+body:has(#yap-circuit-lab) > header::after,
+body:has(#yap-circuit-lab) header,
+body:has(#yap-circuit-lab) #navbar,
+body:has(#yap-circuit-lab) .post-header,
+body:has(#yap-circuit-lab) .page-header,
+body:has(#yap-circuit-lab) .header-section,
+body:has(#yap-circuit-lab) .post-title,
+body:has(#yap-circuit-lab) .page-title {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+body:has(#yap-circuit-lab) > main,
+body:has(#yap-circuit-lab) main,
+body:has(#yap-circuit-lab) main > .container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
