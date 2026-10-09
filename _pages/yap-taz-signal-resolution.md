@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: yap-fullscreen
 title: YAP/TAZ Signal-Resolution Circuit
 permalink: /research/yap-taz-signal-resolution/
 description: An interactive exploration of the proposed YAP/TAZ mechanochemical signal-resolution circuit.
@@ -7,7 +7,7 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-4">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-6">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
