@@ -415,63 +415,54 @@ header:has(> #navbar) {
 
 /* --------------------------------------------------------------------------
    Special project navigation
-   SciAudit AI and Deep Numbers are independent projects, so their navigation
+   Cellular Circuits and Deep Numbers are distinct destinations, so their navigation
    labels use distinct typographic treatments rather than looking like ordinary
    site pages.
 -------------------------------------------------------------------------- */
 
-/* SciAudit AI: technical / research-tool identity. */
-#navbar .nav-sciaudit > .nav-link {
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    "Liberation Mono",
-    monospace !important;
+/* Cellular Circuits: independent research-framework identity. */
+#navbar .nav-circuit-framework > .nav-link {
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif !important;
   font-size: .88rem !important;
-  font-weight: 800 !important;
-  letter-spacing: .025em;
-  color: #bfdbfe !important;
+  font-weight: 900 !important;
+  letter-spacing: .015em;
+  color: #a5f3fc !important;
 }
 
-#navbar .nav-sciaudit > .nav-link::after {
-  content: "AI";
+#navbar .nav-circuit-framework > .nav-link::after {
+  content: "CIRCUITS";
   margin-left: auto;
   padding: .13rem .34rem;
-  border: 1px solid rgba(147,197,253,.30);
+  border: 1px solid rgba(103,232,249,.30);
   border-radius: 5px;
-  color: #93c5fd;
+  color: #67e8f9;
   font-family: inherit;
-  font-size: .58rem;
-  font-weight: 800;
+  font-size: .49rem;
+  font-weight: 950;
   letter-spacing: .08em;
-  line-height: 1;
-  opacity: .85;
+  line-height: 1.2;
+  opacity: .92;
 }
 
-#navbar .nav-sciaudit > .nav-link:hover {
-  color: #e9d5ff !important;
-  background: linear-gradient(90deg, #c4b5fd 0%, #93c5fd 58%, #67e8f9 100%);
+#navbar .nav-circuit-framework > .nav-link:hover {
+  color: #e0f2fe !important;
+  background: linear-gradient(90deg, #67e8f9 0%, #a5b4fc 55%, #86efac 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-#navbar .nav-sciaudit.active > .nav-link {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  background: linear-gradient(135deg, rgba(124,58,237,.30), rgba(37,99,235,.16)) !important;
-  border-color: rgba(167,139,250,.42) !important;
-  box-shadow:
-    0 5px 16px rgba(124,58,237,.16),
-    inset 0 1px 0 rgba(255,255,255,.08);
+#navbar .nav-circuit-framework.active > .nav-link {
+  color: #f0fdff !important;
+  -webkit-text-fill-color: #f0fdff !important;
+  background: linear-gradient(135deg, rgba(8,145,178,.22), rgba(79,70,229,.16)) !important;
+  border-color: rgba(103,232,249,.40) !important;
+  box-shadow: 0 5px 16px rgba(8,145,178,.13), inset 0 1px 0 rgba(255,255,255,.07);
 }
 
-#navbar .nav-sciaudit.active > .nav-link::after {
-  color: #93c5fd !important;
-  -webkit-text-fill-color: #93c5fd !important;
+#navbar .nav-circuit-framework.active > .nav-link::after {
+  color: #a5f3fc !important;
+  -webkit-text-fill-color: #a5f3fc !important;
   background: transparent !important;
 }
 
