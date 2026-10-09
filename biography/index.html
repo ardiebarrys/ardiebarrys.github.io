@@ -616,7 +616,7 @@
     }
   })();
 </script> <style>
-  /* Subtle ambient particles, shown only on the seven primary portfolio pages. */
+  /* Visible but restrained particles behind content on primary portfolio pages. */
   body {
     isolation: isolate;
   }
@@ -624,17 +624,36 @@
   #site-ambient-canvas {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     display: block;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    opacity: .78;
+    opacity: .92;
+  }
+
+  /* Keep page content above the canvas without covering it with a background. */
+  body > header,
+  body > main,
+  body > footer,
+  body > .container,
+  body > .post,
+  body > .page,
+  body > #main,
+  body > #content {
+    position: relative;
+    z-index: 1;
+  }
+
+  body > footer.fixed-bottom,
+  body > .fixed-bottom {
+    position: fixed;
+    z-index: 1000;
   }
 
   @media (max-width: 680px) {
     #site-ambient-canvas {
-      opacity: .62;
+      opacity: .82;
     }
   }
 
@@ -665,13 +684,13 @@
     }
 
     function makeParticle() {
-      var isCyan = Math.random() > 0.72;
+      var isCyan = Math.random() > 0.64;
 
       return {
         x: random(0, width),
         y: random(0, height),
-        radius: random(0.65, 1.55),
-        alpha: random(0.075, 0.18),
+        radius: random(0.9, 1.95),
+        alpha: random(0.14, 0.29),
         vx: random(-0.11, 0.11),
         vy: random(-0.13, 0.13),
         phase: random(0, Math.PI * 2),
@@ -691,8 +710,8 @@
 
       /* Keep particle density modest, especially on narrow mobile screens. */
       var count = width <= 680
-        ? 10
-        : Math.min(38, Math.max(18, Math.round((width * height) / 62000)));
+        ? 15
+        : Math.min(64, Math.max(28, Math.round((width * height) / 36000)));
 
       particles = [];
       for (var i = 0; i < count; i += 1) {
