@@ -231,3 +231,29 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .cell-caption {
     max-height: 145px;
   }
 }
+
+/* Center the complete cell drawing in the available figure area, not merely its SVG box. */
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: minmax(0, 1fr) auto !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > svg {
+  grid-row: 1 !important;
+  align-self: center !important;
+  justify-self: center !important;
+  width: min(100%, 560px) !important;
+  height: auto !important;
+  max-width: 560px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  flex: none !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cell-caption {
+  grid-row: 2 !important;
+  align-self: end !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
