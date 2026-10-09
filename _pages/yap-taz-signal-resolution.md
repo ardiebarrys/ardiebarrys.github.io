@@ -7,7 +7,7 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-11">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-12">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
@@ -119,6 +119,60 @@ nav_order: 99
     </div>
   </section>
 
+  <section class="circuit-section plain-language-guide" id="yap-taz-explained">
+    <div class="circuit-section-head">
+      <div>
+        <span class="circuit-eyebrow">The biology in plain language</span>
+        <h2>What are YAP and TAZ, and what does this paper add?</h2>
+        <p>Start with the basic biology, then separate what researchers already know from the framework this review proposes.</p>
+      </div>
+      <span class="circuit-tag">Beginner's guide</span>
+    </div>
+
+    <div class="plain-language-grid">
+      <article class="plain-language-card">
+        <span class="plain-language-number">01 · THE PLAYERS</span>
+        <h3>YAP and TAZ are cellular messengers to the gene-control system</h3>
+        <p><strong>YAP</strong> stands for Yes-associated protein. <strong>TAZ</strong> stands for transcriptional co-activator with PDZ-binding motif. They are proteins that help control which genes a cell uses. They do not usually switch genes on by binding DNA alone. Instead, they work with DNA-binding partners, especially proteins called <strong>TEAD</strong>, to influence gene activity.</p>
+        <p>Think of YAP and TAZ as collaborators that help a cell turn information about its surroundings into changes in its behavior.</p>
+      </article>
+
+      <article class="plain-language-card">
+        <span class="plain-language-number">02 · WHAT THEY DO</span>
+        <h3>They help cells respond to their physical and biological environment</h3>
+        <p>YAP/TAZ activity can influence cell growth, survival, repair, and cell identity. Their behavior is shaped by chemical signals, contact with neighboring cells, and physical conditions such as how stiff the surrounding tissue is and how much tension the cell experiences.</p>
+        <p>When active, YAP/TAZ can move into the <strong>nucleus</strong>, where DNA is stored, and help TEAD and other partners regulate genes. The Hippo signaling pathway is one major control system: it often restrains YAP/TAZ through phosphorylation and helps keep their activity in check.</p>
+        <p>This regulation matters. Too little or poorly timed activity can interfere with normal tissue maintenance; persistent or inappropriate activity is associated with problems including fibrosis and cancer. The effects depend on cell type and context.</p>
+      </article>
+
+      <article class="plain-language-card">
+        <span class="plain-language-number">03 · WHAT SCIENCE ALREADY KNOWS</span>
+        <h3>Mechanical signals are processed through a network, not one simple switch</h3>
+        <p>Researchers know that cells can convert physical inputs into biochemical signals, a process called <strong>mechanotransduction</strong>. Adhesions, the actin cytoskeleton, Hippo-pathway proteins, transport into and out of the nucleus, and gene-regulatory machinery can all contribute to YAP/TAZ control.</p>
+        <p>A stiff surface or increased cellular tension often favors nuclear YAP/TAZ activity in many experimental settings, but this is not a universal rule. The response varies with the cell, tissue, signal duration, and other biochemical conditions. Researchers also know a great deal about how YAP/TAZ becomes activated; how the whole system returns to its prior functional state is a broader question involving multiple processes.</p>
+      </article>
+
+      <article class="plain-language-card plain-language-proposal">
+        <span class="plain-language-number">04 · WHAT THIS PAPER PROPOSES</span>
+        <h3>Judge the response by whether it resolves, not only by whether it starts</h3>
+        <p>The review proposes describing YAP/TAZ regulation as a <strong>mechanochemical signal-resolution circuit</strong>. In everyday terms, the cell must do more than detect a force and react. It must also combine the information, respond over the right timescale, bring the response to an end when appropriate, and recover the ability to respond to a later signal.</p>
+        <ol>
+          <li><strong>Sense:</strong> detect a change in the physical environment.</li>
+          <li><strong>Integrate:</strong> combine signals from cell attachments, the cytoskeleton, and biochemical pathways.</li>
+          <li><strong>Decode over time:</strong> respond differently depending on how strong, long, or repeated the input is.</li>
+          <li><strong>Terminate:</strong> actively reduce the response when the input ends or conditions change.</li>
+          <li><strong>Recover:</strong> return toward a functional baseline while retaining the ability to respond again.</li>
+        </ol>
+        <p>The central distinction is <strong>activation versus resolution</strong>. A YAP/TAZ signal going up shows that the cell responded. It does not, by itself, show that the response ended appropriately or that the cell regained its normal sensitivity.</p>
+      </article>
+    </div>
+
+    <div class="plain-language-caveat">
+      <strong>Important distinction:</strong> this is a conceptual framework developed in a review, not a claim that one new, fully validated molecular pathway has been discovered. Its proposed stages organize established mechanisms and identify questions that experiments should test, especially whether cells return toward baseline after a mechanical input is withdrawn and whether they respond normally to a second challenge.
+    </div>
+
+    <p class="plain-language-sources">Read further: <a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">the published signal-resolution review</a> · <a href="https://doi.org/10.1177/29780241261430920" target="_blank" rel="noopener noreferrer">a 2026 review of Hippo signaling in mechanobiology</a>.</p>
+  </section>
 
   <section class="circuit-section thought-card" id="dynamic-thought-experiment">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">Start here / No specialist knowledge needed</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
