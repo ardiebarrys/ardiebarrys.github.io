@@ -112,13 +112,29 @@ nav_order: 99
   .protein-flow { stroke-dasharray:5 5; animation:protein-shimmer 3.5s linear infinite; }
   .protein-caption { fill:#dff8ff; font:800 17px system-ui,sans-serif; letter-spacing:1px; }
   @keyframes protein-shimmer { to { stroke-dashoffset:-40; } }
+  /* On phones, preserve the diagram's readable type size and let readers swipe across it. */
+  .protein-showcase { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-color:rgba(103,232,249,.55) rgba(147,197,253,.08); scrollbar-width:thin; }
+  .protein-showcase svg { min-width:760px; width:100%; height:auto; }
+  .protein-showcase::after { content:""; }
   @media(max-width:760px) {
-    .circuit-hero > .protein-showcase { width:100%; aspect-ratio:1.1 / 1; margin:.8rem 0 1rem; }
-    .circuit-hero > .protein-showcase svg { height:auto; }
-    .protein-panel-title { font-size:14px; }
-    .protein-label { font-size:13px; }
-    .protein-small { font-size:11px; }
+    .circuit-hero > .protein-showcase { width:100%; aspect-ratio:auto; margin:.8rem 0 1rem; padding-bottom:.35rem; }
+    .circuit-hero > .protein-showcase svg { min-width:760px; width:760px; height:auto; }
+    .protein-panel-title { font-size:17px; }
+    .protein-label { font-size:16px; }
+    .protein-small { font-size:14px; }
+    .protein-caption { font-size:19px; }
+    .circuit-hero { padding:1rem; }
+    .circuit-hero h1 { font-size:clamp(1.8rem,8vw,2.5rem); }
+    .circuit-subtitle { font-size:.91rem; line-height:1.5; }
   }
+  .mobile-figure-hint { display:none; margin:-.55rem 0 .8rem; color:#91a8ca; font-size:.7rem; }
+  @media(max-width:760px) { .mobile-figure-hint { display:block; } }
+  .resolution-figure { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin:1rem 0 1.25rem; }
+  .resolution-figure-step { position:relative; padding:1rem .85rem; border:1px solid var(--line); border-radius:14px; background:linear-gradient(150deg,rgba(20,46,91,.8),rgba(7,20,42,.9)); text-align:center; }
+  .resolution-figure-step .figure-symbol { display:grid; place-items:center; width:54px; height:54px; margin:0 auto .65rem; border:1px solid rgba(103,232,249,.35); border-radius:50%; color:#67e8f9; font-size:1.45rem; font-weight:900; background:rgba(37,99,235,.12); }
+  .resolution-figure-step strong { display:block; color:#e5efff; font-size:.94rem; }
+  .resolution-figure-step p { margin:.35rem 0 0; color:#9bb0d0; font-size:.78rem; line-height:1.45; text-align:center !important; }
+  @media(max-width:560px) { .resolution-figure { grid-template-columns:1fr; gap:.55rem; } .resolution-figure-step { display:grid; grid-template-columns:48px minmax(0,1fr); gap:.2rem .75rem; align-items:center; text-align:left; padding:.75rem; } .resolution-figure-step .figure-symbol { grid-row:span 2; width:44px; height:44px; margin:0; font-size:1.2rem; } .resolution-figure-step p { margin:0; text-align:left !important; } }
   @media(prefers-reduced-motion:reduce) { .protein-flow { animation:none !important; } }
 
 </style>
@@ -183,6 +199,17 @@ nav_order: 99
     </div>
   </section>
 
+  <div class="mobile-figure-hint" aria-hidden="true">On a phone, swipe sideways across the mechanism figure to read each stage.</div>
+
+  <section class="circuit-section" aria-labelledby="resolution-figure-title">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">The framework at a glance</span><h2 id="resolution-figure-title">Three questions define signal resolution</h2><p>Use this summary to orient yourself before exploring the detailed model.</p></div><span class="circuit-tag">Core figure</span></div>
+    <div class="resolution-figure" role="img" aria-label="Three linked questions: activation, termination, and restoration.">
+      <article class="resolution-figure-step"><span class="figure-symbol" aria-hidden="true">↗</span><strong>1. Activation</strong><p>Did the cell detect and respond to the mechanical cue?</p></article>
+      <article class="resolution-figure-step"><span class="figure-symbol" aria-hidden="true">↓</span><strong>2. Termination</strong><p>Did signaling decline after the cue changed or stopped?</p></article>
+      <article class="resolution-figure-step"><span class="figure-symbol" aria-hidden="true">↻</span><strong>3. Restoration</strong><p>Can the cell respond appropriately to a second cue?</p></article>
+    </div>
+  </section>
+
   <section class="circuit-section plain-language-guide" id="yap-taz-explained">
     <div class="circuit-section-head">
       <div>
@@ -197,37 +224,25 @@ nav_order: 99
       <article class="plain-language-card">
         <span class="plain-language-number">01 · THE PLAYERS</span>
         <h3>YAP and TAZ are cellular messengers to the gene-control system</h3>
-        <p><strong>YAP</strong> stands for Yes-associated protein. <strong>TAZ</strong> stands for transcriptional co-activator with PDZ-binding motif. They are proteins that help control which genes a cell uses. They do not usually switch genes on by binding DNA alone. Instead, they work with DNA-binding partners, especially proteins called <strong>TEAD</strong>, to influence gene activity.</p>
-        <p>Think of YAP and TAZ as collaborators that help a cell turn information about its surroundings into changes in its behavior.</p>
+        <p><strong>YAP</strong> (Yes-associated protein) and <strong>TAZ</strong> are co-activators that work with DNA-binding partners, especially <strong>TEAD</strong>, to regulate gene activity. They help convert information about a cell’s surroundings into changes in cell behavior.</p>
       </article>
 
       <article class="plain-language-card">
         <span class="plain-language-number">02 · WHAT THEY DO</span>
         <h3>They help cells respond to their physical and biological environment</h3>
-        <p>YAP/TAZ activity can influence cell growth, survival, repair, and cell identity. Their behavior is shaped by chemical signals, contact with neighboring cells, and physical conditions such as how stiff the surrounding tissue is and how much tension the cell experiences.</p>
-        <p>When active, YAP/TAZ can move into the <strong>nucleus</strong>, where DNA is stored, and help TEAD and other partners regulate genes. The Hippo signaling pathway is one major control system: it often restrains YAP/TAZ through phosphorylation and helps keep their activity in check.</p>
-        <p>This regulation matters. Too little or poorly timed activity can interfere with normal tissue maintenance; persistent or inappropriate activity is associated with problems including fibrosis and cancer. The effects depend on cell type and context.</p>
+        <p>YAP/TAZ can influence growth, survival, repair and cell identity. Mechanical conditions, cell contacts and biochemical signals affect whether they enter the <strong>nucleus</strong> and regulate genes. The Hippo pathway often restrains them through phosphorylation. Outcomes depend on cell type and context.</p>
       </article>
 
       <article class="plain-language-card">
         <span class="plain-language-number">03 · WHAT SCIENCE ALREADY KNOWS</span>
         <h3>Mechanical signals are processed through a network, not one simple switch</h3>
-        <p>Researchers know that cells can convert physical inputs into biochemical signals, a process called <strong>mechanotransduction</strong>. Adhesions, the actin cytoskeleton, Hippo-pathway proteins, transport into and out of the nucleus, and gene-regulatory machinery can all contribute to YAP/TAZ control.</p>
-        <p>A stiff surface or increased cellular tension often favors nuclear YAP/TAZ activity in many experimental settings, but this is not a universal rule. The response varies with the cell, tissue, signal duration, and other biochemical conditions. Researchers also know a great deal about how YAP/TAZ becomes activated; how the whole system returns to its prior functional state is a broader question involving multiple processes.</p>
+        <p><strong>Mechanotransduction</strong> converts physical inputs into biochemical signals. Adhesions, actin, Hippo-pathway proteins, nuclear transport and gene-regulatory machinery all contribute. Stiffness or tension can favor nuclear YAP/TAZ in some settings, but responses vary with cell type, context and exposure duration.</p>
       </article>
 
       <article class="plain-language-card plain-language-proposal">
         <span class="plain-language-number">04 · WHAT THIS PAPER PROPOSES</span>
         <h3>Judge the response by whether it resolves, not only by whether it starts</h3>
-        <p>The review proposes describing YAP/TAZ regulation as a <strong>mechanochemical signal-resolution circuit</strong>. In everyday terms, the cell must do more than detect a force and react. It must also combine the information, respond over the right timescale, bring the response to an end when appropriate, and recover the ability to respond to a later signal.</p>
-        <ol>
-          <li><strong>Sense:</strong> detect a change in the physical environment.</li>
-          <li><strong>Integrate:</strong> combine signals from cell attachments, the cytoskeleton, and biochemical pathways.</li>
-          <li><strong>Decode over time:</strong> respond differently depending on how strong, long, or repeated the input is.</li>
-          <li><strong>Terminate:</strong> actively reduce the response when the input ends or conditions change.</li>
-          <li><strong>Recover:</strong> return toward a functional baseline while retaining the ability to respond again.</li>
-        </ol>
-        <p>The central distinction is <strong>activation versus resolution</strong>. A YAP/TAZ signal going up shows that the cell responded. It does not, by itself, show that the response ended appropriately or that the cell regained its normal sensitivity.</p>
+        <p>The review proposes a <strong>mechanochemical signal-resolution circuit</strong>: sense and integrate a cue, decode it over time, terminate the response, then test whether responsiveness returns. <strong>Activation is not resolution.</strong> A rising YAP/TAZ signal shows a response, not successful recovery.</p>
       </article>
     </div>
 
