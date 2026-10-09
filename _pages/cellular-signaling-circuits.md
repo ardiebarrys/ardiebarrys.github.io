@@ -7,7 +7,7 @@ nav: true
 nav_order: 7
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/cellular-circuit-overview.css' | relative_url }}?v=20261009-2">
+<link rel="stylesheet" href="{{ '/assets/css/cellular-circuit-overview.css' | relative_url }}?v=20261009-3">
 
 <div class="scf-page" id="scf-overview">
   <a class="scf-back" href="{{ '/' | relative_url }}">← Back to homepage</a>
