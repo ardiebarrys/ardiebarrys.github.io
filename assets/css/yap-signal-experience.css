@@ -653,3 +653,21 @@ body:has(#yap-circuit-lab) #yap-circuit-lab input:focus-visible {
   body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {padding:.95rem !important;border-radius:15px !important}
   body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-bottom {flex-direction:column;align-items:flex-start}
 }
+
+
+/* Keep the compact mobile flow instead of rendering the wide desktop schematic. */
+@media(max-width:760px) {
+  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero > .protein-showcase {
+    width:100% !important;
+    aspect-ratio:auto !important;
+    height:auto !important;
+    margin:.8rem 0 1rem !important;
+    padding:.45rem !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .protein-showcase > svg {
+    display:none !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .protein-mobile-flow {
+    display:block !important;
+  }
+}
