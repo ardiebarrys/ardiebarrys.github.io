@@ -39,6 +39,13 @@ body:has(#yap-circuit-lab) .page {
   background: transparent !important;
   color: #e8f1ff !important;
 }
+/* Use the same outer Bootstrap content wrapper as the other three circuit pages. */
+body:has(#yap-circuit-lab) > .container,
+body:has(#yap-circuit-lab) .container {
+  width:100% !important;
+  max-width:none !important;
+  background:transparent !important;
+}
 body:has(#yap-circuit-lab) footer,
 body:has(#yap-circuit-lab) .fixed-bottom {
   display: none !important;
@@ -700,7 +707,9 @@ html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main > .container-fluid {
   box-sizing:border-box !important;
 }
 html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
-  width:min(1240px,calc(100vw - 2rem)) !important;
+  /* Match the other pages: root width is relative to the shared padded .container. */
+  display:block !important;
+  width:min(1240px,calc(100% - 2rem)) !important;
   max-width:1240px !important;
   min-width:0 !important;
   margin-left:auto !important;
@@ -709,7 +718,7 @@ html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
 }
 @media(max-width:760px) {
   html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
-    width:calc(100vw - 1rem) !important;
+    width:calc(100% - 1rem) !important;
     max-width:1240px !important;
   }
 }
