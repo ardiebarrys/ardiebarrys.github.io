@@ -7,11 +7,11 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-17">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-18">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
-  .circuit-lab { --ink:#e8f1ff; --muted:#9bb0d0; --line:rgba(147,197,253,.19); --blue:#60a5fa; --cyan:#67e8f9; --green:#86efac; --red:#fca5a5; color:var(--ink); width:100%; max-width:1180px; margin:0 auto 3rem; }
+  .circuit-lab { --ink:#e8f1ff; --muted:#9bb0d0; --line:rgba(147,197,253,.19); --blue:#60a5fa; --cyan:#67e8f9; --green:#86efac; --red:#fca5a5; color:var(--ink); width:100%; max-width:1240px; margin:0 auto 3rem; }
   .circuit-lab p { text-align:left !important; }
   .circuit-hero { position:relative; overflow:hidden; padding:clamp(1.4rem,4vw,3rem); border:1px solid var(--line); border-radius:24px; background:radial-gradient(circle at 80% 15%,rgba(59,130,246,.25),transparent 30%),radial-gradient(circle at 12% 90%,rgba(34,211,238,.10),transparent 30%),linear-gradient(145deg,#0c1d3d,#061126 72%); box-shadow:0 24px 65px rgba(0,0,0,.24); }
   .circuit-hero::before { content:""; position:absolute; inset:-40%; pointer-events:none; opacity:.18; background:repeating-radial-gradient(ellipse at 70% 40%,transparent 0 36px,rgba(147,197,253,.28) 37px 38px,transparent 39px 70px); animation:lab-drift 32s linear infinite; }
@@ -145,7 +145,17 @@ nav_order: 99
 <div class="circuit-lab" id="yap-circuit-lab">
   <div class="yap-home-row"><a class="yap-home-button" href="{{ '/cellular-signaling-circuits/' | relative_url }}"><span class="home-arrow" aria-hidden="true">←</span><span>Back to Cellular Circuits</span></a></div>
   <section class="circuit-hero">
-
+    <div class="circuit-eyebrow">Interactive research framework · 2026</div>
+    <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
+    <p class="circuit-subtitle">A framework for mechanical sensing, temporal decoding, active termination and restored mechanosensitivity.</p>
+    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher · Petaling Jaya, Selangor, Malaysia</div>
+    <div class="circuit-hero-meta">
+      <span><b>Journal</b> <em>Progress in Biophysics and Molecular Biology</em> · 202 (2026)</span>
+      <span><b>Accepted</b> 6 October 2026</span>
+      <span><b>Online</b> 7 October 2026</span>
+      <span><b>Version of Record</b> 7 October 2026</span>
+      <span><b>DOI</b> <a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">10.1016/j.pbiomolbio.2026.101960 ↗</a></span>
+    </div>
     <div class="protein-showcase" role="img" aria-label="Mechanism overview: mechanical cues are integrated through adhesion, cytoskeletal and Hippo-pathway networks. Active LATS1/2 kinases phosphorylate YAP and TAZ, often promoting cytoplasmic retention or degradation. When YAP and TAZ accumulate in the nucleus, they partner with TEAD to regulate target genes. The review's signal-resolution framework adds the questions of termination, recovery and response to a later input. Simplified and context-dependent.">
       <div class="protein-mobile-flow" role="img" aria-label="Mobile mechanism figure: mechanical input, signal integration, YAP/TAZ control, nuclear gene regulation, and the proposed resolution questions.">
         <div class="protein-mobile-step"><span class="step-number">1</span><div><strong>Mechanical input</strong><p>Matrix stiffness, cell attachments and actin tension</p></div></div>
@@ -198,11 +208,7 @@ nav_order: 99
         <text class="protein-small" x="285" y="193" text-anchor="middle">Can the system return toward baseline?</text>
       </svg>
     </div>
-    <div class="circuit-eyebrow">Interactive research framework · 2026</div>
-    <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
-    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher · Petaling Jaya, Selangor, Malaysia</div>
-    <p class="circuit-subtitle" style="margin:.6rem 0 0;font-size:.78rem;color:#8ea7cb">Received 21 July 2026 · Revised 4 October 2026 · Accepted 6 October 2026 · Available online 7 October 2026 · Version of Record 7 October 2026</p>
-    <p class="circuit-subtitle">Explore a systems-level framework in which cells do more than sense mechanical forces. They integrate and decode those inputs, terminate signaling, and attempt to restore mechanosensitivity. The key question is not only whether YAP/TAZ activates, but whether the system resolves the response and returns toward a functional baseline.</p>
+    <p class="circuit-hero-summary">The key question is not only whether YAP/TAZ activates, but whether the response resolves after the mechanical input changes and the cell regains appropriate responsiveness.</p>
     <div class="circuit-pills">
       <span class="circuit-pill">Mechanotransduction</span><span class="circuit-pill">Hippo signaling</span><span class="circuit-pill">Temporal decoding</span><span class="circuit-pill">Mechanical memory</span><span class="circuit-pill">Signal resolution</span>
     </div>
