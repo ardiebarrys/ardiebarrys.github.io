@@ -1,0 +1,289 @@
+---
+layout: page
+title: YAP/TAZ Signal-Resolution Circuit
+permalink: /research/yap-taz-signal-resolution/
+description: An interactive exploration of the proposed YAP/TAZ mechanochemical signal-resolution circuit.
+nav: false
+nav_order: 99
+---
+
+<style>
+  .circuit-lab, .circuit-lab * { box-sizing: border-box; }
+  .circuit-lab { --ink:#e8f1ff; --muted:#9bb0d0; --line:rgba(147,197,253,.19); --blue:#60a5fa; --cyan:#67e8f9; --green:#86efac; --red:#fca5a5; color:var(--ink); width:100%; max-width:1180px; margin:0 auto 3rem; }
+  .circuit-lab p { text-align:left !important; }
+  .circuit-hero { position:relative; overflow:hidden; padding:clamp(1.4rem,4vw,3rem); border:1px solid var(--line); border-radius:24px; background:radial-gradient(circle at 80% 15%,rgba(59,130,246,.25),transparent 30%),radial-gradient(circle at 12% 90%,rgba(34,211,238,.10),transparent 30%),linear-gradient(145deg,#0c1d3d,#061126 72%); box-shadow:0 24px 65px rgba(0,0,0,.24); }
+  .circuit-hero::before { content:""; position:absolute; inset:-40%; pointer-events:none; opacity:.18; background:repeating-radial-gradient(ellipse at 70% 40%,transparent 0 36px,rgba(147,197,253,.28) 37px 38px,transparent 39px 70px); animation:lab-drift 32s linear infinite; }
+  .circuit-hero > * { position:relative; z-index:1; }
+  .circuit-eyebrow { color:#93c5fd; font-size:.68rem; font-weight:850; letter-spacing:.16em; text-transform:uppercase; }
+  .circuit-hero h1 { max-width:900px; margin:.65rem 0 .75rem; color:#f2f7ff; font-size:clamp(2rem,5.2vw,4rem); line-height:1.03; letter-spacing:-.05em; }
+  .circuit-byline { color:#b8c9e5; font-size:.94rem; }
+  .circuit-byline strong { color:#f2f7ff; }
+  .circuit-subtitle { max-width:800px; margin:1.1rem 0 1.4rem; color:#b4c5e0; font-size:1.02rem; line-height:1.7; }
+  .circuit-pills { display:flex; flex-wrap:wrap; gap:.45rem; }
+  .circuit-pill { border:1px solid var(--line); border-radius:999px; padding:.38rem .65rem; color:#b9cce8; background:rgba(15,35,70,.6); font-size:.72rem; }
+  .circuit-actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-top:1.4rem; }
+  .circuit-btn { display:inline-flex; align-items:center; justify-content:center; gap:.45rem; min-height:42px; padding:.65rem .95rem; border:1px solid rgba(147,197,253,.3); border-radius:10px; color:#eaf3ff !important; background:rgba(30,64,125,.38); font:inherit; font-size:.82rem; font-weight:800; text-decoration:none !important; cursor:pointer; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+  .circuit-btn:hover { transform:translateY(-2px); border-color:#93c5fd; background:rgba(37,99,235,.38); }
+  .circuit-btn.primary { border-color:rgba(96,165,250,.65); background:linear-gradient(135deg,#2563eb,#1d4ed8); box-shadow:0 8px 22px rgba(37,99,235,.2); }
+  .circuit-section { margin:1.25rem 0; padding:clamp(1rem,2.5vw,1.5rem); border:1px solid var(--line); border-radius:18px; background:linear-gradient(145deg,rgba(13,29,58,.96),rgba(7,17,36,.98)); box-shadow:0 15px 38px rgba(0,0,0,.13); }
+  .circuit-section-head { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:1rem; }
+  .circuit-section-head h2 { margin:.25rem 0 .3rem; color:#eaf2ff; font-size:clamp(1.25rem,3vw,1.8rem); letter-spacing:-.035em; }
+  .circuit-section-head p { margin:0; max-width:760px; color:var(--muted); font-size:.87rem; line-height:1.6; }
+  .circuit-tag { display:inline-flex; flex:0 0 auto; padding:.32rem .5rem; border:1px solid var(--line); border-radius:999px; color:#93c5fd; font-size:.61rem; font-weight:850; letter-spacing:.08em; text-transform:uppercase; }
+  .circuit-flow { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:.55rem; }
+  .circuit-node { position:relative; min-width:0; min-height:142px; padding:.8rem .72rem; border:1px solid rgba(96,165,250,.2); border-radius:13px; background:linear-gradient(150deg,rgba(20,46,91,.78),rgba(7,20,42,.9)); color:var(--ink); text-align:left; cursor:pointer; transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease; }
+  .circuit-node::after { content:""; position:absolute; left:12%; right:12%; bottom:0; height:2px; background:linear-gradient(90deg,transparent,var(--node-color,#60a5fa),transparent); transform:scaleX(.15); opacity:.4; transition:transform .3s ease,opacity .3s ease; }
+  .circuit-node:hover,.circuit-node.is-active { transform:translateY(-3px); border-color:var(--node-color,#60a5fa); background:linear-gradient(150deg,rgba(30,64,125,.82),rgba(8,22,48,.96)); box-shadow:0 12px 26px rgba(0,0,0,.18); }
+  .circuit-node.is-active::after { transform:scaleX(1); opacity:1; }
+  .circuit-node .n { display:grid; place-items:center; width:28px; height:28px; margin-bottom:.65rem; border:1px solid var(--line); border-radius:9px; color:var(--node-color,#93c5fd); background:rgba(37,99,235,.12); font-size:.65rem; font-weight:900; }
+  .circuit-node strong { display:block; color:#e5efff; font-size:.79rem; line-height:1.3; }
+  .circuit-node small { display:block; margin-top:.35rem; color:#8da5ca; font-size:.65rem; line-height:1.4; }
+  .node-detail { display:grid; grid-template-columns:54px minmax(0,1fr); gap:.85rem; align-items:start; margin-top:.8rem; padding:1rem; border:1px solid var(--line); border-radius:12px; background:rgba(3,12,28,.5); animation:lab-enter .35s ease both; }
+  .node-detail-index { display:grid; place-items:center; width:48px; height:48px; border:1px solid rgba(96,165,250,.3); border-radius:13px; color:#93c5fd; background:rgba(37,99,235,.12); font-size:.75rem; font-weight:900; }
+  .node-detail h3 { margin:0 0 .3rem; color:#e5efff; font-size:1rem; }
+  .node-detail p { margin:0; color:#9bb0d0; font-size:.83rem; line-height:1.6; }
+  .lab-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr); gap:1rem; }
+  .lab-controls,.lab-readout { min-width:0; padding:1rem; border:1px solid var(--line); border-radius:13px; background:rgba(3,12,28,.43); }
+  .lab-control { margin-bottom:1.2rem; }
+  .lab-control:last-child { margin-bottom:0; }
+  .lab-control-head { display:flex; align-items:baseline; justify-content:space-between; gap:.8rem; margin-bottom:.45rem; }
+  .lab-control label { color:#dbeafe; font-size:.82rem; font-weight:750; }
+  .lab-control output { color:#93c5fd; font-size:.78rem; font-weight:850; font-variant-numeric:tabular-nums; }
+  .lab-control input[type=range] { width:100%; accent-color:#60a5fa; cursor:pointer; }
+  .lab-help { display:block; margin-top:.25rem; color:#7f96bb; font-size:.69rem; line-height:1.45; }
+  .lab-meter-label { display:flex; justify-content:space-between; gap:.6rem; color:#9bb0d0; font-size:.7rem; }
+  .lab-meter { height:8px; margin:.4rem 0 .9rem; border-radius:99px; overflow:hidden; background:rgba(148,163,184,.15); }
+  .lab-meter span { display:block; width:50%; height:100%; border-radius:inherit; background:linear-gradient(90deg,#60a5fa,#67e8f9); transition:width .35s ease; }
+  .lab-state { display:inline-flex; align-items:center; gap:.45rem; padding:.38rem .6rem; border:1px solid var(--line); border-radius:999px; color:#bfdbfe; font-size:.7rem; font-weight:850; }
+  .lab-state::before { content:""; width:7px; height:7px; border-radius:50%; background:#60a5fa; box-shadow:0 0 0 4px rgba(96,165,250,.1); }
+  .lab-state.adaptive { color:#bbf7d0; border-color:rgba(134,239,172,.28); }
+  .lab-state.adaptive::before { background:#86efac; }
+  .lab-state.persistent { color:#fecaca; border-color:rgba(252,165,165,.3); }
+  .lab-state.persistent::before { background:#fca5a5; }
+  .lab-readout h3 { margin:.75rem 0 .4rem; color:#eaf2ff; font-size:1.05rem; }
+  .lab-readout p { margin:.35rem 0; color:#9bb0d0; font-size:.82rem; line-height:1.6; }
+  .lab-caveat { margin-top:.75rem !important; padding:.7rem .75rem; border-left:2px solid #60a5fa; background:rgba(37,99,235,.08); color:#b5c8e5 !important; font-size:.72rem !important; }
+  .lab-chart { width:100%; height:auto; display:block; margin-top:.7rem; border:1px solid rgba(147,197,253,.12); border-radius:11px; background:rgba(2,8,20,.5); }
+  .lab-chart text { fill:#91a8ca; font-family:system-ui,sans-serif; font-size:10px; }
+  .lab-chart .axis { stroke:rgba(147,197,253,.2); stroke-width:1; }
+  .lab-chart .trace { fill:none; stroke:#67e8f9; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; filter:drop-shadow(0 0 3px rgba(103,232,249,.3)); }
+  .lab-chart .trace-soft { fill:none; stroke:#93c5fd; stroke-width:1.5; stroke-dasharray:4 5; opacity:.75; }
+  .mode-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.55rem; }
+  .mode-button { padding:.75rem .65rem; min-height:94px; border:1px solid rgba(248,113,113,.2); border-radius:11px; background:rgba(74,22,36,.19); color:#e7dce4; font:inherit; font-size:.75rem; font-weight:800; text-align:left; cursor:pointer; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+  .mode-button:hover,.mode-button.is-active { transform:translateY(-2px); border-color:rgba(252,165,165,.65); background:rgba(127,29,29,.24); }
+  .mode-button small { display:block; margin-top:.35rem; color:#b59ba9; font-size:.64rem; line-height:1.4; font-weight:500; }
+  .mode-detail { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin-top:.8rem; padding:1rem; border:1px solid var(--line); border-radius:12px; background:rgba(3,12,28,.45); }
+  .mode-detail h3 { grid-column:1/-1; margin:0; color:#e5efff; font-size:1rem; }
+  .mode-detail div { padding:.75rem; border-radius:9px; background:rgba(15,35,70,.42); }
+  .mode-detail strong { display:block; color:#93c5fd; font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; }
+  .mode-detail p { margin:.3rem 0 0; color:#9bb0d0; font-size:.79rem; line-height:1.55; }
+  .experiment-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.65rem; }
+  .experiment-card { padding:.9rem; border:1px solid var(--line); border-radius:12px; background:rgba(15,35,70,.36); }
+  .experiment-card .step { color:#67e8f9; font-size:.63rem; font-weight:900; letter-spacing:.1em; }
+  .experiment-card h3 { margin:.4rem 0 .35rem; color:#e5efff; font-size:.9rem; }
+  .experiment-card p { margin:0; color:#9bb0d0; font-size:.77rem; line-height:1.55; }
+  .evidence-switches { display:flex; flex-wrap:wrap; gap:.45rem; margin-bottom:.8rem; }
+  .evidence-switches button { padding:.48rem .7rem; border:1px solid var(--line); border-radius:999px; background:rgba(15,35,70,.38); color:#9bb0d0; font:inherit; font-size:.74rem; font-weight:750; cursor:pointer; }
+  .evidence-switches button.is-active { border-color:rgba(96,165,250,.65); color:#eaf2ff; background:rgba(37,99,235,.24); }
+  .evidence-panel { padding:1rem; border:1px solid var(--line); border-radius:12px; background:rgba(3,12,28,.45); }
+  .evidence-panel h3 { margin:0 0 .4rem; color:#e5efff; font-size:1rem; }
+  .evidence-panel p { margin:0; color:#9bb0d0; font-size:.82rem; line-height:1.6; }
+  .circuit-bottom { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:.8rem; padding:.5rem .2rem; color:#7f96bb; font-size:.72rem; }
+  .circuit-bottom a { color:#93c5fd !important; }
+  .circuit-lab button:focus-visible,.circuit-lab a:focus-visible,.circuit-lab input:focus-visible { outline:2px solid #93c5fd; outline-offset:3px; }
+  @keyframes lab-enter { from {opacity:0;transform:translateY(7px)} to {opacity:1;transform:none} }
+  @keyframes lab-drift { to {transform:rotate(360deg)} }
+  @media(max-width:980px) { .circuit-flow { grid-template-columns:repeat(3,minmax(0,1fr)); } .mode-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+  @media(max-width:720px) { .lab-grid { grid-template-columns:1fr; } .experiment-grid { grid-template-columns:1fr; } .circuit-section-head { display:block; } .circuit-tag { margin-top:.65rem; } }
+  @media(max-width:560px) { .circuit-flow { grid-template-columns:repeat(2,minmax(0,1fr)); } .mode-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .mode-detail { grid-template-columns:1fr; } .mode-detail h3 { grid-column:auto; } .node-detail { grid-template-columns:42px minmax(0,1fr); } .node-detail-index { width:38px;height:38px; } .circuit-actions .circuit-btn { width:100%; } }
+  @media(prefers-reduced-motion:reduce) { .circuit-lab *, .circuit-lab *::before, .circuit-lab *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
+</style>
+
+<div class="circuit-lab" id="yap-circuit-lab">
+  <section class="circuit-hero">
+    <div class="circuit-eyebrow">Interactive research framework · 2026</div>
+    <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
+    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher · Petaling Jaya, Selangor, Malaysia</div>
+    <p class="circuit-subtitle">Explore a systems-level framework in which cells do more than sense mechanical forces. They integrate and decode those inputs, terminate signaling, and attempt to restore mechanosensitivity. The key question is not only whether YAP/TAZ activates, but whether the system resolves the response and returns toward a functional baseline.</p>
+    <div class="circuit-pills">
+      <span class="circuit-pill">Mechanotransduction</span><span class="circuit-pill">Hippo signaling</span><span class="circuit-pill">Temporal decoding</span><span class="circuit-pill">Mechanical memory</span><span class="circuit-pill">Signal resolution</span>
+    </div>
+    <div class="circuit-actions">
+      <a class="circuit-btn primary" href="#circuit-explorer">Explore the circuit ↓</a>
+      <a class="circuit-btn" href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">Open published article ↗</a>
+      <a class="circuit-btn" href="/publications/">All publications ↗</a>
+    </div>
+  </section>
+
+  <section class="circuit-section" id="circuit-explorer">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">01 / System architecture</span><h2>Follow the signal through six linked stages</h2><p>Select a stage to inspect its proposed role, regulatory mechanisms and the question that remains experimentally important.</p></div><span class="circuit-tag">Interactive map</span></div>
+    <div class="circuit-flow" role="group" aria-label="Six stages of the mechanochemical signal-resolution circuit">
+      <button class="circuit-node is-active" type="button" data-stage="0" style="--node-color:#60a5fa"><span class="n">01</span><strong>Mechanical inputs</strong><small>Stiffness, stretch, shear, pressure</small></button>
+      <button class="circuit-node" type="button" data-stage="1" style="--node-color:#67e8f9"><span class="n">02</span><strong>Distributed sensing</strong><small>Adhesions, junctions, actin, LINC</small></button>
+      <button class="circuit-node" type="button" data-stage="2" style="--node-color:#a5b4fc"><span class="n">03</span><strong>State control</strong><small>Hippo and parallel regulators</small></button>
+      <button class="circuit-node" type="button" data-stage="3" style="--node-color:#c4b5fd"><span class="n">04</span><strong>Nuclear decoding</strong><small>Transport, TEAD, chromatin, timing</small></button>
+      <button class="circuit-node" type="button" data-stage="4" style="--node-color:#fbbf24"><span class="n">05</span><strong>Active termination</strong><small>Export, phosphorylation, AMOT, turnover</small></button>
+      <button class="circuit-node" type="button" data-stage="5" style="--node-color:#86efac"><span class="n">06</span><strong>Baseline restoration</strong><small>Regain normal mechanosensitivity</small></button>
+    </div>
+    <div class="node-detail" id="stage-detail" aria-live="polite"><span class="node-detail-index">01</span><div><h3>Mechanical inputs define the perturbation</h3><p>Cells encounter matrix stiffness, tensile stretch, fluid shear, pressure and confinement. The framework treats these as changing inputs, not as a direct one-step switch for nuclear YAP/TAZ. The critical experimental move is to withdraw or reverse the input and track what happens next.</p></div></div>
+  </section>
+
+  <section class="circuit-section">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">02 / Dynamic thought experiment</span><h2>What happens after the mechanical input is removed?</h2><p>Adjust a conceptual perturbation to see how duration and reset capacity can change the expected trajectory. The curve is illustrative, not a fit to experimental data.</p></div><span class="circuit-tag">Signal lab</span></div>
+    <div class="lab-grid">
+      <div class="lab-controls">
+        <div class="lab-control"><div class="lab-control-head"><label for="input-strength">Mechanical input strength</label><output id="strength-value" for="input-strength">70%</output></div><input id="input-strength" type="range" min="10" max="100" value="70" step="5"><span class="lab-help">Represents a relative perturbation level, not a physical unit or universal stiffness scale.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-duration">Exposure duration</label><output id="duration-value" for="input-duration">60%</output></div><input id="input-duration" type="range" min="10" max="100" value="60" step="5"><span class="lab-help">Longer exposure can increase the chance of persistent downstream changes in some experimental systems.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-reset">Resolution capacity</label><output id="reset-value" for="input-reset">65%</output></div><input id="input-reset" type="range" min="10" max="100" value="65" step="5"><span class="lab-help">A conceptual composite of termination and recovery capacity, not a measured biological parameter.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-memory">Persistent memory load</label><output id="memory-value" for="input-memory">30%</output></div><input id="input-memory" type="range" min="0" max="100" value="30" step="5"><span class="lab-help">Represents residual chromatin, cytoskeletal, metabolic or extracellular changes after withdrawal.</span></div>
+        <div class="circuit-actions"><button class="circuit-btn primary" type="button" id="reset-lab">Reset parameters ↺</button><button class="circuit-btn" type="button" id="preset-persistent">Load persistent-state example</button></div>
+      </div>
+      <div class="lab-readout" aria-live="polite">
+        <span class="lab-state adaptive" id="lab-state">Illustrative recovery-favored state</span>
+        <h3 id="lab-result-title">Resolution may be achievable</h3>
+        <p id="lab-result-copy">The selected balance favors a return toward baseline after the input is withdrawn, although this is a hypothesis-generating visualization rather than a prediction for a specific cell type.</p>
+        <div class="lab-meter-label"><span>Relative residual signal</span><strong id="residual-label">35%</strong></div><div class="lab-meter"><span id="residual-meter"></span></div>
+        <div class="lab-meter-label"><span>Relative reset capacity</span><strong id="capacity-label">65%</strong></div><div class="lab-meter"><span id="capacity-meter"></span></div>
+        <svg class="lab-chart" viewBox="0 0 340 170" role="img" aria-label="Illustrative signal activation and recovery curve">
+          <line class="axis" x1="32" y1="18" x2="32" y2="136"/><line class="axis" x1="32" y1="136" x2="322" y2="136"/>
+          <line class="axis" x1="32" y1="77" x2="322" y2="77" stroke-dasharray="3 5"/>
+          <text x="6" y="22">High</text><text x="7" y="139">Base</text><text x="32" y="155">Input</text><text x="260" y="155">Withdrawal →</text>
+          <path class="trace-soft" d="M32 130 L78 130 L78 43 L165 43 L165 130 L322 130"/>
+          <path class="trace" id="signal-trace" d="M32 130 L78 130 L78 43 L165 43 C205 82 245 112 322 127"/>
+        </svg>
+        <p class="lab-caveat">Model boundary: the sliders encode a qualitative teaching heuristic. They do not estimate YAP/TAZ concentrations, disease risk, treatment response or the probability of memory lock.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="circuit-section">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">03 / Failure analysis</span><h2>Different failures can converge on persistent output</h2><p>Choose a proposed failure mode. The distinction is operational: what went wrong, how to test it, and what kind of intervention might be relevant.</p></div><span class="circuit-tag">Diagnostic logic</span></div>
+    <div class="mode-grid" role="group" aria-label="Circuit failure modes">
+      <button class="mode-button is-active" data-mode="sensing" type="button">Abnormal sensing<small>The input is misread or force transmission is altered.</small></button>
+      <button class="mode-button" data-mode="controller" type="button">Controller failure<small>Negative feedback is insufficient to constrain output.</small></button>
+      <button class="mode-button" data-mode="escape" type="button">Effector escape<small>Output bypasses normal upstream restraint.</small></button>
+      <button class="mode-button" data-mode="resolution" type="button">Resolution failure<small>Activation occurs, but return to baseline is delayed.</small></button>
+      <button class="mode-button" data-mode="memory" type="button">Memory lock<small>History-dependent changes resist simple withdrawal.</small></button>
+    </div>
+    <div class="mode-detail" id="mode-detail" aria-live="polite"><h3>Abnormal sensing</h3><div><strong>What it means</strong><p>The cell's adhesion, cytoskeletal or nuclear force-transmission apparatus interprets the mechanical environment differently than expected.</p></div><div><strong>Discriminating test</strong><p>Measure traction, adhesion maturation or nuclear deformation alongside YAP/TAZ output across a controlled mechanical input range.</p></div></div>
+  </section>
+
+  <section class="circuit-section">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">04 / Experimental workflow</span><h2>How to test the resolution hypothesis</h2><p>The framework is most directly tested by following a controlled perturbation through activation, withdrawal and a second challenge.</p></div><span class="circuit-tag">Testable predictions</span></div>
+    <div class="experiment-grid">
+      <article class="experiment-card"><span class="step">STEP 01</span><h3>Control the mechanical input</h3><p>Use tunable substrates, in situ softening/restiffening or defined stretch pulses so the input can be reversed without changing unrelated culture conditions.</p></article>
+      <article class="experiment-card"><span class="step">STEP 02</span><h3>Measure multiple layers over time</h3><p>Pair endogenous live-cell YAP reporters with nascent transcription and measurements of adhesion, cytoskeleton, nuclear-envelope state and Hippo regulation.</p></article>
+      <article class="experiment-card"><span class="step">STEP 03</span><h3>Challenge the reset system</h3><p>After recovery, apply a second mechanical input. Compare activation and termination kinetics to test whether mechanosensitivity has actually returned.</p></article>
+    </div>
+  </section>
+
+  <section class="circuit-section">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">05 / Evidence calibration</span><h2>What is established, and what remains a framework prediction?</h2><p>The article integrates evidence of different strengths. Switch between evidence classes to keep the distinction between established mechanisms and the proposed synthesis explicit.</p></div><span class="circuit-tag">Claim boundaries</span></div>
+    <div class="evidence-switches" role="group" aria-label="Evidence categories"><button type="button" class="is-active" data-evidence="established">Established mechanisms</button><button type="button" data-evidence="direct">Direct resolution evidence</button><button type="button" data-evidence="proposed">Framework predictions</button></div>
+    <div class="evidence-panel" id="evidence-panel" aria-live="polite"><h3>Established mechanisms</h3><p>Mechanical inputs regulate YAP/TAZ through adhesion complexes, cytoskeletal tension, Hippo signaling, nuclear transport and context-dependent transcription. Phosphorylation-dependent sequestration, nuclear trafficking, AMOT regulation and protein turnover are established regulatory mechanisms, though their relative contributions vary by system.</p></div>
+  </section>
+
+  <section class="circuit-section">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">06 / Framework summary</span><h2>The central distinction</h2></div><span class="circuit-tag">Take-home model</span></div>
+    <div class="experiment-grid">
+      <article class="experiment-card"><span class="step">ACTIVATION</span><h3>Did the signal rise?</h3><p>Measure input, YAP/TAZ localization and transcriptional engagement. This establishes pathway response but not successful resolution.</p></article>
+      <article class="experiment-card"><span class="step">TERMINATION</span><h3>Did the response stop?</h3><p>Withdraw the mechanical cue and measure export, phosphorylation, sequestration, turnover and downstream output over time.</p></article>
+      <article class="experiment-card"><span class="step">RESTORATION</span><h3>Can the cell respond normally again?</h3><p>Test whether the mechanical baseline and responsiveness to a subsequent input have recovered. This integrated restoration remains a key test of the framework.</p></article>
+    </div>
+  </section>
+
+  <div class="circuit-bottom"><span>Conceptual interactive companion to the published review. Not a clinical or quantitative prediction tool.</span><a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.pbiomolbio.2026.101960 ↗</a></div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('yap-circuit-lab');
+  if (!root) return;
+  var stages = [
+    ['Mechanical inputs define the perturbation','Cells encounter matrix stiffness, tensile stretch, fluid shear, pressure and confinement. The framework treats these as changing inputs, not as a direct one-step switch for nuclear YAP/TAZ. The critical experimental move is to withdraw or reverse the input and track what happens next.'],
+    ['Sensing is distributed across the cell','Integrin adhesions, cadherin junctions, actin and myosin, microtubules, LINC complexes and nuclear structures contribute to force transmission. The same bulk stiffness may therefore be interpreted differently depending on adhesion identity, cell geometry and the mechanical history of the cell.'],
+    ['Hippo acts as a state controller','MST1/2-LATS1/2 signaling, scaffolds such as MOB1 and AMOT, and Hippo-independent inputs regulate YAP/TAZ availability. The result is a continuously adjusted state, not simply an ON/OFF relay.'],
+    ['Nuclear entry is not the endpoint','Nuclear YAP/TAZ output depends on TEAD engagement, cofactors, chromatin accessibility, transport kinetics and duration. Similar nuclear abundance can coexist with different transcriptional outputs.'],
+    ['Termination is actively regulated','Phosphorylation, nuclear export, sequestration, AMOT stabilization and protein degradation can reduce signaling. Their relative order and contribution may differ by cell type and stimulus, and should not be assumed to be one universal sequence.'],
+    ['Reset means restored responsiveness','The proposed mechanical baseline is a state in which the cell can again interpret future mechanical cues appropriately. Coordinated restoration across adhesions, cytoskeleton, nuclear coupling and extracellular matrix remains a central testable prediction.']
+  ];
+  var nodes = root.querySelectorAll('.circuit-node');
+  var stageDetail = root.querySelector('#stage-detail');
+  function showStage(index) {
+    nodes.forEach(function (node, i) { node.classList.toggle('is-active', i === index); node.setAttribute('aria-pressed', i === index ? 'true' : 'false'); });
+    stageDetail.innerHTML = '<span class="node-detail-index">' + String(index + 1).padStart(2, '0') + '</span><div><h3>' + stages[index][0] + '</h3><p>' + stages[index][1] + '</p></div>';
+    stageDetail.style.animation = 'none'; void stageDetail.offsetWidth; stageDetail.style.animation = 'lab-enter .35s ease both';
+  }
+  nodes.forEach(function (node, i) { node.addEventListener('click', function () { showStage(i); }); });
+
+  var inputs = {
+    strength: root.querySelector('#input-strength'),
+    duration: root.querySelector('#input-duration'),
+    reset: root.querySelector('#input-reset'),
+    memory: root.querySelector('#input-memory')
+  };
+  function updateLab() {
+    var s = +inputs.strength.value, d = +inputs.duration.value, r = +inputs.reset.value, m = +inputs.memory.value;
+    root.querySelector('#strength-value').textContent = s + '%';
+    root.querySelector('#duration-value').textContent = d + '%';
+    root.querySelector('#reset-value').textContent = r + '%';
+    root.querySelector('#memory-value').textContent = m + '%';
+    var burden = Math.max(0, Math.min(100, Math.round((s * .2) + (d * .38) + (m * .42) - (r * .25))));
+    var residual = Math.max(0, Math.min(100, Math.round(burden * (1 - r / 125) + m * .22)));
+    var recoveryFavored = r >= (d * .45 + m * .35) && residual < 58;
+    root.querySelector('#residual-label').textContent = residual + '%';
+    root.querySelector('#residual-meter').style.width = residual + '%';
+    root.querySelector('#capacity-label').textContent = r + '%';
+    root.querySelector('#capacity-meter').style.width = r + '%';
+    var state = root.querySelector('#lab-state');
+    state.className = 'lab-state ' + (recoveryFavored ? 'adaptive' : 'persistent');
+    state.textContent = recoveryFavored ? 'Illustrative recovery-favored state' : 'Illustrative persistence-favored state';
+    root.querySelector('#lab-result-title').textContent = recoveryFavored ? 'Resolution may be achievable' : 'Residual activity may remain';
+    root.querySelector('#lab-result-copy').textContent = recoveryFavored
+      ? 'In this heuristic, reset capacity is relatively high compared with exposure duration and memory load. A real cell still needs to demonstrate recovered baseline and a normal response to a second challenge.'
+      : 'In this heuristic, exposure duration and/or persistent memory load outweigh the selected reset capacity. This illustrates why withdrawal alone may not be sufficient to restore the previous state in some systems.';
+    var startX = 32, startY = 130, riseX = 78, peakX = 165, peakY = 130 - s * 0.87;
+    var decayEndY = 130 - residual * 0.87;
+    var bend1 = peakX + 42, bend2 = 245;
+    var dPath = 'M' + startX + ' ' + startY + ' L' + riseX + ' ' + startY + ' L' + riseX + ' ' + peakY.toFixed(1) + ' L' + peakX + ' ' + peakY.toFixed(1) +
+      ' C' + bend1 + ' ' + (peakY + (decayEndY - peakY) * .55).toFixed(1) + ' ' + bend2 + ' ' + (decayEndY - 2).toFixed(1) + ' 322 ' + decayEndY.toFixed(1);
+    root.querySelector('#signal-trace').setAttribute('d', dPath);
+  }
+  Object.keys(inputs).forEach(function (key) { inputs[key].addEventListener('input', updateLab); });
+  root.querySelector('#reset-lab').addEventListener('click', function () {
+    inputs.strength.value = 70; inputs.duration.value = 60; inputs.reset.value = 65; inputs.memory.value = 30; updateLab();
+  });
+  root.querySelector('#preset-persistent').addEventListener('click', function () {
+    inputs.strength.value = 85; inputs.duration.value = 90; inputs.reset.value = 25; inputs.memory.value = 80; updateLab();
+  });
+  updateLab();
+
+  var modeData = {
+    sensing: ['Abnormal sensing','The cell\'s adhesion, cytoskeletal or nuclear force-transmission apparatus interprets the mechanical environment differently than expected.','Measure traction, adhesion maturation or nuclear deformation alongside YAP/TAZ output across a controlled mechanical input range.'],
+    controller: ['Controller failure','Negative feedback or inhibitory state-control mechanisms are insufficient to constrain the amplitude or duration of YAP/TAZ signaling.','Test LATS1/2 activity and feedback responses after a matched stimulus; compare the duration of output with and without a targeted controller perturbation.'],
+    escape: ['Effector escape','YAP/TAZ output can become less dependent on ordinary upstream restraint, including through Hippo-independent pathways or context-specific nuclear retention.','Measure YAP/TAZ output while verifying upstream restraint, and perturb the candidate bypass route rather than inferring it from nuclear localization alone.'],
+    resolution: ['Resolution failure','Activation may occur normally, yet the return toward baseline is delayed or incomplete after the mechanical input is withdrawn.','Track time-resolved recovery after a reversible mechanical perturbation and distinguish slow decay from a stable, history-dependent state.'],
+    memory: ['Memory lock','Persistent chromatin, nuclear, cytoskeletal, metabolic or matrix changes may alter later responses and make simple input withdrawal insufficient.','Withdraw the cue, measure persistence, then apply a second challenge. Test whether reversal requires interruption of feedback or an additional resetting intervention.']
+  };
+  var modeButtons = root.querySelectorAll('.mode-button');
+  function showMode(key) {
+    var d = modeData[key]; if (!d) return;
+    modeButtons.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-mode') === key); });
+    root.querySelector('#mode-detail').innerHTML = '<h3>' + d[0] + '</h3><div><strong>What it means</strong><p>' + d[1] + '</p></div><div><strong>Discriminating test</strong><p>' + d[2] + '</p></div>';
+  }
+  modeButtons.forEach(function (b) { b.addEventListener('click', function () { showMode(b.getAttribute('data-mode')); }); });
+
+  var evidence = {
+    established: ['Established mechanisms','Mechanical inputs regulate YAP/TAZ through adhesion complexes, cytoskeletal tension, Hippo signaling, nuclear transport and context-dependent transcription. Phosphorylation-dependent sequestration, nuclear trafficking, AMOT regulation and protein turnover are established regulatory mechanisms, though their relative contributions vary by system.'],
+    direct: ['Direct evidence for resolution and persistence','Reversible mechanical perturbations and mechanical-dosing studies show that YAP/TAZ responses can decline after input withdrawal, and that exposure history can change reversibility. Feedback disruption and N-cadherin ligation have also been used to probe persistent states. These findings support specific parts of the model, not a fully reconstructed circuit in every tissue.'],
+    proposed: ['Framework predictions still to test','The integrated claim that coordinated restoration of adhesion, cytoskeleton, nuclear coupling and matrix mechanics restores a common mechanical baseline remains a hypothesis. It also remains unresolved whether termination kinetics predict tissue-level disease outcomes better than activation magnitude across comparable systems.']
+  };
+  var evidenceButtons = root.querySelectorAll('[data-evidence]');
+  function showEvidence(key) {
+    var d = evidence[key]; if (!d) return;
+    evidenceButtons.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-evidence') === key); });
+    root.querySelector('#evidence-panel').innerHTML = '<h3>' + d[0] + '</h3><p>' + d[1] + '</p>';
+  }
+  evidenceButtons.forEach(function (b) { b.addEventListener('click', function () { showEvidence(b.getAttribute('data-evidence')); }); });
+})();
+</script>
