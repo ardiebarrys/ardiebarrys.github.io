@@ -1543,6 +1543,47 @@ social: false
     background: rgba(37,99,235,.28);
   }
 
+  /* Primary call-to-action for the highlighted YAP/TAZ study. */
+  .highlight-explore-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: .4rem 1rem 1.5rem;
+  }
+
+  .highlight-related-link.highlight-explore-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .65rem;
+    min-width: min(100%, 340px);
+    min-height: 58px;
+    padding: 1rem 1.65rem;
+    border: 1px solid rgba(147,197,253,.65);
+    border-radius: 14px;
+    background: linear-gradient(120deg, #2563eb 0%, #1d4ed8 55%, #1e40af 100%);
+    color: #fff !important;
+    font-size: 1rem;
+    font-weight: 850;
+    line-height: 1.25;
+    text-align: center;
+    box-shadow: 0 12px 32px rgba(37,99,235,.28), inset 0 1px 0 rgba(255,255,255,.16);
+    animation: highlight-cta-pulse 3.4s ease-in-out infinite;
+  }
+
+  .highlight-related-link.highlight-explore-primary:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    background: linear-gradient(120deg, #3478ff 0%, #245be7 55%, #3155c7 100%);
+    box-shadow: 0 16px 38px rgba(37,99,235,.36), inset 0 1px 0 rgba(255,255,255,.2);
+  }
+
+  @keyframes highlight-cta-pulse {
+    0%, 100% { box-shadow: 0 12px 32px rgba(37,99,235,.23), inset 0 1px 0 rgba(255,255,255,.16); }
+    50% { box-shadow: 0 15px 38px rgba(37,99,235,.38), 0 0 0 5px rgba(96,165,250,.06), inset 0 1px 0 rgba(255,255,255,.2); }
+  }
+
   @keyframes highlight-node-in {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: none; }
@@ -1620,6 +1661,10 @@ social: false
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .highlight-related-link.highlight-explore-primary {
+      animation: none !important;
+    }
+
     .highlight-flow-node {
       animation: none !important;
       opacity: 1 !important;
@@ -2770,13 +2815,18 @@ social: false
     </p>
   </div>
 
+  <div class="highlight-explore-cta">
+    <a class="highlight-related-link highlight-explore-primary" href="/research/yap-taz-signal-resolution/">
+      Explore interactive circuit <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
   <figcaption class="highlight-study-footer">
     <span class="highlight-footer-note">
       <strong>Ardie Barry Sailis.</strong> {{ highlight.title }} ·
       {{ highlight.journal }} · {{ highlight.year }} · Conceptual signal-resolution circuit framework.
     </span>
     <a class="highlight-related-link" href="/publications/">View related publications ↗</a>
-    <a class="highlight-related-link" href="/research/yap-taz-signal-resolution/">Explore interactive circuit ↗</a>
   </figcaption>
 </figure>
 {%- endif %}
