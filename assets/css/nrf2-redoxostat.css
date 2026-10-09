@@ -252,6 +252,7 @@ body:has(#nrf2-redoxostat-lab) .page-header {
 .nrf2-reset:hover { border-color:#67e8f9; background:rgba(37,99,235,.24); }
 .n2-status-line { display:flex; align-items:center; gap:.55rem; margin-bottom:.65rem; color:#d8e8ff; font-size:.8rem; font-weight:850; }
 .n2-status-dot { width:8px; height:8px; border-radius:50%; background:#86efac; box-shadow:0 0 0 4px rgba(134,239,172,.1); }
+.n2-status-line.is-persistent .n2-status-dot { background:#fda4af; box-shadow:0 0 0 4px rgba(253,164,175,.12); }
 .n2-chart { display:block; width:100%; height:auto; overflow:visible; border:1px solid rgba(147,197,253,.12); border-radius:11px; background:rgba(2,8,20,.38); }
 .n2-gridlines path { stroke:rgba(147,197,253,.12); stroke-dasharray:3 5; }
 .n2-axis { fill:none; stroke:rgba(147,197,253,.4); stroke-width:1.2; }
