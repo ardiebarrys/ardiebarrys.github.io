@@ -1754,6 +1754,174 @@
       start();
     }
   })();
+</script> <style>
+  /* Subtle ambient particles, shown only on the seven primary portfolio pages. */
+  body {
+    isolation: isolate;
+  }
+
+  #site-ambient-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: .78;
+  }
+
+  @media (max-width: 680px) {
+    #site-ambient-canvas {
+      opacity: .62;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #site-ambient-canvas {
+      display: none;
+    }
+  }
+</style> <canvas id="site-ambient-canvas" aria-hidden="true"></canvas> <script>
+  (function () {
+    var canvas = document.getElementById('site-ambient-canvas');
+    if (!canvas || !canvas.getContext) return;
+
+    var context = canvas.getContext('2d', { alpha: true });
+    if (!context) return;
+
+    var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var width = 0;
+    var height = 0;
+    var pixelRatio = 1;
+    var particles = [];
+    var animationFrame = 0;
+    var lastFrame = 0;
+    var isVisible = !document.hidden;
+
+    function random(min, max) {
+      return min + Math.random() * (max - min);
+    }
+
+    function makeParticle() {
+      var isCyan = Math.random() > 0.72;
+
+      return {
+        x: random(0, width),
+        y: random(0, height),
+        radius: random(0.65, 1.55),
+        alpha: random(0.075, 0.18),
+        vx: random(-0.11, 0.11),
+        vy: random(-0.13, 0.13),
+        phase: random(0, Math.PI * 2),
+        pulse: random(0.003, 0.008),
+        color: isCyan ? '125, 211, 252' : '147, 197, 253'
+      };
+    }
+
+    function resizeCanvas() {
+      width = window.innerWidth || document.documentElement.clientWidth;
+      height = window.innerHeight || document.documentElement.clientHeight;
+      pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      /* Keep particle density modest, especially on narrow mobile screens. */
+      var count = width <= 680
+        ? 10
+        : Math.min(38, Math.max(18, Math.round((width * height) / 62000)));
+
+      particles = [];
+      for (var i = 0; i < count; i += 1) {
+        particles.push(makeParticle());
+      }
+
+      drawFrame(false);
+    }
+
+    function drawFrame(animate) {
+      context.clearRect(0, 0, width, height);
+
+      particles.forEach(function (particle) {
+        if (animate) {
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          particle.phase += particle.pulse;
+
+          /* Wrap smoothly at the viewport edges instead of jumping at a boundary. */
+          if (particle.x < -3) particle.x = width + 3;
+          if (particle.x > width + 3) particle.x = -3;
+          if (particle.y < -3) particle.y = height + 3;
+          if (particle.y > height + 3) particle.y = -3;
+        }
+
+        var breathing = animate
+          ? 0.78 + 0.22 * Math.sin(particle.phase)
+          : 0.88;
+
+        context.beginPath();
+        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        context.fillStyle = 'rgba(' + particle.color + ', ' +
+          (particle.alpha * breathing).toFixed(3) + ')';
+        context.fill();
+      });
+    }
+
+    function tick(timestamp) {
+      if (!isVisible || reducedMotion.matches) {
+        animationFrame = 0;
+        return;
+      }
+
+      /* Cap redraws around 30 fps to keep the ambient layer lightweight. */
+      if (timestamp - lastFrame >= 32) {
+        drawFrame(true);
+        lastFrame = timestamp;
+      }
+
+      animationFrame = window.requestAnimationFrame(tick);
+    }
+
+    function startAnimation() {
+      if (reducedMotion.matches || !isVisible || animationFrame) return;
+      lastFrame = 0;
+      animationFrame = window.requestAnimationFrame(tick);
+    }
+
+    function stopAnimation() {
+      if (animationFrame) {
+        window.cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+      }
+    }
+
+    window.addEventListener('resize', resizeCanvas, { passive: true });
+
+    document.addEventListener('visibilitychange', function () {
+      isVisible = !document.hidden;
+      if (isVisible) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    });
+
+    if (reducedMotion.addEventListener) {
+      reducedMotion.addEventListener('change', function () {
+        if (reducedMotion.matches) {
+          stopAnimation();
+          drawFrame(false);
+        } else {
+          startAnimation();
+        }
+      });
+    }
+
+    resizeCanvas();
+    startAnimation();
+  })();
 </script> <footer class="fixed-bottom"> <div class="container mt-0">© Copyright 2026 Ardie Barry Sailis</div> </footer> <div id="custom-chatbase-greeting">Hi! I am an AI assistant. Ask me anything.</div> <script>
   (function () {
     if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
