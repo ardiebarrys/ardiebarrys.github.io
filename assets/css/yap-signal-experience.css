@@ -141,7 +141,10 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {
 
 /* Remove the theme-generated page heading and its reserved top band only on this page. */
 body:has(#yap-circuit-lab) .post-header,
-body:has(#yap-circuit-lab) .post-title {
+body:has(#yap-circuit-lab) .page-header,
+body:has(#yap-circuit-lab) .post-title,
+body:has(#yap-circuit-lab) .page-title,
+body:has(#yap-circuit-lab) .page-heading {
   display: none !important;
 }
 body:has(#yap-circuit-lab) main,
@@ -249,6 +252,9 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cel
 
 /* Additional theme title-banner variants, scoped to this research page. */
 body:has(#yap-circuit-lab) .post-header,
-body:has(#yap-circuit-lab) .post-header * {
+body:has(#yap-circuit-lab) .post-header *,
+body:has(#yap-circuit-lab) .page-header,
+body:has(#yap-circuit-lab) .page-header *,
+body:has(#yap-circuit-lab) .header-section {
   display: none !important;
 }
