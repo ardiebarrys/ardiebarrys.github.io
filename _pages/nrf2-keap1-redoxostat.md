@@ -223,7 +223,7 @@ nav_order: 100
         <button id="n2-build-experiment" class="nrf2-primary-btn" type="button">Generate prediction</button>
         <p id="n2-experiment-status" class="n2-experiment-status" aria-live="polite">Choose settings, then generate a matched experiment plan.</p>
       </div>
-      <article class="nrf2-experiment-output" aria-live="polite">
+      <article class="nrf2-experiment-output" id="n2-experiment-output" aria-live="polite">
         <span class="nrf2-kicker">EXPERIMENT PREDICTION</span>
         <h3 id="n2-experiment-title">Stress pulse followed by withdrawal</h3>
         <div class="n2-experiment-path"><span>Stimulus</span><i>→</i><span>Measurement</span><i>→</i><span>Decision</span></div>
@@ -259,4 +259,4 @@ nav_order: 100
   <footer class="nrf2-bottom"><span>Interactive companion to the published review</span><a href="{{ '/publications/' | relative_url }}">All publications ↗</a></footer>
 </div>
 
-<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261009-2" defer></script>
+<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261009-3" defer></script>
