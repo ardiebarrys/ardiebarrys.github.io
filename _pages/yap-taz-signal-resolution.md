@@ -7,7 +7,8 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-20">
+<div class="container mt-5" role="main">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-21">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
@@ -505,3 +506,4 @@ nav_order: 99
 })();
 </script>
 <script src="{{ '/assets/js/yap-signal-experience.js' | relative_url }}?v=20261009-5" defer></script>
+</div>
