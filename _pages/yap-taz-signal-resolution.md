@@ -113,16 +113,19 @@ nav_order: 99
   .protein-caption { fill:#dff8ff; font:800 17px system-ui,sans-serif; letter-spacing:1px; }
   @keyframes protein-shimmer { to { stroke-dashoffset:-40; } }
   /* On phones, preserve the diagram's readable type size and let readers swipe across it. */
-  .protein-showcase { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-color:rgba(103,232,249,.55) rgba(147,197,253,.08); scrollbar-width:thin; }
-  .protein-showcase svg { min-width:760px; width:100%; height:auto; }
-  .protein-showcase::after { content:""; }
+  .protein-showcase { overflow:hidden; }
+  .protein-showcase > svg { display:block; width:100%; height:auto; }
+  .protein-mobile-flow { display:none; }
+  .protein-mobile-step { display:grid; grid-template-columns:38px minmax(0,1fr); gap:.7rem; align-items:start; padding:.85rem; border:1px solid rgba(147,197,253,.28); border-radius:12px; background:rgba(8,24,51,.86); }
+  .protein-mobile-step .step-number { display:grid; place-items:center; width:34px; height:34px; border-radius:10px; background:rgba(37,99,235,.22); border:1px solid rgba(103,232,249,.35); color:#67e8f9; font-weight:900; }
+  .protein-mobile-step strong { display:block; margin:.05rem 0 .25rem; color:#dff8ff; font-size:.91rem; line-height:1.35; }
+  .protein-mobile-step p { margin:0; color:#b2c8e8; font-size:.8rem; line-height:1.45; }
+  .protein-mobile-arrow { text-align:center; height:25px; color:#67e8f9; font-size:1.25rem; line-height:25px; }
+  .protein-mobile-feedback { margin-top:.65rem; padding:.8rem; border-left:3px solid #a5b4fc; border-radius:0 10px 10px 0; background:rgba(99,102,241,.12); color:#dbeafe; font-size:.8rem; line-height:1.45; }
   @media(max-width:760px) {
-    .circuit-hero > .protein-showcase { width:100%; aspect-ratio:auto; margin:.8rem 0 1rem; padding-bottom:.35rem; }
-    .circuit-hero > .protein-showcase svg { min-width:760px; width:760px; height:auto; }
-    .protein-panel-title { font-size:17px; }
-    .protein-label { font-size:16px; }
-    .protein-small { font-size:14px; }
-    .protein-caption { font-size:19px; }
+    .circuit-hero > .protein-showcase { width:100%; aspect-ratio:auto; margin:.8rem 0 1rem; }
+    .protein-showcase > svg { display:none; }
+    .protein-mobile-flow { display:block; }
     .circuit-hero { padding:1rem; }
     .circuit-hero h1 { font-size:clamp(1.8rem,8vw,2.5rem); }
     .circuit-subtitle { font-size:.91rem; line-height:1.5; }
@@ -144,6 +147,18 @@ nav_order: 99
   <section class="circuit-hero">
 
     <div class="protein-showcase" role="img" aria-label="Mechanism overview: mechanical cues are integrated through adhesion, cytoskeletal and Hippo-pathway networks. Active LATS1/2 kinases phosphorylate YAP and TAZ, often promoting cytoplasmic retention or degradation. When YAP and TAZ accumulate in the nucleus, they partner with TEAD to regulate target genes. The review's signal-resolution framework adds the questions of termination, recovery and response to a later input. Simplified and context-dependent.">
+      <div class="protein-mobile-flow" role="img" aria-label="Mobile mechanism figure: mechanical input, signal integration, YAP/TAZ control, nuclear gene regulation, and the proposed resolution questions.">
+        <div class="protein-mobile-step"><span class="step-number">1</span><div><strong>Mechanical input</strong><p>Matrix stiffness, cell attachments and actin tension</p></div></div>
+        <div class="protein-mobile-arrow" aria-hidden="true">↓</div>
+        <div class="protein-mobile-step"><span class="step-number">2</span><div><strong>Signal integration</strong><p>Adhesion signals, cytoskeleton and Hippo pathway</p></div></div>
+        <div class="protein-mobile-arrow" aria-hidden="true">↓</div>
+        <div class="protein-mobile-step"><span class="step-number">3</span><div><strong>YAP/TAZ control</strong><p>LATS1/2 phosphorylation can promote retention or degradation</p></div></div>
+        <div class="protein-mobile-arrow" aria-hidden="true">↓</div>
+        <div class="protein-mobile-step"><span class="step-number">4</span><div><strong>Nuclear gene regulation</strong><p>YAP/TAZ partner with TEAD to regulate target genes</p></div></div>
+        <div class="protein-mobile-arrow" aria-hidden="true">↓</div>
+        <div class="protein-mobile-step"><span class="step-number">5</span><div><strong>Signal resolution</strong><p>Can the response terminate, sensitivity recover, and the cell respond appropriately again?</p></div></div>
+        <div class="protein-mobile-feedback">The resolution circuit is a proposed framework for organizing these questions, not a single proven molecular pathway.</div>
+      </div>
       <svg viewBox="0 0 900 300" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="protein-cyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cffafe"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
@@ -199,7 +214,7 @@ nav_order: 99
     </div>
   </section>
 
-  <div class="mobile-figure-hint" aria-hidden="true">On a phone, swipe sideways across the mechanism figure to read each stage.</div>
+  <div class="mobile-figure-hint" aria-hidden="true">Mobile view: the mechanism is arranged vertically for readability.</div>
 
   <section class="circuit-section" aria-labelledby="resolution-figure-title">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">The framework at a glance</span><h2 id="resolution-figure-title">Three questions define signal resolution</h2><p>Use this summary to orient yourself before exploring the detailed model.</p></div><span class="circuit-tag">Core figure</span></div>
