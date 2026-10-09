@@ -367,3 +367,26 @@ html:before,
 html:after {
   box-shadow: none !important;
 }
+
+/* Final placement override: keep the home control in the top band on all
+   breakpoints, while reserving its original vertical space for the hero. */
+body:has(#yap-circuit-lab) #yap-circuit-lab {
+  padding-top: 5.75rem !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
+  position: fixed !important;
+  top: .7rem !important;
+  left: max(1rem, calc((100vw - 1280px) / 2)) !important;
+  z-index: 2147483647 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+@media (max-width: 560px) {
+  body:has(#yap-circuit-lab) #yap-circuit-lab {
+    padding-top: 5.25rem !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
+    left: .5rem !important;
+    top: .5rem !important;
+  }
+}
