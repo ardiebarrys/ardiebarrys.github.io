@@ -101,6 +101,7 @@ nav_order: 100
         <input id="n2-duration" type="range" min="10" max="100" step="5" value="35">
         <label class="n2-range-row" for="n2-resolution"><span>Resolution capacity</span><output id="n2-resolution-value">70%</output></label>
         <input id="n2-resolution" type="range" min="10" max="100" step="5" value="70">
+        <p class="n2-control-help">How effectively feedback, turnover and recovery bring signaling back toward baseline.</p>
         <label class="n2-range-row" for="n2-redox"><span>Redox restoration</span><output id="n2-redox-value">65%</output></label>
         <input id="n2-redox" type="range" min="10" max="100" step="5" value="65">
         <button type="button" class="nrf2-reset" id="n2-reset">Reset model</button>
