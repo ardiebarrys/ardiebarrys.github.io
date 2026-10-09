@@ -400,8 +400,6 @@ body:has(#yap-circuit-lab) .page {
   padding-top: 0 !important;
 }
 body:has(#yap-circuit-lab) #yap-circuit-lab {
-  width: min(100% - 2rem, 1180px) !important;
-  max-width: 1180px !important;
   margin: 0 auto 3rem !important;
   padding-top: 0 !important;
 }
@@ -420,10 +418,19 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-button {
   position: relative !important;
   margin: 0 !important;
 }
-@media (max-width: 560px) {
+@media (max-width: 760px) {
   body:has(#yap-circuit-lab) #yap-circuit-lab {
-    width: calc(100% - 1rem) !important;
-    padding-top: 0 !important;
+    width:calc(100vw - 1rem) !important;
+    max-width:1240px !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    padding-top:0 !important;
+  }
+  body:has(#yap-circuit-lab) #yap-circuit-lab > .circuit-hero,
+  body:has(#yap-circuit-lab) #yap-circuit-lab > .circuit-section {
+    width:100% !important;
+    max-width:none !important;
+    box-sizing:border-box !important;
   }
 }
 
@@ -494,9 +501,15 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-button {
 
 /* Shared design-system alignment with NRF2–KEAP1, CYP1A1 and condensate pages. */
 body:has(#yap-circuit-lab) #yap-circuit-lab {
-  width:min(100% - 2rem,1240px) !important;
+  /* Match the exact 1240px / viewport-gutter width used by the other circuit pages. */
+  display:block !important;
+  width:min(1240px,calc(100vw - 2rem)) !important;
   max-width:1240px !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
   margin:0 auto 4rem !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
   color:#e8f1ff !important;
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
 }
@@ -669,5 +682,34 @@ body:has(#yap-circuit-lab) #yap-circuit-lab input:focus-visible {
   }
   body:has(#yap-circuit-lab) #yap-circuit-lab .protein-mobile-flow {
     display:block !important;
+  }
+}
+
+
+/* Final width normalization: no stale 1180px cap or container-dependent shrinkage. */
+html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) > main,
+html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main,
+html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main > .container,
+html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main > .container-fluid {
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  box-sizing:border-box !important;
+}
+html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
+  width:min(1240px,calc(100vw - 2rem)) !important;
+  max-width:1240px !important;
+  min-width:0 !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  box-sizing:border-box !important;
+}
+@media(max-width:760px) {
+  html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
+    width:calc(100vw - 1rem) !important;
+    max-width:1240px !important;
   }
 }
