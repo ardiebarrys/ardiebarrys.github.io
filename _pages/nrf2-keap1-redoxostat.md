@@ -221,12 +221,22 @@ nav_order: 100
           <option value="second">Response to a second matched challenge</option>
         </select>
         <button id="n2-build-experiment" class="nrf2-primary-btn" type="button">Generate prediction</button>
+        <p id="n2-experiment-status" class="n2-experiment-status" aria-live="polite">Choose settings, then generate a matched experiment plan.</p>
       </div>
       <article class="nrf2-experiment-output" aria-live="polite">
-        <span class="nrf2-kicker">PREDICTION PANEL</span><h3 id="n2-experiment-title">Peak-matched stress pulse</h3>
-        <div class="n2-experiment-path"><span>Stimulus</span><i>→</i><span>Time series</span><i>→</i><span>Recovery</span></div>
-        <p id="n2-experiment-prediction">Compare the post-withdrawal trajectory, not only the maximum NRF2 response.</p>
-        <div class="n2-experiment-readout"><b>Key discriminator</b><span id="n2-experiment-readout">Decay kinetics and time to baseline</span></div>
+        <span class="nrf2-kicker">EXPERIMENT PREDICTION</span>
+        <h3 id="n2-experiment-title">Stress pulse followed by withdrawal</h3>
+        <div class="n2-experiment-path"><span>Stimulus</span><i>→</i><span>Measurement</span><i>→</i><span>Decision</span></div>
+        <p id="n2-experiment-prediction">Apply the selected perturbation and sample before, during and after it. Generate a prediction to compare model-specific outcomes.</p>
+        <div class="n2-experiment-compare">
+          <article><span class="n2-prediction-label">ANTIOXIDANT SWITCH</span><p id="n2-switch-prediction">Prioritizes pathway activation and target induction during stress.</p></article>
+          <article><span class="n2-prediction-label">SIGNAL-RESOLUTION CIRCUIT</span><p id="n2-circuit-prediction">Predicts that decay and recovery may distinguish conditions with similar peak output.</p></article>
+        </div>
+        <div class="n2-experiment-details">
+          <div class="n2-experiment-readout"><b>Primary readout</b><span id="n2-experiment-readout">Decay kinetics and time to baseline</span></div>
+          <div class="n2-experiment-readout"><b>Essential control</b><span id="n2-experiment-control">Vehicle control and verified stressor washout.</span></div>
+          <div class="n2-experiment-readout"><b>Interpretation</b><span id="n2-experiment-criterion">Compare post-withdrawal behavior, not only the peak.</span></div>
+        </div>
       </article>
     </div>
   </section>
