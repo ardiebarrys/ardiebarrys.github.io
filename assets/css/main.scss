@@ -128,7 +128,43 @@ body > .container.mt-5 {
   width: 100% !important;
   margin: 0 !important;
   transform: none !important;
-  z-index: 10000 !important;
+  z-index: 2147483647 !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+
+/*
+ * Put the entire navigation layer above page components. Some pages use
+ * positioned/animated sections that create their own stacking contexts.
+ */
+header:has(> #navbar) {
+  position: relative !important;
+  z-index: 2147483646 !important;
+  isolation: isolate !important;
+  overflow: visible !important;
+}
+
+/*
+ * Reserve the fixed header's height in normal document flow. The previous
+ * global reset removed this space, allowing page headings/cards to start
+ * underneath the navbar on phones.
+ */
+body > main {
+  position: relative !important;
+  z-index: 1 !important;
+  padding-top: 58px !important;
+}
+
+@media (max-width: 991.98px) {
+  body > main {
+    padding-top: 54px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  body > main {
+    padding-top: 54px !important;
+  }
 }
 
 /*
