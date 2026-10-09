@@ -368,25 +368,47 @@ html:after {
   box-shadow: none !important;
 }
 
-/* Final placement override: keep the home control in the top band without
-   reserving a second, oversized blank row above the research content. */
-body:has(#yap-circuit-lab) #yap-circuit-lab {
-  padding-top: 1.25rem !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
-  position: fixed !important;
-  top: .7rem !important;
-  left: max(1rem, calc((100vw - 1280px) / 2)) !important;
-  z-index: 2147483647 !important;
+/* Structural top-of-page fix:
+   - remove theme-generated navbar spacer rows on this page;
+   - put the home link in normal flow so it aligns with the hero card;
+   - let the research page start at the top without a reserved navbar band. */
+html:has(#yap-circuit-lab),
+body:has(#yap-circuit-lab) {
   margin: 0 !important;
   padding: 0 !important;
 }
+body:has(#yap-circuit-lab) > main,
+body:has(#yap-circuit-lab) main,
+body:has(#yap-circuit-lab) main > .container,
+body:has(#yap-circuit-lab) .post,
+body:has(#yap-circuit-lab) .page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab {
+  width: min(100% - 2rem, 1180px) !important;
+  max-width: 1180px !important;
+  margin: 0 auto 3rem !important;
+  padding-top: 0 !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
+  position: relative !important;
+  inset: auto !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin: 0 auto .8rem !important;
+  padding: 0 !important;
+  z-index: 2 !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-button {
+  position: relative !important;
+  margin: 0 !important;
+}
 @media (max-width: 560px) {
   body:has(#yap-circuit-lab) #yap-circuit-lab {
-    padding-top: 1.1rem !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
-    left: .5rem !important;
-    top: .5rem !important;
+    width: calc(100% - 1rem) !important;
+    padding-top: 0 !important;
   }
 }
