@@ -145,26 +145,13 @@ header:has(> #navbar) {
 }
 
 /*
- * Reserve the fixed header's height in normal document flow. The previous
- * global reset removed this space, allowing page headings/cards to start
- * underneath the navbar on phones.
+ * Keep page content in a lower stacking layer than the fixed navigation.
+ * Do not add extra top padding here because the header element already
+ * reserves the navbar height in normal document flow.
  */
 body > main {
   position: relative !important;
   z-index: 1 !important;
-  padding-top: 58px !important;
-}
-
-@media (max-width: 991.98px) {
-  body > main {
-    padding-top: 54px !important;
-  }
-}
-
-@media (max-width: 575.98px) {
-  body > main {
-    padding-top: 54px !important;
-  }
 }
 
 /*
