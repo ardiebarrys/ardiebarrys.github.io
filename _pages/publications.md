@@ -308,6 +308,9 @@ nav_order: 2
           {%- if p.doi == "10.1016/j.pbiomolbio.2026.03.005" %}
           <a class="pub-page-link" href="{{ '/research/nrf2-keap1-redoxostat/' | relative_url }}">View page</a>
           {%- endif %}
+          {%- if p.doi == "10.1007/s00204-026-04384-1" %}
+          <a class="pub-page-link" href="{{ '/research/cyp1a1-metabolic-feedback/' | relative_url }}">View page</a>
+          {%- endif %}
           <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abstract-{{ p.doi | slugify }}" hidden>Show abstract</button>
           <button
             type="button"
