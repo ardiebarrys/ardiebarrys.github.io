@@ -119,7 +119,7 @@
     renderSimulation();
   }
 
-  $$("#n2-simulator input[type=range]").forEach(function (input) {
+  $("#nrf2-simulator input[type=range]").forEach(function (input) {
     input.addEventListener("input", renderSimulation);
   });
   $$(".n2-chip").forEach(function (button) {
