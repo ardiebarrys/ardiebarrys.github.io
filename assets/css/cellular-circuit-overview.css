@@ -212,3 +212,35 @@ body:has(#scf-overview) .post-header,body:has(#scf-overview) .page-header{displa
   .scf-numbered-kicker{font-size:.68rem;letter-spacing:.025em}
   .scf-hero-footer{font-size:.66rem}
 }
+
+
+/* Scale up the overview's central circuit illustration. */
+@media(min-width:921px){
+  .scf-hero{
+    grid-template-columns:minmax(0,1.04fr) minmax(390px,.96fr);
+    gap:1rem;
+  }
+  .scf-hero-diagram{
+    width:100%;
+    max-width:590px;
+    margin:0 auto;
+  }
+}
+@media(min-width:681px) and (max-width:920px){
+  .scf-hero{
+    grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);
+    gap:.5rem;
+  }
+  .scf-hero-diagram{
+    width:100%;
+    max-width:480px;
+    margin:0 auto;
+  }
+}
+@media(max-width:680px){
+  .scf-hero-diagram{
+    width:calc(100% + 1rem);
+    max-width:420px;
+    margin:-.1rem -.5rem -.25rem;
+  }
+}
