@@ -412,7 +412,7 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
   justify-content: flex-start !important;
   align-items: center !important;
   width: 100% !important;
-  margin: 0 auto .8rem !important;
+  margin: 1rem auto .8rem !important;
   padding: 0 !important;
   z-index: 2 !important;
 }
