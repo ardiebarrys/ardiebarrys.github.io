@@ -7,6 +7,8 @@ nav: false
 nav_order: 99
 ---
 
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}">
+
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
   .circuit-lab { --ink:#e8f1ff; --muted:#9bb0d0; --line:rgba(147,197,253,.19); --blue:#60a5fa; --cyan:#67e8f9; --green:#86efac; --red:#fca5a5; color:var(--ink); width:100%; max-width:1180px; margin:0 auto 3rem; }
@@ -100,6 +102,7 @@ nav_order: 99
 </style>
 
 <div class="circuit-lab" id="yap-circuit-lab">
+  <div class="yap-home-row"><a class="yap-home-button" href="{{ '/' | relative_url }}"><span class="home-arrow" aria-hidden="true">←</span><span>Back to homepage</span></a></div>
   <section class="circuit-hero">
     <div class="circuit-eyebrow">Interactive research framework · 2026</div>
     <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
@@ -114,6 +117,65 @@ nav_order: 99
       <a class="circuit-btn" href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">Open published article ↗</a>
       <a class="circuit-btn" href="/publications/">All publications ↗</a>
     </div>
+  </section>
+
+
+  <section class="circuit-section thought-card" id="dynamic-thought-experiment">
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Start here / No specialist knowledge needed</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
+    <p class="thought-intro">You do not need to know the molecular details yet. First watch what happens over time. Then explore the circuit map and the signal lab below to connect the moving picture to the biology.</p>
+    <div class="thought-layout">
+      <div class="cell-stage" id="thought-cell-stage" data-phase="input">
+        <svg viewBox="0 0 560 330" role="img" aria-labelledby="cell-visual-title cell-visual-desc">
+          <title id="cell-visual-title">Animated conceptual view of a cell responding to a mechanical input</title>
+          <desc id="cell-visual-desc">Yellow arrows show a mechanical force, cyan dots show a conceptual YAP/TAZ-related signal, and a violet shape represents the nucleus. The illustration is schematic, not to scale.</desc>
+          <defs>
+            <linearGradient id="cell-fill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1e40af" stop-opacity=".22"/><stop offset="1" stop-color="#0e7490" stop-opacity=".06"/></linearGradient>
+            <marker id="force-arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/></marker>
+          </defs>
+          <path class="cell-membrane" fill="url(#cell-fill)" d="M67 161 C52 116 91 77 147 72 C193 39 251 60 291 75 C344 48 409 74 437 112 C480 145 467 203 430 230 C398 272 341 264 301 252 C245 280 194 258 156 251 C105 250 64 216 67 161 Z"/>
+          <path class="cell-actin" d="M94 148 C151 125 174 187 232 155 S320 119 377 151 S419 189 448 170"/>
+          <path class="cell-actin" d="M106 205 C164 180 191 221 239 207 S334 171 405 218"/>
+          <path class="cell-actin" d="M130 104 C173 143 203 113 245 98 S327 100 355 127"/>
+          <path class="cell-actin" d="M145 235 C177 199 203 172 244 163"/>
+          <path class="cell-nucleus" d="M235 123 C259 101 306 109 323 135 C342 163 327 201 297 210 C268 222 233 200 228 173 C225 154 226 137 235 123 Z"/>
+          <ellipse class="cell-nucleolus" cx="280" cy="161" rx="12" ry="9"/>
+          <path class="cell-dna" d="M249 143 C265 132 294 138 307 151 S296 175 275 170 S254 181 267 190"/>
+          <path class="cell-dna" d="M253 183 C267 171 288 180 304 166"/>
+          <path class="force-arrow" d="M280 15 L280 48" marker-end="url(#force-arrowhead)"/>
+          <path class="force-arrow" d="M184 18 L196 49" marker-end="url(#force-arrowhead)"/>
+          <path class="force-arrow" d="M376 18 L364 49" marker-end="url(#force-arrowhead)"/>
+          <circle class="force-dot" cx="280" cy="58" r="5"/><circle class="force-dot" cx="196" cy="57" r="4"/><circle class="force-dot" cx="364" cy="57" r="4"/>
+          <path class="yap-path" d="M173 162 Q207 158 241 160 Q258 158 276 160"/>
+          <path class="yap-path" d="M190 191 Q220 180 244 172"/>
+          <circle class="yap-dot" cx="174" cy="161" r="5"/><circle class="yap-dot" cx="194" cy="154" r="4"/><circle class="yap-dot" cx="214" cy="165" r="4"/><circle class="yap-dot" cx="230" cy="157" r="4"/><circle class="yap-dot" cx="246" cy="162" r="4"/><circle class="yap-dot" cx="262" cy="149" r="4"/><circle class="yap-dot" cx="279" cy="171" r="4"/><circle class="yap-dot" cx="302" cy="153" r="4"/>
+          <text class="cell-label" x="280" y="229" text-anchor="middle">NUCLEUS</text>
+          <text class="cell-label" x="93" y="286">CELL EDGE</text><path d="M115 276 L90 247" stroke="rgba(147,197,253,.45)" fill="none"/>
+          <text class="cell-label" x="355" y="286">CYTOSKELETON</text><path d="M390 273 L379 219" stroke="rgba(103,232,249,.55)" fill="none"/>
+          <text class="cell-label" x="280" y="310" text-anchor="middle">SCHEMATIC · NOT TO SCALE</text>
+        </svg>
+        <div class="cell-caption"><span><i class="legend-dot force"></i> Mechanical force</span><span><i class="legend-dot"></i> Conceptual signal</span><span><i class="legend-dot nucleus"></i> Nucleus</span></div>
+      </div>
+      <div class="thought-side">
+        <div class="thought-step" aria-live="polite">
+          <div class="thought-count" id="thought-step-label">Mechanical input ON</div>
+          <h3 id="thought-step-title">1. A force arrives</h3>
+          <p id="thought-step-copy">Imagine the cell sitting on a surface that becomes stiffer, or being stretched. The cell does not “think” in words: proteins, adhesions and the cytoskeleton transmit physical information inward.</p>
+          <div class="thought-status"><span id="thought-watch">Watch the yellow arrows enter the cell and the cyan signal begin moving toward the nucleus.</span></div>
+        </div>
+        <div class="thought-progress" id="thought-progress" role="group" aria-label="Choose a thought experiment step"></div>
+        <div class="thought-controls">
+          <button class="circuit-btn primary" id="thought-next" type="button">Next step →</button>
+          <button class="circuit-btn" id="thought-play" type="button" aria-pressed="false">▶ Play walkthrough</button>
+          <button class="circuit-btn" id="thought-restart" type="button">Start over ↺</button>
+        </div>
+        <div class="thought-controls" aria-label="Jump to an idea">
+          <button class="circuit-btn" type="button" data-thought-preset="fast">Start with force</button>
+          <button class="circuit-btn" type="button" data-thought-preset="memory">Explore recovery</button>
+          <button class="circuit-btn" type="button" data-thought-preset="challenge">Test a second challenge</button>
+        </div>
+      </div>
+    </div>
+    <p class="lab-caveat">This animated cell is an explanatory illustration, not a live-cell recording. The moving dots do not represent measured molecule counts, rates or trajectories.</p>
   </section>
 
   <section class="circuit-section" id="circuit-explorer">
@@ -288,3 +350,4 @@ nav_order: 99
   evidenceButtons.forEach(function (b) { b.addEventListener('click', function () { showEvidence(b.getAttribute('data-evidence')); }); });
 })();
 </script>
+<script src="{{ '/assets/js/yap-signal-experience.js' | relative_url }}" defer></script>
