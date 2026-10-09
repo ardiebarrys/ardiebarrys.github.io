@@ -4,6 +4,33 @@
   if (!root || root.dataset.thoughtReady === 'true') return;
   root.dataset.thoughtReady = 'true';
 
+  // Remove theme-generated title banners that sit before the page's own content.
+  function hideGeneratedPageHeading() {
+    var node = root;
+    var titleHints = /YAP\\/TAZ Signal-Resolution Circuit|An interactive exploration of the proposed YAP\\/TAZ mechanochemical signal-resolution circuit/i;
+    while (node && node.parentElement) {
+      var sibling = node.previousElementSibling;
+      while (sibling) {
+        var previous = sibling.previousElementSibling;
+        var text = (sibling.innerText || sibling.textContent || '').replace(/\\s+/g, ' ').trim();
+        var classes = typeof sibling.className === 'string' ? sibling.className : '';
+        var isThemeHeader = /post-header|page-header|post-title|page-title|page-heading|header-section|post-description/i.test(classes);
+        if (isThemeHeader || titleHints.test(text)) {
+          sibling.style.setProperty('display', 'none', 'important');
+          sibling.style.setProperty('min-height', '0', 'important');
+          sibling.style.setProperty('height', '0', 'important');
+          sibling.style.setProperty('margin', '0', 'important');
+          sibling.style.setProperty('padding', '0', 'important');
+          sibling.setAttribute('aria-hidden', 'true');
+        }
+        sibling = previous;
+      }
+      if (node.matches && node.matches('main')) break;
+      node = node.parentElement;
+    }
+  }
+  hideGeneratedPageHeading();
+
   var steps = [
     {
       key: 'input',
