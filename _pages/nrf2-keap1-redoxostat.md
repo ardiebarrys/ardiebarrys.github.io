@@ -249,4 +249,4 @@ nav_order: 100
   <footer class="nrf2-bottom"><span>Interactive companion to the published review</span><a href="{{ '/publications/' | relative_url }}">All publications ↗</a></footer>
 </div>
 
-<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261009-1" defer></script>
+<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261009-2" defer></script>
