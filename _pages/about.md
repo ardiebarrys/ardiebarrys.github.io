@@ -1549,9 +1549,17 @@ social: false
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
+    min-height: 150px !important;
+    box-sizing: border-box !important;
     margin: 0 auto !important;
-    padding: .4rem 1rem 1.5rem !important;
+    padding: 0 1rem !important;
     text-align: center !important;
+  }
+
+  @media (max-width: 700px) {
+    .highlight-study .highlight-explore-cta {
+      min-height: 126px !important;
+    }
   }
 
   .highlight-study .highlight-explore-cta .highlight-explore-primary {
