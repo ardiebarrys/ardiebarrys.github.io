@@ -182,9 +182,13 @@ social: false
 
   .research-links img {
     display: block;
-    max-width: 105px;
-    max-height: 29px;
+    width: 82% !important;
+    height: 46px !important;
+    max-width: 190px !important;
+    max-height: 46px !important;
     object-fit: contain;
+    transform: scale(1.08);
+    transform-origin: center;
   }
 
   @media (max-width: 767.98px) {
