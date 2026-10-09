@@ -184,7 +184,7 @@ nav_order: 100
   <section class="nrf2-panel">
     <div class="nrf2-section-head"><div><span class="nrf2-kicker">04 / SWITCH VS CIRCUIT</span><h2>Same peak, different history</h2><p>Explore why peak activation alone can miss the cost of persistent signaling.</p></div><span class="nrf2-tag">Model comparison</span></div>
     <div class="nrf2-model-tabs" role="group" aria-label="Compare model interpretation"><button type="button" class="is-active" data-model="switch">Antioxidant switch</button><button type="button" data-model="circuit">Signal-resolution circuit</button></div>
-    <div class="nrf2-model-visual">
+    <div class="nrf2-model-visual" data-model="switch">
       <svg viewBox="0 0 760 220" id="n2-model-chart" role="img" aria-label="Switch model compared with signal-resolution model">
         <path class="n2-model-grid" d="M46 28 H735 M46 80 H735 M46 132 H735 M46 184 H735"/>
         <path class="n2-model-axis" d="M46 20 V184 H735"/>
