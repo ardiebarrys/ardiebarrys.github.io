@@ -228,7 +228,7 @@ nav_order: 99
   </section>
 
   <section class="circuit-section thought-card" id="dynamic-thought-experiment">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Start here / No specialist knowledge needed</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under mechanical stress</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
     <p class="thought-intro">You do not need to know the molecular details yet. First watch what happens over time. Then explore the circuit map and the signal lab below to connect the moving picture to the biology.</p>
     <div class="thought-layout">
       <div class="cell-stage" id="thought-cell-stage" data-phase="input">
