@@ -194,7 +194,7 @@ nav_order: 99
         <rect class="protein-panel" x="486" y="207" width="398" height="65" rx="13" style="stroke:rgba(196,181,253,.42)"/>
         <text class="protein-panel-title" x="685" y="229" text-anchor="middle">5 · SIGNAL RESOLUTION FRAMEWORK</text>
         <text class="protein-label" x="685" y="248" text-anchor="middle">Terminate the response · recover sensitivity · respond again</text>
-        <text class="protein-small" x="685" y="263" text-anchor="middle">Proposed framework questions, not a single proven pathway</text>
+        <text class="protein-small" x="685" y="263" text-anchor="middle">Termination · recovery · renewed response</text>
         <path class="protein-arrow" d="M486 238 H450 V174 H115 V158" marker-end="url(#protein-arrowhead)"/>
         <text class="protein-small" x="285" y="193" text-anchor="middle">Can the system return toward baseline?</text>
       </svg>
@@ -268,6 +268,8 @@ nav_order: 99
     <p class="plain-language-sources">Read further: <a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">the published signal-resolution review</a> · <a href="https://doi.org/10.1177/29780241261430920" target="_blank" rel="noopener noreferrer">a 2026 review of Hippo signaling in mechanobiology</a>.</p>
   </section>
 
+  <p class="visual-note" style="margin:.4rem .2rem .8rem;color:#91a8ca;font-size:.75rem;line-height:1.4">Figures and interactive outputs are conceptual illustrations, not experimental measurements.</p>
+
   <section class="circuit-section thought-card" id="dynamic-thought-experiment">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under mechanical stress</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
     <p class="thought-intro">Follow the signal from force detection to nuclear gene regulation, then examine how the response changes when the mechanical input stops.</p>
@@ -275,7 +277,7 @@ nav_order: 99
       <div class="cell-stage" id="thought-cell-stage" data-phase="input">
         <svg viewBox="0 0 560 330" role="img" aria-labelledby="cell-visual-title cell-visual-desc">
           <title id="cell-visual-title">Animated conceptual view of a cell responding to a mechanical input</title>
-          <desc id="cell-visual-desc">Yellow arrows show a mechanical force, cyan dots show a conceptual YAP/TAZ-related signal, and a violet shape represents the nucleus. The illustration is schematic, not to scale.</desc>
+          <desc id="cell-visual-desc">Yellow arrows show a mechanical force, cyan dots show a conceptual YAP/TAZ-related signal, and a violet shape represents the nucleus. The illustration shows a cell responding to mechanical input.</desc>
           <defs>
             <linearGradient id="cell-fill" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#1e40af" stop-opacity=".22"/><stop offset="1" stop-color="#0e7490" stop-opacity=".06"/></linearGradient>
             <marker id="force-arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#fbbf24"/></marker>
@@ -299,7 +301,7 @@ nav_order: 99
           <text class="cell-label" x="280" y="229" text-anchor="middle">NUCLEUS</text>
           <text class="cell-label" x="93" y="286">CELL EDGE</text><path d="M115 276 L90 247" stroke="rgba(147,197,253,.45)" fill="none"/>
           <text class="cell-label" x="355" y="286">CYTOSKELETON</text><path d="M390 273 L379 219" stroke="rgba(103,232,249,.55)" fill="none"/>
-          <text class="cell-label" x="280" y="310" text-anchor="middle">SCHEMATIC · NOT TO SCALE</text>
+          <text class="cell-label" x="280" y="310" text-anchor="middle">MECHANICAL INPUT AND CELL RESPONSE</text>
         </svg>
         <div class="cell-caption"><span><i class="legend-dot force"></i> Mechanical force</span><span><i class="legend-dot"></i> Conceptual signal</span><span><i class="legend-dot nucleus"></i> Nucleus</span></div>
       </div>
@@ -340,29 +342,29 @@ nav_order: 99
   </section>
 
   <section class="circuit-section">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">02 / Dynamic thought experiment</span><h2>What happens after the mechanical input is removed?</h2><p>Adjust a conceptual perturbation to see how duration and reset capacity can change the expected trajectory. The curve is illustrative, not a fit to experimental data.</p></div><span class="circuit-tag">Signal lab</span></div>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">02 / Dynamic thought experiment</span><h2>What happens after the mechanical input is removed?</h2><p>Adjust the inputs to explore how exposure duration and recovery capacity can change the response trajectory.</p></div><span class="circuit-tag">Signal lab</span></div>
     <div class="lab-grid">
       <div class="lab-controls">
         <div class="lab-control"><div class="lab-control-head"><label for="input-strength">Mechanical input strength</label><output id="strength-value" for="input-strength">70%</output></div><input id="input-strength" type="range" min="10" max="100" value="70" step="5"><span class="lab-help">Represents a relative perturbation level, not a physical unit or universal stiffness scale.</span></div>
         <div class="lab-control"><div class="lab-control-head"><label for="input-duration">Exposure duration</label><output id="duration-value" for="input-duration">60%</output></div><input id="input-duration" type="range" min="10" max="100" value="60" step="5"><span class="lab-help">Longer exposure can increase the chance of persistent downstream changes in some experimental systems.</span></div>
-        <div class="lab-control"><div class="lab-control-head"><label for="input-reset">Resolution capacity</label><output id="reset-value" for="input-reset">65%</output></div><input id="input-reset" type="range" min="10" max="100" value="65" step="5"><span class="lab-help">A conceptual composite of termination and recovery capacity, not a measured biological parameter.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="input-reset">Resolution capacity</label><output id="reset-value" for="input-reset">65%</output></div><input id="input-reset" type="range" min="10" max="100" value="65" step="5"></div>
         <div class="lab-control"><div class="lab-control-head"><label for="input-memory">Persistent memory load</label><output id="memory-value" for="input-memory">30%</output></div><input id="input-memory" type="range" min="0" max="100" value="30" step="5"><span class="lab-help">Represents residual chromatin, cytoskeletal, metabolic or extracellular changes after withdrawal.</span></div>
         <div class="circuit-actions"><button class="circuit-btn primary" type="button" id="reset-lab">Reset parameters ↺</button><button class="circuit-btn" type="button" id="preset-persistent">Load persistent-state example</button></div>
       </div>
       <div class="lab-readout" aria-live="polite">
-        <span class="lab-state adaptive" id="lab-state">Illustrative recovery-favored state</span>
+        <span class="lab-state adaptive" id="lab-state">Recovery-favored state</span>
         <h3 id="lab-result-title">Resolution may be achievable</h3>
         <p id="lab-result-copy">The selected balance favors a return toward baseline after the input is withdrawn, although this is a hypothesis-generating visualization rather than a prediction for a specific cell type.</p>
         <div class="lab-meter-label"><span>Relative residual signal</span><strong id="residual-label">35%</strong></div><div class="lab-meter"><span id="residual-meter"></span></div>
         <div class="lab-meter-label"><span>Relative reset capacity</span><strong id="capacity-label">65%</strong></div><div class="lab-meter"><span id="capacity-meter"></span></div>
-        <svg class="lab-chart" viewBox="0 0 340 170" role="img" aria-label="Illustrative signal activation and recovery curve">
+        <svg class="lab-chart" viewBox="0 0 340 170" role="img" aria-label="Signal activation and recovery curve">
           <line class="axis" x1="32" y1="18" x2="32" y2="136"/><line class="axis" x1="32" y1="136" x2="322" y2="136"/>
           <line class="axis" x1="32" y1="77" x2="322" y2="77" stroke-dasharray="3 5"/>
           <text x="6" y="22">High</text><text x="7" y="139">Base</text><text x="32" y="155">Input</text><text x="260" y="155">Withdrawal →</text>
           <path class="trace-soft" d="M32 130 L78 130 L78 43 L165 43 L165 130 L322 130"/>
           <path class="trace" id="signal-trace" d="M32 130 L78 130 L78 43 L165 43 C205 82 245 112 322 127"/>
         </svg>
-        <p class="lab-caveat">Model boundary: the sliders encode a qualitative teaching heuristic. They do not estimate YAP/TAZ concentrations, disease risk, treatment response or the probability of memory lock.</p>
+        
       </div>
     </div>
   </section>
@@ -403,7 +405,7 @@ nav_order: 99
     </div>
   </section>
 
-  <div class="circuit-bottom"><span>Conceptual interactive companion to the published review. Not a clinical or quantitative prediction tool.</span><a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">DOI: 10.1016/j.pbiomolbio.2026.101960 ↗</a></div>
+  <div class="circuit-bottom"><span>Interactive companion to the published review.</span><a href="https://doi.org/10.1016/j.pbiomolbio.2026.101960" target="_blank" rel="noopener noreferrer">Read the published article ↗</a></div>
 </div>
 
 <script>
@@ -448,11 +450,11 @@ nav_order: 99
     root.querySelector('#capacity-meter').style.width = r + '%';
     var state = root.querySelector('#lab-state');
     state.className = 'lab-state ' + (recoveryFavored ? 'adaptive' : 'persistent');
-    state.textContent = recoveryFavored ? 'Illustrative recovery-favored state' : 'Illustrative persistence-favored state';
+    state.textContent = recoveryFavored ? 'Recovery-favored state' : 'Persistence-favored state';
     root.querySelector('#lab-result-title').textContent = recoveryFavored ? 'Resolution may be achievable' : 'Residual activity may remain';
     root.querySelector('#lab-result-copy').textContent = recoveryFavored
-      ? 'In this heuristic, reset capacity is relatively high compared with exposure duration and memory load. A real cell still needs to demonstrate recovered baseline and a normal response to a second challenge.'
-      : 'In this heuristic, exposure duration and/or persistent memory load outweigh the selected reset capacity. This illustrates why withdrawal alone may not be sufficient to restore the previous state in some systems.';
+      ? 'Recovery capacity is relatively high compared with exposure duration and memory load.'
+      : 'Exposure duration and/or persistent memory load outweigh the selected recovery capacity.';
     var startX = 32, startY = 130, riseX = 78, peakX = 165, peakY = 130 - s * 0.87;
     var decayEndY = 130 - residual * 0.87;
     var bend1 = peakX + 42, bend2 = 245;
