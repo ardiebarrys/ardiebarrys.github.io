@@ -7,7 +7,7 @@ nav: false
 nav_order: 100
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/nrf2-redoxostat.css' | relative_url }}?v=20261009-2">
+<link rel="stylesheet" href="{{ '/assets/css/nrf2-redoxostat.css' | relative_url }}?v=20261009-3">
 
 <div class="nrf2-lab" id="nrf2-redoxostat-lab">
   <a class="nrf2-home" href="{{ '/' | relative_url }}">← Back to homepage</a>
