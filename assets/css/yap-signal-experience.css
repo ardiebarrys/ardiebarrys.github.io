@@ -1,0 +1,139 @@
+/* YAP/TAZ interactive research page: page-wide visual system */
+html:has(#yap-circuit-lab), body:has(#yap-circuit-lab) {
+  min-height: 100%;
+  background: #061126 !important;
+}
+body:has(#yap-circuit-lab) {
+  color: #e8f1ff !important;
+  background:
+    radial-gradient(ellipse at 82% 9%, rgba(38,82,150,.34), transparent 34rem),
+    radial-gradient(ellipse at 5% 54%, rgba(13,91,128,.18), transparent 30rem),
+    linear-gradient(145deg,#0a1934 0%,#061126 46%,#050d1d 100%) fixed !important;
+  background-color: #061126 !important;
+}
+body:has(#yap-circuit-lab)::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: -18vmax;
+  pointer-events: none;
+  opacity: .48;
+  background:
+    repeating-radial-gradient(ellipse at 73% 34%, transparent 0 54px, rgba(108,153,220,.105) 55px 57px, transparent 58px 105px),
+    radial-gradient(ellipse at 72% 33%, rgba(33,79,143,.15), transparent 42%);
+  animation: yap-background-drift 90s linear infinite;
+  transform-origin: center;
+}
+body:has(#yap-circuit-lab) > header,
+body:has(#yap-circuit-lab) header:has(#navbar),
+body:has(#yap-circuit-lab) #navbar,
+body:has(#yap-circuit-lab) progress#progress {
+  display: none !important;
+}
+body:has(#yap-circuit-lab) > main,
+body:has(#yap-circuit-lab) main,
+body:has(#yap-circuit-lab) main > .container,
+body:has(#yap-circuit-lab) .post,
+body:has(#yap-circuit-lab) .page {
+  position: relative;
+  z-index: 1;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #e8f1ff !important;
+}
+body:has(#yap-circuit-lab) footer,
+body:has(#yap-circuit-lab) .fixed-bottom {
+  display: none !important;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab {
+  width: min(100% - 2rem, 1280px);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.25rem 0 3rem;
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero {
+  background:
+    repeating-radial-gradient(ellipse at 86% 37%, transparent 0 36px, rgba(147,197,253,.09) 37px 39px, transparent 40px 70px),
+    radial-gradient(circle at 80% 15%,rgba(59,130,246,.24),transparent 30%),
+    radial-gradient(circle at 12% 90%,rgba(34,211,238,.09),transparent 30%),
+    linear-gradient(145deg,rgba(12,29,61,.88),rgba(6,17,38,.86) 72%);
+  border-color: rgba(147,197,253,.14);
+}
+body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {
+  background: linear-gradient(145deg,rgba(13,29,58,.78),rgba(7,17,36,.82));
+  backdrop-filter: blur(8px);
+}
+.yap-home-row { display:flex; justify-content:flex-start; margin:0 0 .8rem; }
+.yap-home-button {
+  display:inline-flex; align-items:center; gap:.6rem; min-height:42px;
+  padding:.65rem .95rem; border:1px solid rgba(147,197,253,.3); border-radius:999px;
+  color:#dbeafe !important; background:rgba(12,29,61,.7); text-decoration:none !important;
+  font-size:.82rem; font-weight:800; box-shadow:0 8px 22px rgba(0,0,0,.13);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.yap-home-button:hover { transform:translateY(-2px); border-color:#93c5fd; background:rgba(37,99,235,.26); }
+.yap-home-button .home-arrow { font-size:1.05rem; color:#93c5fd; }
+.thought-card { position:relative; overflow:hidden; }
+.thought-intro { max-width:790px; color:#a9bddc; line-height:1.7; font-size:.94rem; }
+.thought-layout { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr); gap:1rem; align-items:stretch; }
+.cell-stage { position:relative; min-width:0; border:1px solid rgba(147,197,253,.18); border-radius:16px; overflow:hidden; background:radial-gradient(ellipse at 50% 45%,rgba(22,62,112,.35),rgba(3,12,28,.72)); }
+.cell-stage svg { display:block; width:100%; height:auto; min-height:240px; }
+.cell-caption { display:flex; flex-wrap:wrap; gap:.45rem; padding:.7rem .8rem; border-top:1px solid rgba(147,197,253,.13); color:#8ea7cb; font-size:.7rem; }
+.cell-caption span { display:inline-flex; align-items:center; gap:.35rem; }
+.legend-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:#67e8f9; }
+.legend-dot.force { background:#fbbf24; }
+.legend-dot.nucleus { background:#a5b4fc; }
+.thought-side { display:flex; flex-direction:column; gap:.7rem; }
+.thought-step { padding:1rem; border:1px solid rgba(147,197,253,.18); border-radius:13px; background:rgba(3,12,28,.45); }
+.thought-step .thought-count { color:#67e8f9; font-size:.66rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+.thought-step h3 { margin:.4rem 0 .35rem; color:#e5efff; font-size:1.08rem; }
+.thought-step p { margin:0; color:#a9bddc; font-size:.82rem; line-height:1.65; }
+.thought-status { display:flex; align-items:center; gap:.55rem; margin-top:.65rem; color:#bfdbfe; font-size:.72rem; }
+.thought-status::before { content:""; width:8px; height:8px; border-radius:50%; background:#60a5fa; box-shadow:0 0 0 4px rgba(96,165,250,.12); }
+.thought-controls { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; }
+.thought-controls .circuit-btn { flex:1 1 auto; }
+.thought-progress { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.35rem; margin-top:.85rem; }
+.thought-progress button { min-height:34px; padding:.3rem; border:1px solid rgba(147,197,253,.17); border-radius:8px; color:#8ea7cb; background:rgba(15,35,70,.5); font-size:.67rem; cursor:pointer; }
+.thought-progress button[aria-current="step"] { color:#f0f7ff; border-color:#60a5fa; background:rgba(37,99,235,.25); }
+.cell-membrane { fill:rgba(59,130,246,.055); stroke:rgba(147,197,253,.65); stroke-width:2.2; }
+.cell-actin { fill:none; stroke:rgba(103,232,249,.48); stroke-width:2; stroke-linecap:round; }
+.cell-nucleus { fill:rgba(129,140,248,.13); stroke:#a5b4fc; stroke-width:2; }
+.cell-nucleolus { fill:rgba(196,181,253,.3); stroke:rgba(196,181,253,.8); }
+.cell-dna { fill:none; stroke:rgba(196,181,253,.7); stroke-width:1.6; stroke-linecap:round; }
+.cell-label { fill:#b9cce8; font:11px system-ui,sans-serif; }
+.force-arrow { stroke:#fbbf24; stroke-width:2.5; stroke-linecap:round; opacity:.12; }
+.force-dot { fill:#fbbf24; opacity:.15; }
+.yap-dot { fill:#67e8f9; stroke:#cffafe; stroke-width:.8; opacity:.25; }
+.yap-path { fill:none; stroke:#67e8f9; stroke-width:1.6; stroke-dasharray:4 7; opacity:.15; }
+.cell-stage[data-phase="input"] .force-arrow,.cell-stage[data-phase="input"] .force-dot { opacity:1; }
+.cell-stage[data-phase="input"] .yap-dot { opacity:.95; animation:yap-float 1.5s ease-in-out infinite alternate; }
+.cell-stage[data-phase="input"] .yap-path { opacity:.95; animation:yap-flow 1.2s linear infinite; }
+.cell-stage[data-phase="control"] .force-arrow { opacity:.5; }
+.cell-stage[data-phase="control"] .yap-dot { opacity:.65; }
+.cell-stage[data-phase="control"] .yap-path { opacity:.55; }
+.cell-stage[data-phase="withdrawal"] .force-arrow,.cell-stage[data-phase="withdrawal"] .force-dot { opacity:.05; }
+.cell-stage[data-phase="withdrawal"] .yap-dot { opacity:.75; animation:yap-fade 2s ease-out forwards; }
+.cell-stage[data-phase="withdrawal"] .yap-path { opacity:.45; }
+.cell-stage[data-phase="recovery"] .force-arrow,.cell-stage[data-phase="recovery"] .force-dot { opacity:.05; }
+.cell-stage[data-phase="recovery"] .yap-dot { opacity:.2; }
+.cell-stage[data-phase="recovery"] .yap-path { opacity:.08; }
+.cell-stage[data-phase="challenge"] .force-arrow,.cell-stage[data-phase="challenge"] .force-dot { opacity:.95; }
+.cell-stage[data-phase="challenge"] .yap-dot { opacity:1; animation:yap-float 1s ease-in-out infinite alternate; }
+.cell-stage[data-phase="challenge"] .yap-path { opacity:1; animation:yap-flow .85s linear infinite; }
+@keyframes yap-background-drift { to { transform:rotate(360deg); } }
+@keyframes yap-flow { to { stroke-dashoffset:-22; } }
+@keyframes yap-float { from { transform:translateY(0); } to { transform:translateY(-5px); } }
+@keyframes yap-fade { 0% { opacity:.9; } 100% { opacity:.16; } }
+@media(max-width:760px) { .thought-layout { grid-template-columns:1fr; } .cell-stage svg { min-height:190px; } }
+@media(max-width:560px) {
+  body:has(#yap-circuit-lab) #yap-circuit-lab { width:calc(100% - 1rem); padding-top:.55rem; }
+  .yap-home-button { min-height:40px; }
+  .thought-controls { display:grid; grid-template-columns:1fr 1fr; }
+  .thought-controls .circuit-btn { width:100%; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body:has(#yap-circuit-lab)::before,.cell-stage *, .cell-stage *::before,.cell-stage *::after { animation:none !important; transition:none !important; }
+}
