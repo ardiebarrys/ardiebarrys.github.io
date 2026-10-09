@@ -24,14 +24,6 @@ body:has(#yap-circuit-lab)::before {
   animation: yap-background-drift 90s linear infinite;
   transform-origin: center;
 }
-body:has(#yap-circuit-lab) > header,
-body:has(#yap-circuit-lab) header,
-body:has(#yap-circuit-lab) #navbar,
-body:has(#yap-circuit-lab) progress#progress,
-body:has(#yap-circuit-lab) .navbar-wrapper,
-body:has(#yap-circuit-lab) .header-wrapper {
-  display: none !important;
-}
 body:has(#yap-circuit-lab) > main,
 body:has(#yap-circuit-lab) main,
 body:has(#yap-circuit-lab) main > .container,
@@ -55,18 +47,13 @@ body:has(#yap-circuit-lab) #yap-circuit-lab {
   width: min(100% - 2rem, 1280px);
   max-width: 1280px;
   margin: 0 auto;
-  /* Reserve the former back-link row's space after moving that link into the
-     otherwise-empty top band. */
-  padding: 5.75rem 0 3rem;
+  padding: 1rem 0 3rem;
 }
 
-/* Put the homepage link inside the empty top band instead of below it. */
+/* Keep the homepage link in normal flow below the shared fixed navbar. */
 body:has(#yap-circuit-lab) .yap-home-row {
-  position: fixed !important;
-  top: 0.7rem !important;
-  left: max(1rem, calc((100vw - 1280px) / 2)) !important;
-  z-index: 2147483647 !important;
-  margin: 0 !important;
+  position: static !important;
+  margin: 0 0 .8rem !important;
   padding: 0 !important;
 }
 body:has(#yap-circuit-lab) .yap-home-button {
