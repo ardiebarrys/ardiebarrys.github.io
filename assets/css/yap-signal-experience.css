@@ -454,3 +454,67 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-button {
     padding-top: 0 !important;
   }
 }
+
+/* Plain-language explainer: distinguish established biology from the review's
+   proposed signal-resolution framework. */
+.plain-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .8rem;
+}
+.plain-language-card {
+  min-width: 0;
+  padding: 1.1rem;
+  border: 1px solid rgba(147,197,253,.17);
+  border-radius: 14px;
+  background: linear-gradient(145deg, rgba(13,29,58,.72), rgba(7,17,36,.78));
+}
+.plain-language-number {
+  display: block;
+  margin-bottom: .6rem;
+  color: #67e8f9;
+  font-size: .65rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
+.plain-language-card h3 {
+  margin: 0 0 .65rem;
+  color: #eaf2ff;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+.plain-language-card p,
+.plain-language-card li {
+  color: #aebfda;
+  font-size: .87rem;
+  line-height: 1.7;
+}
+.plain-language-card p { margin: .55rem 0 0; }
+.plain-language-card strong { color: #e6f1ff; }
+.plain-language-card ol { padding-left: 1.25rem; margin: .65rem 0 0; }
+.plain-language-card li { padding-left: .15rem; margin: .3rem 0; }
+.plain-language-proposal {
+  border-color: rgba(103,232,249,.28);
+  background: linear-gradient(145deg, rgba(10,48,70,.68), rgba(7,20,42,.86));
+}
+.plain-language-caveat {
+  margin-top: .8rem;
+  padding: 1rem 1.1rem;
+  border-left: 3px solid #67e8f9;
+  border-radius: 0 12px 12px 0;
+  background: rgba(3,12,28,.48);
+  color: #aebfda;
+  font-size: .86rem;
+  line-height: 1.7;
+}
+.plain-language-caveat strong { color: #eaf2ff; }
+.plain-language-sources {
+  margin: .8rem 0 0;
+  color: #91a9cc;
+  font-size: .78rem;
+  line-height: 1.6;
+}
+.plain-language-sources a { color: #93c5fd; }
+@media (max-width: 760px) {
+  .plain-language-grid { grid-template-columns: 1fr; }
+}
