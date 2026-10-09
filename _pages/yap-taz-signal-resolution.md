@@ -104,6 +104,7 @@ nav_order: 99
     <div class="circuit-eyebrow">Interactive research framework · 2026</div>
     <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
     <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher · Petaling Jaya, Selangor, Malaysia</div>
+    <p class="circuit-subtitle" style="margin:.6rem 0 0;font-size:.78rem;color:#8ea7cb">Received 21 July 2026 · Revised 4 October 2026 · Accepted 6 October 2026 · Available online 7 October 2026 · Version of Record 7 October 2026</p>
     <p class="circuit-subtitle">Explore a systems-level framework in which cells do more than sense mechanical forces. They integrate and decode those inputs, terminate signaling, and attempt to restore mechanosensitivity. The key question is not only whether YAP/TAZ activates, but whether the system resolves the response and returns toward a functional baseline.</p>
     <div class="circuit-pills">
       <span class="circuit-pill">Mechanotransduction</span><span class="circuit-pill">Hippo signaling</span><span class="circuit-pill">Temporal decoding</span><span class="circuit-pill">Mechanical memory</span><span class="circuit-pill">Signal resolution</span>
