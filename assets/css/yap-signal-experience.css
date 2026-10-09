@@ -295,3 +295,60 @@ body:has(#yap-circuit-lab) main > .container {
   border-top: 0 !important;
   box-shadow: none !important;
 }
+
+
+/* FINAL PAGE-LOCAL OVERRIDE
+   This stylesheet is only loaded by the YAP/TAZ research page. Do not depend
+   on :has() or on the theme's Liquid layout matching to remove the top band. */
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  scroll-padding-top: 0 !important;
+}
+body > header,
+body > nav,
+body > .navbar,
+body header,
+body #navbar,
+body #progress,
+body progress,
+body .progress,
+body .progress-bar,
+body .post-header,
+body .page-header,
+body .header-section,
+body .page-heading,
+body .post-title,
+body .page-title {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+body > main,
+body > .container,
+body > .page,
+body > .post,
+body main,
+body main > .container,
+body main > .page,
+body main > .post {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+  box-shadow: none !important;
+}
+body:before,
+body:after,
+html:before,
+html:after {
+  box-shadow: none !important;
+}
