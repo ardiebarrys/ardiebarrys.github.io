@@ -94,6 +94,51 @@
     }
   }
 </style> <div class="talks"> <section class="talks-section"> <h2>Presentations</h2> <div class="talk"> <div class="talk-date">1 Oct 2026</div> <div> <p class="talk-title">PhD thesis seminar</p> <p class="talk-where">Universiti Malaya</p> </div> </div> <div class="talk"> <div class="talk-date">2024</div> <div> <p class="talk-title">Sexual Desire and Nicotine Dependence Among Smokers, E-Cigarette Users, and Dual Users in Malaysia: A Comparative Study</p> <p class="talk-where">Poster presentation, ISAM Regional Meeting</p> </div> </div> </section> <section class="talks-section"> <h2>Conferences and symposia</h2> <div class="talk"> <div class="talk-date">2024</div> <div> <p class="talk-title">Early Career Researchers–Postgraduates Research Symposium</p> </div> </div> <div class="talk"> <div class="talk-date">2023</div> <div> <p class="talk-title">ic-PHIR Conference</p> <p class="talk-where">UiTM Puncak Alam</p> </div> </div> </section> <section class="talks-section"> <h2>Workshops</h2> <div class="talk"> <div class="talk-date">2025</div> <div> <p class="talk-title">Systematic Literature Review and Meta-Analysis Workshop</p> </div> </div> <div class="talk"> <div class="talk-date">2025</div> <div> <p class="talk-title">UV-Visible Double Beam Spectrophotometer Workshop</p> <p class="talk-where">Shimadzu</p> </div> </div> <div class="talk"> <div class="talk-date">2024</div> <div> <p class="talk-title">Quantitative PCR (qPCR) Workshop</p> <p class="talk-where">Vazyme, Universiti Malaya</p> </div> </div> <div class="talk"> <div class="talk-date">2023</div> <div> <p class="talk-title">ic-PHIR Metabolic Workshop</p> <p class="talk-where">UiTM Puncak Alam</p> </div> </div> </section> </div> </article> </div> </div> <style>
+  /* Enlarge logos inside the external profile-link buttons. */
+  .profile-links a img,
+  .social-links a img,
+  .external-links a img,
+  a.profile-link img,
+  .profile-button img,
+  .scholar-button img,
+  .research-links img {
+    width: 72% !important;
+    height: 72% !important;
+    max-width: 170px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transform-origin: center;
+  }
+
+  /* Preserve each logo's proportions while giving it more of the button area. */
+  .profile-links a,
+  .social-links a,
+  .external-links a,
+  a.profile-link,
+  .profile-button,
+  .scholar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    .profile-links a img,
+    .social-links a img,
+    .external-links a img,
+    a.profile-link img,
+    .profile-button img,
+    .scholar-button img,
+    .research-links img {
+      width: 80% !important;
+      height: 80% !important;
+      max-width: 180px !important;
+      max-height: 52px !important;
+      transform: scale(1.08);
+    }
+  }
+
   /* Site palette: dark navy and blue. Theme variables are also set in assets/css/main.scss. */
   :root {
     color-scheme: dark;

@@ -237,6 +237,51 @@
   }
 
 </style> <div class="bio-page"> <section class="bio-hero" oncontextmenu="return false;"> <div class="bio-hero-content"> <h1>Biography</h1> <p> PhD candidate in Pharmaceutical Sciences working at the intersection of toxicology, molecular regulation, and reproductive health. </p> </div> </section> <article class="bio-card"> <h2>Ardie Barry Sailis</h2> <h3>Early Background</h3> <p> Ardie Barry Sailis is from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. He decided at ten that he wanted to be a scientist, which sounds precocious but was really a child wanting to know why bodies break down and whether anything can be done about it. He never stopped asking. </p> <h3>Academic Development</h3> <p> Pharmaceutical sciences gave that curiosity a shape. Learning how medicines and toxicants interact with living systems narrowed his attention to a specific question. What happens inside a cell when something goes wrong, and why do protective responses sometimes fail to protect? </p> <p> That question pulled him toward toxicology, pharmacology, and molecular regulation. He works experimentally, but reads results as coordinated responses across pathways rather than isolated outcomes. </p> <div class="bio-focus-inline"> <h3>Research Focus</h3> <div class="bio-focus-list"> <span class="bio-focus-tag">Environmental toxicology</span> <span class="bio-focus-tag">E-cigarette exposure</span> <span class="bio-focus-tag">Reproductive health</span> <span class="bio-focus-tag">Molecular regulation</span> <span class="bio-focus-tag">Mechanotransduction</span> <span class="bio-focus-tag">YAP/TAZ signaling</span> <span class="bio-focus-tag">Mitochondrial stress</span> <span class="bio-focus-tag">microRNA signaling</span> </div> </div> <h3>Doctoral Research</h3> <p> He came to the subject sideways. While looking for research assistant positions online, he found a project on e-cigarettes and reproductive health and could not let go of the arithmetic. Millions of users worldwide, and almost nothing known about what the aerosol does to sexual and hormonal function. That gap seemed worth closing. </p> <p> His doctoral work examines what e-cigarette exposure does to male reproductive and endocrine health, at the Faculty of Pharmacy, Universiti Malaya. E-cigarette use is usually discussed as a lung problem. He is interested in what happens further downstream, in Leydig cell steroidogenesis, testosterone signalling, mitochondrial function, redox imbalance, and microRNA regulation. </p> <p> The underlying question is whether repeated exposure disturbs the systems governing hormone production, cellular energy, and stress adaptation, well beyond the airway. </p> <h3>Research Philosophy</h3> <p> He does not think toxicant exposure is best understood as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation, and hormonal control. When those systems are repeatedly challenged, what matters may be less the initial insult than whether the cell can still sense, process, and resolve stress. </p> <p> That conviction produced work nobody asked him to do. Biology never runs cleanly from A to B. Something always intervenes, and the question of what intervenes is the one he keeps returning to. His framework, Cellular Signalling as Dynamic Regulatory Circuits, treats canonical pathways as control systems rather than linear cascades, with attention to feedback, timing, phase-separated states, mechanotransduction, and failures of signal resolution. His work on NRF2–KEAP1 frames redox signaling as a resolution circuit, while his YAP/TAZ review extends the same logic to mechanical signaling, asking how cells sense force, integrate it over time, terminate the response, and restore mechanosensitivity. He wrote these frameworks because research should add to what is known, not only to what is required. </p> <div class="bio-inline-quote"> <blockquote> "Absence of evidence is not evidence of absence. The most important questions often begin where existing evidence becomes incomplete, uncertain, or overlooked." </blockquote> <cite>Ardie Barry Sailis (2026)</cite> </div> <p> The same instinct runs through his writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), he argued that AI should not be judged only on speed and accuracy, but on what it does to justice, accountability, and human dignity. In health research that means asking who contributes the data, who governs it, and who actually benefits. </p> <h3>Long-Term Direction</h3> <p> He wants to do work that is both mechanistically detailed and conceptually integrative, connecting exposure science, cellular stress, endocrine regulation, mechanotransduction, and systems-level disease models. Good research should explain not just whether something causes harm, but how systems sense inputs, encode them over time, adapt, compensate, resolve the response, and eventually fail. </p> </article> <figure class="bio-image-card" oncontextmenu="return false;"> <img src="/assets/img/biography-portrait.jpg" alt="Ardie Barry Sailis during laboratory research" draggable="false" oncontextmenu="return false;"> </figure> </div> </article> </div> </div> <style>
+  /* Enlarge logos inside the external profile-link buttons. */
+  .profile-links a img,
+  .social-links a img,
+  .external-links a img,
+  a.profile-link img,
+  .profile-button img,
+  .scholar-button img,
+  .research-links img {
+    width: 72% !important;
+    height: 72% !important;
+    max-width: 170px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transform-origin: center;
+  }
+
+  /* Preserve each logo's proportions while giving it more of the button area. */
+  .profile-links a,
+  .social-links a,
+  .external-links a,
+  a.profile-link,
+  .profile-button,
+  .scholar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    .profile-links a img,
+    .social-links a img,
+    .external-links a img,
+    a.profile-link img,
+    .profile-button img,
+    .scholar-button img,
+    .research-links img {
+      width: 80% !important;
+      height: 80% !important;
+      max-width: 180px !important;
+      max-height: 52px !important;
+      transform: scale(1.08);
+    }
+  }
+
   /* Site palette: dark navy and blue. Theme variables are also set in assets/css/main.scss. */
   :root {
     color-scheme: dark;

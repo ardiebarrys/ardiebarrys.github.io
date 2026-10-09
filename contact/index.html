@@ -226,6 +226,51 @@
     }
   }
 </style> <div class="contact-page"> <div class="contact-layout"> <div class="contact-top-grid"> <section class="contact-card"> <h2>Address</h2> <div class="contact-address"> <strong>Department of Pharmaceutical Life Sciences</strong><br> Faculty of Pharmacy<br> Universiti Malaya<br> 50603 Kuala Lumpur, Malaysia </div> <iframe class="contact-map" src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> </iframe> </section> <section class="contact-card support-card"> <h2>Support Independent Academic Work</h2> <p> Apart from my doctoral thesis and institutional research, I also write independent academic summaries, research commentary, and scholarly resources on toxicology, reproductive health, and biomedical science. If you find these personal academic projects useful, you may support their continuation through the “Buy Me a Coffee” button. </p> <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener"> <span class="coffee-icon">☕</span> <span>Support via Buy Me a Coffee</span> </a> <div class="support-helps"> <strong>Support helps with:</strong><br> Website maintenance | Open educational resources | Research communication </div> <div class="support-note"> Contributions are voluntary and personal. They do not influence research findings, academic judgment, supervision, peer review, or institutional decisions. This page does not represent institutional fundraising unless stated otherwise. </div> </section> </div> <section class="contact-card"> <h2>Send a Message</h2> <p class="contact-note"> Please allow up to seven business days for a response. </p> <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST"> <label for="email">Your Email</label> <input id="email" type="email" name="email" required=""> <label for="topic">Topic</label> <select id="topic" name="topic" required=""> <option value="">Select a topic</option> <option value="Inquiry">Inquiry</option> <option value="Collaboration">Collaboration</option> <option value="Publication">Publication</option> <option value="Speaking invitation">Speaking Invitation</option> <option value="Media or writing">Media or Writing</option> <option value="Other">Other</option> </select> <label for="message">Question</label> <textarea id="message" name="message" required=""></textarea> <button type="submit">Send Message</button> </form> </section> </div> </div> </article> </div> </div> <style>
+  /* Enlarge logos inside the external profile-link buttons. */
+  .profile-links a img,
+  .social-links a img,
+  .external-links a img,
+  a.profile-link img,
+  .profile-button img,
+  .scholar-button img,
+  .research-links img {
+    width: 72% !important;
+    height: 72% !important;
+    max-width: 170px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transform-origin: center;
+  }
+
+  /* Preserve each logo's proportions while giving it more of the button area. */
+  .profile-links a,
+  .social-links a,
+  .external-links a,
+  a.profile-link,
+  .profile-button,
+  .scholar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    .profile-links a img,
+    .social-links a img,
+    .external-links a img,
+    a.profile-link img,
+    .profile-button img,
+    .scholar-button img,
+    .research-links img {
+      width: 80% !important;
+      height: 80% !important;
+      max-width: 180px !important;
+      max-height: 52px !important;
+      transform: scale(1.08);
+    }
+  }
+
   /* Site palette: dark navy and blue. Theme variables are also set in assets/css/main.scss. */
   :root {
     color-scheme: dark;
