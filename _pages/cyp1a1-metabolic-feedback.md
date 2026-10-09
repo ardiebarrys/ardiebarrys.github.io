@@ -10,7 +10,7 @@ nav_order: 101
 <link rel="stylesheet" href="{{ '/assets/css/cyp1a1-feedback.css' | relative_url }}?v=20261009-1">
 
 <div class="cyp1-page" id="cyp1-feedback-lab">
-  <a class="cyp1-home" href="{{ '/' | relative_url }}">← Back to homepage</a>
+  <a class="cyp1-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
 
   <header class="cyp1-hero">
     <div class="cyp1-eyebrow"><span class="cyp1-status-dot"></span> ENVIRONMENTAL SENSING · METABOLIC FEEDBACK</div>
