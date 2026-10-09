@@ -25,9 +25,11 @@ body:has(#yap-circuit-lab)::before {
   transform-origin: center;
 }
 body:has(#yap-circuit-lab) > header,
-body:has(#yap-circuit-lab) header:has(#navbar),
+body:has(#yap-circuit-lab) header,
 body:has(#yap-circuit-lab) #navbar,
-body:has(#yap-circuit-lab) progress#progress {
+body:has(#yap-circuit-lab) progress#progress,
+body:has(#yap-circuit-lab) .navbar-wrapper,
+body:has(#yap-circuit-lab) .header-wrapper {
   display: none !important;
 }
 body:has(#yap-circuit-lab) > main,
