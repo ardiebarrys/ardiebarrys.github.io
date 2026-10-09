@@ -7,7 +7,7 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-7">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-8">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
