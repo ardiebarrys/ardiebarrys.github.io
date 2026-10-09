@@ -361,6 +361,19 @@ body:has(#nrf2-redoxostat-lab) .page-header {
 .n2-experiment-path span { flex:1; padding:.58rem .3rem; border:1px solid rgba(103,232,249,.22); border-radius:8px; color:#cdeeff; background:rgba(8,145,178,.07); font-size:.69rem; font-weight:850; text-align:center; }
 .n2-experiment-path i { color:#67e8f9; font-style:normal; }
 .nrf2-experiment-output .nrf2-kicker { font-size:.62rem; }
+.n2-experiment-status { margin:.65rem 0 0 !important; color:#8ea8d0; font-size:.7rem; line-height:1.4; }
+.nrf2-experiment-output[data-generated="false"] { border-color:rgba(251,191,36,.35); }
+.n2-experiment-compare { display:grid; grid-template-columns:1fr 1fr; gap:.65rem; margin:.9rem 0; }
+.n2-experiment-compare article { min-width:0; padding:.8rem; border:1px solid rgba(147,197,253,.15); border-radius:10px; background:rgba(4,14,30,.48); }
+.n2-experiment-compare article:last-child { border-color:rgba(103,232,249,.28); background:rgba(8,55,71,.19); }
+.n2-prediction-label { display:block; color:#8faed9; font-size:.61rem; font-weight:900; letter-spacing:.09em; line-height:1.4; }
+.n2-experiment-compare article:last-child .n2-prediction-label { color:#67e8f9; }
+.n2-experiment-compare p { margin:.45rem 0 0 !important; color:#aac0df; font-size:.77rem; line-height:1.55; }
+.n2-experiment-details { display:grid; gap:.45rem; margin-top:.75rem; }
+.n2-experiment-details .n2-experiment-readout { grid-template-columns:125px minmax(0,1fr); margin:0; align-items:start; }
+.n2-experiment-readout b { align-self:start; }
+.n2-experiment-readout span { overflow-wrap:anywhere; }
+
 
 .nrf2-context-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:.6rem; }
 .n2-context { display:flex; flex-direction:column; align-items:flex-start; min-width:0; min-height:126px; padding:.85rem; border:1px solid rgba(147,197,253,.15); border-radius:12px; color:#dce9ff; background:rgba(3,12,27,.45); text-align:left; cursor:pointer; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
