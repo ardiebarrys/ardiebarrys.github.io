@@ -128,6 +128,32 @@ nav_order: 2
     margin-top: 0.9rem;
   }
 
+  .pub-page-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text-strong) !important;
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .pub-page-link:hover {
+    border-color: var(--accent);
+    background: var(--surface-strong);
+  }
+
+  .pub-page-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
   .pub-cite,
   .pub-toggle {
     display: inline-flex;
@@ -276,6 +302,9 @@ nav_order: 2
         </p>
         {%- endif %}
         <div class="pub-tools">
+          {%- if p.doi == "10.1016/j.pbiomolbio.2026.101960" %}
+          <a class="pub-page-link" href="{{ '/research/yap-taz-signal-resolution/' | relative_url }}">View page</a>
+          {%- endif %}
           <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abstract-{{ p.doi | slugify }}" hidden>Show abstract</button>
           <button
             type="button"
