@@ -7,7 +7,7 @@ nav: false
 nav_order: 99
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-13">
+<link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261009-14">
 
 <style>
   .circuit-lab, .circuit-lab * { box-sizing: border-box; }
@@ -100,31 +100,34 @@ nav_order: 99
   @media(max-width:560px) { .circuit-flow { grid-template-columns:repeat(2,minmax(0,1fr)); } .mode-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .mode-detail { grid-template-columns:1fr; } .mode-detail h3 { grid-column:auto; } .node-detail { grid-template-columns:42px minmax(0,1fr); } .node-detail-index { width:38px;height:38px; } .circuit-actions .circuit-btn { width:100%; } }
   @media(prefers-reduced-motion:reduce) { .circuit-lab *, .circuit-lab *::before, .circuit-lab *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 
-  /* Prominent, schematic YAP/TAZ protein illustration in the hero. */
-  .circuit-hero > .protein-showcase { position:absolute !important; z-index:0 !important; top:50%; right:2.5%; width:clamp(230px,31%,370px); aspect-ratio:1; margin:0; transform:translateY(-48%); pointer-events:none; opacity:.98; filter:drop-shadow(0 0 28px rgba(34,211,238,.13)); }
+  /* Keep the mechanism graphic in its own right-hand lane, clear of hero copy. */
+  .circuit-hero > .protein-showcase { position:absolute !important; z-index:0 !important; top:50%; right:1.8%; width:clamp(275px,32%,365px); aspect-ratio:1; margin:0; transform:translateY(-48%); pointer-events:none; opacity:1; }
+  .circuit-hero > :not(.protein-showcase) { max-width:calc(100% - 320px); }
+  .circuit-hero h1 { max-width:760px; }
   .protein-showcase svg { display:block; width:100%; height:100%; overflow:visible; }
-  .protein-halo { opacity:.8; animation:protein-breathe 5.5s ease-in-out infinite; transform-origin:180px 170px; }
-  .protein-fold { transform-origin:180px 170px; animation:protein-breathe 5.5s ease-in-out infinite; }
-  .protein-ribbon-a,.protein-ribbon-b { fill:none; stroke-width:13; stroke-linecap:round; stroke-linejoin:round; filter:url(#protein-glow); }
-  .protein-ribbon-a { stroke:url(#protein-cyan); }
-  .protein-ribbon-b { stroke:url(#protein-violet); stroke-width:11; }
-  .protein-ribbon-c { fill:none; stroke:#38bdf8; stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
-  .protein-ribbon-highlight { fill:none; stroke:rgba(224,251,255,.88); stroke-width:2.1; stroke-linecap:round; stroke-dasharray:10 13; animation:protein-shimmer 4s linear infinite; }
-  .protein-orbit { fill:none; stroke:rgba(147,197,253,.4); stroke-width:1.2; stroke-dasharray:3 8; transform-origin:180px 170px; animation:protein-orbit 24s linear infinite; }
-  .protein-bead { fill:#cffafe; stroke:#67e8f9; stroke-width:1.5; transform-box:fill-box; transform-origin:center; animation:protein-breathe 3.2s ease-in-out infinite; }
-  .protein-caption { fill:#dff8ff; font:800 12px system-ui,sans-serif; letter-spacing:2px; }
-  .protein-subcaption { fill:#93b5d8; font:10px system-ui,sans-serif; letter-spacing:1.2px; }
-  @keyframes protein-orbit { to { transform:rotate(360deg); } }
-  @keyframes protein-breathe { 0%,100% { opacity:.78; } 50% { opacity:1; } }
-  @keyframes protein-shimmer { to { stroke-dashoffset:-92; } }
+  .protein-panel { fill:rgba(8,24,51,.88); stroke:rgba(147,197,253,.34); stroke-width:1.2; }
+  .protein-panel-title { fill:#dff8ff; font:800 11px system-ui,sans-serif; letter-spacing:1.1px; }
+  .protein-label { fill:#d7e7ff; font:600 10px system-ui,sans-serif; }
+  .protein-small { fill:#9fb9dc; font:9px system-ui,sans-serif; }
+  .protein-arrow { fill:none; stroke:#67e8f9; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .protein-arrow-violet { fill:none; stroke:#a5b4fc; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .protein-flow { stroke-dasharray:5 5; animation:protein-shimmer 3.5s linear infinite; }
+  .protein-node { fill:#102a52; stroke:#67e8f9; stroke-width:1.2; }
+  .protein-node-violet { fill:#201d50; stroke:#a5b4fc; stroke-width:1.2; }
+  .protein-caption { fill:#dff8ff; font:800 12px system-ui,sans-serif; letter-spacing:1.6px; }
+  .protein-subcaption { fill:#93b5d8; font:9px system-ui,sans-serif; letter-spacing:.7px; }
+  @keyframes protein-shimmer { to { stroke-dashoffset:-40; } }
   @media(max-width:760px) {
-    .circuit-hero > .protein-showcase { position:relative !important; top:auto; right:auto; display:block; width:min(100%,280px); margin:.45rem auto .65rem; transform:none; }
+    .circuit-hero > .protein-showcase { position:relative !important; top:auto; right:auto; display:block; width:min(100%,360px); margin:.5rem auto .8rem; transform:none; }
     .circuit-hero > :not(.protein-showcase) { max-width:100% !important; }
     .circuit-hero h1 { max-width:100%; }
   }
-  @media(prefers-reduced-motion:reduce) {
-    .protein-halo,.protein-fold,.protein-ribbon-highlight,.protein-orbit,.protein-bead { animation:none !important; }
+  @media(min-width:761px) and (max-width:980px) {
+    .circuit-hero > .protein-showcase { width:270px; right:1%; }
+    .circuit-hero > :not(.protein-showcase) { max-width:calc(100% - 245px); }
+    .circuit-hero h1 { font-size:clamp(2rem,4.2vw,3rem); }
   }
+  @media(prefers-reduced-motion:reduce) { .protein-flow { animation:none !important; } }
 
 </style>
 
@@ -132,29 +135,41 @@ nav_order: 99
   <div class="yap-home-row"><a class="yap-home-button" href="{{ '/' | relative_url }}"><span class="home-arrow" aria-hidden="true">←</span><span>Back to homepage</span></a></div>
   <section class="circuit-hero">
 
-    <div class="protein-showcase" role="img" aria-label="Animated conceptual illustration of folded YAP and TAZ proteins. The ribbon shapes are illustrative and do not depict an experimentally determined molecular structure.">
+    <div class="protein-showcase" role="img" aria-label="Mechanism overview: mechanical tension and actin organization can favor nuclear YAP and TAZ; when Hippo pathway kinases LATS1 and LATS2 are active, they phosphorylate YAP and TAZ, promoting cytoplasmic retention or degradation. Nuclear YAP and TAZ partner with TEAD to regulate target genes. The diagram is simplified and context-dependent.">
       <svg viewBox="0 0 360 340" aria-hidden="true" focusable="false">
         <defs>
-          <radialGradient id="protein-halo-fill"><stop offset="0" stop-color="#22d3ee" stop-opacity=".19"/><stop offset=".62" stop-color="#6366f1" stop-opacity=".08"/><stop offset="1" stop-color="#061126" stop-opacity="0"/></radialGradient>
-          <filter id="protein-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          <linearGradient id="protein-cyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cffafe"/><stop offset=".45" stop-color="#67e8f9"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
-          <linearGradient id="protein-violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset=".5" stop-color="#818cf8"/><stop offset="1" stop-color="#4f46e5"/></linearGradient>
+          <linearGradient id="protein-cyan" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cffafe"/><stop offset="1" stop-color="#0891b2"/></linearGradient>
+          <linearGradient id="protein-violet" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4b5fd"/><stop offset="1" stop-color="#6366f1"/></linearGradient>
+          <marker id="protein-arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#67e8f9"/></marker>
+          <marker id="protein-arrowhead-violet" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a5b4fc"/></marker>
         </defs>
-        <circle class="protein-halo" cx="180" cy="170" r="135" fill="url(#protein-halo-fill)"/>
-        <ellipse class="protein-orbit" cx="180" cy="170" rx="139" ry="89" transform="rotate(-27 180 170)"/>
-        <ellipse class="protein-orbit" cx="180" cy="170" rx="111" ry="128" transform="rotate(34 180 170)" opacity=".6"/>
-        <g class="protein-fold">
-          <path class="protein-ribbon-b" d="M111 115 C78 79 118 54 143 80 C165 103 129 126 145 149 C163 176 209 141 220 112 C231 84 267 92 263 119 C260 144 225 151 226 176 C227 202 265 205 255 230 C245 257 208 240 211 214 C215 190 182 183 166 205 C147 232 181 258 156 276 C131 294 105 269 124 247 C146 221 119 199 99 216 C76 236 52 212 67 190 C82 169 118 183 130 161 C143 140 124 132 111 115 Z"/>
-          <path class="protein-ribbon-a" d="M111 115 C91 91 108 70 128 78 C149 87 139 109 125 123 C105 143 125 166 150 160 C175 154 181 124 202 119 C228 112 244 137 225 154 C205 171 176 164 168 185 C159 209 188 226 211 210 C232 195 245 173 264 187 C284 201 270 228 249 229 C225 230 218 249 232 262"/>
-          <path class="protein-ribbon-c" d="M97 174 C119 151 143 184 160 200 C177 216 195 194 191 176 C187 158 206 144 223 155 C239 166 227 185 212 190"/>
-          <path class="protein-ribbon-highlight" d="M111 115 C91 91 108 70 128 78 C149 87 139 109 125 123 C105 143 125 166 150 160 C175 154 181 124 202 119 C228 112 244 137 225 154"/>
-        </g>
-        <circle class="protein-bead" cx="109" cy="112" r="5"/>
-        <circle class="protein-bead" cx="226" cy="153" r="4" style="animation-delay:-1s"/>
-        <circle class="protein-bead" cx="211" cy="210" r="5" style="animation-delay:-2s"/>
-        <circle class="protein-bead" cx="130" cy="161" r="3.5" style="animation-delay:-.7s"/>
-        <text class="protein-caption" x="180" y="310" text-anchor="middle">YAP / TAZ</text>
-        <text class="protein-subcaption" x="180" y="328" text-anchor="middle">CONCEPTUAL PROTEIN RIBBON</text>
+        <text class="protein-caption" x="180" y="18" text-anchor="middle">HOW YAP / TAZ ARE CONTROLLED</text>
+        <rect class="protein-panel" x="16" y="32" width="328" height="61" rx="12"/>
+        <text class="protein-panel-title" x="180" y="50" text-anchor="middle">MECHANICAL INPUT</text>
+        <text class="protein-label" x="180" y="66" text-anchor="middle">Matrix stiffness · cell attachments</text>
+        <text class="protein-label" x="180" y="80" text-anchor="middle">Actin organization · cellular tension</text>
+        <path class="protein-arrow protein-flow" d="M180 94 V111" marker-end="url(#protein-arrowhead)"/>
+        <rect class="protein-panel" x="16" y="116" width="328" height="57" rx="12"/>
+        <text class="protein-panel-title" x="180" y="135" text-anchor="middle">SIGNAL INTEGRATION</text>
+        <text class="protein-label" x="180" y="151" text-anchor="middle">Adhesion and cytoskeletal pathways</text>
+        <text class="protein-small" x="180" y="164" text-anchor="middle">interact with Hippo-pathway control</text>
+        <path class="protein-arrow" d="M180 174 V190 H95 V202" marker-end="url(#protein-arrowhead)"/>
+        <path class="protein-arrow-violet" d="M180 190 H265 V202" marker-end="url(#protein-arrowhead-violet)"/>
+        <rect class="protein-panel" x="12" y="207" width="162" height="74" rx="11"/>
+        <text class="protein-panel-title" x="93" y="224" text-anchor="middle">HIPPO ON</text>
+        <text class="protein-label" x="93" y="240" text-anchor="middle">LATS1/2 phosphorylate</text>
+        <text class="protein-label" x="93" y="253" text-anchor="middle">YAP / TAZ</text>
+        <text class="protein-small" x="93" y="267" text-anchor="middle">Often retained or degraded</text>
+        <rect class="protein-panel" x="186" y="207" width="162" height="74" rx="11" style="stroke:rgba(103,232,249,.65)"/>
+        <text class="protein-panel-title" x="267" y="224" text-anchor="middle">NUCLEAR YAP / TAZ</text>
+        <text class="protein-label" x="267" y="240" text-anchor="middle">Partner with TEAD</text>
+        <text class="protein-label" x="267" y="253" text-anchor="middle">inside the nucleus</text>
+        <text class="protein-small" x="267" y="267" text-anchor="middle">Regulate target genes</text>
+        <path class="protein-arrow-violet protein-flow" d="M93 282 V294 H180" marker-end="url(#protein-arrowhead-violet)"/>
+        <path class="protein-arrow protein-flow" d="M267 282 V294 H180" marker-end="url(#protein-arrowhead)"/>
+        <text class="protein-subcaption" x="180" y="310" text-anchor="middle">ACTIVATION IS NOT THE WHOLE STORY</text>
+        <text class="protein-small" x="180" y="325" text-anchor="middle">Signal termination · recovery · response to next input</text>
+        <text class="protein-small" x="180" y="337" text-anchor="middle">Simplified model; effects vary by cell context</text>
       </svg>
     </div>
     <div class="circuit-eyebrow">Interactive research framework · 2026</div>
@@ -176,10 +191,10 @@ nav_order: 99
     <div class="circuit-section-head">
       <div>
         <span class="circuit-eyebrow">The biology in plain language</span>
-        <h2>What are YAP and TAZ, and what does this paper add?</h2>
-        <p>Start with the basic biology, then separate what researchers already know from the framework this review proposes.</p>
+        <h2>How do YAP and TAZ turn mechanical cues into gene regulation?</h2>
+        <p>Follow the main control points, then distinguish established mechanisms from the signal-resolution framework proposed in this review.</p>
       </div>
-      <span class="circuit-tag">Beginner's guide</span>
+      <span class="circuit-tag">Mechanism overview</span>
     </div>
 
     <div class="plain-language-grid">
@@ -229,7 +244,7 @@ nav_order: 99
 
   <section class="circuit-section thought-card" id="dynamic-thought-experiment">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under mechanical stress</span><h2>Dynamic thought experiment: follow one cell</h2><p>Think of a cell as a tiny tent. Forces pull on its fabric, internal supports pass the pull along, and the cell must settle when the force stops. Walk through the five moments below.</p></div><span class="circuit-tag">Animated walkthrough</span></div>
-    <p class="thought-intro">You do not need to know the molecular details yet. First watch what happens over time. Then explore the circuit map and the signal lab below to connect the moving picture to the biology.</p>
+    <p class="thought-intro">Follow the signal from force detection to nuclear gene regulation, then examine how the response changes when the mechanical input stops.</p>
     <div class="thought-layout">
       <div class="cell-stage" id="thought-cell-stage" data-phase="input">
         <svg viewBox="0 0 560 330" role="img" aria-labelledby="cell-visual-title cell-visual-desc">
