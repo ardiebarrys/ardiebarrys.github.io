@@ -10,7 +10,7 @@ nav_order: 100
 <link rel="stylesheet" href="{{ '/assets/css/nrf2-redoxostat.css' | relative_url }}?v=20261009-3">
 
 <div class="nrf2-lab" id="nrf2-redoxostat-lab">
-  <a class="nrf2-home" href="{{ '/' | relative_url }}">← Back to homepage</a>
+  <a class="nrf2-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
 
   <header class="nrf2-hero">
     <div class="nrf2-eyebrow"><span class="nrf2-live-dot"></span> REDOX SIGNAL CONTROL · INTERACTIVE REVIEW</div>
