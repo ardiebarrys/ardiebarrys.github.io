@@ -6,4 +6,6 @@ importance: 2
 category: research
 ---
 
-This personal project develops a conceptual framework for interpreting cellular signaling pathways as dynamic regulatory circuits rather than static molecular switches. It now spans redox signal resolution in NRF2–KEAP1 biology, mechanochemical signal resolution in YAP/TAZ mechanotransduction, temporal signal encoding, feedback control, mechanical memory, and disease-associated failures in signal resolution. The YAP/TAZ work extends the framework from biochemical stress sensing to systems in which cells sense, integrate, decode, terminate and recover from mechanical inputs.
+This independent research framework asks how cells sense inputs, integrate signals over time, constrain pathway activity through feedback, and restore responsiveness. It connects four complementary models: YAP/TAZ mechanochemical signal resolution; NRF2–KEAP1 redox control; CYP1A1-mediated metabolic feedback in AhR signaling and immune regulation; and the proposed role of transcriptional condensates as kinetic filters for gene expression. The molecular machinery differs in each system, so the framework is a shared way to ask questions about timing, control and resolution rather than a claim that all pathways use one mechanism.
+
+[Explore the four interactive circuit models](/cellular-signaling-circuits/)
