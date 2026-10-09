@@ -261,50 +261,116 @@
   var experiments = {
     pulse: {
       title: "Stress pulse followed by withdrawal",
-      prediction: "Record NRF2 abundance and localization before, during and after a defined pulse. The circuit model predicts that decay kinetics reveal control behavior that a peak value alone cannot show.",
-      readout: "Time to baseline and response to a second pulse"
+      design: "Apply a defined oxidative or electrophilic stress pulse, verify washout, then sample baseline, activation and recovery.",
+      switch: "Prioritizes NRF2 stabilization and antioxidant-target induction during exposure.",
+      circuit: "Predicts that termination kinetics and residual output can differ even after the stressor is removed.",
+      control: "Vehicle-treated cells, washout verification and matched viability.",
+      criterion: "A distinct post-withdrawal trajectory despite a similar peak supports the circuit interpretation."
     },
     duration: {
       title: "Peak-matched short vs long exposure",
-      prediction: "Match the observed peak response while varying exposure duration. Compare residual NRF2 output and downstream consequences after both inputs have ended.",
-      readout: "Post-withdrawal area under the curve"
+      design: "Titrate short and long exposures to comparable NRF2 peaks, then follow both groups after withdrawal.",
+      switch: "If peak activation is the main driver, peak-matched groups should show broadly similar responses.",
+      circuit: "The longer exposure may leave greater residual output or slower recovery despite a matched peak.",
+      control: "Peak matching, matched sampling and viability; report both peak and cumulative exposure.",
+      criterion: "Divergent recovery in peak-matched groups supports an effect of signal history."
     },
     autophagy: {
       title: "Autophagy impairment during stress",
-      prediction: "Compare control and autophagy-impaired conditions for p62 accumulation, KEAP1 availability, NRF2 turnover and persistence after withdrawal.",
-      readout: "KEAP1 availability and NRF2 decay kinetics"
+      design: "Compare control cells with an autophagy-impaired condition across the same stress pulse and recovery period.",
+      switch: "Emphasizes NRF2 target induction during exposure; autophagy effects may be missed by an activation-only endpoint.",
+      circuit: "Predicts impaired KEAP1 clearance dynamics or renewal and prolonged NRF2 output when the p62–KEAP1 axis is disrupted.",
+      control: "Verify autophagic flux and include a rescue or independent perturbation control.",
+      criterion: "Persistence that tracks with impaired flux and altered KEAP1 control supports the feedback-failure model."
     },
     keap1: {
       title: "Slower KEAP1 renewal",
-      prediction: "Alter KEAP1 renewal and follow the return of NRF2 degradation after stress subsides. The circuit model predicts delayed termination if renewed control is rate-limiting.",
-      readout: "KEAP1 recovery vs NRF2 half-life"
+      design: "Alter KEAP1 renewal without changing the initial stress pulse, then quantify how quickly NRF2 control returns.",
+      switch: "Primarily compares NRF2 activation and target induction during the stress response.",
+      circuit: "Predicts delayed restoration of NRF2 turnover if KEAP1 renewal limits termination.",
+      control: "Matched initial activation plus a KEAP1 rescue or renewal-restoration condition.",
+      criterion: "A change in recovery kinetics rescued by restoring KEAP1 renewal supports a causal role in resolution."
     },
     repeated: {
       title: "Repeated pulses vs chronic exposure",
-      prediction: "Compare matched peak or cumulative exposure while varying the temporal pattern. Test whether recovery between pulses changes target-gene output or the response to a later challenge.",
-      readout: "Inter-pulse recovery and second-challenge response"
+      design: "Compare repeated defined pulses with continuous exposure; match peak or cumulative dose where feasible and record the exposure pattern.",
+      switch: "Emphasizes activation amplitude and target induction, potentially obscuring the recovery intervals between pulses.",
+      circuit: "Predicts that incomplete inter-pulse recovery can change the residual signal and response to a subsequent pulse.",
+      control: "Include matched vehicle, exposure verification and separate peak and cumulative-dose comparisons.",
+      criterion: "Differences associated with inter-pulse recovery support a role for temporal pattern, not just peak amplitude."
     }
   };
 
   var measurements = {
-    time: "Decay kinetics and time to baseline",
-    targets: "Target transcription vs NRF2 abundance",
-    turnover: "Ubiquitination, half-life and KEAP1 recovery",
-    redox: "Redox recovery aligned to pathway decay",
-    second: "Recovery of response amplitude and timing"
+    time: {
+      name: "NRF2 abundance and nuclear localization over time",
+      assay: "Quantify NRF2 protein and nuclear-to-cytoplasmic localization at baseline, during the pulse, and at several post-withdrawal time points.",
+      switch: "The key result is the activation peak and whether NRF2 becomes stabilized.",
+      circuit: "The key result is the trajectory after withdrawal: decay rate, residual output and time toward baseline.",
+      control: "Keep image acquisition, fractionation, normalization and time points consistent.",
+      criterion: "Compare decay half-life and post-withdrawal area under the curve, not only peak height."
+    },
+    targets: {
+      name: "NRF2 target-gene transcription over time",
+      assay: "Measure a prespecified target panel, such as NQO1, HMOX1 and GCLC, at matched time points using nascent RNA or a time-resolved reporter.",
+      switch: "The key result is the magnitude of target induction during exposure.",
+      circuit: "The key result is how quickly transcription falls after withdrawal and whether different exposure histories leave different residual output.",
+      control: "Normalize to baseline and include unstressed controls and appropriate reporter or RNA controls.",
+      criterion: "Persistent transcription after the input ends, especially with matched NRF2 peaks, supports dynamic regulation beyond peak activation."
+    },
+    turnover: {
+      name: "NRF2 ubiquitination, half-life and KEAP1 recovery",
+      assay: "Measure NRF2 ubiquitination and protein half-life alongside KEAP1 abundance or recovery, with samples spanning stress withdrawal.",
+      switch: "The key result is reduced KEAP1-mediated repression and NRF2 stabilization during stress.",
+      circuit: "The key result is whether turnover and KEAP1 control recover on schedule or remain impaired.",
+      control: "Include matched input, protein-loading controls and a control for the turnover assay itself.",
+      criterion: "A turnover defect that precedes or tracks delayed signal decay supports impaired control as a resolution mechanism."
+    },
+    redox: {
+      name: "Redox state and NADPH-linked recovery",
+      assay: "Pair the NRF2 time course with glutathione redox, NADPH/NADP+ and, where feasible, thioredoxin-system measurements.",
+      switch: "The key result is whether the stress response induces a protective antioxidant program.",
+      circuit: "The key result is whether restoration of cellular reducing capacity aligns with the return of NRF2 control.",
+      control: "Collect matched samples and use validated assays with appropriate normalization and assay controls.",
+      criterion: "A reproducible relationship between redox recovery and pathway termination supports coupling, but correlation alone does not establish causality."
+    },
+    second: {
+      name: "Response to a second matched challenge",
+      assay: "After the first exposure, allow a defined recovery interval and then apply the same second stimulus while tracking NRF2 and target responses.",
+      switch: "Compares whether the pathway activates again, typically emphasizing response magnitude.",
+      circuit: "Tests whether the prior exposure changed responsiveness, rise time, peak, decay or target induction on the second challenge.",
+      control: "Use naive cells receiving the second stimulus at the same time, plus a recovered vehicle group.",
+      criterion: "A response difference after the first signal appears to subside indicates that visible signal loss alone may not equal restored competence."
+    }
   };
 
   function buildExperiment() {
-    var perturbation = $("#n2-perturbation").value;
-    var measurement = $("#n2-measurement").value;
-    var experiment = experiments[perturbation];
+    var perturbationKey = $("#n2-perturbation").value;
+    var measurementKey = $("#n2-measurement").value;
+    var experiment = experiments[perturbationKey];
+    var measurement = measurements[measurementKey];
+    if (!experiment || !measurement) return;
+
     setText("#n2-experiment-title", experiment.title);
-    setText("#n2-experiment-prediction", experiment.prediction);
-    setText("#n2-experiment-readout", measurements[measurement]);
+    setText("#n2-experiment-prediction", experiment.design + " " + measurement.assay);
+    setText("#n2-switch-prediction", experiment.switch + " " + measurement.switch);
+    setText("#n2-circuit-prediction", experiment.circuit + " " + measurement.circuit);
+    setText("#n2-experiment-readout", measurement.name);
+    setText("#n2-experiment-control", experiment.control + " " + measurement.control);
+    setText("#n2-experiment-criterion", experiment.criterion + " " + measurement.criterion);
+    setText("#n2-experiment-status", "Prediction generated · " + experiment.title);
+    $("#n2-experiment-output").setAttribute("data-generated", "true");
   }
+
+  function markExperimentDirty() {
+    setText("#n2-experiment-status", "Selections changed. Generate an updated prediction.");
+    $("#n2-experiment-output").setAttribute("data-generated", "false");
+  }
+
   $("#n2-build-experiment").addEventListener("click", buildExperiment);
-  $("#n2-perturbation").addEventListener("change", buildExperiment);
-  $("#n2-measurement").addEventListener("change", buildExperiment);
+  $("#n2-perturbation").addEventListener("change", markExperimentDirty);
+  $("#n2-measurement").addEventListener("change", markExperimentDirty);
+  buildExperiment();
 
   var contexts = {
     adaptive: {
