@@ -1,4 +1,49 @@
 <style>
+  /* Enlarge logos inside the external profile-link buttons. */
+  .profile-links a img,
+  .social-links a img,
+  .external-links a img,
+  a.profile-link img,
+  .profile-button img,
+  .scholar-button img,
+  .research-links img {
+    width: 72% !important;
+    height: 72% !important;
+    max-width: 170px !important;
+    max-height: 48px !important;
+    object-fit: contain !important;
+    transform: scale(1.12);
+    transform-origin: center;
+  }
+
+  /* Preserve each logo's proportions while giving it more of the button area. */
+  .profile-links a,
+  .social-links a,
+  .external-links a,
+  a.profile-link,
+  .profile-button,
+  .scholar-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 600px) {
+    .profile-links a img,
+    .social-links a img,
+    .external-links a img,
+    a.profile-link img,
+    .profile-button img,
+    .scholar-button img,
+    .research-links img {
+      width: 80% !important;
+      height: 80% !important;
+      max-width: 180px !important;
+      max-height: 52px !important;
+      transform: scale(1.08);
+    }
+  }
+
   /* Site palette: dark navy and blue. Theme variables are also set in assets/css/main.scss. */
   :root {
     color-scheme: dark;
