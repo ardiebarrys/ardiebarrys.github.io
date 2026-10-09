@@ -350,4 +350,4 @@ nav_order: 99
   evidenceButtons.forEach(function (b) { b.addEventListener('click', function () { showEvidence(b.getAttribute('data-evidence')); }); });
 })();
 </script>
-<script src="{{ '/assets/js/yap-signal-experience.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/yap-signal-experience.js' | relative_url }}?v=20261009-5" defer></script>
