@@ -917,12 +917,6 @@
 }
 
 
-/* Keep the SciAudit scope points visually centered rather than hugging the card edge. */
-/* Give the SciAudit card a deliberate footer zone so the CTA does not sit against the lower edge. */
-.project-card--audit .project-card-content {
-  padding-bottom: 2.6rem;
-}
-
 .project-cta {
   display: flex;
   justify-content: center;
@@ -959,82 +953,6 @@
   .project-cta {
     margin-top: 1.4rem;
     padding-top: 1rem;
-  }
-}
-
-.project-card--audit .project-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .65rem;
-  max-width: 1080px;
-  margin: 1.55rem auto 0;
-  padding: 0;
-  list-style: none;
-}
-
-.project-card--audit .project-list li {
-  min-width: 0;
-  margin: 0;
-  padding: .8rem .95rem;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: rgba(255,255,255,.018);
-  color: var(--text-muted);
-  line-height: 1.45;
-}
-
-.project-card--audit .project-list li::before {
-  content: "•";
-  display: inline-block;
-  margin-right: .55rem;
-  color: var(--global-theme-color);
-  font-weight: 900;
-}
-
-.project-card--audit .project-list li:last-child {
-  grid-column: 1 / -1;
-  margin-top: .15rem;
-  padding: .95rem 0 .15rem;
-  border: 0;
-  background: transparent;
-  text-align: center;
-}
-
-.project-card--audit .project-list li:last-child::before {
-  display: none;
-}
-
-.project-card--audit .project-list li:last-child a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 42px;
-  padding: .65rem 1.15rem;
-  border: 1px solid rgba(147,197,253,.42);
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(37,99,235,.32), rgba(96,165,250,.14));
-  color: #ffffff !important;
-  font-weight: 800;
-  line-height: 1;
-  text-decoration: none !important;
-  box-shadow: 0 8px 22px rgba(37,99,235,.16), inset 0 1px 0 rgba(255,255,255,.08);
-  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease;
-}
-
-.project-card--audit .project-list li:last-child a:hover {
-  transform: translateY(-2px);
-  border-color: rgba(147,197,253,.72);
-  background: linear-gradient(135deg, rgba(37,99,235,.46), rgba(96,165,250,.20));
-  box-shadow: 0 11px 28px rgba(37,99,235,.22), inset 0 1px 0 rgba(255,255,255,.10);
-}
-
-@media (max-width: 700px) {
-  .project-card--audit .project-list {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card--audit .project-list li:last-child {
-    grid-column: auto;
   }
 }
 
@@ -1464,9 +1382,9 @@
             <small>{{ p.journal }} · {{ p.year }}</small>
           </li>
           {%- endfor -%}
-          <li class="project-paper" style="--paper:{{ project_papers.size }};">
-            <a href="#projects">More coming soon</a>
-            <small>Independent conceptual development</small>
+          <li class="project-paper project-paper--overview" style="--paper:{{ project_papers.size }};">
+            <a href="{{ '/cellular-signaling-circuits/' | relative_url }}">Explore the four circuit models ↗</a>
+            <small>Interactive overview · input, feedback and resolution</small>
           </li>
         </ul>
       </div>
@@ -1474,121 +1392,9 @@
   </section>
 
   <!-- ========================================================
-       03. SCIAUDIT AI
+       03. INDEPENDENT WORK
        ======================================================== -->
-  <section class="project-section">
-    <h2 class="project-section-title">AI Research Technology</h2>
 
-    <details class="project-card project-card--audit">
-      <summary>
-        <span class="project-summary-title">SciAudit AI</span>
-        <span class="project-progress">
-          <span class="project-progress-label">Stage:</span>
-          <span class="project-progress-track"><span class="project-progress-fill" style="--progress:30%;"></span></span>
-          <span class="project-progress-value">Early</span>
-        </span>
-      </summary>
-
-      <div class="project-card-content">
-        <h2>SciAudit AI</h2>
-
-        <p>
-          An independent, early-stage research technology project developing an AI-assisted scientific evidence auditing workflow for biomedical research.
-        </p>
-
-        <p>
-          The project is initially being developed and tested within my own research workflow, with a focus on literature synthesis, cross-study evidence comparison, identification of unsupported claims and methodological limitations, and structured organization of scientific evidence.
-        </p>
-
-        <section class="project-story">
-          <div class="project-story-intro">
-            <div>
-              <p class="project-story-kicker">Technology story</p>
-              <h3 class="project-story-title">From a difficult literature review to an auditable research workflow</h3>
-              <p class="project-story-caption">
-                SciAudit AI is deliberately presented as an early-stage project. The story is about the problem being engineered around, not about claimed commercial traction or capabilities that have not yet been validated.
-              </p>
-            </div>
-            <span class="project-story-status"><i></i> Early stage</span>
-          </div>
-
-          <div class="story-visual" data-theme="audit" aria-hidden="true">
-            <div class="story-orbit" style="--orbit-size:250px;--orbit-rotation:0deg;"></div>
-            <div class="story-orbit" style="--orbit-size:180px;--orbit-rotation:90deg;"></div>
-            <div class="story-core">EVIDENCE<br>AUDIT</div>
-            <span class="story-particle" style="--x:11%;--y:28%;--dx:20px;--dy:-13px;--delay:.1s;--dur:4.8s;"></span>
-            <span class="story-particle" style="--x:24%;--y:70%;--dx:-15px;--dy:-19px;--delay:.8s;--dur:5.2s;"></span>
-            <span class="story-particle" style="--x:72%;--y:25%;--dx:14px;--dy:-16px;--delay:1.1s;--dur:4.3s;"></span>
-            <span class="story-particle" style="--x:87%;--y:66%;--dx:-19px;--dy:-11px;--delay:1.8s;--dur:5.6s;"></span>
-            <span class="story-visual-label"><strong>Claim</strong> → evidence → audit trail</span>
-          </div>
-
-          <div class="project-story-track" style="--story-count:5;">
-            <article class="story-step" style="--step:0;">
-              <div class="story-node-wrap"><span class="story-node">01</span></div>
-              <span class="story-index">INPUT</span>
-              <h4>Scientific claim</h4>
-              <p>Start with a claim, conclusion, or mechanistic statement that needs evidence.</p>
-            </article>
-            <article class="story-step" style="--step:1;">
-              <div class="story-node-wrap"><span class="story-node">02</span></div>
-              <span class="story-index">RETRIEVE</span>
-              <h4>Find the evidence</h4>
-              <p>Collect the studies and sources needed to evaluate what is actually supported.</p>
-            </article>
-            <article class="story-step" style="--step:2;">
-              <div class="story-node-wrap"><span class="story-node">03</span></div>
-              <span class="story-index">COMPARE</span>
-              <h4>Compare studies</h4>
-              <p>Look for agreement, disagreement, population differences and methodological constraints.</p>
-            </article>
-            <article class="story-step" style="--step:3;">
-              <div class="story-node-wrap"><span class="story-node">04</span></div>
-              <span class="story-index">AUDIT</span>
-              <h4>Stress-test the claim</h4>
-              <p>Separate direct evidence from inference, extrapolation and unsupported interpretation.</p>
-            </article>
-            <article class="story-step" style="--step:4;">
-              <div class="story-node-wrap"><span class="story-node">05</span></div>
-              <span class="story-index">OUTPUT</span>
-              <h4>Build an audit trail</h4>
-              <p>Return a structured evidence record that makes uncertainty visible rather than hiding it.</p>
-            </article>
-          </div>
-
-          <div class="project-evidence">
-            <div class="project-evidence-box" style="--evidence-delay:900;">
-              <p class="project-evidence-label">Current scope</p>
-              <p>
-                Biomedical literature synthesis, cross-study comparison, unsupported-claim detection, methodological critique, evidence provenance and uncertainty.
-              </p>
-            </div>
-            <div class="project-evidence-box" style="--evidence-delay:1040;">
-              <p class="project-evidence-label">Status</p>
-              <p>
-                Independent and early-stage. The workflow is being developed and tested before any broader release.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <ul class="project-list">
-          <li>Biomedical scientific evidence auditing</li>
-          <li>AI-assisted literature synthesis and comparison</li>
-          <li>Evidence provenance, uncertainty and methodological critique</li>
-          <li>Initial broader-release target: approximately 2029, subject to validation and development</li>
-        </ul>
-
-        <div class="project-cta">
-          <a href="/sciaudit-ai/">Explore SciAudit AI</a>
-        </div>
-      </div>
-    </details>
-  </section>
-
-  <!-- ========================================================
-       04. INDEPENDENT WORK
-       ======================================================== -->
   <section class="project-section">
     <h2 class="project-section-title">Independent Work</h2>
 
