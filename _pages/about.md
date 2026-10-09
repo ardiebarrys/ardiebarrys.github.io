@@ -2776,6 +2776,7 @@ social: false
       {{ highlight.journal }} · {{ highlight.year }} · Conceptual signal-resolution circuit framework.
     </span>
     <a class="highlight-related-link" href="/publications/">View related publications ↗</a>
+    <a class="highlight-related-link" href="/research/yap-taz-signal-resolution/">Explore interactive circuit ↗</a>
   </figcaption>
 </figure>
 {%- endif %}
