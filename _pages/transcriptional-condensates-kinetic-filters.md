@@ -10,7 +10,7 @@ nav_order: 102
 <link rel="stylesheet" href="{{ '/assets/css/condensate-kinetic-filter.css' | relative_url }}?v=20261009-1">
 
 <div class="tkf-page" id="tkf-lab">
-  <a class="tkf-home" href="{{ '/' | relative_url }}">← Back to homepage</a>
+  <a class="tkf-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
 
   <header class="tkf-hero">
     <div class="tkf-eyebrow"><span class="tkf-live"></span> GENE REGULATION · TEMPORAL SIGNAL DECODING</div>
