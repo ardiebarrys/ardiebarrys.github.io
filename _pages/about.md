@@ -938,9 +938,9 @@ social: false
     font-weight: 750;
   }
 
-  .about-sciaudit-card {
+  .about-circuit-library-card {
     background:
-      radial-gradient(circle at 90% 10%, rgba(37,99,235,0.10), transparent 34%),
+      radial-gradient(circle at 90% 10%, rgba(103,232,249,0.11), transparent 34%),
       var(--surface);
   }
 
@@ -2963,7 +2963,7 @@ social: false
         <div class="focus-detail-grid">
           <div class="focus-detail-card"><span>Audit</span><strong>Claim → source → support</strong><p>Trace statements to the evidence that actually supports them, not merely related citations.</p></div>
           <div class="focus-detail-card"><span>Writing</span><strong>Precision over volume</strong><p>Make methods, limitations, effect direction and uncertainty visible to the reader.</p></div>
-          <div class="focus-detail-card"><span>Technology</span><strong>SciAudit AI</strong><p>Explore how evidence-critical research workflows can become structured and auditable.</p></div>
+          <div class="focus-detail-card"><span>Structured synthesis</span><strong>Claim → evidence → conclusion</strong><p>Trace claims to sources, separate evidence from inference, and make uncertainty visible.</p></div>
         </div>
         <div class="focus-output"><span>Workflow output</span><strong>Question → evidence map → calibrated conclusion → transparent communication</strong></div>
       </div>
@@ -2997,14 +2997,15 @@ social: false
     <a href="/projects/">Explore projects</a>
   </div>
 
-  <div class="about-mini-card about-sciaudit-card">
-    <span class="about-card-label">Building</span>
-    <h3>SciAudit AI</h3>
+  <div class="about-mini-card about-circuit-library-card">
+    <span class="about-card-label">Four connected papers</span>
+    <h3>Dynamic Circuit Models</h3>
     <p>
-      An early-stage AI-assisted scientific evidence auditing project,
-      initially developed from my own biomedical research workflow.
+      Explore YAP/TAZ mechanotransduction, NRF2–KEAP1 redox control,
+      CYP1A1-mediated ligand feedback, and the proposed temporal filtering
+      role of transcriptional condensates.
     </p>
-    <a href="/sciaudit-ai/">Explore SciAudit AI</a>
+    <a href="/cellular-signaling-circuits/">Explore the framework</a>
   </div>
 
 </div>
@@ -3077,9 +3078,9 @@ social: false
     </article>
     <article class="timeline-item">
       <span class="timeline-dot"></span>
-      <span class="timeline-year">2025 →</span>
-      <h3>SciAudit AI</h3>
-      <p>Turning evidence-critical research workflows into an auditable AI-assisted system.</p>
+      <span class="timeline-year">Ongoing</span>
+      <h3>Interactive circuit models</h3>
+      <p>Translating four conceptual frameworks into visual research pages with dynamic figures and testable predictions.</p>
     </article>
   </div>
 </div>
