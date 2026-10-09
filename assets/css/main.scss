@@ -514,14 +514,14 @@ header:has(> #navbar) {
 
 /* Keep the active-state treatment consistent while retaining each project's
    own typography. */
-#navbar .nav-sciaudit.active > .nav-link,
+#navbar .nav-circuit-framework.active > .nav-link,
 #navbar .nav-deep-numbers.active > .nav-link {
   font-weight: 850 !important;
 }
 
 /* On narrow phones, preserve the distinction without making the labels crowded. */
 @media (max-width: 575.98px) {
-  #navbar .nav-sciaudit > .nav-link {
+  #navbar .nav-circuit-framework > .nav-link {
     font-size: .84rem !important;
   }
 
