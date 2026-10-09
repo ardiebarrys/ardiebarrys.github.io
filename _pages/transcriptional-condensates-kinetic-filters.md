@@ -7,7 +7,7 @@ nav: false
 nav_order: 102
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/condensate-kinetic-filter.css' | relative_url }}?v=20261009-1">
+<link rel="stylesheet" href="{{ '/assets/css/condensate-kinetic-filter.css' | relative_url }}?v=20261009-2">
 
 <div class="tkf-page" id="tkf-lab">
   <a class="tkf-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
@@ -120,13 +120,19 @@ nav_order: 102
 
   <section class="tkf-panel">
     <div class="tkf-section-head"><div><span class="tkf-kicker">03 / TRANSCRIPTIONAL BURSTING</span><h2>From condensate kinetics to bursts</h2><p>Explore the model's predicted links between assembly and transcriptional output.</p></div><span class="tkf-tag">Burst explorer</span></div>
-    <div class="tkf-burst-controls">
-      <label class="tkf-range-label" for="tkf-lifetime"><span>Condensate lifetime</span><output id="tkf-lifetime-value">60%</output></label>
-      <input id="tkf-lifetime" type="range" min="5" max="100" step="5" value="60">
-      <label class="tkf-range-label" for="tkf-density"><span>Local factor enrichment</span><output id="tkf-density-value">65%</output></label>
-      <input id="tkf-density" type="range" min="5" max="100" step="5" value="65">
-      <label class="tkf-range-label" for="tkf-exchange"><span>Molecular exchange</span><output id="tkf-exchange-value">70%</output></label>
-      <input id="tkf-exchange" type="range" min="5" max="100" step="5" value="70">
+    <div class="tkf-burst-controls" aria-label="Adjust condensate properties">
+      <div class="tkf-burst-control">
+        <label class="tkf-range-label" for="tkf-lifetime"><span>Condensate lifetime</span><output id="tkf-lifetime-value">60%</output></label>
+        <input id="tkf-lifetime" type="range" min="5" max="100" step="5" value="60">
+      </div>
+      <div class="tkf-burst-control">
+        <label class="tkf-range-label" for="tkf-density"><span>Local factor enrichment</span><output id="tkf-density-value">65%</output></label>
+        <input id="tkf-density" type="range" min="5" max="100" step="5" value="65">
+      </div>
+      <div class="tkf-burst-control">
+        <label class="tkf-range-label" for="tkf-exchange"><span>Molecular exchange</span><output id="tkf-exchange-value">70%</output></label>
+        <input id="tkf-exchange" type="range" min="5" max="100" step="5" value="70">
+      </div>
     </div>
     <div class="tkf-burst-visual">
       <svg id="tkf-burst-chart" viewBox="0 0 720 245" role="img" aria-label="Predicted transcription burst pattern associated with selected condensate properties">
