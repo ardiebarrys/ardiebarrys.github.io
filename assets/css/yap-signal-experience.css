@@ -246,3 +246,9 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cel
   justify-content: center !important;
   margin: 0 !important;
 }
+
+/* Additional theme title-banner variants, scoped to this research page. */
+body:has(#yap-circuit-lab) .post-header,
+body:has(#yap-circuit-lab) .post-header * {
+  display: none !important;
+}
