@@ -311,6 +311,9 @@ nav_order: 2
           {%- if p.doi == "10.1007/s00204-026-04384-1" %}
           <a class="pub-page-link" href="{{ '/research/cyp1a1-metabolic-feedback/' | relative_url }}">View page</a>
           {%- endif %}
+          {%- if p.doi == "10.1016/j.genrep.2026.102599" %}
+          <a class="pub-page-link" href="{{ '/research/transcriptional-condensates-kinetic-filters/' | relative_url }}">View page</a>
+          {%- endif %}
           <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abstract-{{ p.doi | slugify }}" hidden>Show abstract</button>
           <button
             type="button"
