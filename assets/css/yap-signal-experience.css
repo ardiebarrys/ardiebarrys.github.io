@@ -273,19 +273,13 @@ body:has(#yap-circuit-lab) .page-header-container {
   display: none !important;
 }
 
-/* The research page uses its own wrapper layout, so no theme title banner or
-   header shadow should occupy space above the custom research interface. */
+/* Hide only the theme-generated title banner. The shared site navbar stays visible. */
 html:has(#yap-circuit-lab),
 body:has(#yap-circuit-lab) {
   margin-top: 0 !important;
   padding-top: 0 !important;
   border-top: 0 !important;
 }
-body:has(#yap-circuit-lab) > header,
-body:has(#yap-circuit-lab) > header::before,
-body:has(#yap-circuit-lab) > header::after,
-body:has(#yap-circuit-lab) header,
-body:has(#yap-circuit-lab) #navbar,
 body:has(#yap-circuit-lab) .post-header,
 body:has(#yap-circuit-lab) .page-header,
 body:has(#yap-circuit-lab) .header-section,
@@ -312,9 +306,7 @@ body:has(#yap-circuit-lab) main > .container-fluid {
 }
 
 
-/* FINAL PAGE-LOCAL OVERRIDE
-   This stylesheet is only loaded by the YAP/TAZ research page. Do not depend
-   on :has() or on the theme's Liquid layout matching to remove the top band. */
+/* Final page-local layout fixes. Preserve the shared navbar above the research content. */
 html,
 body {
   margin: 0 !important;
@@ -322,17 +314,10 @@ body {
   border: 0 !important;
   scroll-padding-top: 0 !important;
 }
-body > header,
-body > nav,
-body > .navbar,
-body header,
-body #navbar,
 body #progress,
 body progress,
 body .progress,
 body .progress-bar,
-body .navbar-wrapper,
-body .header-wrapper,
 body .post-header,
 body .page-header,
 body .header-section,
@@ -379,9 +364,9 @@ html:after {
 }
 
 /* Structural top-of-page fix:
-   - remove theme-generated navbar spacer rows on this page;
-   - put the home link in normal flow so it aligns with the hero card;
-   - let the research page start at the top without a reserved navbar band. */
+   - retain the site's shared navigation bar;
+   - remove duplicate theme spacers;
+   - put the home link in normal flow below the navbar. */
 body:has(#yap-circuit-lab) .navbar-spacer,
 body:has(#yap-circuit-lab) .navbar-offset,
 body:has(#yap-circuit-lab) .navbar-placeholder,
