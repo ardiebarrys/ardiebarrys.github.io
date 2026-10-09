@@ -455,6 +455,8 @@ body:has(#nrf2-redoxostat-lab) .page-header {
   .nrf2-failure-layout { grid-template-columns:minmax(0,1fr); }
   .n2-failure-btn { padding:.6rem; }
   .nrf2-compare-grid { grid-template-columns:1fr; }
+  .n2-experiment-compare { grid-template-columns:1fr; }
+  .n2-experiment-details .n2-experiment-readout { grid-template-columns:1fr; }
   .n2-experiment-path span { font-size:.61rem; }
   .nrf2-context-grid { grid-template-columns:1fr 1fr; gap:.45rem; }
   .n2-context { min-height:110px; padding:.65rem; }
