@@ -391,10 +391,10 @@ html:after {
   box-shadow: none !important;
 }
 
-/* Final placement override: keep the home control in the top band on all
-   breakpoints, while reserving its original vertical space for the hero. */
+/* Final placement override: keep the home control in the top band without
+   reserving a second, oversized blank row above the research content. */
 body:has(#yap-circuit-lab) #yap-circuit-lab {
-  padding-top: 5.75rem !important;
+  padding-top: 1.25rem !important;
 }
 body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
   position: fixed !important;
@@ -406,7 +406,7 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
 }
 @media (max-width: 560px) {
   body:has(#yap-circuit-lab) #yap-circuit-lab {
-    padding-top: 5.25rem !important;
+    padding-top: 1.1rem !important;
   }
   body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
     left: .5rem !important;
