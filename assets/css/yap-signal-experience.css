@@ -257,3 +257,16 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cel
   justify-content: center !important;
   margin: 0 !important;
 }
+
+/* Additional theme title-banner variants, scoped to this research page. */
+body:has(#yap-circuit-lab) .post-header,
+body:has(#yap-circuit-lab) .post-header *,
+body:has(#yap-circuit-lab) .page-header,
+body:has(#yap-circuit-lab) .page-header *,
+body:has(#yap-circuit-lab) .header-section,
+body:has(#yap-circuit-lab) .page-title-wrapper,
+body:has(#yap-circuit-lab) .post-title-wrapper,
+body:has(#yap-circuit-lab) .post-header-container,
+body:has(#yap-circuit-lab) .page-header-container {
+  display: none !important;
+}
