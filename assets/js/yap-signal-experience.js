@@ -7,12 +7,12 @@
   // Remove theme-generated title banners that sit before the page's own content.
   function hideGeneratedPageHeading() {
     var node = root;
-    var titleHints = /YAP\\/TAZ Signal-Resolution Circuit|An interactive exploration of the proposed YAP\\/TAZ mechanochemical signal-resolution circuit/i;
+    var titleHints = /YAP\/TAZ Signal-Resolution Circuit|An interactive exploration of the proposed YAP\/TAZ mechanochemical signal-resolution circuit/i;
     while (node && node.parentElement) {
       var sibling = node.previousElementSibling;
       while (sibling) {
         var previous = sibling.previousElementSibling;
-        var text = (sibling.innerText || sibling.textContent || '').replace(/\\s+/g, ' ').trim();
+        var text = (sibling.innerText || sibling.textContent || '').replace(/\s+/g, ' ').trim();
         var classes = typeof sibling.className === 'string' ? sibling.className : '';
         var isThemeHeader = /post-header|page-header|post-title|page-title|page-heading|header-section|post-description/i.test(classes);
         if (isThemeHeader || titleHints.test(text)) {
