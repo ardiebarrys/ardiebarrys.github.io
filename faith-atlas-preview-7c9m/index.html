@@ -148,6 +148,36 @@ body.modal-open{overflow:hidden}
 .timeline-scroll:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 @media(max-width:680px){.timeline-scroll{padding-left:14px;padding-right:14px}.timeline-panel .timeline-tools{padding-left:0;padding-right:0}}
 
+
+/* Timeline is the main canvas: taller, larger and easier to scan */
+.timeline-canvas{height:640px;min-width:3600px}
+.timeline-canvas .era-strip{top:204px;height:44px}
+.timeline-canvas .rail-line{top:310px;height:3px}
+.timeline-canvas .rail-line:before,.timeline-canvas .rail-line:after{top:-4px;width:11px;height:11px}
+.timeline-canvas .year-tick{top:295px;height:34px}
+.timeline-canvas .year-tick span{top:29px;font-size:11px}
+.timeline-canvas .saint-bubble{top:15px;width:104px;margin-left:-52px;min-height:170px;padding:0 3px}
+.timeline-canvas .saint-bubble.lower{top:412px}
+.timeline-canvas .portrait{width:76px;height:76px;font-size:23px}
+.timeline-canvas .portrait:before{inset:-6px}
+.timeline-canvas .portrait:after{width:12px;height:12px;top:-5px;right:1px}
+.timeline-canvas .bubble-name{font-size:11px;line-height:1.3;max-width:101px;margin-top:12px}
+.timeline-canvas .bubble-date{font-size:9.5px;margin-top:5px}
+.timeline-canvas .saint-bubble.lower .portrait:after{top:auto;bottom:-4px;right:2px}
+.timeline-scroll{min-height:660px}
+@media(max-width:680px){
+ .timeline-canvas{height:590px;min-width:3600px}
+ .timeline-canvas .era-strip{top:185px;height:42px}
+ .timeline-canvas .rail-line{top:280px}
+ .timeline-canvas .year-tick{top:265px}
+ .timeline-canvas .saint-bubble{top:12px;width:90px;margin-left:-45px;min-height:155px}
+ .timeline-canvas .saint-bubble.lower{top:382px}
+ .timeline-canvas .portrait{width:64px;height:64px;font-size:20px}
+ .timeline-canvas .bubble-name{font-size:10px;max-width:88px;margin-top:10px}
+ .timeline-canvas .bubble-date{font-size:9px}
+ .timeline-scroll{min-height:610px}
+}
+
 @media(max-width:1050px){.people-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding-top:58px}.page-shell{padding-inline:24px}}
 @media(max-width:680px){.page-shell{padding-inline:15px}.topbar{padding:18px 0}.brand-mark{width:34px;height:34px}.brand-label{font-size:9px}.brand-sub{font-size:10px}.preview-status{font-size:8px;padding:7px 9px}.hero{padding:47px 0 28px}h1{font-size:48px;line-height:1.02}.hero-copy{font-size:15px}.stat-row{gap:8px;margin-bottom:28px}.stat{padding:13px 12px}.stat strong{font-size:23px}.stat span{font-size:10px}.section-heading h2{font-size:27px}.timeline-panel{padding:16px 13px 14px;border-radius:18px}.timeline-tools{align-items:flex-start}.timeline-canvas{min-width:3600px}.people-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.person-card{padding:10px 9px;gap:9px}.portrait-small{width:36px;height:36px;flex-basis:36px;font-size:12px}.person-card-name{font-size:11px}.person-card-date{font-size:9px}.people-toolbar{align-items:stretch}.searchbox{max-width:none}.select-wrap{justify-content:space-between}.select-wrap select{flex:1;max-width:240px}.closing-note{margin-top:40px}.footer-right{text-align:left}.modal-backdrop{padding:10px}.profile-modal{padding:21px;border-radius:20px}.modal-title{font-size:28px}.modal-portrait{width:70px;height:70px;flex-basis:70px;font-size:22px}.modal-header{gap:13px}.modal-date{font-size:11px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
