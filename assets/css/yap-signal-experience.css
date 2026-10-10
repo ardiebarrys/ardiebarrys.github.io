@@ -267,7 +267,7 @@ body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cel
   margin: 0 !important;
 }
 
-/* Additional theme title-banner variants, scoped to this research page. */
+
 body:has(#yap-circuit-lab) .post-header,
 body:has(#yap-circuit-lab) .post-header *,
 body:has(#yap-circuit-lab) .page-header,
@@ -313,7 +313,6 @@ body:has(#yap-circuit-lab) main > .container-fluid {
 }
 
 
-/* Final page-local layout fixes. Preserve the shared navbar above the research content. */
 html,
 body {
   margin: 0 !important;
@@ -370,10 +369,7 @@ html:after {
   box-shadow: none !important;
 }
 
-/* Structural top-of-page fix:
-   - retain the site's shared navigation bar;
-   - remove duplicate theme spacers;
-   - put the home link in normal flow below the navbar. */
+
 body:has(#yap-circuit-lab) .navbar-spacer,
 body:has(#yap-circuit-lab) .navbar-offset,
 body:has(#yap-circuit-lab) .navbar-placeholder,
@@ -693,7 +689,6 @@ body:has(#yap-circuit-lab) #yap-circuit-lab input:focus-visible {
 }
 
 
-/* Final width normalization: no stale 1180px cap or container-dependent shrinkage. */
 html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) > main,
 html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main,
 html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main > .container,
