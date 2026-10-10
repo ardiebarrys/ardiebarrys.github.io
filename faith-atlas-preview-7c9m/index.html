@@ -87,7 +87,7 @@ h1 em{font-weight:400;color:var(--gold-bright)}
 .legend{display:flex;gap:12px;flex-wrap:wrap}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{width:7px;height:7px;border-radius:50%;display:inline-block;background:var(--gold)}
-.timeline-disclaimer{color:#85948a}
+.timeline-disclaimer{display:none}.single-note{font-size:10px;line-height:1.5;color:#74847a;font-weight:400;letter-spacing:.01em}.closing-note{justify-content:center;padding-top:16px;margin-top:34px}.closing-note .single-note{text-align:center;max-width:850px}
 .intro-origin{margin:28px 0 38px;display:flex;align-items:start;gap:15px;border-left:2px solid var(--gold);padding:5px 0 5px 18px;max-width:850px}
 .intro-origin strong{color:var(--gold-bright);font-size:12px;letter-spacing:.04em}
 .intro-origin p{margin:3px 0 0;color:var(--muted);font-size:12px}
@@ -197,7 +197,7 @@ body.modal-open{overflow:hidden}
     <div class="eyebrow">Salvation history · Made explorable</div>
     <h1>From the beginning.<br>To the saints of <em>today.</em></h1>
     <p class="hero-copy">One connected journey through the Catholic story: biblical origins, the patriarchs, Christ and the apostles, the early Church, and the saints whose lives still shape the world.</p>
-    <div class="hero-meta"><span class="meta-pill"><b>One journey</b> · Every era</span><span class="meta-pill"><b>Tap any bubble</b> · Open a profile</span><span class="meta-pill"><b>Scripture + history</b> · Clearly distinguished</span></div>
+    <div class="hero-meta"><span class="meta-pill"><b>One journey</b> · Every era</span><span class="meta-pill"><b>Tap any bubble</b> · Open a profile</span><span class="meta-pill"><b>Scripture + Church history</b> · Connected across the ages</span></div>
   </section>
   <section class="stat-row" aria-label="Preview contents">
     <div class="stat"><strong id="statPeople">34</strong><span>Featured people in this concept</span></div>
@@ -245,10 +245,10 @@ body.modal-open{overflow:hidden}
           <div id="bubbleLayer" aria-label="Clickable people on the timeline"></div>
         </div>
       </div>
-      <div class="timeline-foot"><div class="legend"><span><i></i> Featured profile</span><span><i style="background:#a7d1ba"></i> Historical person</span><span><i style="background:#9bb8db"></i> Biblical tradition</span></div><span class="timeline-disclaimer">Era spacing is illustrative, not a mathematically scaled chronology.</span></div>
+      <div class="timeline-foot"><div class="legend"><span><i></i> Featured profile</span><span><i style="background:#a7d1ba"></i> Historical person</span><span><i style="background:#9bb8db"></i> Biblical tradition</span></div></div>
     </div>
   </section>
-  <div class="intro-origin"><span style="color:var(--gold);font-size:19px;line-height:1">✧</span><div><strong>A note on the starting point</strong><p>In Catholic understanding, Adam and Eve belong to the account of humanity's origins in Genesis. Their placement marks the beginning of the narrative, not a claim that historians have established a calendar date for them. Later profiles distinguish traditional dates from documented dates.</p></div></div>
+  
   <section class="people-section" aria-labelledby="peopleTitle">
     <div class="section-heading"><div><div class="section-kicker">02 / The people</div><h2 id="peopleTitle">Discover the lives</h2><p>Search by name, period, role, or place. Open any profile for context.</p></div></div>
     <div class="people-toolbar">
@@ -260,10 +260,7 @@ body.modal-open{overflow:hidden}
     <div class="no-results" id="noResults">No profiles match that search. Try a name, an era, or a related term.</div>
   </section>
 </main>
-<footer class="closing-note">
-  <div><strong>Catholic Saints History · Concept Preview</strong>Built as a design experiment before domain purchase. Profile coverage is illustrative, not exhaustive.</div>
-  <div class="footer-right"><strong>Accuracy before certainty</strong>Dates and statuses should be checked against Scripture, historical scholarship, and official Catholic sources as the database expands.</div>
-</footer>
+<footer class="closing-note"><small class="single-note">Biblical and traditional dates are identified where precise historical dates are not established.</small></footer>
 </div>
 <div class="modal-backdrop" id="profileBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <article class="profile-modal">
@@ -275,7 +272,7 @@ body.modal-open{overflow:hidden}
     <div class="modal-body">
       <p id="modalBio"></p>
       <div class="detail-grid"><div class="detail-box"><span class="detail-label">Place in the story</span><span class="detail-value" id="modalRole"></span></div><div class="detail-box"><span class="detail-label">Recognition / date note</span><span class="detail-value" id="modalStatus"></span></div><div class="detail-box"><span class="detail-label">Related people</span><span class="detail-value" id="modalRelations"></span></div><div class="detail-box"><span class="detail-label">Key source pathway</span><span class="detail-value" id="modalSource"></span></div></div>
-      <div class="source-note" id="modalNote"></div>
+      
       <div class="modal-links"><a class="modal-link" id="modalBible" href="https://www.vatican.va/" target="_blank" rel="noopener noreferrer">Vatican resources ↗</a><button class="modal-link" id="copyProfile" type="button">Copy profile summary</button></div>
     </div>
   </article>
@@ -336,7 +333,7 @@ function makeCard(p){var btn=document.createElement("button");btn.type="button";
 function renderCards(){var list=people.filter(matches);if(sortMode==="date"){list.sort(function(a,b){return (a.year===null?-9999:a.year)-(b.year===null?-9999:b.year);});}else if(sortMode==="name"){list.sort(function(a,b){return a.name.localeCompare(b.name);});}else{list=storySort(list);}grid.innerHTML="";list.forEach(function(p){grid.appendChild(makeCard(p));});count.textContent=list.length+" profile"+(list.length===1?"":"s")+" shown";noResults.classList.toggle("show",list.length===0);applyBubbleVisibility();document.getElementById("statPeople").textContent=people.length;}
 function applyBubbleVisibility(){Array.prototype.forEach.call(bubbleLayer.children,function(b){var p=people.find(function(x){return x.id===b.dataset.id;});b.hidden=!p||!matches(p);});}
 function applyFilters(){applyBubbleVisibility();renderCards();}
-function openProfile(id){var p=people.find(function(x){return x.id===id;});if(!p)return;activePerson=p;var c=getColors(p),portrait=document.getElementById("modalPortrait");portrait.style.setProperty("--avatar-a",c[0]);portrait.style.setProperty("--avatar-b",c[1]);portrait.textContent=getInitials(p);document.getElementById("modalEra").textContent=(eraNames[p.era]||"Featured profile")+" · Featured profile";document.getElementById("modalTitle").textContent=p.name;document.getElementById("modalDate").textContent=p.life;document.getElementById("modalBio").textContent=p.bio;document.getElementById("modalRole").textContent=p.role;document.getElementById("modalStatus").textContent=p.status;document.getElementById("modalRelations").textContent=p.relations;document.getElementById("modalSource").textContent=p.source;document.getElementById("modalNote").textContent=p.note;document.getElementById("profileBackdrop").classList.add("open");document.body.classList.add("modal-open");document.getElementById("modalClose").focus();}
+function openProfile(id){var p=people.find(function(x){return x.id===id;});if(!p)return;activePerson=p;var c=getColors(p),portrait=document.getElementById("modalPortrait");portrait.style.setProperty("--avatar-a",c[0]);portrait.style.setProperty("--avatar-b",c[1]);portrait.textContent=getInitials(p);document.getElementById("modalEra").textContent=(eraNames[p.era]||"Featured profile")+" · Featured profile";document.getElementById("modalTitle").textContent=p.name;document.getElementById("modalDate").textContent=p.life;document.getElementById("modalBio").textContent=p.bio;document.getElementById("modalRole").textContent=p.role;document.getElementById("modalStatus").textContent=p.status;document.getElementById("modalRelations").textContent=p.relations;document.getElementById("modalSource").textContent=p.source;document.getElementById("profileBackdrop").classList.add("open");document.body.classList.add("modal-open");document.getElementById("modalClose").focus();}
 function closeProfile(){document.getElementById("profileBackdrop").classList.remove("open");document.body.classList.remove("modal-open");activePerson=null;}
 document.getElementById("eraFilters").addEventListener("click",function(e){var b=e.target.closest("button[data-era]");if(!b)return;currentEra=b.dataset.era;Array.prototype.forEach.call(document.querySelectorAll(".filter-btn"),function(btn){btn.classList.toggle("active",btn===b);});applyFilters();});
 searchInput.addEventListener("input",function(){query=searchInput.value;applyFilters();});
