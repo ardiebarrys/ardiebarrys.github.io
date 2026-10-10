@@ -190,7 +190,7 @@ body:has(#tkf-lab) .post-header,body:has(#tkf-lab) .page-header { display:none !
 }
 @media(prefers-reduced-motion:reduce) { .tkf-page *, .tkf-page *::before, .tkf-page *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 
-/* Normalize each burst-explorer parameter as a paired control. */
+
 @media(min-width:681px) and (max-width:920px) {
   .tkf-burst-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .tkf-burst-control { grid-template-rows:minmax(2.4rem,auto) auto; }
