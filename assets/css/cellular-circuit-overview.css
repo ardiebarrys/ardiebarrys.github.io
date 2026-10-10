@@ -158,7 +158,6 @@ body:has(#scf-overview) .post-header,body:has(#scf-overview) .page-header{displa
 @media(prefers-reduced-motion:reduce){.scf-page *,.scf-page *::before,.scf-page *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 
-/* Readability pass: lift secondary labels while preserving the compact visual hierarchy. */
 .scf-eyebrow,.scf-kicker{font-size:.76rem;letter-spacing:.115em;line-height:1.55}
 .scf-hero-footer{font-size:.68rem;letter-spacing:.075em;line-height:1.55}
 .scf-diagram-node text{font-size:9.5px}
@@ -214,7 +213,6 @@ body:has(#scf-overview) .post-header,body:has(#scf-overview) .page-header{displa
 }
 
 
-/* Scale up the overview's central circuit illustration. */
 @media(min-width:921px){
   .scf-hero{
     grid-template-columns:minmax(0,1.04fr) minmax(390px,.96fr);
