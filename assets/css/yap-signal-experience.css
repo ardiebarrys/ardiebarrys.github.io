@@ -1,777 +1,1325 @@
-/* YAP/TAZ interactive research page: page-wide visual system */
-html:has(#yap-circuit-lab), body:has(#yap-circuit-lab) {
-  min-height: 100%;
-  background: #061126 !important;
-}
-body:has(#yap-circuit-lab) {
-  color: #e8f1ff !important;
-  background:
-    radial-gradient(ellipse at 82% 9%, rgba(38,82,150,.34), transparent 34rem),
-    radial-gradient(ellipse at 5% 54%, rgba(13,91,128,.18), transparent 30rem),
-    linear-gradient(145deg,#0a1934 0%,#061126 46%,#050d1d 100%) fixed !important;
-  background-color: #061126 !important;
-}
-body:has(#yap-circuit-lab)::before {
-  content: "";
-  position: fixed;
-  z-index: 0;
-  inset: -18vmax;
-  pointer-events: none;
-  opacity: .48;
-  background:
-    repeating-radial-gradient(ellipse at 73% 34%, transparent 0 54px, rgba(108,153,220,.105) 55px 57px, transparent 58px 105px),
-    radial-gradient(ellipse at 72% 33%, rgba(33,79,143,.15), transparent 42%);
-  animation: yap-background-drift 90s linear infinite;
-  transform-origin: center;
-}
-body:has(#yap-circuit-lab) > main,
-body:has(#yap-circuit-lab) main,
-body:has(#yap-circuit-lab) main > .container,
-body:has(#yap-circuit-lab) .post,
-body:has(#yap-circuit-lab) .page {
-  position: relative;
-  z-index: 1;
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  color: #e8f1ff !important;
-}
-/* Use the same outer Bootstrap content wrapper as the other three circuit pages. */
-body:has(#yap-circuit-lab) > .container,
-body:has(#yap-circuit-lab) .container {
-  width:100% !important;
-  max-width:none !important;
-  background:transparent !important;
-}
-body:has(#yap-circuit-lab) footer,
-body:has(#yap-circuit-lab) .fixed-bottom {
-  display: none !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab {
-  width: min(100% - 2rem, 1280px);
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem 0 3rem;
+/* YAP/TAZ signal-resolution circuit: interactive research page */
+.circuit-lab,
+.circuit-lab * {
+  box-sizing: border-box;
 }
 
-/* Keep the homepage link in normal flow below the shared fixed navbar. */
-body:has(#yap-circuit-lab) .yap-home-row {
-  position: static !important;
-  margin: 0 0 .8rem !important;
-  padding: 0 !important;
+.circuit-lab {
+  --ink: #e8f1ff;
+  --muted: #b0c2df;
+  --soft: #c4d3ea;
+  --line: rgba(147, 197, 253, 0.2);
+  --cyan: #67e8f9;
+  --blue: #60a5fa;
+  --label: #93c5fd;
+  width: 100%;
+  margin: 0 0 3rem;
+  color: var(--ink);
 }
-body:has(#yap-circuit-lab) .yap-home-button {
-  box-shadow: 0 5px 18px rgba(0,0,0,.22);
+
+.circuit-lab p {
+  text-align: left;
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero {
-  background:
-    repeating-radial-gradient(ellipse at 86% 37%, transparent 0 36px, rgba(147,197,253,.09) 37px 39px, transparent 40px 70px),
-    radial-gradient(circle at 80% 15%,rgba(59,130,246,.24),transparent 30%),
-    radial-gradient(circle at 12% 90%,rgba(34,211,238,.09),transparent 30%),
-    linear-gradient(145deg,rgba(12,29,61,.88),rgba(6,17,38,.86) 72%);
-  border-color: rgba(147,197,253,.14);
+
+.circuit-lab a:focus-visible,
+.circuit-lab button:focus-visible,
+.circuit-lab input:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {
-  background: linear-gradient(145deg,rgba(13,29,58,.78),rgba(7,17,36,.82));
-  backdrop-filter: blur(8px);
-}
-.yap-home-row { display:flex; justify-content:flex-start; margin:0 0 .8rem; }
+
+/* ---------- Back link ---------- */
 .yap-home-button {
-  display:inline-flex; align-items:center; gap:.6rem; min-height:42px;
-  padding:.65rem .95rem; border:1px solid rgba(147,197,253,.3); border-radius:999px;
-  color:#dbeafe !important; background:rgba(12,29,61,.7); text-decoration:none !important;
-  font-size:.82rem; font-weight:800; box-shadow:0 8px 22px rgba(0,0,0,.13);
-  transition:transform .2s ease,border-color .2s ease,background .2s ease;
-}
-.yap-home-button:hover { transform:translateY(-2px); border-color:#93c5fd; background:rgba(37,99,235,.26); }
-.yap-home-button .home-arrow { font-size:1.05rem; color:#93c5fd; }
-.thought-card { position:relative; overflow:hidden; }
-.thought-intro { max-width:790px; color:#a9bddc; line-height:1.7; font-size:.94rem; }
-.thought-layout { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(270px,.85fr); gap:1rem; align-items:stretch; }
-.cell-stage { position:relative; min-width:0; border:1px solid rgba(147,197,253,.18); border-radius:16px; overflow:hidden; background:radial-gradient(ellipse at 50% 45%,rgba(22,62,112,.35),rgba(3,12,28,.72)); }
-.cell-stage svg { display:block; width:100%; height:auto; min-height:240px; }
-.cell-caption { display:flex; flex-wrap:wrap; gap:.45rem; padding:.7rem .8rem; border-top:1px solid rgba(147,197,253,.13); color:#8ea7cb; font-size:.7rem; }
-.cell-caption span { display:inline-flex; align-items:center; gap:.35rem; }
-.legend-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:#67e8f9; }
-.legend-dot.force { background:#fbbf24; }
-.legend-dot.nucleus { background:#a5b4fc; }
-.thought-side { display:flex; flex-direction:column; gap:.7rem; }
-.thought-step { padding:1rem; border:1px solid rgba(147,197,253,.18); border-radius:13px; background:rgba(3,12,28,.45); }
-.thought-step .thought-count { color:#67e8f9; font-size:.66rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
-.thought-step h3 { margin:.4rem 0 .35rem; color:#e5efff; font-size:1.08rem; }
-.thought-step p { margin:0; color:#a9bddc; font-size:.82rem; line-height:1.65; }
-.thought-status { display:flex; align-items:center; gap:.55rem; margin-top:.65rem; color:#bfdbfe; font-size:.72rem; }
-.thought-status::before { content:""; width:8px; height:8px; border-radius:50%; background:#60a5fa; box-shadow:0 0 0 4px rgba(96,165,250,.12); }
-.thought-controls { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.8rem; }
-.thought-controls .circuit-btn { flex:1 1 auto; }
-.thought-progress { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.35rem; margin-top:.85rem; }
-.thought-progress button { min-height:34px; padding:.3rem; border:1px solid rgba(147,197,253,.17); border-radius:8px; color:#8ea7cb; background:rgba(15,35,70,.5); font-size:.67rem; cursor:pointer; }
-.thought-progress button[aria-current="step"] { color:#f0f7ff; border-color:#60a5fa; background:rgba(37,99,235,.25); }
-.cell-membrane { fill:rgba(59,130,246,.055); stroke:rgba(147,197,253,.65); stroke-width:2.2; }
-.cell-actin { fill:none; stroke:rgba(103,232,249,.48); stroke-width:2; stroke-linecap:round; }
-.cell-nucleus { fill:rgba(129,140,248,.13); stroke:#a5b4fc; stroke-width:2; }
-.cell-nucleolus { fill:rgba(196,181,253,.3); stroke:rgba(196,181,253,.8); }
-.cell-dna { fill:none; stroke:rgba(196,181,253,.7); stroke-width:1.6; stroke-linecap:round; }
-.cell-label { fill:#b9cce8; font:11px system-ui,sans-serif; }
-.force-arrow { stroke:#fbbf24; stroke-width:2.5; stroke-linecap:round; opacity:.12; }
-.force-dot { fill:#fbbf24; opacity:.15; }
-.yap-dot { fill:#67e8f9; stroke:#cffafe; stroke-width:.8; opacity:.25; }
-.yap-path { fill:none; stroke:#67e8f9; stroke-width:1.6; stroke-dasharray:4 7; opacity:.15; }
-.cell-stage[data-phase="input"] .force-arrow,.cell-stage[data-phase="input"] .force-dot { opacity:1; }
-.cell-stage[data-phase="input"] .yap-dot { opacity:.95; animation:yap-float 1.5s ease-in-out infinite alternate; }
-.cell-stage[data-phase="input"] .yap-path { opacity:.95; animation:yap-flow 1.2s linear infinite; }
-.cell-stage[data-phase="control"] .force-arrow { opacity:.5; }
-.cell-stage[data-phase="control"] .yap-dot { opacity:.65; }
-.cell-stage[data-phase="control"] .yap-path { opacity:.55; }
-.cell-stage[data-phase="withdrawal"] .force-arrow,.cell-stage[data-phase="withdrawal"] .force-dot { opacity:.05; }
-.cell-stage[data-phase="withdrawal"] .yap-dot { opacity:.75; animation:yap-fade 2s ease-out forwards; }
-.cell-stage[data-phase="withdrawal"] .yap-path { opacity:.45; }
-.cell-stage[data-phase="recovery"] .force-arrow,.cell-stage[data-phase="recovery"] .force-dot { opacity:.05; }
-.cell-stage[data-phase="recovery"] .yap-dot { opacity:.2; }
-.cell-stage[data-phase="recovery"] .yap-path { opacity:.08; }
-.cell-stage[data-phase="challenge"] .force-arrow,.cell-stage[data-phase="challenge"] .force-dot { opacity:.95; }
-.cell-stage[data-phase="challenge"] .yap-dot { opacity:1; animation:yap-float 1s ease-in-out infinite alternate; }
-.cell-stage[data-phase="challenge"] .yap-path { opacity:1; animation:yap-flow .85s linear infinite; }
-@keyframes yap-background-drift { to { transform:rotate(360deg); } }
-@keyframes yap-flow { to { stroke-dashoffset:-22; } }
-@keyframes yap-float { from { transform:translateY(0); } to { transform:translateY(-5px); } }
-@keyframes yap-fade { 0% { opacity:.9; } 100% { opacity:.16; } }
-@media(max-width:760px) { .thought-layout { grid-template-columns:1fr; } .cell-stage svg { min-height:190px; } }
-@media(max-width:560px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab { width:calc(100% - 1rem); padding-top:.55rem; }
-  .yap-home-button { min-height:40px; }
-  .thought-controls { display:grid; grid-template-columns:1fr 1fr; }
-  .thought-controls .circuit-btn { width:100%; }
-}
-@media(prefers-reduced-motion:reduce) {
-  body:has(#yap-circuit-lab)::before,.cell-stage *, .cell-stage *::before,.cell-stage *::after { animation:none !important; transition:none !important; }
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  margin: 0 0 1.1rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 999px;
+  color: #dbeafe !important;
+  background: rgba(12, 29, 61, 0.7);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none !important;
 }
 
+.yap-home-button:hover {
+  border-color: #93c5fd;
+  background: rgba(37, 99, 235, 0.26);
+}
 
-/* Remove the theme-generated page heading and its reserved top band only on this page. */
-body:has(#yap-circuit-lab) .post-header,
-body:has(#yap-circuit-lab) .page-header,
-body:has(#yap-circuit-lab) .post-title,
-body:has(#yap-circuit-lab) .page-title,
-body:has(#yap-circuit-lab) .page-heading {
-  display: none !important;
+/* ---------- Shared labels ---------- */
+.circuit-eyebrow {
+  display: block;
+  color: var(--label);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
-body:has(#yap-circuit-lab) main,
-body:has(#yap-circuit-lab) main > .container {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab {
-  padding-top: .35rem;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
-  margin-top: 0;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .cell-stage {
-  display: flex;
-  flex-direction: column;
+
+/* ---------- Buttons ---------- */
+.circuit-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(147, 197, 253, 0.28);
+  border-radius: 10px;
+  color: #e6efff !important;
+  background: rgba(15, 35, 70, 0.55);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
   text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .cell-stage svg {
-  width: min(100%, 560px);
-  max-width: 560px;
-  min-height: 0;
-  margin: auto;
-  flex: 0 1 auto;
+
+.circuit-btn:hover {
+  border-color: rgba(103, 232, 249, 0.6);
+  background: rgba(37, 99, 235, 0.28);
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .cell-caption {
+
+.circuit-btn.primary {
+  border-color: rgba(103, 232, 249, 0.5);
+  background: #1d4ed8;
+}
+
+.circuit-btn.primary:hover {
+  background: #2563eb;
+}
+
+/* ---------- Hero ---------- */
+.circuit-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.1rem, 3.4vw, 2.4rem);
+  border: 1px solid rgba(96, 165, 250, 0.27);
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse at 82% 12%, rgba(37, 99, 235, 0.2), transparent 35%),
+    radial-gradient(ellipse at 8% 72%, rgba(13, 148, 136, 0.12), transparent 34%),
+    linear-gradient(145deg, #0c1d3d, #050e1f);
+}
+
+.circuit-hero h1 {
+  max-width: 950px;
+  margin: 0.6rem 0 0.4rem !important;
+  color: #f2f7ff !important;
+  font-size: clamp(2rem, 5vw, 3.6rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.circuit-subtitle {
+  max-width: 880px;
+  margin: 0 0 1rem !important;
+  color: #b9c3ff;
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.circuit-byline {
+  margin: 0 0 0.9rem;
+  color: var(--soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.circuit-byline strong {
+  color: #f2f7ff;
+}
+
+.circuit-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.2rem;
+}
+
+.circuit-hero-meta span {
+  display: inline-block;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 9px;
+  color: var(--soft);
+  background: rgba(8, 24, 51, 0.62);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.circuit-hero-meta b {
+  color: #f2f7ff;
+  font-weight: 700;
+}
+
+.circuit-hero-meta a {
+  color: #93c5fd;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.circuit-hero-summary {
+  max-width: 900px;
+  margin: 0 0 1rem !important;
+  color: var(--soft);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.circuit-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.2rem;
+}
+
+.circuit-pill {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 999px;
+  color: var(--soft);
+  background: rgba(15, 35, 70, 0.45);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.circuit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* Mechanism figure: wide SVG on desktop, stacked steps on phones */
+.protein-showcase {
+  margin: 0.4rem 0 1.25rem;
+  padding: 0.6rem;
+  border: 1px solid rgba(147, 197, 253, 0.16);
+  border-radius: 16px;
+  background: linear-gradient(140deg, rgba(18, 43, 81, 0.66), rgba(3, 12, 26, 0.66));
+}
+
+.protein-showcase > svg {
+  display: block;
   width: 100%;
-  justify-content: center;
+  height: auto;
+}
+
+.protein-panel {
+  fill: rgba(8, 24, 51, 0.92);
+  stroke: rgba(147, 197, 253, 0.42);
+  stroke-width: 1.5;
+}
+
+.protein-caption {
+  fill: #dff8ff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.protein-panel-title {
+  fill: #dff8ff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.protein-label {
+  fill: #e0ecff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.protein-small {
+  fill: #c2d4ee;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.protein-arrow,
+.protein-arrow-violet {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.protein-arrow {
+  stroke: #67e8f9;
+}
+
+.protein-arrow-violet {
+  stroke: #a5b4fc;
+}
+
+.protein-flow {
+  stroke-dasharray: 5 5;
+}
+
+.protein-mobile-flow {
+  display: none;
+}
+
+.protein-mobile-step {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.85rem;
+  border: 1px solid rgba(147, 197, 253, 0.28);
+  border-radius: 12px;
+  background: rgba(8, 24, 51, 0.86);
+}
+
+.protein-mobile-step .step-number {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(103, 232, 249, 0.35);
+  border-radius: 10px;
+  color: #67e8f9;
+  background: rgba(37, 99, 235, 0.22);
+  font-weight: 700;
+}
+
+.protein-mobile-step strong {
+  display: block;
+  margin: 0.1rem 0 0.25rem;
+  color: #dff8ff;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.protein-mobile-step p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.protein-mobile-arrow {
+  height: 26px;
+  color: #67e8f9;
+  font-size: 1.2rem;
+  line-height: 26px;
   text-align: center;
 }
-/* On narrow screens, keep the live signal graph pinned above the sliders while the user adjusts them. */
-@media(max-width:720px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-grid {
-    display: flex;
-    flex-direction: column;
-    gap: .65rem;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-readout {
-    display: contents;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-chart {
-    order: 0;
-    position: sticky;
-    top: 0;
-    z-index: 8;
-    width: 100%;
-    max-height: 164px;
-    padding: .35rem .4rem;
-    margin: 0;
-    border: 1px solid rgba(147,197,253,.24);
-    border-radius: 12px;
-    background: rgba(6,17,38,.97);
-    box-shadow: 0 8px 24px rgba(0,0,0,.24);
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls {
-    order: 1;
-    width: 100%;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab #lab-state,
-  body:has(#yap-circuit-lab) #yap-circuit-lab #lab-result-title,
-  body:has(#yap-circuit-lab) #yap-circuit-lab #lab-result-copy,
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-meter-label,
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-meter,
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-caveat {
-    order: 2;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-chart text {
-    font-size: 10px;
-  }
-}
-@media(max-width:420px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-chart {
-    max-height: 145px;
-  }
+
+.visual-note {
+  margin: 0.6rem 0 1rem !important;
+  color: #a7b9d6;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
-/* Center the complete cell drawing in the available figure area, not merely its SVG box. */
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) !important;
-  grid-template-rows: minmax(0, 1fr) auto !important;
-  align-items: stretch !important;
-  justify-items: stretch !important;
+/* ---------- Sections ---------- */
+.circuit-section {
+  margin: 1.1rem 0;
+  padding: clamp(1rem, 2.7vw, 1.7rem);
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: linear-gradient(145deg, rgba(12, 28, 56, 0.96), rgba(6, 16, 34, 0.98));
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > svg {
-  grid-row: 1 !important;
-  align-self: center !important;
-  justify-self: center !important;
-  width: min(100%, 560px) !important;
-  height: auto !important;
-  max-width: 560px !important;
-  min-height: 0 !important;
-  margin: 0 auto !important;
-  flex: none !important;
+
+.circuit-section-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.2rem;
 }
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-layout > .cell-stage > .cell-caption {
-  grid-row: 2 !important;
-  align-self: end !important;
-  justify-content: center !important;
+
+.circuit-section-head h2 {
+  margin: 0.35rem 0 0.45rem !important;
+  color: #eef4ff !important;
+  font-size: clamp(1.4rem, 3vw, 2rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.circuit-section-head p {
+  max-width: 820px;
   margin: 0 !important;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-
-body:has(#yap-circuit-lab) .post-header,
-body:has(#yap-circuit-lab) .post-header *,
-body:has(#yap-circuit-lab) .page-header,
-body:has(#yap-circuit-lab) .page-header *,
-body:has(#yap-circuit-lab) .header-section {
-  display: none !important;
+/* Cards used across sections */
+.plain-language-card,
+.thought-step,
+.node-detail,
+.mode-detail,
+.evidence-panel,
+.experiment-card,
+.lab-controls,
+.lab-readout,
+.resolution-figure-step {
+  border: 1px solid rgba(147, 197, 253, 0.17);
+  border-radius: 13px;
+  background: rgba(3, 12, 27, 0.45);
 }
 
-/* Hide only the theme-generated title banner. The shared site navbar stays visible. */
-html:has(#yap-circuit-lab),
-body:has(#yap-circuit-lab) {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-}
-body:has(#yap-circuit-lab) .post-header,
-body:has(#yap-circuit-lab) .page-header,
-body:has(#yap-circuit-lab) .header-section,
-body:has(#yap-circuit-lab) .post-title,
-body:has(#yap-circuit-lab) .page-title {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-body:has(#yap-circuit-lab) > main,
-body:has(#yap-circuit-lab) main,
-body:has(#yap-circuit-lab) main > .container {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-  box-shadow: none !important;
+/* ---------- Three questions ---------- */
+.resolution-figure {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
-
-html,
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  scroll-padding-top: 0 !important;
-}
-body #progress,
-body progress,
-body .progress,
-body .progress-bar,
-body .post-header,
-body .page-header,
-body .header-section,
-body .page-heading,
-body .post-title,
-body .page-title {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
-body > main,
-body > .container,
-body > .page,
-body > .post,
-body main,
-body main > .container,
-body main > .page,
-body main > .post {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  border-top: 0 !important;
-  box-shadow: none !important;
-}
-body:before,
-body:after,
-html:before,
-html:after {
-  box-shadow: none !important;
-}
-html:has(#yap-circuit-lab),
-body:has(#yap-circuit-lab) {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-body:has(#yap-circuit-lab) > main,
-body:has(#yap-circuit-lab) main,
-body:has(#yap-circuit-lab) main > .container,
-body:has(#yap-circuit-lab) .post,
-body:has(#yap-circuit-lab) .page {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab {
-  margin: 0 auto 3rem !important;
-  padding-top: 0 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-row {
-  position: relative !important;
-  inset: auto !important;
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  width: 100% !important;
-  margin: 1rem auto .8rem !important;
-  padding: 0 !important;
-  z-index: 2 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .yap-home-button {
-  position: relative !important;
-  margin: 0 !important;
-}
-@media (max-width: 760px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab {
-    width:calc(100vw - 1rem) !important;
-    max-width:1240px !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    padding-top:0 !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab > .circuit-hero,
-  body:has(#yap-circuit-lab) #yap-circuit-lab > .circuit-section {
-    width:100% !important;
-    max-width:none !important;
-    box-sizing:border-box !important;
-  }
+.resolution-figure-step {
+  padding: 1.1rem 1rem;
+  text-align: center;
 }
 
-/* Plain-language explainer: distinguish established biology from the review's
-   proposed signal-resolution framework. */
+.resolution-figure-step .figure-symbol {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 0.65rem;
+  border: 1px solid rgba(103, 232, 249, 0.35);
+  border-radius: 50%;
+  color: #67e8f9;
+  background: rgba(37, 99, 235, 0.12);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.resolution-figure-step strong {
+  display: block;
+  color: #eef4ff;
+  font-size: 1.05rem;
+}
+
+.resolution-figure-step p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ---------- Plain-language guide ---------- */
 .plain-language-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .8rem;
+  gap: 0.8rem;
 }
+
 .plain-language-card {
   min-width: 0;
-  padding: 1.1rem;
-  border: 1px solid rgba(147,197,253,.17);
-  border-radius: 14px;
-  background: linear-gradient(145deg, rgba(13,29,58,.72), rgba(7,17,36,.78));
+  padding: 1.1rem 1.15rem;
 }
+
 .plain-language-number {
   display: block;
-  margin-bottom: .6rem;
+  margin-bottom: 0.5rem;
   color: #67e8f9;
-  font-size: .65rem;
-  font-weight: 900;
-  letter-spacing: .11em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
+
 .plain-language-card h3 {
-  margin: 0 0 .65rem;
-  color: #eaf2ff;
-  font-size: 1.08rem;
+  margin: 0 0 0.55rem;
+  color: #eef4ff;
+  font-size: 1.12rem;
+  font-weight: 700;
   line-height: 1.35;
 }
-.plain-language-card p,
-.plain-language-card li {
-  color: #aebfda;
-  font-size: .87rem;
-  line-height: 1.7;
+
+.plain-language-card p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.97rem;
+  line-height: 1.65;
 }
-.plain-language-card p { margin: .55rem 0 0; }
-.plain-language-card strong { color: #e6f1ff; }
-.plain-language-card ol { padding-left: 1.25rem; margin: .65rem 0 0; }
-.plain-language-card li { padding-left: .15rem; margin: .3rem 0; }
+
+.plain-language-card strong {
+  color: #f2f7ff;
+}
+
 .plain-language-proposal {
-  border-color: rgba(103,232,249,.28);
-  background: linear-gradient(145deg, rgba(10,48,70,.68), rgba(7,20,42,.86));
+  border-color: rgba(103, 232, 249, 0.32);
+  background: linear-gradient(145deg, rgba(10, 48, 70, 0.68), rgba(7, 20, 42, 0.86));
 }
+
 .plain-language-caveat {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   padding: 1rem 1.1rem;
   border-left: 3px solid #67e8f9;
   border-radius: 0 12px 12px 0;
-  background: rgba(3,12,28,.48);
-  color: #aebfda;
-  font-size: .86rem;
-  line-height: 1.7;
+  background: rgba(3, 12, 28, 0.48);
+  color: var(--soft);
+  font-size: 0.97rem;
+  line-height: 1.65;
 }
-.plain-language-caveat strong { color: #eaf2ff; }
+
+.plain-language-caveat strong {
+  color: #f2f7ff;
+}
+
 .plain-language-sources {
-  margin: .8rem 0 0;
-  color: #91a9cc;
-  font-size: .78rem;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
   line-height: 1.6;
 }
-.plain-language-sources a { color: #93c5fd; }
+
+.plain-language-sources a {
+  color: #93c5fd;
+}
+
+/* ---------- Thought experiment ---------- */
+.thought-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.cell-stage {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-width: 0;
+  border: 1px solid rgba(147, 197, 253, 0.18);
+  border-radius: 16px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 45%, rgba(22, 62, 112, 0.35), rgba(3, 12, 28, 0.72));
+}
+
+.cell-stage svg {
+  display: block;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 560px);
+  height: auto;
+}
+
+.cell-caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1rem;
+  padding: 0.75rem 0.8rem;
+  border-top: 1px solid rgba(147, 197, 253, 0.14);
+  color: var(--soft);
+  font-size: 0.875rem;
+}
+
+.cell-caption span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #67e8f9;
+}
+
+.legend-dot.force {
+  background: #fbbf24;
+}
+
+.legend-dot.nucleus {
+  background: #a5b4fc;
+}
+
+.cell-membrane {
+  fill: rgba(59, 130, 246, 0.055);
+  stroke: rgba(147, 197, 253, 0.65);
+  stroke-width: 2.2;
+}
+
+.cell-actin {
+  fill: none;
+  stroke: rgba(103, 232, 249, 0.48);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.cell-nucleus {
+  fill: rgba(129, 140, 248, 0.13);
+  stroke: #a5b4fc;
+  stroke-width: 2;
+}
+
+.cell-nucleolus {
+  fill: rgba(196, 181, 253, 0.3);
+  stroke: rgba(196, 181, 253, 0.8);
+}
+
+.cell-dna {
+  fill: none;
+  stroke: rgba(196, 181, 253, 0.7);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.cell-label {
+  fill: #c9d8ee;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.force-arrow {
+  stroke: #fbbf24;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.12;
+}
+
+.force-dot {
+  fill: #fbbf24;
+  opacity: 0.15;
+}
+
+.yap-dot {
+  fill: #67e8f9;
+  stroke: #cffafe;
+  stroke-width: 0.8;
+  opacity: 0.25;
+}
+
+.yap-path {
+  fill: none;
+  stroke: #67e8f9;
+  stroke-width: 1.6;
+  stroke-dasharray: 4 7;
+  opacity: 0.15;
+}
+
+.cell-stage[data-phase="input"] .force-arrow,
+.cell-stage[data-phase="input"] .force-dot {
+  opacity: 1;
+}
+
+.cell-stage[data-phase="input"] .yap-dot {
+  opacity: 0.95;
+  animation: yap-float 1.5s ease-in-out infinite alternate;
+}
+
+.cell-stage[data-phase="input"] .yap-path {
+  opacity: 0.95;
+  animation: yap-flow 1.2s linear infinite;
+}
+
+.cell-stage[data-phase="control"] .force-arrow {
+  opacity: 0.5;
+}
+
+.cell-stage[data-phase="control"] .yap-dot {
+  opacity: 0.65;
+}
+
+.cell-stage[data-phase="control"] .yap-path {
+  opacity: 0.55;
+}
+
+.cell-stage[data-phase="withdrawal"] .force-arrow,
+.cell-stage[data-phase="withdrawal"] .force-dot,
+.cell-stage[data-phase="recovery"] .force-arrow,
+.cell-stage[data-phase="recovery"] .force-dot {
+  opacity: 0.05;
+}
+
+.cell-stage[data-phase="withdrawal"] .yap-dot {
+  opacity: 0.75;
+  animation: yap-fade 2s ease-out forwards;
+}
+
+.cell-stage[data-phase="withdrawal"] .yap-path {
+  opacity: 0.45;
+}
+
+.cell-stage[data-phase="recovery"] .yap-dot {
+  opacity: 0.2;
+}
+
+.cell-stage[data-phase="recovery"] .yap-path {
+  opacity: 0.08;
+}
+
+.cell-stage[data-phase="challenge"] .force-arrow,
+.cell-stage[data-phase="challenge"] .force-dot {
+  opacity: 0.95;
+}
+
+.cell-stage[data-phase="challenge"] .yap-dot {
+  opacity: 1;
+  animation: yap-float 1s ease-in-out infinite alternate;
+}
+
+.cell-stage[data-phase="challenge"] .yap-path {
+  opacity: 1;
+  animation: yap-flow 0.85s linear infinite;
+}
+
+@keyframes yap-flow {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+@keyframes yap-float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes yap-fade {
+  0% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.16;
+  }
+}
+
+.thought-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.thought-step {
+  padding: 1rem 1.1rem;
+}
+
+.thought-count {
+  color: #67e8f9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.thought-step h3 {
+  margin: 0.4rem 0 0.4rem;
+  color: #eef4ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.thought-step p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+.thought-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+  color: #d6e6ff;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.thought-status::before {
+  content: "";
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.45em;
+  border-radius: 50%;
+  background: #60a5fa;
+}
+
+.thought-progress {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.thought-progress button {
+  min-height: 40px;
+  padding: 0.3rem;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 8px;
+  color: var(--soft);
+  background: rgba(15, 35, 70, 0.5);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.thought-progress button[aria-current="step"] {
+  color: #fff;
+  border-color: #60a5fa;
+  background: rgba(37, 99, 235, 0.35);
+}
+
+.thought-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+/* ---------- Six-stage explorer ---------- */
+.circuit-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.circuit-node {
+  position: relative;
+  min-width: 0;
+  min-height: 132px;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  border-radius: 13px;
+  background: linear-gradient(150deg, rgba(20, 46, 91, 0.78), rgba(7, 20, 42, 0.9));
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.circuit-node:hover,
+.circuit-node.is-active {
+  border-color: var(--node-color, #60a5fa);
+  background: linear-gradient(150deg, rgba(30, 64, 125, 0.82), rgba(8, 22, 48, 0.96));
+}
+
+.circuit-node.is-active {
+  box-shadow: inset 0 -3px 0 var(--node-color, #60a5fa);
+}
+
+.circuit-node .n {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--node-color, #93c5fd);
+  background: rgba(37, 99, 235, 0.12);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.circuit-node strong {
+  display: block;
+  color: #eef4ff;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.circuit-node small {
+  display: block;
+  margin-top: 0.35rem;
+  color: #b3c5e1;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.node-detail {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  margin-top: 0.8rem;
+  padding: 1rem 1.1rem;
+}
+
+.node-detail-index {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 13px;
+  color: #93c5fd;
+  background: rgba(37, 99, 235, 0.12);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.node-detail h3,
+.mode-detail h3,
+.evidence-panel h3 {
+  margin: 0 0 0.35rem;
+  color: #eef4ff;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.node-detail p,
+.evidence-panel p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.97rem;
+  line-height: 1.65;
+}
+
+/* ---------- Signal lab ---------- */
+.lab-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 1rem;
+}
+
+.lab-controls,
+.lab-readout {
+  min-width: 0;
+  padding: 1.1rem;
+}
+
+.lab-control {
+  margin-bottom: 1.15rem;
+}
+
+.lab-control-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.lab-control label {
+  color: #e2ecff;
+  font-size: 0.97rem;
+  font-weight: 700;
+}
+
+.lab-control output {
+  color: #93c5fd;
+  font-size: 0.97rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.lab-control input[type="range"] {
+  width: 100%;
+  accent-color: #60a5fa;
+  cursor: pointer;
+}
+
+.lab-help {
+  display: block;
+  margin-top: 0.25rem;
+  color: #a7b9d6;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.lab-controls .circuit-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+
+.lab-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #bfdbfe;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.lab-state::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #60a5fa;
+}
+
+.lab-state.adaptive {
+  color: #bbf7d0;
+  border-color: rgba(134, 239, 172, 0.32);
+}
+
+.lab-state.adaptive::before {
+  background: #86efac;
+}
+
+.lab-state.persistent {
+  color: #fecaca;
+  border-color: rgba(252, 165, 165, 0.34);
+}
+
+.lab-state.persistent::before {
+  background: #fca5a5;
+}
+
+.lab-readout h3 {
+  margin: 0.75rem 0 0.35rem;
+  color: #eef4ff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.lab-readout p {
+  margin: 0 0 0.8rem;
+  color: var(--soft);
+  font-size: 0.97rem;
+  line-height: 1.6;
+}
+
+.lab-meter-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  color: var(--soft);
+  font-size: 0.9rem;
+}
+
+.lab-meter-label strong {
+  color: #eef4ff;
+}
+
+.lab-meter {
+  height: 8px;
+  margin: 0.4rem 0 0.9rem;
+  border-radius: 99px;
+  overflow: hidden;
+  background: rgba(148, 163, 184, 0.18);
+}
+
+.lab-meter span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #60a5fa, #67e8f9);
+  transition: width 0.35s ease;
+}
+
+.lab-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.5rem;
+  border: 1px solid rgba(147, 197, 253, 0.14);
+  border-radius: 11px;
+  background: rgba(2, 8, 20, 0.5);
+}
+
+.lab-chart text {
+  fill: #b7c8e2;
+  font-size: 13px;
+}
+
+.lab-chart .axis {
+  stroke: rgba(147, 197, 253, 0.25);
+  stroke-width: 1;
+}
+
+.lab-chart .trace {
+  fill: none;
+  stroke: #67e8f9;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lab-chart .trace-soft {
+  fill: none;
+  stroke: #93c5fd;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 5;
+  opacity: 0.75;
+}
+
+/* ---------- Failure modes ---------- */
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.mode-button {
+  min-height: 96px;
+  padding: 0.8rem 0.75rem;
+  border: 1px solid rgba(248, 113, 113, 0.24);
+  border-radius: 11px;
+  background: rgba(74, 22, 36, 0.22);
+  color: #f3e8ee;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.mode-button:hover,
+.mode-button.is-active {
+  border-color: rgba(252, 165, 165, 0.7);
+  background: rgba(127, 29, 29, 0.3);
+}
+
+.mode-button small {
+  display: block;
+  margin-top: 0.35rem;
+  color: #d7c0ca;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.mode-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  padding: 1rem 1.1rem;
+}
+
+.mode-detail h3 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.mode-detail div {
+  padding: 0.8rem 0.9rem;
+  border-radius: 9px;
+  background: rgba(15, 35, 70, 0.45);
+}
+
+.mode-detail strong {
+  display: block;
+  color: #93c5fd;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mode-detail p {
+  margin: 0.35rem 0 0;
+  color: var(--soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ---------- Test workflow ---------- */
+.experiment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.experiment-card {
+  padding: 1rem;
+}
+
+.experiment-card .step {
+  color: #67e8f9;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.experiment-card h3 {
+  margin: 0.4rem 0 0.35rem;
+  color: #eef4ff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.experiment-card p {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ---------- Evidence ---------- */
+.evidence-switches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.evidence-switches button {
+  min-height: 44px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(15, 35, 70, 0.4);
+  color: var(--soft);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.evidence-switches button.is-active {
+  border-color: rgba(96, 165, 250, 0.7);
+  color: #fff;
+  background: rgba(37, 99, 235, 0.32);
+}
+
+.evidence-panel {
+  padding: 1rem 1.1rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .protein-showcase {
+    padding: 0.45rem;
+  }
+
+  .protein-showcase > svg {
+    display: none;
+  }
+
+  .protein-mobile-flow {
+    display: block;
+  }
+}
+
+@media (max-width: 980px) {
+  .circuit-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mode-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
-  .plain-language-grid { grid-template-columns: 1fr; }
-}
-
-
-/* Shared design-system alignment with NRF2–KEAP1, CYP1A1 and condensate pages. */
-body:has(#yap-circuit-lab) #yap-circuit-lab {
-  /* Match the exact 1240px / viewport-gutter width used by the other circuit pages. */
-  display:block !important;
-  width:min(1240px,calc(100vw - 2rem)) !important;
-  max-width:1240px !important;
-  min-width:0 !important;
-  box-sizing:border-box !important;
-  margin:0 auto 4rem !important;
-  padding-left:0 !important;
-  padding-right:0 !important;
-  color:#e8f1ff !important;
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero {
-  padding:clamp(1rem,3.4vw,2.5rem) !important;
-  margin:0 0 1.1rem !important;
-  border:1px solid rgba(96,165,250,.27) !important;
-  border-radius:25px !important;
-  background:
-    radial-gradient(ellipse at 82% 12%,rgba(37,99,235,.2),transparent 35%),
-    radial-gradient(ellipse at 8% 72%,rgba(13,148,136,.12),transparent 34%),
-    linear-gradient(145deg,rgba(12,29,61,.99),rgba(5,14,31,.99)) !important;
-  box-shadow:0 24px 60px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04) !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero::after {
-  content:"";
-  position:absolute;
-  width:320px;height:320px;top:-220px;right:-140px;
-  border:1px solid rgba(103,232,249,.16);border-radius:50%;
-  box-shadow:0 0 0 26px rgba(103,232,249,.025),0 0 0 57px rgba(103,232,249,.02);
-  pointer-events:none;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero > * {position:relative;z-index:1}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-eyebrow {
-  display:flex;align-items:center;gap:.55rem;margin:0 0 .35rem;
-  color:#93c5fd !important;font-size:.68rem !important;font-weight:900 !important;
-  letter-spacing:.15em !important;line-height:1.4;text-transform:uppercase;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero h1 {
-  max-width:950px;margin:.75rem 0 .1rem !important;color:#f2f7ff !important;
-  font-size:clamp(2rem,5.2vw,4rem) !important;font-weight:800 !important;
-  line-height:1.03;letter-spacing:-.055em;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero .circuit-subtitle {
-  max-width:900px;margin:.55rem 0 1rem !important;color:#a5b4fc !important;
-  font-size:clamp(1.05rem,2vw,1.45rem) !important;font-weight:650;
-  letter-spacing:-.025em;line-height:1.45;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-byline {
-  margin:0 0 .85rem !important;color:#b8c9e5 !important;font-size:.94rem !important;line-height:1.6;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-byline strong {color:#f2f7ff !important}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta {
-  display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.2rem;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta span {
-  display:flex;flex-wrap:wrap;gap:.35rem;align-items:baseline;
-  padding:.5rem .66rem;border:1px solid rgba(147,197,253,.16);border-radius:9px;
-  color:#b4c7e8;background:rgba(8,24,51,.62);font-size:.75rem;line-height:1.5;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta b {color:#e8f1ff}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta a {color:#93c5fd;text-decoration:none;overflow-wrap:anywhere}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero .protein-showcase {
-  aspect-ratio:3 / 1;margin:1rem 0 1.15rem;padding:.5rem;
-  border:1px solid rgba(147,197,253,.15);border-radius:18px;
-  background:linear-gradient(140deg,rgba(18,43,81,.66),rgba(3,12,26,.66));
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .protein-showcase svg {display:block;width:100%;height:100%;overflow:visible}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-summary {
-  max-width:950px;margin:.2rem 0 .95rem !important;color:#b4c7e8 !important;
-  font-size:.91rem !important;line-height:1.68 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-pills {display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0 1rem}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-pill {
-  padding:.38rem .62rem;border:1px solid rgba(147,197,253,.17);border-radius:999px;
-  color:#a9bddc;background:rgba(15,35,70,.38);font-size:.72rem;font-weight:750;line-height:1.45;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-actions {display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-btn {
-  display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:40px;
-  padding:.61rem .85rem;border:1px solid rgba(147,197,253,.2);border-radius:9px;
-  color:#dbeafe !important;background:rgba(15,35,70,.48);font:inherit;font-size:.79rem !important;
-  font-weight:800;text-decoration:none !important;cursor:pointer;
-  transition:background .2s,border-color .2s,transform .2s;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-btn:hover {
-  border-color:rgba(103,232,249,.5);background:rgba(37,99,235,.22);transform:translateY(-1px);
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-btn.primary {
-  border-color:rgba(103,232,249,.46);color:#f0fdff !important;
-  background:linear-gradient(120deg,rgba(8,145,178,.33),rgba(37,99,235,.36));
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {
-  margin:1.1rem 0 !important;padding:clamp(1rem,2.7vw,1.7rem) !important;
-  border:1px solid rgba(147,197,253,.19) !important;border-radius:19px !important;
-  background:linear-gradient(145deg,rgba(12,28,56,.96),rgba(6,16,34,.98)) !important;
-  box-shadow:0 16px 40px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.025) !important;
-  backdrop-filter:none !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section-head {
-  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
-  margin:0 0 1.2rem !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section-head h2 {
-  margin:.35rem 0 .42rem !important;color:#eaf2ff !important;
-  font-size:clamp(1.35rem,3.1vw,2rem) !important;font-weight:800 !important;
-  letter-spacing:-.04em;line-height:1.15;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section-head p {
-  margin:0 !important;color:#9bb0d0 !important;font-size:.88rem !important;line-height:1.55 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-tag {
-  flex:0 0 auto;padding:.35rem .56rem;border:1px solid rgba(147,197,253,.18);
-  border-radius:999px;color:#9cc5ff;background:rgba(37,99,235,.08);
-  font-size:.61rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .plain-language-card,
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-step,
-body:has(#yap-circuit-lab) #yap-circuit-lab .node-detail,
-body:has(#yap-circuit-lab) #yap-circuit-lab .mode-detail,
-body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-panel {
-  border:1px solid rgba(147,197,253,.15) !important;border-radius:13px !important;
-  background:rgba(3,12,27,.44) !important;box-shadow:none !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .plain-language-card h3,
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-step h3,
-body:has(#yap-circuit-lab) #yap-circuit-lab .node-detail h3,
-body:has(#yap-circuit-lab) #yap-circuit-lab .mode-detail h3,
-body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-panel h3 {
-  color:#eaf2ff !important;font-weight:800 !important;letter-spacing:-.02em;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .plain-language-card p,
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-step p,
-body:has(#yap-circuit-lab) #yap-circuit-lab .node-detail p,
-body:has(#yap-circuit-lab) #yap-circuit-lab .mode-detail p,
-body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-panel p {
-  color:#a9bddc !important;line-height:1.68 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-bottom {
-  display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.8rem;
-  padding:.55rem .2rem;color:#7f96bb;font-size:.76rem;
-  border-top:1px solid rgba(147,197,253,.12);
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-bottom a {color:#93c5fd !important;text-decoration:none}
-body:has(#yap-circuit-lab) #yap-circuit-lab .visual-note {
-  margin:.45rem .2rem .9rem !important;color:#8da6cb !important;font-size:.73rem !important;line-height:1.5 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab a:focus-visible,
-body:has(#yap-circuit-lab) #yap-circuit-lab button:focus-visible,
-body:has(#yap-circuit-lab) #yap-circuit-lab input:focus-visible {
-  outline:2px solid #67e8f9 !important;outline-offset:3px;
-}
-@media(max-width:760px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab {width:calc(100% - 1rem) !important}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero {padding:1rem !important;border-radius:18px !important}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero h1 {font-size:clamp(1.9rem,7.5vw,2.65rem) !important;line-height:1.04}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero .circuit-subtitle {font-size:1.02rem !important;line-height:1.5}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta {display:grid;grid-template-columns:1fr;gap:.4rem;margin:.8rem 0 1rem}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero-meta span {font-size:.78rem}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section-head {display:block !important}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-tag {display:inline-flex;margin-top:.6rem}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-actions {display:grid;grid-template-columns:1fr}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-actions .circuit-btn {width:100%}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-section {padding:.95rem !important;border-radius:15px !important}
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-bottom {flex-direction:column;align-items:flex-start}
-}
-
-
-/* Keep the compact mobile flow instead of rendering the wide desktop schematic. */
-@media(max-width:760px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab .circuit-hero > .protein-showcase {
-    width:100% !important;
-    aspect-ratio:auto !important;
-    height:auto !important;
-    margin:.8rem 0 1rem !important;
-    padding:.45rem !important;
+  .circuit-hero {
+    padding: 1rem;
+    border-radius: 18px;
   }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .protein-showcase > svg {
-    display:none !important;
+
+  .circuit-hero-meta {
+    display: grid;
+    grid-template-columns: 1fr;
   }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .protein-mobile-flow {
-    display:block !important;
+
+  .circuit-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .circuit-section {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .circuit-section-head {
+    display: block;
+  }
+
+    .resolution-figure,
+  .plain-language-grid,
+  .thought-layout,
+  .lab-grid,
+  .experiment-grid,
+  .evidence-switches {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-chart text {
+    font-size: 15px;
+  }
+
+  .cell-label {
+    font-size: 24px;
+    letter-spacing: 0;
+  }
+
+}
+
+@media (max-width: 560px) {
+  .resolution-figure-step {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 0.15rem 0.8rem;
+    align-items: center;
+    padding: 0.85rem;
+    text-align: left;
+  }
+
+  .resolution-figure-step .figure-symbol {
+    grid-row: span 2;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .resolution-figure-step p {
+    margin: 0;
+    text-align: left;
+  }
+
+  .circuit-flow,
+  .mode-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mode-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .node-detail {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .node-detail-index {
+    width: 38px;
+    height: 38px;
+  }
+
+  .lab-controls .circuit-actions {
+    grid-template-columns: 1fr;
   }
 }
 
-
-html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) > main,
-html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main,
-html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) main > .container {
-  width:100% !important;
-  max-width:none !important;
-  margin-left:0 !important;
-  margin-right:0 !important;
-  padding-left:0 !important;
-  padding-right:0 !important;
-  box-sizing:border-box !important;
-}
-html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
-  /* Match the other pages: root width is relative to the shared padded .container. */
-  display:block !important;
-  width:min(1240px,calc(100% - 2rem)) !important;
-  max-width:1240px !important;
-  min-width:0 !important;
-  margin-left:auto !important;
-  margin-right:auto !important;
-  box-sizing:border-box !important;
-}
-@media(max-width:760px) {
-  html:has(#yap-circuit-lab) body:has(#yap-circuit-lab) #yap-circuit-lab {
-    width:calc(100% - 1rem) !important;
-    max-width:1240px !important;
+@media (prefers-reduced-motion: reduce) {
+  .circuit-lab *,
+  .circuit-lab *::before,
+  .circuit-lab *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
-
-/* Organize the YAP/TAZ interactive controls into consistent, aligned button groups. */
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  align-items:stretch !important;
-  gap:.55rem !important;
-  margin-top:.7rem !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:100% !important;
-  min-width:0 !important;
-  min-height:46px !important;
-  height:100% !important;
-  box-sizing:border-box !important;
-  padding:.65rem .7rem !important;
-  margin:0 !important;
-  text-align:center !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-restart {
-  grid-column:1 / -1 !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-next {
-  border-color:rgba(103,232,249,.46) !important;
-  background:linear-gradient(120deg,rgba(8,145,178,.33),rgba(37,99,235,.36)) !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions {
-  display:grid !important;
-  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-  align-items:stretch !important;
-  gap:.55rem !important;
-  margin-top:1rem !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions > .circuit-btn {
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  width:100% !important;
-  min-width:0 !important;
-  min-height:48px !important;
-  height:100% !important;
-  box-sizing:border-box !important;
-  padding:.65rem .75rem !important;
-  margin:0 !important;
-  text-align:center !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches {
-  display:grid !important;
-  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
-  gap:.5rem !important;
-  align-items:stretch !important;
-}
-body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches > button {
-  min-width:0 !important;
-  min-height:44px !important;
-  padding:.6rem .7rem !important;
-  line-height:1.35 !important;
-  white-space:normal !important;
-  overflow-wrap:anywhere;
-}
-@media(max-width:760px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
-    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
-    gap:.5rem !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn {
-    min-height:48px !important;
-    padding:.65rem .55rem !important;
-    font-size:.82rem !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions {
-    grid-template-columns:1fr !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .evidence-switches {
-    grid-template-columns:1fr !important;
-  }
-}
-@media(max-width:380px) {
-  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls {
-    grid-template-columns:1fr !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls > .circuit-btn,
-  body:has(#yap-circuit-lab) #yap-circuit-lab .lab-controls .circuit-actions > .circuit-btn {
-    min-height:44px !important;
-  }
-  body:has(#yap-circuit-lab) #yap-circuit-lab .thought-controls:not([aria-label]) #thought-restart {
-    grid-column:auto !important;
-  }
+/* The thought-experiment loops only run while the stage is on screen */
+.cell-stage.is-paused * {
+  animation-play-state: paused !important;
 }
