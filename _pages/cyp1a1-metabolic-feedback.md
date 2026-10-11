@@ -7,7 +7,7 @@ nav: false
 nav_order: 101
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/cyp1a1-feedback.css' | relative_url }}?v=20261011">
+<link rel="stylesheet" href="{{ '/assets/css/cyp1a1-feedback.css' | relative_url }}?v=20261011-2">
 
 <div class="cyp1-page" id="cyp1-feedback-lab">
   <a class="cyp1-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Cellular Circuits</a>

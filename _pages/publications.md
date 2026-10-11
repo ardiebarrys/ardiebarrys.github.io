@@ -247,6 +247,10 @@ nav_order: 2
     visibility: visible;
   }
 
+  .pub-metrics.is-empty {
+    display: none;
+  }
+
   .pub-metric {
     display: flex;
     align-items: center;
@@ -506,8 +510,16 @@ nav_order: 2
           markBadges();
         });
       });
-      [1500, 4000, 9000].forEach(function (delay) {
-        setTimeout(markBadges, delay);
+      [1500, 4000, 9000].forEach(function (delay, i, all) {
+        setTimeout(function () {
+          markBadges();
+          // Panels whose badges never appeared (blocked or no data) give their space back.
+          if (i === all.length - 1) {
+            document.querySelectorAll(".pub-metrics:not(.has-badge)").forEach(function (panel) {
+              panel.classList.add("is-empty");
+            });
+          }
+        }, delay);
       });
     }
 
