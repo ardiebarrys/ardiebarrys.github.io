@@ -198,7 +198,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     display: block;
     margin-top: .28rem;
     color: #7480a4;
-    font: 700 .6rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 700 .75rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .12em;
     text-transform: uppercase;
   }
@@ -219,7 +219,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 999px;
     background: rgba(10,14,30,.56);
     color: #b8c2e4;
-    font: 800 .62rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .755rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .05em;
   }
 
@@ -299,7 +299,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 999px;
     background: rgba(124,58,237,.08);
     color: #c4b5fd;
-    font: 850 .64rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .76rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .12em;
     text-transform: uppercase;
     box-shadow: 0 0 28px rgba(124,58,237,.07);
@@ -331,7 +331,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: dn-gradient-slide 8s ease-in-out infinite;
   }
 
   .dn-subtitle {
@@ -357,14 +356,13 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     padding: .7rem .78rem;
     border: 1px solid rgba(148,163,184,.12);
     border-radius: 12px;
-    background: rgba(7,10,24,.55);
-    backdrop-filter: blur(12px);
+    background: rgba(7,10,24,.82);
   }
 
   .dn-hero-metric small {
     display: block;
     color: #69759a;
-    font: 800 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .74rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
@@ -382,7 +380,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     left: 50%;
     transform: translateX(-50%);
     color: #596585;
-    font: 800 .58rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .745rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .14em;
     text-transform: uppercase;
   }
@@ -450,7 +448,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-cosmic-atlas-kicker {
     color: #6e7ba0;
-    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .74rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .13em;
     text-transform: uppercase;
   }
@@ -465,7 +463,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-cosmic-atlas-head span:last-child {
     color: #56617e;
-    font: 750 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 750 .74rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .06em;
     text-transform: uppercase;
     white-space: nowrap;
@@ -511,7 +509,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 0;
     background: transparent;
     color: #667292;
-    font: 800 .48rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .72rem/1.35 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .04em;
     text-align: center;
     text-transform: uppercase;
@@ -524,7 +522,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-cosmic-entity b {
     display: block;
     color: #aab5d5;
-    font-size: .55rem;
+    font-size: .738rem;
   }
 
   .dn-cosmic-entity span {
@@ -594,7 +592,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       0 36px 110px rgba(0,0,0,.52),
       0 0 0 1px rgba(255,255,255,.018) inset,
       0 0 90px rgba(124,58,237,.04);
-    backdrop-filter: blur(18px);
   }
 
   .dn-command {
@@ -620,20 +617,20 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-command-label {
     color: #586489;
-    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .74rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .12em;
     text-transform: uppercase;
   }
 
   .dn-command-value {
     color: #dbe4ff;
-    font: 850 .68rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .77rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     white-space: nowrap;
   }
 
   .dn-command-center {
     color: #fff;
-    font: 950 .7rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 950 .775rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .13em;
   }
 
@@ -687,7 +684,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 999px;
     background: rgba(37,99,235,.06);
     color: #a5bfff;
-    font: 850 .58rem/1 system-ui, sans-serif;
+    font: 850 .745rem/1 system-ui, sans-serif;
     letter-spacing: .08em;
     text-transform: uppercase;
   }
@@ -702,7 +699,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-round {
     color: #5e6a8d;
-    font: 800 .59rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .747rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .11em;
     text-transform: uppercase;
   }
@@ -775,7 +772,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     background:
       linear-gradient(135deg, #6d28d9, #2563eb 62%, #0891b2);
     color: #fff;
-    font: 900 .72rem/1 system-ui, sans-serif;
+    font: 900 .78rem/1 system-ui, sans-serif;
     letter-spacing: .05em;
     text-transform: uppercase;
     cursor: pointer;
@@ -819,7 +816,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     min-height: 1.25rem;
     margin: .72rem 0 0 !important;
     color: #6f7da4 !important;
-    font: 750 .67rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 750 .767rem/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
   .dn-progress-wrap {
@@ -833,7 +830,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     justify-content: space-between;
     gap: 1rem;
     color: #596584;
-    font: 800 .57rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .742rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .1em;
     text-transform: uppercase;
   }
@@ -858,13 +855,13 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-small-rule {
     margin-top: 1.2rem;
     color: #4d5877;
-    font-size: .66rem;
+    font-size: .765rem;
     line-height: 1.55;
   }
 
   .dn-score-panel {
     min-height: 500px;
-    padding: 1.05rem;
+    padding: 1.05rem 1.05rem 6rem;
     background:
       radial-gradient(circle at 50% 42%, rgba(124,58,237,.12), transparent 46%),
       rgba(3,6,16,.78);
@@ -879,14 +876,14 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-score-title {
     color: #68749a;
-    font: 850 .59rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .747rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .12em;
     text-transform: uppercase;
   }
 
   .dn-destination {
     color: #d7e2ff;
-    font: 900 .68rem/1.15 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 900 .77rem/1.15 ui-monospace, SFMono-Regular, Menlo, monospace;
     text-align: right;
   }
 
@@ -929,9 +926,9 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   }
 
   .dn-score-unit {
-    margin-top: .25rem;
+    margin-top: .5rem;
     color: #7884a6;
-    font: 850 .58rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .745rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .13em;
     text-transform: uppercase;
   }
@@ -953,7 +950,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-score-micro-item small {
     display: block;
     color: #536080;
-    font: 800 .53rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 800 .732rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .08em;
     text-transform: uppercase;
   }
@@ -965,13 +962,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     font: 900 .9rem/1.1 ui-monospace, SFMono-Regular, Menlo, monospace;
   }
 
+  /* The rocket sits below the score so it never covers the numbers */
   .dn-rocket-stage {
-    position: absolute;
-    left: 50%;
-    top: 58%;
+    position: relative;
     width: 200px;
-    height: 190px;
-    transform: translate(-50%,-50%);
+    height: 160px;
+    margin: 1.2rem auto 0;
     pointer-events: none;
   }
 
@@ -1117,7 +1113,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     max-width: 250px;
     margin: .45rem auto 0;
     color: #667394;
-    font-size: .67rem;
+    font-size: .767rem;
     line-height: 1.55;
   }
 
@@ -1147,7 +1143,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-reveal-kicker {
     color: #8b97bb;
-    font: 850 .56rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .74rem/1 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .12em;
     text-transform: uppercase;
   }
@@ -1166,7 +1162,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 10px;
     background: rgba(124,58,237,.08);
     color: #c4b5fd;
-    font: 850 .62rem/1 system-ui, sans-serif;
+    font: 850 .755rem/1 system-ui, sans-serif;
     cursor: pointer;
   }
 
@@ -1191,7 +1187,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-reveal-item b {
     display: block;
     color: #627095;
-    font: 850 .5rem/1.25 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 850 .725rem/1.25 ui-monospace, SFMono-Regular, Menlo, monospace;
     letter-spacing: .06em;
   }
 
@@ -1206,7 +1202,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     display: block;
     margin-top: .34rem;
     color: #7180a4;
-    font-size: .58rem;
+    font-size: .745rem;
     line-height: 1.4;
   }
 
@@ -1239,7 +1235,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 999px;
     background: rgba(7,10,22,.55);
     color: #69759a;
-    font: 850 .61rem/1 system-ui, sans-serif;
+    font: 850 .752rem/1 system-ui, sans-serif;
     cursor: pointer;
   }
 
@@ -1300,14 +1296,14 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-panel-card b {
     display: block;
     color: #bdc7e7;
-    font-size: .72rem;
+    font-size: .78rem;
   }
 
   .dn-panel-card span {
     display: block;
     margin-top: .32rem;
     color: #6f7b9e;
-    font-size: .65rem;
+    font-size: .762rem;
     line-height: 1.55;
   }
 
@@ -1334,7 +1330,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     display: block;
     margin-top: .25rem;
     color: #6e7a9e;
-    font-size: .68rem;
+    font-size: .77rem;
   }
 
   .dn-support-link {
@@ -1346,7 +1342,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     border-radius: 9px;
     background: linear-gradient(135deg,#6d28d9,#2563eb);
     color: #fff !important;
-    font: 850 .61rem/1 system-ui, sans-serif;
+    font: 850 .752rem/1 system-ui, sans-serif;
     text-decoration: none !important;
     white-space: nowrap;
   }
@@ -1354,14 +1350,10 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
   .dn-footer-note {
     padding-top: 1rem;
     color: #424c69;
-    font: 700 .58rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+    font: 700 .745rem/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
     text-align: center;
   }
 
-  @keyframes dn-gradient-slide {
-    0%,100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
 
   @keyframes dn-orbit-spin {
     to { transform: rotate(360deg); }
@@ -1425,10 +1417,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       min-height: 420px;
     }
 
-    .dn-rocket-stage {
-      top: 56%;
-    }
-
     .dn-reveal-grid {
       grid-template-columns: repeat(2, minmax(0,1fr));
     }
@@ -1476,8 +1464,22 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       font-size: .9rem;
     }
 
+    .dn-hero-metrics {
+      flex-wrap: nowrap;
+      gap: .45rem;
+    }
+
     .dn-hero-metric {
-      min-width: 108px;
+      flex: 1 1 0;
+      min-width: 0;
+      padding: .65rem .45rem;
+    }
+
+    .dn-scroll-hint {
+      position: static;
+      transform: none;
+      margin: 1.8rem auto 0;
+      text-align: center;
     }
 
     .dn-command {
@@ -1538,6 +1540,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     .dn-support-link {
       width: 100%;
     }
+  }
+
+  /* Looping animations pause while their section is off screen */
+  .dn-paused,
+  .dn-paused * {
+    animation-play-state: paused !important;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -2397,9 +2405,32 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     root.style.setProperty("--dn-py", pointerY.toFixed(3));
   }, { passive: true });
 
+  // Canvas animations redraw at about 30 fps and hold still while the page scrolls,
+  // so scrolling stays smooth. The atlas also stops when it is off screen.
+  var scrollingUntil = 0;
+  var lastAtlasFrame = 0;
+  window.addEventListener("scroll", function () {
+    scrollingUntil = performance.now() + 180;
+  }, { passive: true });
+
+  var atlasVisible = true;
+  var atlasCanvas = document.getElementById("dn-cosmic-canvas");
+  if (atlasCanvas && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      atlasVisible = entries[0].isIntersecting;
+      if (atlasVisible && !atlasAnimation) atlasAnimation = requestAnimationFrame(drawCosmicAtlas);
+    }).observe(atlasCanvas);
+  }
+
   function drawCosmicAtlas(time) {
-    var canvas = document.getElementById("dn-cosmic-canvas");
+    var canvas = atlasCanvas;
     if (!canvas) return;
+
+    if (time && (time < scrollingUntil || time - lastAtlasFrame < 32)) {
+      atlasAnimation = atlasVisible ? requestAnimationFrame(drawCosmicAtlas) : 0;
+      return;
+    }
+    lastAtlasFrame = time || 0;
 
     var rect = canvas.getBoundingClientRect();
     var ratio = Math.min(2, window.devicePixelRatio || 1);
@@ -3343,19 +3374,19 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       ctx.fill();
 
       var numberText = String(guess.value);
-      var tagWidth = Math.max(48, numberText.length * 7 + 24);
+      var tagWidth = Math.max(56, numberText.length * 8 + 40);
       var tagY = markerY - 24 - guessIndex * 2;
 
       ctx.fillStyle = "rgba(2,4,14,.92)";
       ctx.strokeStyle = rgba(guess.color, .72);
       ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.roundRect(markerX - tagWidth / 2, tagY - 10, tagWidth, 19, 7);
+      ctx.roundRect(markerX - tagWidth / 2, tagY - 11, tagWidth, 21, 7);
       ctx.fill();
       ctx.stroke();
 
       ctx.textAlign = "center";
-      ctx.font = "900 8px ui-monospace, SFMono-Regular, Menlo, monospace";
+      ctx.font = "800 10px ui-monospace, SFMono-Regular, Menlo, monospace";
       ctx.fillStyle = guess.color;
       ctx.fillText("Q" + guess.round + "  " + numberText + "%", markerX, tagY + 3);
 
@@ -3369,12 +3400,12 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     });
 
     ctx.textAlign = "left";
-    ctx.font = "800 8px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillStyle = "rgba(148,163,184,.62)";
+    ctx.font = "700 11px ui-monospace, SFMono-Regular, Menlo, monospace";
+    ctx.fillStyle = "rgba(148,163,184,.82)";
     ctx.fillText("INNER → OUTER SYSTEM", left, 18);
 
     ctx.textAlign = "right";
-    ctx.fillStyle = "rgba(196,181,253,.62)";
+    ctx.fillStyle = "rgba(196,181,253,.82)";
     ctx.fillText("GALACTIC → DEEP FIELD", right, 18);
 
     if (atlasGuesses.length) {
@@ -3383,7 +3414,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       ctx.fillText("YOUR TRAJECTORY", left, height - 8);
     }
 
-    atlasAnimation = requestAnimationFrame(drawCosmicAtlas);
+    atlasAnimation = atlasVisible ? requestAnimationFrame(drawCosmicAtlas) : 0;
   }
   function resizeCanvas(canvas, ctx) {
     var ratio = Math.min(2, window.devicePixelRatio || 1);
@@ -3411,11 +3442,16 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     }
   }
 
+  var lastStarFrame = 0;
+
   function drawStars(time) {
+    starAnimation = requestAnimationFrame(drawStars);
+    if (time < scrollingUntil || time - lastStarFrame < 32) return;
+    lastStarFrame = time;
     starCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     stars.forEach(function (star) {
-      star.tw += star.speed;
+      star.tw += star.speed * 2;
       var pulse = .58 + Math.sin(star.tw + time * .0012) * .28;
       var driftX = pointerX * star.z * -6;
       var driftY = pointerY * star.z * -4;
@@ -3438,7 +3474,6 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
     }
 
     drawShootingStars();
-    starAnimation = requestAnimationFrame(drawStars);
   }
 
   var shooting = [];
@@ -3494,7 +3529,8 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
       return p.life > 0;
     });
 
-    effectAnimation = requestAnimationFrame(effectLoop);
+    effectAnimation = particles.length ? requestAnimationFrame(effectLoop) : 0;
+    effectCanvas.hidden = !particles.length;
   }
 
   function burst(x, y, score) {
@@ -3516,9 +3552,25 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
         color: colors[Math.floor(Math.random() * colors.length)]
       });
     }
+
+    effectCanvas.hidden = false;
+    if (!effectAnimation) effectAnimation = requestAnimationFrame(effectLoop);
+  }
+
+  function pauseOffscreenLoops() {
+    if (!("IntersectionObserver" in window)) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle("dn-paused", !entry.isIntersecting);
+      });
+    });
+    root.querySelectorAll(".dn-topbar, .dn-hero, .dn-cosmic-atlas, .dn-score-panel").forEach(function (el) {
+      observer.observe(el);
+    });
   }
 
   function init() {
+    pauseOffscreenLoops();
     loadStats();
     buildDailyMission(false);
     liveTelemetry();

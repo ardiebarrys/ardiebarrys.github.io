@@ -29,9 +29,8 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     --cv-text: #1e293b;
     --cv-muted: #5b6478;
     --cv-line: #dfe5f1;
-    max-width: 880px;
-    margin: 0.25rem auto 3rem;
-    padding: 3rem 3.25rem 2.5rem;
+    margin: 0 0 3rem;
+    padding: 2.75rem 3rem 2.5rem;
     border: 1px solid var(--cv-line);
     border-radius: 14px;
     background: #ffffff;
@@ -77,13 +76,13 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     min-width: 0;
   }
 
-  .cv-name {
-    margin: 0 0 0.4rem;
+  .cv .cv-name {
+    margin: 0 0 0.5rem;
     color: var(--cv-ink);
     font-family: "Spectral", Georgia, serif;
     font-size: 2.6rem;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: -0.01em;
   }
 
@@ -271,7 +270,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
       border-radius: 12px;
     }
 
-    .cv-name {
+    .cv .cv-name {
       font-size: 2.1rem;
     }
 
@@ -325,12 +324,10 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     html:root body::before,
     #navbar,
     footer,
-    .fixed-bottom,
-    .progress-container,
-    #progress,
+    #site-stars,
+    #back-to-top,
     .post-header,
     .cv a.cv-pdf,
-    #custom-chatbase-greeting,
     #chatbase-bubble-button,
     #chatbase-bubble-window,
     iframe {

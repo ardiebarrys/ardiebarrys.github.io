@@ -7,10 +7,10 @@ nav: false
 nav_order: 100
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/nrf2-redoxostat.css' | relative_url }}?v=20261009-3">
+<link rel="stylesheet" href="{{ '/assets/css/nrf2-redoxostat.css' | relative_url }}?v=20261011">
 
 <div class="nrf2-lab" id="nrf2-redoxostat-lab">
-  <a class="nrf2-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
+  <a class="nrf2-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Cellular Circuits</a>
 
   <header class="nrf2-hero">
     <div class="nrf2-eyebrow"><span class="nrf2-live-dot"></span> REDOX SIGNAL CONTROL · INTERACTIVE REVIEW</div>
@@ -71,7 +71,7 @@ nav_order: 100
         <text x="605" y="269" text-anchor="middle" class="n2-svg-res-copy">KEAP1 renewal · protein turnover · autophagy</text>
         <text x="605" y="288" text-anchor="middle" class="n2-svg-res-copy">redox restoration · renewed responsiveness</text>
         <path d="M366 261 H114 V184" class="n2-svg-feedback" marker-end="url(#n2backarrow)"/>
-        <text x="231" y="248" class="n2-svg-tiny">RESTORE CONTROL</text>
+        <text x="222" y="248" class="n2-svg-tiny">RESTORE CONTROL</text>
         <text x="560" y="335" text-anchor="middle" class="n2-svg-foot">ACTIVATION STARTS THE RESPONSE · RESOLUTION SHAPES ITS MEANING</text>
       </svg>
       <div class="nrf2-mobile-diagram" aria-hidden="true">
@@ -87,7 +87,7 @@ nav_order: 100
   </header>
 
   <section class="nrf2-panel" id="nrf2-simulator">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">01 / SIGNAL DYNAMICS</span><h2>Change the stress pattern</h2><p>Adjust the inputs and compare a brief response with a response that persists.</p></div><span class="nrf2-tag">Live simulation</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">01 / SIGNAL DYNAMICS</span><h2>Change the stress pattern</h2><p>Compare a brief response with one that persists.</p></div></div>
     <div class="nrf2-presets" role="group" aria-label="Stress pattern presets">
       <button type="button" class="n2-chip is-active" data-pattern="pulse">Brief pulse</button>
       <button type="button" class="n2-chip" data-pattern="repeated">Repeated pulses</button>
@@ -101,7 +101,7 @@ nav_order: 100
         <input id="n2-duration" type="range" min="10" max="100" step="5" value="35">
         <label class="n2-range-row" for="n2-resolution"><span>Resolution capacity</span><output id="n2-resolution-value">70%</output></label>
         <input id="n2-resolution" type="range" min="10" max="100" step="5" value="70">
-        <p class="n2-control-help">How effectively feedback, turnover and recovery bring signaling back toward baseline.</p>
+        <p class="n2-control-help">How well feedback, turnover and recovery return signaling to baseline.</p>
         <label class="n2-range-row" for="n2-redox"><span>Redox restoration</span><output id="n2-redox-value">65%</output></label>
         <input id="n2-redox" type="range" min="10" max="100" step="5" value="65">
         <button type="button" class="nrf2-reset" id="n2-reset">Reset model</button>
@@ -132,7 +132,7 @@ nav_order: 100
   </section>
 
   <section class="nrf2-panel" id="nrf2-circuit-explorer">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">02 / CIRCUIT ARCHITECTURE</span><h2>Explore the redoxostat</h2><p>Select a component to inspect its role in control and recovery.</p></div><span class="nrf2-tag">Select a node</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">02 / CIRCUIT ARCHITECTURE</span><h2>Explore the redoxostat</h2><p>Select a component to see its role in control and recovery.</p></div></div>
     <div class="nrf2-architecture">
       <div class="nrf2-node-grid" role="group" aria-label="Redoxostat circuit components">
         <button class="n2-arch-node is-active" type="button" data-node="sensor"><span>01</span><b>Redox sensor</b><small>KEAP1 cysteines</small></button>
@@ -150,7 +150,7 @@ nav_order: 100
   </section>
 
   <section class="nrf2-panel">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">03 / FAILURE MODES</span><h2>Where can resolution fail?</h2><p>Different defects can produce persistent output through different routes.</p></div><span class="nrf2-tag">Failure map</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">03 / FAILURE MODES</span><h2>Where can resolution fail?</h2><p>Different defects can each leave the output switched on.</p></div></div>
     <div class="nrf2-failure-layout">
       <div class="nrf2-failure-list" role="group" aria-label="Select a failure mode">
         <button type="button" class="n2-failure-btn is-active" data-failure="sensor"><span class="n2-failure-num">01</span><span><b>Sensor dysfunction</b><small>KEAP1 cannot reset sensing</small></span><i>↗</i></button>
@@ -163,12 +163,12 @@ nav_order: 100
         <div class="n2-failure-visual">
           <svg viewBox="0 0 340 120" role="img" aria-label="Selected circuit failure visualization">
             <path id="n2-failure-line" d="M25 60 H315" class="n2-failure-track"/>
+            <path id="n2-failure-break" d="M16 26 L52 90" class="n2-failure-break"/>
             <circle cx="34" cy="60" r="19" class="n2-failure-node"/><text x="34" y="65" text-anchor="middle">K</text>
             <circle cx="118" cy="60" r="19" class="n2-failure-node"/><text x="118" y="65" text-anchor="middle">C</text>
             <circle cx="202" cy="60" r="19" class="n2-failure-node"/><text x="202" y="65" text-anchor="middle">N</text>
             <circle cx="306" cy="60" r="19" class="n2-failure-node"/><text x="306" y="65" text-anchor="middle">↻</text>
             <path d="M53 60 H99 M137 60 H183 M221 60 H287" class="n2-failure-link"/>
-            <path id="n2-failure-break" d="M20 38 L48 82" class="n2-failure-break"/>
             <text x="34" y="105" text-anchor="middle" class="n2-mini-label">KEAP1</text><text x="118" y="105" text-anchor="middle" class="n2-mini-label">CUL3</text><text x="202" y="105" text-anchor="middle" class="n2-mini-label">NRF2</text><text x="306" y="105" text-anchor="middle" class="n2-mini-label">RESET</text>
           </svg>
         </div>
@@ -182,7 +182,7 @@ nav_order: 100
   </section>
 
   <section class="nrf2-panel">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">04 / SWITCH VS CIRCUIT</span><h2>Same peak, different history</h2><p>Explore why peak activation alone can miss the cost of persistent signaling.</p></div><span class="nrf2-tag">Model comparison</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">04 / SWITCH VS CIRCUIT</span><h2>Same peak, different history</h2><p>Peak activation alone can miss the cost of persistent signaling.</p></div></div>
     <div class="nrf2-model-tabs" role="group" aria-label="Compare model interpretation"><button type="button" class="is-active" data-model="switch">Antioxidant switch</button><button type="button" data-model="circuit">Signal-resolution circuit</button></div>
     <div class="nrf2-model-visual" data-model="switch">
       <svg viewBox="0 0 760 220" id="n2-model-chart" role="img" aria-label="Switch model compared with signal-resolution model">
@@ -201,7 +201,7 @@ nav_order: 100
   </section>
 
   <section class="nrf2-panel">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">05 / EXPERIMENT DESIGN</span><h2>Build a discriminating experiment</h2><p>Choose a perturbation and the measurement that would best separate the models.</p></div><span class="nrf2-tag">Study planner</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">05 / EXPERIMENT DESIGN</span><h2>Build a discriminating experiment</h2><p>Pick a perturbation and a measurement that separate the two models.</p></div></div>
     <div class="nrf2-experiment-builder">
       <div class="nrf2-builder-controls">
         <label for="n2-perturbation">Perturbation</label>
@@ -214,7 +214,7 @@ nav_order: 100
         </select>
         <label for="n2-measurement">Primary measurement</label>
         <select id="n2-measurement">
-          <option value="time">Time-resolved NRF2 abundance and nuclear localization</option>
+          <option value="time">NRF2 level and nuclear localization over time</option>
           <option value="targets">Target-gene transcription over time</option>
           <option value="turnover">KEAP1 / NRF2 turnover and ubiquitination</option>
           <option value="redox">Redox state and NADPH-linked recovery</option>
@@ -242,7 +242,7 @@ nav_order: 100
   </section>
 
   <section class="nrf2-panel">
-    <div class="nrf2-section-head"><div><span class="nrf2-kicker">06 / BIOLOGICAL CONTEXT</span><h2>Why duration changes the outcome</h2><p>Select a context to see how persistent NRF2 signaling may be interpreted.</p></div><span class="nrf2-tag">Context matters</span></div>
+    <div class="nrf2-section-head"><div><span class="nrf2-kicker">06 / BIOLOGICAL CONTEXT</span><h2>Why duration changes the outcome</h2><p>Select a context to see how persistent NRF2 signaling may be read.</p></div></div>
     <div class="nrf2-context-grid" role="group" aria-label="Biological outcome contexts">
       <button type="button" class="n2-context is-active" data-context="adaptive"><span class="n2-context-icon">✳</span><b>Adaptive stress response</b><small>Transient protection</small></button>
       <button type="button" class="n2-context" data-context="cancer"><span class="n2-context-icon">◎</span><b>Cancer</b><small>Metabolic support · resistance</small></button>
@@ -254,9 +254,8 @@ nav_order: 100
 
   <section class="nrf2-takeaway">
     <div class="nrf2-takeaway-orbit" aria-hidden="true"><span></span><span></span><span></span><i>N</i></div>
-    <div><span class="nrf2-kicker">THE CENTRAL DISTINCTION</span><h2>Activation is an event. Resolution is a system property.</h2><p>The redoxostat framework shifts attention from peak NRF2 activity alone to the full trajectory: sensing, response, termination and renewed competence.</p><a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005" target="_blank" rel="noopener noreferrer">Read the published review ↗</a></div>
+    <div><span class="nrf2-kicker">THE CENTRAL DISTINCTION</span><h2>Activation is an event. Resolution is a system property.</h2><p>The redoxostat framework looks past peak NRF2 activity to the full trajectory: sensing, response, termination and renewed competence.</p><a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005" target="_blank" rel="noopener noreferrer">Read the published review ↗</a></div>
   </section>
-  <footer class="nrf2-bottom"><span>Interactive companion to the published review</span><a href="{{ '/publications/' | relative_url }}">All publications ↗</a></footer>
 </div>
 
-<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261009-3" defer></script>
+<script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261011" defer></script>

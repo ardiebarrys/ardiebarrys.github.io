@@ -9,15 +9,14 @@
   var status = root.querySelector("#scf-filter-status");
 
   var descriptions = {
-    all: "Showing all four research frameworks.",
-    biochemical: "Showing biochemical feedback frameworks: NRF2–KEAP1 and CYP1A1.",
-    mechanical: "Showing the mechanochemical framework: YAP/TAZ.",
-    temporal: "Showing the temporal decoding framework: transcriptional condensates."
+    all: "Showing all four frameworks.",
+    biochemical: "Showing biochemical feedback: NRF2–KEAP1 and CYP1A1.",
+    mechanical: "Showing mechanical signaling: YAP/TAZ.",
+    temporal: "Showing temporal decoding: transcriptional condensates."
   };
 
-  function applyFilter(key) {
-    var known = Object.prototype.hasOwnProperty.call(descriptions, key);
-    if (!known) key = "all";
+  function applyFilter(key, announce) {
+    if (!Object.prototype.hasOwnProperty.call(descriptions, key)) key = "all";
 
     filters.forEach(function (button) {
       var active = button.getAttribute("data-filter") === key;
@@ -27,18 +26,17 @@
 
     cards.forEach(function (card) {
       var visible = key === "all" || card.getAttribute("data-category") === key;
-      card.classList.toggle("is-filtered-out", !visible);
-      card.setAttribute("aria-hidden", visible ? "false" : "true");
+      card.hidden = !visible;
     });
 
-    status.textContent = descriptions[key];
+    if (status && announce) status.textContent = descriptions[key];
   }
 
   filters.forEach(function (button) {
     button.addEventListener("click", function () {
-      applyFilter(button.getAttribute("data-filter"));
+      applyFilter(button.getAttribute("data-filter"), true);
     });
   });
 
-  applyFilter("all");
+  applyFilter("all", false);
 })();

@@ -8,6 +8,10 @@ nav_order: 4
 ---
 
 <style>
+  .post-description {
+    display: none;
+  }
+
   .talks {
     margin-top: 1.5rem;
   }

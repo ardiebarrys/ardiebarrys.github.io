@@ -190,35 +190,35 @@
       copy: "Loss-of-function changes or persistent modification can weaken KEAP1-mediated NRF2 repression after the original stress signal subsides.",
       outcome: "NRF2 remains stabilized after withdrawal.",
       test: "Follow KEAP1 state and NRF2 turnover after a reversible stress pulse.",
-      breakPath: "M20 38 L48 82", node: 0
+      breakPath: "M16 26 L52 90", node: 0
     },
     controller: {
       kind: "CONTROLLER FAILURE", title: "NRF2 degradation is impaired",
       copy: "Disrupted CUL3–KEAP1 ligase activity reduces NRF2 ubiquitination and clearance, prolonging transcription after stress declines.",
       outcome: "NRF2 turnover slows and downstream output persists.",
       test: "Measure NRF2 ubiquitination, half-life and post-stress decay with matched inputs.",
-      breakPath: "M104 38 L132 82", node: 1
+      breakPath: "M100 26 L136 90", node: 1
     },
     escape: {
       kind: "AMPLIFIER ESCAPE", title: "NRF2 becomes less sensitive to restraint",
       copy: "NFE2L2 gain-of-function changes can disrupt KEAP1 recognition, allowing NRF2 to remain active despite normal upstream redox conditions.",
       outcome: "Transcription becomes partly uncoupled from the stress input.",
       test: "Compare NRF2 turnover and target expression while verifying KEAP1 status.",
-      breakPath: "M188 38 L216 82", node: 2
+      breakPath: "M184 26 L220 90", node: 2
     },
     feedback: {
       kind: "FEEDBACK FAILURE", title: "Clearance and feedback no longer constrain output",
       copy: "Autophagy impairment and p62-associated KEAP1 sequestration can weaken KEAP1 control and maintain NRF2 signaling.",
       outcome: "NRF2 output remains elevated after the initial stimulus.",
       test: "Track p62, KEAP1 availability, autophagic flux and NRF2 output through withdrawal.",
-      breakPath: "M291 38 L319 82", node: 3
+      breakPath: "M288 26 L324 90", node: 3
     },
     redox: {
       kind: "REDOX RESET FAILURE", title: "The cell cannot restore reducing capacity efficiently",
       copy: "Limited metabolic or thiol-reducing capacity may delay restoration of cysteine chemistry and redox-responsive control.",
       outcome: "Recovery is delayed even when the original stressor is removed.",
       test: "Pair NRF2 kinetics with NADPH-linked, glutathione or thioredoxin redox measurements.",
-      breakPath: "M291 38 L319 82", node: 3
+      breakPath: "M288 26 L324 90", node: 3
     }
   };
 

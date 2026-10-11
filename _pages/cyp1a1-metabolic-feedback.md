@@ -7,10 +7,10 @@ nav: false
 nav_order: 101
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/cyp1a1-feedback.css' | relative_url }}?v=20261009-1">
+<link rel="stylesheet" href="{{ '/assets/css/cyp1a1-feedback.css' | relative_url }}?v=20261011">
 
 <div class="cyp1-page" id="cyp1-feedback-lab">
-  <a class="cyp1-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
+  <a class="cyp1-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Cellular Circuits</a>
 
   <header class="cyp1-hero">
     <div class="cyp1-eyebrow"><span class="cyp1-status-dot"></span> ENVIRONMENTAL SENSING · METABOLIC FEEDBACK</div>
@@ -36,36 +36,36 @@ nav_order: 101
         <g class="cyp1-svg-node">
           <rect x="20" y="68" width="180" height="106" rx="15"/>
           <circle cx="54" cy="102" r="16" class="cyp1-icon-ligand"/><text x="54" y="107" text-anchor="middle" class="cyp1-svg-glyph">L</text>
-          <text x="42" y="137" class="cyp1-svg-title">LIGAND INPUT</text>
-          <text x="42" y="157" class="cyp1-svg-copy">Diet · microbiota ·</text><text x="42" y="170" class="cyp1-svg-copy">environment</text>
+          <text x="42" y="134" class="cyp1-svg-title">LIGAND INPUT</text>
+          <text x="42" y="153" class="cyp1-svg-copy">Diet · microbiota ·</text><text x="42" y="169" class="cyp1-svg-copy">environment</text>
         </g>
         <path d="M202 120 H236" class="cyp1-main-arrow" marker-end="url(#cyp1-arrow)"/>
         <g class="cyp1-svg-node">
           <rect x="243" y="68" width="180" height="106" rx="15"/>
           <circle cx="277" cy="102" r="16" class="cyp1-icon-ahrr"/><text x="277" y="107" text-anchor="middle" class="cyp1-svg-glyph">A</text>
-          <text x="265" y="137" class="cyp1-svg-title">AhR SENSOR</text>
-          <text x="265" y="157" class="cyp1-svg-copy">Ligand binding ·</text><text x="265" y="170" class="cyp1-svg-copy">nuclear AhR–ARNT</text>
+          <text x="265" y="134" class="cyp1-svg-title">AhR SENSOR</text>
+          <text x="265" y="153" class="cyp1-svg-copy">Ligand binding ·</text><text x="265" y="169" class="cyp1-svg-copy">nuclear AhR–ARNT</text>
         </g>
         <path d="M425 120 H459" class="cyp1-main-arrow" marker-end="url(#cyp1-arrow)"/>
         <g class="cyp1-svg-node">
           <rect x="466" y="68" width="180" height="106" rx="15"/>
           <circle cx="500" cy="102" r="16" class="cyp1-icon-cyp"/><text x="500" y="107" text-anchor="middle" class="cyp1-svg-glyph">C</text>
-          <text x="488" y="137" class="cyp1-svg-title">CYP1A1 INDUCES</text>
-          <text x="488" y="157" class="cyp1-svg-copy">Delayed protein</text><text x="488" y="170" class="cyp1-svg-copy">and enzyme activity</text>
+          <text x="488" y="134" class="cyp1-svg-title">CYP1A1 INDUCES</text>
+          <text x="488" y="153" class="cyp1-svg-copy">Delayed protein</text><text x="488" y="169" class="cyp1-svg-copy">and enzyme activity</text>
         </g>
         <path d="M648 120 H682" class="cyp1-main-arrow" marker-end="url(#cyp1-arrow)"/>
         <g class="cyp1-svg-node">
           <rect x="689" y="68" width="180" height="106" rx="15"/>
           <circle cx="723" cy="102" r="16" class="cyp1-icon-metabolite"/><text x="723" y="107" text-anchor="middle" class="cyp1-svg-glyph">M</text>
-          <text x="711" y="137" class="cyp1-svg-title">LIGAND METABOLISM</text>
-          <text x="711" y="157" class="cyp1-svg-copy">Substrate-dependent</text><text x="711" y="170" class="cyp1-svg-copy">clearance</text>
+          <text x="711" y="134" class="cyp1-svg-title">LIGAND METABOLISM</text>
+          <text x="711" y="153" class="cyp1-svg-copy">Substrate-dependent</text><text x="711" y="169" class="cyp1-svg-copy">clearance</text>
         </g>
         <path d="M871 120 H905" class="cyp1-main-arrow" marker-end="url(#cyp1-arrow)"/>
         <g class="cyp1-svg-node">
           <rect x="912" y="68" width="148" height="106" rx="15"/>
           <circle cx="946" cy="102" r="16" class="cyp1-icon-outcome"/><text x="946" y="107" text-anchor="middle" class="cyp1-svg-glyph">↻</text>
-          <text x="934" y="137" class="cyp1-svg-title">OUTCOME</text>
-          <text x="934" y="157" class="cyp1-svg-copy">Resolution or</text><text x="934" y="170" class="cyp1-svg-copy">persistence</text>
+          <text x="934" y="134" class="cyp1-svg-title">OUTCOME</text>
+          <text x="934" y="153" class="cyp1-svg-copy">Resolution or</text><text x="934" y="169" class="cyp1-svg-copy">persistence</text>
         </g>
         <path d="M780 176 V229 H334 V178" class="cyp1-return-arrow" marker-end="url(#cyp1-return-arrow)"/>
         <rect x="332" y="220" width="452" height="74" rx="15" class="cyp1-feedback-box"/>
@@ -92,7 +92,7 @@ nav_order: 101
   </header>
 
   <section class="cyp1-panel" id="cyp1-simulator">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">01 / LIGAND–FEEDBACK DYNAMICS</span><h2>Watch the feedback loop respond</h2><p>Choose a ligand profile and vary induction delay, metabolic capacity and continued exposure.</p></div><span class="cyp1-tag">Live simulation</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">01 / LIGAND–FEEDBACK DYNAMICS</span><h2>Watch the feedback loop respond</h2><p>Pick a ligand profile, then vary induction delay, metabolic capacity and exposure.</p></div></div>
     <div class="cyp1-presets" role="group" aria-label="Ligand profiles">
       <button type="button" class="cyp1-profile is-active" data-ligand="ficz">FICZ · labile</button>
       <button type="button" class="cyp1-profile" data-ligand="dietary">Dietary indole · variable</button>
@@ -142,7 +142,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">02 / CIRCUIT COMPONENTS</span><h2>Explore the control architecture</h2><p>Choose a node to see how it contributes to signal initiation or resolution.</p></div><span class="cyp1-tag">Interactive circuit</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">02 / CIRCUIT COMPONENTS</span><h2>Explore the control architecture</h2><p>Select a node to see how it starts or resolves the signal.</p></div></div>
     <div class="cyp1-components">
       <div class="cyp1-component-grid" role="group" aria-label="AhR CYP1A1 circuit components">
         <button type="button" class="cyp1-component is-active" data-component="ligand"><span>01</span><b>Ligand input</b><small>Environmental · dietary · endogenous</small></button>
@@ -160,7 +160,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">03 / LIGAND COMPARISON</span><h2>Same sensor, different persistence</h2><p>Compare representative ligand behavior described in the review.</p></div><span class="cyp1-tag">Compare profiles</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">03 / LIGAND COMPARISON</span><h2>Same sensor, different persistence</h2><p>Compare representative ligands from the review.</p></div></div>
     <div class="cyp1-ligand-compare">
       <button type="button" class="cyp1-ligand-card is-active" data-compare="ficz"><span class="cyp1-ligand-type">ENDOGENOUS</span><b>FICZ</b><small>Rapidly metabolized</small><span class="cyp1-mini-bar"><i style="width:18%"></i></span><p>Efficient CYP1A1 substrate; can engage a self-limiting feedback loop.</p></button>
       <button type="button" class="cyp1-ligand-card" data-compare="dietary"><span class="cyp1-ligand-type">DIET / MICROBIOTA</span><b>Indole ligands</b><small>Variable susceptibility</small><span class="cyp1-mini-bar"><i style="width:53%"></i></span><p>Ligand source, chemistry and metabolism contribute to context-dependent signaling.</p></button>
@@ -170,7 +170,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">04 / FEEDBACK FAILURE</span><h2>How can the circuit be uncoupled?</h2><p>Select a failure mode to see its likely kinetic signature and a way to test it.</p></div><span class="cyp1-tag">Failure explorer</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">04 / FEEDBACK FAILURE</span><h2>How can the circuit be uncoupled?</h2><p>Select a failure mode to see its signature and a test.</p></div></div>
     <div class="cyp1-failure-layout">
       <div class="cyp1-failure-list" role="group" aria-label="Select feedback failure mode">
         <button type="button" class="cyp1-failure is-active" data-failure="persistent"><span>01</span><div><b>Persistent ligand</b><small>Substrate resists metabolism</small></div><i>↗</i></button>
@@ -182,11 +182,11 @@ nav_order: 101
         <svg viewBox="0 0 420 125" role="img" aria-label="Selected failure node in the AhR CYP1A1 feedback circuit">
           <path class="cyp1-failure-track" d="M35 54 H385"/>
           <path class="cyp1-failure-link" d="M75 54 H143 M181 54 H249 M287 54 H355"/>
+          <path id="cyp1-failure-mark" d="M38 18 L74 82" class="cyp1-failure-mark"/>
           <circle cx="56" cy="54" r="20" class="cyp1-failure-node"/><text x="56" y="59" text-anchor="middle">L</text>
           <circle cx="162" cy="54" r="20" class="cyp1-failure-node"/><text x="162" y="59" text-anchor="middle">A</text>
           <circle cx="268" cy="54" r="20" class="cyp1-failure-node"/><text x="268" y="59" text-anchor="middle">C</text>
           <circle cx="374" cy="54" r="20" class="cyp1-failure-node"/><text x="374" y="59" text-anchor="middle">↻</text>
-          <path id="cyp1-failure-mark" d="M38 32 L72 76" class="cyp1-failure-mark"/>
           <text x="56" y="99" text-anchor="middle" class="cyp1-failure-label">LIGAND</text><text x="162" y="99" text-anchor="middle" class="cyp1-failure-label">AhR</text><text x="268" y="99" text-anchor="middle" class="cyp1-failure-label">CYP1A1</text><text x="374" y="99" text-anchor="middle" class="cyp1-failure-label">FEEDBACK</text>
         </svg>
         <span class="cyp1-kicker" id="cyp1-failure-label">FEEDBACK ESCAPE</span>
@@ -199,7 +199,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">05 / TISSUE REDEPLOYMENT</span><h2>One circuit, different local outcomes</h2><p>Explore how shared metabolic feedback can shape distinct tissue functions.</p></div><span class="cyp1-tag">Tissue explorer</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">05 / TISSUE REDEPLOYMENT</span><h2>One circuit, different local outcomes</h2><p>The same metabolic feedback can shape different tissue functions.</p></div></div>
     <div class="cyp1-tissue-tabs" role="group" aria-label="Choose tissue context">
       <button type="button" class="is-active" data-tissue="gut">Gut</button>
       <button type="button" data-tissue="skin">Skin</button>
@@ -216,8 +216,8 @@ nav_order: 101
           <circle cx="140" cy="110" r="26" fill="#433c85" fill-opacity=".5" stroke="#c4b5fd" stroke-width="1.3"/>
           <g class="cyp1-art-dots"><circle cx="79" cy="83" r="4"/><circle cx="191" cy="88" r="3"/><circle cx="86" cy="143" r="3"/><circle cx="197" cy="137" r="4"/><circle cx="122" cy="57" r="3"/><circle cx="157" cy="163" r="3"/><circle cx="115" cy="137" r="2.5"/><circle cx="160" cy="91" r="2.5"/></g>
           <path d="M40 35 C75 9 113 26 121 47 M240 185 C205 208 175 191 162 171" fill="none" stroke="#fbbf24" stroke-width="2.3" stroke-linecap="round"/>
-          <text x="140" y="114" text-anchor="middle" fill="#e0e7ff" font-size="12" font-weight="800">AhR</text>
-          <text x="140" y="205" text-anchor="middle" fill="#95b1da" font-size="10" letter-spacing="1.4">LOCAL SIGNAL CONTROL</text>
+          <text x="140" y="115" text-anchor="middle" fill="#e0e7ff" font-size="15" font-weight="700">AhR</text>
+          <text x="140" y="208" text-anchor="middle" fill="#a9bfe2" font-size="14" font-weight="700" letter-spacing=".6">LOCAL SIGNAL CONTROL</text>
         </svg>
       </div>
       <article class="cyp1-tissue-detail" aria-live="polite"><span class="cyp1-kicker" id="cyp1-tissue-kicker">BARRIER IMMUNITY</span><h3 id="cyp1-tissue-title">Gut: ligand availability supports mucosal defense</h3><p id="cyp1-tissue-copy">CYP1A1-dependent ligand clearance can shape AhR signaling in intestinal tissues. Constitutive clearance of susceptible ligands can reduce IL-22 production and alter ILC3 and Th17-related mucosal responses.</p><div class="cyp1-question"><b>What to monitor</b><span id="cyp1-tissue-readout">Ligand levels, CYP1A1 activity, AhR targets and IL-22-associated readouts.</span></div></article>
@@ -225,7 +225,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">06 / IMMUNE CONSEQUENCES</span><h2>Signal timing shapes immune interpretation</h2><p>Explore outcomes associated with different AhR signal histories.</p></div><span class="cyp1-tag">Immune explorer</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">06 / IMMUNE CONSEQUENCES</span><h2>Signal timing shapes immune interpretation</h2><p>Outcomes linked to different AhR signal histories.</p></div></div>
     <div class="cyp1-immune-grid">
       <button type="button" class="cyp1-immune-card is-active" data-immune="barrier"><span class="cyp1-immune-icon">▤</span><b>Barrier homeostasis</b><small>Intestinal and epithelial defense</small></button>
       <button type="button" class="cyp1-immune-card" data-immune="lineage"><span class="cyp1-immune-icon">◉</span><b>Immune differentiation</b><small>Context-sensitive T-cell programs</small></button>
@@ -235,7 +235,7 @@ nav_order: 101
   </section>
 
   <section class="cyp1-panel">
-    <div class="cyp1-section-head"><div><span class="cyp1-kicker">07 / EXPERIMENT DESIGN</span><h2>Build a feedback-discrimination experiment</h2><p>Select a perturbation and a measurement to generate model-specific predictions and controls.</p></div><span class="cyp1-tag">Study planner</span></div>
+    <div class="cyp1-section-head"><div><span class="cyp1-kicker">07 / EXPERIMENT DESIGN</span><h2>Build a feedback-discrimination experiment</h2><p>Pick a perturbation and a measurement to compare model predictions.</p></div></div>
     <div class="cyp1-experiment-builder">
       <div class="cyp1-experiment-controls">
         <label for="cyp1-perturbation">Perturbation</label>
@@ -280,7 +280,6 @@ nav_order: 101
     <div><span class="cyp1-kicker">THE CENTRAL DISTINCTION</span><h2>CYP1A1 does more than mark AhR activation.</h2><p>By metabolizing susceptible ligands, it can help determine how long environmental sensing remains active and thereby shape tissue and immune outcomes.</p><a href="https://doi.org/10.1007/s00204-026-04384-1" target="_blank" rel="noopener noreferrer">Read the published review ↗</a></div>
   </section>
 
-  <footer class="cyp1-footer"><span>Interactive companion to the published review</span><a href="{{ '/publications/' | relative_url }}">All publications ↗</a></footer>
 </div>
 
-<script src="{{ '/assets/js/cyp1a1-feedback.js' | relative_url }}?v=20261009-1" defer></script>
+<script src="{{ '/assets/js/cyp1a1-feedback.js' | relative_url }}?v=20261011" defer></script>
