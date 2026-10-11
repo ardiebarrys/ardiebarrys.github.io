@@ -8,11 +8,8 @@ nav_order: 2
 ---
 
 <style>
-  .post,
-  .page,
-  .container,
-  main {
-    max-width: 1280px !important;
+  .post-description {
+    display: none;
   }
 
   .pubs {
@@ -107,7 +104,7 @@ nav_order: 2
     gap: .25rem .85rem;
     margin: .55rem 0 0;
     color: var(--muted);
-    font-size: .78rem;
+    font-size: .875rem;
     line-height: 1.45;
   }
 
@@ -232,16 +229,22 @@ nav_order: 2
     color: var(--text-strong);
   }
 
+  /* The light panel appears only once a badge has rendered, so blocked or empty badges never leave a blank box */
   .pub-metrics {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     padding: 0.6rem 0.8rem;
     border-radius: 12px;
+    visibility: hidden;
     background: #ffffff;
     color: #1e293b;
     --global-text-color: #1e293b;
     --global-theme-color: #1d4ed8;
+  }
+
+  .pub-metrics.has-badge {
+    visibility: visible;
   }
 
   .pub-metric {
@@ -333,30 +336,17 @@ nav_order: 2
         </div>
         <div class="pub-abstract-body" id="abstract-{{ p.doi | slugify }}">{{ p.abstract | markdownify }}</div>
       </div>
-<aside class="pub-metrics" aria-label="Metrics for this paper">
-  <div class="pub-metric">
-    <a
-      href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}"
-      class="plumx-plum-print-popup"
-      data-popup="bottom"
-      data-size="medium">
-    </a>
-  </div>
-
-  <div class="pub-metric">
-    <div class="lazy-badge"
-         data-badge="altmetric"
-         data-badge-type="donut"
-         data-doi="{{ p.doi }}"></div>
-  </div>
-
-  <div class="pub-metric">
-    <span class="lazy-badge"
-          data-badge="dimensions"
-          data-doi="{{ p.doi }}"
-          data-style="small_circle"></span>
-  </div>
-</aside>
+      <aside class="pub-metrics" aria-label="Metrics for this paper">
+        <div class="pub-metric">
+          <a href="https://plu.mx/plum/a/?doi={{ p.doi | url_encode }}" class="plumx-plum-print-popup" data-popup="bottom" data-size="medium"></a>
+        </div>
+        <div class="pub-metric">
+          <div class="lazy-badge" data-badge="altmetric" data-badge-type="donut" data-doi="{{ p.doi }}"></div>
+        </div>
+        <div class="pub-metric">
+          <span class="lazy-badge" data-badge="dimensions" data-doi="{{ p.doi }}" data-style="small_circle"></span>
+        </div>
+      </aside>
     </article>
     {%- endfor %}
   </section>
@@ -460,13 +450,14 @@ nav_order: 2
       });
     });
 
-    // Load the Altmetric and Dimensions badges only when a paper scrolls into view.
+    // Load the Altmetric and Dimensions badges once the page is idle, all at once,
+    // so nothing loads in the middle of a scroll.
     var sources = {
       altmetric: {
         className: "altmetric-embed",
         src: "https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js",
-        init: function (scope) {
-          if (typeof window._altmetric_embed_init === "function") window._altmetric_embed_init(scope);
+        init: function () {
+          if (typeof window._altmetric_embed_init === "function") window._altmetric_embed_init();
         },
       },
       dimensions: {
@@ -477,54 +468,63 @@ nav_order: 2
         },
       },
     };
-    var loading = {};
 
-    function loadScript(name) {
-      if (!loading[name]) {
-        loading[name] = new Promise(function (resolve) {
-          var script = document.createElement("script");
-          script.src = sources[name].src;
-          script.async = true;
-          script.charset = "utf-8";
-          script.onload = resolve;
-          script.onerror = resolve;
-          document.body.appendChild(script);
-        });
-      }
-      return loading[name];
-    }
-
-    function activate(panel) {
-      panel.querySelectorAll(".lazy-badge").forEach(function (badge) {
-        var name = badge.getAttribute("data-badge");
-        var source = sources[name];
-        if (!source) return;
-        badge.classList.remove("lazy-badge");
-        badge.classList.add(source.className);
-        loadScript(name).then(function () {
-          source.init(panel);
-        });
+    function loadScript(src) {
+      return new Promise(function (resolve) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.charset = "utf-8";
+        script.onload = resolve;
+        script.onerror = resolve;
+        document.body.appendChild(script);
       });
     }
 
-    var panels = document.querySelectorAll(".pub-metrics");
-    if (!("IntersectionObserver" in window)) {
-      panels.forEach(activate);
-      return;
-    }
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            observer.unobserve(entry.target);
-            activate(entry.target);
-          }
+    // Show a metrics panel only after one of its badges has drawn something.
+    function markBadges() {
+      document.querySelectorAll(".pub-metrics:not(.has-badge)").forEach(function (panel) {
+        var drawn = Array.prototype.some.call(panel.querySelectorAll(".pub-metric *"), function (el) {
+          var box = el.getBoundingClientRect();
+          return box.width > 4 && box.height > 4;
         });
-      },
-      { rootMargin: "400px 0px" }
-    );
-    panels.forEach(function (panel) {
-      observer.observe(panel);
-    });
+        if (drawn) panel.classList.add("has-badge");
+      });
+    }
+
+    function loadBadges() {
+      Object.keys(sources).forEach(function (name) {
+        var source = sources[name];
+        var badges = document.querySelectorAll('.lazy-badge[data-badge="' + name + '"]');
+        if (!badges.length) return;
+        badges.forEach(function (badge) {
+          badge.classList.remove("lazy-badge");
+          badge.classList.add(source.className);
+        });
+        loadScript(source.src).then(function () {
+          source.init();
+          markBadges();
+        });
+      });
+      [1500, 4000, 9000].forEach(function (delay) {
+        setTimeout(markBadges, delay);
+      });
+    }
+
+    function scheduleBadges() {
+      setTimeout(function () {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadBadges, { timeout: 4000 });
+        } else {
+          loadBadges();
+        }
+      }, 1200);
+    }
+
+    if (document.readyState === "complete") {
+      scheduleBadges();
+    } else {
+      window.addEventListener("load", scheduleBadges);
+    }
   })();
 </script>

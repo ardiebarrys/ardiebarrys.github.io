@@ -12,300 +12,234 @@ nav_order: 7
     display: none;
   }
 
-  .post,
-  .page,
-  .container,
-  main {
-    max-width: 1280px !important;
-  }
-
-  .navbar .nav-link.active,
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
-    color: var(--global-theme-color) !important;
-    font-weight: 700 !important;
-  }
-
-  .bio-page {
-    width: 100%;
-    max-width: 1280px !important;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-
   .bio-hero {
     position: relative;
-    width: 100%;
-    min-height: 430px;
-    margin: 1.5rem 0 2rem;
-    border-radius: 14px;
+    display: flex;
+    align-items: flex-end;
+    min-height: 380px;
+    margin: 0 0 1.5rem;
+    padding: 2rem 2.2rem;
+    border-radius: 16px;
     overflow: hidden;
     background-image:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.42)),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.35)),
       url("{{ '/assets/img/biography-lab.jpg' | relative_url }}");
     background-size: cover;
     background-position: center;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
     user-select: none;
-    -webkit-user-select: none;
   }
 
-  .bio-hero-content {
-    position: absolute;
-    left: 2.2rem;
-    right: 2.2rem;
-    bottom: 2.2rem;
-    max-width: 760px;
-    color: #ffffff !important;
-  }
-
-  .bio-hero-content h1 {
-    margin: 0 0 0.7rem;
-    color: #ffffff !important;
-    font-size: 3rem;
+  .bio-hero h2 {
+    margin: 0 0 0.6rem;
+    color: #ffffff;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
     font-weight: 700;
+    line-height: 1.1;
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
   }
 
-  .bio-hero-content p {
+  .bio-hero p {
+    max-width: 640px;
     margin: 0;
-    padding: 0.2rem 0;
-    color: #ffffff !important;
-    font-size: 1.2rem;
-    line-height: 1.65;
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.6;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
 
+  .bio-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
   .bio-card,
-  .bio-image-card {
-    width: 100%;
+  .bio-side > div {
+    padding: 1.8rem 2rem;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--surface);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.135);
-    box-sizing: border-box;
-  }
-
-  .bio-card {
-    padding: 1.7rem 1.9rem;
-  }
-
-  .bio-card h2 {
-    margin-top: 0;
-    color: var(--text-strong) !important;
-    font-weight: 700;
   }
 
   .bio-card h3 {
-    margin-top: 1.4rem;
-    margin-bottom: 0.45rem;
+    margin: 1.6rem 0 0.5rem;
     color: var(--text-strong);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
   }
 
+  .bio-card h3:first-child {
+    margin-top: 0;
+  }
+
   .bio-card p {
-    text-align: justify;
-    text-justify: inter-word;
+    margin: 0 0 0.9rem;
+    font-size: 1.05rem;
     line-height: 1.75;
   }
 
-  .bio-focus-inline {
-    max-width: 860px;
-    margin: 1.8rem auto;
-    padding: 1.25rem 1.4rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 12px;
-    background: var(--surface);
-    text-align: center;
+  .bio-card p:last-child {
+    margin-bottom: 0;
   }
 
-  .bio-focus-inline h3 {
-    margin-top: 0;
-    margin-bottom: 0.9rem;
-    text-align: center;
+  .bio-side {
+    position: sticky;
+    top: calc(var(--nav-height) + 1rem);
+    display: grid;
+    gap: 1.5rem;
   }
 
-  .bio-focus-list {
+  .bio-side > div {
+    padding: 1.4rem 1.5rem;
+  }
+
+  .bio-side h3 {
+    margin: 0 0 0.8rem;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .bio-focus {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.55rem;
+    gap: 0.5rem;
   }
 
-  .bio-focus-tag {
-    padding: 0.45rem 0.7rem;
+  .bio-focus span {
+    padding: 0.4rem 0.75rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: var(--surface);
+    background: rgba(8, 17, 48, 0.35);
     color: var(--text);
     font-size: 0.95rem;
   }
 
-  .bio-inline-quote {
-    max-width: 860px;
-    margin: 1.8rem auto;
-    padding: 1.35rem 1.5rem;
-    border-left: 5px solid var(--global-theme-color);
-    border-radius: 12px;
-    background: var(--surface);
-    text-align: center;
+  .bio-quote {
+    border-left: 4px solid var(--global-theme-color) !important;
   }
 
-  .bio-inline-quote blockquote {
+  .bio-quote blockquote {
     margin: 0;
-    color: var(--text);
-    font-size: 1.08rem;
-    font-weight: 600;
-    line-height: 1.7;
-    text-align: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--text-strong);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
   }
 
-  .bio-inline-quote cite {
+  .bio-quote cite {
     display: block;
-    margin-top: 0.85rem;
+    margin-top: 0.7rem;
     color: var(--muted);
-    font-style: italic;
-    font-weight: 700;
-    text-align: center;
+    font-style: normal;
+    font-weight: 500;
   }
 
-  .bio-image-card {
-    margin-top: 1.8rem;
+  .bio-image {
+    margin: 1.5rem 0 0;
+    border-radius: 16px;
     overflow: hidden;
   }
 
-  .bio-image-card img {
+  .bio-image img {
+    display: block;
     width: 100%;
     height: 420px;
     object-fit: cover;
-    display: block;
     -webkit-user-drag: none;
     user-select: none;
-    -webkit-user-select: none;
+  }
+
+  @media (max-width: 991.98px) {
+    .bio-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .bio-side {
+      position: static;
+    }
   }
 
   @media (max-width: 768px) {
     .bio-hero {
       min-height: 300px;
+      padding: 1.4rem 1.3rem;
     }
 
-    .bio-hero-content {
-      left: 1.3rem;
-      right: 1.3rem;
-      bottom: 1.4rem;
-    }
-
-    .bio-hero-content h1 {
-      font-size: 2.2rem;
-    }
-
-    .bio-hero-content p {
+    .bio-hero p {
       font-size: 1.02rem;
     }
 
-    .bio-card {
-      padding: 1.25rem;
+    .bio-card,
+    .bio-side > div {
+      padding: 1.25rem 1.1rem;
     }
 
-    .bio-image-card img {
-      height: 280px;
+    .bio-card p {
+      font-size: 1rem;
+    }
+
+    .bio-image img {
+      height: 260px;
     }
   }
-
 </style>
 
-<div class="bio-page">
-
 <section class="bio-hero" oncontextmenu="return false;">
-  <div class="bio-hero-content">
-    <h1>Biography</h1>
-    <p>
-      PhD candidate in Pharmaceutical Sciences working at the intersection of toxicology,
-      molecular regulation, and reproductive health.
-    </p>
+  <div>
+    <h2>Ardie Barry Sailis</h2>
+    <p>PhD candidate in Pharmaceutical Sciences, working where toxicology, molecular regulation and reproductive health meet.</p>
   </div>
 </section>
 
-<article class="bio-card">
-  <h2>Ardie Barry Sailis</h2>
+<div class="bio-layout">
+  <article class="bio-card">
+    <h3>Early background</h3>
+    <p>Ardie Barry Sailis is from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. At ten he wanted to know why bodies break down and whether anything can be done about it. He never stopped asking.</p>
 
-  <h3>Early Background</h3>
-  <p>
-    Ardie Barry Sailis is from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. He decided at ten that he wanted to be a scientist, which sounds precocious but was really a child wanting to know why bodies break down and whether anything can be done about it. He never stopped asking.
-  </p>
+    <h3>Academic development</h3>
+    <p>Pharmaceutical sciences gave that curiosity a shape and a specific question: what happens inside a cell when something goes wrong, and why do protective responses sometimes fail? That question led him to toxicology, pharmacology and molecular regulation. He works experimentally but reads results as coordinated responses across pathways, not isolated outcomes.</p>
 
-  <h3>Academic Development</h3>
-  <p>
-    Pharmaceutical sciences gave that curiosity a shape. Learning how medicines and toxicants interact with living systems narrowed his attention to a specific question. What happens inside a cell when something goes wrong, and why do protective responses sometimes fail to protect?
-  </p>
+    <h3>Doctoral research</h3>
+    <p>He came to the subject sideways. Searching for research assistant posts, he found a project on e-cigarettes and reproductive health and could not let go of the arithmetic: millions of users, and almost nothing known about what the aerosol does to sexual and hormonal function.</p>
+    <p>His doctoral work at the Faculty of Pharmacy, Universiti Malaya, looks beyond the lungs, at Leydig cell steroidogenesis, testosterone signaling, mitochondrial function, redox balance and microRNA regulation. The question is whether repeated exposure disturbs the systems that govern hormone production, cellular energy and stress adaptation.</p>
 
-  <p>
-    That question pulled him toward toxicology, pharmacology, and molecular regulation. He works experimentally, but reads results as coordinated responses across pathways rather than isolated outcomes.
-  </p>
+    <h3>Research philosophy</h3>
+    <p>He does not see toxicant exposure as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation and hormones. Under repeated challenge, what may matter most is whether the cell can still sense, process and resolve stress.</p>
+    <p>That conviction produced work nobody asked him to do. His framework, Cellular Signaling as Dynamic Regulatory Circuits, treats pathways as control systems rather than linear cascades, from NRF2–KEAP1 redox signaling to YAP/TAZ mechanotransduction. He wrote it because research should add to what is known, not only to what is required.</p>
+    <p>The same instinct runs through his writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), he argued that AI should be judged not only on speed and accuracy but on justice, accountability and human dignity. In health research, that means asking who contributes the data, who governs it and who benefits.</p>
 
-  <div class="bio-focus-inline">
-    <h3>Research Focus</h3>
-    <div class="bio-focus-list">
-      <span class="bio-focus-tag">Environmental toxicology</span>
-      <span class="bio-focus-tag">E-cigarette exposure</span>
-      <span class="bio-focus-tag">Reproductive health</span>
-      <span class="bio-focus-tag">Molecular regulation</span>
-      <span class="bio-focus-tag">Mechanotransduction</span>
-      <span class="bio-focus-tag">YAP/TAZ signaling</span>
-      <span class="bio-focus-tag">Mitochondrial stress</span>
-      <span class="bio-focus-tag">microRNA signaling</span>
+    <h3>Long-term direction</h3>
+    <p>He wants work that is mechanistically detailed and conceptually integrative, explaining not only whether something causes harm but how systems sense, adapt, resolve and eventually fail.</p>
+  </article>
+
+  <aside class="bio-side">
+    <div class="bio-quote">
+      <blockquote>"Absence of evidence is not evidence of absence. The most important questions often begin where existing evidence becomes incomplete, uncertain, or overlooked."</blockquote>
+      <cite>Ardie Barry Sailis (2026)</cite>
     </div>
-  </div>
-
-  <h3>Doctoral Research</h3>
-  <p>
-    He came to the subject sideways. While looking for research assistant positions online, he found a project on e-cigarettes and reproductive health and could not let go of the arithmetic. Millions of users worldwide, and almost nothing known about what the aerosol does to sexual and hormonal function. That gap seemed worth closing.
-  </p>
-
-  <p>
-    His doctoral work examines what e-cigarette exposure does to male reproductive and endocrine health, at the Faculty of Pharmacy, Universiti Malaya. E-cigarette use is usually discussed as a lung problem. He is interested in what happens further downstream, in Leydig cell steroidogenesis, testosterone signalling, mitochondrial function, redox imbalance, and microRNA regulation.
-  </p>
-
-  <p>
-    The underlying question is whether repeated exposure disturbs the systems governing hormone production, cellular energy, and stress adaptation, well beyond the airway.
-  </p>
-
-  <h3>Research Philosophy</h3>
-  <p>
-    He does not think toxicant exposure is best understood as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation, and hormonal control. When those systems are repeatedly challenged, what matters may be less the initial insult than whether the cell can still sense, process, and resolve stress.
-  </p>
-
-  <p>
-    That conviction produced work nobody asked him to do. Biology never runs cleanly from A to B. Something always intervenes, and the question of what intervenes is the one he keeps returning to. His framework, Cellular Signalling as Dynamic Regulatory Circuits, treats canonical pathways as control systems rather than linear cascades, with attention to feedback, timing, phase-separated states, mechanotransduction, and failures of signal resolution. His work on NRF2–KEAP1 frames redox signaling as a resolution circuit, while his YAP/TAZ review extends the same logic to mechanical signaling, asking how cells sense force, integrate it over time, terminate the response, and restore mechanosensitivity. He wrote these frameworks because research should add to what is known, not only to what is required.
-  </p>
-
-  <div class="bio-inline-quote">
-    <blockquote>
-      "Absence of evidence is not evidence of absence. The most important questions often begin where existing evidence becomes incomplete, uncertain, or overlooked."
-    </blockquote>
-    <cite>Ardie Barry Sailis (2026)</cite>
-  </div>
-
-  <p>
-    The same instinct runs through his writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), he argued that AI should not be judged only on speed and accuracy, but on what it does to justice, accountability, and human dignity. In health research that means asking who contributes the data, who governs it, and who actually benefits.
-  </p>
-
-  <h3>Long-Term Direction</h3>
-  <p>
-    He wants to do work that is both mechanistically detailed and conceptually integrative, connecting exposure science, cellular stress, endocrine regulation, mechanotransduction, and systems-level disease models. Good research should explain not just whether something causes harm, but how systems sense inputs, encode them over time, adapt, compensate, resolve the response, and eventually fail.
-  </p>
-
-</article>
-
-<figure class="bio-image-card" oncontextmenu="return false;">
-  <img
-    src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}"
-    alt="Ardie Barry Sailis during laboratory research"
-    draggable="false"
-    oncontextmenu="return false;"
-  >
-</figure>
-
+    <div>
+      <h3>Research focus</h3>
+      <div class="bio-focus">
+        <span>Environmental toxicology</span>
+        <span>E-cigarette exposure</span>
+        <span>Reproductive health</span>
+        <span>Molecular regulation</span>
+        <span>Mechanotransduction</span>
+        <span>YAP/TAZ signaling</span>
+        <span>Mitochondrial stress</span>
+        <span>microRNA signaling</span>
+      </div>
+    </div>
+  </aside>
 </div>
+
+<figure class="bio-image" oncontextmenu="return false;">
+  <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis during laboratory research" width="1600" height="903" loading="lazy" decoding="async" draggable="false">
+</figure>

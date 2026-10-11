@@ -8,37 +8,17 @@ description: Get in touch about research, collaborations or roles
 ---
 
 <style>
-  .post,
-  .page,
-  .container,
-  main {
-    max-width: 1280px !important;
-  }
-
-  .navbar .nav-link.active,
-  .navbar .nav-item.active .nav-link,
-  .navbar .nav-link[aria-current="page"] {
-    color: var(--global-theme-color) !important;
-    font-weight: 700 !important;
-  }
-
-  .contact-page {
-    width: 100%;
-    margin-top: 1.5rem;
-  }
-
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.8rem;
+    gap: 1.5rem;
     width: 100%;
-    margin-top: 1.5rem;
   }
 
   .contact-top-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
-    gap: 1.8rem;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 1.5rem;
     width: 100%;
     align-items: stretch;
   }
@@ -49,9 +29,9 @@ description: Get in touch about research, collaborations or roles
 
   .contact-card {
     width: 100%;
-    padding: 1.8rem 2rem;
+    padding: 1.6rem 1.8rem;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--surface);
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
     box-sizing: border-box;
@@ -65,8 +45,9 @@ description: Get in touch about research, collaborations or roles
   }
 
   .contact-address {
-    margin-bottom: 1.4rem;
-    line-height: 1.55;
+    margin-bottom: 1.2rem;
+    font-size: 1.02rem;
+    line-height: 1.6;
   }
 
   .contact-map {
@@ -77,24 +58,20 @@ description: Get in touch about research, collaborations or roles
   }
 
   .contact-note {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.4rem;
     color: var(--muted);
   }
 
   .support-card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 1.45rem 1.6rem;
   }
 
   .support-card p {
     margin-bottom: 1rem;
     color: var(--text);
-    line-height: 1.55;
-    text-align: justify;
-    text-align-last: left;
-    text-justify: inter-word;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .coffee-button {
@@ -103,21 +80,19 @@ description: Get in touch about research, collaborations or roles
     justify-content: center;
     gap: 0.6rem;
     width: fit-content;
-    margin: 0.3rem 0 1rem;
-    padding: 0.78rem 1.15rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: var(--surface);
-    color: var(--accent) !important;
-    font-weight: 700;
+    min-height: 46px;
+    margin: 0.2rem 0 1.1rem;
+    padding: 0.7rem 1.15rem;
+    border: 1px solid rgba(147, 197, 253, 0.6);
+    border-radius: 12px;
+    background: var(--button);
+    color: #ffffff !important;
+    font-weight: 600;
     text-decoration: none !important;
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.1);
   }
 
   .coffee-button:hover {
-    border-color: var(--global-theme-color);
-    background: var(--surface-strong);
-    color: var(--global-theme-color) !important;
+    background: #3b82f6;
   }
 
   .coffee-icon {
@@ -125,23 +100,13 @@ description: Get in touch about research, collaborations or roles
     line-height: 1;
   }
 
-  .support-helps {
-    margin-top: 0.4rem;
-    padding-top: 0.85rem;
-    border-top: 1px solid var(--line);
-    color: var(--text);
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
   .support-note {
-    margin-top: 0.85rem;
+    margin-top: auto;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line);
     color: var(--muted);
-    font-size: 0.88rem;
-    line-height: 1.5;
-    text-align: justify;
-    text-align-last: left;
-    text-justify: inter-word;
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .contact-form label {
@@ -170,7 +135,7 @@ description: Get in touch about research, collaborations or roles
   }
 
   .contact-form ::placeholder {
-    color: #8796b8;
+    color: #a3b2d3;
   }
 
   .contact-form button {
@@ -228,37 +193,26 @@ description: Get in touch about research, collaborations or roles
       </section>
 
       <section class="contact-card support-card">
-        <h2>Support Independent Academic Work</h2>
+        <h2>Support independent work</h2>
 
-        <p>
-          Apart from my doctoral thesis and institutional research, I also write independent academic summaries, research commentary, and scholarly resources on toxicology, reproductive health, and biomedical science. If you find these personal academic projects useful, you may support their continuation through the “Buy Me a Coffee” button.
-        </p>
+        <p>Beyond my thesis, I write independent reviews, commentary and open resources on toxicology and reproductive health. Your support keeps them going.</p>
 
-        <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener">
-          <span class="coffee-icon">&#9749;</span>
-          <span>Support via Buy Me a Coffee</span>
+        <a class="coffee-button" href="https://buymeacoffee.com/ardiebarrysailis" target="_blank" rel="noopener noreferrer">
+          <span class="coffee-icon" aria-hidden="true">&#9749;</span>
+          <span>Buy Me a Coffee</span>
         </a>
 
-        <div class="support-helps">
-          <strong>Support helps with:</strong><br>
-          Website maintenance | Open educational resources | Research communication
-        </div>
-
-        <div class="support-note">
-          Contributions are voluntary and personal. They do not influence research findings, academic judgment, supervision, peer review, or institutional decisions. This page does not represent institutional fundraising unless stated otherwise.
-        </div>
+        <div class="support-note">Voluntary and personal, not institutional fundraising. Contributions never influence findings, peer review or institutional decisions.</div>
       </section>
     </div>
 
     <section class="contact-card">
-      <h2>Send a Message</h2>
+      <h2>Send a message</h2>
 
-      <p class="contact-note">
-        Please allow up to seven business days for a response.
-      </p>
+      <p class="contact-note">Replies within seven business days.</p>
 
       <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
-        <label for="email">Your Email</label>
+        <label for="email">Your email</label>
         <input id="email" type="email" name="email" required>
 
         <label for="topic">Topic</label>
@@ -267,15 +221,15 @@ description: Get in touch about research, collaborations or roles
           <option value="Inquiry">Inquiry</option>
           <option value="Collaboration">Collaboration</option>
           <option value="Publication">Publication</option>
-          <option value="Speaking invitation">Speaking Invitation</option>
-          <option value="Media or writing">Media or Writing</option>
+          <option value="Speaking invitation">Speaking invitation</option>
+          <option value="Media or writing">Media or writing</option>
           <option value="Other">Other</option>
         </select>
 
-        <label for="message">Question</label>
+        <label for="message">Message</label>
         <textarea id="message" name="message" required></textarea>
 
-        <button type="submit">Send Message</button>
+        <button type="submit">Send message</button>
       </form>
     </section>
   </div>

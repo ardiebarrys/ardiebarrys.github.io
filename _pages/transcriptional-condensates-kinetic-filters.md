@@ -7,10 +7,10 @@ nav: false
 nav_order: 102
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/condensate-kinetic-filter.css' | relative_url }}?v=20261009-2">
+<link rel="stylesheet" href="{{ '/assets/css/condensate-kinetic-filter.css' | relative_url }}?v=20261011">
 
 <div class="tkf-page" id="tkf-lab">
-  <a class="tkf-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Back to Cellular Circuits</a>
+  <a class="tkf-home" href="{{ '/cellular-signaling-circuits/' | relative_url }}">← Cellular Circuits</a>
 
   <header class="tkf-hero">
     <div class="tkf-eyebrow"><span class="tkf-live"></span> GENE REGULATION · TEMPORAL SIGNAL DECODING</div>
@@ -61,7 +61,7 @@ nav_order: 102
   </header>
 
   <section class="tkf-panel" id="tkf-simulator">
-    <div class="tkf-section-head"><div><span class="tkf-kicker">01 / DYNAMIC INPUT</span><h2>Test the kinetic filter</h2><p>Change pulse timing and assembly/reset kinetics to see how the model responds.</p></div><span class="tkf-tag">Live simulation</span></div>
+    <div class="tkf-section-head"><div><span class="tkf-kicker">01 / DYNAMIC INPUT</span><h2>Test the kinetic filter</h2><p>Change pulse timing and assembly or reset kinetics to see how the model responds.</p></div></div>
     <div class="tkf-presets" role="group" aria-label="Input pattern presets">
       <button type="button" class="tkf-preset is-active" data-pattern="brief">Brief pulse</button>
       <button type="button" class="tkf-preset" data-pattern="repeated">Repeated pulses</button>
@@ -105,7 +105,7 @@ nav_order: 102
   </section>
 
   <section class="tkf-panel">
-    <div class="tkf-section-head"><div><span class="tkf-kicker">02 / FILTER BEHAVIOR</span><h2>What kind of temporal filter emerges?</h2><p>Select a behavior to inspect its predicted signature and competing explanations.</p></div><span class="tkf-tag">Model explorer</span></div>
+    <div class="tkf-section-head"><div><span class="tkf-kicker">02 / FILTER BEHAVIOR</span><h2>What kind of temporal filter emerges?</h2><p>Select a behavior to see its signature and competing explanations.</p></div></div>
     <div class="tkf-filter-grid" role="group" aria-label="Temporal filter mechanisms">
       <button type="button" class="tkf-filter-card is-active" data-filter="threshold"><span>01</span><b>Duration threshold</b><small>Short inputs may not assemble</small></button>
       <button type="button" class="tkf-filter-card" data-filter="lowpass"><span>02</span><b>Low-pass filtering</b><small>Fast fluctuations attenuate</small></button>
@@ -119,7 +119,7 @@ nav_order: 102
   </section>
 
   <section class="tkf-panel">
-    <div class="tkf-section-head"><div><span class="tkf-kicker">03 / TRANSCRIPTIONAL BURSTING</span><h2>From condensate kinetics to bursts</h2><p>Explore the model's predicted links between assembly and transcriptional output.</p></div><span class="tkf-tag">Burst explorer</span></div>
+    <div class="tkf-section-head"><div><span class="tkf-kicker">03 / TRANSCRIPTIONAL BURSTING</span><h2>From condensate kinetics to bursts</h2><p>How the model links assembly to transcriptional output.</p></div></div>
     <div class="tkf-burst-controls" aria-label="Adjust condensate properties">
       <div class="tkf-burst-control">
         <label class="tkf-range-label" for="tkf-lifetime"><span>Condensate lifetime</span><output id="tkf-lifetime-value">60%</output></label>
@@ -146,12 +146,12 @@ nav_order: 102
         <div><span>Predicted burst duration</span><strong id="tkf-burst-duration">Moderate</strong></div>
         <div><span>Output per burst</span><strong id="tkf-burst-size">Moderate</strong></div>
       </div>
-      <p id="tkf-burst-insight" class="tkf-insight">Change condensate lifetime, enrichment and exchange to see how the model qualitatively maps these properties to bursting.</p>
+      <p id="tkf-burst-insight" class="tkf-insight">Change lifetime, enrichment and exchange to see how the model maps them to bursting.</p>
     </div>
   </section>
 
   <section class="tkf-panel">
-    <div class="tkf-section-head"><div><span class="tkf-kicker">04 / CELLULAR OPERATING REGIME</span><h2>Condensates work inside living cells</h2><p>Choose a physiological context to explore what could shift assembly or reset kinetics.</p></div><span class="tkf-tag">Context matters</span></div>
+    <div class="tkf-section-head"><div><span class="tkf-kicker">04 / CELLULAR OPERATING REGIME</span><h2>Condensates work inside living cells</h2><p>Pick a context to see what could shift assembly or reset kinetics.</p></div></div>
     <div class="tkf-context-grid" role="group" aria-label="Physiological context">
       <button type="button" class="tkf-context is-active" data-context="baseline"><span>✳</span><b>Baseline</b><small>Dynamic exchange</small></button>
       <button type="button" class="tkf-context" data-context="energy"><span>⚡</span><b>Low energy</b><small>ATP-dependent processes</small></button>
@@ -162,7 +162,7 @@ nav_order: 102
   </section>
 
   <section class="tkf-panel">
-    <div class="tkf-section-head"><div><span class="tkf-kicker">05 / EXPERIMENT DESIGN</span><h2>Build a causal test</h2><p>Select a perturbation and measurement to generate predictions, controls and falsification criteria.</p></div><span class="tkf-tag">Study planner</span></div>
+    <div class="tkf-section-head"><div><span class="tkf-kicker">05 / EXPERIMENT DESIGN</span><h2>Build a causal test</h2><p>Pick a perturbation and a measurement to get predictions, controls and a falsification test.</p></div></div>
     <div class="tkf-experiment-builder">
       <div class="tkf-experiment-controls">
         <label for="tkf-perturbation">Perturbation</label>
@@ -205,7 +205,6 @@ nav_order: 102
     <div class="tkf-orbit" aria-hidden="true"><span></span><span></span><span></span><i>τ</i></div>
     <div><span class="tkf-kicker">THE CENTRAL QUESTION</span><h2>Do condensates decode time, or reflect transcription already in progress?</h2><p>The model is useful only if controlled changes in condensate kinetics predictably change nascent transcription while competing mechanisms are measured and controlled.</p><a href="https://doi.org/10.1016/j.genrep.2026.102599" target="_blank" rel="noopener noreferrer">Read the published review ↗</a></div>
   </section>
-  <footer class="tkf-footer"><span>Interactive companion to the published review</span><a href="{{ '/publications/' | relative_url }}">All publications ↗</a></footer>
 </div>
 
-<script src="{{ '/assets/js/condensate-kinetic-filter.js' | relative_url }}?v=20261009-1" defer></script>
+<script src="{{ '/assets/js/condensate-kinetic-filter.js' | relative_url }}?v=20261011" defer></script>
