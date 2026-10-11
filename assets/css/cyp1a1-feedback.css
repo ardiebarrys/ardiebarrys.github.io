@@ -359,7 +359,7 @@
   .cyp1-compare-result { grid-template-columns:43px minmax(0,1fr); gap:.65rem; padding:.8rem; }
   .cyp1-compare-glyph { width:40px; height:40px; border-radius:11px; }
   .cyp1-tissue-scene { grid-template-columns:1fr; gap:.4rem; padding:.8rem; }
-  .cyp1-tissue-art svg { max-width:180px; }
+  .cyp1-tissue-art svg { max-width:245px; }
   .cyp1-immune-grid { grid-template-columns:1fr; }
   .cyp1-immune-card { flex-direction:row; align-items:center; gap:.65rem; min-height:0; padding:.65rem; }
   .cyp1-immune-icon { flex:0 0 32px; margin:0; }
