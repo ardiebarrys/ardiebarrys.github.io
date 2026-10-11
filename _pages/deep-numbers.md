@@ -325,9 +325,7 @@ description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 
   .dn-title-gradient {
     display: inline-block;
-    background:
-      linear-gradient(110deg, #fff 8%, #c4b5fd 35%, #93c5fd 58%, #67e8f9 78%, #fff 96%);
-    background-size: 220% auto;
+    background: linear-gradient(110deg, #c4b5fd 10%, #93c5fd 50%, #67e8f9 90%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
