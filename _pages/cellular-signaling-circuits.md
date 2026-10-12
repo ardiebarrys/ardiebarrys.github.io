@@ -24,7 +24,7 @@ nav_order: 7
       <svg viewBox="0 0 360 384" aria-hidden="true">
         <defs>
           <linearGradient id="scf-ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#67e8f9"/><stop offset=".52" stop-color="#a5b4fc"/><stop offset="1" stop-color="#86efac"/></linearGradient>
-          <linearGradient id="scf-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#183d70"/><stop offset="1" stop-color="#11183c"/></linearGradient>
+          <linearGradient id="scf-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#202d46"/><stop offset="1" stop-color="#121928"/></linearGradient>
           <marker id="scf-tip" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6Z" fill="#67e8f9"/></marker>
         </defs>
         <circle cx="180" cy="178" r="112" class="scf-guide"/>
@@ -35,7 +35,7 @@ nav_order: 7
         <path d="M305.9 223.8 A134 134 0 0 1 230.2 302.2" class="scf-arc" marker-end="url(#scf-tip)"/>
         <path d="M134.2 303.9 A134 134 0 0 1 55.8 228.2" class="scf-arc" marker-end="url(#scf-tip)"/>
         <path d="M54.1 132.2 A134 134 0 0 1 129.8 53.8" class="scf-arc" marker-end="url(#scf-tip)"/>
-        <circle cx="180" cy="178" r="60" fill="url(#scf-core)" stroke="rgba(147,197,253,.4)" stroke-width="1.4"/>
+        <circle cx="180" cy="178" r="60" fill="url(#scf-core)" stroke="rgba(148, 163, 184, .4)" stroke-width="1.4"/>
         <circle cx="180" cy="178" r="48" fill="none" stroke="rgba(103,232,249,.21)" stroke-width="1"/>
         <text x="180" y="170" text-anchor="middle" class="scf-core-small">CELLULAR</text>
         <text x="180" y="194" text-anchor="middle" class="scf-core-large">STATE</text>

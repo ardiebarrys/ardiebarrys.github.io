@@ -28,28 +28,28 @@
 @use "typograms";
 
 /*******************************************************************************
- * Site palette: dark navy and blue (overrides the theme's default colors)
+ * Site palette: neutral slate with blue accents (overrides the theme's default colors)
  ******************************************************************************/
 :root {
   color-scheme: dark;
-  --global-bg-color: #081130;
-  --global-code-bg-color: rgba(147, 197, 253, 0.1);
-  --global-text-color: #e8eefc;
-  --global-text-color-light: #b4c2e1;
+  --global-bg-color: #0d121d;
+  --global-code-bg-color: rgba(148, 163, 184, 0.1);
+  --global-text-color: #e5e7eb;
+  --global-text-color-light: #acb4c0;
   --global-theme-color: #93c5fd;
   --global-hover-color: #bfdbfe;
-  --global-hover-text-color: #081130;
-  --global-footer-bg-color: #050b20;
-  --global-footer-text-color: #b4c2e1;
+  --global-hover-text-color: #0d121d;
+  --global-footer-bg-color: #090c13;
+  --global-footer-text-color: #acb4c0;
   --global-footer-link-color: #ffffff;
-  --global-distill-app-color: #b4c2e1;
-  --global-divider-color: rgba(147, 197, 253, 0.18);
-  --global-card-bg-color: #13245c;
+  --global-distill-app-color: #acb4c0;
+  --global-divider-color: rgba(148, 163, 184, 0.18);
+  --global-card-bg-color: #1a2439;
   --global-highlight-color: #fca5a5;
   --global-back-to-top-bg-color: rgba(255, 255, 255, 0.12);
   --global-back-to-top-text-color: #ffffff;
-  --global-newsletter-bg-color: #13245c;
-  --global-newsletter-text-color: #e8eefc;
+  --global-newsletter-bg-color: #1a2439;
+  --global-newsletter-text-color: #e5e7eb;
   --global-tip-block-bg: #123b2c;
   --global-tip-block-text: #beffe2;
   --global-tip-block-title: #e2f5ec;
@@ -61,16 +61,16 @@
   --global-danger-block-title: #ffe0e0;
 
   /* Shared page tokens used by every page */
-  --site-bg: #081130;
-  --surface: rgba(37, 72, 160, 0.5);
-  --surface-hover: rgba(46, 88, 190, 0.58);
-  --surface-strong: rgba(59, 130, 246, 0.2);
-  --line: rgba(147, 197, 253, 0.22);
-  --line-strong: rgba(147, 197, 253, 0.5);
-  --text: #e8eefc;
+  --site-bg: #0d121d;
+  --surface: rgba(148, 163, 184, 0.07);
+  --surface-hover: rgba(148, 163, 184, 0.11);
+  --surface-strong: rgba(148, 163, 184, 0.12);
+  --line: rgba(148, 163, 184, 0.18);
+  --line-strong: rgba(148, 163, 184, 0.34);
+  --text: #e5e7eb;
   --text-strong: #ffffff;
-  --muted: #b4c2e1;
-  --text-muted: #b4c2e1;
+  --muted: #acb4c0;
+  --text-muted: #acb4c0;
   --accent: #93c5fd;
   --accent-strong: #bfdbfe;
   --button: #2563eb;
@@ -102,7 +102,7 @@ body {
   font-weight: 400;
 }
 
-/* Static blue glow behind every page, on its own layer so scrolling never repaints it */
+/* Faint static glow behind every page, on its own layer so scrolling never repaints it */
 body::before {
   position: fixed;
   inset: 0;
@@ -111,9 +111,8 @@ body::before {
   pointer-events: none;
   will-change: transform;
   background:
-    radial-gradient(circle at 18% 12%, rgba(37, 99, 235, 0.34), transparent 38%),
-    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.18), transparent 32%),
-    radial-gradient(circle at 45% 95%, rgba(29, 78, 216, 0.28), transparent 40%),
+    radial-gradient(circle at 18% 12%, rgba(37, 99, 235, 0.1), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.05), transparent 34%),
     var(--site-bg);
 }
 
@@ -205,8 +204,8 @@ main {
   overflow: visible !important;
   will-change: transform;
   /* Solid instead of a backdrop blur: blur re-renders on every scrolled frame */
-  background: rgba(8, 17, 48, 0.96) !important;
-  border-bottom: 1px solid rgba(147, 197, 253, 0.14) !important;
+  background: rgba(13, 18, 29, 0.96) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
   box-shadow: none !important;
 }
 
@@ -289,7 +288,7 @@ body:has(> header > #navbar) {
   margin: 0 0 0 auto;
   padding: 0.48rem 0.82rem !important;
   box-sizing: border-box;
-  border: 1px solid rgba(147, 197, 253, 0.3);
+  border: 1px solid rgba(148, 163, 184, 0.3);
   border-radius: 999px;
   background: rgba(96, 165, 250, 0.07);
   color: var(--global-text-color) !important;
@@ -302,7 +301,7 @@ body:has(> header > #navbar) {
 
 #navbar .navbar-menu-trigger:hover {
   background: rgba(96, 165, 250, 0.13);
-  border-color: rgba(147, 197, 253, 0.48);
+  border-color: rgba(148, 163, 184, 0.48);
 }
 
 #navbar .navbar-menu-toggle:focus-visible + .navbar-menu-trigger {
@@ -344,7 +343,7 @@ body:has(> header > #navbar) {
 
 #navbar .navbar-menu-toggle:checked + .navbar-menu-trigger {
   background: rgba(37, 99, 235, 0.18);
-  border-color: rgba(147, 197, 253, 0.55);
+  border-color: rgba(148, 163, 184, 0.55);
 }
 
 /* Dropdown panel. The checkbox state is the only open/closed state. */
@@ -361,9 +360,9 @@ body:has(> header > #navbar) {
   margin: 0 !important;
   padding: 0.7rem !important;
   box-sizing: border-box;
-  border: 1px solid rgba(147, 197, 253, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 18px;
-  background: linear-gradient(145deg, #0a1c42, #071430);
+  background: linear-gradient(145deg, #121927, #0d121c);
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.3);
   display: none !important;
 }
@@ -418,7 +417,7 @@ body:has(> header > #navbar) {
 #navbar .nav-link:hover,
 #navbar .nav-link:focus-visible {
   background: rgba(96, 165, 250, 0.08);
-  border-color: rgba(147, 197, 253, 0.18);
+  border-color: rgba(148, 163, 184, 0.18);
   color: var(--global-hover-color) !important;
 }
 
@@ -449,7 +448,7 @@ body:has(> header > #navbar) {
 
 #navbar .nav-deep-numbers > .nav-link::after {
   content: "PLAY";
-  border: 1px solid rgba(147, 197, 253, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.45);
   color: #bfdbfe;
 }
 
@@ -457,7 +456,7 @@ body:has(> header > #navbar) {
   color: #fff !important;
   font-weight: 700 !important;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(96, 165, 250, 0.13));
-  border-color: rgba(147, 197, 253, 0.38);
+  border-color: rgba(148, 163, 184, 0.38);
 }
 
 #navbar .nav-active-dot {
@@ -531,8 +530,8 @@ body:has(> header > #navbar) {
   z-index: 1;
   margin-top: 3rem;
   padding: 1.1rem 15px 1.3rem;
-  border-top: 1px solid rgba(147, 197, 253, 0.14);
-  background: #050b20;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  background: #090c13;
   color: var(--muted);
   font-size: 0.9rem;
   text-align: center;
@@ -549,6 +548,6 @@ body.deep-numbers-active .deep-numbers-page {
 
 body:has(#deep-numbers-app) .site-footer {
   margin-top: 0;
-  background: #02030a;
+  background: #030406;
   border-top-color: rgba(129, 140, 248, 0.12);
 }

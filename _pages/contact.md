@@ -83,7 +83,7 @@ description: Get in touch about research, collaborations or roles
     min-height: 46px;
     margin: 0.2rem 0 1.1rem;
     padding: 0.7rem 1.15rem;
-    border: 1px solid rgba(147, 197, 253, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.6);
     border-radius: 12px;
     background: var(--button);
     color: #ffffff !important;
@@ -135,7 +135,7 @@ description: Get in touch about research, collaborations or roles
   }
 
   .contact-form ::placeholder {
-    color: #a3b2d3;
+    color: #9ca5b4;
   }
 
   .contact-form button {

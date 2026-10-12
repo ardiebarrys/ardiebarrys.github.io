@@ -14,10 +14,10 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .home {
-    --card: linear-gradient(145deg, rgba(15, 35, 82, 0.92), rgba(7, 20, 48, 0.96));
-    --card-line: rgba(147, 197, 253, 0.22);
+    --card: #121a29;
+    --card-line: rgba(148, 163, 184, 0.22);
     --label: #93c5fd;
-    --soft: #c3cfe8;
+    --soft: #b7bec9;
   }
 
   .home p {
@@ -68,7 +68,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     min-height: 240px;
     object-fit: cover;
     object-position: 50% 22%;
-    border: 2px solid rgba(147, 197, 253, 0.45);
+    border: 2px solid rgba(148, 163, 184, 0.45);
     border-radius: 18px;
     -webkit-user-drag: none;
     user-select: none;
@@ -97,8 +97,8 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     flex-wrap: wrap;
     gap: 0.35rem 1.4rem;
     padding: 0.75rem 0;
-    border-top: 1px solid rgba(147, 197, 253, 0.22);
-    border-bottom: 1px solid rgba(147, 197, 253, 0.22);
+    border-top: 1px solid rgba(148, 163, 184, 0.22);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.22);
     color: var(--soft);
     font-size: 0.95rem;
   }
@@ -125,9 +125,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     gap: 0.6rem;
     min-height: 46px;
     padding: 0.55rem 0.8rem;
-    border: 1px solid rgba(147, 197, 253, 0.28);
+    border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 12px;
-    background: rgba(15, 35, 82, 0.55);
+    background: rgba(23, 32, 50, 0.55);
     color: var(--text-strong) !important;
     font-size: 0.95rem;
     font-weight: 500;
@@ -137,7 +137,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .profile-links a:hover {
-    border-color: rgba(147, 197, 253, 0.7);
+    border-color: rgba(148, 163, 184, 0.7);
     background: rgba(37, 99, 235, 0.28);
   }
 
@@ -215,9 +215,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     align-items: center;
     min-height: 30px;
     padding: 0.25rem 0.65rem;
-    border: 1px solid rgba(147, 197, 253, 0.25);
+    border: 1px solid rgba(148, 163, 184, 0.25);
     border-radius: 999px;
-    background: rgba(15, 35, 82, 0.5);
+    background: rgba(23, 32, 50, 0.5);
     color: var(--soft) !important;
     font-size: 0.82rem;
     font-weight: 500;
@@ -225,7 +225,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .study-meta a:hover {
-    border-color: rgba(147, 197, 253, 0.6);
+    border-color: rgba(148, 163, 184, 0.6);
     color: #fff !important;
   }
 
@@ -239,9 +239,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .circuit {
     margin: 0 1.1rem;
     padding: 1rem;
-    border: 1px solid rgba(96, 165, 250, 0.18);
+    border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 14px;
-    background: rgba(2, 10, 26, 0.45);
+    background: rgba(7, 9, 14, 0.45);
   }
 
   .circuit-caption {
@@ -262,9 +262,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .circuit-node {
     position: relative;
     padding: 0.75rem 0.7rem;
-    border: 1px solid rgba(96, 165, 250, 0.22);
+    border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 11px;
-    background: linear-gradient(160deg, rgba(20, 46, 96, 0.75), rgba(7, 20, 48, 0.9));
+    background: linear-gradient(160deg, rgba(27, 38, 60, 0.75), rgba(13, 18, 28, 0.9));
   }
 
   .circuit-node::after {
@@ -288,7 +288,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     width: 26px;
     height: 26px;
     margin-bottom: 0.45rem;
-    border: 1px solid rgba(147, 197, 253, 0.3);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     border-radius: 8px;
     color: #93c5fd;
     font-size: 0.8rem;
@@ -306,7 +306,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .circuit-node small {
     display: block;
     margin-top: 0.3rem;
-    color: #b0c1e0;
+    color: #aab1be;
     font-size: 0.8rem;
     line-height: 1.4;
   }
@@ -320,9 +320,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .circuit-box {
     padding: 0.8rem 0.9rem;
-    border: 1px solid rgba(96, 165, 250, 0.18);
+    border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 11px;
-    background: rgba(15, 35, 82, 0.35);
+    background: rgba(23, 32, 50, 0.35);
   }
 
   .circuit-box .home-label {
@@ -339,14 +339,14 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .circuit-box p {
     margin-top: 0.3rem !important;
-    color: #b0c1e0;
+    color: #aab1be;
     font-size: 0.875rem;
     line-height: 1.5;
   }
 
   .circuit-box.is-good {
     border-color: rgba(74, 222, 128, 0.3);
-    background: linear-gradient(145deg, rgba(20, 76, 60, 0.3), rgba(15, 35, 82, 0.35));
+    background: linear-gradient(145deg, rgba(20, 76, 60, 0.3), rgba(23, 32, 50, 0.35));
   }
 
   .circuit-box.is-good .home-label {
@@ -355,7 +355,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .circuit-box.is-bad {
     border-color: rgba(248, 113, 113, 0.3);
-    background: linear-gradient(145deg, rgba(94, 32, 46, 0.3), rgba(15, 35, 82, 0.35));
+    background: linear-gradient(145deg, rgba(94, 32, 46, 0.3), rgba(23, 32, 50, 0.35));
   }
 
   .circuit-box.is-bad .home-label {
@@ -369,7 +369,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     gap: 0.45rem;
     margin-top: 0.8rem;
     padding-top: 0.8rem;
-    border-top: 1px solid rgba(96, 165, 250, 0.14);
+    border-top: 1px solid rgba(148, 163, 184, 0.14);
   }
 
   .circuit-chips b {
@@ -393,9 +393,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .study-test {
     margin: 0.8rem 1.1rem 0;
     padding: 0.85rem 0.95rem;
-    border: 1px solid rgba(147, 197, 253, 0.18);
+    border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 11px;
-    background: rgba(15, 35, 82, 0.3);
+    background: rgba(23, 32, 50, 0.3);
   }
 
   .study-test strong {
@@ -407,7 +407,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .study-test p {
     margin-top: 0.25rem !important;
-    color: #b0c1e0;
+    color: #aab1be;
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -437,7 +437,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .btn-primary {
-    border: 1px solid rgba(147, 197, 253, 0.6);
+    border: 1px solid rgba(148, 163, 184, 0.6);
     background: #2563eb;
     color: #fff !important;
   }
@@ -447,13 +447,13 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .btn-secondary {
-    border: 1px solid rgba(147, 197, 253, 0.35);
-    background: rgba(30, 64, 125, 0.25);
-    color: #dbeafe !important;
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    background: rgba(148, 163, 184, 0.06);
+    color: #e5e7eb !important;
   }
 
   .btn-secondary:hover {
-    border-color: rgba(147, 197, 253, 0.7);
+    border-color: rgba(148, 163, 184, 0.7);
   }
 
   /* ---------- Explore my work ---------- */
@@ -480,10 +480,10 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     appearance: none;
     min-height: 42px;
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(96, 165, 250, 0.3);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     border-radius: 999px;
-    background: rgba(15, 35, 82, 0.35);
-    color: #c9d7f0;
+    background: rgba(23, 32, 50, 0.35);
+    color: #bfc4ce;
     font: inherit;
     font-size: 0.95rem;
     font-weight: 600;
@@ -497,7 +497,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   }
 
   .explore-tab[aria-selected="true"] {
-    border-color: rgba(147, 197, 253, 0.7);
+    border-color: rgba(148, 163, 184, 0.7);
     background: #2563eb;
     color: #fff;
   }
@@ -509,9 +509,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .explore-panel {
     padding: 1.2rem;
-    border: 1px solid rgba(96, 165, 250, 0.18);
+    border: 1px solid rgba(148, 163, 184, 0.18);
     border-radius: 14px;
-    background: rgba(7, 20, 48, 0.55);
+    background: rgba(13, 18, 28, 0.55);
   }
 
   .explore-panel[hidden] {
@@ -545,9 +545,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .explore-steps li {
     position: relative;
     padding: 0.75rem 0.8rem 0.75rem 2.9rem;
-    border: 1px solid rgba(96, 165, 250, 0.2);
+    border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 11px;
-    background: rgba(15, 35, 82, 0.4);
+    background: rgba(23, 32, 50, 0.4);
     counter-increment: step;
   }
 
@@ -560,7 +560,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     place-items: center;
     width: 26px;
     height: 26px;
-    border: 1px solid rgba(147, 197, 253, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.35);
     border-radius: 50%;
     color: #93c5fd;
     font-size: 0.8rem;
@@ -578,7 +578,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .explore-steps span {
     display: block;
     margin-top: 0.15rem;
-    color: #b0c1e0;
+    color: #aab1be;
     font-size: 0.85rem;
     line-height: 1.4;
   }
@@ -591,9 +591,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .explore-card {
     padding: 0.85rem 0.95rem;
-    border: 1px solid rgba(96, 165, 250, 0.16);
+    border: 1px solid rgba(148, 163, 184, 0.16);
     border-radius: 11px;
-    background: rgba(15, 35, 82, 0.3);
+    background: rgba(23, 32, 50, 0.3);
   }
 
   .explore-card .home-label {
@@ -609,7 +609,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .explore-card p {
     margin-top: 0.25rem !important;
-    color: #b0c1e0;
+    color: #aab1be;
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -666,9 +666,9 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
   .focus-list span {
     padding: 0.4rem 0.75rem;
-    border: 1px solid rgba(147, 197, 253, 0.28);
+    border: 1px solid rgba(148, 163, 184, 0.28);
     border-radius: 999px;
-    background: rgba(37, 72, 160, 0.35);
+    background: rgba(148, 163, 184, 0.07);
     color: var(--text);
     font-size: 0.95rem;
   }
@@ -684,7 +684,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   .news-list {
     margin: 0;
     padding: 0 0 0 1.1rem;
-    border-left: 2px solid rgba(147, 197, 253, 0.25);
+    border-left: 2px solid rgba(148, 163, 184, 0.25);
     list-style: none;
   }
 

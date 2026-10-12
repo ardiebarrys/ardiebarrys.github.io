@@ -113,7 +113,7 @@ nav_order: 7
     padding: 0.4rem 0.75rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    background: rgba(8, 17, 48, 0.35);
+    background: rgba(13, 18, 29, 0.35);
     color: var(--text);
     font-size: 0.95rem;
   }
