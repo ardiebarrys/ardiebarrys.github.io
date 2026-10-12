@@ -210,7 +210,7 @@ nav_order: 2
     padding: 1rem 1.1rem;
     border-left: 3px solid var(--accent);
     border-radius: 8px;
-    background: rgba(8, 17, 48, 0.45);
+    background: rgba(13, 18, 29, 0.45);
     color: var(--text);
     font-size: 0.95rem;
     line-height: 1.65;
@@ -238,8 +238,8 @@ nav_order: 2
     border-radius: 12px;
     visibility: hidden;
     background: #ffffff;
-    color: #1e293b;
-    --global-text-color: #1e293b;
+    color: #161e2c;
+    --global-text-color: #161e2c;
     --global-theme-color: #1d4ed8;
   }
 
