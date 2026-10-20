@@ -259,3 +259,4 @@ nav_order: 100
 </div>
 
 <script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261011" defer></script>
+{% include depth3d/circuits.liquid %}

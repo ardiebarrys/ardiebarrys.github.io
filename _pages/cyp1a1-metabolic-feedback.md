@@ -283,3 +283,4 @@ nav_order: 101
 </div>
 
 <script src="{{ '/assets/js/cyp1a1-feedback.js' | relative_url }}?v=20261011" defer></script>
+{% include depth3d/circuits.liquid %}

@@ -208,3 +208,4 @@ nav_order: 102
 </div>
 
 <script src="{{ '/assets/js/condensate-kinetic-filter.js' | relative_url }}?v=20261011" defer></script>
+{% include depth3d/circuits.liquid %}
