@@ -6,7 +6,7 @@ This folder is excluded from the Jekyll build (`exclude: docs/` in `_config.yml`
 
 | File | Type | Purpose |
 | --- | --- | --- |
-| `assets/js/vendor/three-r170.module.min.js` | new | Three.js r170 (MIT, license header kept). Self-hosted, loaded lazily only when a 3D view is needed. Skipped by Terser because of the `.min.js` suffix. |
+| `assets/js/lib/three-r170.module.min.js` | new | Three.js r170 (MIT, license header kept). Self-hosted, loaded lazily only when a 3D view is needed. Skipped by Terser because of the `.min.js` suffix. Not in a folder named `vendor`, which `_config.yml` excludes from the build. |
 | `assets/js/depth3d-home-cell.js` | new | Homepage accent: translucent adherent cell with nucleus, stress fibers, perinuclear actin cap, focal adhesions and slow signal particles toward the nucleus. Desktop only (min-width 1100 px, fine pointer). Sizes itself to the free strip right of the intro text and hides if there is not enough room. Decorative (`aria-hidden`). |
 | `assets/js/depth3d-yap-circuit.js` | new | Optional 3D view of the six-stage circuit, inserted above the existing stage buttons on the YAP/TAZ page. Selecting a stage in 3D clicks the existing button, so the existing detail panel stays the source of truth. Drag, keyboard, zoom, reset and show/hide controls. Open by default at 720 px and wider, collapsed on phones. |
 | `assets/js/depth3d-cards.js` | new | Small pointer tilt (max 2.4 degrees) and lift on homepage explore cards, framework cards and project cards. Mouse only. |
