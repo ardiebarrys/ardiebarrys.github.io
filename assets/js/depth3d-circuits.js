@@ -244,6 +244,52 @@
     fill.position.set(-6, 3, -4);
     scene.add(fill);
 
+    // ---------- 3D grid backdrop: a floor and back wall lit by the key light ----------
+    // Lines shade from white where the light falls to gray in shadow, and fade with distance.
+    function addGrid(lightPos) {
+      function gridMaterial(normal, cell, strength) {
+        return new THREE.ShaderMaterial({
+          transparent: true,
+          depthWrite: false,
+          uniforms: {
+            uLight: { value: lightPos.clone() },
+            uNormal: { value: normal },
+            uCell: { value: cell },
+            uStrength: { value: strength },
+            uWhite: { value: new THREE.Color(0xf8fafc) },
+            uGray: { value: new THREE.Color(0x64748b) }
+          },
+          vertexShader:
+            "varying vec3 vW; varying vec2 vP;" +
+            "void main(){ vec4 w = modelMatrix * vec4(position,1.0); vW = w.xyz; vP = position.xy;" +
+            "gl_Position = projectionMatrix * viewMatrix * w; }",
+          fragmentShader:
+            "uniform vec3 uLight; uniform vec3 uNormal; uniform float uCell; uniform float uStrength;" +
+            "uniform vec3 uWhite; uniform vec3 uGray; varying vec3 vW; varying vec2 vP;" +
+            "float grid(vec2 p, float s){ vec2 c = p / s; vec2 g = abs(fract(c - 0.5) - 0.5) / fwidth(c);" +
+            "return 1.0 - min(min(g.x, g.y), 1.0); }" +
+            "void main(){" +
+            " float minor = grid(vP, uCell); float major = grid(vP, uCell * 5.0);" +
+            " vec3 L = uLight - vW; float d = length(L);" +
+            " float lambert = max(dot(normalize(uNormal), L / d), 0.0);" +
+            " float pool = clamp(1.0 - d / 16.0, 0.0, 1.0);" +
+            " float shade = clamp(lambert * pool * 2.0, 0.0, 1.0);" +
+            " float edge = smoothstep(0.0, 0.18, 0.5 - max(abs(vP.x) / 30.0, abs(vP.y) / 18.0));" +
+            " float a = max(minor * 0.6, major) * (0.2 + 0.8 * shade) * edge * uStrength;" +
+            " gl_FragColor = vec4(mix(uGray, uWhite, shade), a); }"
+        });
+      }
+      var floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 18, 1, 1), gridMaterial(new THREE.Vector3(0, 1, 0), 0.5, 1));
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -0.85;
+      floor.renderOrder = -2;
+      var wall = new THREE.Mesh(new THREE.PlaneGeometry(30, 18, 1, 1), gridMaterial(new THREE.Vector3(0, 0, 1), 0.5, 0.6));
+      wall.position.set(0, 8.15, -4.6);
+      wall.renderOrder = -2;
+      scene.add(floor, wall);
+    }
+    addGrid(new THREE.Vector3(2.5, 6.5, 4.5));
+
     // ---------- Shape helpers ----------
     function std(color, o) {
       o = o || {};
