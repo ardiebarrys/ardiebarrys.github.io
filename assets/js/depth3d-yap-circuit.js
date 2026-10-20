@@ -9,7 +9,7 @@
   "use strict";
 
   var script = document.currentScript;
-  var THREE_URL = (script && script.getAttribute("data-three")) || "/assets/js/vendor/three-r170.module.min.js";
+  var THREE_URL = (script && script.getAttribute("data-three")) || "/assets/js/lib/three-r170.module.min.js";
 
   var section = document.getElementById("circuit-explorer");
   var flow = section && section.querySelector(".circuit-flow");

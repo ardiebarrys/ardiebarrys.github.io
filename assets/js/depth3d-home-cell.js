@@ -7,7 +7,7 @@
   "use strict";
 
   var script = document.currentScript;
-  var THREE_URL = (script && script.getAttribute("data-three")) || "/assets/js/vendor/three-r170.module.min.js";
+  var THREE_URL = (script && script.getAttribute("data-three")) || "/assets/js/lib/three-r170.module.min.js";
 
   var card = document.querySelector(".home .home-intro");
   if (!card || !window.matchMedia || !("IntersectionObserver" in window)) return;
