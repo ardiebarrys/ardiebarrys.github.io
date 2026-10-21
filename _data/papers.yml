@@ -11,6 +11,26 @@
 #   news:      optional custom line for Latest News
 #   highlight: optional plain-language summary for the homepage Highlighted Study
 
+- title: "The unfolded protein response as a proteotoxic stress-resolution circuit: branch-selective signaling and failed resolution in environmental immunotoxicity"
+  authors:
+    - Ardie Barry Sailis
+  journal: Chemico-Biological Interactions
+  year: 2026
+  received: 2026-07-28
+  revised: 2026-10-06
+  accepted: 2026-10-18
+  published: 2026-10-19
+  doi: 10.1016/j.cbi.2026.112392
+  volume: 440
+  article: 112392
+  project: framework
+  short: The unfolded protein response as a proteotoxic stress-resolution circuit
+  news: New review in Chemico-Biological Interactions proposing the unfolded protein response as a proteotoxic stress-resolution circuit in environmental immunotoxicity.
+  highlight: >-
+    A framework in which environmental toxicants act as proteotoxic inputs, IRE1α, PERK and ATF6 decode ER stress into immune outcomes, and failed resolution can shift immune and barrier cells into persistent dysfunction.
+  abstract: |-
+    Environmental immunotoxicity is commonly framed through oxidative stress, cytotoxicity, inflammation, receptor-mediated signaling and cell- or tissue-specific mechanisms. This review proposes that proteotoxic stress resolution represents an additional layer linking environmental exposure to immune dysfunction. Specifically, the unfolded protein response (UPR) is considered as a branch-selective proteotoxic stress-resolution circuit that can shape immune outcomes when endoplasmic reticulum (ER) homeostasis is perturbed. The framework is offered as a hypothesis-generating conceptual structure rather than an established mechanistic paradigm, and the causal step linking failed resolution to immune dysfunction remains largely extrapolated from non-toxicological ER-stress models. Evidence from ER proteostasis biology, immune-cell function and toxicology indicates that environmental toxicants can disrupt protein folding, ER calcium balance, redox homeostasis, lipid composition, degradation pathways and secretory load, thereby engaging distinct combinations of IRE1α, PERK and ATF6 signaling. These branches generate immune-relevant outputs: IRE1α links ER stress to RNA processing and inflammatory signaling, PERK controls translational suppression and fate selection, and ATF6 supports restoration of folding capacity and secretory competence. Across macrophages, dendritic cells, T cells, plasma cells and barrier epithelial cells, immune outcomes depend on branch bias, signaling duration, cell-type context and resolution through ER-associated degradation, autophagy, ER-phagy, translational recovery and restoration of calcium and redox balance. This framework predicts that repeated low-dose exposures, mixed toxicant inputs and incomplete post-exposure recovery can shift immune or barrier cells into inflammatory, suppressive or barrier-disruptive states without overt cytotoxicity. It also supports time-resolved, branch-specific and cell-specific profiling for immunotoxic risk assessment.
+
 - title: "YAP/TAZ as a mechanochemical signal-resolution circuit"
   authors:
     - Ardie Barry Sailis
@@ -25,8 +45,6 @@
   project: framework
   short: YAP/TAZ as a mechanochemical signal-resolution circuit
   news: New review in Progress in Biophysics and Molecular Biology proposing YAP/TAZ as a mechanochemical signal-resolution circuit.
-  highlight: >-
-    A framework for YAP/TAZ that links mechanical sensing, signal integration, temporal decoding, active termination and recovery of mechanosensitivity.
   abstract: |-
     Mechanical forces regulate cell fate, tissue homeostasis, regeneration, fibrosis and cancer through interconnected mechanotransduction networks in which Yes-associated protein (YAP) and transcriptional coactivator with PDZ-binding motif (TAZ) serve as major transcriptional effectors. This review develops a mechanochemical signal-resolution circuit framework that integrates evidence from mechanobiology, Hippo signaling, nuclear transport, chromatin regulation, extracellular matrix remodeling and mechanical memory. The framework defines YAP/TAZ regulation as a distributed process in which mechanical inputs are sensed, integrated, temporally decoded, actively terminated and followed by restoration of cellular mechanosensitivity and tissue mechanical homeostasis. Current evidence indicates that YAP/TAZ output depends not only on nuclear abundance but also on signaling duration, nucleocytoplasmic dynamics, transcriptional context, feedback control and the persistence of chromatin, cytoskeletal, metabolic and extracellular changes. Failure at different circuit components may produce abnormal sensing, controller failure, effector escape, resolution failure or memory lock, thereby converting adaptive responses into fibrosis, cancer and other chronic tissue states. This model also explains why transient YAP/TAZ activation can support regeneration, whereas sustained or poorly resolved activation promotes pathological remodeling. Testing the framework will require reversible mechanical perturbations, endogenous live-cell reporters, temporally controlled YAP/TAZ manipulation and integrated single-cell analysis of signaling, transcription, chromatin and mechanics. Therapeutically, restoring signal termination and the mechanical baseline may preserve beneficial YAP/TAZ functions while limiting pathological persistence more selectively than continuous pathway suppression.
 
