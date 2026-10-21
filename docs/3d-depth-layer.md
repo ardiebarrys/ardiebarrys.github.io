@@ -11,6 +11,8 @@ This folder is excluded from the Jekyll build (`exclude: docs/` in `_config.yml`
 | `assets/js/depth3d-yap-circuit.js` | new | Optional 3D view of the six-stage circuit, inserted above the existing stage buttons on the YAP/TAZ page. Selecting a stage in 3D clicks the existing button, so the existing detail panel stays the source of truth. Drag, keyboard, zoom, reset and show/hide controls. Open by default at 720 px and wider, collapsed on phones. |
 | `assets/js/depth3d-circuits.js` | new | Shared 3D engine with four configurations: the homepage highlighted study (YAP/TAZ six stages above Figure 1, selection highlights the matching Figure 1 card), NRF2–KEAP1 (closed control loop: sensor, controller, amplifier, outcome, then resolution and redox restoration back to the sensor, with redox stress as input), CYP1A1 (ligand, AhR, delayed induction, metabolism, then negative feedback back to the ligand pool with an inhibition bar, plus the AhR branch to tissue output) and condensates (input, threshold, assembly/exchange, persistence, reset, transcription; the four filter cards select stages 1 to 4, and reset loops back to the threshold). Same controls and safeguards as the YAP/TAZ view. All circuit views (including YAP/TAZ) sit on a lit 3D grid floor and back wall: lines are white where the key light falls and gray in shadow. |
 | `_includes/depth3d/circuits.liquid` | new | Link and script tags for the three framework pages. |
+| `assets/js/depth3d-thought-cell.js` | new | "Thought experiment: follow one cell" on the YAP/TAZ page as a realistic 3D cell: translucent physically based membrane with ruffled lamellipodium and filopodia, textured nucleus with pore complexes, mitochondria, Golgi, centrosome and microtubules, vesicles, ventral stress fibers, perinuclear actin cap and focal adhesions, on an ECM-coated hydrogel over the lit grid. Follows the existing step controls through `data-phase`: force stretches the substrate (yellow arrows), ECM fibers straighten, adhesions enlarge, the actin cap tenses and the nucleus flattens; cyan YAP/TAZ particles shuttle into the nucleus, which glows cyan; Hippo-retained particles dim in step 2; residual flattening and glow remain after withdrawal as a conceptual memory cue. The original SVG stays in the page as fallback and behind a 2D/3D toggle. |
+| `_includes/depth3d/thought-cell.liquid` | new | Script tag, included from `_includes/depth3d/yap.liquid`. |
 | `assets/js/depth3d-cards.js` | new | Small pointer tilt (max 2.4 degrees) and lift on homepage explore cards, framework cards and project cards. Mouse only. |
 | `assets/css/depth3d.css` | new | Styles for the three features above. Cards keep no transform at rest. |
 | `_includes/depth3d/*.liquid` | new | Link and script tags for each page. |
@@ -47,7 +49,8 @@ git revert <merge commit>
 Or remove one feature by deleting its include line:
 
 - Homepage cell and homepage card tilt: the last line of `_pages/about.md`
-- YAP/TAZ 3D view: the last line of `_pages/yap-taz-signal-resolution.md`
+- YAP/TAZ 3D view: the last line of `_pages/yap-taz-signal-resolution.md` (also removes the 3D thought-experiment cell)
+- Thought-experiment 3D cell only: the `thought-cell.liquid` line in `_includes/depth3d/yap.liquid`
 - Framework 3D views: the last line of each of the three framework pages
 - Highlighted-study 3D view: the `depth3d-circuits.js` line in `_includes/depth3d/home.liquid`
 - Framework card tilt: the last line of `_pages/cellular-signaling-circuits.md`
