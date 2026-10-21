@@ -307,3 +307,127 @@
     height: 250px;
   }
 }
+
+/* ---------- YAP/TAZ thought experiment: realistic 3D cell ---------- */
+#thought-cell-stage {
+  position: relative;
+}
+
+.t3d {
+  position: relative;
+  display: none;
+  min-height: 320px;
+  overflow: hidden;
+}
+
+#thought-cell-stage.t3d-on .t3d {
+  display: block;
+}
+
+#thought-cell-stage.t3d-on > svg {
+  display: none;
+}
+
+.t3d-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  opacity: 0;
+  transition: opacity 0.9s var(--d3-ease);
+  touch-action: pan-y;
+}
+
+.t3d.is-ready .t3d-canvas {
+  opacity: 1;
+}
+
+.t3d.is-dragging .t3d-canvas {
+  cursor: grabbing;
+}
+
+.t3d-tag {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.8rem;
+  z-index: 2;
+  color: #93c5fd;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.t3d-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.t3d-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  border-radius: 999px;
+  background: rgba(4, 10, 22, 0.66);
+  color: #dbe7fb;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.t3d-toggle {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.6rem;
+  z-index: 3;
+  min-height: 30px;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(147, 197, 253, 0.32);
+  border-radius: 999px;
+  background: rgba(8, 15, 30, 0.8);
+  color: #e8f1ff;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.t3d-toggle:hover {
+  border-color: rgba(147, 197, 253, 0.7);
+}
+
+.t3d-toggle:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 2px;
+}
+
+.t3d-toggle[hidden] {
+  display: none;
+}
+
+@media (max-width: 599.98px) {
+  .t3d {
+    min-height: 270px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t3d-canvas {
+    transition: none;
+  }
+}
+
+.t3d.is-narrow .t3d-labels {
+  display: none;
+}
