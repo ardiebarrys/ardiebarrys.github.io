@@ -931,8 +931,13 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
     <p class="study-intro">{{ highlight.highlight }}</p>
 
+    <div class="upr-fig" id="upr-figure-stage" role="img" aria-label="Interactive 3D recreation of Figure 1: environmental toxicants perturb ER proteostasis, the IRE1α, PERK and ATF6 branches decode the stress into immune outcomes, and ATF6 supports restoration. Conceptual.">
+      <noscript><p class="upr-fig-status">The interactive 3D figure needs JavaScript. The same circuit is summarized below.</p></noscript>
+    </div>
+    <p class="upr-fig-caption">Figure 1, rebuilt in 3D. Drag to rotate, scroll or use the buttons to zoom, including into the ER to read the proteostasis-disturbance boxes inside it. Conceptual illustration, not measured data. A simplified 2D version follows.</p>
+
     <div class="circuit" role="img" aria-label="Figure 1. The UPR branch-selective proteotoxic stress-resolution circuit">
-      <p class="circuit-caption" aria-hidden="true">Figure 1 · Proteotoxic stress-resolution circuit</p>
+      <p class="circuit-caption" aria-hidden="true">Simplified 2D view · Proteotoxic stress-resolution circuit</p>
       <div class="circuit-flow">
         <div class="circuit-node"><span class="circuit-num">01</span><strong>Proteotoxic input</strong><small>Toxicant perturbs ER proteostasis</small></div>
         <div class="circuit-node"><span class="circuit-num">02</span><strong>ER stress sensing</strong><small>IRE1α, PERK and ATF6 detect the stress</small></div>
