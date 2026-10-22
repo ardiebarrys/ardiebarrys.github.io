@@ -997,7 +997,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
       <div class="profile-affiliation">
         <p><strong>PhD candidate, Pharmaceutical Sciences</strong></p>
         <p>Toxicology and molecular regulation</p>
-        <p>Kuala Lumpur, Malaysia</p>
+        <p>Petaling Jaya, Selangor</p>
       </div>
 
       <p class="profile-ids">
@@ -1020,7 +1020,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     <span class="home-label">Toxicology · Reproductive health</span>
     <h2>I study what vaping does to male reproductive health.</h2>
     <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. I came to the question sideways, found I could not let go of the arithmetic, and have spent my PhD following it from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis.</p>
-    <p class="home-record"><strong>{{ site.data.papers | size }} peer-reviewed papers</strong> as sole or first author, and I review for <strong>7 international journals</strong>. I am from Tambunan, Sabah, and of Dusun heritage.</p>
+    <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
     <div class="focus-list" aria-label="Research focus">
       <span>E-cigarette aerosol</span>
       <span>Male reproductive toxicology</span>
@@ -1143,10 +1143,10 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
       <h3>Reviews and synthesis</h3>
       <p>Most of my published work pulls scattered mechanistic evidence into a usable picture of what e-cigarette exposure does, and says plainly where the evidence runs out.</p>
       <ol class="explore-steps">
-        <li><strong>{{ site.data.papers | size }} papers</strong><span>2025 to 2026</span></li>
-        <li><strong>Sole or first author</strong><span>on all of them</span></li>
-        <li><strong>7 journals</strong><span>I peer review for</span></li>
-        <li><strong>1 systematic review</strong><span>Secondhand aerosol</span></li>
+        <li><strong>Aerosol</strong><span>Metals, carbonyls, particles</span></li>
+        <li><strong>Steroidogenesis</strong><span>Leydig cells, testosterone</span></li>
+        <li><strong>Mitochondria</strong><span>Energy, redox, ferroptosis</span></li>
+        <li><strong>Whole body</strong><span>Respiratory, metabolic, vascular</span></li>
       </ol>
       <div class="explore-cards">
         <div class="explore-card"><span class="home-label">Where evidence stops</span><strong>Plausible, mechanistic, proven</strong><p>Three different claims. I keep them apart, in every paper.</p></div>
