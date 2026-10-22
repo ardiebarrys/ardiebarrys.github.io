@@ -396,6 +396,7 @@
 .scf-nrf { --scf-accent: #86efac; --scf-accent2: #67e8f9; }
 .scf-cyp { --scf-accent: #fbbf24; --scf-accent2: #86efac; }
 .scf-cond { --scf-accent: #c4b5fd; --scf-accent2: #67e8f9; }
+.scf-upr { --scf-accent: #f87171; --scf-accent2: #a5b4fc; }
 
 .scf-card-top {
   display: flex;
