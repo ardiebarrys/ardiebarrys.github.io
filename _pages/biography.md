@@ -4,7 +4,7 @@ title: Biography
 permalink: /biography/
 description: Biography of Ardie Barry Sailis, a toxicology researcher from Sabah studying how e-cigarettes affect male reproductive health
 nav: true
-nav_order: 7
+nav_order: 2
 ---
 
 <style>
@@ -194,29 +194,29 @@ nav_order: 7
 <section class="bio-hero" oncontextmenu="return false;">
   <div>
     <h2>Ardie Barry Sailis</h2>
-    <p>PhD candidate in Pharmaceutical Sciences, working where toxicology, molecular regulation and reproductive health meet.</p>
+    <p>From Tambunan, Sabah. I work where toxicology, molecular regulation and reproductive health meet.</p>
   </div>
 </section>
 
 <div class="bio-layout">
   <article class="bio-card">
     <h3>Early background</h3>
-    <p>Ardie Barry Sailis is from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. At ten he wanted to know why bodies break down and whether anything can be done about it. He never stopped asking.</p>
+    <p>I am from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. At ten I wanted to know why bodies break down and whether anything can be done about it. I never stopped asking.</p>
 
     <h3>Academic development</h3>
-    <p>Pharmaceutical sciences gave that curiosity a shape and a specific question: what happens inside a cell when something goes wrong, and why do protective responses sometimes fail? That question led him to toxicology, pharmacology and molecular regulation. He works experimentally but reads results as coordinated responses across pathways, not isolated outcomes.</p>
+    <p>Pharmaceutical sciences gave that curiosity a shape and a specific question: what happens inside a cell when something goes wrong, and why do protective responses sometimes fail? That question led me to toxicology, pharmacology and molecular regulation. I work experimentally, but I read results as coordinated responses across pathways, not isolated outcomes.</p>
 
     <h3>Doctoral research</h3>
-    <p>He came to the subject sideways. Searching for research assistant posts, he found a project on e-cigarettes and reproductive health and could not let go of the arithmetic: millions of users, and almost nothing known about what the aerosol does to sexual and hormonal function.</p>
-    <p>His doctoral work at the Faculty of Pharmacy, Universiti Malaya, looks beyond the lungs, at Leydig cell steroidogenesis, testosterone signaling, mitochondrial function, redox balance and microRNA regulation. The question is whether repeated exposure disturbs the systems that govern hormone production, cellular energy and stress adaptation.</p>
+    <p>I came to the subject sideways. Searching for research assistant posts, I found a project on e-cigarettes and reproductive health and could not let go of the arithmetic: millions of users, and almost nothing known about what the aerosol does to sexual and hormonal function.</p>
+    <p>My doctoral work looks beyond the lungs, at Leydig cell steroidogenesis, testosterone signaling, mitochondrial function, redox balance and microRNA regulation. The question is whether repeated exposure disturbs the systems that govern hormone production, cellular energy and stress adaptation.</p>
 
     <h3>Research philosophy</h3>
-    <p>He does not see toxicant exposure as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation and hormones. Under repeated challenge, what may matter most is whether the cell can still sense, process and resolve stress.</p>
-    <p>That conviction produced work nobody asked him to do. His framework, Cellular Signaling as Dynamic Regulatory Circuits, treats pathways as control systems rather than linear cascades, from NRF2–KEAP1 redox signaling and YAP/TAZ mechanotransduction to the unfolded protein response in environmental immunotoxicity. He wrote it because research should add to what is known, not only to what is required.</p>
-    <p>The same instinct runs through his writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), he argued that AI should be judged not only on speed and accuracy but on justice, accountability and human dignity. In health research, that means asking who contributes the data, who governs it and who benefits.</p>
+    <p>I do not see toxicant exposure as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation and hormones. Under repeated challenge, what may matter most is whether the cell can still sense, process and resolve stress.</p>
+    <p>That conviction produced work nobody asked me to do. My framework, Cellular Signaling as Dynamic Regulatory Circuits, treats pathways as control systems rather than linear cascades, from NRF2–KEAP1 redox signaling and YAP/TAZ mechanotransduction to the unfolded protein response in environmental immunotoxicity. I wrote it because research should add to what is known, not only to what is required.</p>
+    <p>The same instinct runs through my writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), I argued that AI should be judged not only on speed and accuracy but on justice, accountability and human dignity. In health research, that means asking who contributes the data, who governs it and who benefits.</p>
 
     <h3>Long-term direction</h3>
-    <p>He wants work that is mechanistically detailed and conceptually integrative, explaining not only whether something causes harm but how systems sense, adapt, resolve and eventually fail.</p>
+    <p>I want work that is mechanistically detailed and conceptually integrative, explaining not only whether something causes harm but how systems sense, adapt, resolve and eventually fail.</p>
   </article>
 
   <aside class="bio-side">

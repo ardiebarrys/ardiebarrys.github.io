@@ -4,7 +4,7 @@ permalink: /publications/
 title: Publications
 description: Journal articles and literature reviews by Ardie Barry Sailis
 nav: true
-nav_order: 2
+nav_order: 3
 ---
 
 <style>

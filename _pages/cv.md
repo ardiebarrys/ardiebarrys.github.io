@@ -3,9 +3,9 @@ layout: page
 title: Curriculum Vitae
 permalink: /cv/
 nav: true
-nav_order: 6
+nav_order: 8
 nav_title: CV
-description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences at Universiti Malaya, with publications, experience and training
+description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences, with publications, experience and training
 ---
 
 <style>
@@ -394,7 +394,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     <div>
       <p class="cv-name">Ardie Barry Sailis</p>
       <p class="cv-role">PhD Candidate in Pharmaceutical Sciences (Health)</p>
-      <p class="cv-org">Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya</p>
+      <p class="cv-org">Toxicology · Molecular regulation · Kuala Lumpur, Malaysia</p>
       <ul class="cv-contact">
         <li><a href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a></li>
         <li><a href="https://ardiebarrysailis.com">ardiebarrysailis.com</a></li>
@@ -418,7 +418,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences 
     <h2>Profile</h2>
     <div>
       <p>
-        Toxicology researcher studying how e-cigarette use affects male reproductive health. My PhD at Universiti Malaya compares cigarette
+        Toxicology researcher studying how e-cigarette use affects male reproductive health. My PhD compares cigarette
         smokers, e-cigarette users and dual users in Malaysia, linking exposure to testosterone-related microRNAs, mitochondrial function and
         blood cell changes. I have published {{ site.data.papers | size }} peer-reviewed papers as sole or first author and review manuscripts
         for seven international journals. Open to roles in research, medical affairs, regulatory science and science communication.

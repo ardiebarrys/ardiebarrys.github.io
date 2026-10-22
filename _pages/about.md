@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-description: Toxicology researcher at Universiti Malaya studying how e-cigarette aerosol affects male reproductive health
+description: Toxicology researcher studying how e-cigarette aerosol affects male reproductive health
 ---
 
 <style>
@@ -165,6 +165,51 @@ description: Toxicology researcher at Universiti Malaya studying how e-cigarette
     color: var(--soft);
     font-size: 1.08rem;
     line-height: 1.6;
+  }
+
+  .home-intro .home-record {
+    margin-top: 0.8rem !important;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.18);
+    font-size: 1rem;
+  }
+
+  .home-intro .home-record strong {
+    color: var(--text-strong);
+    font-weight: 600;
+  }
+
+  /* ---------- Doctoral research card ---------- */
+  .thesis-card h2 {
+    margin: 0.2rem 0 0.6rem;
+    color: var(--text-strong);
+    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .thesis-card > p {
+    color: var(--soft);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .thesis-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.9rem 0 1.1rem;
+  }
+
+  .thesis-chips span {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--g) 45%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--g) 12%, transparent);
+    color: #e9eef6;
+    font-size: 0.85rem;
+    font-weight: 500;
   }
 
   /* ---------- Highlighted study ---------- */
@@ -950,8 +995,8 @@ description: Toxicology researcher at Universiti Malaya studying how e-cigarette
 
     <div class="profile-body">
       <div class="profile-affiliation">
-        <p><strong>Department of Pharmaceutical Life Sciences</strong></p>
-        <p>Faculty of Pharmacy, Universiti Malaya</p>
+        <p><strong>PhD candidate, Pharmaceutical Sciences</strong></p>
+        <p>Toxicology and molecular regulation</p>
         <p>Kuala Lumpur, Malaysia</p>
       </div>
 
@@ -972,9 +1017,10 @@ description: Toxicology researcher at Universiti Malaya studying how e-cigarette
   </section>
 
   <section class="home-card home-intro">
-    <span class="home-label">Toxicology · Universiti Malaya</span>
+    <span class="home-label">Toxicology · Reproductive health</span>
     <h2>I study what vaping does to male reproductive health.</h2>
-    <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. My PhD follows that question from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis, comparing smokers, vapers and dual users in Malaysia.</p>
+    <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. I came to the question sideways, found I could not let go of the arithmetic, and have spent my PhD following it from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis.</p>
+    <p class="home-record"><strong>{{ site.data.papers | size }} peer-reviewed papers</strong> as sole or first author, and I review for <strong>7 international journals</strong>. I am from Tambunan, Sabah, and of Dusun heritage.</p>
     <div class="focus-list" aria-label="Research focus">
       <span>E-cigarette aerosol</span>
       <span>Male reproductive toxicology</span>
@@ -982,6 +1028,21 @@ description: Toxicology researcher at Universiti Malaya studying how e-cigarette
       <span>Mitochondrial dysfunction</span>
       <span>microRNA regulation</span>
       <span>Stress-resolution circuits</span>
+    </div>
+  </section>
+
+  <section class="home-card thesis-card" aria-labelledby="thesis-card-title">
+    <span class="home-label">Doctoral research</span>
+    <h2 id="thesis-card-title">Does vaping change how the male body makes testosterone?</h2>
+    <p>My thesis takes the question to people rather than to a model. It compares three exposures on testosterone signaling, steroidogenic microRNAs, mitochondrial function and sexual health, so that the aerosol itself is the variable.</p>
+    <div class="thesis-chips">
+      <span style="--g:#f87171">Cigarette smokers</span>
+      <span style="--g:#67e8f9">E-cigarette users</span>
+      <span style="--g:#a78bfa">Dual users</span>
+    </div>
+    <div class="card-links">
+      <a class="btn-primary" href="/research/e-cigarettes-male-reproductive-health/">The doctoral study <span aria-hidden="true">↗</span></a>
+      <a class="btn-secondary" href="/publications/">Publications</a>
     </div>
   </section>
 

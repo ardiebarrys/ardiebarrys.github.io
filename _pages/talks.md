@@ -4,7 +4,7 @@ title: Talks
 permalink: /talks/
 description: Presentations, conferences and workshops
 nav: true
-nav_order: 5
+nav_order: 7
 ---
 
 <style>

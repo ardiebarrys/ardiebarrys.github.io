@@ -3,7 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 nav: true
-nav_order: 8
+nav_order: 9
 description: Get in touch about research, collaborations or roles
 ---
 
@@ -50,11 +50,11 @@ description: Get in touch about research, collaborations or roles
     line-height: 1.6;
   }
 
-  .contact-map {
-    width: 100%;
-    height: 360px;
-    border: 0;
-    border-radius: 10px;
+  .contact-address-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 
   .contact-note {
@@ -163,10 +163,6 @@ description: Get in touch about research, collaborations or roles
     .contact-card {
       padding: 1.25rem;
     }
-
-    .contact-map {
-      height: 320px;
-    }
   }
 </style>
 
@@ -174,22 +170,15 @@ description: Get in touch about research, collaborations or roles
   <div class="contact-layout">
     <div class="contact-top-grid">
       <section class="contact-card">
-        <h2>Address</h2>
+        <h2>Where I am</h2>
 
         <div class="contact-address">
-          <strong>Department of Pharmaceutical Life Sciences</strong><br>
-          Faculty of Pharmacy<br>
-          Universiti Malaya<br>
-          50603 Kuala Lumpur, Malaysia
+          <strong>Kuala Lumpur, Malaysia</strong><br>
+          PhD candidate, Pharmaceutical Sciences<br>
+          Toxicology and molecular regulation
         </div>
 
-        <iframe
-          class="contact-map"
-          src="https://www.google.com/maps?q=Faculty%20of%20Pharmacy%2C%20University%20of%20Malaya%2C%2050603%20Kuala%20Lumpur%2C%20Malaysia&output=embed"
-          allowfullscreen
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+        <p class="contact-address-note">The form is the fastest way to reach me. I read everything, and I reply to anything about toxicology, reproductive health, collaborations or roles.</p>
       </section>
 
       <section class="contact-card support-card">
