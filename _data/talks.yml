@@ -1,8 +1,7 @@
 # Talks, conferences and workshops. Used on the Talks page and the CV.
 # kind: talk, poster, conference or workshop. Keep the newest at the top.
 
-- title: PhD thesis seminar
-  where: Universiti Malaya
+- title: Doctoral thesis seminar
   date: 1 Oct 2026
   kind: talk
 
@@ -30,7 +29,7 @@
   kind: workshop
 
 - title: Quantitative PCR (qPCR) Workshop
-  where: Vazyme, Universiti Malaya
+  where: Vazyme
   date: "2024"
   kind: workshop
 

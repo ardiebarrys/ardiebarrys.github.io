@@ -867,9 +867,9 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
     <div class="profile-body">
       <div class="profile-affiliation">
-        <p><strong>PhD candidate, Pharmaceutical Sciences</strong></p>
-        <p>Toxicology and molecular regulation</p>
-        <p>Petaling Jaya, Selangor</p>
+        <p><strong>Independent researcher</strong></p>
+        <p>Toxicology and molecular biology</p>
+        <p>Petaling Jaya, Selangor, Malaysia</p>
       </div>
 
       <p class="profile-ids">

@@ -174,8 +174,8 @@ description: Get in touch about research, collaborations or roles
 
         <div class="contact-address">
           <strong>Petaling Jaya, Selangor, Malaysia</strong><br>
-          PhD candidate, Pharmaceutical Sciences<br>
-          Toxicology and molecular regulation
+          Independent researcher<br>
+          Toxicology and molecular biology
         </div>
 
         <p class="contact-address-note">The form is the fastest way to reach me. I read everything, and I reply to anything about toxicology, reproductive health, collaborations or roles.</p>
