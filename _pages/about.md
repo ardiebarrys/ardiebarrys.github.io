@@ -934,7 +934,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     <div class="upr-fig" id="upr-figure-stage" role="img" aria-label="Interactive conceptual 3D immune cell showing the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria, and toxicant particles entering the cell.">
       <noscript><p class="upr-fig-status">The interactive 3D cell needs JavaScript. The circuit is summarized below.</p></noscript>
     </div>
-    <p class="upr-fig-caption">A conceptual 3D immune cell: the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria and incoming toxicant particles. Drag the background to move the cell, drag the cell to orbit around it, and scroll to zoom. Illustration, not measured data. A simplified 2D circuit follows.</p>
+    <p class="upr-fig-caption">A conceptual 3D immune cell with the UPR mechanisms beside it: the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria and incoming toxicant particles, and the branch outputs feeding the immune outcomes. Drag the background to move everything, drag an object to orbit around it, and scroll to zoom. Illustration, not measured data. A simplified 2D circuit follows.</p>
 
     <div class="circuit" role="img" aria-label="Figure 1. The UPR branch-selective proteotoxic stress-resolution circuit">
       <p class="circuit-caption" aria-hidden="true">Simplified 2D view · Proteotoxic stress-resolution circuit</p>
