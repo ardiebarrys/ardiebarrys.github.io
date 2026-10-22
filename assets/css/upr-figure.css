@@ -46,6 +46,20 @@
 .upr-fig-zoom { display: inline-flex; gap: 0.25rem; }
 .upr-fig-zoom button { min-width: 34px; font-size: 1rem; line-height: 1; padding: 0.3rem 0.5rem; }
 
+.upr-fig-labels { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.upr-fig-label {
+  position: absolute; top: 0; left: 0;
+  padding: 0.12rem 0.45rem;
+  border: 1px solid var(--lc, rgba(147, 197, 253, 0.45));
+  border-radius: 999px;
+  background: rgba(4, 10, 22, 0.74);
+  color: #eaf2ff; font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.05em; line-height: 1.3; text-transform: uppercase;
+  white-space: nowrap; will-change: transform;
+}
+.upr-fig-label[hidden] { display: none; }
+.upr-fig.is-narrow .upr-fig-labels { display: none; }
+
 .upr-fig-caption {
   margin: 0.55rem 1.1rem 0 !important;
   color: #9aa2b1; font-size: 0.78rem; line-height: 1.5;
