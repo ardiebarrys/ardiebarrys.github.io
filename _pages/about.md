@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-description: Doctoral Researcher · Toxicology · Scientific Evidence
+description: Toxicology researcher at Universiti Malaya studying how e-cigarette aerosol affects male reproductive health
 ---
 
 <style>
@@ -972,18 +972,16 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
   </section>
 
   <section class="home-card home-intro">
-    <span class="home-label">Pharmaceutical Sciences · Toxicology</span>
-    <h2>Researcher. Scientific writer. Evidence&#8209;focused problem solver.</h2>
-    <p>I study how inhaled toxicants, especially e-cigarette aerosol, affect male reproductive health and the molecular mechanisms behind it.</p>
+    <span class="home-label">Toxicology · Universiti Malaya</span>
+    <h2>I study what vaping does to male reproductive health.</h2>
+    <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. My PhD follows that question from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis, comparing smokers, vapers and dual users in Malaysia.</p>
     <div class="focus-list" aria-label="Research focus">
-      <span>E-cigarette toxicology</span>
-      <span>Reproductive toxicology</span>
-      <span>Endocrine disruption</span>
+      <span>E-cigarette aerosol</span>
+      <span>Male reproductive toxicology</span>
+      <span>Leydig cells &amp; testosterone</span>
       <span>Mitochondrial dysfunction</span>
       <span>microRNA regulation</span>
-      <span>Mechanotransduction</span>
-      <span>YAP/TAZ signaling</span>
-      <span>Evidence synthesis</span>
+      <span>Stress-resolution circuits</span>
     </div>
   </section>
 
@@ -1041,7 +1039,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
       <div class="explore-tabs" role="tablist" aria-label="Research areas">
         <button class="explore-tab" id="tab-toxicology" type="button" role="tab" aria-selected="true" aria-controls="panel-toxicology">Toxicology</button>
         <button class="explore-tab" id="tab-mechanisms" type="button" role="tab" aria-selected="false" aria-controls="panel-mechanisms" tabindex="-1">Mechanisms</button>
-        <button class="explore-tab" id="tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="panel-evidence" tabindex="-1">Evidence &amp; writing</button>
+        <button class="explore-tab" id="tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="panel-evidence" tabindex="-1">Reviews &amp; synthesis</button>
       </div>
     </div>
 
@@ -1080,18 +1078,18 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     </div>
 
     <div class="explore-panel" id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" hidden>
-      <span class="home-label">Question → audit → synthesis</span>
-      <h3>Evidence &amp; scientific communication</h3>
-      <p>Turn a broad question into an auditable chain: find the literature, test its quality, map claims to evidence and state the conclusion precisely.</p>
+      <span class="home-label">The published record</span>
+      <h3>Reviews and synthesis</h3>
+      <p>Most of my published work pulls scattered mechanistic evidence into a usable picture of what e-cigarette exposure does, and says plainly where the evidence runs out.</p>
       <ol class="explore-steps">
-        <li><strong>Question</strong><span>Scope the claim</span></li>
-        <li><strong>Retrieve</strong><span>Find the evidence</span></li>
-        <li><strong>Appraise</strong><span>Quality, bias</span></li>
-        <li><strong>Synthesize</strong><span>Claim and uncertainty</span></li>
+        <li><strong>{{ site.data.papers | size }} papers</strong><span>2025 to 2026</span></li>
+        <li><strong>Sole or first author</strong><span>on all of them</span></li>
+        <li><strong>7 journals</strong><span>I peer review for</span></li>
+        <li><strong>1 systematic review</strong><span>Secondhand aerosol</span></li>
       </ol>
       <div class="explore-cards">
-        <div class="explore-card"><span class="home-label">Audit</span><strong>Claim → source → support</strong><p>Trace each statement to evidence that actually supports it.</p></div>
-        <div class="explore-card"><span class="home-label">Writing</span><strong>Precision over volume</strong><p>Show methods, limits, effect direction and uncertainty.</p></div>
+        <div class="explore-card"><span class="home-label">Where evidence stops</span><strong>Plausible, mechanistic, proven</strong><p>Three different claims. I keep them apart, in every paper.</p></div>
+        <div class="explore-card"><span class="home-label">Outside the journals</span><strong>Writing for readers, not referees</strong><p>Pieces in <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news">The Conversation</a> on what the vaping evidence does and does not show.</p></div>
       </div>
     </div>
   </section>

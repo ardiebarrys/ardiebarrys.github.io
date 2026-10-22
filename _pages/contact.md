@@ -3,7 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 nav: true
-nav_order: 6
+nav_order: 8
 description: Get in touch about research, collaborations or roles
 ---
 

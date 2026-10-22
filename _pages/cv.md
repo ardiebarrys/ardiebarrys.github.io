@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 permalink: /cv/
 nav: true
-nav_order: 5
+nav_order: 6
 nav_title: CV
 description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences at Universiti Malaya, with publications, experience and training
 ---
