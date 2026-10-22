@@ -2,7 +2,7 @@
 layout: page
 title: Biography
 permalink: /biography/
-description: Biography of Ardie Barry Sailis, a toxicology researcher from Sabah studying how e-cigarettes affect male reproductive health
+description: Biography of Ardie Barry Sailis, a toxicology researcher studying how e-cigarettes affect male reproductive health
 nav: true
 nav_order: 2
 ---
@@ -194,7 +194,7 @@ nav_order: 2
 <section class="bio-hero" oncontextmenu="return false;">
   <div>
     <h2>Ardie Barry Sailis</h2>
-    <p>From Tambunan, Sabah. I work where toxicology, molecular regulation and reproductive health meet.</p>
+    <p>I work where toxicology, molecular regulation and reproductive health meet.</p>
   </div>
 </section>
 

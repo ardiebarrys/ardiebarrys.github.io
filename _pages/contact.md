@@ -173,7 +173,7 @@ description: Get in touch about research, collaborations or roles
         <h2>Where I am</h2>
 
         <div class="contact-address">
-          <strong>Kuala Lumpur, Malaysia</strong><br>
+          <strong>Petaling Jaya, Selangor, Malaysia</strong><br>
           PhD candidate, Pharmaceutical Sciences<br>
           Toxicology and molecular regulation
         </div>
