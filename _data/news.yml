@@ -1,9 +1,7 @@
 # Latest News on the homepage.
 # New papers in _data/papers.yml appear in Latest News automatically,
-# so this file is only for other news. The homepage shows the 5 most recent items.
-
-- date: 2026-10-06
-  text: Updated the whole website.
+# so this file is only for other milestones. The homepage shows the 5 most recent items.
+# Keep entries to real milestones: seminars, invitations, awards, new roles.
 
 - date: 2026-10-01
   text: Presented my PhD thesis seminar.

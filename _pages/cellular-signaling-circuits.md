@@ -4,7 +4,7 @@ title: Cellular Circuits
 permalink: /cellular-signaling-circuits/
 description: An overview of five research frameworks exploring cellular signaling as dynamic regulatory circuits.
 nav: true
-nav_order: 7
+nav_order: 5
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/cellular-circuit-overview.css' | relative_url }}?v=20261011">

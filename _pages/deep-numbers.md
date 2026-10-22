@@ -2,8 +2,8 @@
 layout: page
 title: Deep Numbers
 permalink: /deep-numbers/
-nav: true
-nav_order: 8
+nav: false
+nav_order: 99
 description: Deep Numbers, a daily rarity game by Ardie Barry Sailis.
 ---
 
