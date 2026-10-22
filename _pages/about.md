@@ -931,10 +931,10 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
     <p class="study-intro">{{ highlight.highlight }}</p>
 
-    <div class="upr-fig" id="upr-figure-stage" role="img" aria-label="Interactive 3D recreation of Figure 1: environmental toxicants perturb ER proteostasis, the IRE1α, PERK and ATF6 branches decode the stress into immune outcomes, and ATF6 supports restoration. Conceptual.">
-      <noscript><p class="upr-fig-status">The interactive 3D figure needs JavaScript. The same circuit is summarized below.</p></noscript>
+    <div class="upr-fig" id="upr-figure-stage" role="img" aria-label="Interactive conceptual 3D immune cell showing the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria, and toxicant particles entering the cell.">
+      <noscript><p class="upr-fig-status">The interactive 3D cell needs JavaScript. The circuit is summarized below.</p></noscript>
     </div>
-    <p class="upr-fig-caption">Figure 1, rebuilt in 3D. Drag to rotate, scroll or use the buttons to zoom, including into the ER to read the proteostasis-disturbance boxes inside it. Conceptual illustration, not measured data. A simplified 2D version follows.</p>
+    <p class="upr-fig-caption">A conceptual 3D immune cell: the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria and incoming toxicant particles. Drag the background to move the cell, drag the cell to orbit around it, and scroll to zoom. Illustration, not measured data. A simplified 2D circuit follows.</p>
 
     <div class="circuit" role="img" aria-label="Figure 1. The UPR branch-selective proteotoxic stress-resolution circuit">
       <p class="circuit-caption" aria-hidden="true">Simplified 2D view · Proteotoxic stress-resolution circuit</p>
