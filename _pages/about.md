@@ -615,164 +615,6 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     border-color: rgba(148, 163, 184, 0.7);
   }
 
-  /* ---------- Explore my work ---------- */
-  .explore-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .explore-head .home-label {
-    margin: 0;
-  }
-
-  .explore-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .explore-tab {
-    appearance: none;
-    min-height: 42px;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(148, 163, 184, 0.3);
-    border-radius: 999px;
-    background: rgba(23, 32, 50, 0.35);
-    color: #bfc4ce;
-    font: inherit;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  }
-
-  .explore-tab:hover {
-    border-color: rgba(96, 165, 250, 0.6);
-    color: #fff;
-  }
-
-  .explore-tab[aria-selected="true"] {
-    border-color: rgba(148, 163, 184, 0.7);
-    background: #2563eb;
-    color: #fff;
-  }
-
-  .explore-tab:focus-visible {
-    outline: 2px solid #bfdbfe;
-    outline-offset: 3px;
-  }
-
-  .explore-panel {
-    padding: 1.2rem;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 14px;
-    background: rgba(13, 18, 28, 0.55);
-  }
-
-  .explore-panel[hidden] {
-    display: none;
-  }
-
-  .explore-panel h3 {
-    margin: 0 0 0.4rem;
-    color: var(--text-strong);
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-
-  .explore-panel > p {
-    max-width: 780px;
-    color: var(--soft);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .explore-steps {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0.6rem;
-    margin: 1rem 0;
-    padding: 0;
-    list-style: none;
-    counter-reset: step;
-  }
-
-  .explore-steps li {
-    position: relative;
-    padding: 0.75rem 0.8rem 0.75rem 2.9rem;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 11px;
-    background: rgba(23, 32, 50, 0.4);
-    counter-increment: step;
-  }
-
-  .explore-steps li::before {
-    content: counter(step, decimal-leading-zero);
-    position: absolute;
-    left: 0.75rem;
-    top: 0.8rem;
-    display: grid;
-    place-items: center;
-    width: 26px;
-    height: 26px;
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    border-radius: 50%;
-    color: #93c5fd;
-    font-size: 0.8rem;
-    font-weight: 700;
-  }
-
-  .explore-steps strong {
-    display: block;
-    color: #eef4ff;
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1.3;
-  }
-
-  .explore-steps span {
-    display: block;
-    margin-top: 0.15rem;
-    color: #aab1be;
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .explore-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.6rem;
-  }
-
-  .explore-card {
-    padding: 0.85rem 0.95rem;
-    border: 1px solid rgba(148, 163, 184, 0.16);
-    border-radius: 11px;
-    background: rgba(23, 32, 50, 0.3);
-  }
-
-  .explore-card .home-label {
-    margin-bottom: 0.2rem;
-  }
-
-  .explore-card strong {
-    display: block;
-    color: #eef4ff;
-    font-size: 0.98rem;
-    font-weight: 600;
-  }
-
-  .explore-card p {
-    margin-top: 0.25rem !important;
-    color: #aab1be;
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
   /* ---------- Framework + support ---------- */
   .home-pair {
     display: grid;
@@ -925,9 +767,6 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
       display: none;
     }
 
-    .explore-steps {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
     .home-pair {
       grid-template-columns: 1fr;
@@ -1002,21 +841,9 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
       padding: 1.1rem 0.75rem 1.2rem;
     }
 
-    .explore-panel {
-      padding: 1rem 0.85rem;
-    }
 
-    .explore-tabs {
-      width: 100%;
-    }
 
-    .explore-tab {
-      flex: 1 1 auto;
-    }
 
-    .explore-steps {
-      grid-template-columns: 1fr;
-    }
   }
 
   @media (max-width: 575.98px) {
@@ -1062,9 +889,9 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
   </section>
 
   <section class="home-card home-intro">
-    <span class="home-label">Toxicology · Reproductive health</span>
-    <h2>I study what vaping does to male reproductive health.</h2>
-    <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. I came to the question sideways, found I could not let go of the arithmetic, and have spent my PhD following it from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis.</p>
+    <span class="home-label">Toxicology · Molecular Biology</span>
+    <h2>I study how cells handle chemical stress, and what happens when they cannot.</h2>
+    <p>That question runs in two directions. In the lab, whether vaping disturbs the systems that make testosterone, followed from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis. On paper, how signaling pathways end a response and recover from it, and why failing to resolve stress may matter more than switching on.</p>
     <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
     <div class="home-tracks">
       <article class="home-track track-doctoral">
@@ -1146,67 +973,6 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
   </figure>
 {%- endif %}
 
-  <section class="home-card explore" aria-label="Explore my work">
-    <div class="explore-head">
-      <span class="home-label">Explore my work</span>
-      <div class="explore-tabs" role="tablist" aria-label="Research areas">
-        <button class="explore-tab" id="tab-toxicology" type="button" role="tab" aria-selected="true" aria-controls="panel-toxicology">Toxicology</button>
-        <button class="explore-tab" id="tab-mechanisms" type="button" role="tab" aria-selected="false" aria-controls="panel-mechanisms" tabindex="-1">Mechanisms</button>
-        <button class="explore-tab" id="tab-evidence" type="button" role="tab" aria-selected="false" aria-controls="panel-evidence" tabindex="-1">Reviews &amp; synthesis</button>
-      </div>
-    </div>
-
-    <div class="explore-panel" id="panel-toxicology" role="tabpanel" aria-labelledby="tab-toxicology">
-      <span class="home-label">Exposure → response</span>
-      <h3>Inhaled toxicants</h3>
-      <p>Characterize what is inhaled, set dose and context, trace the biological response, then judge human relevance.</p>
-      <ol class="explore-steps">
-        <li><strong>Exposure</strong><span>Aerosol, tobacco, route</span></li>
-        <li><strong>Dose &amp; context</strong><span>Concentration, timing</span></li>
-        <li><strong>Biological response</strong><span>Organ, cell, pathway</span></li>
-        <li><strong>Human relevance</strong><span>Risk, uncertainty</span></li>
-      </ol>
-      <div class="explore-cards">
-        <div class="explore-card"><span class="home-label">Questions</span><strong>What is inhaled?</strong><p>Which constituents, particles and doses are plausible.</p></div>
-        <div class="explore-card"><span class="home-label">Evidence</span><strong>What changes?</strong><p>Respiratory, reproductive, metabolic and systemic endpoints.</p></div>
-        <div class="explore-card"><span class="home-label">Decision</span><strong>What can be concluded?</strong><p>Plausibility, mechanism and proven human effects, kept apart.</p></div>
-      </div>
-    </div>
-
-    <div class="explore-panel" id="panel-mechanisms" role="tabpanel" aria-labelledby="tab-mechanisms" hidden>
-      <span class="home-label">Trigger → network → resolution</span>
-      <h3>Molecular mechanisms</h3>
-      <p>Follow the causal chain from a trigger through molecular nodes to adaptation, feedback, termination or lasting dysfunction.</p>
-      <ol class="explore-steps">
-        <li><strong>Trigger</strong><span>Stress, ligand, force</span></li>
-        <li><strong>Molecular node</strong><span>Receptor, kinase, factor</span></li>
-        <li><strong>Network response</strong><span>Feedback, crosstalk</span></li>
-        <li><strong>Resolution</strong><span>Adaptation, persistence</span></li>
-      </ol>
-      <div class="explore-cards">
-        <div class="explore-card"><span class="home-label">Core systems</span><strong>NRF2–KEAP1 · CYP1A1</strong><p>Redox sensing and environmental response.</p></div>
-        <div class="explore-card"><span class="home-label">Mechanochemical</span><strong>YAP/TAZ signaling</strong><p>Force, transcription and cell state.</p></div>
-        <div class="explore-card"><span class="home-label">Temporal control</span><strong>Condensates · microRNA</strong><p>Signal timing and kinetic filtering.</p></div>
-      </div>
-    </div>
-
-    <div class="explore-panel" id="panel-evidence" role="tabpanel" aria-labelledby="tab-evidence" hidden>
-      <span class="home-label">The published record</span>
-      <h3>Reviews and synthesis</h3>
-      <p>Most of my published work pulls scattered mechanistic evidence into a usable picture of what e-cigarette exposure does, and says plainly where the evidence runs out.</p>
-      <ol class="explore-steps">
-        <li><strong>Aerosol</strong><span>Metals, carbonyls, particles</span></li>
-        <li><strong>Steroidogenesis</strong><span>Leydig cells, testosterone</span></li>
-        <li><strong>Mitochondria</strong><span>Energy, redox, ferroptosis</span></li>
-        <li><strong>Whole body</strong><span>Respiratory, metabolic, vascular</span></li>
-      </ol>
-      <div class="explore-cards">
-        <div class="explore-card"><span class="home-label">Where evidence stops</span><strong>Plausible, mechanistic, proven</strong><p>Three different claims. I keep them apart, in every paper.</p></div>
-        <div class="explore-card"><span class="home-label">Outside the journals</span><strong>Writing for readers, not referees</strong><p>Pieces in <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news">The Conversation</a> on what the vaping evidence does and does not show.</p></div>
-      </div>
-    </div>
-  </section>
-
   <div class="home-pair">
     <section class="home-card">
       <span class="home-label">Projects</span>
@@ -1272,34 +1038,6 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     if (photo) {
       photo.addEventListener('contextmenu', function (event) { event.preventDefault(); });
     }
-
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('.explore-tab'));
-
-    function select(tab, focus) {
-      tabs.forEach(function (item) {
-        var active = item === tab;
-        item.setAttribute('aria-selected', active ? 'true' : 'false');
-        item.setAttribute('tabindex', active ? '0' : '-1');
-        var panel = document.getElementById(item.getAttribute('aria-controls'));
-        if (panel) panel.hidden = !active;
-      });
-      if (focus) tab.focus();
-    }
-
-    tabs.forEach(function (tab, index) {
-      tab.addEventListener('click', function () { select(tab, false); });
-      tab.addEventListener('keydown', function (event) {
-        var next = null;
-        if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
-        if (event.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
-        if (event.key === 'Home') next = tabs[0];
-        if (event.key === 'End') next = tabs[tabs.length - 1];
-        if (next) {
-          event.preventDefault();
-          select(next, true);
-        }
-      });
-    });
   })();
 </script>
 
