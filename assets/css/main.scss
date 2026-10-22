@@ -442,6 +442,134 @@ body:has(> header > #navbar) {
   color: #a5f3fc;
 }
 
+#navbar .nav-doctoral > .nav-link {
+  color: #fcd34d !important;
+}
+
+#navbar .nav-doctoral > .nav-link::after {
+  content: "DOCTORAL";
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: #fcd34d;
+}
+
+/* Projects holds the two research tracks behind a three-line toggle. */
+#navbar .nav-has-sub {
+  flex-direction: column !important;
+  align-items: stretch;
+  gap: 0.3rem;
+}
+
+#navbar .nav-sub-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#navbar .nav-sub-head {
+  display: flex;
+  align-items: stretch;
+  gap: 0.3rem;
+  width: 100%;
+}
+
+#navbar .nav-sub-head > .nav-link {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#navbar .nav-has-sub.active .nav-sub-head > .nav-link {
+  color: #fff !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(96, 165, 250, 0.13));
+  border-color: rgba(148, 163, 184, 0.38);
+}
+
+#navbar .nav-sub-trigger {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+#navbar .nav-sub-trigger:hover {
+  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(148, 163, 184, 0.45);
+}
+
+#navbar .nav-sub-input:focus-visible ~ .nav-sub-head .nav-sub-trigger {
+  outline: 2px solid #67e8f9;
+  outline-offset: 2px;
+}
+
+#navbar .nav-sub-icon {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 16px;
+}
+
+#navbar .nav-sub-icon > span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #cbd5e1;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#navbar .nav-sub-input:checked ~ .nav-sub-head .nav-sub-trigger {
+  background: rgba(37, 99, 235, 0.22);
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+#navbar .nav-sub-input:checked ~ .nav-sub-head .nav-sub-icon > span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+#navbar .nav-sub-input:checked ~ .nav-sub-head .nav-sub-icon > span:nth-child(2) {
+  opacity: 0;
+}
+
+#navbar .nav-sub-input:checked ~ .nav-sub-head .nav-sub-icon > span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+#navbar .nav-sublist {
+  display: none;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 0 0 0.55rem !important;
+  border-left: 1px solid rgba(148, 163, 184, 0.2);
+  list-style: none !important;
+}
+
+#navbar .nav-sub-input:checked ~ .nav-sublist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+/* When open, the group takes its own full-width row so it does not interleave
+   with the items beside it. */
+#navbar .nav-has-sub:has(.nav-sub-input:checked) {
+  grid-column: 1 / -1;
+}
+
+#navbar .nav-sublist .nav-link {
+  padding: 0.5rem 0.65rem !important;
+  font-size: 0.92rem;
+}
+
 #navbar .nav-deep-numbers > .nav-link {
   color: #dbeafe !important;
 }
@@ -512,6 +640,10 @@ body:has(> header > #navbar) {
   #navbar .navbar-menu-list {
     grid-template-columns: 1fr;
     gap: 0.3rem;
+  }
+
+  #navbar .nav-sub-input:checked ~ .nav-sublist {
+    grid-template-columns: 1fr;
   }
 }
 

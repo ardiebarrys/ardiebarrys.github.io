@@ -44,10 +44,22 @@
             </a>
           </li>
 
+          {%- comment -%}
+            Doctoral Research and Cellular Circuits are the two research tracks. They are
+            nested under Projects behind a three-line toggle instead of sitting at the top
+            level. The Projects page itself is unchanged.
+          {%- endcomment -%}
+          {% assign sub_pages = "/research/e-cigarettes-male-reproductive-health/,/cellular-signaling-circuits/" | split: "," %}
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+
+          {%- assign sub_open = false -%}
+          {%- for sp in sorted_pages -%}
+            {%- if sub_pages contains sp.permalink and page.url contains sp.url -%}{%- assign sub_open = true -%}{%- endif -%}
+          {%- endfor -%}
+
           {% for p in sorted_pages %}
             {% if p.nav and p.permalink != '/' and p.autogen == null %}
-              <li class="nav-item {% if page.url contains p.url %}active{% endif %}{% if p.permalink == '/cellular-signaling-circuits/' %} nav-special nav-circuit-framework{% elsif p.permalink == '/deep-numbers/' %} nav-special nav-deep-numbers{% endif %}">
+              {% unless sub_pages contains p.permalink %}
                 {%- if p.permalink contains '://' -%}
                   {%- assign url = p.permalink -%}
                 {%- elsif p.permalink contains '/blog/' -%}
@@ -55,12 +67,44 @@
                 {%- else -%}
                   {%- assign url = p.url -%}
                 {%- endif -%}
-                <a class="nav-link" href="{{ url | relative_url }}">
-                  {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
-                  <span>{{- p.title -}}</span>
-                  {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
-                </a>
-              </li>
+
+                {% if p.permalink == '/projects/' %}
+                  <li class="nav-item nav-has-sub {% if page.url contains p.url %}active{% endif %}">
+                    <input type="checkbox" id="nav-projects-sub" class="nav-sub-input" {% if sub_open %}checked{% endif %}>
+                    <div class="nav-sub-head">
+                      <a class="nav-link" href="{{ url | relative_url }}">
+                        {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                        <span>{{- p.title -}}</span>
+                        {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
+                      </a>
+                      <label for="nav-projects-sub" class="nav-sub-trigger" aria-label="Show the two research tracks">
+                        <span class="nav-sub-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                      </label>
+                    </div>
+                    <ul class="nav-sublist">
+                      {% for sp in sorted_pages %}
+                        {% if sp.nav and sub_pages contains sp.permalink %}
+                          <li class="nav-item nav-special {% if sp.permalink == '/cellular-signaling-circuits/' %}nav-circuit-framework{% else %}nav-doctoral{% endif %} {% if page.url contains sp.url %}active{% endif %}">
+                            <a class="nav-link" href="{{ sp.url | relative_url }}">
+                              {% if page.url contains sp.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                              <span>{{- sp.title -}}</span>
+                              {% if page.url contains sp.url %}<span class="sr-only">(current)</span>{% endif %}
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li class="nav-item {% if page.url contains p.url %}active{% endif %}{% if p.permalink == '/deep-numbers/' %} nav-special nav-deep-numbers{% endif %}">
+                    <a class="nav-link" href="{{ url | relative_url }}">
+                      {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                      <span>{{- p.title -}}</span>
+                      {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endunless %}
             {% endif %}
           {% endfor %}
         </ul>

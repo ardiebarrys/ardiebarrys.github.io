@@ -179,38 +179,79 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     font-weight: 600;
   }
 
-  /* ---------- Doctoral research card ---------- */
-  .thesis-card h2 {
-    margin: 0.2rem 0 0.6rem;
-    color: var(--text-strong);
-    font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  /* ---------- The two research tracks ---------- */
+  .home-tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+    margin-top: 1.3rem;
+  }
+
+  .home-track {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-top: 3px solid var(--t);
+    border-radius: 14px;
+    background: rgba(7, 9, 14, 0.42);
+  }
+
+  .track-doctoral { --t: #fbbf24; }
+  .track-circuits { --t: #67e8f9; }
+
+  .track-tag {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--t);
+    font-size: 0.75rem;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
-  .thesis-card > p {
-    color: var(--soft);
-    font-size: 1rem;
-    line-height: 1.6;
+  .home-track h3 {
+    margin: 0 0 0.35rem;
+    color: #eef4ff;
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
-  .thesis-chips {
+  .home-track > p {
+    margin: 0 0 0.8rem !important;
+    color: #aab1be;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .track-keys {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.45rem;
-    margin: 0.9rem 0 1.1rem;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
   }
 
-  .thesis-chips span {
-    padding: 0.35rem 0.75rem;
-    border: 1px solid color-mix(in srgb, var(--g) 45%, transparent);
+  .track-keys span {
+    padding: 0.28rem 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--t) 38%, rgba(148, 163, 184, 0.2));
     border-radius: 999px;
-    background: color-mix(in srgb, var(--g) 12%, transparent);
-    color: #e9eef6;
-    font-size: 0.85rem;
-    font-weight: 500;
+    background: color-mix(in srgb, var(--t) 10%, transparent);
+    color: #dbe3ee;
+    font-size: 0.8rem;
+    line-height: 1.35;
   }
+
+  .track-link {
+    margin-top: auto;
+    align-self: flex-start;
+    color: var(--t) !important;
+    font-size: 0.92rem;
+    font-weight: 600;
+    text-decoration: none !important;
+  }
+
+  .track-link:hover { text-decoration: underline !important; }
 
   /* ---------- Highlighted study ---------- */
   .study {
@@ -891,6 +932,10 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     .home-pair {
       grid-template-columns: 1fr;
     }
+
+    .home-tracks {
+      grid-template-columns: 1fr;
+    }
   }
 
   @media (max-width: 767.98px) {
@@ -1021,28 +1066,35 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     <h2>I study what vaping does to male reproductive health.</h2>
     <p>Millions of people vape. Very little is known about what the aerosol does to testosterone, sperm and sexual function. I came to the question sideways, found I could not let go of the arithmetic, and have spent my PhD following it from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis.</p>
     <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
-    <div class="focus-list" aria-label="Research focus">
-      <span>E-cigarette aerosol</span>
-      <span>Male reproductive toxicology</span>
-      <span>Leydig cells &amp; testosterone</span>
-      <span>Mitochondrial dysfunction</span>
-      <span>microRNA regulation</span>
-      <span>Stress-resolution circuits</span>
-    </div>
-  </section>
+    <div class="home-tracks">
+      <article class="home-track track-doctoral">
+        <span class="track-tag">Doctoral research</span>
+        <h3>Vaping and male reproductive health</h3>
+        <p>Smokers, vapers and dual users compared, so the aerosol itself is the variable.</p>
+        <div class="track-keys" aria-label="Doctoral research keywords">
+          <span>E-cigarette aerosol</span>
+          <span>Leydig cells &amp; testosterone</span>
+          <span>Mitochondrial dysfunction</span>
+          <span>microRNA regulation</span>
+          <span>Sexual health</span>
+        </div>
+        <a class="track-link" href="/research/e-cigarettes-male-reproductive-health/">Open the doctoral study <span aria-hidden="true">→</span></a>
+      </article>
 
-  <section class="home-card thesis-card" aria-labelledby="thesis-card-title">
-    <span class="home-label">Doctoral research</span>
-    <h2 id="thesis-card-title">Does vaping change how the male body makes testosterone?</h2>
-    <p>My thesis takes the question to people rather than to a model. It compares three exposures on testosterone signaling, steroidogenic microRNAs, mitochondrial function and sexual health, so that the aerosol itself is the variable.</p>
-    <div class="thesis-chips">
-      <span style="--g:#f87171">Cigarette smokers</span>
-      <span style="--g:#67e8f9">E-cigarette users</span>
-      <span style="--g:#a78bfa">Dual users</span>
-    </div>
-    <div class="card-links">
-      <a class="btn-primary" href="/research/e-cigarettes-male-reproductive-health/">The doctoral study <span aria-hidden="true">↗</span></a>
-      <a class="btn-secondary" href="/publications/">Publications</a>
+      <article class="home-track track-circuits">
+        <span class="track-tag">Independent framework</span>
+        <h3>Cellular signaling circuits</h3>
+        <p>Five papers treating pathways as control systems that must also resolve, not switches.</p>
+        <div class="track-keys" aria-label="Cellular circuits keywords">
+          <span>Signal resolution</span>
+          <span>UPR &amp; ER stress</span>
+          <span>NRF2–KEAP1</span>
+          <span>YAP/TAZ</span>
+          <span>CYP1A1</span>
+          <span>Condensates</span>
+        </div>
+        <a class="track-link" href="/cellular-signaling-circuits/">Open Cellular Circuits <span aria-hidden="true">→</span></a>
+      </article>
     </div>
   </section>
 
@@ -1157,12 +1209,12 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
   <div class="home-pair">
     <section class="home-card">
-      <span class="home-label">Independent framework</span>
-      <h3>Cellular Signaling as Dynamic Regulatory Circuits</h3>
-      <p>Five connected papers model YAP/TAZ, NRF2–KEAP1, CYP1A1, transcriptional condensates and the unfolded protein response as dynamic control systems, not simple switches.</p>
+      <span class="home-label">Projects</span>
+      <h3>Both tracks, side by side</h3>
+      <p>The doctoral study and the circuit framework, with the questions each one is built to answer.</p>
       <div class="card-links">
-        <a class="btn-primary" href="/cellular-signaling-circuits/">Explore the framework</a>
-        <a class="btn-secondary" href="/projects/">Projects</a>
+        <a class="btn-primary" href="/projects/">Open Projects</a>
+        <a class="btn-secondary" href="/publications/">Publications</a>
       </div>
     </section>
 
