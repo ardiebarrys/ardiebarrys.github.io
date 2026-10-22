@@ -9,10 +9,11 @@
   var status = root.querySelector("#scf-filter-status");
 
   var descriptions = {
-    all: "Showing all four frameworks.",
+    all: "Showing all five frameworks.",
     biochemical: "Showing biochemical feedback: NRF2–KEAP1 and CYP1A1.",
     mechanical: "Showing mechanical signaling: YAP/TAZ.",
-    temporal: "Showing temporal decoding: transcriptional condensates."
+    temporal: "Showing temporal decoding: transcriptional condensates.",
+    proteostasis: "Showing proteostasis: the unfolded protein response in immunotoxicity."
   };
 
   function applyFilter(key, announce) {

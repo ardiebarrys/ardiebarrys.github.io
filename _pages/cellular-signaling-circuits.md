@@ -2,7 +2,7 @@
 layout: yap-fullscreen
 title: Cellular Circuits
 permalink: /cellular-signaling-circuits/
-description: An overview of four research frameworks exploring cellular signaling as dynamic regulatory circuits.
+description: An overview of five research frameworks exploring cellular signaling as dynamic regulatory circuits.
 nav: true
 nav_order: 7
 ---
@@ -14,9 +14,9 @@ nav_order: 7
     <div class="scf-hero-copy">
       <p class="scf-eyebrow"><span class="scf-live-dot"></span>Independent research framework</p>
       <h1>Cellular Signaling<br><span>as Dynamic Regulatory Circuits</span></h1>
-      <p class="scf-lede">Four biological systems, one question: how do cells read an input, control how long it lasts and return to a responsive state?</p>
+      <p class="scf-lede">Five biological systems, one question: how do cells read an input, control how long it lasts and return to a responsive state?</p>
       <div class="scf-hero-actions">
-        <a class="scf-primary-link" href="#scf-research">Explore the four frameworks <span aria-hidden="true">↓</span></a>
+        <a class="scf-primary-link" href="#scf-research">Explore the five frameworks <span aria-hidden="true">↓</span></a>
         <a class="scf-secondary-link" href="{{ '/publications/' | relative_url }}">Publications <span aria-hidden="true">↗</span></a>
       </div>
     </div>
@@ -64,14 +64,15 @@ nav_order: 7
   </section>
 
   <section class="scf-library" id="scf-research" aria-labelledby="scf-research-title">
-    <p class="scf-kicker">Four connected frameworks</p>
+    <p class="scf-kicker">Five connected frameworks</p>
     <h2 id="scf-research-title">Explore the research</h2>
 
     <div class="scf-filters" role="group" aria-label="Filter frameworks">
-      <button type="button" class="scf-filter is-active" data-filter="all" aria-pressed="true">All four</button>
+      <button type="button" class="scf-filter is-active" data-filter="all" aria-pressed="true">All five</button>
       <button type="button" class="scf-filter" data-filter="biochemical" aria-pressed="false">Biochemical feedback</button>
       <button type="button" class="scf-filter" data-filter="mechanical" aria-pressed="false">Mechanical signaling</button>
       <button type="button" class="scf-filter" data-filter="temporal" aria-pressed="false">Temporal decoding</button>
+      <button type="button" class="scf-filter" data-filter="proteostasis" aria-pressed="false">Proteostasis</button>
     </div>
     <p class="scf-sr-only" id="scf-filter-status" aria-live="polite"></p>
 
@@ -138,6 +139,22 @@ nav_order: 7
         </div>
         <p class="scf-card-question"><b>Central question</b><span>Do condensate kinetics decode timing, or reflect transcription already underway?</span></p>
         <a class="scf-open" href="{{ '/research/transcriptional-condensates-kinetic-filters/' | relative_url }}"><span>Explore condensates</span><span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="scf-paper-card scf-upr" data-category="proteostasis">
+        <div class="scf-card-top"><span class="scf-index">05</span><span class="scf-domain">Proteostasis · Immunotoxicity</span></div>
+        <ol class="scf-flow" aria-label="Toxicant, ER sensors, branches, resolution">
+          <li><b>Toxicant</b><span>proteotoxic input</span></li>
+          <li><b>ER sensors</b><span>IRE1α, PERK, ATF6</span></li>
+          <li><b>Branches</b><span>immune output</span></li>
+          <li><b>Resolution</b><span>recover or persist</span></li>
+        </ol>
+        <div class="scf-card-copy">
+          <h3>The UPR as a proteotoxic stress-resolution circuit</h3>
+          <p>Environmental toxicants act as proteotoxic inputs. IRE1α, PERK and ATF6 decode ER stress into immune outcomes, and failed resolution can shift immune and barrier cells toward persistent dysfunction.</p>
+        </div>
+        <p class="scf-card-question"><b>Central question</b><span>Does the response resolve before the next exposure, or stay branch-skewed and persistent?</span></p>
+        <a class="scf-open" href="{{ '/research/upr-proteotoxic-stress-resolution/' | relative_url }}"><span>Explore the UPR</span><span aria-hidden="true">↗</span></a>
       </article>
     </div>
   </section>
