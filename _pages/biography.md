@@ -212,7 +212,7 @@ nav_order: 7
 
     <h3>Research philosophy</h3>
     <p>He does not see toxicant exposure as isolated cellular injury. Cells integrate signals across mitochondria, redox state, gene regulation, inflammation and hormones. Under repeated challenge, what may matter most is whether the cell can still sense, process and resolve stress.</p>
-    <p>That conviction produced work nobody asked him to do. His framework, Cellular Signaling as Dynamic Regulatory Circuits, treats pathways as control systems rather than linear cascades, from NRF2–KEAP1 redox signaling to YAP/TAZ mechanotransduction. He wrote it because research should add to what is known, not only to what is required.</p>
+    <p>That conviction produced work nobody asked him to do. His framework, Cellular Signaling as Dynamic Regulatory Circuits, treats pathways as control systems rather than linear cascades, from NRF2–KEAP1 redox signaling and YAP/TAZ mechanotransduction to the unfolded protein response in environmental immunotoxicity. He wrote it because research should add to what is known, not only to what is required.</p>
     <p>The same instinct runs through his writing outside the lab. In <em>From AI Efficiency to Human Dignity: A Research Perspective on Magnifica Humanitas</em> (May 2026), he argued that AI should be judged not only on speed and accuracy but on justice, accountability and human dignity. In health research, that means asking who contributes the data, who governs it and who benefits.</p>
 
     <h3>Long-term direction</h3>

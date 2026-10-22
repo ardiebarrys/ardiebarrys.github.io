@@ -25,23 +25,23 @@
       className: "c3d-home",
       focusClass: "is-3d-focus",
       noteTail: "Figure 1 below shows the same six stages in 2D.",
-      tag: "Conceptual 3D schematic · signal-resolution circuit",
-      ariaLabel: "3D schematic of the six-stage YAP/TAZ signal-resolution circuit",
+      tag: "Conceptual 3D schematic · proteotoxic stress-resolution circuit",
+      ariaLabel: "3D schematic of the six-stage UPR proteotoxic stress-resolution circuit",
       pitch: 0.3,
       lift: 0.4,
       pad: 1.75,
       stages: [
-        { at: [-5.1, 0.0, 0.7], color: 0x60a5fa, shape: "mech" },
-        { at: [-3.05, 0.2, -0.55], color: 0x67e8f9, shape: "sensing" },
-        { at: [-1.0, 0.0, 0.6], color: 0xa5b4fc, shape: "hippo" },
-        { at: [1.05, 0.25, -0.6], color: 0xc4b5fd, shape: "nucleus" },
-        { at: [3.1, 0.0, 0.55], color: 0xfbbf24, shape: "termination" },
-        { at: [5.1, 0.1, -0.45], color: 0x86efac, shape: "baseline" }
+        { at: [-5.1, 0.0, 0.7], color: 0xf87171, shape: "toxinput" },
+        { at: [-3.05, 0.2, -0.55], color: 0x67e8f9, shape: "ersensors" },
+        { at: [-1.0, 0.0, 0.6], color: 0xa5b4fc, shape: "branchout" },
+        { at: [1.05, 0.25, -0.6], color: 0xf472b6, shape: "immuneout" },
+        { at: [3.1, 0.0, 0.55], color: 0x34d399, shape: "turnover" },
+        { at: [5.1, 0.1, -0.45], color: 0x86efac, shape: "recovery" }
       ],
       paths: [
         { through: [0, 1, 2, 3, 4], kind: "forward", color: 0x67e8f9, speed: 0.04 },
         { through: [4, 5], kind: "forward", color: 0x86efac, speed: 0.02 },
-        { through: [5, 0], kind: "return", color: 0x86efac, speed: 0.022, arc: 1.9 }
+        { through: [5, 0], kind: "return", color: 0xf87171, speed: 0.022, arc: 1.9 }
       ]
     },
     {
@@ -473,6 +473,56 @@
         cyc.position.y = 0.42;
         cyc.rotation.x = -Math.PI / 2.3;
         g.add(dome, nuc, cyc);
+      },
+
+      // UPR proteotoxic stress-resolution circuit (homepage highlighted study)
+      toxinput: function (g, c) {
+        // An ER membrane strip with incoming toxicant particles perturbing proteostasis.
+        g.add(mesh(new THREE.BoxGeometry(1.4, 0.08, 1.0), std(0x0e7490, { base: 0x0e7490, glow: 0.2, opacity: 0.5, depthWrite: false }), 0, -0.4, 0));
+        var tox = std(c, { glow: 0.5, rough: 0.5 });
+        [[-0.3, 0.35, 0.1], [0.1, 0.55, -0.15], [0.35, 0.3, 0.2], [-0.1, 0.2, -0.25], [0.2, 0.1, 0.05], [-0.35, 0.15, -0.1]].forEach(function (p, i) {
+          var m = mesh(new THREE.IcosahedronGeometry(0.07, 0), tox, p[0], p[1], p[2]);
+          m.rotation.set(i, i * 0.7, 0); g.add(m);
+        });
+        var f = std(c, { glow: 0.6 });
+        g.add(arrow(V(0, 0.65, 0.3), V(0, -0.28, 0.3), 0.024, f), arrow(V(-0.4, 0.5, -0.1), V(-0.4, -0.28, -0.1), 0.02, f));
+      },
+      ersensors: function (g, c) {
+        // ER membrane with the three transmembrane sensors: IRE1a, PERK and ATF6.
+        var geo = new THREE.PlaneGeometry(1.5, 1.0, 20, 14);
+        var p = geo.attributes.position;
+        for (var i = 0; i < p.count; i++) p.setZ(i, 0.08 * Math.cos(p.getX(i) * 2.2));
+        geo.computeVertexNormals();
+        var membrane = new THREE.Mesh(geo, std(c, { base: 0x0e7490, glow: 0.16, opacity: 0.4, depthWrite: false, side: THREE.DoubleSide }));
+        membrane.rotation.x = -Math.PI / 2; membrane.position.y = -0.1; g.add(membrane);
+        [[-0.45, 0xf87171], [0.0, 0xa5b4fc], [0.45, 0x86efac]].forEach(function (s) {
+          var bar = capsule(std(s[1], { glow: 0.5 }), 0.08, 0.34);
+          bar.position.set(s[0], -0.1, 0); g.add(bar);
+          g.add(mesh(new THREE.IcosahedronGeometry(0.1, 0), std(s[1], { glow: 0.45 }), s[0], -0.36, 0));
+        });
+      },
+      branchout: function (g, c) {
+        // Three diverging branch outputs: XBP1 RNA, the PERK-eIF2a chain and an ATF6 vesicle.
+        var rna = waveTube(std(0xf87171, { glow: 0.5 }), 0.55, 0.05, 2.5); rna.position.set(-0.4, 0.28, 0); rna.rotation.z = 0.3; g.add(rna);
+        var chain = std(0xa5b4fc, { glow: 0.5 });
+        for (var i = 0; i < 3; i++) g.add(mesh(new THREE.SphereGeometry(0.06, 12, 8), chain, -0.05, 0.28 - i * 0.18, 0));
+        g.add(mesh(new THREE.SphereGeometry(0.03, 8, 6), std(0xfacc15, { glow: 0.6 }), 0.02, 0.28, 0));
+        g.add(mesh(new THREE.SphereGeometry(0.08, 14, 10), std(0x86efac, { glow: 0.5 }), 0.4, -0.08, 0.1));
+        for (var k = 0; k < 3; k++) { var tr = new THREE.Mesh(new THREE.TorusGeometry(0.12 - k * 0.02, 0.016, 8, 24, 1.8), std(0x86efac, { glow: 0.3 })); tr.scale.set(1, 1, 0.5); tr.rotation.set(Math.PI / 2, 0, 0.5); tr.position.set(0.52 + k * 0.04, 0.16, 0); g.add(tr); }
+      },
+      immuneout: function (g, c) {
+        // An immune cell releasing mixed cytokines: the decoded immune output.
+        g.add(mesh(new THREE.SphereGeometry(0.34, 32, 22), fresnel(c, 0.06, 0.5)));
+        g.add(mesh(new THREE.SphereGeometry(0.14, 20, 14), std(0xa5b4fc, { glow: 0.3 }), 0.02, 0, 0));
+        var cols = [0x67e8f9, 0xf87171, 0xfbbf24, 0x86efac, 0xc4b5fd, 0xf472b6];
+        for (var i = 0; i < 10; i++) { var a = i * 2.39996, r = 0.5 + 0.12 * (i % 3); g.add(mesh(new THREE.SphereGeometry(0.035, 10, 8), std(cols[i % cols.length], { glow: 0.55 }), Math.cos(a) * r, Math.sin(a) * r * 0.7, Math.sin(a * 1.3) * 0.25)); }
+      },
+      recovery: function (g, c) {
+        // Baseline restoration: ER proteostasis and immune function return, ready for the next exposure.
+        var dome = mesh(new THREE.SphereGeometry(0.42, 40, 20, 0, Math.PI * 2, 0, Math.PI / 2), std(c, { base: 0x166534, glow: 0.25, opacity: 0.5, depthWrite: false }), 0, -0.3, 0);
+        dome.scale.set(1.2, 0.7, 1);
+        var cyc = circleArrow(0.44, Math.PI * 1.6, std(c, { glow: 0.6 }), 0.022); cyc.position.y = 0.38; cyc.rotation.x = -Math.PI / 2.3;
+        g.add(dome, mesh(new THREE.SphereGeometry(0.16, 24, 16), std(0xa5b4fc, { glow: 0.3 }), 0, -0.18, 0), cyc);
       },
 
       // NRF2–KEAP1

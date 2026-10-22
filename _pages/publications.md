@@ -309,6 +309,9 @@ nav_order: 2
         </p>
         {%- endif %}
         <div class="pub-tools">
+          {%- if p.doi == "10.1016/j.cbi.2026.112392" %}
+          <a class="pub-page-link" href="{{ '/research/upr-proteotoxic-stress-resolution/' | relative_url }}">View page</a>
+          {%- endif %}
           {%- if p.doi == "10.1016/j.pbiomolbio.2026.101960" %}
           <a class="pub-page-link" href="{{ '/research/yap-taz-signal-resolution/' | relative_url }}">View page</a>
           {%- endif %}

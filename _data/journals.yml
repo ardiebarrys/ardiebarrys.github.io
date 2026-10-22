@@ -16,6 +16,13 @@
   quartile: Q1
   rank: "32/198"
 
+- name: "Chemico-Biological Interactions"
+  category: "Toxicology"
+  indexing: SCIE
+  jif: 5.2
+  quartile: Q1
+  rank: "16/106"
+
 - name: "Toxicology"
   category: "Toxicology"
   indexing: SCIE

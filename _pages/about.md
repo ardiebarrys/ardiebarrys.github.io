@@ -931,61 +931,62 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
 
     <p class="study-intro">{{ highlight.highlight }}</p>
 
-    <div class="circuit" role="img" aria-label="Figure 1. The YAP/TAZ mechanochemical signal-resolution circuit">
-      <p class="circuit-caption" aria-hidden="true">Figure 1 · Signal-resolution circuit</p>
+    <div class="circuit" role="img" aria-label="Figure 1. The UPR branch-selective proteotoxic stress-resolution circuit">
+      <p class="circuit-caption" aria-hidden="true">Figure 1 · Proteotoxic stress-resolution circuit</p>
       <div class="circuit-flow">
-        <div class="circuit-node"><span class="circuit-num">01</span><strong>Mechanical inputs</strong><small>Stiffness, stretch, shear, pressure</small></div>
-        <div class="circuit-node"><span class="circuit-num">02</span><strong>Distributed sensing</strong><small>Adhesions, junctions, cytoskeleton, LINC</small></div>
-        <div class="circuit-node"><span class="circuit-num">03</span><strong>State control</strong><small>Hippo and parallel inputs regulate YAP/TAZ</small></div>
-        <div class="circuit-node"><span class="circuit-num">04</span><strong>Nuclear decoding</strong><small>Transport, TEAD, chromatin, timing</small></div>
-        <div class="circuit-node"><span class="circuit-num">05</span><strong>Signal termination</strong><small>Phosphorylation, export, degradation, AMOT</small></div>
-        <div class="circuit-node"><span class="circuit-num">06</span><strong>Baseline restoration</strong><small>Adhesion, cytoskeleton and matrix recovery</small></div>
+        <div class="circuit-node"><span class="circuit-num">01</span><strong>Proteotoxic input</strong><small>Toxicant perturbs ER proteostasis</small></div>
+        <div class="circuit-node"><span class="circuit-num">02</span><strong>ER stress sensing</strong><small>IRE1α, PERK and ATF6 detect the stress</small></div>
+        <div class="circuit-node"><span class="circuit-num">03</span><strong>Branch signaling</strong><small>XBP1s/RIDD, eIF2α-ATF4-CHOP, N-ATF6</small></div>
+        <div class="circuit-node"><span class="circuit-num">04</span><strong>Immune decoding</strong><small>Cytokines, antigen presentation, polarization, secretion</small></div>
+        <div class="circuit-node"><span class="circuit-num">05</span><strong>Active resolution</strong><small>ERAD, autophagy, ER-phagy, Ca²⁺ and redox</small></div>
+        <div class="circuit-node"><span class="circuit-num">06</span><strong>Baseline restoration</strong><small>Immune function returns toward baseline</small></div>
       </div>
 
       <div class="circuit-pair">
         <div class="circuit-box">
-          <span class="home-label">Temporal decoding</span>
-          <strong>Magnitude is not enough</strong>
-          <p>Output depends on signal duration, nuclear residence, context and feedback, not nuclear abundance alone.</p>
+          <span class="home-label">Branch decoding</span>
+          <strong>Activation alone is not the outcome</strong>
+          <p>Meaning depends on which of IRE1α, PERK and ATF6 is engaged, for how long, and in which cell type.</p>
         </div>
         <div class="circuit-box">
           <span class="home-label">Resolution logic</span>
-          <strong>Termination is an active program</strong>
-          <p>Force relaxation and trafficking lower activity, while AMOT stabilization and degradation lock in the OFF state.</p>
+          <strong>Resolution is an active program</strong>
+          <p>ERAD, autophagy, ER-phagy, translational recovery and Ca²⁺/redox normalization actively terminate the signal.</p>
         </div>
       </div>
 
       <div class="circuit-pair">
         <div class="circuit-box is-good">
-          <span class="home-label">Efficient resolution</span>
-          <strong>Adaptive response → restored mechanosensitivity → homeostasis</strong>
-          <p>The signal is decoded, ended and the mechanical baseline recovers.</p>
+          <span class="home-label">Adaptive resolution</span>
+          <strong>Transient signaling → restored proteostasis → immune function returns</strong>
+          <p>The stress is decoded, cleared and ER proteostasis recovers before the next exposure.</p>
         </div>
         <div class="circuit-box is-bad">
-          <span class="home-label">Incomplete resolution</span>
-          <strong>Persistent state → mechanical memory → pathology</strong>
-          <p>Residual chromatin, cytoskeletal, metabolic or matrix changes bias later responses.</p>
+          <span class="home-label">Failed resolution</span>
+          <strong>Persistent branch-skewed signaling → unresolved burden → immune dysfunction</strong>
+          <p>Incomplete recovery between exposures can reset immune and barrier cells without overt cytotoxicity.</p>
         </div>
       </div>
 
       <div class="circuit-chips">
         <b>Failure modes</b>
-        <span>Abnormal sensing</span>
-        <span>Controller failure</span>
-        <span>Effector escape</span>
-        <span>Resolution failure</span>
-        <span>Memory lock</span>
+        <span>Sensor overload</span>
+        <span>Branch imbalance</span>
+        <span>RIDD dysfunction</span>
+        <span>Prolonged PERK-ISR</span>
+        <span>Secretory collapse</span>
+        <span>Incomplete recovery</span>
       </div>
     </div>
 
     <div class="study-test">
       <span class="home-label">Testable prediction</span>
-      <strong>Measure the system after the mechanical input is withdrawn.</strong>
-      <p>Use reversible perturbations, live-cell reporters, timed YAP/TAZ control and joint readouts of signaling, transcription, chromatin and mechanics.</p>
+      <strong>Measure the system after the exposure, not only during it.</strong>
+      <p>Report recovery kinetics, branch-specific signaling and functional immune output, so incomplete recovery rather than peak activation becomes the variable.</p>
     </div>
 
     <div class="study-actions">
-      <a class="btn-primary" href="/research/yap-taz-signal-resolution/">Explore the interactive circuit <span aria-hidden="true">↗</span></a>
+      <a class="btn-primary" href="/research/upr-proteotoxic-stress-resolution/">Explore the interactive circuit <span aria-hidden="true">↗</span></a>
       <a class="btn-secondary" href="/publications/">All publications</a>
     </div>
   </figure>
@@ -1056,7 +1057,7 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     <section class="home-card">
       <span class="home-label">Independent framework</span>
       <h3>Cellular Signaling as Dynamic Regulatory Circuits</h3>
-      <p>Four connected papers model YAP/TAZ, NRF2–KEAP1, CYP1A1 and transcriptional condensates as dynamic control systems, not simple switches.</p>
+      <p>Five connected papers model YAP/TAZ, NRF2–KEAP1, CYP1A1, transcriptional condensates and the unfolded protein response as dynamic control systems, not simple switches.</p>
       <div class="card-links">
         <a class="btn-primary" href="/cellular-signaling-circuits/">Explore the framework</a>
         <a class="btn-secondary" href="/projects/">Projects</a>
