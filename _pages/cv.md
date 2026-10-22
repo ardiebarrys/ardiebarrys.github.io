@@ -5,7 +5,7 @@ permalink: /cv/
 nav: true
 nav_order: 8
 nav_title: CV
-description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences, with publications, experience and training
+description: CV of Ardie Barry Sailis, independent toxicology researcher in Petaling Jaya, Selangor, with publications, experience and training
 ---
 
 <style>
@@ -393,15 +393,14 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences,
   <header class="cv-head">
     <div>
       <p class="cv-name">Ardie Barry Sailis</p>
-      <p class="cv-role">PhD Candidate in Pharmaceutical Sciences (Health)</p>
-      <p class="cv-org">Toxicology · Molecular regulation · Kuala Lumpur, Malaysia</p>
+      <p class="cv-role">Independent researcher · Toxicology and molecular biology</p>
+      <p class="cv-org">Petaling Jaya, Selangor, Malaysia</p>
       <ul class="cv-contact">
         <li><a href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a></li>
         <li><a href="https://ardiebarrysailis.com">ardiebarrysailis.com</a></li>
         <li><a href="https://orcid.org/0009-0009-8994-2793">ORCID 0009-0009-8994-2793</a></li>
         <li><a href="https://scholar.google.com/citations?user=saKP688AAAAJ">Google Scholar</a></li>
         <li><a href="https://www.linkedin.com/in/ardiebarrysailis">linkedin.com/in/ardiebarrysailis</a></li>
-        <li>Kuala Lumpur, Malaysia</li>
       </ul>
     </div>
     <a class="cv-pdf" href="/assets/pdf/Ardie_Barry_Sailis_CV.pdf" download>
@@ -418,7 +417,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences,
     <h2>Profile</h2>
     <div>
       <p>
-        Toxicology researcher studying how e-cigarette use affects male reproductive health. My PhD compares cigarette
+        Toxicology researcher studying how e-cigarette use affects male reproductive health. My doctoral work compares cigarette
         smokers, e-cigarette users and dual users in Malaysia, linking exposure to testosterone-related microRNAs, mitochondrial function and
         blood cell changes. I have published {{ site.data.papers | size }} peer-reviewed papers as sole or first author and review manuscripts
         for seven international journals. Open to roles in research, medical affairs, regulatory science and science communication.
@@ -434,7 +433,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences,
           <span class="cv-entry-title">Doctor of Philosophy in Pharmacy (Health)</span>
           <span class="cv-date">Dec 2023 &ndash; Dec 2026 (expected)</span>
         </div>
-        <p class="cv-entry-org">Universiti Malaya, Kuala Lumpur</p>
+        <p class="cv-entry-org">Malaysia</p>
         <p class="cv-detail">
           Thesis on testosterone-related microRNAs, blood cell abnormalities and sexual desire in Malaysian cigarette smokers, e-cigarette users
           and dual users.
@@ -445,7 +444,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences,
           <span class="cv-entry-title">Bachelor of Science in Microbiology, With Distinction</span>
           <span class="cv-date">2019 &ndash; 2023</span>
         </div>
-        <p class="cv-entry-org">Universiti Malaya, Kuala Lumpur</p>
+        <p class="cv-entry-org">Malaysia</p>
       </div>
     </div>
   </section>
@@ -458,7 +457,7 @@ description: CV of Ardie Barry Sailis, PhD candidate in Pharmaceutical Sciences,
           <span class="cv-entry-title">Doctoral Researcher</span>
           <span class="cv-date">Dec 2023 &ndash; present</span>
         </div>
-        <p class="cv-entry-org">Department of Pharmaceutical Life Sciences, Faculty of Pharmacy, Universiti Malaya</p>
+        <p class="cv-entry-org">Doctoral research, Malaysia</p>
         <ul>
           <li>Conducted a comparative study of cigarette smokers, e-cigarette users and dual users in Malaysia.</li>
           <li>Analyzed testosterone-related microRNAs by qPCR alongside hormone and blood cell profiles.</li>

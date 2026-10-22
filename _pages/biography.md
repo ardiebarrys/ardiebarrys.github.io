@@ -204,7 +204,7 @@ nav_order: 2
     <p>I am from Tambunan, Sabah, and of Dusun heritage. Kuala Lumpur was a long way off, in more senses than distance. At ten I wanted to know why bodies break down and whether anything can be done about it. I never stopped asking.</p>
 
     <h3>Academic development</h3>
-    <p>Pharmaceutical sciences gave that curiosity a shape and a specific question: what happens inside a cell when something goes wrong, and why do protective responses sometimes fail? That question led me to toxicology, pharmacology and molecular regulation. I work experimentally, but I read results as coordinated responses across pathways, not isolated outcomes.</p>
+    <p>Laboratory science gave that curiosity a shape and a specific question: what happens inside a cell when something goes wrong, and why do protective responses sometimes fail? That question led me to toxicology, pharmacology and molecular regulation. I work experimentally, but I read results as coordinated responses across pathways, not isolated outcomes.</p>
 
     <h3>Doctoral research</h3>
     <p>I came to the subject sideways. Searching for research assistant posts, I found a project on e-cigarettes and reproductive health and could not let go of the arithmetic: millions of users, and almost nothing known about what the aerosol does to sexual and hormonal function.</p>
