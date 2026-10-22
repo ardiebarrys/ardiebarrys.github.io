@@ -311,6 +311,79 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     line-height: 1.4;
   }
 
+  /* ---------- Animated six-stage circuit ---------- */
+  .circuit-track {
+    position: relative;
+    height: 3px;
+    margin: 0 0.3rem 1.1rem;
+    border-radius: 3px;
+    background: rgba(148, 163, 184, 0.16);
+    overflow: hidden;
+  }
+
+  .circuit-track-fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #f87171, #22d3ee, #a78bfa, #f472b6, #34d399, #86efac);
+    animation: circuitFill 7.2s linear infinite;
+  }
+
+  @keyframes circuitFill {
+    0% { width: 0; }
+    90% { width: 100%; }
+    100% { width: 100%; }
+  }
+
+  .circuit-anim .circuit-node {
+    animation: circuitStage 7.2s linear infinite;
+    animation-delay: calc(var(--i) * 1.2s);
+    will-change: transform, box-shadow;
+  }
+
+  .circuit-anim .circuit-num {
+    animation: circuitNum 7.2s linear infinite;
+    animation-delay: calc(var(--i) * 1.2s);
+  }
+
+  @keyframes circuitStage {
+    0%, 24%, 100% {
+      transform: translateY(0);
+      border-color: rgba(148, 163, 184, 0.22);
+      box-shadow: none;
+    }
+    8%, 16% {
+      transform: translateY(-4px);
+      border-color: var(--c);
+      box-shadow: 0 0 0 1px var(--c), 0 14px 30px rgba(2, 6, 15, 0.45);
+    }
+  }
+
+  @keyframes circuitNum {
+    0%, 24%, 100% {
+      color: #93c5fd;
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.3);
+    }
+    8%, 16% {
+      color: #0b1220;
+      background: var(--c);
+      border-color: var(--c);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .circuit-anim .circuit-node,
+    .circuit-anim .circuit-num,
+    .circuit-track-fill {
+      animation: none;
+    }
+    .circuit-track-fill { width: 100%; }
+  }
+
   .circuit-pair {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -936,51 +1009,16 @@ description: Doctoral Researcher · Toxicology · Scientific Evidence
     </div>
     <p class="upr-fig-caption">A conceptual 3D immune cell with the UPR mechanisms beside it: the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria and incoming toxicant particles, and the branch outputs feeding the immune outcomes. Drag the background to move everything, drag an object to orbit around it, and scroll to zoom. Illustration, not measured data. A simplified 2D circuit follows.</p>
 
-    <div class="circuit" role="img" aria-label="Figure 1. The UPR branch-selective proteotoxic stress-resolution circuit">
-      <p class="circuit-caption" aria-hidden="true">Simplified 2D view · Proteotoxic stress-resolution circuit</p>
+    <div class="circuit circuit-anim" role="img" aria-label="Animated six-stage proteotoxic stress-resolution circuit: 1 proteotoxic input, 2 ER stress sensing, 3 branch signaling, 4 immune decoding, 5 active resolution, 6 baseline restoration.">
+      <p class="circuit-caption" aria-hidden="true">Proteotoxic stress-resolution circuit · six stages</p>
+      <div class="circuit-track" aria-hidden="true"><span class="circuit-track-fill"></span></div>
       <div class="circuit-flow">
-        <div class="circuit-node"><span class="circuit-num">01</span><strong>Proteotoxic input</strong><small>Toxicant perturbs ER proteostasis</small></div>
-        <div class="circuit-node"><span class="circuit-num">02</span><strong>ER stress sensing</strong><small>IRE1α, PERK and ATF6 detect the stress</small></div>
-        <div class="circuit-node"><span class="circuit-num">03</span><strong>Branch signaling</strong><small>XBP1s/RIDD, eIF2α-ATF4-CHOP, N-ATF6</small></div>
-        <div class="circuit-node"><span class="circuit-num">04</span><strong>Immune decoding</strong><small>Cytokines, antigen presentation, polarization, secretion</small></div>
-        <div class="circuit-node"><span class="circuit-num">05</span><strong>Active resolution</strong><small>ERAD, autophagy, ER-phagy, Ca²⁺ and redox</small></div>
-        <div class="circuit-node"><span class="circuit-num">06</span><strong>Baseline restoration</strong><small>Immune function returns toward baseline</small></div>
-      </div>
-
-      <div class="circuit-pair">
-        <div class="circuit-box">
-          <span class="home-label">Branch decoding</span>
-          <strong>Activation alone is not the outcome</strong>
-          <p>Meaning depends on which of IRE1α, PERK and ATF6 is engaged, for how long, and in which cell type.</p>
-        </div>
-        <div class="circuit-box">
-          <span class="home-label">Resolution logic</span>
-          <strong>Resolution is an active program</strong>
-          <p>ERAD, autophagy, ER-phagy, translational recovery and Ca²⁺/redox normalization actively terminate the signal.</p>
-        </div>
-      </div>
-
-      <div class="circuit-pair">
-        <div class="circuit-box is-good">
-          <span class="home-label">Adaptive resolution</span>
-          <strong>Transient signaling → restored proteostasis → immune function returns</strong>
-          <p>The stress is decoded, cleared and ER proteostasis recovers before the next exposure.</p>
-        </div>
-        <div class="circuit-box is-bad">
-          <span class="home-label">Failed resolution</span>
-          <strong>Persistent branch-skewed signaling → unresolved burden → immune dysfunction</strong>
-          <p>Incomplete recovery between exposures can reset immune and barrier cells without overt cytotoxicity.</p>
-        </div>
-      </div>
-
-      <div class="circuit-chips">
-        <b>Failure modes</b>
-        <span>Sensor overload</span>
-        <span>Branch imbalance</span>
-        <span>RIDD dysfunction</span>
-        <span>Prolonged PERK-ISR</span>
-        <span>Secretory collapse</span>
-        <span>Incomplete recovery</span>
+        <div class="circuit-node" style="--i:0;--c:#f87171"><span class="circuit-num">01</span><strong>Proteotoxic input</strong></div>
+        <div class="circuit-node" style="--i:1;--c:#22d3ee"><span class="circuit-num">02</span><strong>ER stress sensing</strong></div>
+        <div class="circuit-node" style="--i:2;--c:#a78bfa"><span class="circuit-num">03</span><strong>Branch signaling</strong></div>
+        <div class="circuit-node" style="--i:3;--c:#f472b6"><span class="circuit-num">04</span><strong>Immune decoding</strong></div>
+        <div class="circuit-node" style="--i:4;--c:#34d399"><span class="circuit-num">05</span><strong>Active resolution</strong></div>
+        <div class="circuit-node" style="--i:5;--c:#86efac"><span class="circuit-num">06</span><strong>Baseline restoration</strong></div>
       </div>
     </div>
 
