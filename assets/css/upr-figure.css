@@ -1,75 +1,79 @@
-/*
- * Homepage highlighted-study 3D figure (depth3d-upr-figure.js). Self-contained:
- * the homepage does not load depth3d.css, so all styling lives here.
- */
+/* Scoped styles for the progressively enhanced UPR atlas. */
 .upr-fig {
-  position: relative;
-  margin: 0 1.1rem 0.4rem;
-  min-height: 520px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 14px;
-  overflow: hidden;
-  background: radial-gradient(130% 100% at 50% 8%, rgba(13, 32, 64, 0.55), rgba(5, 8, 14, 0.9));
-  touch-action: pan-y;
+  --atlas-ink: #e6eeed; --atlas-muted: #b1c2c4;
+  --atlas-line: rgba(166,195,194,.2); --atlas-accent: #b5d9c9;
+  margin: 0 1.1rem 1rem; border: 1px solid var(--atlas-line); border-radius: 16px;
+  background: #101d25; color: var(--atlas-ink); overflow: hidden; text-align: left; isolation: isolate;
 }
-.upr-fig-inner { position: absolute; inset: 0; }
-.upr-fig-canvas {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  display: block; cursor: grab; opacity: 0; transition: opacity 0.9s ease; touch-action: none;
-}
+.upr-fig [hidden] { display: none !important; }
+.upr-fig-heading { padding: 1.5rem 1.6rem 1.2rem; border-bottom: 1px solid var(--atlas-line); }
+.upr-fig-kicker { color: var(--atlas-accent); font-size: .68rem; font-weight: 600; line-height: 1.5; letter-spacing: .14em; text-transform: uppercase; }
+.upr-fig-heading h3 { margin: .35rem 0 .5rem !important; color: var(--atlas-ink); font-size: clamp(1.25rem,2.3vw,1.7rem); letter-spacing: -.025em; line-height: 1.2; }
+.home .upr-fig-heading p, .upr-fig-heading p { margin: 0; max-width: 64ch; color: var(--atlas-muted); font-size: .9rem; line-height: 1.6; }
+.upr-fig-layout { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(280px,1fr); }
+.upr-fig-viewport { position: relative; min-width: 0; min-height: 480px; background: radial-gradient(ellipse at 45% 44%,#233b40 0%,#12242d 50%,#0b1720 100%); }
+.upr-fig-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.upr-fig-fallback svg { display: block; width: 100%; height: 100%; object-fit: contain; }
+.upr-fig.is-ready .upr-fig-fallback { visibility: hidden; }
+.upr-fig-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; opacity: 0; touch-action: pan-y pinch-zoom; cursor: grab; }
 .upr-fig.is-ready .upr-fig-canvas { opacity: 1; }
 .upr-fig.is-dragging .upr-fig-canvas { cursor: grabbing; }
-.upr-fig-tag {
-  position: absolute; top: 0.7rem; left: 0.85rem; z-index: 2;
-  color: #93c5fd; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em;
-  text-transform: uppercase; pointer-events: none;
+.upr-fig-canvas:focus-visible { outline: 2px solid var(--atlas-accent); outline-offset: -4px; }
+.upr-fig-view-note { position: absolute; top: 1rem; left: 1rem; z-index: 1; color: var(--atlas-muted); font-size: .68rem; letter-spacing: .06em; pointer-events: none; }
+.upr-fig-tools { position: absolute; left: .85rem; right: .85rem; bottom: 1rem; z-index: 3; display: flex; gap: .3rem; flex-wrap: wrap; justify-content: center; }
+.upr-fig button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.upr-fig-tools button { padding: .4rem .65rem; min-height: 44px; min-width: 44px; border: 1px solid #47616a; border-radius: 7px; background: #12232eed; color: #e3eeec; font-size: .74rem; line-height: 1.2; }
+.upr-fig button:hover { border-color: #b5d9c9; background: #263f45; color: #fff; }
+.upr-fig button:focus-visible, .upr-fig a:focus-visible { outline: 2px solid #d4eee3; outline-offset: 3px; }
+.upr-fig-tools button[aria-pressed="true"] { background: #31564e; border-color: #a1cdb9; }
+.upr-fig-guide { padding: 1.4rem; border-left: 1px solid var(--atlas-line); background: #12212a; }
+.upr-fig-tabs { display: flex; flex-wrap: wrap; gap: .4rem; padding-bottom: 1.3rem; }
+.upr-fig-tabs button { min-height: 44px; padding: .45rem .6rem; border: 1px solid #43575f; border-radius: 6px; background: transparent; color: #c2d0d0; font-size: .76rem; font-weight: 600; }
+.upr-fig-tabs button[aria-pressed="true"] { color: #10251e; background: #bedaca; border-color: #bedaca; }
+.upr-fig-guide h4 { margin: 0 0 .75rem !important; color: var(--atlas-ink); font-size: 1.13rem; line-height: 1.4; letter-spacing: -.015em; }
+.home .upr-fig-guide p, .upr-fig-guide p { margin: 0; color: #c3d0d1; font-size: .86rem; line-height: 1.7; }
+.upr-fig-guide ol { counter-reset: atlas-step; list-style: none; margin: 1.25rem 0; padding: 0; }
+.upr-fig-guide li { position: relative; counter-increment: atlas-step; margin: 0; padding: .65rem 0 .65rem 2.15rem; border-top: 1px solid var(--atlas-line); font-size: .81rem; line-height: 1.6; color: #e0e8e7; }
+.upr-fig-guide li::before { content: "0" counter(atlas-step); position: absolute; left: 0; top: .72rem; color: #9fc4b5; font: 600 .67rem/1.5 monospace; }
+.home .upr-fig-guide #upr-topic-note, .upr-fig-guide #upr-topic-note { color: var(--atlas-muted); font-size: .74rem; line-height: 1.6; border-left: 2px solid #73998c; padding-left: .8rem; }
+.upr-fig-legend { display: flex; flex-wrap: wrap; gap: .65rem 1.3rem; padding: 1rem 1.5rem; border-top: 1px solid var(--atlas-line); color: #c4d2d1; font-size: .72rem; }
+.upr-fig-legend span { display: inline-flex; align-items: center; gap: .45rem; }
+.upr-fig-legend i { display: inline-block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--key-color,#90b5a7); }
+.upr-fig-labels { position: absolute; inset: 0; pointer-events: none; opacity: 0; overflow: hidden; }
+.upr-fig.is-ready .upr-fig-labels { opacity: 1; }
+.upr-fig-label { position: absolute; top: 0; left: 0; padding: .3rem .5rem; border: 1px solid #6a8989; border-radius: 4px; color: #f3f6ef; background: #10232ce8; font-size: .68rem; line-height: 1.3; white-space: nowrap; }
+.home .upr-fig-caption, .upr-fig-caption { margin: 0 !important; padding: 0 1.5rem 1rem; color: #a9bbbd; font-size: .73rem; line-height: 1.6; }
+.upr-fig-caption a { color: #c2e1d1; text-decoration: underline; text-underline-offset: .2em; }
+.home #upr-fig-help, #upr-fig-help { margin: 0; padding: 0 1.5rem 1rem; font-size: .71rem; line-height: 1.6; color: #a9bbbd; }
+.upr-fig-status { position: absolute; width: 1px; height: 1px; margin: -1px !important; padding: 0; clip-path: inset(50%); overflow: hidden; white-space: nowrap; }
+@media (max-width: 850px) {
+  .upr-fig-layout { grid-template-columns: 1fr; }
+  .upr-fig-viewport { min-height: 410px; }
+  .upr-fig-guide { border-left: 0; border-top: 1px solid var(--atlas-line); }
 }
-.upr-fig-status {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  margin: 0; color: #8b93a1; font-size: 0.9rem;
+@media (max-width: 480px) {
+  .upr-fig { margin: 0 .65rem 1rem; border-radius: 12px; }
+  .upr-fig-heading, .upr-fig-guide { padding: 1.1rem; }
+  .upr-fig-viewport { min-height: 330px; }
+  .upr-fig-tools { left: .4rem; right: .4rem; gap: .25rem; }
+  .upr-fig-tools button { padding: .35rem .45rem; font-size: .69rem; }
+  .upr-fig-legend { padding: 1rem 1.1rem; gap: .55rem .9rem; }
+  .home .upr-fig-caption, .upr-fig-caption, .home #upr-fig-help, #upr-fig-help { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .upr-fig-label { font-size: .62rem; }
 }
-.upr-fig-tools {
-  position: absolute; right: 0.6rem; bottom: 0.6rem; z-index: 3;
-  display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; justify-content: flex-end;
-  max-width: calc(100% - 1.2rem);
+@media (forced-colors: active) { .upr-fig button[aria-pressed="true"] { outline: 2px solid Highlight; } }
+.upr-fig-legend { margin: 0; list-style: none; }
+.upr-fig-legend li { display: inline-flex; align-items: center; gap: .45rem; }
+.upr-fig-legend .upr-fig-key { display: inline-block; width: .6rem; height: .6rem; border-radius: 50%; background: var(--key-color,#90b5a7); }
+/* Container sizing also keeps the atlas readable inside narrower page columns. */
+.upr-fig { container-type: inline-size; }
+@container (max-width: 720px) {
+  .upr-fig-layout { grid-template-columns: 1fr; }
+  .upr-fig-viewport { min-height: 410px; }
+  .upr-fig-guide { border-left: 0; border-top: 1px solid var(--atlas-line); }
 }
-.upr-fig-tools button {
-  min-height: 32px; padding: 0.3rem 0.7rem;
-  border: 1px solid rgba(147, 197, 253, 0.3); border-radius: 999px;
-  background: rgba(8, 15, 30, 0.82); color: #dbe7fb;
-  font: inherit; font-size: 0.78rem; font-weight: 600; cursor: pointer;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
-}
-.upr-fig-tools button:hover { border-color: rgba(147, 197, 253, 0.7); }
-.upr-fig-tools button.is-active { border-color: #67e8f9; color: #ecfeff; background: rgba(8, 145, 178, 0.3); }
-.upr-fig-tools button:focus-visible { outline: 2px solid #67e8f9; outline-offset: 2px; }
-.upr-fig-zoom { display: inline-flex; gap: 0.25rem; }
-.upr-fig-zoom button { min-width: 34px; font-size: 1rem; line-height: 1; padding: 0.3rem 0.5rem; }
-
-.upr-fig-labels { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-.upr-fig-label {
-  position: absolute; top: 0; left: 0;
-  padding: 0.12rem 0.45rem;
-  border: 1px solid var(--lc, rgba(147, 197, 253, 0.45));
-  border-radius: 999px;
-  background: rgba(4, 10, 22, 0.74);
-  color: #eaf2ff; font-size: 0.66rem; font-weight: 700;
-  letter-spacing: 0.04em; line-height: 1.3;
-  white-space: nowrap; will-change: transform;
-}
-.upr-fig-label[hidden] { display: none; }
-.upr-fig.is-narrow .upr-fig-labels { display: none; }
-
-.upr-fig-caption {
-  margin: 0.55rem 1.1rem 0 !important;
-  color: #9aa2b1; font-size: 0.78rem; line-height: 1.5;
-}
-.upr-fig-failed { display: none; }
-
-@media (max-width: 767.98px) {
-  .upr-fig { margin: 0 0.75rem 0.4rem; min-height: 380px; }
-  .upr-fig-tools button { font-size: 0.72rem; padding: 0.28rem 0.55rem; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .upr-fig-canvas { transition: none; }
+@container (max-width: 420px) {
+  .upr-fig-viewport { min-height: 330px; }
+  .upr-fig-tools { left: .4rem; right: .4rem; gap: .25rem; }
+  .upr-fig-tools button { padding: .35rem .45rem; font-size: .69rem; }
 }

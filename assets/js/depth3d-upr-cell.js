@@ -12,6 +12,8 @@
   var script = document.currentScript;
   var THREE_URL = (script && script.getAttribute("data-three")) || "/assets/js/lib/three-r170.module.min.js";
 
+  var anatomyURL = new URL("upr-cell-anatomy.js?v=20261025", script.src).href;
+
   var stage = document.getElementById("upr-scene-stage");
   if (!stage || !window.matchMedia || !("IntersectionObserver" in window)) return;
 
@@ -43,7 +45,7 @@
   function load() {
     if (api || loading) return;
     loading = true;
-    import(THREE_URL).then(function (THREE) { api = build(THREE); }).catch(function () { host.remove(); });
+    Promise.all([import(THREE_URL), import(anatomyURL)]).then(function (modules) { api = build(modules[0], modules[1].createUPRCell); }).catch(function () { host.remove(); });
   }
   var loadWatch = new IntersectionObserver(function (entries) {
     if (entries[0].isIntersecting) { loadWatch.disconnect(); load(); }
@@ -81,7 +83,7 @@
   }
 
   // ======================================================================
-  function build(THREE) {
+  function build(THREE, createUPRCell) {
     var V = function (x, y, z) { return new THREE.Vector3(x, y, z); };
     var lowPower = small.matches;
 
@@ -171,186 +173,23 @@
             " gl_FragColor = vec4(mix(uGray, uWhite, shade), a); }"
         });
       }
-      var floor = new THREE.Mesh(new THREE.PlaneGeometry(44, 26), gridMaterial(V(0, 1, 0), 0.6, 1));
+      var floor = new THREE.Mesh(new THREE.PlaneGeometry(44, 26), gridMaterial(V(0, 1, 0), 0.6, 0.18));
       floor.rotation.x = -Math.PI / 2; floor.position.y = -1.7; floor.renderOrder = -2;
-      var wall = new THREE.Mesh(new THREE.PlaneGeometry(44, 26), gridMaterial(V(0, 0, 1), 0.6, 0.55));
+      var wall = new THREE.Mesh(new THREE.PlaneGeometry(44, 26), gridMaterial(V(0, 0, 1), 0.6, 0.12));
       wall.position.set(0, 11, -7); wall.renderOrder = -2;
       scene.add(floor, wall);
     })();
 
     // ---------- Geometry helpers ----------
-    function mergeGeometries(list) {
-      var pos = [], nor = [], idx = [], off = 0;
-      list.forEach(function (g) {
-        pos.push(g.attributes.position.array); nor.push(g.attributes.normal.array);
-        var ia = g.index.array; for (var i = 0; i < ia.length; i++) idx.push(ia[i] + off);
-        off += g.attributes.position.count;
-      });
-      function cat(arrs) { var n = 0; arrs.forEach(function (a) { n += a.length; }); var out = new Float32Array(n), o = 0; arrs.forEach(function (a) { out.set(a, o); o += a.length; }); return out; }
-      var m = new THREE.BufferGeometry();
-      m.setAttribute("position", new THREE.BufferAttribute(cat(pos), 3));
-      m.setAttribute("normal", new THREE.BufferAttribute(cat(nor), 3));
-      m.setIndex(idx);
-      return m;
-    }
     function tube(points, r, seg) { return new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points), seg || Math.max(20, points.length * 10), r, 6, false); }
 
     // ======================================================================
     // WHOLE CELL  (immune cell with ER network)
     // ======================================================================
-    var cellGroup = new THREE.Group();
-    scene.add(cellGroup);
-    var NUC_R = 0.62;
-
-    // Soft contact shadow
-    (function () {
-      var c = document.createElement("canvas"); c.width = c.height = 128;
-      var g = c.getContext("2d");
-      var grd = g.createRadialGradient(64, 64, 18, 64, 64, 64);
-      grd.addColorStop(0, "rgba(0,0,0,0.5)"); grd.addColorStop(1, "rgba(0,0,0,0)");
-      g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
-      var m = new THREE.Mesh(new THREE.PlaneGeometry(4.2, 4.2), new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
-      m.rotation.x = -Math.PI / 2; m.position.y = -1.68; cellGroup.add(m);
-    })();
-
-    // Plasma membrane: translucent, lightly ruffled sphere
-    var membraneMat = new THREE.MeshPhysicalMaterial({
-      color: 0xd6ecff, roughness: 0.08, metalness: 0, transmission: 1, thickness: 0.4, ior: 1.37,
-      attenuationColor: new THREE.Color(0xb7d6f5), attenuationDistance: 2.2,
-      sheen: 0.4, sheenRoughness: 0.4, sheenColor: new THREE.Color(0xbfe1ff),
-      clearcoat: 0.3, clearcoatRoughness: 0.3, iridescence: 0.3, iridescenceIOR: 1.3,
-      specularIntensity: 0.6, envMapIntensity: 0.8
-    });
-    (function () {
-      var geo = new THREE.SphereGeometry(1.3, lowPower ? 96 : 160, lowPower ? 64 : 100);
-      var p = geo.attributes.position;
-      for (var i = 0; i < p.count; i++) {
-        var x = p.getX(i), y = p.getY(i), z = p.getZ(i);
-        var n = fbm(x * 1.6 + 3, y * 1.6 + 1, z * 1.6 + 5, 4) - 0.5;
-        var fine = fbm(x * 6 + 2, y * 6 + 4, z * 6 + 1, 2) - 0.5;
-        var s = 1 + 0.07 * n + 0.02 * fine;
-        p.setXYZ(i, x * s, y * s, z * s);
-      }
-      geo.computeVertexNormals();
-      var mem = new THREE.Mesh(geo, membraneMat);
-      mem.renderOrder = 3; cellGroup.add(mem);
-      // A few filopodia
-      for (var f = 0; f < 16; f++) {
-        var th = rand() * Math.PI * 2, ph = (rand() - 0.5) * 1.2;
-        var dir = V(Math.cos(th) * Math.cos(ph), Math.sin(ph) * 0.7, Math.sin(th) * Math.cos(ph)).normalize();
-        var base = dir.clone().multiplyScalar(1.28), tip = dir.clone().multiplyScalar(1.28 + 0.12 + rand() * 0.22);
-        cellGroup.add(new THREE.Mesh(tube([base, base.clone().lerp(tip, 0.5), tip], 0.012, 10), membraneMat));
-      }
-    })();
-
-    // Nucleus with chromatin texture
-    var nucEmissive = new THREE.Color(0x67e8f9);
-    var nucleusMat;
-    (function () {
-      var W = 384, H = 192, c1 = document.createElement("canvas"); c1.width = W; c1.height = H;
-      var g1 = c1.getContext("2d"), d1 = g1.createImageData(W, H);
-      for (var j = 0; j < H; j++) {
-        var phi = (j / H) * Math.PI;
-        for (var i = 0; i < W; i++) {
-          var lam = (i / W) * Math.PI * 2;
-          var x = Math.sin(phi) * Math.cos(lam), y = Math.cos(phi), z = Math.sin(phi) * Math.sin(lam);
-          var nv = fbm(x * 3 + 7, y * 3 + 2, z * 3 + 5, 4);
-          var v = Math.max(0, Math.min(1, (nv - 0.35) * 2.0));
-          var r = 54 + 92 * v, gg = 42 + 74 * v, b = 118 + 90 * v;
-          var o = (j * W + i) * 4; d1.data[o] = r; d1.data[o + 1] = gg; d1.data[o + 2] = b; d1.data[o + 3] = 255;
-        }
-      }
-      g1.putImageData(d1, 0, 0);
-      var tex = new THREE.CanvasTexture(c1); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
-      nucleusMat = new THREE.MeshPhysicalMaterial({ map: tex, roughness: 0.5, clearcoat: 0.5, clearcoatRoughness: 0.3, sheen: 0.6, sheenColor: new THREE.Color(0xc4b5fd), emissive: nucEmissive.clone(), emissiveIntensity: 0.08 });
-      var geo = new THREE.SphereGeometry(NUC_R, 80, 56);
-      var p = geo.attributes.position;
-      for (var k = 0; k < p.count; k++) {
-        var vx = p.getX(k), vy = p.getY(k), vz = p.getZ(k);
-        var w = 1 + 0.04 * (fbm(vx * 2 + 1, vy * 2 + 3, vz * 2 + 5, 3) - 0.5);
-        p.setXYZ(k, vx * w, vy * w, vz * w);
-      }
-      geo.computeVertexNormals();
-      var nuc = new THREE.Mesh(geo, nucleusMat); nuc.castShadow = true; cellGroup.add(nuc);
-    })();
-
-    // ---------- ER network: perinuclear sheets + branching peripheral tubules ----------
-    var erMat = new THREE.MeshPhysicalMaterial({
-      color: 0x8fd4e6, roughness: 0.34, metalness: 0, transmission: 0.35, thickness: 0.3,
-      emissive: new THREE.Color(0x22d3ee), emissiveIntensity: 0.12,
-      sheen: 0.4, sheenColor: new THREE.Color(0x7dd3fc), clearcoat: 0.3, envMapIntensity: 0.7,
-      transparent: true, opacity: 0.96, side: THREE.DoubleSide
-    });
-    (function erNetwork() {
-      var tubes = [];
-      // Nodes on a shell around the nucleus
-      var nodes = [];
-      var count = lowPower ? 34 : 50;
-      for (var i = 0; i < count; i++) {
-        var u = rand(), v = rand();
-        var th = u * Math.PI * 2, ph = Math.acos(2 * v - 1);
-        var rr = NUC_R + 0.14 + rand() * 0.42;
-        var n = V(Math.sin(ph) * Math.cos(th), Math.cos(ph) * 0.8, Math.sin(ph) * Math.sin(th)).multiplyScalar(rr);
-        n.y *= 0.9;
-        nodes.push(n);
-      }
-      // Connect each node to its 2 nearest neighbors (reticular web)
-      for (var a = 0; a < nodes.length; a++) {
-        var dists = [];
-        for (var b = 0; b < nodes.length; b++) if (b !== a) dists.push([b, nodes[a].distanceTo(nodes[b])]);
-        dists.sort(function (p, q) { return p[1] - q[1]; });
-        for (var kk = 0; kk < 2; kk++) {
-          var j = dists[kk][0];
-          if (j < a) continue; // avoid duplicate edges
-          var mid = nodes[a].clone().lerp(nodes[j], 0.5);
-          mid.multiplyScalar(1 + 0.08 + rand() * 0.06); // bow outward from nucleus
-          tubes.push(tube([nodes[a], mid, nodes[j]], 0.016 + rand() * 0.01, 22));
-        }
-        // small node swelling
-        tubes.push(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([nodes[a].clone().add(V(0.001, 0, 0)), nodes[a].clone().add(V(-0.001, 0, 0))]), 2, 0.026, 6, false));
-      }
-      var net = new THREE.Mesh(mergeGeometries(tubes), erMat);
-      net.castShadow = true; cellGroup.add(net);
-
-      // Perinuclear ER sheets: a couple of flattened bumpy shells hugging the nucleus
-      for (var s = 0; s < 2; s++) {
-        var sg = new THREE.SphereGeometry(NUC_R + 0.1 + s * 0.08, 48, 32, 0, Math.PI * 2, Math.PI * (0.18 + s * 0.08), Math.PI * 0.5);
-        var sp = sg.attributes.position;
-        for (var m2 = 0; m2 < sp.count; m2++) {
-          var px = sp.getX(m2), py = sp.getY(m2), pz = sp.getZ(m2);
-          var bump = 1 + 0.03 * (fbm(px * 5, py * 5, pz * 5, 2) - 0.5);
-          sp.setXYZ(m2, px * bump, py * bump, pz * bump);
-        }
-        sg.computeVertexNormals();
-        var sheet = new THREE.Mesh(sg, erMat.clone());
-        sheet.material.opacity = 0.5; sheet.rotation.y = s * 1.3; cellGroup.add(sheet);
-      }
-    })();
-
-    // Mitochondria
+    var anatomy = createUPRCell(THREE, { lowPower: lowPower });
+    var cellGroup = anatomy.group; scene.add(cellGroup);
+    var NUC_R = 0.49, erMat = anatomy.erMaterial;
     var dummy = new THREE.Object3D();
-    (function () {
-      var c = lowPower ? 26 : 40;
-      var inst = new THREE.InstancedMesh(new THREE.CapsuleGeometry(0.03, 0.12, 6, 12), new THREE.MeshPhysicalMaterial({ color: 0xe2866a, roughness: 0.42, clearcoat: 0.6, sheen: 0.4, sheenColor: new THREE.Color(0xffc2a8) }), c);
-      for (var i = 0; i < c; i++) {
-        var th = rand() * Math.PI * 2, ph = Math.acos(2 * rand() - 1), rr = NUC_R + 0.25 + rand() * 0.55;
-        var p = V(Math.sin(ph) * Math.cos(th), Math.cos(ph) * 0.75, Math.sin(ph) * Math.sin(th)).multiplyScalar(rr);
-        dummy.position.copy(p);
-        dummy.quaternion.setFromUnitVectors(V(0, 1, 0), V(rand() - 0.5, rand() - 0.5, rand() - 0.5).normalize());
-        dummy.scale.set(1, 0.7 + rand() * 0.9, 1); dummy.updateMatrix(); inst.setMatrixAt(i, dummy.matrix);
-      }
-      inst.castShadow = true; cellGroup.add(inst);
-    })();
-
-    // Golgi
-    (function () {
-      var mat = new THREE.MeshPhysicalMaterial({ color: 0xe8a2c8, roughness: 0.35, clearcoat: 0.8, sheen: 0.5, sheenColor: new THREE.Color(0xfbcfe8) });
-      for (var i = 0; i < 4; i++) {
-        var t = new THREE.Mesh(new THREE.TorusGeometry(0.2 - i * 0.02, 0.016, 8, 32, 2.0), mat);
-        t.scale.set(1, 1, 0.5); t.rotation.set(Math.PI / 2, 0, 0.6);
-        t.position.set(0.5 + i * 0.04, -0.2, 0.55); t.castShadow = true; cellGroup.add(t);
-      }
-    })();
 
     // Toxicant particles streaming inward toward the ER
     var toxN = lowPower ? 26 : 40;
@@ -467,9 +306,9 @@
       if (color) el.style.setProperty("--lc", color); labelsEl.appendChild(el); return el;
     }
     var cellLabels = [
-      { el: mkLabel("Nucleus", "rgba(196,181,253,.6)"), at: function () { return V(0, NUC_R + 0.15, 0); } },
-      { el: mkLabel("ER network", "rgba(125,211,252,.6)"), at: function () { return V(-0.95, 0.35, 0.55); } },
-      { el: mkLabel("Mitochondria", "rgba(226,134,106,.6)"), at: function () { return V(0.9, 0.7, -0.4); } },
+      { el: mkLabel("Nucleus", "rgba(196,181,253,.6)"), at: function () { return V(-0.48, 0.65, 0.4); } },
+      { el: mkLabel("ER network", "rgba(125,211,252,.6)"), at: function () { return V(0.25, -0.85, 0.25); } },
+      { el: mkLabel("Mitochondria", "rgba(226,134,106,.6)"), at: function () { return V(-1.08, -0.40, 0.20); } },
       { el: mkLabel("Toxicant", "rgba(203,213,225,.6)"), at: function () { return V(1.15, 1.0, 0.6); } }
     ];
     var erLabels = [
@@ -494,7 +333,7 @@
 
     function approach(cur, goal, rate, dt) { return cur + (goal - cur) * (1 - Math.exp(-rate * dt)); }
 
-    var erTeal = new THREE.Color(0x22d3ee), erAngry = new THREE.Color(0xf97316), erCalm = new THREE.Color(0x34d399), tmpCol = new THREE.Color();
+    var erTeal = new THREE.Color(0x496f68), erAngry = new THREE.Color(0xad7059), erCalm = new THREE.Color(0x7caa92), tmpCol = new THREE.Color();
 
     function updateScene(t, dt, still) {
       ["tox", "load", "sig", "adapt", "fail"].forEach(function (k) {
@@ -503,8 +342,7 @@
 
       // ER emissive: teal at rest, shifts to orange under fail, to green under adaptive
       tmpCol.copy(erTeal).lerp(erAngry, state.fail * 0.8).lerp(erCalm, state.adapt * 0.6);
-      erMat.emissive.copy(tmpCol); erMat.emissiveIntensity = 0.1 + 0.5 * state.sig + 0.4 * state.fail;
-      nucleusMat.emissiveIntensity = 0.06 + 0.3 * state.sig;
+      erMat.emissive.copy(tmpCol); erMat.emissiveIntensity = 0.04 + 0.18 * state.sig + 0.15 * state.fail;
       if (erGroup.userData.patchMat) { erGroup.userData.patchMat.emissive.copy(tmpCol); erGroup.userData.patchMat.emissiveIntensity = 0.08 + 0.5 * state.sig + 0.4 * state.fail; }
 
       // Toxicant particles
@@ -543,9 +381,10 @@
       // XBP1 splicing: ribbon opens a gap (scale down) and brightens with signaling
       xbp1Mat.opacity = 0.3 + 0.7 * state.sig; xbp1.scale.x = 1 - 0.25 * state.sig;
       perkS.userData.mat.emissiveIntensity = 0.3 + 1.5 * Math.max(state.sig, state.fail * 0.85);
-      perkChainMat.emissiveIntensity = 0.2 + 0.9 * Math.max(state.sig, state.fail * 0.8);
+      // Each token owns a cloned material; update that material, not the prototype.
       perkTokens.forEach(function (tk, i) {
         var on = Math.max(state.sig, state.fail * 0.8);
+        tk.material.emissiveIntensity = 0.2 + 0.9 * on;
         tk.scale.setScalar(0.5 + 0.9 * on);
         tk.position.y = MEMBRANE_Y + [0.7, 0.95, 1.2][i] + (still ? 0 : Math.sin(t * 1.2 + i) * 0.02);
       });
@@ -588,7 +427,7 @@
     }
 
     // ---------- Camera ----------
-    var CELL = { target: V(0, 0.05, 0), yaw: -0.5, pitch: 0.5, radius: 5.4 };
+    var CELL = { target: V(0, 0.05, 0), yaw: -0.08, pitch: 0.18, radius: 5.4 };
     var ER = { target: erGroup.position.clone().add(V(0, 0.35, 0)), yaw: -0.12, pitch: 0.3, radius: 3.4 };
     var user = { yaw: 0, pitch: 0 };
     var view = { yaw: CELL.yaw, pitch: CELL.pitch };
@@ -596,6 +435,40 @@
     var curTarget = CELL.target.clone(), curRadius = CELL.radius;
     var drag = null;
     var canvas = renderer.domElement;
+    var paused = reduceMotion.matches, contextLost = false, firstFrame = true;
+    canvas.tabIndex = 0;
+    canvas.setAttribute("role", "img");
+    canvas.setAttribute("aria-label", "Interactive conceptual cell and ER sensor model");
+    canvas.setAttribute("aria-describedby", "upr-scene-help upr-scene-explanation");
+    var tools = document.createElement("div"); tools.className = "upr-scene-tools";
+    tools.innerHTML = '<button type="button" data-motion aria-pressed="false">Pause motion</button><button type="button" data-reset>Reset view</button>';
+    tools.hidden = true; stage.appendChild(tools);
+    var pauseButton = tools.querySelector("[data-motion]");
+    function syncMotion() {
+      pauseButton.setAttribute("aria-pressed", String(paused || reduceMotion.matches));
+      pauseButton.textContent = reduceMotion.matches ? "Motion reduced" : paused ? "Resume motion" : "Pause motion";
+      pauseButton.disabled = reduceMotion.matches;
+    }
+    pauseButton.addEventListener("click", function () { paused = !paused; syncMotion(); kick(); });
+    function resetView() { user.yaw = user.pitch = 0; pointer.x = pointer.y = 0; kick(); }
+    tools.querySelector("[data-reset]").addEventListener("click", resetView);
+    canvas.addEventListener("keydown", function (event) {
+      if (event.ctrlKey || event.metaKey || event.altKey) return;
+      if (event.key === "ArrowLeft") user.yaw = Math.max(-1.3, user.yaw - 0.12);
+      else if (event.key === "ArrowRight") user.yaw = Math.min(1.3, user.yaw + 0.12);
+      else if (event.key === "ArrowUp") user.pitch = Math.max(-0.35, user.pitch - 0.1);
+      else if (event.key === "ArrowDown") user.pitch = Math.min(0.7, user.pitch + 0.1);
+      else if (event.key === "Home") resetView();
+      else return;
+      event.preventDefault(); kick();
+    });
+    canvas.addEventListener("webglcontextlost", function (event) {
+      event.preventDefault(); contextLost = true; cancelAnimationFrame(raf); raf = 0;
+      stage.classList.remove("is-ready"); tools.hidden = true; canvas.tabIndex = -1;
+      stage.querySelector(".upr-scene-fallback").textContent = "3D rendering paused. Use the view and stage controls below to read each explanation.";
+    });
+    canvas.addEventListener("webglcontextrestored", function () { contextLost = false; firstFrame = true; canvas.tabIndex = 0; resize(); });
+    syncMotion();
 
     canvas.addEventListener("pointerdown", function (e) { drag = { id: e.pointerId, x: e.clientX, y: e.clientY, yaw: user.yaw, pitch: user.pitch, moved: 0 }; });
     canvas.addEventListener("pointermove", function (e) {
@@ -606,6 +479,7 @@
       }
       if (!drag || drag.id !== e.pointerId) return;
       var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (e.pointerType === "touch" && !drag.captured && Math.abs(dy) > Math.abs(dx)) { drag = null; return; }
       drag.moved = Math.max(drag.moved, Math.abs(dx) + Math.abs(dy));
       if (drag.moved > 4) {
         if (!drag.captured) { try { canvas.setPointerCapture(e.pointerId); } catch (err) {} drag.captured = true; stage.classList.add("is-dragging"); }
@@ -625,6 +499,9 @@
       var w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
       width = w; height = h; renderer.setSize(w, h, false); camera.aspect = w / h;
       stage.classList.toggle("is-narrow", w < 480);
+      var tangent = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+      CELL.radius = Math.max(5.4, 2.0 / (tangent * camera.aspect) + 1.0, 1.5 / tangent + 0.7);
+      ER.radius = Math.max(3.4, 1.8 / (tangent * camera.aspect) + 0.8, 1.25 / tangent + 0.7);
       camera.updateProjectionMatrix(); kick();
     }
 
@@ -649,10 +526,10 @@
     var clock = new THREE.Clock();
     function frame() {
       raf = 0;
-      if (!visible || document.hidden || !width) return;
-      var still = reduceMotion.matches;
+      if (!visible || document.hidden || contextLost || !width) return;
+      var still = reduceMotion.matches || paused;
       var dt = Math.min(0.1, clock.getDelta());
-      var t = still ? lastT : clock.elapsedTime; lastT = t;
+      var t = still ? lastT : lastT + dt; lastT = t;
 
       viewBlend += (viewTarget - viewBlend) * (still ? 1 : (1 - Math.exp(-dt * 3.5)));
       updateScene(t, dt, still);
@@ -681,6 +558,7 @@
       );
       camera.lookAt(curTarget);
       renderer.render(scene, camera);
+      if (firstFrame) { firstFrame = false; stage.classList.add("is-ready"); tools.hidden = false; }
       placeLabels();
       if (!still) raf = requestAnimationFrame(frame);
     }
@@ -693,11 +571,10 @@
     if ("ResizeObserver" in window) new ResizeObserver(resize).observe(stage);
     window.addEventListener("resize", resize);
     document.addEventListener("visibilitychange", kick);
-    if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", kick);
+    if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", function () { syncMotion(); kick(); });
 
     updateScene(0, 0, true);
     resize();
-    stage.classList.add("is-ready");
     return { };
   }
 })();
