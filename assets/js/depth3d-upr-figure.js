@@ -18,7 +18,7 @@
       title: "Start with the endoplasmic reticulum",
       copy: "The endoplasmic reticulum (ER) helps proteins fold. When folding demand exceeds capacity, three ER sensors coordinate the unfolded protein response, or UPR.",
       steps: ["Protein folding becomes disrupted.", "IRE1α, PERK and ATF6 activate distinct, interacting responses.", "The cell adjusts protein production, folding and clearance."],
-      note: "The cutaway exposes the ER around the nucleus. Colors identify structures; they do not show measured activity."
+      note: "The ER surrounds the nucleus and helps coordinate protein folding, quality control and clearance."
     },
     ire1: {
       title: "IRE1α: adjust the folding program",
@@ -36,13 +36,13 @@
       title: "ATF6: expand repair capacity",
       copy: "During ER stress, ATF6 moves from the ER to the Golgi. Proteolytic processing releases a fragment that can enter the nucleus and regulate gene expression.",
       steps: ["ATF6 traffics from the ER to the Golgi.", "Cleavage releases the active N-terminal fragment.", "Gene expression supports chaperones, folding capacity and ER-associated degradation."],
-      note: "The highlighted sensor marks its ER location. The simplified cell does not depict the complete trafficking route or a resolved protein structure."
+      note: "The active ATF6 fragment connects stress sensing at the ER with restoration programs in the nucleus."
     },
     recovery: {
       title: "Recovery is the question that follows",
       copy: "A stress response is only part of the story. The framework asks whether the cell can clear the burden, reduce signaling and restore function after an exposure ends.",
       steps: ["Adaptive resolution: folding balance and function recover.", "Incomplete resolution: stress signaling or dysfunction persists.", "Test the distinction by measuring recovery over time."],
-      note: "These are alternative, context-dependent outcomes across cell types. This illustration is a guide to the framework, not measured dynamics or a prediction for an individual cell."
+      note: "Recovery depends on how effectively the cell restores protein-folding capacity and clears the stress burden."
     }
   };
   function selectTopic(id) {

@@ -61,7 +61,7 @@ nav_order: 99
     </div>
   </section>
 
-  <p class="visual-note">Every figure, explorer and simulation on this page is a conceptual illustration of the review's framework, not an experimental measurement. The framework is offered as a hypothesis-generating structure, and the causal step linking failed resolution to immune dysfunction remains largely extrapolated from non-toxicological ER-stress models.</p>
+  <p class="visual-note">The framework is offered as a hypothesis-generating structure, and the causal step linking failed resolution to immune dysfunction remains largely extrapolated from non-toxicological ER-stress models.</p>
 
   <section class="circuit-section" aria-labelledby="resolution-figure-title">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">The framework at a glance</span><h2 id="resolution-figure-title">Three questions define proteotoxic stress resolution</h2></div></div>
@@ -115,9 +115,9 @@ nav_order: 99
   </section>
 
   <section class="circuit-section upr-scene-card" id="upr-3d">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2 id="upr-scene-title">From stress sensing to recovery</h2><p>Explore toxicant input and branch signaling, then compare two possible outcomes. The cell is a simplified illustration: the response depends on the exposure and cell type. Choose the ER close-up to inspect the three sensors, or drag the model to rotate.</p></div></div>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2 id="upr-scene-title">From stress sensing to recovery</h2><p>Explore toxicant input and branch signaling, then compare two possible outcomes. Choose the ER close-up to inspect the three sensors, or drag the model to rotate.</p></div></div>
     <div class="upr-scene" id="upr-scene-stage" data-phase="toxicant" data-view="cell" role="group" aria-labelledby="upr-scene-title" aria-describedby="upr-scene-explanation">
-      <p class="upr-scene-fallback">A conceptual 3D model of an immune cell and its ER appears here in supporting browsers. The same content is described in the sections below.</p>
+      <p class="upr-scene-fallback">A 3D model of an immune cell and its ER appears here in supporting browsers. The same content is described in the sections below.</p>
     </div>
     <p class="upr-scene-help" id="upr-scene-help">Drag to rotate. With the model focused, arrow keys rotate and Home resets the view. Pause freezes motion.</p>
     <div class="upr-scene-controls">
@@ -135,9 +135,9 @@ nav_order: 99
     <div class="upr-scene-explanation" id="upr-scene-explanation" aria-live="polite" aria-atomic="true">
       <span class="upr-scene-view" id="upr-scene-view">Whole cell · anatomy and stress context</span>
       <h3 id="upr-scene-phase-title">1 · Toxicant input</h3>
-      <p id="upr-scene-phase-copy">An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate a conceptual toxicant input; the amber shapes represent an increased misfolded-protein burden.</p>
+      <p id="upr-scene-phase-copy">An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate toxicant input; the amber shapes represent an increased misfolded-protein burden.</p>
     </div>
-    <p class="upr-scene-outcomes">Recovery and persistent stress are alternative scenarios, not consecutive stages. Colors identify structures and signals; brightness and particle counts are illustrative, not measured quantities.</p>
+    <p class="upr-scene-outcomes">Recovery and persistent stress are alternative scenarios, not consecutive stages.</p>
     <ul class="upr-scene-caption" aria-label="Model color key"><li><span class="l-tox" aria-hidden="true"></span>Toxicant</li><li><span class="l-ire" aria-hidden="true"></span>IRE1α</li><li><span class="l-perk" aria-hidden="true"></span>PERK</li><li><span class="l-atf6" aria-hidden="true"></span>ATF6</li><li><span class="l-mis" aria-hidden="true"></span>Misfolded protein</li></ul>
   </section>
 
@@ -572,7 +572,7 @@ nav_order: 99
     var viewBtns = root.querySelectorAll('[data-set-view]');
     var phaseBtns = root.querySelectorAll('[data-set-phase]');
     var phaseCopy = {
-      toxicant: ['1 · Toxicant input', 'An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate a conceptual toxicant input; the amber shapes represent an increased misfolded-protein burden.'],
+      toxicant: ['1 · Toxicant input', 'An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate toxicant input; the amber shapes represent an increased misfolded-protein burden.'],
       signaling: ['2 · Branch signaling', 'IRE1α, PERK and ATF6 coordinate distinct responses to ER stress. Look for the three colored sensors at the ER membrane. Their outputs can support adaptation or contribute to dysfunction, depending on cell type and signaling duration.'],
       adaptive: ['3A · Recovery', 'In this adaptive scenario, folding and clearance capacity catch up with the burden. Misfolded-protein load and stress signaling decline as ER function returns toward baseline. Recovery is an active process.'],
       failed: ['3B · Persistent stress', 'In this alternative scenario, the protein-folding burden remains and signaling does not reset. The framework proposes that prolonged or unbalanced responses may contribute to immune dysfunction. Failure is not an inevitable outcome of UPR activation.']

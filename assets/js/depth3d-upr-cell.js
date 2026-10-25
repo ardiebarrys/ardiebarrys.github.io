@@ -38,7 +38,7 @@
   var host = document.createElement("div");
   host.className = "upr-scene-inner";
   host.style.cssText = "position:absolute;inset:0;";
-  host.innerHTML = '<span class="upr-scene-tag">Conceptual 3D illustration</span><div class="upr-scene-labels" aria-hidden="true"></div>';
+  host.innerHTML = '<span class="upr-scene-tag">Cell and ER sensors</span><div class="upr-scene-labels" aria-hidden="true"></div>';
   stage.appendChild(host);
 
   var api = null, loading = false;
@@ -438,7 +438,7 @@
     var paused = reduceMotion.matches, contextLost = false, firstFrame = true;
     canvas.tabIndex = 0;
     canvas.setAttribute("role", "img");
-    canvas.setAttribute("aria-label", "Interactive conceptual cell and ER sensor model");
+    canvas.setAttribute("aria-label", "Interactive cell and ER sensor model");
     canvas.setAttribute("aria-describedby", "upr-scene-help upr-scene-explanation");
     var tools = document.createElement("div"); tools.className = "upr-scene-tools";
     tools.innerHTML = '<button type="button" data-motion aria-pressed="false">Pause motion</button><button type="button" data-reset>Reset view</button>';
