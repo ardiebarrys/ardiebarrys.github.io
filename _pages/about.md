@@ -4,7 +4,7 @@ title: About
 permalink: /
 nav: false
 nav_order: 1
-description: Toxicology researcher studying how e-cigarette aerosol affects male reproductive health
+description: Ardie Barry Sailis studies environmental exposures, male reproductive health and how cellular signaling systems respond to stress and recover.
 ---
 
 <style>
@@ -860,10 +860,23 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 </style>
 
 <div class="home">
-  <h1 class="home-title">Ardie Barry Sailis</h1>
+  <section class="site-hero" aria-labelledby="home-title">
+    <div class="site-hero-copy">
+      <span class="site-eyebrow">Independent researcher · Toxicology &amp; molecular biology</span>
+      <h1 id="home-title">How cells respond.<br>Why recovery matters.</h1>
+      <p>I'm Ardie Barry Sailis. I study how chemical exposures affect reproductive health and how cells adapt, recover or fail under stress.</p>
+      <div class="site-hero-actions"><a class="site-action" href="{{ '/projects/' | relative_url }}">Explore the research <span aria-hidden="true">↗</span></a><a class="site-text-link" href="{{ '/contact/' | relative_url }}">Get in touch</a></div>
+      <dl class="site-hero-proof">
+        <div><dt>{{ site.data.papers | size }}</dt><dd>Research publications</dd></div>
+        {%- assign framework_count = site.data.papers | where: "project", "framework" | size -%}
+        <div><dt>{{ framework_count }}</dt><dd>Interactive frameworks</dd></div>
+        <div><dt>2</dt><dd>Research tracks</dd></div>
+      </dl>
+    </div>
+    <figure class="site-hero-portrait"><img src="{{ '/assets/img/ardie-profile.jpg' | relative_url }}" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high"><figcaption>Ardie Barry Sailis<span>Independent researcher · Petaling Jaya, Malaysia</span></figcaption></figure>
+  </section>
 
   <section class="home-card profile-card" aria-label="Profile">
-    <img class="profile-photo" src="/assets/img/ardie-profile.jpg" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high" draggable="false">
 
     <div class="profile-body">
       <div class="profile-affiliation">
@@ -890,8 +903,8 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
   <section class="home-card home-intro">
     <span class="home-label">Toxicology · Molecular Biology</span>
-    <h2>I study how cells handle chemical stress, and what happens when they cannot.</h2>
-    <p>That question runs in two directions. In the lab, whether vaping disturbs the systems that make testosterone, followed from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis. On paper, how signaling pathways end a response and recover from it, and why failing to resolve stress may matter more than switching on.</p>
+    <h2>Two research tracks.<br>Connected by cellular stress.</h2>
+    <p>My experimental work investigates vaping and male reproductive health. My independent writing examines how signaling systems control a response, bring it to an end and restore function.</p>
     <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
     <div class="home-tracks">
       <article class="home-track track-doctoral">
@@ -1007,7 +1020,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 {%- assign news_items = news_rows | split: "@@" | sort | reverse %}
 
   <section class="news">
-    <h2>Latest News</h2>
+    <h2>Latest news</h2>
     <ul class="news-list">
       {%- assign news_shown = 0 -%}
       {%- for row in news_items -%}

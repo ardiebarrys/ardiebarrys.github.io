@@ -22,6 +22,7 @@
 @use "publications";
 @use "components";
 @use "utilities";
+@use "site-design";
 
 @use "tabs";
 @use "teachings";
@@ -683,3 +684,5 @@ body:has(#deep-numbers-app) .site-footer {
   background: #030406;
   border-top-color: rgba(129, 140, 248, 0.12);
 }
+
+@include site-design.apply;

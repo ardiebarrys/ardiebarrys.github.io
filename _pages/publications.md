@@ -281,17 +281,26 @@ nav_order: 3
   }
 </style>
 
-{% include journal-metrics-summary.html %}
+<section class="publication-filters" id="publication-filters" aria-label="Find publications" hidden>
+  <div class="publication-filter-grid">
+    <div class="publication-filter-search"><label for="publication-search">Search publications</label><input type="search" id="publication-search" placeholder="Title, journal, author or keyword" autocomplete="off" aria-controls="publication-list"></div>
+    <div><label for="publication-track">Research track</label><select id="publication-track" aria-controls="publication-list"><option value="">All research</option><option value="thesis">Doctoral research</option><option value="framework">Cellular circuits</option><option value="other">Other writing</option></select></div>
+    <div><label for="publication-year">Publication year</label><select id="publication-year" aria-controls="publication-list"><option value="">All years</option>{% assign filter_years = site.data.papers | group_by: "year" %}{% for year in filter_years %}<option value="{{ year.name }}">{{ year.name }}</option>{% endfor %}</select></div>
+    <button type="button" data-clear-publications>Clear filters</button>
+  </div>
+  <p class="publication-results" id="publication-results" role="status" aria-live="polite"></p>
+</section>
+<div class="publication-empty" id="publication-empty" hidden><h2>No matching publications</h2><p>Try another keyword, year or research track.</p><button type="button" data-clear-publications>Show all publications</button></div>
 
 {%- assign me = "Ardie Barry Sailis" -%}
 {%- assign years = site.data.papers | group_by: "year" %}
 
-<div class="pubs">
+<div class="pubs" id="publication-list">
   {%- for group in years %}
   <section class="pub-year" aria-labelledby="year-{{ group.name }}">
     <h2 class="pub-year-title" id="year-{{ group.name }}">{{ group.name }}</h2>
     {%- for p in group.items %}
-    <article class="pub" id="{{ p.doi | slugify }}">
+    <article class="pub" id="{{ p.doi | slugify }}" data-project="{{ p.project | default: 'other' }}" data-year="{{ p.year }}">
       <div class="pub-main">
         <h3 class="pub-title"><a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a></h3>
         <p class="pub-authors">
@@ -359,6 +368,10 @@ nav_order: 3
   </section>
   {%- endfor %}
 </div>
+
+<details class="publication-metrics"><summary>Journal overview and publication metrics</summary>
+{% include journal-metrics-summary.html %}
+</details>
 
 <script>
   (function () {

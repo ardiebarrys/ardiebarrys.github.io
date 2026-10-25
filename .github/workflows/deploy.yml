@@ -35,6 +35,8 @@ jobs:
           node --check assets/js/depth3d-upr-cell.js
           node --check assets/js/upr-cell-anatomy.js
           node bin/check-upr.cjs
+          node --check assets/js/site-design.js
+          node bin/check-site.cjs
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
@@ -55,6 +57,8 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      - name: Verify internal links and assets
+        run: node bin/check-links.cjs
       - name: Generate CV PDF 📄
         # Prints the /cv/ page to PDF so the download button always matches the CV page.
         # If this step fails, the committed copy in assets/pdf is used instead.
@@ -68,6 +72,13 @@ jobs:
             --print-to-pdf=_site/assets/pdf/Ardie_Barry_Sailis_CV.pdf \
             http://localhost:8080/cv/
           ls -la _site/assets/pdf/Ardie_Barry_Sailis_CV.pdf
+      - name: Save review preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: _site
+          retention-days: 3
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
