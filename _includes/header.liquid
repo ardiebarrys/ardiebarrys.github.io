@@ -1,58 +1,115 @@
-<a class="site-skip" href="#site-content">Skip to content</a>
-<header class="site-header">
-  <nav id="navbar" class="navbar" aria-label="Primary navigation">
+<header>
+  <nav id="navbar" class="navbar navbar-light {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation" aria-label="Primary navigation">
     <div class="navbar-layout">
-      <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="Ardie Barry Sailis, home">
-        <span class="site-monogram" aria-hidden="true">AB</span>
-        <span>Ardie Barry Sailis</span>
-      </a>
-      <div class="site-primary-links">
-        <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' %}aria-current="page"{% endif %}>Research</a>
-        <a href="{{ '/publications/' | relative_url }}" {% if page.url == '/publications/' %}aria-current="page"{% endif %}>Publications</a>
-        <a href="{{ '/biography/' | relative_url }}" {% if page.url == '/biography/' %}aria-current="page"{% endif %}>About</a>
-        <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+
+      <div class="navbar-brand-slot">
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+          {% if site.title == 'blank' %}
+            {% if site.first_name %}<span class="font-weight-bold">{{- site.first_name -}}</span>{% endif %}
+            {% if site.middle_name %}{{- site.middle_name -}}{% endif %}
+            {% if site.last_name %}{{- site.last_name -}}{% endif %}
+          {% else %}
+            {{- site.title -}}
+          {% endif %}
+        </a>
       </div>
-      <details class="site-menu" id="site-menu">
-        <summary class="site-menu-trigger"><span>Menu</span><span class="site-menu-icon" aria-hidden="true"><i></i><i></i></span></summary>
-        <div class="site-menu-panel" id="site-menu-panel">
-          <div class="site-menu-content">
-            <div class="site-menu-top"><span class="site-eyebrow">Explore the site</span><button type="button" data-menu-close hidden aria-label="Close menu">Close <span aria-hidden="true">×</span></button></div>
-            <div class="site-menu-grid">
-              <div>
-                <p class="site-menu-label">Portfolio</p>
-                <ul class="site-menu-pages">
-                  {%- assign menu_paths = '/|/projects/|/publications/|/biography/|/talks/|/cv/|/contact/|/deep-numbers/' | split: '|' -%}
-                  {%- assign menu_labels = 'Home|Research|Publications|Biography|Talks|Curriculum vitae|Contact|Deep Numbers' | split: '|' -%}
-                  {% for path in menu_paths %}
-                  <li><a href="{{ path | relative_url }}" {% if page.url == path %}aria-current="page"{% endif %}><span>{{ menu_labels[forloop.index0] }}</span><span aria-hidden="true">↗</span></a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-              <div class="site-menu-research">
-                <p class="site-menu-label">Research in focus</p>
-                <a href="{{ '/research/e-cigarettes-male-reproductive-health/' | relative_url }}"><small>Doctoral research</small><strong>Vaping and reproductive health</strong></a>
-                <a href="{{ '/cellular-signaling-circuits/' | relative_url }}"><small>Independent framework</small><strong>Cellular signaling circuits</strong></a>
-                <ul>
-                  <li><a href="{{ '/research/upr-proteotoxic-stress-resolution/' | relative_url }}">UPR and proteotoxic stress <span aria-hidden="true">↗</span></a></li>
-                  <li><a href="{{ '/research/yap-taz-signal-resolution/' | relative_url }}">YAP/TAZ and mechanical signals <span aria-hidden="true">↗</span></a></li>
-                  <li><a href="{{ '/research/nrf2-keap1-redoxostat/' | relative_url }}">NRF2–KEAP1 and redox balance <span aria-hidden="true">↗</span></a></li>
-                  <li><a href="{{ '/research/cyp1a1-metabolic-feedback/' | relative_url }}">CYP1A1 and metabolic feedback <span aria-hidden="true">↗</span></a></li>
-                  <li><a href="{{ '/research/transcriptional-condensates-kinetic-filters/' | relative_url }}">Condensates and signal timing <span aria-hidden="true">↗</span></a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="site-menu-bottom"><span>Independent research. Open questions.</span><a href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a></div>
-          </div>
-        </div>
-      </details>
+
+      <input
+        type="checkbox"
+        id="navbar-menu-toggle"
+        class="navbar-menu-toggle"
+        aria-controls="navbarNav"
+      >
+
+      <label
+        for="navbar-menu-toggle"
+        class="navbar-menu-trigger"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="menu-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="menu-label">Menu</span>
+      </label>
+
+      <div class="navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-menu-list">
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/' | relative_url }}">
+              {% if page.permalink == '/' %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+              <span>About</span>
+              {% if page.permalink == '/' %}<span class="sr-only">(current)</span>{% endif %}
+            </a>
+          </li>
+
+          {%- comment -%}
+            Doctoral Research and Cellular Circuits are the two research tracks. They are
+            nested under Projects behind a three-line toggle instead of sitting at the top
+            level. The Projects page itself is unchanged.
+          {%- endcomment -%}
+          {% assign sub_pages = "/research/e-cigarettes-male-reproductive-health/,/cellular-signaling-circuits/" | split: "," %}
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+
+          {%- assign sub_open = false -%}
+          {%- for sp in sorted_pages -%}
+            {%- if sub_pages contains sp.permalink and page.url contains sp.url -%}{%- assign sub_open = true -%}{%- endif -%}
+          {%- endfor -%}
+
+          {% for p in sorted_pages %}
+            {% if p.nav and p.permalink != '/' and p.autogen == null %}
+              {% unless sub_pages contains p.permalink %}
+                {%- if p.permalink contains '://' -%}
+                  {%- assign url = p.permalink -%}
+                {%- elsif p.permalink contains '/blog/' -%}
+                  {%- assign url = '/blog/' -%}
+                {%- else -%}
+                  {%- assign url = p.url -%}
+                {%- endif -%}
+
+                {% if p.permalink == '/projects/' %}
+                  <li class="nav-item nav-has-sub {% if page.url contains p.url %}active{% endif %}">
+                    <input type="checkbox" id="nav-projects-sub" class="nav-sub-input" {% if sub_open %}checked{% endif %}>
+                    <div class="nav-sub-head">
+                      <a class="nav-link" href="{{ url | relative_url }}">
+                        {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                        <span>{{- p.title -}}</span>
+                        {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
+                      </a>
+                      <label for="nav-projects-sub" class="nav-sub-trigger" aria-label="Show the two research tracks">
+                        <span class="nav-sub-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+                      </label>
+                    </div>
+                    <ul class="nav-sublist">
+                      {% for sp in sorted_pages %}
+                        {% if sp.nav and sub_pages contains sp.permalink %}
+                          <li class="nav-item nav-special {% if sp.permalink == '/cellular-signaling-circuits/' %}nav-circuit-framework{% else %}nav-doctoral{% endif %} {% if page.url contains sp.url %}active{% endif %}">
+                            <a class="nav-link" href="{{ sp.url | relative_url }}">
+                              {% if page.url contains sp.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                              <span>{{- sp.title -}}</span>
+                              {% if page.url contains sp.url %}<span class="sr-only">(current)</span>{% endif %}
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  <li class="nav-item {% if page.url contains p.url %}active{% endif %}">
+                    <a class="nav-link" href="{{ url | relative_url }}">
+                      {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
+                      <span>{{- p.title -}}</span>
+                      {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endunless %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
     </div>
   </nav>
 </header>
-<div id="site-content" class="site-content-anchor" tabindex="-1"></div>
-{% unless page.url == '/' or page.url == '/deep-numbers/' %}
-<nav class="site-breadcrumbs" aria-label="Breadcrumb">
-  <a href="{{ '/' | relative_url }}">Home</a><span aria-hidden="true">/</span>
-  {% if page.url contains '/research/' %}<a href="{{ '/projects/' | relative_url }}">Research</a><span aria-hidden="true">/</span>{% endif %}
-  <span aria-current="page">{{ page.title }}</span>
-</nav>
-{% endunless %}

@@ -170,8 +170,7 @@ description: Get in touch about research, collaborations or roles
   <div class="contact-layout">
     <div class="contact-top-grid">
       <section class="contact-card">
-        <h2>Start a conversation</h2>
-        <a class="contact-direct-email" href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a>
+        <h2>Where I am</h2>
 
         <div class="contact-address">
           <strong>Petaling Jaya, Selangor, Malaysia</strong><br>
@@ -179,7 +178,7 @@ description: Get in touch about research, collaborations or roles
           Toxicology and molecular biology
         </div>
 
-        <p class="contact-address-note">For research questions, collaborations, speaking invitations or academic roles, send an email or use the form below.</p>
+        <p class="contact-address-note">The form is the fastest way to reach me. I read everything, and I reply to anything about toxicology, reproductive health, collaborations or roles.</p>
       </section>
 
       <section class="contact-card support-card">
@@ -203,7 +202,7 @@ description: Get in touch about research, collaborations or roles
 
       <form class="contact-form" action="https://formspree.io/f/mjgdnjlb" method="POST">
         <label for="email">Your email</label>
-        <input id="email" type="email" name="email" autocomplete="email" required>
+        <input id="email" type="email" name="email" required>
 
         <label for="topic">Topic</label>
         <select id="topic" name="topic" required>
@@ -219,9 +218,7 @@ description: Get in touch about research, collaborations or roles
         <label for="message">Message</label>
         <textarea id="message" name="message" required></textarea>
 
-        <div class="site-honeypot" aria-hidden="true"><label for="contact-website">Website</label><input type="text" id="contact-website" name="_gotcha" tabindex="-1" autocomplete="off"></div>
         <button type="submit">Send message</button>
-        <p class="contact-form-status" id="contact-form-status" role="status" aria-live="polite"></p>
       </form>
     </section>
   </div>

@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Curriculum vitae
+title: Curriculum Vitae
 permalink: /cv/
 nav: true
 nav_order: 8
 nav_title: CV
-description: Research, publications, experience and training of Ardie Barry Sailis.
+description: CV of Ardie Barry Sailis, independent toxicology researcher in Petaling Jaya, Selangor, with publications, experience and training
 ---
 
 <style>
