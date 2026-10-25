@@ -31,7 +31,7 @@ body .post-header .post-description {display:block;max-width:65ch;font-size:18px
 .site-skip:focus {transform:none}
 .site-content-anchor {height:0;scroll-margin-top:112px}
 body .site-header:has(>#navbar) {height:112px!important;min-height:112px!important;z-index:40!important}
-body #navbar {top:24px!important;left:0!important;right:0!important;width:min(1200px,calc(100% - 32px))!important;margin:0 auto!important;transform:none!important;will-change:auto!important;border:1px solid #313131!important;border-radius:999px;background:#181818!important;z-index:40!important}
+body #navbar {opacity:1!important;top:24px!important;left:0!important;right:0!important;width:min(1200px,calc(100% - 32px))!important;margin:0 auto!important;transform:none!important;will-change:auto!important;border:1px solid #313131!important;border-radius:999px;background:#181818!important;z-index:40!important}
 body #navbar>.navbar-layout {width:100%!important;max-width:100%!important;min-height:64px;padding:8px 24px!important;gap:24px}
 .site-brand {display:inline-flex;align-items:center;gap:12px;color:#ededed!important;font-size:14px;font-weight:600;text-decoration:none!important;white-space:nowrap}
 .site-monogram {display:grid;place-items:center;width:32px;height:32px;border:1px solid #555;border-radius:8px;font-size:12px;letter-spacing:-.02em;background:#272727}
@@ -207,11 +207,18 @@ body .bio-card h3 {font-size:24px;line-height:32px;letter-spacing:-.025em;font-w
 body .bio-card h3:first-child {margin-top:0}
 body .bio-quote blockquote {font-size:18px;line-height:28px;font-weight:400;color:#ededed}
 body .bio-focus span {background:#272727;border-color:#313131;color:#b5b5b5;border-radius:4px}
-body .cv {font-family:"Manrope",sans-serif}
-body .cv-name {font-family:inherit;font-size:48px;line-height:1;font-weight:600;letter-spacing:-.04em}
-body .cv-head {background:#1f1f1f;border:1px solid #313131;border-radius:16px;padding:32px}
+body .cv {font-family:"Manrope",sans-serif;--cv-ink:#ededed;--cv-blue:#deded6;--cv-text:#ededed;--cv-muted:#b5b5b5;--cv-line:#313131;--global-text-color:#ededed;--global-text-color-light:#b5b5b5;background:#1f1f1f;color:#ededed;border-color:#313131;padding:32px;box-shadow:none}
+body .cv {overflow-wrap:anywhere}
+body .cv :is(.cv-section,.cv-section>div,.cv-section>dl,.cv-entry,.cv-entry-head,.cv-pubs) {min-width:0}
+body .cv a {overflow-wrap:anywhere}
+body .thesis,body .thesis * {box-sizing:border-box}
+body .thesis :is(.thesis-groundwork,.thesis-paper) {min-width:0;max-width:100%}
+body .thesis-paper :is(a,em) {min-width:0;white-space:normal;overflow-wrap:anywhere}
+body .cv .cv-name {font-family:"Manrope",sans-serif;font-size:48px;line-height:1;font-weight:600;letter-spacing:-.04em}
+body .cv a.cv-pdf {color:#181818!important;background:#ededed;border:1px solid #ededed}
+body .cv-head {background:transparent;border:0;border-bottom:1px solid #313131;border-radius:0;padding:0 0 32px}
 body .cv-section {border-top-color:#313131;padding-top:32px;margin-top:32px}
-body .cv-section h2 {font-size:24px;line-height:32px;letter-spacing:-.025em;font-weight:500}
+body .cv .cv-section>h2 {font-family:"Manrope",sans-serif;font-size:24px;line-height:32px;letter-spacing:-.025em;font-weight:500}
 body .cv-date {font-variant-numeric:tabular-nums;color:#b5b5b5}
 body .talk {padding:24px;border:1px solid #313131;border-radius:16px;background:#1f1f1f;margin-bottom:16px}
 body .talk-title {font-size:20px;line-height:28px;font-weight:500}
@@ -223,7 +230,7 @@ body .contact-card p {max-width:65ch;font-size:16px;line-height:24px;color:#b5b5
 .contact-direct-email {display:inline-block;font-size:18px;line-height:28px;color:#ededed!important;margin:16px 0;text-underline-offset:4px;overflow-wrap:anywhere}
 body .contact-form :is(input,select,textarea) {background:#181818;border-color:#555;border-radius:8px;color:#ededed;font-size:16px;line-height:24px}
 body .contact-form label {font-size:14px;line-height:20px;font-weight:500;margin-top:24px;margin-bottom:8px}
-body .contact-form button,body .coffee-button {background:#ededed;color:#181818;border:1px solid #ededed;border-radius:8px;min-height:48px;padding:8px 12px;font-size:16px;font-weight:600;box-shadow:none}
+body .contact-form button,body .coffee-button {background:#ededed;color:#181818!important;border:1px solid #ededed;border-radius:8px;min-height:48px;padding:8px 12px;font-size:16px;font-weight:600;box-shadow:none}
 body .contact-form button:disabled {opacity:.6;cursor:wait}
 .contact-form-status {margin-top:16px;min-height:24px;color:#c9c9c9;font-size:14px;line-height:24px}
 .contact-form-status[data-state="error"] {color:#f1b6ad}
@@ -232,6 +239,17 @@ body .contact-form button:disabled {opacity:.6;cursor:wait}
 .site-missing-code {font-size:96px;line-height:1;letter-spacing:-.06em;color:#777;margin-bottom:32px}
 .site-missing p {color:#b5b5b5;font-size:18px;line-height:28px;margin-bottom:32px}
 
+/* Preserve the game while matching the surrounding portfolio surfaces. */
+html:root.deep-numbers-document,html body.deep-numbers-active {background:#181818!important}
+body.deep-numbers-active > main,body.deep-numbers-active > [role="main"] {width:100%!important;max-width:none!important}
+body .deep-numbers-page {width:100%;margin-left:0;margin-right:0;--dn-bg:#181818;--dn-panel:#1f1f1f;--dn-panel-strong:#272727;--dn-line:#313131;--dn-line-strong:#555;--dn-muted:#b5b5b5;background:#181818;margin-top:0!important;font-family:"Manrope",sans-serif}
+body .deep-numbers-page::before,body .deep-numbers-page::after {display:none}
+body .deep-numbers-page .dn-star-canvas {visibility:hidden}
+body .deep-numbers-page :is(.dn-panel,.dn-panel-card,.dn-game-shell) {background:#1f1f1f;border-color:#313131;box-shadow:none}
+body :is(.nrf2-lab,.cyp1-page,.tkf-page) {--n2-muted:#b5b5b5;--n2-line:#313131;--cyp1-muted:#b5b5b5;--cyp1-line:#313131;--tkf-muted:#b5b5b5;--tkf-line:#313131}
+body :is(.nrf2-home,.cyp1-home,.tkf-home,.yap-home-button) {background:#272727;border:1px solid #555;border-radius:8px;font-size:14px;line-height:20px;color:#ededed!important;box-shadow:none}
+body :is(.nrf2-hero,.cyp1-hero,.tkf-hero)::after {display:none}
+body :is(.nrf2-hero-figure,.cyp1-figure,.tkf-hero-figure,.protein-showcase,.scf-hero-diagram) {background:#181818;border-color:#313131;box-shadow:none}
 /* Footer */
 body .site-footer {padding:64px 32px 24px;margin-top:64px;background:#181818;border-top:1px solid #313131;text-align:left;font-size:14px;line-height:24px}
 .site-footer-main {display:grid;grid-template-columns:1.3fr .8fr 1fr;gap:48px;width:min(1200px,100%);margin:auto}
@@ -307,7 +325,7 @@ body .pub-title {font-size:20px;line-height:28px}
 .publication-filter-grid {gap:12px}
 .publication-filters {padding:16px}
 .publication-filter-grid button {grid-column:1/-1}
-body .cv-name {font-size:36px;line-height:40px}
+body .cv .cv-name {font-size:36px;line-height:40px}
 body .site-footer {padding:40px 16px 24px}
 .site-footer-main {grid-template-columns:1fr;gap:32px}
 .site-footer-contact {grid-column:auto}
@@ -319,4 +337,8 @@ html {scroll-behavior:auto!important}
 :is(.site-menu-icon i,.site-menu-pages a,.site-action,.home-tracks,.home-pair,.news,.project-feature,.bio-layout,.contact-top-grid) {transition:none!important}
 }
 }
+@media print {
+#navbar,header:has(>#navbar),.site-skip,.site-breadcrumbs,.site-content-anchor,.site-footer {display:none!important;height:0!important;min-height:0!important}
+}
+
 }
