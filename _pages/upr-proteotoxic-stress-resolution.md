@@ -8,7 +8,7 @@ nav_order: 99
 ---
 
 <link rel="stylesheet" href="{{ '/assets/css/yap-signal-experience.css' | relative_url }}?v=20261011">
-<link rel="stylesheet" href="{{ '/assets/css/upr-experience.css' | relative_url }}?v=20261025">
+<link rel="stylesheet" href="{{ '/assets/css/upr-experience.css' | relative_url }}?v=20261022">
 
 <div class="circuit-lab" id="upr-circuit-lab">
   <a class="yap-home-button" href="{{ '/cellular-signaling-circuits/' | relative_url }}"><span aria-hidden="true">←</span> Cellular Circuits</a>
@@ -61,7 +61,7 @@ nav_order: 99
     </div>
   </section>
 
-  <p class="visual-note">The framework is offered as a hypothesis-generating structure, and the causal step linking failed resolution to immune dysfunction remains largely extrapolated from non-toxicological ER-stress models.</p>
+  <p class="visual-note">Every figure, explorer and simulation on this page is a conceptual illustration of the review's framework, not an experimental measurement. The framework is offered as a hypothesis-generating structure, and the causal step linking failed resolution to immune dysfunction remains largely extrapolated from non-toxicological ER-stress models.</p>
 
   <section class="circuit-section" aria-labelledby="resolution-figure-title">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">The framework at a glance</span><h2 id="resolution-figure-title">Three questions define proteotoxic stress resolution</h2></div></div>
@@ -115,38 +115,31 @@ nav_order: 99
   </section>
 
   <section class="circuit-section upr-scene-card" id="upr-3d">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2 id="upr-scene-title">From stress sensing to recovery</h2><p>Explore toxicant input and branch signaling, then compare two possible outcomes. Choose the ER close-up to inspect the three sensors, or drag the model to rotate.</p></div></div>
-    <div class="upr-scene" id="upr-scene-stage" data-phase="toxicant" data-view="cell" role="group" aria-labelledby="upr-scene-title" aria-describedby="upr-scene-explanation">
-      <p class="upr-scene-fallback">A 3D model of an immune cell and its ER appears here in supporting browsers. The same content is described in the sections below.</p>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2>Interactive 3D model</h2><p>Follow one immune cell as a toxicant perturbs its endoplasmic reticulum, the three UPR branches decode the stress, and the response either resolves or fails. Switch to the ER close-up to see IRE1α, PERK and ATF6 at the membrane. Drag to rotate.</p></div></div>
+    <div class="upr-scene" id="upr-scene-stage" data-phase="toxicant" data-view="cell" role="img" aria-label="Conceptual 3D model of an immune cell with its endoplasmic reticulum network. A toxicant enters, the ER signals through IRE1α, PERK and ATF6, and the stress resolves or persists.">
+      <p class="upr-scene-fallback">A conceptual 3D model of an immune cell and its ER appears here in supporting browsers. The same content is described in the sections below.</p>
     </div>
-    <p class="upr-scene-help" id="upr-scene-help">Drag to rotate. With the model focused, arrow keys rotate and Home resets the view. Pause freezes motion.</p>
     <div class="upr-scene-controls">
       <div class="upr-view-toggle" role="group" aria-label="Choose a view">
-        <button type="button" class="is-active" data-set-view="cell" aria-pressed="true" aria-controls="upr-scene-stage upr-scene-explanation">Whole cell</button>
-        <button type="button" data-set-view="er" aria-pressed="false" aria-controls="upr-scene-stage upr-scene-explanation">ER close-up</button>
+        <button type="button" class="is-active" data-set-view="cell">Whole cell</button>
+        <button type="button" data-set-view="er">ER close-up</button>
       </div>
       <div class="upr-phase-row" role="group" aria-label="Choose a stage">
-        <button type="button" class="is-active" data-set-phase="toxicant" aria-pressed="true" aria-controls="upr-scene-stage upr-scene-explanation">1 · Toxicant input</button>
-        <button type="button" data-set-phase="signaling" aria-pressed="false" aria-controls="upr-scene-stage upr-scene-explanation">2 · Branch signaling</button>
-        <button type="button" data-set-phase="adaptive" aria-pressed="false" aria-controls="upr-scene-stage upr-scene-explanation">3A · Recovery</button>
-        <button type="button" data-set-phase="failed" aria-pressed="false" aria-controls="upr-scene-stage upr-scene-explanation">3B · Persistent stress</button>
+        <button type="button" class="is-active" data-set-phase="toxicant">1 · Toxicant input</button>
+        <button type="button" data-set-phase="signaling">2 · Branch signaling</button>
+        <button type="button" data-set-phase="adaptive">3 · Adaptive resolution</button>
+        <button type="button" data-set-phase="failed">3 · Failed resolution</button>
       </div>
     </div>
-    <div class="upr-scene-explanation" id="upr-scene-explanation" aria-live="polite" aria-atomic="true">
-      <span class="upr-scene-view" id="upr-scene-view">Whole cell · anatomy and stress context</span>
-      <h3 id="upr-scene-phase-title">1 · Toxicant input</h3>
-      <p id="upr-scene-phase-copy">An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate toxicant input; the amber shapes represent an increased misfolded-protein burden.</p>
-    </div>
-    <p class="upr-scene-outcomes">Recovery and persistent stress are alternative scenarios, not consecutive stages.</p>
-    <ul class="upr-scene-caption" aria-label="Model color key"><li><span class="l-tox" aria-hidden="true"></span>Toxicant</li><li><span class="l-ire" aria-hidden="true"></span>IRE1α</li><li><span class="l-perk" aria-hidden="true"></span>PERK</li><li><span class="l-atf6" aria-hidden="true"></span>ATF6</li><li><span class="l-mis" aria-hidden="true"></span>Misfolded protein</li></ul>
+    <p class="upr-scene-caption"><span class="l-tox" aria-hidden="true"></span> Toxicant <span class="l-ire" aria-hidden="true"></span> IRE1α <span class="l-perk" aria-hidden="true"></span> PERK <span class="l-atf6" aria-hidden="true"></span> ATF6 <span class="l-mis" aria-hidden="true"></span> Misfolded protein</p>
   </section>
 
   <section class="circuit-section" id="branch-explorer">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">System architecture · Table 1</span><h2>Three non-interchangeable UPR branches</h2><p>IRE1α, PERK and ATF6 are distinct modules that decode ER stress into different immune-relevant outputs. Select a branch to see its role and outputs.</p></div></div>
     <div class="upr-branch-grid" role="group" aria-label="UPR branch modules">
-      <button class="upr-branch-btn is-active" type="button" data-branch="ire1" style="--br:#f87171" aria-pressed="true" aria-controls="branch-detail"><strong>IRE1α</strong><small>Inflammatory and RNA-processing branch</small></button>
-      <button class="upr-branch-btn" type="button" data-branch="perk" style="--br:#a5b4fc" aria-pressed="false" aria-controls="branch-detail"><strong>PERK</strong><small>Translational brake and fate control</small></button>
-      <button class="upr-branch-btn" type="button" data-branch="atf6" style="--br:#86efac" aria-pressed="false" aria-controls="branch-detail"><strong>ATF6</strong><small>Proteostasis-restoration branch</small></button>
+      <button class="upr-branch-btn is-active" type="button" data-branch="ire1" style="--br:#f87171"><strong>IRE1α</strong><small>Inflammatory and RNA-processing branch</small></button>
+      <button class="upr-branch-btn" type="button" data-branch="perk" style="--br:#a5b4fc"><strong>PERK</strong><small>Translational brake and fate control</small></button>
+      <button class="upr-branch-btn" type="button" data-branch="atf6" style="--br:#86efac"><strong>ATF6</strong><small>Proteostasis-restoration branch</small></button>
     </div>
     <div class="upr-branch-detail" id="branch-detail" aria-live="polite" style="--br:#f87171"></div>
   </section>
@@ -154,12 +147,12 @@ nav_order: 99
   <section class="circuit-section" id="toxicant-explorer">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">Proteotoxic inputs · Table 2</span><h2>Six toxicant classes, graded by evidence</h2><p>Toxicants should not be treated as interchangeable ER stressors. Select a class to see its proteotoxic signature and the strength of evidence for UPR engagement, immune outcome and resolution.</p></div></div>
     <div class="tox-grid" role="group" aria-label="Environmental toxicant classes">
-      <button class="tox-btn is-active" type="button" data-tox="pm" aria-pressed="true" aria-controls="tox-detail"><strong>Fine particulate matter</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
-      <button class="tox-btn" type="button" data-tox="metals" aria-pressed="false" aria-controls="tox-detail"><strong>Metals &amp; metalloids</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
-      <button class="tox-btn" type="button" data-tox="edc" aria-pressed="false" aria-controls="tox-detail"><strong>Endocrine disruptors</strong><div class="tox-grades"><span class="grade grade-moderate"><span class="grade-label">UPR</span> Moderate</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-sparse"><span class="grade-label">Resolution</span> Sparse</span></div></button>
-      <button class="tox-btn" type="button" data-tox="pops" aria-pressed="false" aria-controls="tox-detail"><strong>Persistent organic pollutants</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-limited"><span class="grade-label">Resolution</span> Limited</span></div></button>
-      <button class="tox-btn" type="button" data-tox="plastics" aria-pressed="false" aria-controls="tox-detail"><strong>Micro- &amp; nanoplastics</strong><div class="tox-grades"><span class="grade grade-sparse"><span class="grade-label">UPR</span> Sparse</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-limited"><span class="grade-label">Resolution</span> Limited</span></div></button>
-      <button class="tox-btn" type="button" data-tox="myco" aria-pressed="false" aria-controls="tox-detail"><strong>Mycotoxins</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
+      <button class="tox-btn is-active" type="button" data-tox="pm"><strong>Fine particulate matter</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
+      <button class="tox-btn" type="button" data-tox="metals"><strong>Metals &amp; metalloids</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
+      <button class="tox-btn" type="button" data-tox="edc"><strong>Endocrine disruptors</strong><div class="tox-grades"><span class="grade grade-moderate"><span class="grade-label">UPR</span> Moderate</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-sparse"><span class="grade-label">Resolution</span> Sparse</span></div></button>
+      <button class="tox-btn" type="button" data-tox="pops"><strong>Persistent organic pollutants</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-limited"><span class="grade-label">Resolution</span> Limited</span></div></button>
+      <button class="tox-btn" type="button" data-tox="plastics"><strong>Micro- &amp; nanoplastics</strong><div class="tox-grades"><span class="grade grade-sparse"><span class="grade-label">UPR</span> Sparse</span><span class="grade grade-moderate"><span class="grade-label">Immune</span> Moderate</span><span class="grade grade-limited"><span class="grade-label">Resolution</span> Limited</span></div></button>
+      <button class="tox-btn" type="button" data-tox="myco"><strong>Mycotoxins</strong><div class="tox-grades"><span class="grade grade-strong"><span class="grade-label">UPR</span> Strong</span><span class="grade grade-strong"><span class="grade-label">Immune</span> Strong</span><span class="grade grade-moderate"><span class="grade-label">Resolution</span> Moderate</span></div></button>
     </div>
     <div class="tox-detail" id="tox-detail" aria-live="polite"></div>
     <p class="lab-help" style="margin-top:0.7rem">Grades denote the directness and consistency of the available evidence, not the magnitude or toxicological importance of the effect. <b style="color:#34d399">Strong</b>: branch-resolved or perturbation evidence in exposure-relevant models. <b style="color:#fbbf24">Moderate</b>: consistent marker-level evidence or one well-controlled model. <b style="color:#fb923c">Limited</b>: few studies, indirect readouts or non-immune systems. <b style="color:#94a3b8">Sparse</b>: no direct evidence.</p>
@@ -168,12 +161,12 @@ nav_order: 99
   <section class="circuit-section" id="celltype-explorer">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">Cell-type decoding · Fig. 2</span><h2>The same branches, different immune meaning per cell</h2><p>IRE1α, PERK and ATF6 generate distinct outputs depending on cell type and stress context. Select a cell type to decode its dominant immune consequence.</p></div></div>
     <div class="circuit-flow" role="group" aria-label="Immune and barrier cell types">
-      <button class="circuit-node is-active" type="button" data-cell="0" style="--node-color:#f472b6" aria-pressed="true" aria-controls="celltype-detail"><span class="n">01</span><strong>Macrophages</strong><small>Polarization and cytokine output</small></button>
-      <button class="circuit-node" type="button" data-cell="1" style="--node-color:#a78bfa" aria-pressed="false" aria-controls="celltype-detail"><span class="n">02</span><strong>Dendritic cells</strong><small>Antigen presentation</small></button>
-      <button class="circuit-node" type="button" data-cell="2" style="--node-color:#34d399" aria-pressed="false" aria-controls="celltype-detail"><span class="n">03</span><strong>Activated T cells</strong><small>Effector function</small></button>
-      <button class="circuit-node" type="button" data-cell="3" style="--node-color:#818cf8" aria-pressed="false" aria-controls="celltype-detail"><span class="n">04</span><strong>Plasma cells</strong><small>Antibody secretion</small></button>
-      <button class="circuit-node" type="button" data-cell="4" style="--node-color:#f59e0b" aria-pressed="false" aria-controls="celltype-detail"><span class="n">05</span><strong>Barrier epithelium</strong><small>Mucus and barrier defense</small></button>
-      <button class="circuit-node" type="button" data-cell="5" style="--node-color:#67e8f9" aria-pressed="false" aria-controls="celltype-detail"><span class="n">06</span><strong>ILC3s / mucosal</strong><small>IL-22 and IL-17 output</small></button>
+      <button class="circuit-node is-active" type="button" data-cell="0" style="--node-color:#f472b6"><span class="n">01</span><strong>Macrophages</strong><small>Polarization and cytokine output</small></button>
+      <button class="circuit-node" type="button" data-cell="1" style="--node-color:#a78bfa"><span class="n">02</span><strong>Dendritic cells</strong><small>Antigen presentation</small></button>
+      <button class="circuit-node" type="button" data-cell="2" style="--node-color:#34d399"><span class="n">03</span><strong>Activated T cells</strong><small>Effector function</small></button>
+      <button class="circuit-node" type="button" data-cell="3" style="--node-color:#818cf8"><span class="n">04</span><strong>Plasma cells</strong><small>Antibody secretion</small></button>
+      <button class="circuit-node" type="button" data-cell="4" style="--node-color:#f59e0b"><span class="n">05</span><strong>Barrier epithelium</strong><small>Mucus and barrier defense</small></button>
+      <button class="circuit-node" type="button" data-cell="5" style="--node-color:#67e8f9"><span class="n">06</span><strong>ILC3s / mucosal</strong><small>IL-22 and IL-17 output</small></button>
     </div>
     <div class="node-detail celltype-detail" id="celltype-detail" aria-live="polite"></div>
   </section>
@@ -182,7 +175,7 @@ nav_order: 99
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">Resolution architecture · Fig. 3</span><h2>Adaptive resolution versus failed resolution</h2><p>Resolution is an active restoration process, not a passive decline. The outcome depends on stress duration, branch dynamics and whether ER proteostasis is restored.</p></div></div>
     <div class="upr-resolve-compare">
       <div class="upr-resolve-col is-adaptive">
-        <h3>Outcome A · Adaptive resolution</h3>
+        <h3>Adaptive resolution</h3>
         <p>UPR signaling is transient and resolves, returning immune function toward baseline.</p>
         <ul class="upr-resolve-list">
           <li>ERAD, proteasomal clearance, autophagy and ER-phagy remove misfolded proteins and excess stress-expanded ER</li>
@@ -192,7 +185,7 @@ nav_order: 99
         </ul>
       </div>
       <div class="upr-resolve-col is-failed">
-        <h3>Outcome B · Failed resolution</h3>
+        <h3>Failed resolution</h3>
         <p>Unfolded-protein burden persists and drives sustained or branch-skewed signaling.</p>
         <ul class="upr-resolve-list">
           <li>Persistent or excessive IRE1α signaling through RIDD, XBP1s and TRAF2–ASK1-JNK / NF-κB</li>
@@ -205,11 +198,11 @@ nav_order: 99
   </section>
 
   <section class="circuit-section">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Resolution lab</span><h2>What happens when recovery cannot keep pace?</h2><p>Compare illustrative exposure patterns and recovery capacity. The framework proposes that incomplete recovery between pulses may affect immune function alongside dose. This simplified model shows that idea; it is not calibrated to a toxicant, cell type or measured time course.</p></div></div>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Resolution lab</span><h2>What happens across repeated low-dose exposures?</h2><p>The framework predicts that incomplete recovery between pulses, not total dose, shifts cells toward altered setpoints. Adjust the pulse pattern and recovery capacity to see the effect.</p></div></div>
     <div class="lab-grid">
       <div class="lab-controls">
         <div class="lab-control"><div class="lab-control-head"><label for="sim-strength">Per-pulse stress strength</label><output id="sim-strength-value" for="sim-strength">60%</output></div><input id="sim-strength" type="range" min="20" max="100" value="60" step="5"></div>
-        <div class="lab-control"><div class="lab-control-head"><label for="sim-interval">Inter-exposure interval</label><output id="sim-interval-value" for="sim-interval">55%</output></div><input id="sim-interval" type="range" min="10" max="100" value="55" step="5" aria-describedby="sim-interval-help"><span class="lab-help" id="sim-interval-help">Illustrative scale: 10% means shorter intervals; 100% means longer intervals. No measured time unit is assigned.</span></div>
+        <div class="lab-control"><div class="lab-control-head"><label for="sim-interval">Inter-exposure interval</label><output id="sim-interval-value" for="sim-interval">55%</output></div><input id="sim-interval" type="range" min="10" max="100" value="55" step="5"><span class="lab-help">Time between pulses, relative to the recovery half-time.</span></div>
         <div class="lab-control"><div class="lab-control-head"><label for="sim-recovery">Resolution capacity</label><output id="sim-recovery-value" for="sim-recovery">60%</output></div><input id="sim-recovery" type="range" min="10" max="100" value="60" step="5"><span class="lab-help">How fast ER proteostasis and function return between pulses.</span></div>
         <div class="lab-control"><div class="lab-control-head"><label for="sim-pulses">Number of exposures</label><output id="sim-pulses-value" for="sim-pulses">5</output></div><input id="sim-pulses" type="range" min="2" max="8" value="5" step="1"></div>
         <div class="circuit-actions"><button class="circuit-btn primary" type="button" id="sim-reset">Reset parameters ↺</button><button class="circuit-btn" type="button" id="sim-preset">Load incomplete-recovery example</button></div>
@@ -218,7 +211,7 @@ nav_order: 99
         <span class="lab-state adaptive" id="sim-state">Adaptive resilience</span>
         <h3 id="sim-title">Recovery keeps pace with exposure</h3>
         <p id="sim-copy">Each pulse resolves before the next arrives, so the baseline setpoint is preserved.</p>
-        <div class="lab-meter-label"><span>Largest residual stress after a pulse</span><strong id="sim-residual-label">18%</strong></div><div class="lab-meter"><span id="sim-residual-meter"></span></div>
+        <div class="lab-meter-label"><span>Residual stress before final pulse</span><strong id="sim-residual-label">18%</strong></div><div class="lab-meter"><span id="sim-residual-meter"></span></div>
         <div class="lab-meter-label"><span>Baseline drift</span><strong id="sim-drift-label">12%</strong></div><div class="lab-meter"><span id="sim-drift-meter"></span></div>
         <svg class="lab-chart" viewBox="-16 0 356 168" role="img" aria-label="Repeated UPR activation pulses with recovery between pulses">
           <line class="axis" x1="32" y1="18" x2="32" y2="136"/><line class="axis" x1="32" y1="136" x2="322" y2="136"/>
@@ -234,15 +227,15 @@ nav_order: 99
   <section class="circuit-section">
     <div class="circuit-section-head"><div><span class="circuit-eyebrow">Failure analysis · Table 3</span><h2>Distinct failures converge on persistent dysfunction</h2><p>Different disruptions within the resolution architecture produce recognizable failure modes. Select one to see the basis and its effect on immune dynamics.</p></div></div>
     <div class="mode-grid" role="group" aria-label="Circuit failure modes">
-      <button class="mode-button is-active" data-mode="sensor" type="button" aria-pressed="true" aria-controls="mode-detail">Sensor overload<small>Unfolded-protein load exceeds folding and clearance capacity.</small></button>
-      <button class="mode-button" data-mode="imbalance" type="button" aria-pressed="false" aria-controls="mode-detail">Branch imbalance<small>Dominant or prolonged PERK or IRE1α skews the output.</small></button>
-      <button class="mode-button" data-mode="ridd" type="button" aria-pressed="false" aria-controls="mode-detail">RIDD-associated dysfunction<small>Sustained IRE1α RNase degrades antigen-processing transcripts.</small></button>
-      <button class="mode-button" data-mode="perk" type="button" aria-pressed="false" aria-controls="mode-detail">Prolonged PERK-ISR<small>Persistent eIF2α phosphorylation limits cytokine output.</small></button>
-      <button class="mode-button" data-mode="premature" type="button" aria-pressed="false" aria-controls="mode-detail">Premature recovery<small>eIF2α dephosphorylation restores synthesis too early.</small></button>
-      <button class="mode-button" data-mode="degradative" type="button" aria-pressed="false" aria-controls="mode-detail">Degradative failure<small>ERAD, proteasome, autophagy or ER-phagy cannot clear the burden.</small></button>
-      <button class="mode-button" data-mode="secretory" type="button" aria-pressed="false" aria-controls="mode-detail">Secretory collapse<small>ER expansion fails to match secretory demand.</small></button>
-      <button class="mode-button" data-mode="barrier" type="button" aria-pressed="false" aria-controls="mode-detail">Barrier-resolution failure<small>Persistent epithelial ER stress disrupts mucin and repair.</small></button>
-      <button class="mode-button" data-mode="incomplete" type="button" aria-pressed="false" aria-controls="mode-detail">Incomplete recovery<small>UPR activity does not reset before the next exposure.</small></button>
+      <button class="mode-button is-active" data-mode="sensor" type="button">Sensor overload<small>Unfolded-protein load exceeds folding and clearance capacity.</small></button>
+      <button class="mode-button" data-mode="imbalance" type="button">Branch imbalance<small>Dominant or prolonged PERK or IRE1α skews the output.</small></button>
+      <button class="mode-button" data-mode="ridd" type="button">RIDD-associated dysfunction<small>Sustained IRE1α RNase degrades antigen-processing transcripts.</small></button>
+      <button class="mode-button" data-mode="perk" type="button">Prolonged PERK-ISR<small>Persistent eIF2α phosphorylation limits cytokine output.</small></button>
+      <button class="mode-button" data-mode="premature" type="button">Premature recovery<small>eIF2α dephosphorylation restores synthesis too early.</small></button>
+      <button class="mode-button" data-mode="degradative" type="button">Degradative failure<small>ERAD, proteasome, autophagy or ER-phagy cannot clear the burden.</small></button>
+      <button class="mode-button" data-mode="secretory" type="button">Secretory collapse<small>ER expansion fails to match secretory demand.</small></button>
+      <button class="mode-button" data-mode="barrier" type="button">Barrier-resolution failure<small>Persistent epithelial ER stress disrupts mucin and repair.</small></button>
+      <button class="mode-button" data-mode="incomplete" type="button">Incomplete recovery<small>UPR activity does not reset before the next exposure.</small></button>
     </div>
     <div class="mode-detail" id="mode-detail" aria-live="polite"></div>
   </section>
@@ -282,8 +275,8 @@ nav_order: 99
   </section>
 
   <section class="circuit-section">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Evidence provenance · Section 3.11</span><h2>What is observed, extrapolated or predicted?</h2><p>The framework's three central claims rest on different bodies of research. Switch between them to keep direct observation apart from inference.</p></div></div>
-    <div class="evidence-switches" role="group" aria-label="Evidence provenance categories"><button type="button" class="is-active" data-evidence="observed" aria-pressed="true" aria-controls="evidence-panel">Observed in exposure models</button><button type="button" data-evidence="extrapolated" aria-pressed="false" aria-controls="evidence-panel">Extrapolated from non-toxicological systems</button><button type="button" data-evidence="predicted" aria-pressed="false" aria-controls="evidence-panel">Framework predictions</button></div>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">Evidence provenance · Section 3.11</span><h2>What is observed, extrapolated, or predicted?</h2><p>The framework's three central claims rest on different bodies of research. Switch between them to keep direct observation apart from inference.</p></div></div>
+    <div class="evidence-switches" role="group" aria-label="Evidence provenance categories"><button type="button" class="is-active" data-evidence="observed">Observed in exposure models</button><button type="button" data-evidence="extrapolated">Extrapolated from non-toxicological systems</button><button type="button" data-evidence="predicted">Framework predictions</button></div>
     <div class="evidence-panel" id="evidence-panel" aria-live="polite"></div>
   </section>
 
@@ -293,13 +286,6 @@ nav_order: 99
 (function () {
   var root = document.getElementById('upr-circuit-lab');
   if (!root) return;
-
-  // Keep visual and assistive-technology selection states in sync. Native buttons
-  // retain Tab, Enter and Space behavior without a custom keyboard interaction model.
-  function setSelected(button, selected) {
-    button.classList.toggle('is-active', selected);
-    button.setAttribute('aria-pressed', String(selected));
-  }
 
   // ---------- Branch explorer (Table 1) ----------
   var branches = {
@@ -341,7 +327,7 @@ nav_order: 99
   var branchDetail = root.querySelector('#branch-detail');
   function showBranch(key) {
     var b = branches[key]; if (!b) return;
-    branchBtns.forEach(function (x) { setSelected(x, x.getAttribute('data-branch') === key); });
+    branchBtns.forEach(function (x) { x.classList.toggle('is-active', x.getAttribute('data-branch') === key); });
     branchDetail.style.setProperty('--br', b.color);
     var outs = b.outputs.map(function (o) { return '<div class="upr-suboutput"><b>' + o[0] + '</b><span>' + o[1] + '</span></div>'; }).join('');
     branchDetail.innerHTML = '<h3>' + b.name + '</h3><p class="upr-branch-role">' + b.role + '</p><div class="upr-suboutputs">' + outs + '</div><p class="upr-branch-immune"><b>Immune relevance.</b> ' + b.immune + '</p>';
@@ -422,7 +408,7 @@ nav_order: 99
   var toxDetail = root.querySelector('#tox-detail');
   function showTox(key) {
     var t = toxins[key]; if (!t) return;
-    toxBtns.forEach(function (x) { setSelected(x, x.getAttribute('data-tox') === key); });
+    toxBtns.forEach(function (x) { x.classList.toggle('is-active', x.getAttribute('data-tox') === key); });
     var rows = t.studies.map(function (s) {
       return '<div class="tox-study"><span class="tox-domain">' + s[0] + '</span><span class="grade grade-' + s[1] + '">' + gradeLabel[s[1]] + '</span><p>' + s[2] + '</p></div>';
     }).join('');
@@ -444,7 +430,7 @@ nav_order: 99
   var cellDetail = root.querySelector('#celltype-detail');
   function showCell(i) {
     var c = cells[i]; if (!c) return;
-    cellBtns.forEach(function (b, k) { setSelected(b, k === i); });
+    cellBtns.forEach(function (b, k) { b.classList.toggle('is-active', k === i); });
     function br(label, color, data) {
       return '<div class="ct-branch' + (data[1] ? '' : ' is-faded') + '" style="--br:' + color + '"><b>' + label + '</b><span>' + data[0] + '</span></div>';
     }
@@ -453,9 +439,7 @@ nav_order: 99
       '<div><h3>' + c.name + '</h3>' +
       '<div class="ct-branches">' + br('IRE1α', '#f87171', c.ire1) + br('PERK', '#a5b4fc', c.perk) + br('ATF6', '#86efac', c.atf6) + '</div>' +
       '<div class="ct-consequence"><b>Dominant immune consequence</b><span>' + c.consequence + '</span></div></div>';
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      cellDetail.style.animation = 'none'; void cellDetail.offsetWidth; cellDetail.style.animation = 'lab-enter .35s ease both';
-    }
+    cellDetail.style.animation = 'none'; void cellDetail.offsetWidth; cellDetail.style.animation = 'lab-enter .35s ease both';
   }
   cellBtns.forEach(function (b, i) { b.addEventListener('click', function () { showCell(i); }); });
   showCell(0);
@@ -515,11 +499,11 @@ nav_order: 99
     var adaptive = clear >= 0.6 && driftPct < 30;
     var state = root.querySelector('#sim-state');
     state.className = 'lab-state ' + (adaptive ? 'adaptive' : 'persistent');
-    state.textContent = adaptive ? 'Illustrative recovery' : 'Illustrative incomplete recovery';
+    state.textContent = adaptive ? 'Adaptive resilience' : 'Altered immune setpoint';
     root.querySelector('#sim-title').textContent = adaptive ? 'Recovery keeps pace with exposure' : 'Recovery is incomplete between pulses';
     root.querySelector('#sim-copy').textContent = adaptive
-      ? 'Most of the modeled stress clears between pulses, keeping the residual burden low. Immune function is not calculated by this illustration.'
-      : 'The model carries residual stress into later pulses. The framework proposes that incomplete recovery may contribute to immune dysfunction; this illustration does not calculate an immune outcome.';
+      ? 'Each pulse resolves before the next arrives, so the baseline setpoint is preserved.'
+      : 'Residual proteotoxic stress accumulates across pulses and the baseline setpoint drifts upward, the state the framework predicts shifts immune or barrier cells toward persistent dysfunction.';
   }
   Object.keys(sim).forEach(function (k) { sim[k].addEventListener('input', updateSim); });
   root.querySelector('#sim-reset').addEventListener('click', function () {
@@ -545,7 +529,7 @@ nav_order: 99
   var modeButtons = root.querySelectorAll('.mode-button');
   function showMode(key) {
     var d = modes[key]; if (!d) return;
-    modeButtons.forEach(function (b) { setSelected(b, b.getAttribute('data-mode') === key); });
+    modeButtons.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-mode') === key); });
     root.querySelector('#mode-detail').innerHTML = '<h3>' + d[0] + '</h3><div><strong>Basis</strong><p>' + d[1] + '</p></div><div><strong>Effect on immune dynamics</strong><p>' + d[2] + '</p></div>';
   }
   modeButtons.forEach(function (b) { b.addEventListener('click', function () { showMode(b.getAttribute('data-mode')); }); });
@@ -560,7 +544,7 @@ nav_order: 99
   var evidenceButtons = root.querySelectorAll('[data-evidence]');
   function showEvidence(key) {
     var d = evidence[key]; if (!d) return;
-    evidenceButtons.forEach(function (b) { setSelected(b, b.getAttribute('data-evidence') === key); });
+    evidenceButtons.forEach(function (b) { b.classList.toggle('is-active', b.getAttribute('data-evidence') === key); });
     root.querySelector('#evidence-panel').innerHTML = '<h3>' + d[0] + '</h3><p>' + d[1] + '</p>';
   }
   evidenceButtons.forEach(function (b) { b.addEventListener('click', function () { showEvidence(b.getAttribute('data-evidence')); }); });
@@ -571,32 +555,16 @@ nav_order: 99
   if (sceneStage) {
     var viewBtns = root.querySelectorAll('[data-set-view]');
     var phaseBtns = root.querySelectorAll('[data-set-phase]');
-    var phaseCopy = {
-      toxicant: ['1 · Toxicant input', 'An environmental exposure can disturb protein folding or the ER membrane. The pale particles indicate toxicant input; the amber shapes represent an increased misfolded-protein burden.'],
-      signaling: ['2 · Branch signaling', 'IRE1α, PERK and ATF6 coordinate distinct responses to ER stress. Look for the three colored sensors at the ER membrane. Their outputs can support adaptation or contribute to dysfunction, depending on cell type and signaling duration.'],
-      adaptive: ['3A · Recovery', 'In this adaptive scenario, folding and clearance capacity catch up with the burden. Misfolded-protein load and stress signaling decline as ER function returns toward baseline. Recovery is an active process.'],
-      failed: ['3B · Persistent stress', 'In this alternative scenario, the protein-folding burden remains and signaling does not reset. The framework proposes that prolonged or unbalanced responses may contribute to immune dysfunction. Failure is not an inevitable outcome of UPR activation.']
-    };
-    function describeScene() {
-      var phase = phaseCopy[sceneStage.getAttribute('data-phase')] || phaseCopy.toxicant;
-      root.querySelector('#upr-scene-view').textContent = sceneStage.getAttribute('data-view') === 'er'
-        ? 'ER close-up · the membrane and its three sensors'
-        : 'Whole cell · anatomy and stress context';
-      root.querySelector('#upr-scene-phase-title').textContent = phase[0];
-      root.querySelector('#upr-scene-phase-copy').textContent = phase[1];
-    }
     viewBtns.forEach(function (b) {
       b.addEventListener('click', function () {
-        viewBtns.forEach(function (x) { setSelected(x, x === b); });
+        viewBtns.forEach(function (x) { x.classList.toggle('is-active', x === b); });
         sceneStage.setAttribute('data-view', b.getAttribute('data-set-view'));
-        describeScene();
       });
     });
     phaseBtns.forEach(function (b) {
       b.addEventListener('click', function () {
-        phaseBtns.forEach(function (x) { setSelected(x, x === b); });
+        phaseBtns.forEach(function (x) { x.classList.toggle('is-active', x === b); });
         sceneStage.setAttribute('data-phase', b.getAttribute('data-set-phase'));
-        describeScene();
       });
     });
   }

@@ -25,16 +25,6 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Check UPR interactions and anatomy
-        run: |
-          node --check assets/js/depth3d-upr-figure.js
-          node --check assets/js/depth3d-upr-cell.js
-          node --check assets/js/upr-cell-anatomy.js
-          node bin/check-upr.cjs
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
