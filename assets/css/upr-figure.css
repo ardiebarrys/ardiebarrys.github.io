@@ -2,23 +2,11 @@
  * Homepage highlighted-study 3D figure (depth3d-upr-figure.js). Self-contained:
  * the homepage does not load depth3d.css, so all styling lives here.
  */
-.upr-fig {
-  position: relative;
-  margin: 0 1.1rem 0.4rem;
-  min-height: 520px;
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 14px;
-  overflow: hidden;
-  background: radial-gradient(130% 100% at 50% 8%, rgba(13, 32, 64, 0.55), rgba(5, 8, 14, 0.9));
-  touch-action: pan-y;
-}
 .upr-fig-inner { position: absolute; inset: 0; }
 .upr-fig-canvas {
   position: absolute; inset: 0; width: 100%; height: 100%;
   display: block; cursor: grab; opacity: 0; transition: opacity 0.9s ease; touch-action: none;
 }
-.upr-fig.is-ready .upr-fig-canvas { opacity: 1; }
-.upr-fig.is-dragging .upr-fig-canvas { cursor: grabbing; }
 .upr-fig-tag {
   position: absolute; top: 0.7rem; left: 0.85rem; z-index: 2;
   color: #93c5fd; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em;
@@ -56,7 +44,6 @@
   white-space: nowrap; will-change: transform;
 }
 .upr-fig-label[hidden] { display: none; }
-.upr-fig.is-narrow .upr-fig-labels { display: none; }
 
 .upr-fig-caption {
   margin: 0.55rem 1.1rem 0 !important;
@@ -65,7 +52,6 @@
 .upr-fig-failed { display: none; }
 
 @media (max-width: 767.98px) {
-  .upr-fig { margin: 0 0.75rem 0.4rem; min-height: 380px; }
   .upr-fig-tools button { font-size: 0.72rem; padding: 0.28rem 0.55rem; }
 }
 @media (prefers-reduced-motion: reduce) {
