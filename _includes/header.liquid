@@ -96,7 +96,7 @@
                     </ul>
                   </li>
                 {% else %}
-                  <li class="nav-item {% if page.url contains p.url %}active{% endif %}{% if p.permalink == '/deep-numbers/' %} nav-special nav-deep-numbers{% endif %}">
+                  <li class="nav-item {% if page.url contains p.url %}active{% endif %}">
                     <a class="nav-link" href="{{ url | relative_url }}">
                       {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
                       <span>{{- p.title -}}</span>
