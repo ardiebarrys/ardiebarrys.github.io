@@ -115,23 +115,8 @@ nav_order: 99
   </section>
 
   <section class="circuit-section upr-scene-card" id="upr-3d">
-    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2>Interactive 3D model</h2><p>Follow one immune cell as a toxicant perturbs its endoplasmic reticulum, the three UPR branches decode the stress, and the response either resolves or fails. Switch to the ER close-up to see IRE1α, PERK and ATF6 at the membrane. Drag to rotate.</p></div></div>
-    <div class="upr-scene" id="upr-scene-stage" data-phase="toxicant" data-view="cell" role="img" aria-label="Conceptual 3D model of an immune cell with its endoplasmic reticulum network. A toxicant enters, the ER signals through IRE1α, PERK and ATF6, and the stress resolves or persists.">
-      <p class="upr-scene-fallback">A conceptual 3D model of an immune cell and its ER appears here in supporting browsers. The same content is described in the sections below.</p>
-    </div>
-    <div class="upr-scene-controls">
-      <div class="upr-view-toggle" role="group" aria-label="Choose a view">
-        <button type="button" class="is-active" data-set-view="cell">Whole cell</button>
-        <button type="button" data-set-view="er">ER close-up</button>
-      </div>
-      <div class="upr-phase-row" role="group" aria-label="Choose a stage">
-        <button type="button" class="is-active" data-set-phase="toxicant">1 · Toxicant input</button>
-        <button type="button" data-set-phase="signaling">2 · Branch signaling</button>
-        <button type="button" data-set-phase="adaptive">3 · Adaptive resolution</button>
-        <button type="button" data-set-phase="failed">3 · Failed resolution</button>
-      </div>
-    </div>
-    <p class="upr-scene-caption"><span class="l-tox" aria-hidden="true"></span> Toxicant <span class="l-ire" aria-hidden="true"></span> IRE1α <span class="l-perk" aria-hidden="true"></span> PERK <span class="l-atf6" aria-hidden="true"></span> ATF6 <span class="l-mis" aria-hidden="true"></span> Misfolded protein</p>
+    <div class="circuit-section-head"><div><span class="circuit-eyebrow">A cell under proteotoxic stress</span><h2>Interactive 3D model</h2><p>Follow toxicant inputs through ER disturbances, IRE1α, PERK and ATF6 mechanisms, resolution and seven potential immune outcomes. Drag to orbit, scroll to zoom, or use the playback controls.</p></div></div>
+    {% include upr-realistic-3d.liquid %}
   </section>
 
   <section class="circuit-section" id="branch-explorer">

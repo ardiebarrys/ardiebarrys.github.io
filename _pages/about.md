@@ -942,10 +942,8 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
     <p class="study-intro">{{ highlight.highlight }}</p>
 
-    <div class="upr-fig" id="upr-figure-stage" role="img" aria-label="Interactive conceptual 3D immune cell showing the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria, and toxicant particles entering the cell.">
-      <noscript><p class="upr-fig-status">The interactive 3D cell needs JavaScript. The circuit is summarized below.</p></noscript>
-    </div>
-    <p class="upr-fig-caption">A conceptual 3D immune cell with the UPR mechanisms beside it: the nucleus, the endoplasmic reticulum with its IRE1α, PERK and ATF6 sensors, mitochondria and incoming toxicant particles, and the branch outputs feeding the immune outcomes. Drag the background to move everything, drag an object to orbit around it, and scroll to zoom. Illustration, not measured data. A simplified 2D circuit follows.</p>
+    {% include upr-realistic-3d.liquid %}
+    <p class="upr-fig-caption">Explore toxicant inputs, ER disturbances, IRE1α, PERK and ATF6 mechanisms, resolution and seven potential immune outcomes. Drag to orbit, scroll to zoom, or use the playback controls. Conceptual illustration, not measured data. A simplified 2D circuit follows.</p>
 
     <div class="circuit circuit-anim" role="img" aria-label="Animated six-stage proteotoxic stress-resolution circuit: 1 proteotoxic input, 2 ER stress sensing, 3 branch signaling, 4 immune decoding, 5 active resolution, 6 baseline restoration.">
       <p class="circuit-caption" aria-hidden="true">Proteotoxic stress-resolution circuit · six stages</p>
