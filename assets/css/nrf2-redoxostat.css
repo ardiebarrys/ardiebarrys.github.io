@@ -108,41 +108,6 @@
 }
 .nrf2-hero-meta b { color:#e8f1ff; }
 .nrf2-hero-meta a { text-decoration:none; }
-.nrf2-hero-figure {
-  position:relative;
-  padding:.5rem;
-  border:1px solid rgba(147,197,253,.15);
-  border-radius:18px;
-  background:linear-gradient(140deg,rgba(18,43,81,.66),rgba(3,12,26,.66));
-}
-.nrf2-desktop-diagram { display:block; width:100%; height:auto; overflow:visible; }
-.n2-svg-title { fill:#8da9d4; font-size:14px; font-weight:700; letter-spacing:1.6px; }
-.n2-svg-node rect { fill:url(#n2bg); stroke:rgba(147,197,253,.4); stroke-width:1.4; }
-.n2-svg-node { cursor:default; }
-.n2-svg-node rect { transition:stroke .2s ease,filter .2s ease; }
-.n2-svg-node:hover rect { stroke:#67e8f9; filter:drop-shadow(0 5px 12px rgba(37,99,235,.15)); }
-.n2-svg-head { fill:#e8f1ff; font-size:14px; font-weight:700; letter-spacing:.4px; }
-.n2-svg-copy { fill:#a9c2e2; font-size:14px; font-weight:400; }
-.n2-svg-icon { fill:#07152c; font-size:15px; font-weight:700; }
-.n2-icon-red { fill:#fda4af; }
-.n2-icon-violet { fill:#c4b5fd; }
-.n2-icon-cyan { fill:#67e8f9; }
-.n2-icon-green { fill:#86efac; }
-.n2-icon-gold { fill:#fcd34d; }
-.n2-svg-arrow { fill:none; stroke:#67e8f9; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:5 6; }
-.n2-svg-feedback { fill:none; stroke:#c4b5fd; stroke-width:2.2; stroke-dasharray:5 5; }
-.n2-svg-resolution { fill:rgba(91,76,170,.12); stroke:rgba(196,181,253,.52); stroke-width:1.4; }
-.n2-svg-res-title { fill:#ddd6fe; font-size:14.5px; font-weight:700; letter-spacing:.8px; }
-.n2-svg-res-copy { fill:#b8c9e5; font-size:14px; font-weight:400; }
-.n2-svg-tiny { fill:#a9bfe2; font-size:13px; font-weight:700; letter-spacing:.5px; }
-.n2-svg-foot { fill:#8fa9d3; font-size:13px; font-weight:700; letter-spacing:1.2px; }
-.nrf2-mobile-diagram { display:none; }
-.nrf2-figure-note {
-  margin:.65rem .1rem 0 !important;
-  color:#8da6cb;
-  font-size:.886rem;
-  line-height:1.45;
-}
 .nrf2-panel {
   margin:1.1rem 0;
   padding:clamp(1rem,2.7vw,1.7rem);
@@ -378,19 +343,6 @@
   .nrf2-controls .nrf2-reset { grid-column:1/-1; }
   .nrf2-node-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .nrf2-context-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
-@media(max-width:1099.98px) {
-  .nrf2-desktop-diagram { display:none; }
-  .nrf2-mobile-diagram { display:grid; gap:0; padding:.5rem; }
-  .n2-mobile-node { display:grid; grid-template-columns:43px minmax(0,1fr); gap:.7rem; align-items:center; padding:.7rem; border:1px solid rgba(147,197,253,.24); border-radius:11px; background:linear-gradient(145deg,rgba(18,43,83,.78),rgba(5,16,33,.9)); }
-  .n2-mobile-node > span { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(103,232,249,.3); border-radius:11px; color:#67e8f9; background:rgba(8,145,178,.1); font-size:1rem; font-weight:700; }
-  .n2-mobile-node.stress > span { color:#fda4af; border-color:rgba(253,164,175,.3); }
-  .n2-mobile-node b { display:block; color:#e8f1ff; font-size:.945rem; }
-  .n2-mobile-node small { display:block; margin-top:.15rem; color:#91a8ca; font-size:.882rem; }
-  .nrf2-mobile-diagram > i { height:22px; color:#67e8f9; font-size:1.2rem; font-style:normal; text-align:center; }
-  .n2-mobile-return { display:grid; grid-template-columns:28px minmax(0,1fr); gap:.15rem .5rem; margin-top:.55rem; padding:.75rem; border:1px solid rgba(196,181,253,.32); border-radius:11px; color:#ddd6fe; background:rgba(91,76,170,.1); font-size:.928rem; }
-  .n2-mobile-return:first-letter { font-size:1.1rem; }
-  .n2-mobile-return small { grid-column:2; color:#aab9d8; font-size:.882rem; line-height:1.45; }
 }
 @media(max-width:680px) {
   .n2-chart .n2-axis-label { font-size:22.5px; }
