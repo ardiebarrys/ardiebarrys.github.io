@@ -156,7 +156,7 @@
       '<button type="button" class="y3d-btn y3d-toggle" aria-controls="' + uid + '-stage" aria-expanded="true">Hide 3D view</button>' +
     "</div>" +
     '<div class="y3d-stage" id="' + uid + '-stage" tabindex="0" role="group" aria-roledescription="3D view" aria-describedby="' + uid + '-help">' +
-      '<div class="y3d-labels" aria-hidden="true"></div>' +
+      '<div class="y3d-labels"></div>' +
       '<div class="y3d-tools">' +
         '<button type="button" class="y3d-btn y3d-icon" data-act="zoom-out" aria-label="Zoom out">−</button>' +
         '<button type="button" class="y3d-btn y3d-icon" data-act="zoom-in" aria-label="Zoom in">+</button>' +
@@ -169,9 +169,7 @@
   var stageEl = wrap.querySelector(".y3d-stage");
   stageEl.setAttribute("aria-label", config.ariaLabel);
   var maxKey = buttons.length;
-  wrap.querySelector(".y3d-note").textContent =
-    "Illustrative shapes, not molecular structures or measured dynamics. Drag or use arrow keys to rotate, + and − to zoom, 1 to " +
-    maxKey + " to select, 0 to reset. " + (config.noteTail || "The buttons below show the same content in 2D.");
+  wrap.querySelector(".y3d-note").textContent = "Select a stage to follow the mechanism. Drag to orbit; use + and − to zoom.";
   anchorEl.parentNode.insertBefore(wrap, anchorEl);
 
   var toggle = wrap.querySelector(".y3d-toggle");
@@ -181,7 +179,7 @@
 
   var saved = null;
   try { saved = window.localStorage.getItem(STORE_KEY); } catch (e) { saved = null; }
-  var open = saved ? saved === "open" : window.matchMedia("(min-width: 720px)").matches;
+  var open = location.hash.startsWith("#view=") || saved === "open";
   var api = null;
   var loading = false;
 
@@ -229,7 +227,7 @@
     var V = function (x, y, z) { return new THREE.Vector3(x, y, z); };
 
     var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "low-power" });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, matchMedia("(max-width:700px)").matches ? 1 : 1.6));
     renderer.setClearColor(0x000000, 0);
     renderer.domElement.className = "y3d-canvas";
     stageEl.insertBefore(renderer.domElement, stageEl.firstChild);
@@ -855,7 +853,7 @@
       var el = document.createElement("div");
       el.className = "y3d-label" + (s.button < 0 ? " is-context" : "");
       el.style.setProperty("--y3d-color", hex(s.color));
-      var num = s.button >= 0 ? String(s.button + 1).padStart(2, "0") : "•";
+      var num = s.button >= 0 ? String(s.button + 1).padStart(2, "0") : "";
       el.innerHTML = "<b></b><span></span>";
       el.querySelector("b").textContent = num;
       el.querySelector("span").textContent = s.name;
@@ -906,6 +904,7 @@
     var hovered = -1;
     function focusStage(i) {
       selected = i;
+      if(typeof caption!=="undefined"&&caption)caption.textContent=String(i+1).padStart(2,"0")+" / "+stageList.length+" · "+stageList[i].name;
       goal.target.copy(anchors[i]).multiplyScalar(0.18).add(V(0, lift, 0));
       labels.forEach(function (l, k) { l.classList.toggle("is-active", k === i); });
       if (config.focusClass) {
@@ -1038,10 +1037,11 @@
     }
     function step() {
       raf = 0;
-      if (!visible || !active || document.hidden || !width) return;
-      var still = reduceMotion.matches;
+      if (!visible || !active || document.hidden || !width) { clock.getDelta(); return; }
+      var still = !tourPlaying;
       var dt = Math.min(0.1, clock.getDelta());
-      var t = still ? lastT : clock.elapsedTime;
+      if(tourPlaying){tourElapsed+=dt;if(tourElapsed>=7){tourElapsed=0;if(selected>=stageList.length-1){tourPlaying=false;toolkit.onPlayChange(false);}else selectStage(selected+1);}}
+      var t = still ? lastT : lastT + dt;
       lastT = t;
       var k = still ? 1 : 1 - Math.exp(-dt * 5.5);
       var kf = still ? 1 : 1 - Math.exp(-dt * 7.5);
@@ -1071,9 +1071,9 @@
         g.position.y = anchors[i].y + (still ? 0 : Math.sin(t * 0.6 + i) * 0.03);
       });
 
-      updateParticles(still ? 0.4 : t);
+      updateParticles(t);
       renderer.render(scene, camera);
-      labels.forEach(function (el, i) { place(el, anchors[i].clone().add(below[i] ? labelBelow : labelAbove), below[i]); });
+      labels.forEach(function (el, i) { place(el, anchors[i].clone().add(below[i] ? labelBelow : labelAbove), below[i]); if(width<700&&i!==selected)el.hidden=true; });
       if (inputLabel) place(inputLabel, inputLabelAnchor);
       if (!still || settling) raf = requestAnimationFrame(step);
     }
@@ -1088,6 +1088,20 @@
     document.addEventListener("visibilitychange", kick);
     if (reduceMotion.addEventListener) reduceMotion.addEventListener("change", kick);
 
+    var tourPlaying=false,tourElapsed=0,showStageLabels=true,detailMode=0;
+    var stageList=config.stages;
+    function selectStage(i){i=Math.max(0,Math.min(stageList.length-1,Math.floor(i)));if(stageList[i].button>=0)buttons[stageList[i].button].click();else focusStage(i);caption.textContent=String(i+1).padStart(2,'0')+' / '+stageList.length+' · '+stageList[i].name;}
+    var caption=document.createElement('p');caption.className='rv-stage-title';wrap.insertBefore(caption,stageEl);
+    var toolkit=ResearchViewer.attach({root:wrap,kind:config.key,title:config.tag,canvas:renderer.domElement,
+      caption:()=>stageList[selected].name,getState:()=>({stage:selected}),setState:s=>{tourPlaying=false;selectStage(Number(s.stage)||0);kick();},
+      previous:()=>{tourPlaying=false;toolkit.onPlayChange(false);selectStage(selected-1);},next:()=>{tourPlaying=false;toolkit.onPlayChange(false);selectStage(selected+1);},
+      play:()=>{tourPlaying=!tourPlaying;if(tourPlaying&&selected>=stageList.length-1)selectStage(0);tourElapsed=0;clock.getDelta();kick();return tourPlaying;},
+      replay:()=>{selectStage(0);tourPlaying=true;tourElapsed=0;toolkit.onPlayChange(true);clock.getDelta();kick();},
+      labels:()=>{showStageLabels=!showStageLabels;labelsEl.hidden=!showStageLabels;kick();return showStageLabels;},
+      quality:()=>{detailMode=(detailMode+1)%3;renderer.setPixelRatio(Math.min(devicePixelRatio,detailMode===2?2:detailMode===1?1:matchMedia('(max-width:700px)').matches?1:1.6));resize();return ['Auto detail','Balanced','High detail'][detailMode];},fullscreen:true,
+      render:()=>renderer.render(scene,camera),labelElements:()=>labels});
+    selectStage(selected);
+    document.addEventListener('fullscreenchange',resize);
     focusStage(selected);
     resize();
     view.radius = fitRadius;

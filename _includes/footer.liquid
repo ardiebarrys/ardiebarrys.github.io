@@ -169,49 +169,8 @@
     }, { passive: true });
   })();
 
-  /* Chat widget: loads once the page is idle, never in the middle of a scroll. */
-  (function () {
-    if (!window.chatbase || window.chatbase('getState') !== 'initialized') {
-      window.chatbase = function () {
-        if (!window.chatbase.q) window.chatbase.q = [];
-        window.chatbase.q.push(arguments);
-      };
-      window.chatbase = new Proxy(window.chatbase, {
-        get: function (target, prop) {
-          if (prop === 'q') return target.q;
-          return function () {
-            return target(prop, Array.prototype.slice.call(arguments));
-          };
-        },
-      });
-    }
-
-    function loadChat() {
-      var script = document.createElement('script');
-      script.src = 'https://www.chatbase.co/embed.min.js';
-      script.id = 'dxCY_mFoNPQu83GSntHvw';
-      script.domain = 'www.chatbase.co';
-      document.body.appendChild(script);
-    }
-
-    function scheduleChat() {
-      setTimeout(function () {
-        if ('requestIdleCallback' in window) {
-          window.requestIdleCallback(loadChat, { timeout: 5000 });
-        } else {
-          loadChat();
-        }
-      }, 3000);
-    }
-
-    if (document.readyState === 'complete') {
-      scheduleChat();
-    } else {
-      window.addEventListener('load', scheduleChat);
-    }
-  })();
 </script>
-
+<button type="button" class="chat-launch" id="chat-launch" aria-expanded="false" aria-controls="research-chat">Ask about my research</button>
 {% if page.url == '/publications/' %}
 <script async src="https://cdn.plu.mx/widget-popup.js"></script>
 {% endif %}

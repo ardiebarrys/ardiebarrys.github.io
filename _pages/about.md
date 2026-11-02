@@ -862,36 +862,10 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 <div class="home">
   <h1 class="home-title">Ardie Barry Sailis</h1>
 
-  <section class="home-card profile-card" aria-label="Profile">
-    <img class="profile-photo" src="/assets/img/ardie-profile.jpg" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high" draggable="false">
-
-    <div class="profile-body">
-      <div class="profile-affiliation">
-        <p><strong>Independent researcher</strong></p>
-        <p>Toxicology and molecular biology</p>
-        <p>Petaling Jaya, Selangor, Malaysia</p>
-      </div>
-
-      <p class="profile-ids">
-        <span><b>ORCID</b> <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a></span>
-        <span><b>Scopus ID</b> 60192026900</span>
-      </p>
-
-      <nav class="profile-links" aria-label="Research profiles">
-        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
-        <a href="https://www.researchgate.net/profile/Ardie-Sailis"><i class="ai ai-researchgate" aria-hidden="true"></i>ResearchGate</a>
-        <a href="https://www.linkedin.com/in/ardiebarrysailis"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
-        <a href="https://communities.springernature.com/users/ardie-barry-sailis"><i class="ai ai-springer" aria-hidden="true"></i>Springer Nature</a>
-        <a href="https://www.growkudos.com/profile/ardie_barry_sailis"><i class="fa-solid fa-asterisk" aria-hidden="true"></i>Kudos</a>
-        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news"><i class="ai ai-conversation" aria-hidden="true"></i>The Conversation</a>
-      </nav>
-    </div>
-  </section>
-
   <section class="home-card home-intro">
     <span class="home-label">Toxicology · Molecular Biology</span>
     <h2>I study how cells handle chemical stress, and what happens when they cannot.</h2>
-    <p>That question runs in two directions. In the lab, whether vaping disturbs the systems that make testosterone, followed from what is actually inhaled down to Leydig cells, mitochondria and the microRNAs that regulate steroidogenesis. On paper, how signaling pathways end a response and recover from it, and why failing to resolve stress may matter more than switching on.</p>
+    <p>Two research tracks connect environmental exposure to cellular recovery: how vaping affects male reproductive health, and how cells bring stress signals to an end.</p>
     <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
     <div class="home-tracks">
       <article class="home-track track-doctoral">
@@ -925,6 +899,33 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     </div>
   </section>
 
+  <section class="home-card profile-card" aria-label="Profile">
+    <img class="profile-photo" src="/assets/img/ardie-profile.jpg" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high" draggable="false">
+
+    <div class="profile-body">
+      <div class="profile-affiliation">
+        <p><strong>Independent researcher</strong></p>
+        <p>Toxicology and molecular biology</p>
+        <p>Petaling Jaya, Selangor, Malaysia</p>
+      </div>
+
+      <p class="profile-ids">
+        <span><b>ORCID</b> <a href="https://orcid.org/0009-0009-8994-2793">0009-0009-8994-2793</a></span>
+        <span><b>Scopus ID</b> 60192026900</span>
+      </p>
+
+      <nav class="profile-links" aria-label="Research profiles">
+        <a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
+        <a href="https://www.researchgate.net/profile/Ardie-Sailis"><i class="ai ai-researchgate" aria-hidden="true"></i>ResearchGate</a>
+        <a href="https://www.linkedin.com/in/ardiebarrysailis"><i class="fa-brands fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
+        <a href="https://communities.springernature.com/users/ardie-barry-sailis"><i class="ai ai-springer" aria-hidden="true"></i>Springer Nature</a>
+        <a href="https://www.growkudos.com/profile/ardie_barry_sailis"><i class="fa-solid fa-asterisk" aria-hidden="true"></i>Kudos</a>
+        <a href="https://theconversation.com/profiles/ardie-barry-sailis-2713182/news"><i class="ai ai-conversation" aria-hidden="true"></i>The Conversation</a>
+      </nav>
+    </div>
+  </section>
+
+
 {%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
 {%- if highlight %}
   <figure class="home-card study" aria-labelledby="study-title">
@@ -943,7 +944,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     <p class="study-intro">{{ highlight.highlight }}</p>
 
     {% include upr-realistic-3d.liquid %}
-    <p class="upr-fig-caption">Explore toxicant inputs, ER disturbances, IRE1α, PERK and ATF6 mechanisms, resolution and seven potential immune outcomes. Drag to orbit, scroll to zoom, or use the playback controls. Conceptual illustration, not measured data. A simplified 2D circuit follows.</p>
+
 
     <div class="circuit circuit-anim" role="img" aria-label="Animated six-stage proteotoxic stress-resolution circuit: 1 proteotoxic input, 2 ER stress sensing, 3 branch signaling, 4 immune decoding, 5 active resolution, 6 baseline restoration.">
       <p class="circuit-caption" aria-hidden="true">Proteotoxic stress-resolution circuit · six stages</p>

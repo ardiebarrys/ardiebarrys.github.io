@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: NRF2–KEAP1 Redoxostat
 permalink: /research/nrf2-keap1-redoxostat/
 description: An interactive visual guide to NRF2–KEAP1 redox signal resolution.
+paper_doi: "10.1016/j.pbiomolbio.2026.03.005"
+og_image: /assets/img/social/nrf2-keap1-redoxostat.png
 nav: false
 nav_order: 100
 ---
@@ -206,3 +208,5 @@ nav_order: 100
 </div>
 
 <script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261011" defer></script>
+
+{% include research-related.liquid %}
