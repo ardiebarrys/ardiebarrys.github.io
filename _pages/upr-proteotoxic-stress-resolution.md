@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: UPR Proteotoxic Stress-Resolution Circuit
 permalink: /research/upr-proteotoxic-stress-resolution/
 description: An interactive exploration of the proposed unfolded protein response as a branch-selective proteotoxic stress-resolution circuit in environmental immunotoxicity.
+paper_doi: "10.1016/j.cbi.2026.112392"
+og_image: /assets/img/social/upr-proteotoxic-stress-resolution.png
 nav: false
 nav_order: 99
 ---
@@ -556,3 +558,5 @@ nav_order: 99
 })();
 </script>
 {% include depth3d/upr.liquid %}
+
+{% include research-related.liquid %}

@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: CYP1A1 Metabolic Feedback Circuit
 permalink: /research/cyp1a1-metabolic-feedback/
 description: An interactive visual guide to the AhR–CYP1A1 metabolic feedback circuit linking environmental sensing to immune regulation.
+paper_doi: "10.1007/s00204-026-04384-1"
+og_image: /assets/img/social/cyp1a1-metabolic-feedback.png
 nav: false
 nav_order: 101
 ---
@@ -284,3 +286,5 @@ nav_order: 101
 
 <script src="{{ '/assets/js/cyp1a1-feedback.js' | relative_url }}?v=20261011" defer></script>
 {% include depth3d/circuits.liquid %}
+
+{% include research-related.liquid %}

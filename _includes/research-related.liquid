@@ -1,0 +1,4 @@
+<aside class="research-related" aria-label="Related studies">
+  <h2>Explore another cellular circuit</h2>
+  <nav aria-label="Cellular circuit studies">{% for study in site.data.research_viewers %}{% capture study_url %}/research/{{ study.slug }}/{% endcapture %}<a href="{{ study_url | relative_url }}" {% if page.url == study_url %}aria-current="page"{% endif %}>{{ study.name }}</a>{% endfor %}<a href="{{ '/publications/' | relative_url }}">All publications ↗</a></nav>
+</aside>

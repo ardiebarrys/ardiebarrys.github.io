@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: YAP/TAZ Signal-Resolution Circuit
 permalink: /research/yap-taz-signal-resolution/
 description: An interactive exploration of the proposed YAP/TAZ mechanochemical signal-resolution circuit.
+paper_doi: "10.1016/j.pbiomolbio.2026.101960"
+og_image: /assets/img/social/yap-taz-signal-resolution.png
 nav: false
 nav_order: 99
 ---
@@ -350,3 +352,5 @@ nav_order: 99
 </script>
 <script src="{{ '/assets/js/yap-signal-experience.js' | relative_url }}?v=20261011" defer></script>
 {% include depth3d/yap.liquid %}
+
+{% include research-related.liquid %}

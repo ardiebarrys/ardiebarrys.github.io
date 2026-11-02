@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: NRF2–KEAP1 Redoxostat
 permalink: /research/nrf2-keap1-redoxostat/
 description: An interactive visual guide to NRF2–KEAP1 redox signal resolution.
+paper_doi: "10.1016/j.pbiomolbio.2026.03.005"
+og_image: /assets/img/social/nrf2-keap1-redoxostat.png
 nav: false
 nav_order: 100
 ---
@@ -29,7 +31,7 @@ nav_order: 100
       @container (max-width: 700px) { .nrf2-realistic-embed iframe { height: 1400px; } }
     </style>
     <div class="nrf2-realistic-embed" id="nrf2-3d">
-      <iframe src="{{ '/assets/html/nrf2-realistic-3d.html' | relative_url }}?v=20261102" title="Interactive 3D: NRF2–KEAP1 stress sensing, gene activation and active signal resolution" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+      <iframe src="{{ '/assets/html/nrf2-realistic-3d.html' | relative_url }}?v=20261103b" title="Interactive 3D: NRF2–KEAP1 stress sensing, gene activation and active signal resolution" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
     </div>
   </header>
 
@@ -206,3 +208,5 @@ nav_order: 100
 </div>
 
 <script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261011" defer></script>
+
+{% include research-related.liquid %}

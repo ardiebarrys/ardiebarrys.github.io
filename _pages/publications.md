@@ -281,7 +281,13 @@ nav_order: 3
   }
 </style>
 
-{% include journal-metrics-summary.html %}
+<form class="pub-discovery" id="pub-discovery" role="search" aria-label="Find publications" hidden>
+  <label>Search papers<input type="search" id="pub-search" placeholder="Title, author, keyword or DOI" autocomplete="off"></label>
+  <label>Topic<select id="pub-topic"><option value="">All topics</option><option value="framework">Cellular signaling circuits</option><option value="thesis">Vaping &amp; reproductive health</option><option value="other">Other research</option></select></label>
+  <label>Year<select id="pub-year"><option value="">All years</option>{% assign filter_years = site.data.papers | map: 'year' | uniq | sort | reverse %}{% for year in filter_years %}<option value="{{ year }}">{{ year }}</option>{% endfor %}</select></label>
+  <button type="reset">Clear filters</button>
+</form>
+<p id="pub-results" class="pub-result-count" role="status" hidden></p>
 
 {%- assign me = "Ardie Barry Sailis" -%}
 {%- assign years = site.data.papers | group_by: "year" %}
@@ -291,7 +297,7 @@ nav_order: 3
   <section class="pub-year" aria-labelledby="year-{{ group.name }}">
     <h2 class="pub-year-title" id="year-{{ group.name }}">{{ group.name }}</h2>
     {%- for p in group.items %}
-    <article class="pub" id="{{ p.doi | slugify }}">
+    <article class="pub" id="{{ p.doi | slugify }}" data-year="{{ p.year }}" data-topic="{{ p.project | default: 'other' }}">
       <div class="pub-main">
         <h3 class="pub-title"><a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a></h3>
         <p class="pub-authors">
@@ -340,6 +346,7 @@ nav_order: 3
           >
             Copy citation
           </button>
+          <a class="pub-bib" href="{{ '/assets/citations/' | relative_url }}{{ p.doi | slugify }}.bib" download>Download BibTeX</a>
         </div>
         <div class="pub-abstract-body" id="abstract-{{ p.doi | slugify }}">{{ p.abstract | markdownify }}</div>
       </div>
@@ -543,3 +550,6 @@ nav_order: 3
     }
   })();
 </script>
+
+<details class="journal-context"><summary>Journal metrics and publication context</summary>{% include journal-metrics-summary.html %}</details>
+<script src="{{ "/assets/js/publications-discovery.js" | relative_url }}?v=20261103b" defer></script>

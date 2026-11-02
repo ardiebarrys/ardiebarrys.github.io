@@ -11,6 +11,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      revision:
+        description: "Source branch, tag or commit to deploy (a known-good commit enables rollback)"
+        required: false
+        default: "main"
 
 permissions:
   contents: write
@@ -25,6 +30,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.revision || github.ref }}
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
@@ -58,8 +65,22 @@ jobs:
             --print-to-pdf=_site/assets/pdf/Ardie_Barry_Sailis_CV.pdf \
             http://localhost:8080/cv/
           ls -la _site/assets/pdf/Ardie_Barry_Sailis_CV.pdf
+      - name: Validate generated links, assets and research metadata
+        run: python3 scripts/check-site.py _site
+      - name: Record deployed source
+        run: python3 -c 'import json,subprocess; json.dump({"commit":subprocess.check_output(["git","rev-parse","HEAD"],text=True).strip()},open("_site/deployment.json","w"))'
+      - name: Keep verified build for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-build
+          path: _site
+          retention-days: 14
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+
+      - name: Verify live deployment
+        if: github.event_name != 'pull_request'
+        run: python3 scripts/check-deployment.py "$(git rev-parse HEAD)"

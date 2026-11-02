@@ -3,6 +3,8 @@ layout: yap-fullscreen
 title: Transcriptional Condensates as Kinetic Filters
 permalink: /research/transcriptional-condensates-kinetic-filters/
 description: An interactive exploration of how transcriptional condensate kinetics may decode dynamic signaling inputs.
+paper_doi: "10.1016/j.genrep.2026.102599"
+og_image: /assets/img/social/transcriptional-condensates-kinetic-filters.png
 nav: false
 nav_order: 102
 ---
@@ -209,3 +211,5 @@ nav_order: 102
 
 <script src="{{ '/assets/js/condensate-kinetic-filter.js' | relative_url }}?v=20261011" defer></script>
 {% include depth3d/circuits.liquid %}
+
+{% include research-related.liquid %}
