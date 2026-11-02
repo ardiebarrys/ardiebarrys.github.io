@@ -22,68 +22,15 @@ nav_order: 100
       <span><b>Control logic</b> Detect → adapt → resolve</span>
       <span><b>Article</b> <a href="https://doi.org/10.1016/j.pbiomolbio.2026.03.005" target="_blank" rel="noopener noreferrer">10.1016/j.pbiomolbio.2026.03.005 ↗</a></span>
     </div>
-    <div class="nrf2-hero-figure" role="img" aria-label="NRF2 KEAP1 redoxostat overview: redox stress modifies the KEAP1 sensor, NRF2 becomes stabilized and enters the nucleus, antioxidant response genes are induced, and a resolution module helps restore KEAP1 control and redox balance.">
-      <svg class="nrf2-desktop-diagram" viewBox="0 0 1120 360" aria-hidden="true">
-        <defs>
-          <linearGradient id="n2bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#183865"/><stop offset="1" stop-color="#08162e"/></linearGradient>
-          <linearGradient id="n2cyan" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#67e8f9"/><stop offset="1" stop-color="#34d399"/></linearGradient>
-          <marker id="n2arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#67e8f9"/></marker>
-          <marker id="n2backarrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c4b5fd"/></marker>
-        </defs>
-        <text x="560" y="28" text-anchor="middle" class="n2-svg-title">THE REDOXOSTAT · A SIGNAL THAT MUST ALSO RESOLVE</text>
-        <g class="n2-svg-node" data-figure-node="stress">
-          <rect x="20" y="66" width="190" height="112" rx="16"/>
-          <circle cx="53" cy="96" r="16" class="n2-icon-red"/><text x="53" y="101" text-anchor="middle" class="n2-svg-icon">!</text>
-          <text x="44" y="131" class="n2-svg-head">REDOX STRESS</text>
-          <text x="44" y="153" class="n2-svg-copy">ROS · electrophiles</text>
-        </g>
-        <path d="M212 122 H245" class="n2-svg-arrow" marker-end="url(#n2arrow)"/>
-        <g class="n2-svg-node" data-figure-node="sensor">
-          <rect x="252" y="66" width="190" height="112" rx="16"/>
-          <circle cx="285" cy="96" r="16" class="n2-icon-violet"/><text x="285" y="101" text-anchor="middle" class="n2-svg-icon">K</text>
-          <text x="276" y="131" class="n2-svg-head">KEAP1 SENSOR</text>
-          <text x="276" y="153" class="n2-svg-copy">Cysteine chemistry</text>
-        </g>
-        <path d="M444 122 H477" class="n2-svg-arrow" marker-end="url(#n2arrow)"/>
-        <g class="n2-svg-node" data-figure-node="controller">
-          <rect x="484" y="66" width="190" height="112" rx="16"/>
-          <circle cx="517" cy="96" r="16" class="n2-icon-cyan"/><text x="517" y="101" text-anchor="middle" class="n2-svg-icon">N</text>
-          <text x="508" y="131" class="n2-svg-head">NRF2 STABILIZES</text>
-          <text x="508" y="153" class="n2-svg-copy">Less turnover</text>
-        </g>
-        <path d="M676 122 H709" class="n2-svg-arrow" marker-end="url(#n2arrow)"/>
-        <g class="n2-svg-node" data-figure-node="output">
-          <rect x="716" y="66" width="190" height="112" rx="16"/>
-          <circle cx="749" cy="96" r="16" class="n2-icon-green"/><text x="749" y="101" text-anchor="middle" class="n2-svg-icon">G</text>
-          <text x="740" y="131" class="n2-svg-head">GENE RESPONSE</text>
-          <text x="740" y="153" class="n2-svg-copy">ARE-linked program</text>
-        </g>
-        <path d="M908 122 H941" class="n2-svg-arrow" marker-end="url(#n2arrow)"/>
-        <g class="n2-svg-node" data-figure-node="outcome">
-          <rect x="948" y="66" width="152" height="112" rx="16"/>
-          <circle cx="980" cy="96" r="16" class="n2-icon-gold"/><text x="980" y="101" text-anchor="middle" class="n2-svg-icon">↗</text>
-          <text x="972" y="131" class="n2-svg-head">OUTCOME</text>
-          <text x="972" y="153" class="n2-svg-copy">Context + time</text>
-        </g>
-        <path d="M1025 184 V233 H847" class="n2-svg-feedback" marker-end="url(#n2backarrow)"/>
-        <rect x="366" y="218" width="478" height="84" rx="16" class="n2-svg-resolution"/>
-        <text x="605" y="246" text-anchor="middle" class="n2-svg-res-title">ACTIVE RESOLUTION MODULE</text>
-        <text x="605" y="269" text-anchor="middle" class="n2-svg-res-copy">KEAP1 renewal · protein turnover · autophagy</text>
-        <text x="605" y="288" text-anchor="middle" class="n2-svg-res-copy">redox restoration · renewed responsiveness</text>
-        <path d="M366 261 H114 V184" class="n2-svg-feedback" marker-end="url(#n2backarrow)"/>
-        <text x="222" y="248" class="n2-svg-tiny">RESTORE CONTROL</text>
-        <text x="560" y="335" text-anchor="middle" class="n2-svg-foot">ACTIVATION STARTS THE RESPONSE · RESOLUTION SHAPES ITS MEANING</text>
-      </svg>
-      <div class="nrf2-mobile-diagram" aria-hidden="true">
-        <div class="n2-mobile-node stress"><span>!</span><div><b>Redox stress</b><small>ROS · electrophiles</small></div></div>
-        <i>↓</i><div class="n2-mobile-node sensor"><span>K</span><div><b>KEAP1 sensor</b><small>Cysteine chemistry</small></div></div>
-        <i>↓</i><div class="n2-mobile-node controller"><span>N</span><div><b>NRF2 stabilizes</b><small>Reduced turnover</small></div></div>
-        <i>↓</i><div class="n2-mobile-node output"><span>G</span><div><b>Gene response</b><small>ARE-linked program</small></div></div>
-        <i>↓</i><div class="n2-mobile-node outcome"><span>↗</span><div><b>Biological outcome</b><small>Context + duration</small></div></div>
-        <div class="n2-mobile-return">↶ <b>Active resolution</b><small>KEAP1 renewal · turnover · autophagy · redox restoration</small></div>
-      </div>
+    <style>
+      .nrf2-realistic-embed { margin-top: 1.5rem; overflow: hidden; border: 1px solid #36574e; border-radius: 16px; background: #091716; container-type: inline-size; }
+      .nrf2-realistic-embed iframe { display: block; width: 100%; height: 900px; border: 0; }
+      @media (max-width: 900px) { .nrf2-realistic-embed iframe { height: 1400px; } }
+      @container (max-width: 700px) { .nrf2-realistic-embed iframe { height: 1400px; } }
+    </style>
+    <div class="nrf2-realistic-embed" id="nrf2-3d">
+      <iframe src="{{ '/assets/html/nrf2-realistic-3d.html' | relative_url }}?v=20261102" title="Interactive 3D: NRF2–KEAP1 stress sensing, gene activation and active signal resolution" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
     </div>
-    <p class="nrf2-figure-note">Figures and interactive outputs are conceptual illustrations, not experimental measurements.</p>
   </header>
 
   <section class="nrf2-panel" id="nrf2-simulator">
@@ -259,4 +206,3 @@ nav_order: 100
 </div>
 
 <script src="{{ '/assets/js/nrf2-redoxostat.js' | relative_url }}?v=20261011" defer></script>
-{% include depth3d/circuits.liquid %}
