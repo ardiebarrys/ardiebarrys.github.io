@@ -31,7 +31,7 @@ nav_order: 100
       @container (max-width: 700px) { .nrf2-realistic-embed iframe { height: 1400px; } }
     </style>
     <div class="nrf2-realistic-embed" id="nrf2-3d">
-      <iframe src="{{ '/assets/html/nrf2-realistic-3d.html' | relative_url }}?v=20261103b" title="Interactive 3D: NRF2–KEAP1 stress sensing, gene activation and active signal resolution" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
+      <iframe src="{{ '/assets/html/nrf2-realistic-3d.html' | relative_url }}?v=20261103c" title="Interactive 3D: NRF2–KEAP1 stress sensing, gene activation and active signal resolution" loading="lazy" allow="fullscreen" allowfullscreen></iframe>
     </div>
   </header>
 
