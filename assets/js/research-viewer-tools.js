@@ -19,7 +19,7 @@
   button('Share stage',async()=>{
    let url=new URL(location.href);try{if(parent!==window&&parent.location.origin===location.origin)url=new URL(parent.location.href);}catch{}
    url.hash='view='+encodeURIComponent(JSON.stringify({v:1,kind:a.kind,...a.getState()}));
-   try{await navigator.clipboard.writeText(url.href);say('Stage link copied');}catch{const field=document.createElement('input');field.readOnly=true;field.value=url.href;field.setAttribute('aria-label','Stage link to copy');tools.append(field);field.focus();field.select();say('Copy the selected link');}
+   try{await navigator.clipboard.writeText(url.href);say('Stage link copied');}catch{tools.querySelector('input')?.remove();const field=document.createElement('input');field.readOnly=true;field.value=url.href;field.setAttribute('aria-label','Stage link to copy');tools.append(field);field.focus();field.select();say('Copy the selected link');}
   });
   button('Save figure',()=>{
    try{
@@ -30,7 +30,7 @@
     ctx.fillStyle='#a1e8c7';ctx.font='bold 22px Arial';ctx.fillText(a.title,24,height+36);ctx.fillStyle='#e2eee8';ctx.font='18px Arial';
     let line='',y=height+68;for(const word of a.caption().split(/\s+/)){if(ctx.measureText(line+word).width>output.width-48){ctx.fillText(line,24,y);line='';y+=24;}line+=word+' ';}ctx.fillText(line,24,y);
     ctx.fillStyle='#9ab6aa';ctx.font='14px Arial';ctx.fillText('Ardie Barry Sailis · ardiebarrysailis.com',24,output.height-17);
-    output.toBlob(blob=>{if(!blob){say('Could not save this frame.');return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=a.kind+'-mechanism.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('Figure saved');},'image/png');
+    output.toBlob(blob=>{if(!blob){say('Could not save this frame.');return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=a.kind+'-mechanism.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);say('Figure download started');},'image/png');
    }catch{say('Figure export is unavailable in this browser.');}
   });
   tools.append(status);

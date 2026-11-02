@@ -866,7 +866,6 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     <span class="home-label">Toxicology · Molecular Biology</span>
     <h2>I study how cells handle chemical stress, and what happens when they cannot.</h2>
     <p>Two research tracks connect environmental exposure to cellular recovery: how vaping affects male reproductive health, and how cells bring stress signals to an end.</p>
-    <p class="home-record">Most of what I have published, I wrote because the question was sitting there unanswered, not because a project required it.</p>
     <div class="home-tracks">
       <article class="home-track track-doctoral">
         <span class="track-tag">Doctoral research</span>

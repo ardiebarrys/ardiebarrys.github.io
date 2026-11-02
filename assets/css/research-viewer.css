@@ -23,3 +23,9 @@
 .figure:fullscreen,#app:fullscreen{height:100dvh;max-height:none;overflow:auto}
 @media(max-width:700px){.figure{height:auto!important;min-height:100dvh;overflow:visible}.figure .model-layout{flex-direction:column}.figure .viewport{min-height:460px;flex:auto}.figure .legend{width:100%;border-left:0;border-top:1px solid #36574e;padding:16px;overflow:visible}.figure .legend h1{font-size:28px}.figure .view-controls{gap:5px}.figure .chapters{overflow-x:auto;justify-content:flex-start}.figure .chapters button{min-width:95px}.rv-tools{padding:10px}.rv-tools button{flex:1 1 auto}.rv-status{flex-basis:100%}.figure .model-label{max-width:185px;white-space:normal}.y3d-tools{bottom:10px!important}.y3d-tools button{min-height:44px}.y3d-stage{min-height:390px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.figure>.rv-tools,#app>.rv-tools{order:10;flex-shrink:0}
+@media(max-width:700px){
+ .figure .toolbar{order:0}.figure .story-flow{order:1}.figure .model-layout{display:contents}
+ .figure .viewport{order:2;min-height:460px}.figure .player{order:3;flex-shrink:0}
+ .figure .legend{order:4}.figure .chapters{order:5}
+}

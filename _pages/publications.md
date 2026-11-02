@@ -346,7 +346,7 @@ nav_order: 3
           >
             Copy citation
           </button>
-          <button type="button" class="pub-bib">Download BibTeX</button>
+          <a class="pub-bib" href="{{ '/assets/citations/' | relative_url }}{{ p.doi | slugify }}.bib" download>Download BibTeX</a>
         </div>
         <div class="pub-abstract-body" id="abstract-{{ p.doi | slugify }}">{{ p.abstract | markdownify }}</div>
       </div>
@@ -552,4 +552,4 @@ nav_order: 3
 </script>
 
 <details class="journal-context"><summary>Journal metrics and publication context</summary>{% include journal-metrics-summary.html %}</details>
-<script src="{{ "/assets/js/publications-discovery.js" | relative_url }}?v=20261103" defer></script>
+<script src="{{ "/assets/js/publications-discovery.js" | relative_url }}?v=20261103b" defer></script>
