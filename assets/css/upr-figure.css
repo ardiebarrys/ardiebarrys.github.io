@@ -44,11 +44,6 @@
   white-space: nowrap; will-change: transform;
 }
 .upr-fig-label[hidden] { display: none; }
-
-.upr-fig-caption {
-  margin: 0.55rem 1.1rem 0 !important;
-  color: #9aa2b1; font-size: 0.78rem; line-height: 1.5;
-}
 .upr-fig-failed { display: none; }
 
 @media (max-width: 767.98px) {

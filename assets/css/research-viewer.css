@@ -1,0 +1,25 @@
+/* One readable, touch-friendly control language for every research figure. */
+.rv-tools{display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding:10px 16px;border-top:1px solid #36574e;background:#0c1b1b;color:#deeee8;font:14px/1.4 Arial,sans-serif}
+.rv-tools button,.rv-tools a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #52766b;border-radius:7px;background:#152e29;color:#deeee8;padding:8px 12px;font:inherit;text-decoration:none;cursor:pointer}
+.rv-tools button:hover,.rv-tools button[aria-pressed=true]{background:#284e40;border-color:#a1e8c7}
+.rv-tools button:focus-visible{outline:2px solid #a1e8c7;outline-offset:3px}
+.rv-status{flex:1 1 140px;color:#b6ccc4;font-size:13px}
+.rv-stage-title{color:#d6eee6;font-size:16px;padding:10px 16px;margin:0;background:#102421;min-height:42px}
+.y3d{border-color:#36574e!important;border-radius:14px!important;font-family:Arial,sans-serif!important}
+.y3d-label{font-size:13px!important}.y3d-label b:empty{display:none}.y3d-note{font-size:14px!important}
+.y3d:fullscreen{display:flex;flex-direction:column;background:#081715;padding:16px;overflow:auto}
+.y3d:fullscreen .y3d-stage{flex:1;min-height:360px}
+.y3d-stage.is-compact .y3d-label span{display:inline!important}.y3d-stage.is-compact .y3d-label{max-width:80%;white-space:normal}
+.figure button,.figure select,#app button,#app select{min-height:44px;font-size:13px!important}
+.figure .toolbar{flex-wrap:wrap;padding:12px 16px;gap:8px}
+.figure .legend{width:270px}
+.figure #expand,#app #fullscreen{min-width:44px}
+.figure:fullscreen,#app:fullscreen{height:100dvh;max-height:none;overflow:auto}
+@media(max-width:700px){.figure{height:auto!important;min-height:100dvh;overflow:visible}.figure .viewport{min-height:460px;flex:auto}.figure .legend{width:100%;border-left:0;border-top:1px solid #36574e;padding:16px;overflow:visible}.figure .legend h1{font-size:28px}.rv-tools{padding:10px}.rv-tools button{flex:1 1 auto}.rv-status{flex-basis:100%}.y3d-tools{bottom:10px!important}.y3d-tools button{min-height:44px}.y3d-stage{min-height:390px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.figure>.rv-tools,#app>.rv-tools{order:10;flex-shrink:0}
+@media(max-width:700px){
+ .figure .toolbar{order:0}
+ .figure .viewport{order:2;min-height:460px}
+ .figure .legend{order:4}
+}
