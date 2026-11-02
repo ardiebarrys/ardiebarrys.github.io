@@ -22,14 +22,22 @@
   document.querySelectorAll('iframe[src*="realistic-3d"]').forEach(watch);
   new MutationObserver(records=>records.forEach(r=>r.addedNodes.forEach(n=>{if(n.nodeName==='IFRAME'&&n.src.includes('realistic-3d'))watch(n);}))).observe(document.body,{childList:true,subtree:true});
   const launch=document.getElementById('chat-launch');
+  let chatLoading=false;
   launch?.addEventListener('click',()=>{
-    let panel=document.getElementById('research-chat');
-    if(!panel){
-      panel=document.createElement('section');panel.id='research-chat';panel.setAttribute('aria-label','Research assistant');
-      Object.assign(panel.style,{position:'fixed',left:'1rem',bottom:'5rem',width:'min(410px, calc(100vw - 2rem))',height:'min(620px, calc(100dvh - 9rem))',zIndex:99999,background:'#0c1729',border:'1px solid #52777d',borderRadius:'14px',overflow:'hidden'});
-      const frame=document.createElement('iframe');frame.src='https://www.chatbase.co/chatbot-iframe/dxCY_mFoNPQu83GSntHvw';frame.title='Ask about Ardie’s research';frame.style.cssText='border:0;width:100%;height:100%';panel.append(frame);document.body.append(panel);
-    }else panel.hidden=!panel.hidden;
-    launch.setAttribute('aria-expanded',String(!panel.hidden));launch.textContent=panel.hidden?'Ask about my research':'Close research chat';
+    if(chatLoading)return;
+    chatLoading=true;launch.textContent='Opening research chat…';launch.setAttribute('aria-busy','true');
+    // Preserve the site's existing Chatbase integration and settings; load only on demand.
+    if(!window.chatbase||window.chatbase('getState')!=='initialized'){
+      window.chatbase=function(){if(!window.chatbase.q)window.chatbase.q=[];window.chatbase.q.push(arguments);};
+      window.chatbase=new Proxy(window.chatbase,{get:(target,prop)=>prop==='q'?target.q:function(){return target(prop,Array.prototype.slice.call(arguments));}});
+    }
+    const script=document.createElement('script');script.src='https://www.chatbase.co/embed.min.js';script.id='dxCY_mFoNPQu83GSntHvw';script.domain='www.chatbase.co';
+    const ready=new MutationObserver(()=>{
+      const bubble=document.getElementById('chatbase-bubble-button');
+      if(bubble){ready.disconnect();clearTimeout(timeout);launch.hidden=true;launch.removeAttribute('aria-busy');bubble.click();}
+    });
+    const failed=()=>{ready.disconnect();chatLoading=false;script.remove();launch.removeAttribute('aria-busy');launch.textContent='Chat unavailable · try again';};
+    const timeout=setTimeout(failed,20000);script.onerror=()=>{clearTimeout(timeout);failed();};
+    ready.observe(document.body,{childList:true,subtree:true});document.body.append(script);
   });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'){const p=document.getElementById('research-chat');if(p&&!p.hidden){p.hidden=true;launch.setAttribute('aria-expanded','false');launch.textContent='Ask about my research';launch.focus();}}});
 })();

@@ -1,5 +1,6 @@
 require "cgi"
 require "json"
+require "fileutils"
 Jekyll::Hooks.register :pages, :post_render do |page|
   doi = page.data["paper_doi"]
   next unless doi && page.output.include?("</head>")
@@ -18,21 +19,15 @@ Jekyll::Hooks.register :pages, :post_render do |page|
   page.output.sub!("</head>", head.join("\n") + "\n</head>")
 end
 
-# Static citation files also work without JavaScript and can be linked directly.
-module ResearchCitations
-  class Generator < Jekyll::Generator
-    safe true
-    priority :normal
-    def generate(site)
-      site.data.fetch("papers", []).each do |paper|
-        escape = ->(value) { value.to_s.gsub(/[\\{}%&#_$]/) { |c| "\\" + c } }
-        fields = {"title"=>"{" + escape.call(paper["title"]) + "}", "author"=>Array(paper["authors"]).map { |a| escape.call(a) }.join(" and "), "journal"=>escape.call(paper["journal"]), "year"=>paper["year"], "volume"=>paper["volume"], "number"=>paper["issue"], "pages"=>paper["pages"] || paper["article"], "doi"=>paper["doi"], "url"=>"https://doi.org/#{paper['doi']}"}
-        slug = Jekyll::Utils.slugify(paper["doi"])
-        entry = Jekyll::PageWithoutAFile.new(site, site.source, "assets/citations", slug + ".bib")
-        entry.data = {"layout"=>nil, "sitemap"=>false}
-        entry.content = "@article{#{slug},\n" + fields.reject { |_,v| v.nil? || v.to_s.empty? }.map { |k,v| "  #{k} = {#{v}}" }.join(",\n") + "\n}\n"
-        site.pages << entry
-      end
-    end
+# Write citation assets after rendering, outside Liquid and jekyll-scholar conversion.
+Jekyll::Hooks.register :site, :post_write do |site|
+  directory = File.join(site.dest, "assets", "citations")
+  FileUtils.mkdir_p(directory)
+  site.data.fetch("papers", []).each do |paper|
+    escape = ->(value) { value.to_s.gsub(/[\\{}%&#_$]/) { |c| "\\" + c } }
+    fields = {"title"=>"{" + escape.call(paper["title"]) + "}", "author"=>Array(paper["authors"]).map { |a| escape.call(a) }.join(" and "), "journal"=>escape.call(paper["journal"]), "year"=>paper["year"], "volume"=>paper["volume"], "number"=>paper["issue"], "pages"=>paper["pages"] || paper["article"], "doi"=>paper["doi"], "url"=>"https://doi.org/#{paper['doi']}"}
+    slug = Jekyll::Utils.slugify(paper["doi"])
+    content = "@article{#{slug},\n" + fields.reject { |_,v| v.nil? || v.to_s.empty? }.map { |k,v| "  #{k} = {#{v}}" }.join(",\n") + "\n}\n"
+    File.write(File.join(directory, slug + ".bib"), content, encoding: "UTF-8")
   end
 end
