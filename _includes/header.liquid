@@ -5,21 +5,27 @@
 <header class="site-header">
   <nav class="primary-nav" aria-label="Primary navigation">
     <a class="site-brand" href="{{ '/' | relative_url }}">Ardie Barry Sailis</a>
-    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-panel">Menu <span aria-hidden="true">☰</span></button>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-panel"><span class="when-closed">Menu <span aria-hidden="true">☰</span></span><span class="when-open">Close <span aria-hidden="true">✕</span></span></button>
     <div class="primary-panel" id="primary-panel">
       <ul class="primary-links">
         <li class="nav-dropdown">
-          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="research-menu">Research <span aria-hidden="true">▾</span></button>
-          <ul class="dropdown-panel" id="research-menu">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="research-menu">Research <span class="caret" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-panel dropdown-research" id="research-menu">
             {% for item in site.data.research_navigation %}
-              {% if forloop.index == 2 %}<li><a href="{{ '/cellular-signaling-circuits/' | relative_url }}">Cellular Circuits (overview)</a></li>{% endif %}
-              <li><a href="{{ item.url | relative_url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+              {% if forloop.first %}
+              <li class="dd-group" aria-hidden="true">Doctoral research</li>
+              <li><a class="dd-item" style="--dot:{{ item.hue }}" href="{{ item.url | relative_url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>Vaping &amp; male reproductive health</a></li>
+              <li class="dd-group" aria-hidden="true">Cellular Circuits</li>
+              <li><a class="dd-item dd-overview" href="{{ '/cellular-signaling-circuits/' | relative_url }}" {% if page.url == '/cellular-signaling-circuits/' %}aria-current="page"{% endif %}>All five frameworks</a></li>
+              {% else %}
+              <li><a class="dd-item dd-sub" style="--dot:{{ item.hue }}" href="{{ item.url | relative_url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+              {% endif %}
             {% endfor %}
           </ul>
         </li>
         <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
         <li class="nav-dropdown">
-          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="about-menu">About <span aria-hidden="true">▾</span></button>
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="about-menu">About <span class="caret" aria-hidden="true">▾</span></button>
           <ul class="dropdown-panel" id="about-menu">
             <li><a href="{{ '/biography/' | relative_url }}">Biography</a></li>
             <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>

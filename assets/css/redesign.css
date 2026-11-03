@@ -138,3 +138,54 @@ body.research-page .circuit-lab {--cyan:var(--hue);--accent:var(--hue)}
   body.research-page h1 {font-size:clamp(56px,12vw,64px);overflow-wrap:anywhere}
   .chat-launch {right:16px;bottom:16px;max-width:calc(100vw - 32px)}
 }
+
+/* ===================== QA fixes (build review, November 2026) ===================== */
+
+/* 1. Clear the floating nav. The theme's body.fixed-top-nav rule was zeroing this padding,
+      which pushed page titles and breadcrumbs underneath the nav bar. */
+html body,html body.fixed-top-nav {padding-top:116px!important}
+html body.painted-home,html body.painted-home.fixed-top-nav {padding-top:0!important}
+
+/* 2. Type scale: the giant size belongs to the homepage hero only. */
+body h1,body .post-header .post-title {font-size:clamp(40px,5.4vw,72px);letter-spacing:-.025em;line-height:1.04}
+body h2 {font-size:clamp(28px,3.2vw,44px)}
+body h3 {font-size:clamp(20px,1.9vw,26px)}
+body.research-page h1 {font-size:clamp(34px,4.2vw,56px);letter-spacing:-.02em}
+.home-night h2,.home-night .home-intro h2,.home-night .study-head h2 {font-size:clamp(32px,3.8vw,52px)}
+.home-night .news h2 {font-size:clamp(28px,3vw,40px);margin-bottom:20px}
+.home-night .home-intro .home-lead {margin:6px 0 26px;max-width:62ch;font-size:clamp(19px,1.6vw,22px);line-height:1.55;color:var(--text)}
+
+/* 3. Navigation: one rotating caret, grouped research menu. */
+.primary-nav .dropdown-toggle::after {display:none!important;content:none!important}
+.primary-nav .caret {display:inline-block;font-size:.8em;transition:transform var(--dur-short) var(--ease-out)}
+.primary-nav .dropdown-toggle[aria-expanded=true] .caret {transform:rotate(180deg)}
+.dropdown-research {width:min(380px,calc(100vw - 48px))}
+.dropdown-panel .dd-group {padding:14px 14px 6px;font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#93a3c4}
+.dropdown-panel .dd-group:first-child {padding-top:6px}
+.dropdown-panel .dd-item {display:flex;align-items:center;gap:12px}
+.dropdown-panel .dd-item::before {content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--dot,#c9d3ea);box-shadow:0 0 10px var(--dot,transparent)}
+.dropdown-panel .dd-overview {font-weight:600}
+.dropdown-panel .dd-sub {padding-left:30px}
+.dropdown-panel a[aria-current=page] {background:#ffffff14}
+.dropdown-panel a:hover {background:#ffffff12}
+.mobile-nav-toggle .when-open {display:none}
+.mobile-nav-toggle[aria-expanded=true] .when-open {display:inline}
+.mobile-nav-toggle[aria-expanded=true] .when-closed {display:none}
+
+/* 4. Painted hero: blend the meadow into the night section instead of a hard seam. */
+.painted-copy {z-index:1}
+.painted-hero::after {content:"";position:absolute;left:0;right:0;bottom:0;height:220px;z-index:0;pointer-events:none;background:linear-gradient(to bottom,rgba(61,106,82,0),rgba(61,106,82,.55) 55%,#3d6a52)}
+
+@media(max-width:767px) {
+  html body,html body.fixed-top-nav {padding-top:96px!important;padding-bottom:0!important}
+  html body.painted-home,html body.painted-home.fixed-top-nav {padding-top:0!important}
+  body h1,body .post-header .post-title {font-size:clamp(36px,10vw,48px)}
+  body.research-page h1 {font-size:clamp(30px,8.6vw,40px);overflow-wrap:normal;hyphens:auto}
+  body h2 {font-size:clamp(26px,7vw,34px)}
+  .home-night h2,.home-night .home-intro h2,.home-night .study-head h2 {font-size:clamp(30px,8.4vw,40px)}
+  /* 5. Keep the space for the floating buttons inside the footer, so no dark band shows below it. */
+  .redesigned-footer {padding-bottom:104px}
+  /* 6. Compact round chat button on phones, so it never sits over a line of text. */
+  .chat-launch {width:56px;height:56px;min-height:56px;padding:0;border-radius:50%;font-size:0;line-height:0;color:transparent;overflow:hidden;background:#123d44 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e6faf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.4A8 8 0 1 1 21 12z'/%3E%3C/svg%3E") center/24px no-repeat}
+  .dropdown-panel .dd-sub {padding-left:26px}
+}
