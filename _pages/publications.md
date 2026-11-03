@@ -279,7 +279,48 @@ nav_order: 3
       transition: none;
     }
   }
+  .journal-context.pub-journal-context {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    border: 0;
+  }
+  .journal-context.pub-journal-context > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 64px;
+    padding: 1rem 1.2rem;
+    border: 1px solid #527b8e;
+    border-radius: 12px;
+    background: #13283b;
+    color: #e0f1f3;
+    list-style: none;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .pub-journal-context > summary::-webkit-details-marker { display: none; }
+  .journal-context.pub-journal-context > summary:hover { background: #1b354b; border-color: #8bd6db; }
+  .pub-journal-context > summary:focus-visible { outline: 2px solid #8ee4d1; outline-offset: 4px; }
+  .journal-context-action { display: inline-flex; align-items: center; gap: .7rem; flex-shrink: 0; color: #a4e9dc; font-weight: 600; }
+  .journal-context-chevron { font-size: 1.4rem; line-height: 1; }
+  .pub-journal-context .journal-context-hide { display: none; }
+  .pub-journal-context[open] .journal-context-show { display: none; }
+  .pub-journal-context[open] .journal-context-hide { display: inline; }
+  .pub-journal-context[open] .journal-context-chevron { transform: rotate(180deg); }
+  @media (max-width: 560px) {
+    .journal-context.pub-journal-context > summary { align-items: flex-start; flex-direction: column; gap: .65rem; }
+  }
 </style>
+
+<details class="journal-context pub-journal-context">
+  <summary>
+    <strong>Journal metrics and publication context</strong>
+    <span class="journal-context-action"><span class="journal-context-show">Show metrics</span><span class="journal-context-hide">Hide metrics</span><span class="journal-context-chevron" aria-hidden="true">⌄</span></span>
+  </summary>
+  {% include journal-metrics-summary.html %}
+</details>
 
 <form class="pub-discovery" id="pub-discovery" role="search" aria-label="Find publications" hidden>
   <label>Search papers<input type="search" id="pub-search" placeholder="Title, author, keyword or DOI" autocomplete="off"></label>
@@ -551,5 +592,4 @@ nav_order: 3
   })();
 </script>
 
-<details class="journal-context"><summary>Journal metrics and publication context</summary>{% include journal-metrics-summary.html %}</details>
 <script src="{{ "/assets/js/publications-discovery.js" | relative_url }}?v=20261103b" defer></script>
