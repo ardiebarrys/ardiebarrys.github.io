@@ -18,7 +18,7 @@ nav_order: 99
     <div class="circuit-eyebrow">Interactive framework · 2026</div>
     <h1>The unfolded protein response as a proteotoxic stress-resolution circuit</h1>
     <p class="circuit-subtitle">A framework in which environmental toxicants act as proteotoxic inputs, IRE1α, PERK and ATF6 decode ER stress into immune outcomes, and failed resolution can shift immune and barrier cells toward persistent dysfunction.</p>
-    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher</div>
+    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Researcher</div>
     <div class="circuit-hero-meta">
       <span><b>Journal</b> <em>Chemico-Biological Interactions</em>, 440 (2026) 112392</span>
       <span><b>Accepted</b> 18 October 2026</span>

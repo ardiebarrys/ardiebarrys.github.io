@@ -174,7 +174,7 @@ description: Get in touch about research, collaborations or roles
 
         <div class="contact-address">
           <strong>Petaling Jaya, Selangor, Malaysia</strong><br>
-          Independent researcher<br>
+          Researcher<br>
           Toxicology and molecular biology
         </div>
 

@@ -17,7 +17,7 @@ nav_order: 99
     <div class="circuit-eyebrow">Interactive framework · 2026</div>
     <h1>YAP/TAZ as a mechanochemical signal-resolution circuit</h1>
     <p class="circuit-subtitle">A framework for mechanical sensing, temporal decoding, active termination and restored mechanosensitivity.</p>
-    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher</div>
+    <div class="circuit-byline"><strong>Ardie Barry Sailis</strong> · Researcher</div>
     <div class="circuit-hero-meta">
       <span><b>Journal</b> <em>Progress in Biophysics and Molecular Biology</em>, 202 (2026)</span>
       <span><b>Accepted</b> 6 October 2026</span>

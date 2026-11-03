@@ -903,7 +903,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
     <div class="profile-body">
       <div class="profile-affiliation">
-        <p><strong>Independent researcher</strong></p>
+        <p><strong>Researcher</strong></p>
         <p>Toxicology and molecular biology</p>
         <p>Petaling Jaya, Selangor, Malaysia</p>
       </div>

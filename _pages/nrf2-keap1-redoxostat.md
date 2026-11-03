@@ -18,7 +18,7 @@ nav_order: 100
     <div class="nrf2-eyebrow"><span class="nrf2-live-dot"></span> REDOX SIGNAL CONTROL · INTERACTIVE REVIEW</div>
     <h1>NRF2–KEAP1 as a redox signal-resolution circuit</h1>
     <p class="nrf2-subtitle">Beyond the antioxidant switch</p>
-    <p class="nrf2-byline"><strong>Ardie Barry Sailis</strong> · Independent Researcher</p>
+    <p class="nrf2-byline"><strong>Ardie Barry Sailis</strong> · Researcher</p>
     <div class="nrf2-hero-meta">
       <span><b>Core idea</b> Signal duration matters</span>
       <span><b>Control logic</b> Detect → adapt → resolve</span>

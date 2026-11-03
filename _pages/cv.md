@@ -5,7 +5,7 @@ permalink: /cv/
 nav: true
 nav_order: 8
 nav_title: CV
-description: CV of Ardie Barry Sailis, independent toxicology researcher in Petaling Jaya, Selangor, with publications, experience and training
+description: CV of Ardie Barry Sailis, toxicology researcher in Petaling Jaya, Selangor, with publications, experience and training
 ---
 
 <style>
@@ -393,7 +393,7 @@ description: CV of Ardie Barry Sailis, independent toxicology researcher in Peta
   <header class="cv-head">
     <div>
       <p class="cv-name">Ardie Barry Sailis</p>
-      <p class="cv-role">Independent researcher · Toxicology and molecular biology</p>
+      <p class="cv-role">Researcher · Toxicology and molecular biology</p>
       <p class="cv-org">Petaling Jaya, Selangor, Malaysia</p>
       <ul class="cv-contact">
         <li><a href="mailto:ardiebarrys@gmail.com">ardiebarrys@gmail.com</a></li>
