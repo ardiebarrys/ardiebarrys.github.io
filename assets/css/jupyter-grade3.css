@@ -159,6 +159,16 @@ ul#tabs a {
   transition: 200ms ease;
 }
 
+.dropdown-submenu > .dropdown-menu {
+  display: none;
+  top: 2px !important;
+  left: 100%;
+  margin-top: -2px;
+  margin-left: 0px;
+  padding-top: 0px;
+  transition: 200ms ease;
+}
+
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
@@ -170,6 +180,22 @@ ul#tabs a {
   display: block;
   clear: both;
   white-space: nowrap;
+}
+
+.dropdown-submenu > a:after {
+  color: #303030;
+  margin-right: -16px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.dropdown-submenu:hover > a:after,
+.dropdown-submenu:active > a:after,
+.dropdown-submenu:focus > a:after,
+.dropdown-submenu:visited > a:after {
+  color: #ff7823;
+  margin-right: -16px;
+  display: inline-block !important;
 }
 
 .btn {
@@ -187,7 +213,8 @@ ul#tabs a {
 
 .btn:hover,
 .btn:active:hover,
-.btn.active:hover {
+.btn.active:hover,
+.open > .dropdown-toggle.btn:hover {
   color: #ef5c00;
   border: 2px solid #e0e0e0;
   background-color: #e0e0e0;
@@ -202,7 +229,9 @@ ul#tabs a {
 .btn:active:focus,
 .btn.active:focus,
 .btn:active.focus,
-.btn.active.focus {
+.btn.active.focus,
+.open > .dropdown-toggle.btn:focus,
+.open > .dropdown-toggle.btn.focus {
   color: #ef5c00;
   border: 2px solid #e0e0e0;
   background-color: #e0e0e0 !important;
@@ -227,6 +256,15 @@ ul#tabs a {
   background-color: #ffccac !important;
   border-color: #ffccac !important;
   transition: 200ms ease !important;
+}
+
+.dropdown-header {
+  font-family: sans-serif !important;
+  font-size: 13pt !important;
+  color: #ff7823 !important;
+  border-bottom: none !important;
+  padding: 0px !important;
+  margin: 6px 6px 0px !important;
 }
 
 button.close {
