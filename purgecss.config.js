@@ -5,6 +5,9 @@ module.exports = {
   // Standalone 3D iframe HTML contains classes used by the shared viewer stylesheet.
   skippedContentGlobs: [],
   safelist: [
+    /^primary-/, /^dropdown-/, /^mobile-nav-/, /^hero-/, /^painted-/, /^cell-orb/,
+    /^reveal-/, /^reading-progress/, /^inline-icon/, /^nav-open$/, /^skip-link$/,
+    /^research-/, /^home-night$/, /^statement-line$/,
     "collapse",
     "collapsing",
     "show",

@@ -77,7 +77,7 @@ nav_order: 5
     <p class="scf-sr-only" id="scf-filter-status" aria-live="polite"></p>
 
     <div class="scf-card-grid">
-      <article class="scf-paper-card scf-yap" data-category="mechanical">
+      <article class="scf-paper-card scf-yap" data-reveal style="--hue:#67e8f9;view-transition-name:framework-yap" data-category="mechanical">
         <div class="scf-card-top"><span class="scf-index">01</span><span class="scf-domain">Mechanochemical signaling</span></div>
         <ol class="scf-flow" aria-label="Mechanics, YAP/TAZ, genes, resolution">
           <li><b>Mechanics</b><span>force, matrix</span></li>
@@ -93,7 +93,7 @@ nav_order: 5
         <a class="scf-open" href="{{ '/research/yap-taz-signal-resolution/' | relative_url }}"><span>Explore YAP/TAZ</span><span aria-hidden="true">↗</span></a>
       </article>
 
-      <article class="scf-paper-card scf-nrf" data-category="biochemical">
+      <article class="scf-paper-card scf-nrf" data-reveal style="--hue:#34d399;view-transition-name:framework-nrf2" data-category="biochemical">
         <div class="scf-card-top"><span class="scf-index">02</span><span class="scf-domain">Redox signaling</span></div>
         <ol class="scf-flow" aria-label="Redox cue, KEAP1, NRF2, reset">
           <li><b>Redox cue</b><span>stress input</span></li>
@@ -109,7 +109,7 @@ nav_order: 5
         <a class="scf-open" href="{{ '/research/nrf2-keap1-redoxostat/' | relative_url }}"><span>Explore NRF2–KEAP1</span><span aria-hidden="true">↗</span></a>
       </article>
 
-      <article class="scf-paper-card scf-cyp" data-category="biochemical">
+      <article class="scf-paper-card scf-cyp" data-reveal style="--hue:#fbbf24;view-transition-name:framework-cyp" data-category="biochemical">
         <div class="scf-card-top"><span class="scf-index">03</span><span class="scf-domain">Environment · Immunity</span></div>
         <ol class="scf-flow" aria-label="Ligand, AhR, CYP1A1, immunity">
           <li><b>Ligand</b><span>environment</span></li>
@@ -125,7 +125,7 @@ nav_order: 5
         <a class="scf-open" href="{{ '/research/cyp1a1-metabolic-feedback/' | relative_url }}"><span>Explore CYP1A1</span><span aria-hidden="true">↗</span></a>
       </article>
 
-      <article class="scf-paper-card scf-cond" data-category="temporal">
+      <article class="scf-paper-card scf-cond" data-reveal style="--hue:#a78bfa;view-transition-name:framework-condensates" data-category="temporal">
         <div class="scf-card-top"><span class="scf-index">04</span><span class="scf-domain">Gene regulation · Timing</span></div>
         <ol class="scf-flow" aria-label="Pulses, assembly, reset, bursts">
           <li><b>Pulses</b><span>signal timing</span></li>
@@ -141,7 +141,7 @@ nav_order: 5
         <a class="scf-open" href="{{ '/research/transcriptional-condensates-kinetic-filters/' | relative_url }}"><span>Explore condensates</span><span aria-hidden="true">↗</span></a>
       </article>
 
-      <article class="scf-paper-card scf-upr" data-category="proteostasis">
+      <article class="scf-paper-card scf-upr" data-reveal style="--hue:#f472b6;view-transition-name:framework-upr" data-category="proteostasis">
         <div class="scf-card-top"><span class="scf-index">05</span><span class="scf-domain">Proteostasis · Immunotoxicity</span></div>
         <ol class="scf-flow" aria-label="Toxicant, ER sensors, branches, resolution">
           <li><b>Toxicant</b><span>proteotoxic input</span></li>

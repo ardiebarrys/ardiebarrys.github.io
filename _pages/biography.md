@@ -23,7 +23,7 @@ nav_order: 2
     overflow: hidden;
     background-image:
       linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.35)),
-      url("{{ '/assets/img/biography-lab.jpg' | relative_url }}");
+      image-set(url("{{ '/assets/img/biography-lab-480.webp' | relative_url }}") 0.5x, url("{{ '/assets/img/biography-lab-800.webp' | relative_url }}") 1x, url("{{ '/assets/img/biography-lab-1400.webp' | relative_url }}") 2x);
     background-size: cover;
     background-position: center;
     user-select: none;
@@ -241,5 +241,5 @@ nav_order: 2
 </div>
 
 <figure class="bio-image" oncontextmenu="return false;">
-  <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis during laboratory research" width="1600" height="903" loading="lazy" decoding="async" draggable="false">
+<picture><source type="image/webp" srcset="{{ '/assets/img/biography-portrait-480.webp' | relative_url }} 480w, {{ '/assets/img/biography-portrait-800.webp' | relative_url }} 800w, {{ '/assets/img/biography-portrait-1400.webp' | relative_url }} 1400w" sizes="(max-width:767px) 100vw, 800px">  <img src="{{ '/assets/img/biography-portrait.jpg' | relative_url }}" alt="Ardie Barry Sailis during laboratory research" width="1600" height="903" loading="lazy" decoding="async" draggable="false"></picture>
 </figure>

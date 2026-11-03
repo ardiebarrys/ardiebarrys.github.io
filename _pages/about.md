@@ -3,6 +3,8 @@ layout: page
 title: About
 permalink: /
 nav: false
+suppress_title: true
+painted_home: true
 nav_order: 1
 description: Toxicology researcher studying how e-cigarette aerosol affects male reproductive health
 ---
@@ -859,12 +861,13 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
   }
 </style>
 
-<div class="home">
-  <h1 class="home-title">Ardie Barry Sailis</h1>
+{% include painted-hero.liquid %}
+<div class="home-night"><div class="home">
+  <div class="research-counts" aria-label="Research at a glance"><span><b data-count="15">15</b> papers</span><span><b data-count="5">5</b> frameworks</span><span><b data-count="2">2</b> research tracks</span></div>
 
-  <section class="home-card home-intro">
+  <section data-reveal class="home-card home-intro">
     <span class="home-label">Toxicology · Molecular Biology</span>
-    <h2>I study how cells handle chemical stress, and what happens when they cannot.</h2>
+    <h2 class="statement-line">I study how cells handle chemical stress, and what happens when they cannot.</h2>
     <p>Two research tracks connect environmental exposure to cellular recovery: how vaping affects male reproductive health, and how cells bring stress signals to an end.</p>
     <div class="home-tracks">
       <article class="home-track track-doctoral">
@@ -898,8 +901,8 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     </div>
   </section>
 
-  <section class="home-card profile-card" aria-label="Profile">
-    <img class="profile-photo" src="/assets/img/ardie-profile.jpg" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high" draggable="false">
+  <section data-reveal class="home-card profile-card" aria-label="Profile">
+    <picture><source type="image/webp" srcset="/assets/img/ardie-profile-480.webp 480w, /assets/img/ardie-profile-800.webp 800w, /assets/img/ardie-profile-1400.webp 1400w" sizes="(max-width:767px) 100vw, 50vw"><img class="profile-photo" src="/assets/img/ardie-profile.jpg" alt="Ardie Barry Sailis" width="900" height="1132" loading="eager" decoding="async" fetchpriority="high" draggable="false"></picture>
 
     <div class="profile-body">
       <div class="profile-affiliation">
@@ -927,7 +930,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 
 {%- assign highlight = site.data.papers | where_exp: "p", "p.highlight" | first -%}
 {%- if highlight %}
-  <figure class="home-card study" aria-labelledby="study-title">
+  <figure data-reveal class="home-card study" aria-labelledby="study-title">
     <div class="study-head">
       <div>
         <span class="home-label">Highlighted study</span>
@@ -972,7 +975,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 {%- endif %}
 
   <div class="home-pair">
-    <section class="home-card">
+    <section data-reveal class="home-card">
       <span class="home-label">Projects</span>
       <h3>Both tracks, side by side</h3>
       <p>The doctoral study and the circuit framework, with the questions each one is built to answer.</p>
@@ -982,7 +985,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
       </div>
     </section>
 
-    <section class="home-card">
+    <section data-reveal class="home-card">
       <span class="home-label">Support</span>
       <h3>Find this work useful?</h3>
       <p>Help keep my independent research and open projects going.</p>
@@ -1007,7 +1010,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 {%- endcapture -%}
 {%- assign news_items = news_rows | split: "@@" | sort | reverse %}
 
-  <section class="news">
+  <section data-reveal class="news">
     <h2>Latest News</h2>
     <ul class="news-list">
       {%- assign news_shown = 0 -%}
@@ -1024,7 +1027,7 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
     </ul>
   </section>
 
-  <div class="home-contact">
+  <div data-reveal class="home-contact">
     <div class="contact-icons">{% social_links %}</div>
     <p>For academic correspondence, use the <a href="/contact/">Contact page</a>. Updated {{ site.time | date: "%-d %B %Y" }}.</p>
   </div>
@@ -1040,3 +1043,4 @@ description: Toxicology researcher studying how e-cigarette aerosol affects male
 </script>
 
 {% include depth3d/home.liquid %}
+</div>

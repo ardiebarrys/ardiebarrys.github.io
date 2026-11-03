@@ -1,0 +1,29 @@
+- title: "Doctoral research: Vaping & male reproductive health"
+  short: Doctoral research
+  url: /research/e-cigarettes-male-reproductive-health/
+  hue: "#f5b544"
+- title: UPR & ER stress
+  short: UPR
+  url: /research/upr-proteotoxic-stress-resolution/
+  hue: "#f472b6"
+  transition: framework-upr
+- title: YAP/TAZ
+  short: YAP/TAZ
+  url: /research/yap-taz-signal-resolution/
+  hue: "#67e8f9"
+  transition: framework-yap
+- title: NRF2–KEAP1
+  short: NRF2–KEAP1
+  url: /research/nrf2-keap1-redoxostat/
+  hue: "#34d399"
+  transition: framework-nrf2
+- title: CYP1A1
+  short: CYP1A1
+  url: /research/cyp1a1-metabolic-feedback/
+  hue: "#fbbf24"
+  transition: framework-cyp
+- title: Transcriptional condensates
+  short: Condensates
+  url: /research/transcriptional-condensates-kinetic-filters/
+  hue: "#a78bfa"
+  transition: framework-condensates

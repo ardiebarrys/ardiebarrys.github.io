@@ -1,0 +1,19 @@
+<section class="painted-hero" aria-labelledby="painted-title">
+  <div class="painted-art" aria-hidden="true">
+    <picture class="hero-mobile"><source type="image/webp" srcset="{{ '/assets/img/hero/sky-mobile-768.webp' | relative_url }} 768w, {{ '/assets/img/hero/sky-mobile-1024.webp' | relative_url }} 1024w" sizes="100vw"><img src="{{ '/assets/img/hero/sky-mobile.png' | relative_url }}" alt="" width="1024" height="1536" fetchpriority="high"></picture>
+    {% assign layers = 'sky,clouds-far,clouds-near,hills-far,hills-mid,meadow-front' | split: ',' %}
+    {% assign speeds = '0.1,0.2,0.35,0.5,0.7,1.0' | split: ',' %}
+    {% for layer in layers %}
+    <div class="hero-layer hero-layer-{{ layer }}" data-speed="{{ speeds[forloop.index0] }}" style="--speed:{{ speeds[forloop.index0] }}">
+      <picture><source media="(min-width:768px)" type="image/webp" srcset="{{ '/assets/img/hero/' | append: layer | append: '-768.webp' | relative_url }} 768w, {{ '/assets/img/hero/' | append: layer | append: '-1536.webp' | relative_url }} 1536w" sizes="100vw"><source media="(max-width:767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="><img src="{{ '/assets/img/hero/' | append: layer | append: '.png' | relative_url }}" width="1536" height="1024" alt="" decoding="async" {% if forloop.first %}fetchpriority="high"{% endif %}></picture>
+    </div>
+    {% endfor %}
+    {% for i in (1..6) %}<span class="cell-orb cell-orb-{{ i }}"><i></i></span>{% endfor %}
+  </div>
+  <div class="painted-copy">
+    <p class="hero-kicker">Toxicology · Molecular biology</p>
+    <h1 id="painted-title">Ardie Barry Sailis</h1>
+    <p class="hero-statement"><em>I study how cells handle chemical stress, and what happens when they cannot.</em></p>
+    <div class="hero-actions"><a class="hero-button" href="{{ '/cellular-signaling-circuits/' | relative_url }}">Explore the research <span aria-hidden="true">↗</span></a><a class="hero-button hero-button-secondary" href="{{ '/publications/' | relative_url }}">Publications</a></div>
+  </div>
+</section>

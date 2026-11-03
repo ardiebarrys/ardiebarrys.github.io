@@ -683,3 +683,8 @@ body:has(#deep-numbers-app) .site-footer {
   background: #030406;
   border-top-color: rgba(129, 140, 248, 0.12);
 }
+
+:root {
+ --ink:#070b14; --surface:#0e1526; --text:#f3f1ea; --text-muted:#c9d3ea;
+ --doctoral:#f5b544; --framework:#22d3ee;
+}

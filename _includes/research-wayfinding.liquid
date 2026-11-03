@@ -1,0 +1,9 @@
+{% assign current_research = site.data.research_navigation | where: 'url', page.url | first %}
+{% if current_research %}
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+<nav class="research-breadcrumb" aria-label="Breadcrumb">
+  <a href="{{ '/projects/' | relative_url }}">Research</a><span aria-hidden="true">/</span>
+  {% if current_research.transition %}<a href="{{ '/cellular-signaling-circuits/' | relative_url }}">Cellular Circuits</a><span aria-hidden="true">/</span>{% endif %}
+  <span aria-current="page">{% if current_research.transition %}{{ current_research.title | escape }}{% else %}Doctoral research{% endif %}</span>
+</nav>
+{% endif %}
