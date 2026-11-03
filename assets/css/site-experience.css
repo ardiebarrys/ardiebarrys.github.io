@@ -23,7 +23,7 @@
 .pub-result-count{color:#aec4d5;margin:1rem 0}.pub-bib{background:#132b39;color:#c9e8ef;border:1px solid #4a6876;border-radius:6px;padding:.6rem .8rem;cursor:pointer;min-height:44px;font:inherit}
 .pub-tools button,.pub-tools a{min-height:44px;display:inline-flex;align-items:center}
 .journal-context{margin:2rem 0;border-top:1px solid #334155;padding-top:1rem}.journal-context summary{cursor:pointer;padding:1rem 0;color:#bbd3e5}
-.chat-launch{position:fixed;bottom:1.25rem;left:1.25rem;z-index:99998;min-height:48px;border:1px solid #528a91;border-radius:25px;background:#123d44;color:#e6faf6;padding:.75rem 1rem;font:600 14px Arial;box-shadow:0 6px 20px #0005;cursor:pointer}
+.chat-launch{position:fixed;bottom:1.25rem;right:1.25rem;z-index:99998;min-height:48px;border:1px solid #528a91;border-radius:25px;background:#123d44;color:#e6faf6;padding:.75rem 1rem;font:inherit;font-weight:600;font-size:14px;box-shadow:0 6px 20px #0005;cursor:pointer}
 @media(min-width:900px){.home-intro .home-tracks{margin-top:1.5rem}.home-intro .home-record{display:none}}
 @media(max-width:900px){.site-shortcuts{display:none}.pub-discovery{grid-template-columns:1fr 1fr}.pub-discovery label:first-child{grid-column:1/-1}.study-preview iframe{height:1450px}}
 @media(max-width:480px){.pub-discovery{grid-template-columns:1fr}.pub-discovery label:first-child{grid-column:auto}.research-related{margin:2rem .5rem}.study-launch{width:100%}}

@@ -5,7 +5,7 @@
     width: 3.4rem !important;
     height: 3.4rem !important;
     right: 1.25rem !important;
-    bottom: 1.25rem !important;
+    bottom: 5.5rem !important;
     z-index: 99999 !important;
     background: #2563eb !important;
     color: #ffffff !important;
@@ -29,8 +29,8 @@
   }
 
   #chatbase-bubble-button {
-    left: 1.25rem !important;
-    right: auto !important;
+    right: 1.25rem !important;
+    left: auto !important;
     bottom: 1.25rem !important;
     z-index: 99998 !important;
     background-color: #2563eb !important;
@@ -41,8 +41,8 @@
   }
 
   #chatbase-bubble-window {
-    left: 1.25rem !important;
-    right: auto !important;
+    right: 1.25rem !important;
+    left: auto !important;
     bottom: 5.5rem !important;
     width: min(420px, calc(100vw - 2.5rem)) !important;
     max-width: calc(100vw - 2.5rem) !important;
@@ -53,11 +53,12 @@
       width: 3rem !important;
       height: 3rem !important;
       right: 1rem !important;
-      bottom: 1rem !important;
+      bottom: 5.5rem !important;
     }
 
     #chatbase-bubble-button {
-      left: 1rem !important;
+      right: 1rem !important;
+      left: auto !important;
       bottom: 1rem !important;
     }
 
@@ -133,7 +134,17 @@
 </script>
 {% endif %}
 
-<footer class="site-footer">&copy; {{ site.time | date: '%Y' }} Ardie Barry Sailis &nbsp;·&nbsp; <a href="{{ '/deep-numbers/' | relative_url }}">Deep Numbers</a></footer>
+<footer class="site-footer redesigned-footer">
+<div class="footer-columns">
+  <section><h2>Research</h2><ul>
+    <li><a href="{{ '/cellular-signaling-circuits/' | relative_url }}">Cellular Circuits (overview)</a></li>
+    {% for item in site.data.research_navigation %}<li><a href="{{ item.url | relative_url }}">{{ item.title | escape }}</a></li>{% endfor %}
+  </ul></section>
+  <section><h2>Publications</h2><ul><li><a href="{{ '/publications/' | relative_url }}">All publications</a></li><li><a href="https://scholar.google.com/citations?user=saKP688AAAAJ&amp;hl=en">Google Scholar</a></li></ul></section>
+  <section><h2>About</h2><ul><li><a href="{{ '/biography/' | relative_url }}">Biography</a></li><li><a href="{{ '/cv/' | relative_url }}">CV</a></li><li><a href="{{ '/talks/' | relative_url }}">Talks</a></li><li><a href="{{ '/deep-numbers/' | relative_url }}">Deep Numbers</a></li></ul></section>
+  <section><h2>Contact</h2><ul><li><a href="{{ '/contact/' | relative_url }}">Academic correspondence</a></li><li><a href="https://orcid.org/0009-0009-8994-2793">ORCID</a></li><li><a href="https://www.linkedin.com/in/ardiebarrysailis">LinkedIn</a></li></ul></section>
+</div><p class="footer-copyright">&copy; {{ site.time | date: '%Y' }} Ardie Barry Sailis</p>
+</footer>
 
 <script>
   /* Back-to-top button: shows while scrolling, fades out 3 s after scrolling stops. */

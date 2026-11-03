@@ -4,6 +4,7 @@ title: Doctoral Research
 permalink: /research/e-cigarettes-male-reproductive-health/
 description: Doctoral research comparing cigarette smokers, e-cigarette users and dual users, linking exposure to testosterone signaling, mitochondrial function and microRNA regulation
 nav: true
+suppress_title: true
 nav_order: 4
 ---
 

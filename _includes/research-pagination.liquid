@@ -1,0 +1,15 @@
+{% assign current_research = site.data.research_navigation | where: 'url', page.url | first %}
+{% if current_research.transition %}
+<nav class="research-pagination" aria-label="Previous and next framework">
+{% for item in site.data.research_navigation %}
+  {% if item.url == page.url %}
+    {% assign previous_index = forloop.index0 | minus: 1 %}
+    {% assign next_index = forloop.index0 | plus: 1 %}
+    {% if previous_index > 0 %}{% assign previous = site.data.research_navigation[previous_index] %}
+    <a href="{{ previous.url | relative_url }}" rel="prev"><small>Previous framework</small><span>← {{ previous.short }}</span></a>{% endif %}
+    {% if next_index < site.data.research_navigation.size %}{% assign next = site.data.research_navigation[next_index] %}
+    <a href="{{ next.url | relative_url }}" rel="next"><small>Next framework</small><span>{{ next.short }} →</span></a>{% endif %}
+  {% endif %}
+{% endfor %}
+</nav>
+{% endif %}

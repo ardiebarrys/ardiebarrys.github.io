@@ -1,125 +1,39 @@
-<link rel="stylesheet" href="{{ "/assets/css/site-experience.css" | relative_url }}?v=20261103c">
-<link rel="stylesheet" href="{{ "/assets/css/research-viewer.css" | relative_url }}?v=20261103c">
-<script src="{{ "/assets/js/research-viewer-tools.js" | relative_url }}?v=20261103c" defer></script>
-<script src="{{ "/assets/js/site-experience.js" | relative_url }}?v=20261103c" defer></script>
-<header>
-  <nav id="navbar" class="navbar navbar-light {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation" aria-label="Primary navigation">
-    <div class="navbar-layout">
-
-      <div class="navbar-brand-slot">
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-          {% if site.title == 'blank' %}
-            {% if site.first_name %}<span class="font-weight-bold">{{- site.first_name -}}</span>{% endif %}
-            {% if site.middle_name %}{{- site.middle_name -}}{% endif %}
-            {% if site.last_name %}{{- site.last_name -}}{% endif %}
-          {% else %}
-            {{- site.title -}}
-          {% endif %}
-        </a>
-      </div>
-
-      <div class="site-shortcuts" aria-label="Quick navigation">
-        <a href="{{ '/projects/' | relative_url }}" {% if page.url == '/projects/' %}aria-current="page"{% endif %}>Research</a>
-        <a href="{{ '/publications/' | relative_url }}" {% if page.url == '/publications/' %}aria-current="page"{% endif %}>Publications</a>
-        <a href="{{ '/cv/' | relative_url }}" {% if page.url == '/cv/' %}aria-current="page"{% endif %}>CV</a>
-        <a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
-      </div>
-      <input
-        type="checkbox"
-        id="navbar-menu-toggle"
-        class="navbar-menu-toggle"
-        aria-controls="navbarNav"
-      >
-
-      <label
-        for="navbar-menu-toggle"
-        class="navbar-menu-trigger"
-        aria-label="Toggle navigation menu"
-      >
-        <span class="menu-icon" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-        <span class="menu-label">Menu</span>
-      </label>
-
-      <div class="navbar-collapse-main" id="navbarNav">
-        <ul class="navbar-menu-list">
-          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
-              {% if page.permalink == '/' %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
-              <span>About</span>
-              {% if page.permalink == '/' %}<span class="sr-only">(current)</span>{% endif %}
-            </a>
-          </li>
-
-          {%- comment -%}
-            Doctoral Research and Cellular Circuits are the two research tracks. They are
-            nested under Projects behind a three-line toggle instead of sitting at the top
-            level. The Projects page itself is unchanged.
-          {%- endcomment -%}
-          {% assign sub_pages = "/research/e-cigarettes-male-reproductive-health/,/cellular-signaling-circuits/" | split: "," %}
-          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
-
-          {%- assign sub_open = false -%}
-          {%- for sp in sorted_pages -%}
-            {%- if sub_pages contains sp.permalink and page.url contains sp.url -%}{%- assign sub_open = true -%}{%- endif -%}
-          {%- endfor -%}
-
-          {% for p in sorted_pages %}
-            {% if p.nav and p.permalink != '/' and p.autogen == null %}
-              {% unless sub_pages contains p.permalink %}
-                {%- if p.permalink contains '://' -%}
-                  {%- assign url = p.permalink -%}
-                {%- elsif p.permalink contains '/blog/' -%}
-                  {%- assign url = '/blog/' -%}
-                {%- else -%}
-                  {%- assign url = p.url -%}
-                {%- endif -%}
-
-                {% if p.permalink == '/projects/' %}
-                  <li class="nav-item nav-has-sub {% if page.url contains p.url %}active{% endif %}">
-                    <input type="checkbox" id="nav-projects-sub" class="nav-sub-input" {% if sub_open %}checked{% endif %}>
-                    <div class="nav-sub-head">
-                      <a class="nav-link" href="{{ url | relative_url }}">
-                        {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
-                        <span>{{- p.title -}}</span>
-                        {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
-                      </a>
-                      <label for="nav-projects-sub" class="nav-sub-trigger" aria-label="Show the two research tracks">
-                        <span class="nav-sub-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-                      </label>
-                    </div>
-                    <ul class="nav-sublist">
-                      {% for sp in sorted_pages %}
-                        {% if sp.nav and sub_pages contains sp.permalink %}
-                          <li class="nav-item nav-special {% if sp.permalink == '/cellular-signaling-circuits/' %}nav-circuit-framework{% else %}nav-doctoral{% endif %} {% if page.url contains sp.url %}active{% endif %}">
-                            <a class="nav-link" href="{{ sp.url | relative_url }}">
-                              {% if page.url contains sp.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
-                              <span>{{- sp.title -}}</span>
-                              {% if page.url contains sp.url %}<span class="sr-only">(current)</span>{% endif %}
-                            </a>
-                          </li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
-                  </li>
-                {% else %}
-                  <li class="nav-item {% if page.url contains p.url %}active{% endif %}{% if p.permalink == '/deep-numbers/' %} nav-special nav-deep-numbers{% endif %}">
-                    <a class="nav-link" href="{{ url | relative_url }}">
-                      {% if page.url contains p.url %}<span class="nav-active-dot" aria-hidden="true"></span>{% endif %}
-                      <span>{{- p.title -}}</span>
-                      {% if page.url contains p.url %}<span class="sr-only">(current)</span>{% endif %}
-                    </a>
-                  </li>
-                {% endif %}
-              {% endunless %}
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-
+<link rel="stylesheet" href="{{ '/assets/css/site-experience.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/research-viewer.css' | relative_url }}">
+<script src="{{ '/assets/js/research-viewer-tools.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/site-experience.js' | relative_url }}" defer></script>
+<header class="site-header">
+  <nav class="primary-nav" aria-label="Primary navigation">
+    <a class="site-brand" href="{{ '/' | relative_url }}">Ardie Barry Sailis</a>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="primary-panel"><span class="when-closed">Menu <span aria-hidden="true">☰</span></span><span class="when-open">Close <span aria-hidden="true">✕</span></span></button>
+    <div class="primary-panel" id="primary-panel">
+      <ul class="primary-links">
+        <li class="nav-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="research-menu">Research <span class="caret" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-panel dropdown-research" id="research-menu">
+            {% for item in site.data.research_navigation %}
+              {% if forloop.first %}
+              <li class="dd-group" aria-hidden="true">Doctoral research</li>
+              <li><a class="dd-item" style="--dot:{{ item.hue }}" href="{{ item.url | relative_url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>Vaping &amp; male reproductive health</a></li>
+              <li class="dd-group" aria-hidden="true">Cellular Circuits</li>
+              <li><a class="dd-item dd-overview" href="{{ '/cellular-signaling-circuits/' | relative_url }}" {% if page.url == '/cellular-signaling-circuits/' %}aria-current="page"{% endif %}>All five frameworks</a></li>
+              {% else %}
+              <li><a class="dd-item dd-sub" style="--dot:{{ item.hue }}" href="{{ item.url | relative_url }}" {% if item.url == page.url %}aria-current="page"{% endif %}>{{ item.title | escape }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="about-menu">About <span class="caret" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-panel" id="about-menu">
+            <li><a href="{{ '/biography/' | relative_url }}">Biography</a></li>
+            <li><a href="{{ '/cv/' | relative_url }}">CV</a></li>
+            <li><a href="{{ '/talks/' | relative_url }}">Talks</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-contact" href="{{ '/contact/' | relative_url }}">Contact</a></li>
+      </ul>
     </div>
   </nav>
 </header>
