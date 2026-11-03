@@ -76,7 +76,7 @@
   --button: #2563eb;
   --button-hover: #1d4ed8;
 
-  /* One content width for every page (Deep Numbers opts out) */
+  /* One content width for every page */
   --page-max: 1100px;
   --nav-height: 58px;
 }
@@ -421,7 +421,7 @@ body:has(> header > #navbar) {
   color: var(--global-hover-color) !important;
 }
 
-/* Cellular Circuits and Deep Numbers get a small tag so they read as projects. */
+/* Cellular Circuits gets a small tag so it reads as a project. */
 #navbar .nav-special > .nav-link::after {
   margin-left: auto;
   padding: 0.18rem 0.42rem;
@@ -570,16 +570,6 @@ body:has(> header > #navbar) {
   font-size: 0.92rem;
 }
 
-#navbar .nav-deep-numbers > .nav-link {
-  color: #dbeafe !important;
-}
-
-#navbar .nav-deep-numbers > .nav-link::after {
-  content: "PLAY";
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  color: #bfdbfe;
-}
-
 #navbar .nav-item.active > .nav-link {
   color: #fff !important;
   font-weight: 700 !important;
@@ -671,15 +661,4 @@ body:has(> header > #navbar) {
 
 .site-footer a {
   color: var(--accent) !important;
-}
-
-/* Deep Numbers starts just below the navbar and owns its own dark backdrop */
-body.deep-numbers-active .deep-numbers-page {
-  margin-top: -2rem !important;
-}
-
-body:has(#deep-numbers-app) .site-footer {
-  margin-top: 0;
-  background: #030406;
-  border-top-color: rgba(129, 140, 248, 0.12);
 }
